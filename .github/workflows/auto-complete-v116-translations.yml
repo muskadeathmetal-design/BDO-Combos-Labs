@@ -1,0 +1,33 @@
+name: Auto-complete V116 visible translations
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/auto-complete-visible-translations-v116.js'
+      - 'translations/missing-visible-v116.json'
+      - '.github/workflows/auto-complete-v116-translations.yml'
+permissions:
+  contents: write
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Translate missing visible strings statically
+        run: node tools/auto-complete-visible-translations-v116.js
+      - name: Commit generated translation patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add translations/auto-complete-visible-v116.json
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git commit -m "Auto-complete V116 visible translations"
+          git pull --rebase origin main
+          git push
