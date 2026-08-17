@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tools/audit-static-en-v116.js'
+      - 'en/index.html'
 permissions:
   contents: write
 jobs:
