@@ -8,6 +8,7 @@ on:
       - 'tools/run-safe-static-build-v116.js'
       - 'tools/prepare-static-translation-patches-v116.js'
       - 'tools/apply-post-visible-translations-v116.js'
+      - 'tools/apply-aligned-residual-translations-v116.js'
       - 'bcl-static-auto-translations-v116.json'
       - 'translations/**.json'
       - '.github/workflows/install-v116-static-locales.yml'
@@ -34,6 +35,9 @@ jobs:
       - name: Apply post-build visible translations
         run: node tools/apply-post-visible-translations-v116.js
 
+      - name: Apply aligned residual translations
+        run: node tools/apply-aligned-residual-translations-v116.js
+
       - name: Verify dynamic i18n is absent from locale pages
         run: |
           set -e
@@ -44,6 +48,8 @@ jobs:
             ! grep -q 'bcl-full-ui-i18n-v113.js' "$lang/index.html"
             grep -q 'bcl-static-locale-router' "$lang/index.html"
           done
+          ! grep -q 'transición:' es/index.html
+          ! grep -q 'fuente:transition' es/index.html
 
       - name: Commit generated static locales
         run: |
