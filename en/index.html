@@ -5999,7 +5999,7 @@ if(!BDO_DOM_READY){
           <div class="home75-detail">
             <p>A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.</p>
             <ol><li>Ouvre <b>Transition / Cancel</b>.</li><li>Check the torque <b>A → B</b>.</li><li>Controls duration and frames when available.</li><li>Validates reliable measurements.</li><li>Corrects or removes spurious detections.</li></ol>
-            <p class="home75-tip"><b>A cancel never reduces the duration of the CC.</b> It reduces combo execution/chaining time, which may allow more skills during the same control window.</p>
+            <p class="home75-tip"><b>A cancel never reduces the duration of the CC.</b> Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.</p>
           </div>
         </details>
 
@@ -6025,7 +6025,7 @@ if(!BDO_DOM_READY){
           <summary><span>07</span> Set Optimizer / Auto-Build</summary>
           <div class="home75-detail">
             <p>The page <b>Settings</b> allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.</p>
-            <ol><li>Increases the weight of <b>Speed</b> to favor fast chains.</li><li>Increases the weight of <b>Cancel</b> to favor sequences with a cancel.</li><li>Active <b>Require known transition</b> to prefer candidates whose binding is measured/known.</li><li>Return to the Builder and compare suggestion scores.</li></ol>
+            <ol><li>Increases the weight of <b>Speed</b> to favor fast chains.</li><li>Increases the weight of <b>Cancel</b> to favor sequences with a cancel.</li><li>Active <b>Require known transition</b> to prefer candidates whose binding is measured/known.</li><li>Retourne au Builder et compare le score des suggestions.</li></ol>
             <p class="home75-tip">The score is not just a damage score: it combines player logic and available technical factors. Missing data necessarily limits the precision of the optimization.</p>
           </div>
         </details>
@@ -6073,7 +6073,7 @@ if(!BDO_DOM_READY){
               <li>Clique <b>Import a backup</b>.</li>
               <li>Select the file <code>BDO_Combos_Labs_Backup_....json</code>.</li>
               <li>Wait for the confirmation message.</li>
-              <li>Return to Skills, Transition / Cancel and Combo Builder to verify the restored data.</li>
+              <li>Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.</li>
             </ol>
 
             <p class="home75-tip"><b>Account local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Used « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
@@ -6936,7 +6936,7 @@ if(!BDO_DOM_READY){
   <div class="settings92-row">
     <div class="settings92-name"><b>Optimization profile</b><small>General profile that determines Auto-Build priorities.</small></div>
     <div class="settings92-control"><select id="autoBuildMode" onchange="saveAutoBuildSettings()">
-            <option value="balanced">Balance</option>
+            <option value="balanced">Balanced</option>
             <option value="damage">Maximum damage</option>
             <option value="burst">Burst court</option>
             <option value="cc">CC Priority</option>
@@ -9244,7 +9244,7 @@ function renderComboPage(){
 
   if(!combos.length){
     content.className = 'page-placeholder';
-    content.textContent = 'No combo de class valid enregistré pour ' + className + '.';
+    content.textContent = 'No combo de class validated enregistré pour ' + className + '.';
     return;
   }
 
@@ -16494,7 +16494,7 @@ function enhanceTransitionReviewUIV47(){
     const summary=document.createElement('div');
     summary.id='transitionReviewSummaryV47';
     summary.className='transition-review-summary-v47';
-    summary.textContent=`Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)`;
+    summary.textContent=`Manual validation: ${validated} confirmed · ${pending} to review · ${rejected} rejected`;
     validation.appendChild(summary);
   }
 }
@@ -19535,7 +19535,7 @@ function renderBuilderSequence(){
             );
             chip.title=tl.ccApplied
               ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}`
-              : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
+              : `Elapsed time since previous skill: ${tl.linkTimingSource||'unknown'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
             return chip;
           }
           if(tl.ccTimerExpiredHere){
@@ -20396,13 +20396,13 @@ function oldRenderCrystals(){
     }else{
       const m=p.mods||{};
       const aggregate=[];
-      if(m.ap) aggregate.push(`AP caché +${m.ap}`);
+      if(m.ap) aggregate.push(`Hidden AP +${m.ap}`);
       if(m.monsterAP) aggregate.push(`AP monstre +${m.monsterAP}`);
-      if(m.humanDamage) aggregate.push(`Dégâts humains +${m.humanDamage}`);
+      if(m.humanDamage) aggregate.push(`Human damage +${m.humanDamage}`);
       if(m.accuracy) aggregate.push(`Accuracy +${m.accuracy}`);
-      if(m.critDmgPct) aggregate.push(`Dégâts critiques +${m.critDmgPct}%`);
+      if(m.critDmgPct) aggregate.push(`Critical damage +${m.critDmgPct}%`);
       if(m.backDmgPct) aggregate.push(`Back Attack +${m.backDmgPct}%`);
-      if(m.specialPct) aggregate.push(`Dégâts spéciaux +${m.specialPct}%`);
+      if(m.specialPct) aggregate.push(`Special damage +${m.specialPct}%`);
       if(m.atkSpeedPct) aggregate.push(`Vitesse attaque +${m.atkSpeedPct}%`);
       if(m.castingSpeedPct) aggregate.push(`Vitesse incantation +${m.castingSpeedPct}%`);
 
@@ -24290,7 +24290,7 @@ function communityPatternsForContextV101(className,spec){
       seq:communityNormalizeSequenceV101(c.sequence),
       type:'PLAYER COMBO',
       confidence:c.communityVerified?'community-verified':'community-shared',
-      sourceTag:`Partagé par ${c.author||'Joueur'}`,
+      sourceTag:`Shared by ${c.author||'Player'}`,
       note:c.note||'Combo shared by a player.',
       ownerClass:c.className,
       ownerSpec:c.spec,
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

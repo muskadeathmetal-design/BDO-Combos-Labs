@@ -3109,7 +3109,7 @@ button,.tab-btn,.optimizer-btn{
 
 
 <style>
-/* V17 — Transição/Cancelar reference-driven cleanup */
+/* V17 — Transferir/Cancelar reference-driven cleanup */
 .transition-clean-toolbar{
   display:flex;align-items:center;justify-content:space-between;gap:14px;
   margin:0 0 12px;padding:11px 13px;border:1px solid rgba(139,148,158,.16);
@@ -3449,7 +3449,7 @@ th {
   font-size:8px;font-weight:900;text-transform:uppercase;vertical-align:middle
 }
 .skills-cc-duration-status-v55.auto{color:#e3b341;background:rgba(210,153,34,.10);border:1px solid rgba(210,153,34,.20)}
-.skills-cc-duration-status-v55.validado{color:#7ee787;background:rgba(63,185,80,.10);border:1px solid rgba(63,185,80,.20)}
+.skills-cc-duration-status-v55.validada{color:#7ee787;background:rgba(63,185,80,.10);border:1px solid rgba(63,185,80,.20)}
 </style>
 
 <style id="cc-timeline-stats-v57-style">.builder-selected-skill-meta-item.cc-active strong{font-variant-numeric:tabular-nums}</style>
@@ -5795,7 +5795,7 @@ if(!BDO_DOM_READY){
       onclick="showPage('playerCombosPage',this);renderPlayerCombosPage()">
       <span data-i18n="nav.playerCombos">Combos de jogadores</span>
     </button>
-    <button class="tab-btn" data-page="transitionPage" onclick="showPage('transitionPage',this);renderTransitionPage()"> <span data-i18n="nav.transições">Transição/Cancelar</span></button>
+    <button class="tab-btn" data-page="transitionPage" onclick="showPage('transitionPage',this);renderTransitionPage()"> <span data-i18n="nav.transições">Transferir/Cancelar</span></button>
       <button class="tab-btn" type="button" onclick="showPage('youtubeAnalyzerPage', this); renderYouTubeAnalyzer();">
         <span data-i18n="nav.videoAnalyzer">Video Analyzer</span>
       </button>
@@ -5816,19 +5816,19 @@ if(!BDO_DOM_READY){
         <div class="home18-ações">
           <button class="optimizer-btn" type="button" onclick="showPage('skillsPage',document.querySelector('[data-page=skillsPage]'));renderSkillsPage()">Abrir Skills</button>
           <button class="tab-btn" type="button" onclick="showPage('builderPage',document.querySelector('[data-page=builderPage]'));renderComboBuilder()">Construtor de combinação</button>
-          <button class="tab-btn" type="button" onclick="showPage('transitionPage',document.querySelector('[data-page=transitionPage]'));renderTransitionPage()">Transições/cancelamentos</button>
+          <button class="tab-btn" type="button" onclick="showPage('transitionPage',document.querySelector('[data-page=transitionPage]'));renderTransitionPage()">Transições / Cancels</button>
         </div>
       </div>
       <div class="home18-context-card">
         <span>Contexto ativo</span>
         <strong id="home18Context">Nenhuma aula sélectionnée</strong>
-        <small id="home18Reference">Référentiel : —</small>
+        <small id="home18Reference">Referência : —</small>
       </div>
     </section>
 
     <section class="home18-kpis" aria-label="Resumo do Projeto">
       <article class="home18-kpi"><span>Skills carregadas</span><strong id="home18Skills">0</strong><small id="home18SkillsSub">0 activés</small></article>
-      <article class="home18-kpi"><span>Référentiel</span><strong id="home18ReferenceCount">0</strong><small id="home18ReferenceSub">entradas disponíveis</small></article>
+      <article class="home18-kpi"><span>Referência</span><strong id="home18ReferenceCount">0</strong><small id="home18ReferenceSub">entradas disponíveis</small></article>
       <article class="home18-kpi"><span>Combos</span><strong id="home18Combos">0</strong><small>pour ce contexte</small></article>
       <article class="home18-kpi"><span>Transições</span><strong id="home18Transições">0</strong><small id="home18TransitionsSub">validado / medido</small></article>
       <article class="home18-kpi"><span>Completude</span><strong id="home18Completeness">0%</strong><small>données de combat</small></article>
@@ -5933,7 +5933,7 @@ if(!BDO_DOM_READY){
       </div>
       <div class="home75-update-grid">
         <article><b>Stabilisation CC PvP</b><p>CC Timer e imunidade usam o mesmo cronograma de início a início, sem contagem dupla da duração das habilidades.</p></article>
-        <article><b>Transições e cancelamentos</b><p>Métricas conhecidas influenciam a classificação, a construção automática e o tempo real consumido nas janelas CC.</p></article>
+        <article><b>Transições e Cancels</b><p>Métricas conhecidas influenciam a classificação, a construção automática e o tempo real consumido nas janelas CC.</p></article>
         <article><b>Video Analyzer</b><p>Análise a partir de uma posição escolhida, detecção de habilidades, transições/cancelamentos e durações de CC validadas diretamente em uma habilidade.</p></article>
         <article><b>Comptes locaux</b><p>Entrar, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.</p></article>
         <article><b>Gestion Skills & Builds</b><p>Adicione, renomeie e exclua agora e também sincronize o histórico de construção salvo.</p></article>
@@ -5952,7 +5952,7 @@ if(!BDO_DOM_READY){
 
       <div class="home75-start">
         <div><b>Objectif</b><p>Construire un combinação à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.</p></div>
-        <div><b>Principe important</b><p>Une donnée absente reste inconnue. Une transição ou une duração do CC non medido ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.</p></div>
+        <div><b>Principe important</b><p>Une donnée absente reste inconnue. Une transição ou une duração do CC non medida ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.</p></div>
       </div>
 
       <div class="home75-toc">
@@ -5998,7 +5998,7 @@ if(!BDO_DOM_READY){
           <summary><span>04</span> Confirmar les transitions et cancels</summary>
           <div class="home75-detail">
             <p>Uma transição representa o tempo real necessário para passar da habilidade A para a habilidade B. Um cancelamento permite interromper uma animação para continuar mais cedo.</p>
-            <ol><li>Ouvre <b>Transição/Cancelar</b>.</li><li>Verifique o torque <b>A → B</b>.</li><li>Controla a duração e os frames quando disponíveis.</li><li>Valida medições confiáveis.</li><li>Corrige ou remove detecções falsas.</li></ol>
+            <ol><li>Ouvre <b>Transferir/Cancelar</b>.</li><li>Verifique o torque <b>A → B</b>.</li><li>Controla a duração e os frames quando disponíveis.</li><li>Valida medições confiáveis.</li><li>Corrige ou remove detecções falsas.</li></ol>
             <p class="home75-tip"><b>Un cancel ne réduit jamais la durée du CC.</b> Reduz o tempo de execução/encadeamento do combinação, o que pode permitir que mais habilidades sejam colocadas durante a mesma janela de controle.</p>
           </div>
         </details>
@@ -6047,7 +6047,7 @@ if(!BDO_DOM_READY){
               <span>Habilidades adicionadas/modificadas</span>
               <span>Inputs et statistiques</span>
               <span>Durées CC mesurées</span>
-              <span>Transições/cancelamentos</span>
+              <span>Transições / Cancels</span>
               <span>Medições e validações de vídeo</span>
               <span>Combos enregistrés</span>
               <span>Estado du Construtor de combinação</span>
@@ -6073,7 +6073,7 @@ if(!BDO_DOM_READY){
               <li>Clique <b>Importar cópia de segurança</b>.</li>
               <li>Selecione o arquivo <code>BDO_Combos_Labs_Backup_....json</code>.</li>
               <li>Aguarde a mensagem de confirmação.</li>
-              <li>Retourne dans Skills, Transição/Cancelar et Construtor de combinação pour vérifier les données restaurées.</li>
+              <li>Retourne dans Skills, Transferir/Cancelar et Construtor de combinação pour vérifier les données restaurées.</li>
             </ol>
 
             <p class="home75-tip"><b>Compte local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Usado « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
@@ -6390,14 +6390,14 @@ if(!BDO_DOM_READY){
     <div class="card">
       <div class="combo-header">
         <div>
-          <h2>Transição/Cancelar</h2>
+          <h2>Transferir/Cancelar</h2>
           <div id="transitionClassContext" class="badge">No class selected</div>
         </div>
       </div>
             <div class="transition-clean-toolbar">
         <div>
           <strong>Validando transições</strong>
-          <span id="transitionValidationStatus">Référentiel + compétences actives</span>
+          <span id="transitionValidationStatus">Referência + compétences actives</span>
         </div>
         <button id="transitionCleanBtn" type="button" class="tab-btn" onclick="cleanCurrentTransitionsV17(true)">Limpe transições inválidas</button>
       </div>
@@ -6510,7 +6510,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <div id="builderSequence" class="combo-list" style="margin-top:12px"></div>
-<div class="optimizer-note cc-budget-note-v64"><strong>Budget CC :</strong> Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle fonte du CC Timer avec sa propre durée medido, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.</div>
+<div class="optimizer-note cc-budget-note-v64"><strong>Budget CC :</strong> Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle fonte du CC Timer avec sa propre durée medida, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.</div>
       <div id="builderPvpReccStatusV68" class="builder-pvp-recc-status-v68" style="display:none"></div>
       <div id="builderValidationStatus" class="builder-validation-status"></div>
       <div id="builderOfficialCCLegend" class="builder-official-cc-legend">
@@ -6659,7 +6659,7 @@ if(!BDO_DOM_READY){
             <span class="youtube-tutorial-number">7</span>
             <div>
               <strong>Salvar resultados</strong>
-              <p>Clique em <b>Salvar Combinação + Transições</b>. Le combinação est ajouté à <b>Combos</b> e as medições são registradas em <b>Transição/Cancelar</b>.</p>
+              <p>Clique em <b>Salvar Combinação + Transições</b>. Le combinação est ajouté à <b>Combos</b> e as medições são registradas em <b>Transferir/Cancelar</b>.</p>
             </div>
           </div>
 
@@ -6936,7 +6936,7 @@ if(!BDO_DOM_READY){
   <div class="settings92-row">
     <div class="settings92-name"><b>Perfil de otimização</b><small>Perfil geral que determina as prioridades do Auto-Build.</small></div>
     <div class="settings92-control"><select id="autoBuildMode" onchange="saveAutoBuildSettings()">
-            <option value="balanced">Equilíbrio</option>
+            <option value="balanced">Equilibrado</option>
             <option value="damage">Dano máximo</option>
             <option value="burst">Burst court</option>
             <option value="cc">Prioridade CC</option>
@@ -6977,12 +6977,12 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildMaxSkills">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Durée max. estimado (s)</b><small>Durée estimado maximale acceptée pour la séquence complète.</small></div>
+    <div class="settings92-name"><b>Durée max. estimada (s)</b><small>Durée estimada maximale acceptée pour la séquence complète.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxDuration" type="number" min="0.5" max="60" step="0.1" value="8" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxDuration">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Durée min. estimado (s)</b><small>Durée estimado minimale souhaitée pour la séquence.</small></div>
+    <div class="settings92-name"><b>Durée min. estimada (s)</b><small>Durée estimada minimale souhaitée pour la séquence.</small></div>
     <div class="settings92-control"><input id="autoBuildMinDuration" type="number" min="0" max="60" step="0.1" value="0" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinDuration">Automatique</div>
   </div>
@@ -9244,7 +9244,7 @@ function renderComboPage(){
 
   if(!combos.length){
     content.className = 'page-placeholder';
-    content.textContent = 'Aucun combinação de aula válido enregistré pour ' + className + '.';
+    content.textContent = 'Aucun combinação de aula validado enregistré pour ' + className + '.';
     return;
   }
 
@@ -10409,7 +10409,7 @@ function optimizeCurrentCombo(){
           <div class="optimizer-stats-v41">
             <div><span>Skills</span><b>${combatStats.skillsCount ?? best.sequence.length}</b></div>
             <div><span>Total Damage</span><b>${Number(combatStats.totalDamage)>0 ? Number(combatStats.totalDamage).toFixed(2) : '—'}</b></div>
-            <div><span>Durée estimado</span><b>${Number(combatStats.totalDuration)>0 ? Number(combatStats.totalDuration).toFixed(2)+' s' : '—'}</b></div>
+            <div><span>Durée estimada</span><b>${Number(combatStats.totalDuration)>0 ? Number(combatStats.totalDuration).toFixed(2)+' s' : '—'}</b></div>
             <div><span>DPS estimé</span><b>${Number(combatStats.dps)>0 ? Number(combatStats.dps).toFixed(2) : '—'}</b></div>
             <div><span>CC</span><b>${combatStats.ccCount ?? 0}</b></div>
             <div><span>Protection</span><b>${Math.round(Number(combatStats.protectionCoverage||0)*100)}%</b></div>
@@ -16494,7 +16494,7 @@ function enhanceTransitionReviewUIV47(){
     const summary=document.createElement('div');
     summary.id='transitionReviewSummaryV47';
     summary.className='resumo-revisão-de-transição-v47';
-    summary.textContent=`Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)`;
+    summary.textContent=`Validação manual: ${validated} confirmadas · ${pending} a verificar · ${rejected} rejeitadas`;
     validation.appendChild(summary);
   }
 }
@@ -18659,7 +18659,7 @@ function builderLinkTimingV61(fromName,toName){
       cancelAt,
       hasCancel:true,
       validated:true,
-      fonte:'cancel válido (estimation start-to-start)'
+      fonte:'cancel validado (estimation start-to-start)'
     };
   }
 
@@ -19535,7 +19535,7 @@ function renderBuilderSequence(){
             );
             chip.title=tl.ccApplied
               ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · fonte ${tl.ccTimerMeasurement?.fonte||'inconnue'}`
-              : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}ZZBBCLTOKEN0ZZZ`;
+              : `Tempo decorrido desde a skill anterior: ${tl.linkTimingSource||'desconhecido'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}ZZBBCLTOKEN0ZZZ`;
             return chip;
           }
           if(tl.ccTimerExpiredHere){
@@ -20396,13 +20396,13 @@ function oldRenderCrystals(){
     }else{
       const m=p.mods||{};
       const aggregate=[];
-      if(m.ap) aggregate.push(`AP caché +${m.ap}`);
+      if(m.ap) aggregate.push(`AP oculto +${m.ap}`);
       if(m.monsterAP) aggregate.push(`AP monstre +${m.monsterAP}`);
-      if(m.humanDamage) aggregate.push(`Dégâts humains +${m.humanDamage}`);
+      if(m.humanDamage) aggregate.push(`Dano humano +${m.humanDamage}`);
       if(m.accuracy) aggregate.push(`Précision +${m.accuracy}`);
-      if(m.critDmgPct) aggregate.push(`Dégâts critiques +${m.critDmgPct}%`);
+      if(m.critDmgPct) aggregate.push(`Dano crítico +${m.critDmgPct}%`);
       if(m.backDmgPct) aggregate.push(`Back Attack +${m.backDmgPct}%`);
-      if(m.specialPct) aggregate.push(`Dégâts spéciaux +${m.specialPct}%`);
+      if(m.specialPct) aggregate.push(`Dano especial +${m.specialPct}%`);
       if(m.atkSpeedPct) aggregate.push(`Vitesse attaque +${m.atkSpeedPct}%`);
       if(m.castingSpeedPct) aggregate.push(`Vitesse incantation +${m.castingSpeedPct}%`);
 
@@ -21796,7 +21796,7 @@ function genericCCApplyToSelectedSkillV67(){
   try{if(typeof renderSkillsPage==='function')renderSkillsPage();}catch(e){}
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
 
-  if(status)status.textContent=`Durée CC validado pour ${skillName} : ${duration.toFixed(4)} s.`;
+  if(status)status.textContent=`Durée CC validada pour ${skillName} : ${duration.toFixed(4)} s.`;
 }
 
 function genericCCResetV50(){
@@ -22037,7 +22037,7 @@ function renderAutoCCV49(){
   root.innerHTML=`
     <div class="video-auto-cc-head-v49">
       <strong>Mesures CC détectées</strong>
-      <small>Começo = impact estimé · FIM = reprise de mouvement estimado · les mesures auto peuvent être enregistrées puis validées</small>
+      <small>Começo = impact estimé · FIM = reprise de mouvement estimada · les mesures auto peuvent être enregistrées puis validées</small>
     </div>
     ${rows.map((m,index)=>`
       <div class="video-auto-cc-row-v49">
@@ -22366,7 +22366,7 @@ function saveAutoTransitionsV45(){
   if(typeof ensureClassSpecStores==='function')ensureClassSpecStores(cls,spec);
   const store=CLASS_TRANSITIONS?.[cls]?.[spec];
   if(!Array.isArray(store)){
-    if(status)status.textContent='Stockage Transição/Cancelar indisponible.';
+    if(status)status.textContent='Stockage Transferir/Cancelar indisponible.';
     return;
   }
 
@@ -22533,7 +22533,7 @@ bdoOnReady(()=>{
 </script>
 
 <script>
-/* V17 — Reference-driven Transição/Cancelar validation.
+/* V17 — Reference-driven Transferir/Cancelar validation.
    A transição is kept only when BOTH endpoints resolve to real skills.
    Raw JSON fragments, formatting debris and ambiguous input-only endpoints are rejected. */
 function transitionNormV17(value){
@@ -22678,7 +22678,7 @@ function cleanCurrentTransitionsV17(manual=false){
   if(status){
     status.textContent=result.removed.length
       ? `${result.valid.length} valide(s) · ${result.removed.length} entrée(s) parasite(s) supprimée(s)`
-      : `${result.valid.length} transição(s) validado(s) · aucune entrée parasite`;
+      : `${result.valid.length} transição(s) validada(s) · aucune entrée parasite`;
     status.className=result.removed.length?'status-warn':'status-good';
   }
   if(manual && typeof renderTransitionPage==='function') renderTransitionPage();
@@ -23090,7 +23090,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <label for="bug77Category">Área em questão</label>
         <select id="bug77Category">
           <option>Construtor de combinação</option><option>Video Analyzer</option><option>Skills</option>
-          <option>Transição/Cancelar</option><option>CC / CC Timer</option><option>Auto-Build</option>
+          <option>Transferir/Cancelar</option><option>CC / CC Timer</option><option>Auto-Build</option>
           <option>Sauvegarde / Restauration</option><option>Interface</option><option>Autre</option>
         </select>
       </div>
@@ -24290,7 +24290,7 @@ function communityPatternsForContextV101(className,spec){
       seq:communityNormalizeSequenceV101(c.sequence),
       type:'COMBO DE JOGADORES',
       confidence:c.communityVerified?'community-verified':'community-shared',
-      sourceTag:`Partagé par ${c.author||'Joueur'}`,
+      sourceTag:`Partilhado por ${c.author||'Jogador'}`,
       note:c.note||'Combo compartilhado por um jogador.',
       ownerClass:c.className,
       ownerSpec:c.spec,
@@ -25542,9 +25542,9 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdoCombosLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Crie uma conta','account.profile':'Meu perfil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Alterar a senha','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de jogadores','nav.transições':'Transição/Cancelar','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Settings'},
-en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Combos de Classe','nav.playerCombos':'Combos de jogadores','nav.transições':'Transição/Cancelar','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Settings'},
-de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Meu perfil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transições':'Transição/Cancelar','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Einstellungen'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Crie uma conta','account.profile':'Meu perfil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Alterar a senha','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de jogadores','nav.transições':'Transferir/Cancelar','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Settings'},
+en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Combos de Classe','nav.playerCombos':'Combos de jogadores','nav.transições':'Transferir/Cancelar','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Settings'},
+de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Meu perfil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transições':'Transferir/Cancelar','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Einstellungen'},
 es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Combos de Classe','nav.playerCombos':'Combos de Jugadores','nav.transições':'Transición / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Ajustes'},
 it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Combinação de Classe','nav.playerCombos':'Jogos combinados','nav.transições':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Impostazioni'},
 pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de Jogadores','nav.transições':'Transferir/Cancelar','nav.videoAnalyzer':'Analisador de Vídeo','nav.addons':'Skill Add-ons','nav.builder':'Construtor de combinação','nav.settings':'Definições'}};
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
