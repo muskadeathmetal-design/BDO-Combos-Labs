@@ -1,18 +1,19 @@
 const fs = require('fs');
 const path = require('path');
+const cp = require('child_process');
 
 const LOCALES = ['fr','en','de','es','it','pt'];
-const BASE_FILE = 'index.html';
-const I18N_FILE = 'bcl-i18n-v115-master.js';
+const ROOT_FILE = 'index.html';
+const CURRENT_I18N_FILE = 'bcl-i18n-v115-master.js';
+const LEGACY_V113_REF = '03ed2d779fc4a0327e87f88700c0b9e905670983';
+const LEGACY_V113_PATH = 'bcl-full-ui-i18n-v113.js';
 
-function loadMaps() {
-  const js = fs.readFileSync(I18N_FILE, 'utf8');
-  const marker = 'const maps=';
-  const start = js.indexOf(marker);
-  if (start < 0) throw new Error('Unable to find locale maps in ' + I18N_FILE);
+function extractObjectLiteral(js, marker, fromIndex = 0) {
+  const start = js.indexOf(marker, fromIndex);
+  if (start < 0) throw new Error('Unable to find marker: ' + marker);
   const objectStart = js.indexOf('{', start + marker.length);
-  if (objectStart < 0) throw new Error('Unable to find locale map object start');
-  let depth = 0, quote = null, escaped = false, objectEnd = -1;
+  if (objectStart < 0) throw new Error('Unable to find object start for ' + marker);
+  let depth = 0, quote = null, escaped = false;
   for (let i = objectStart; i < js.length; i++) {
     const ch = js[i];
     if (quote) {
@@ -25,11 +26,57 @@ function loadMaps() {
     if (ch === '{') depth++;
     else if (ch === '}') {
       depth--;
-      if (depth === 0) { objectEnd = i + 1; break; }
+      if (depth === 0) return { text: js.slice(objectStart, i + 1), end: i + 1 };
     }
   }
-  if (objectEnd < 0) throw new Error('Unable to find locale map object end');
-  return Function('"use strict"; return (' + js.slice(objectStart, objectEnd) + ');')();
+  throw new Error('Unable to find object end for ' + marker);
+}
+
+function evalObject(text) {
+  return Function('"use strict"; return (' + text + ');')();
+}
+
+function loadCurrentMaps() {
+  const js = fs.readFileSync(CURRENT_I18N_FILE, 'utf8');
+  return evalObject(extractObjectLiteral(js, 'const maps=').text);
+}
+
+function loadLegacyV113Exact() {
+  const js = cp.execFileSync('git', ['show', `${LEGACY_V113_REF}:${LEGACY_V113_PATH}`], {
+    encoding: 'utf8', maxBuffer: 20 * 1024 * 1024
+  });
+  const exactObj = extractObjectLiteral(js, 'const exact=');
+  const exact = evalObject(exactObj.text);
+
+  // V113 added a second large layer with Object.assign(exact.xx,{...}).
+  // Reuse those dictionaries at BUILD TIME only; no V113 runtime code is restored.
+  let pos = exactObj.end;
+  const stop = js.indexOf('const fallbackWords=', pos);
+  const limit = stop >= 0 ? stop : js.length;
+  while (pos < limit) {
+    const idx = js.indexOf('Object.assign(exact.', pos);
+    if (idx < 0 || idx >= limit) break;
+    const localeStart = idx + 'Object.assign(exact.'.length;
+    const comma = js.indexOf(',', localeStart);
+    if (comma < 0 || comma >= limit) break;
+    const locale = js.slice(localeStart, comma).trim();
+    if (!LOCALES.includes(locale) || locale === 'fr') { pos = comma + 1; continue; }
+    const obj = extractObjectLiteral(js, ',', comma);
+    Object.assign(exact[locale] || (exact[locale] = {}), evalObject(obj.text));
+    pos = obj.end;
+  }
+  return exact;
+}
+
+function loadMaps() {
+  const current = loadCurrentMaps();
+  const legacy = loadLegacyV113Exact();
+  const merged = {};
+  for (const locale of LOCALES) {
+    if (locale === 'fr') continue;
+    merged[locale] = Object.assign({}, current[locale] || {}, legacy[locale] || {});
+  }
+  return merged;
 }
 
 function removeDynamicI18n(html) {
@@ -98,11 +145,21 @@ function validate(page, locale) {
   if (page.length < 500000) throw new Error(locale + ': generated application unexpectedly small');
 }
 
+function sourceApplication() {
+  // Once V116 exists, root/index.html is only a redirect. FR remains the canonical full source.
+  const candidates = [path.join('fr','index.html'), ROOT_FILE];
+  for (const file of candidates) {
+    if (!fs.existsSync(file)) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    if (html.length > 500000) return removeDynamicI18n(html);
+  }
+  throw new Error('No full application source found (expected fr/index.html or index.html)');
+}
+
 function main() {
-  if (!fs.existsSync(BASE_FILE)) throw new Error('Missing ' + BASE_FILE);
-  if (!fs.existsSync(I18N_FILE)) throw new Error('Missing ' + I18N_FILE);
+  if (!fs.existsSync(CURRENT_I18N_FILE)) throw new Error('Missing ' + CURRENT_I18N_FILE);
   const maps = loadMaps();
-  const base = removeDynamicI18n(fs.readFileSync(BASE_FILE, 'utf8'));
+  const base = sourceApplication();
 
   for (const locale of LOCALES) {
     let page = translateSource(base, locale, maps);
@@ -114,8 +171,8 @@ function main() {
   }
 
   const root = `<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDO Combos Labs · V116</title></head><body><script>(function(){var l='fr';try{var s=localStorage.getItem('bcl_language')||localStorage.getItem('bclLanguage');if(/^(fr|en|de|es|it|pt)$/.test(s))l=s;}catch(e){}location.replace('/'+l+'/'+(location.search||'')+(location.hash||''));})();</script><noscript><a href="/fr/">Ouvrir BDO Combos Labs</a></noscript></body></html>\n`;
-  fs.writeFileSync(BASE_FILE, root, 'utf8');
-  console.log('V116 static locales built and validated:', LOCALES.join(', '));
+  fs.writeFileSync(ROOT_FILE, root, 'utf8');
+  console.log('V116 static locales rebuilt with merged V113+V115 dictionaries:', LOCALES.join(', '));
 }
 
 main();
