@@ -1,21 +1,17 @@
-V116 visible French candidates: 87
+V116 visible French candidates: 82
 
 , then adds a marker. The cancellation will be associated with the transition to the next skill.
 . All pages use this context to load the correct reference, skills, combos and measurements.
 . The local player is the time source used for all markers.
 4 · Transitions
 A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.
-Account local
-Account local :
 Actions
 Adds detected skills to the list when the match is correct.
 Adventurer's Guide
 After having validated many transitions/cancels.
 allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.
 Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
-Automatique
-Backup / Restauration
-Backup manuelle uniquement
+Automatic validation
 BDO Combos Labs now links the skill reference, video measurements, transitions/cancels, the official PvP CC system and the Combo Builder. Builder suggestions recalculate according to Awakening / Mixed / Pre-Awakening orientation, the current sequence and recorded timings.
 Before any operation that could empty the browser's local data.
 Break down the importance of damage, speed, CC and transitions/cancels.
@@ -27,7 +23,6 @@ Clean up invalid transitions
 Combo validation rules shared by players.
 Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.
 Confirm transitions and cancels
-Confirmer
 Control and validate transitions / cancellations
 Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
 Create an account to automatically separate your workspace from other users of this browser. A local backup of the profile is updated periodically and upon logout.
@@ -46,6 +41,8 @@ Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lor
 Load local video
 Loads a local video and indicates its FPS.
 Loads a local video, then marks the start of skills and cancels.
+Local account
+Local account :
 Local account & personal data
 Local Lab
 Local mode: This account only protects data from this browser. Community sharing now uses Supabase. As this application does not have a server yet, this system is not a cloud account and does not protect against someone having access to the browser profile.
@@ -56,7 +53,6 @@ Measure transitions + cancels
 NEW LOCAL ACCOUNT
 NEXT ACTIONS
 No transition / cancel registered.
-Nombre minimum d’effets CC que l’optimiseur doit rechercher.
 of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the
 Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
 Phase
@@ -84,6 +80,5 @@ Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier expo
 Use editing to correct sound
 Validating transitions
 Validation
-Validation automatique
 Wait for the confirmation message.
 work normally → measure/correct the data → save your useful builds → end the session with

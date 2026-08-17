@@ -1,5 +1,5 @@
-V116 human residual French candidates: 228
-Visible: 87
+V116 human residual French candidates: 223
+Visible: 82
 Internal/dynamic: 141
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
@@ -43,8 +43,6 @@ ${skillName} marked at ${time.toFixed(4)} s (local video).
 4 · Transitions
 A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.
 Abilità
-Account local
-Account local :
 Actions
 Add transitions
 Adds detected skills to the list when the match is correct.
@@ -59,9 +57,7 @@ Analysis from a chosen position, detection of skills, transitions/cancels and CC
 Automatic local video analysis V46
 Automatic local video CC analysis V49
 Automatic search impossible : ${e?.message||String(e)}
-Automatique
-Backup / Restauration
-Backup manuelle uniquement
+Automatic validation
 badge builder-phase-badge
 BDFoundry Tamer guide — Rabam
 BDFoundry Tamer guide — Succession PvE addons
@@ -84,7 +80,6 @@ Compétences
 Completeness actuelle : ${completeness}%
 Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.
 Confirm transitions and cancels
-Confirmer
 Connexion
 Control and validate transitions / cancellations
 Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
@@ -133,6 +128,8 @@ Loads a local video and indicates its FPS.
 Loads a local video, then marks the start of skills and cancels.
 Loads a valid local video first.
 local
+Local account
+Local account :
 Local account & personal data
 Local Lab
 Local mode: This account only protects data from this browser. Community sharing now uses Supabase. As this application does not have a server yet, this system is not a cloud account and does not protect against someone having access to the browser profile.
@@ -155,7 +152,6 @@ NEXT ACTIONS
 No transition / cancel registered.
 No transition synergy data
 No validated cancel/transition
-Nombre minimum d’effets CC que l’optimiseur doit rechercher.
 non résolu
 Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}
 of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the
@@ -218,7 +214,6 @@ Unknown transition
 Use editing to correct sound
 Validating transitions
 Validation
-Validation automatique
 validé
 validée
 Vérification : ${communityVerifyThresholdV101()} Like
