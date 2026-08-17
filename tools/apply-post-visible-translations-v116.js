@@ -6,27 +6,22 @@ const patchFiles=[
   path.join('translations','post-visible-final-v116.json')
 ];
 const patches=patchFiles.map(file=>JSON.parse(fs.readFileSync(file,'utf8')));
-const protectedTerms=['Down Smash','Air Smash','Super Armor','Forward Guard','Knockdown','Knockback','Stiffness','Invincible','Iframe','Freeze','Stun','Bound','Float','Grab','Shift','Space','LMB','RMB'];
-function protect(text){
-  let out=String(text); const vals=[];
-  protectedTerms.forEach((term,i)=>{const token=`§§POSTKEEP${i}§§`; if(out.includes(term)){vals.push([token,term]); out=out.split(term).join(token);}});
-  return {out,vals};
-}
-function restore(text,vals){let out=text; for(const [t,v] of vals) out=out.split(t).join(v); return out;}
+
+// This pass runs AFTER the main translation build. Its keys are exact strings
+// observed in the generated pages, so literal replacement is the safest option.
+// BDO terms, inputs and CC names are already preserved in every target value.
 for(const locale of locales){
   const file=path.join(locale,'index.html');
   let html=fs.readFileSync(file,'utf8');
   let applied=0;
   for(const patch of patches){
     for(const [from,map] of Object.entries(patch)){
-      const to=map&&map[locale]; if(!from||!to) continue;
-      const pf=protect(from), pt=protect(to);
-      if(!html.includes(pf.out)) continue;
-      html=html.split(pf.out).join(pt.out);
-      html=restore(html,[...pf.vals,...pt.vals]);
+      const to=map&&map[locale];
+      if(!from||!to||!html.includes(from)) continue;
+      html=html.split(from).join(to);
       applied++;
     }
   }
   fs.writeFileSync(file,html,'utf8');
-  console.log(locale+': post-visible translations applied:',applied);
+  console.log(locale+': post-visible exact translations applied:',applied);
 }
