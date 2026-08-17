@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/build-static-locales-v116.js'
       - 'bcl-static-auto-translations-v116.json'
+      - 'translations/**.json'
       - '.github/workflows/install-v116-static-locales.yml'
   workflow_dispatch:
 
@@ -45,4 +46,5 @@ jobs:
             exit 0
           fi
           git commit -m "Build V116 static language versions"
+          git pull --rebase origin main
           git push
