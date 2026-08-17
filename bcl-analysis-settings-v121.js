@@ -1,105 +1,31 @@
 (()=>{'use strict';
-const VERSION='v125-analysis-control-center';
-const KEY='bcl.analysisSettings.v125';
-const DEFAULTS={mode:'simple',profile:'balanced',searchDepth:'standard',maxComboSkills:10,combatMode:'pvp',strictCC:true,protectionPolicy:'normal',cancelPolicy:'validated',resourceModel:'normal',timingTolerance:'normal',transitionPolicy:'validated',protectionGapPolicy:'penalize',confidence:'medium',recommendationStyle:'balanced'};
-const OPT={
-  profile:[['balanced','Balanced'],['burst','Burst'],['protected','Protected'],['cc','CC Control'],['low_stamina','Low Stamina'],['mobility','Mobility']],
-  depth:[['shallow','Shallow'],['standard','Standard'],['deep','Deep']],
-  combat:[['pvp','PvP'],['pve','PvE']],
-  protection:[['relaxed','Relaxed'],['normal','Normal'],['strict','Strict']],
-  cancel:[['validated','Validated only'],['allow_pending','Allow pending']],
-  resource:[['relaxed','Relaxed'],['normal','Normal'],['strict','Strict']],
-  timing:[['tight','Tight'],['normal','Normal'],['loose','Loose']],
-  transition:[['validated','Validated only'],['allow_pending','Allow pending']],
-  gap:[['ignore','Ignore'],['penalize','Penalize'],['reject','Reject']],
-  confidence:[['low','Low'],['medium','Medium'],['high','High']],
-  style:[['conservative','Conservative'],['balanced','Balanced'],['exploratory','Exploratory']]
-};
-function load(){
-  try{
-    const modern=JSON.parse(localStorage.getItem(KEY)||'{}');
-    const old=JSON.parse(localStorage.getItem('bcl.analysisSettings.v121')||'{}');
-    return {...DEFAULTS,...old,...modern};
-  }catch(e){return {...DEFAULTS}}
-}
-function save(v){
-  const clean={...DEFAULTS,...v};
-  localStorage.setItem(KEY,JSON.stringify(clean));
-  window.dispatchEvent(new CustomEvent('bcl-analysis-settings-changed',{detail:{...clean}}));
-  return clean;
-}
-function e(v){return String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]||c))}
-function sel(id,value,options){return `<select id="${id}">${options.map(([v,l])=>`<option value="${v}"${v===value?' selected':''}>${e(l)}</option>`).join('')}</select>`}
-function field(label,control,help=''){return `<label class="ac-field"><span>${e(label)}</span>${control}${help?`<small>${e(help)}</small>`:''}</label>`}
-function page(){return document.getElementById('settingsPage')||document.querySelector('[data-page="settings"]')}
-function collect(root){return {
-  mode:root.querySelector('#acMode')?.value||'simple',
-  profile:root.querySelector('#acProfile')?.value||'balanced',
-  searchDepth:root.querySelector('#acDepth')?.value||'standard',
-  maxComboSkills:Math.max(2,Math.min(20,Number(root.querySelector('#acMaxSkills')?.value)||10)),
-  combatMode:root.querySelector('#acCombat')?.value||'pvp',
-  strictCC:!!root.querySelector('#acStrictCC')?.checked,
-  protectionPolicy:root.querySelector('#acProtection')?.value||'normal',
-  cancelPolicy:root.querySelector('#acCancel')?.value||'validated',
-  resourceModel:root.querySelector('#acResource')?.value||'normal',
-  timingTolerance:root.querySelector('#acTiming')?.value||'normal',
-  transitionPolicy:root.querySelector('#acTransition')?.value||'validated',
-  protectionGapPolicy:root.querySelector('#acGap')?.value||'penalize',
-  confidence:root.querySelector('#acConfidence')?.value||'medium',
-  recommendationStyle:root.querySelector('#acStyle')?.value||'balanced'
-}}
-function hideLegacy(p,root){
-  [...p.children].forEach(el=>{if(el!==root){el.dataset.acLegacyHidden='1';el.style.display='none'}});
-}
-function render(){
-  const p=page();if(!p)return false;
-  let root=p.querySelector('#analysisControlCenterV125');
-  if(root){hideLegacy(p,root);return true}
-  const s=load();
-  root=document.createElement('section');root.id='analysisControlCenterV125';root.className='ac-shell';
-  root.innerHTML=`<style>
-  #analysisControlCenterV125{display:grid;gap:14px}.ac-hero{padding:18px;border-radius:14px;border:1px solid rgba(88,166,255,.28);background:linear-gradient(135deg,rgba(31,111,235,.13),rgba(17,24,33,.95))}.ac-hero h2{margin:0 0 6px;font-size:20px}.ac-hero p{margin:0;color:#9aa7b5;max-width:850px}.ac-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:12px}.ac-card{padding:15px;border-radius:13px;border:1px solid rgba(139,148,158,.16);background:rgba(17,24,33,.94)}.ac-card h3{margin:0 0 11px}.ac-field{display:grid;gap:6px;margin:10px 0}.ac-field>span{font-size:12px;color:#c9d1d9}.ac-field small{font-size:11px;color:#8b949e}.ac-field select,.ac-field input{width:100%;max-width:none}.ac-check{display:flex;align-items:center;gap:8px;margin:11px 0;color:#c9d1d9}.ac-check input{width:auto;min-height:auto}.ac-actions{display:flex;gap:8px;flex-wrap:wrap}.ac-status{font-size:12px;color:#79c0ff;align-self:center}.ac-private{padding:10px 12px;border-radius:10px;background:rgba(46,160,67,.08);border:1px solid rgba(46,160,67,.2);font-size:12px;color:#9fdfad}.ac-advanced[hidden]{display:none!important}@media(max-width:800px){.ac-grid{grid-template-columns:1fr}}
-  </style>
-  <div class="ac-hero"><h2>Analysis & Optimization</h2><p>Configure comment AnalysisCore doit rechercher, simuler et classer les combos. Les formules, poids internes et heuristiques privées ne sont jamais exposés dans le navigateur.</p></div>
-  <div class="ac-grid">
-    <article class="ac-card"><h3>Optimizer</h3>
-      ${field('Control level',sel('acMode',s.mode,[['simple','Simple'],['advanced','Advanced']]))}
-      ${field('Objective profile',sel('acProfile',s.profile,OPT.profile),'Choisit l’objectif général sans révéler les coefficients internes.')}
-      ${field('Search depth',sel('acDepth',s.searchDepth,OPT.depth))}
-      ${field('Maximum combo length',`<input id="acMaxSkills" type="number" min="2" max="20" step="1" value="${Math.max(2,Math.min(20,Number(s.maxComboSkills)||10))}">`)}
-    </article>
-    <article class="ac-card"><h3>Combat Simulation</h3>
-      ${field('Combat mode',sel('acCombat',s.combatMode,OPT.combat))}
-      <label class="ac-check"><input id="acStrictCC" type="checkbox"${s.strictCC?' checked':''}><span>Strict CC state & immunity</span></label>
-      ${field('Protection handling',sel('acProtection',s.protectionPolicy,OPT.protection))}
-      ${field('Cancel policy',sel('acCancel',s.cancelPolicy,OPT.cancel))}
-      ${field('Resource model',sel('acResource',s.resourceModel,OPT.resource))}
-    </article>
-    <article class="ac-card ac-advanced"><h3>Timeline & Combat Graph</h3>
-      ${field('Timing tolerance',sel('acTiming',s.timingTolerance,OPT.timing))}
-      ${field('Transition policy',sel('acTransition',s.transitionPolicy,OPT.transition))}
-      ${field('Protection gaps',sel('acGap',s.protectionGapPolicy,OPT.gap))}
-    </article>
-    <article class="ac-card ac-advanced"><h3>Confidence & Recommendations</h3>
-      ${field('Minimum confidence',sel('acConfidence',s.confidence,OPT.confidence))}
-      ${field('Recommendation style',sel('acStyle',s.recommendationStyle,OPT.style))}
-      <div class="ac-private">Private boundary: AnalysisCore converts these preferences into internal scoring, pruning, search budgets and ranking logic.</div>
-    </article>
-  </div>
-  <div class="ac-actions"><button type="button" class="optimizer-btn" id="acSave">Save analysis settings</button><button type="button" class="tab-btn" id="acReset">Reset defaults</button><span class="ac-status" id="acStatus"></span></div>`;
-  p.prepend(root);hideLegacy(p,root);
-  const mode=()=>{const advanced=root.querySelector('#acMode')?.value==='advanced';root.querySelectorAll('.ac-advanced').forEach(x=>x.hidden=!advanced)};
-  const persist=()=>{const v=save(collect(root));const st=root.querySelector('#acStatus');if(st){st.textContent='Saved';setTimeout(()=>{if(st.textContent==='Saved')st.textContent=''},1200)};return v};
-  root.querySelector('#acMode')?.addEventListener('change',()=>{mode();persist()});
-  root.addEventListener('change',ev=>{if(ev.target?.id!=='acMode')persist()});
-  root.querySelector('#acSave')?.addEventListener('click',persist);
-  root.querySelector('#acReset')?.addEventListener('click',()=>{localStorage.removeItem(KEY);localStorage.removeItem('bcl.analysisSettings.v121');root.remove();render()});
-  mode();
-  window.bclGetAnalysisPreferencesV125=()=>({...collect(root)});
-  window.bclGetAnalysisPreferencesV121=()=>({...collect(root)});
-  window.BCL_ANALYSIS_SETTINGS_V125={version:VERSION,key:KEY,defaults:{...DEFAULTS},get:()=>({...load()}),set:v=>save({...load(),...v})};
-  return true;
-}
-function boot(){render();setTimeout(render,250);setTimeout(render,1000);document.querySelector('[data-page="settingsPage"]')?.addEventListener('click',()=>setTimeout(render,0));}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
-})();
+const VERSION='v126-analysis-control-center';
+const KEY='bcl.analysisSettings.v126';
+const DEFAULTS={mode:'simple',profile:'balanced',searchDepth:'standard',maxComboSkills:10,minComboSkills:3,resultCount:5,routeDiversity:'medium',exploration:'balanced',combatMode:'pvp',strictCC:true,ccStrategy:'balanced',smashPolicy:'allow',ccWaste:'penalize',protectionPolicy:'normal',protectionGapPolicy:'penalize',minProtection:'normal',positioning:'balanced',cancelPolicy:'validated',timingTolerance:'normal',cancelPrecision:'normal',maxTransition:'normal',totalDuration:'normal',transitionPolicy:'validated',cycles:'deny',skillRepeat:'limited',resourceModel:'normal',staminaReserve:'medium',resourceReserve:'medium',recoveryPriority:'normal',damagePriority:'balanced',specialAttack:'balanced',cooldownPenalty:'normal',targetState:'neutral',targetProtection:'none',targetOrientation:'front',confidence:'medium',missingData:'penalize',recommendationStyle:'balanced',explanation:'standard'};
+const O={profile:[['balanced','Balanced'],['burst','Burst'],['protected','Protected'],['cc','CC Lock'],['low_stamina','Low Stamina'],['mobility','Mobility'],['safe_pvp','Safe PvP'],['experimental','Experimental']],depth:[['shallow','Shallow'],['standard','Standard'],['deep','Deep'],['extreme','Extreme']],level:[['low','Low'],['medium','Medium'],['high','High']],policy:[['relaxed','Relaxed'],['normal','Normal'],['strict','Strict']],timing:[['tight','Tight'],['normal','Normal'],['loose','Loose']],confidence:[['low','Low'],['medium','Medium'],['high','High'],['verified','Verified only']]};
+function load(){try{return {...DEFAULTS,...JSON.parse(localStorage.getItem('bcl.analysisSettings.v125')||'{}'),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return {...DEFAULTS}}}
+function save(v){const x={...DEFAULTS,...v};localStorage.setItem(KEY,JSON.stringify(x));window.dispatchEvent(new CustomEvent('bcl-analysis-settings-changed',{detail:{...x}}));return x}
+const esc=v=>String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]||c));
+const sel=(id,v,a)=>`<select id="${id}">${a.map(([x,l])=>`<option value="${x}"${x===v?' selected':''}>${esc(l)}</option>`).join('')}</select>`;
+const field=(l,c,h='')=>`<label class="ac-field"><span>${esc(l)}</span>${c}${h?`<small>${esc(h)}</small>`:''}</label>`;
+const check=(id,v,l)=>`<label class="ac-check"><input id="${id}" type="checkbox"${v?' checked':''}><span>${esc(l)}</span></label>`;
+function page(){return document.getElementById('settingsPage')}
+function render(){const p=page();if(!p)return false;let r=p.querySelector('#analysisControlCenterV126');if(r)return true;const s=load();r=document.createElement('section');r.id='analysisControlCenterV126';r.innerHTML=`<style>
+#analysisControlCenterV126{display:grid;gap:14px}.ac-hero,.ac-card{border:1px solid rgba(139,148,158,.17);border-radius:14px;background:rgba(17,24,33,.94)}.ac-hero{padding:18px;background:linear-gradient(135deg,rgba(31,111,235,.15),rgba(17,24,33,.96))}.ac-hero h2{margin:0 0 5px}.ac-hero p{margin:0;color:#9aa7b5}.ac-presets{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.ac-preset{padding:7px 10px;border-radius:9px}.ac-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:11px}.ac-card{padding:14px}.ac-card h3{margin:0 0 9px}.ac-field{display:grid;gap:5px;margin:9px 0}.ac-field>span{font-size:12px;color:#c9d1d9}.ac-field small,.ac-note{font-size:11px;color:#8b949e}.ac-field select,.ac-field input{width:100%;max-width:none}.ac-check{display:flex;gap:8px;align-items:center;margin:9px 0}.ac-check input{width:auto;min-height:auto}.ac-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ac-status{font-size:12px;color:#79c0ff}.ac-private{padding:10px;border:1px solid rgba(46,160,67,.22);background:rgba(46,160,67,.07);border-radius:9px;color:#9fdfad;font-size:11px}.ac-advanced[hidden]{display:none!important}@media(max-width:850px){.ac-grid{grid-template-columns:1fr}}
+</style><div class="ac-hero"><h2>AnalysisCore Control Center</h2><p>Pilote la recherche, la simulation PvP, Timeline, Combat Graph, Confidence et les recommandations sans exposer les coefficients privés du moteur.</p><div class="ac-presets">${O.profile.map(([v,l])=>`<button type="button" class="tab-btn ac-preset" data-profile="${v}">${l}</button>`).join('')}</div></div><div class="ac-grid">
+<article class="ac-card"><h3>Optimizer</h3>${field('Control level',sel('acMode',s.mode,[['simple','Simple'],['advanced','Advanced']]))}${field('Objective profile',sel('acProfile',s.profile,O.profile))}${field('Search depth',sel('acDepth',s.searchDepth,O.depth))}${field('Minimum combo length',`<input id="acMin" type="number" min="1" max="20" value="${s.minComboSkills}">`)}${field('Maximum combo length',`<input id="acMax" type="number" min="2" max="30" value="${s.maxComboSkills}">`)}<div class="ac-advanced">${field('Results requested',`<input id="acResults" type="number" min="1" max="20" value="${s.resultCount}">`)}${field('Route diversity',sel('acDiversity',s.routeDiversity,O.level))}${field('Exploration',sel('acExplore',s.exploration,[['conservative','Conservative'],['balanced','Balanced'],['aggressive','Aggressive']]))}</div></article>
+<article class="ac-card"><h3>Damage Engine</h3>${field('Damage priority',sel('acDamage',s.damagePriority,[['sustain','Sustained DPS'],['balanced','Balanced'],['burst','Maximum burst']]))}${field('Special attacks',sel('acSpecial',s.specialAttack,[['low','Low priority'],['balanced','Balanced'],['high','Prioritize Crit / Back / Down / Air']]))}${field('Cooldown penalty',sel('acCooldown',s.cooldownPenalty,O.policy))}<div class="ac-note">Les multiplicateurs et poids réels restent dans AnalysisCore.</div></article>
+<article class="ac-card"><h3>CC Engine</h3>${check('acStrictCC',s.strictCC,'Strict CC count & immunity')}${field('CC strategy',sel('acCCStrategy',s.ccStrategy,[['opener','Opener priority'],['balanced','Balanced'],['extension','Extension priority']]))}${field('Smash policy',sel('acSmash',s.smashPolicy,[['deny','Do not plan around Smash'],['allow','Allow Smash'],['prefer','Prefer Smash extensions']]))}<div class="ac-advanced">${field('Wasted CC',sel('acCCWaste',s.ccWaste,[['ignore','Ignore'],['penalize','Penalize'],['reject','Reject route']]))}</div></article>
+<article class="ac-card"><h3>Protection Engine</h3>${field('Protection handling',sel('acProtection',s.protectionPolicy,O.policy))}${field('Protection gaps',sel('acGap',s.protectionGapPolicy,[['ignore','Ignore'],['penalize','Penalize'],['reject','Reject']]))}<div class="ac-advanced">${field('Minimum protection',sel('acMinProtection',s.minProtection,O.policy))}${field('Positioning',sel('acPositioning',s.positioning,[['offensive','Offensive'],['balanced','Balanced'],['safe','Safety first']]))}</div></article>
+<article class="ac-card ac-advanced"><h3>Timeline Engine</h3>${field('Timing tolerance',sel('acTiming',s.timingTolerance,O.timing))}${field('Cancel precision',sel('acCancelPrecision',s.cancelPrecision,O.policy))}${field('Maximum transition time',sel('acMaxTransition',s.maxTransition,[['short','Short'],['normal','Normal'],['long','Long']]))}${field('Total combo duration',sel('acDuration',s.totalDuration,[['short','Short'],['normal','Normal'],['unlimited','No preference']]))}</article>
+<article class="ac-card ac-advanced"><h3>Combat Graph</h3>${field('Transition policy',sel('acTransition',s.transitionPolicy,[['validated','Validated only'],['allow_pending','Allow pending'],['all','Explore all']]))}${field('Cycles',sel('acCycles',s.cycles,[['deny','Reject'],['limited','Limited'],['allow','Allow']]))}${field('Skill repetition',sel('acRepeat',s.skillRepeat,[['deny','No repetition'],['limited','Limited'],['allow','Allow']]))}${field('Cancel policy',sel('acCancel',s.cancelPolicy,[['validated','Validated only'],['allow_pending','Allow pending'],['all','Explore all']]))}</article>
+<article class="ac-card ac-advanced"><h3>Resources</h3>${field('Resource model',sel('acResource',s.resourceModel,O.policy))}${field('Stamina reserve',sel('acStamina',s.staminaReserve,O.level))}${field('Combat resource reserve',sel('acReserve',s.resourceReserve,O.level))}${field('Recovery priority',sel('acRecovery',s.recoveryPriority,O.policy))}</article>
+<article class="ac-card"><h3>Simulation Scenario</h3>${field('Combat mode',sel('acCombat',s.combatMode,[['pvp','PvP'],['pve','PvE']]))}<div class="ac-advanced">${field('Initial target state',sel('acTargetState',s.targetState,[['neutral','Neutral'],['airborne','Airborne'],['downed','Downed'],['stunned','Stunned']]))}${field('Target protection',sel('acTargetProtection',s.targetProtection,[['none','None'],['sa','Super Armor'],['fg','Forward Guard'],['iframe','Invincibility']]))}${field('Orientation',sel('acOrientation',s.targetOrientation,[['front','Front'],['side','Side'],['back','Back']]))}</div></article>
+<article class="ac-card"><h3>Confidence & Recommendations</h3>${field('Minimum confidence',sel('acConfidence',s.confidence,O.confidence))}${field('Missing data',sel('acMissing',s.missingData,[['allow','Allow'],['penalize','Penalize'],['reject','Reject']]))}${field('Recommendation style',sel('acStyle',s.recommendationStyle,[['conservative','Conservative'],['balanced','Balanced'],['exploratory','Exploratory']]))}<div class="ac-advanced">${field('Explanation level',sel('acExplain',s.explanation,[['compact','Compact'],['standard','Standard'],['detailed','Detailed']]))}</div><div class="ac-private">Public DTO only. Scoring weights, pruning, beam/search budgets and ranking formulas remain private in AnalysisCore.</div></article></div><div class="ac-actions"><button class="optimizer-btn" id="acSave">Save</button><button class="tab-btn" id="acReset">Reset defaults</button><span class="ac-status" id="acStatus"></span></div>`;
+p.prepend(r);[...p.children].forEach(x=>{if(x!==r)x.style.display='none'});
+const val=id=>r.querySelector('#'+id)?.value, chk=id=>!!r.querySelector('#'+id)?.checked;
+function collect(){return {...load(),mode:val('acMode'),profile:val('acProfile'),searchDepth:val('acDepth'),minComboSkills:+val('acMin'),maxComboSkills:+val('acMax'),resultCount:+val('acResults')||s.resultCount,routeDiversity:val('acDiversity')||s.routeDiversity,exploration:val('acExplore')||s.exploration,damagePriority:val('acDamage'),specialAttack:val('acSpecial'),cooldownPenalty:val('acCooldown'),strictCC:chk('acStrictCC'),ccStrategy:val('acCCStrategy'),smashPolicy:val('acSmash'),ccWaste:val('acCCWaste')||s.ccWaste,protectionPolicy:val('acProtection'),protectionGapPolicy:val('acGap'),minProtection:val('acMinProtection')||s.minProtection,positioning:val('acPositioning')||s.positioning,timingTolerance:val('acTiming')||s.timingTolerance,cancelPrecision:val('acCancelPrecision')||s.cancelPrecision,maxTransition:val('acMaxTransition')||s.maxTransition,totalDuration:val('acDuration')||s.totalDuration,transitionPolicy:val('acTransition')||s.transitionPolicy,cycles:val('acCycles')||s.cycles,skillRepeat:val('acRepeat')||s.skillRepeat,cancelPolicy:val('acCancel')||s.cancelPolicy,resourceModel:val('acResource')||s.resourceModel,staminaReserve:val('acStamina')||s.staminaReserve,resourceReserve:val('acReserve')||s.resourceReserve,recoveryPriority:val('acRecovery')||s.recoveryPriority,combatMode:val('acCombat'),targetState:val('acTargetState')||s.targetState,targetProtection:val('acTargetProtection')||s.targetProtection,targetOrientation:val('acOrientation')||s.targetOrientation,confidence:val('acConfidence'),missingData:val('acMissing'),recommendationStyle:val('acStyle'),explanation:val('acExplain')||s.explanation}}
+function mode(){r.querySelectorAll('.ac-advanced').forEach(x=>x.hidden=val('acMode')!=='advanced')}
+function persist(){save(collect());const x=r.querySelector('#acStatus');x.textContent='Saved';setTimeout(()=>x.textContent='',900)}
+r.querySelector('#acMode').addEventListener('change',()=>{mode();persist()});r.addEventListener('change',e=>{if(e.target.id!=='acMode')persist()});r.querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>{r.querySelector('#acProfile').value=b.dataset.profile;persist()}));r.querySelector('#acSave').onclick=persist;r.querySelector('#acReset').onclick=()=>{localStorage.removeItem(KEY);localStorage.removeItem('bcl.analysisSettings.v125');r.remove();render()};mode();window.bclGetAnalysisPreferencesV126=()=>collect();window.bclGetAnalysisPreferencesV125=()=>collect();window.BCL_ANALYSIS_SETTINGS_V126={version:VERSION,get:()=>({...load()}),set:v=>save({...load(),...v})};return true}
+function boot(){render();setTimeout(render,300);document.querySelector('[data-page="settingsPage"]')?.addEventListener('click',()=>setTimeout(render,0))}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();})();
