@@ -1,82 +1,105 @@
 (()=>{'use strict';
-const KEY='bcl.analysisSettings.v121';
-const DEFAULTS={
-  mode:'simple',profile:'balanced',searchDepth:'standard',maxComboSkills:10,
-  combatMode:'pvp',strictCC:true,protectionPolicy:'normal',cancelPolicy:'validated',resourceModel:'normal',
-  timingTolerance:'normal',transitionPolicy:'validated',protectionGapPolicy:'penalize',
-  confidence:'medium',recommendationStyle:'balanced'
+const VERSION='v125-analysis-control-center';
+const KEY='bcl.analysisSettings.v125';
+const DEFAULTS={mode:'simple',profile:'balanced',searchDepth:'standard',maxComboSkills:10,combatMode:'pvp',strictCC:true,protectionPolicy:'normal',cancelPolicy:'validated',resourceModel:'normal',timingTolerance:'normal',transitionPolicy:'validated',protectionGapPolicy:'penalize',confidence:'medium',recommendationStyle:'balanced'};
+const OPT={
+  profile:[['balanced','Balanced'],['burst','Burst'],['protected','Protected'],['cc','CC Control'],['low_stamina','Low Stamina'],['mobility','Mobility']],
+  depth:[['shallow','Shallow'],['standard','Standard'],['deep','Deep']],
+  combat:[['pvp','PvP'],['pve','PvE']],
+  protection:[['relaxed','Relaxed'],['normal','Normal'],['strict','Strict']],
+  cancel:[['validated','Validated only'],['allow_pending','Allow pending']],
+  resource:[['relaxed','Relaxed'],['normal','Normal'],['strict','Strict']],
+  timing:[['tight','Tight'],['normal','Normal'],['loose','Loose']],
+  transition:[['validated','Validated only'],['allow_pending','Allow pending']],
+  gap:[['ignore','Ignore'],['penalize','Penalize'],['reject','Reject']],
+  confidence:[['low','Low'],['medium','Medium'],['high','High']],
+  style:[['conservative','Conservative'],['balanced','Balanced'],['exploratory','Exploratory']]
 };
-const PROFILES=['balanced','burst','protected','cc','low_stamina','mobility'];
-function load(){try{return {...DEFAULTS,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return {...DEFAULTS}}}
-function save(v){localStorage.setItem(KEY,JSON.stringify(v));window.dispatchEvent(new CustomEvent('bcl-analysis-settings-changed',{detail:{...v}}));}
-function esc(v){return String(v).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]||c))}
-function field(label,html,help=''){return `<label class="bcl121-field"><span>${esc(label)}</span>${html}${help?`<small>${esc(help)}</small>`:''}</label>`}
-function select(id,value,options){return `<select id="${id}">${options.map(([v,l])=>`<option value="${v}"${v===value?' selected':''}>${esc(l)}</option>`).join('')}</select>`}
-function checkbox(id,checked,label){return `<label class="bcl121-check"><input id="${id}" type="checkbox"${checked?' checked':''}><span>${esc(label)}</span></label>`}
-function settingsPage(){
-  const direct=document.querySelector('#settingsPage,#pageSettings,#settings-page,[data-page="settings"]');
-  if(direct)return direct;
-  const pages=[...document.querySelectorAll('.page,section')];
-  return pages.find(p=>/settings|paramètres|ajustes|einstellungen|impostazioni|definições/i.test((p.id||'')+' '+(p.getAttribute('data-page')||'')+' '+(p.querySelector('h1,h2,h3')?.textContent||'')))||null;
+function load(){
+  try{
+    const modern=JSON.parse(localStorage.getItem(KEY)||'{}');
+    const old=JSON.parse(localStorage.getItem('bcl.analysisSettings.v121')||'{}');
+    return {...DEFAULTS,...old,...modern};
+  }catch(e){return {...DEFAULTS}}
+}
+function save(v){
+  const clean={...DEFAULTS,...v};
+  localStorage.setItem(KEY,JSON.stringify(clean));
+  window.dispatchEvent(new CustomEvent('bcl-analysis-settings-changed',{detail:{...clean}}));
+  return clean;
+}
+function e(v){return String(v??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]||c))}
+function sel(id,value,options){return `<select id="${id}">${options.map(([v,l])=>`<option value="${v}"${v===value?' selected':''}>${e(l)}</option>`).join('')}</select>`}
+function field(label,control,help=''){return `<label class="ac-field"><span>${e(label)}</span>${control}${help?`<small>${e(help)}</small>`:''}</label>`}
+function page(){return document.getElementById('settingsPage')||document.querySelector('[data-page="settings"]')}
+function collect(root){return {
+  mode:root.querySelector('#acMode')?.value||'simple',
+  profile:root.querySelector('#acProfile')?.value||'balanced',
+  searchDepth:root.querySelector('#acDepth')?.value||'standard',
+  maxComboSkills:Math.max(2,Math.min(20,Number(root.querySelector('#acMaxSkills')?.value)||10)),
+  combatMode:root.querySelector('#acCombat')?.value||'pvp',
+  strictCC:!!root.querySelector('#acStrictCC')?.checked,
+  protectionPolicy:root.querySelector('#acProtection')?.value||'normal',
+  cancelPolicy:root.querySelector('#acCancel')?.value||'validated',
+  resourceModel:root.querySelector('#acResource')?.value||'normal',
+  timingTolerance:root.querySelector('#acTiming')?.value||'normal',
+  transitionPolicy:root.querySelector('#acTransition')?.value||'validated',
+  protectionGapPolicy:root.querySelector('#acGap')?.value||'penalize',
+  confidence:root.querySelector('#acConfidence')?.value||'medium',
+  recommendationStyle:root.querySelector('#acStyle')?.value||'balanced'
+}}
+function hideLegacy(p,root){
+  [...p.children].forEach(el=>{if(el!==root){el.dataset.acLegacyHidden='1';el.style.display='none'}});
 }
 function render(){
-  const page=settingsPage();if(!page)return false;
-  if(page.querySelector('#bclAnalysisSettingsV121'))return true;
-  const old=[...page.querySelectorAll('.settings-grid,.phase-grid,.settings-actions,.optimizer-result')];
-  old.forEach(el=>{if(!el.closest('#bclAnalysisSettingsV121'))el.style.display='none'});
+  const p=page();if(!p)return false;
+  let root=p.querySelector('#analysisControlCenterV125');
+  if(root){hideLegacy(p,root);return true}
   const s=load();
-  const root=document.createElement('section');root.id='bclAnalysisSettingsV121';root.className='bcl121-panel';
-  root.innerHTML=`
-    <style>
-      .bcl121-panel{margin-top:16px;display:grid;gap:14px}.bcl121-head{padding:16px;border:1px solid rgba(88,166,255,.22);border-radius:14px;background:rgba(88,166,255,.06)}
-      .bcl121-head h2{margin:0 0 6px}.bcl121-head p{margin:0;color:#9aa7b5}.bcl121-grid{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:12px}
-      .bcl121-card{border:1px solid rgba(139,148,158,.16);border-radius:14px;padding:14px;background:rgba(17,24,33,.92)}.bcl121-card h3{margin:0 0 10px}
-      .bcl121-field{display:grid;gap:6px;margin:10px 0}.bcl121-field small{color:#8b949e}.bcl121-field select,.bcl121-field input{width:100%}
-      .bcl121-check{display:flex;align-items:center;gap:8px;margin:9px 0;color:#c9d1d9}.bcl121-check input{width:auto;min-height:auto}
-      .bcl121-actions{display:flex;gap:8px;flex-wrap:wrap}.bcl121-note{font-size:12px;color:#8b949e;margin-top:8px}
-      .bcl121-advanced[hidden]{display:none!important}@media(max-width:800px){.bcl121-grid{grid-template-columns:1fr}}
-    </style>
-    <div class="bcl121-head"><h2>Analysis & Optimization</h2><p>Control the behavior of AnalysisCore without exposing private scoring weights or heuristics.</p></div>
-    <div class="bcl121-grid">
-      <div class="bcl121-card"><h3>Optimizer</h3>
-        ${field('Control level',select('bcl121Mode',s.mode,[['simple','Simple'],['advanced','Advanced']]))}
-        ${field('Objective profile',select('bcl121Profile',s.profile,PROFILES.map(x=>[x,x.replace('_',' ')])),'High-level objective only; private weights stay server-side.')}
-        ${field('Search depth',select('bcl121Depth',s.searchDepth,[['shallow','Shallow'],['standard','Standard'],['deep','Deep']]))}
-        ${field('Maximum combo length',`<input id="bcl121MaxSkills" type="number" min="3" max="30" step="1" value="${Number(s.maxComboSkills)||10}">`)}
-      </div>
-      <div class="bcl121-card"><h3>Combat Simulation</h3>
-        ${field('Combat mode',select('bcl121Combat',s.combatMode,[['pvp','PvP'],['pve','PvE']]))}
-        ${checkbox('bcl121StrictCC',!!s.strictCC,'Strict CC state and immunity handling')}
-        ${field('Protection handling',select('bcl121Protection',s.protectionPolicy,[['relaxed','Relaxed'],['normal','Normal'],['strict','Strict']]))}
-        ${field('Cancel policy',select('bcl121Cancel',s.cancelPolicy,[['confirmed','Confirmed only'],['validated','Validated'],['all','Allow experimental']]))}
-        ${field('Resource model',select('bcl121Resource',s.resourceModel,[['light','Light'],['normal','Normal'],['strict','Strict']]))}
-      </div>
-      <div class="bcl121-card bcl121-advanced"><h3>Timeline & Combat Graph</h3>
-        ${field('Timing tolerance',select('bcl121Timing',s.timingTolerance,[['low','Low'],['normal','Normal'],['high','High']]))}
-        ${field('Unvalidated transitions',select('bcl121Transition',s.transitionPolicy,[['deny','Reject'],['validated','Prefer validated'],['allow','Allow']]))}
-        ${field('Protection gaps',select('bcl121Gap',s.protectionGapPolicy,[['ignore','Ignore'],['penalize','Penalize'],['forbid','Forbid']]))}
-      </div>
-      <div class="bcl121-card bcl121-advanced"><h3>Confidence</h3>
-        ${field('Minimum confidence',select('bcl121Confidence',s.confidence,[['low','Low'],['medium','Medium'],['high','High'],['verified','Verified only']]))}
-        ${field('Recommendation style',select('bcl121Style',s.recommendationStyle,[['conservative','Conservative'],['balanced','Balanced'],['exploratory','Exploratory']]))}
-        <div class="bcl121-note">These controls are public preferences only. AnalysisCore decides the private scoring, pruning and ranking behavior.</div>
-      </div>
-    </div>
-    <div class="bcl121-actions"><button type="button" class="optimizer-btn" id="bcl121Save">Save analysis settings</button><button type="button" class="tab-btn" id="bcl121Reset">Reset defaults</button></div>`;
-  page.appendChild(root);
-  function collect(){return {
-    mode:document.getElementById('bcl121Mode')?.value||'simple',profile:document.getElementById('bcl121Profile')?.value||'balanced',searchDepth:document.getElementById('bcl121Depth')?.value||'standard',maxComboSkills:Math.max(3,Math.min(30,Number(document.getElementById('bcl121MaxSkills')?.value)||10)),
-    combatMode:document.getElementById('bcl121Combat')?.value||'pvp',strictCC:!!document.getElementById('bcl121StrictCC')?.checked,protectionPolicy:document.getElementById('bcl121Protection')?.value||'normal',cancelPolicy:document.getElementById('bcl121Cancel')?.value||'validated',resourceModel:document.getElementById('bcl121Resource')?.value||'normal',
-    timingTolerance:document.getElementById('bcl121Timing')?.value||'normal',transitionPolicy:document.getElementById('bcl121Transition')?.value||'validated',protectionGapPolicy:document.getElementById('bcl121Gap')?.value||'penalize',confidence:document.getElementById('bcl121Confidence')?.value||'medium',recommendationStyle:document.getElementById('bcl121Style')?.value||'balanced'} }
-  function mode(){const adv=(document.getElementById('bcl121Mode')?.value||'simple')==='advanced';root.querySelectorAll('.bcl121-advanced').forEach(el=>el.hidden=!adv)}
-  document.getElementById('bcl121Mode')?.addEventListener('change',mode);mode();
-  document.getElementById('bcl121Save')?.addEventListener('click',()=>save(collect()));
-  document.getElementById('bcl121Reset')?.addEventListener('click',()=>{localStorage.removeItem(KEY);root.remove();render()});
-  root.addEventListener('change',()=>save(collect()));
-  window.bclGetAnalysisPreferencesV121=()=>({...collect()});
-  window.BCL_ANALYSIS_SETTINGS_V121={version:121,key:KEY,defaults:{...DEFAULTS},get:()=>({...load()}),set:v=>save({...load(),...v})};
+  root=document.createElement('section');root.id='analysisControlCenterV125';root.className='ac-shell';
+  root.innerHTML=`<style>
+  #analysisControlCenterV125{display:grid;gap:14px}.ac-hero{padding:18px;border-radius:14px;border:1px solid rgba(88,166,255,.28);background:linear-gradient(135deg,rgba(31,111,235,.13),rgba(17,24,33,.95))}.ac-hero h2{margin:0 0 6px;font-size:20px}.ac-hero p{margin:0;color:#9aa7b5;max-width:850px}.ac-grid{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:12px}.ac-card{padding:15px;border-radius:13px;border:1px solid rgba(139,148,158,.16);background:rgba(17,24,33,.94)}.ac-card h3{margin:0 0 11px}.ac-field{display:grid;gap:6px;margin:10px 0}.ac-field>span{font-size:12px;color:#c9d1d9}.ac-field small{font-size:11px;color:#8b949e}.ac-field select,.ac-field input{width:100%;max-width:none}.ac-check{display:flex;align-items:center;gap:8px;margin:11px 0;color:#c9d1d9}.ac-check input{width:auto;min-height:auto}.ac-actions{display:flex;gap:8px;flex-wrap:wrap}.ac-status{font-size:12px;color:#79c0ff;align-self:center}.ac-private{padding:10px 12px;border-radius:10px;background:rgba(46,160,67,.08);border:1px solid rgba(46,160,67,.2);font-size:12px;color:#9fdfad}.ac-advanced[hidden]{display:none!important}@media(max-width:800px){.ac-grid{grid-template-columns:1fr}}
+  </style>
+  <div class="ac-hero"><h2>Analysis & Optimization</h2><p>Configure comment AnalysisCore doit rechercher, simuler et classer les combos. Les formules, poids internes et heuristiques privées ne sont jamais exposés dans le navigateur.</p></div>
+  <div class="ac-grid">
+    <article class="ac-card"><h3>Optimizer</h3>
+      ${field('Control level',sel('acMode',s.mode,[['simple','Simple'],['advanced','Advanced']]))}
+      ${field('Objective profile',sel('acProfile',s.profile,OPT.profile),'Choisit l’objectif général sans révéler les coefficients internes.')}
+      ${field('Search depth',sel('acDepth',s.searchDepth,OPT.depth))}
+      ${field('Maximum combo length',`<input id="acMaxSkills" type="number" min="2" max="20" step="1" value="${Math.max(2,Math.min(20,Number(s.maxComboSkills)||10))}">`)}
+    </article>
+    <article class="ac-card"><h3>Combat Simulation</h3>
+      ${field('Combat mode',sel('acCombat',s.combatMode,OPT.combat))}
+      <label class="ac-check"><input id="acStrictCC" type="checkbox"${s.strictCC?' checked':''}><span>Strict CC state & immunity</span></label>
+      ${field('Protection handling',sel('acProtection',s.protectionPolicy,OPT.protection))}
+      ${field('Cancel policy',sel('acCancel',s.cancelPolicy,OPT.cancel))}
+      ${field('Resource model',sel('acResource',s.resourceModel,OPT.resource))}
+    </article>
+    <article class="ac-card ac-advanced"><h3>Timeline & Combat Graph</h3>
+      ${field('Timing tolerance',sel('acTiming',s.timingTolerance,OPT.timing))}
+      ${field('Transition policy',sel('acTransition',s.transitionPolicy,OPT.transition))}
+      ${field('Protection gaps',sel('acGap',s.protectionGapPolicy,OPT.gap))}
+    </article>
+    <article class="ac-card ac-advanced"><h3>Confidence & Recommendations</h3>
+      ${field('Minimum confidence',sel('acConfidence',s.confidence,OPT.confidence))}
+      ${field('Recommendation style',sel('acStyle',s.recommendationStyle,OPT.style))}
+      <div class="ac-private">Private boundary: AnalysisCore converts these preferences into internal scoring, pruning, search budgets and ranking logic.</div>
+    </article>
+  </div>
+  <div class="ac-actions"><button type="button" class="optimizer-btn" id="acSave">Save analysis settings</button><button type="button" class="tab-btn" id="acReset">Reset defaults</button><span class="ac-status" id="acStatus"></span></div>`;
+  p.prepend(root);hideLegacy(p,root);
+  const mode=()=>{const advanced=root.querySelector('#acMode')?.value==='advanced';root.querySelectorAll('.ac-advanced').forEach(x=>x.hidden=!advanced)};
+  const persist=()=>{const v=save(collect(root));const st=root.querySelector('#acStatus');if(st){st.textContent='Saved';setTimeout(()=>{if(st.textContent==='Saved')st.textContent=''},1200)};return v};
+  root.querySelector('#acMode')?.addEventListener('change',()=>{mode();persist()});
+  root.addEventListener('change',ev=>{if(ev.target?.id!=='acMode')persist()});
+  root.querySelector('#acSave')?.addEventListener('click',persist);
+  root.querySelector('#acReset')?.addEventListener('click',()=>{localStorage.removeItem(KEY);localStorage.removeItem('bcl.analysisSettings.v121');root.remove();render()});
+  mode();
+  window.bclGetAnalysisPreferencesV125=()=>({...collect(root)});
+  window.bclGetAnalysisPreferencesV121=()=>({...collect(root)});
+  window.BCL_ANALYSIS_SETTINGS_V125={version:VERSION,key:KEY,defaults:{...DEFAULTS},get:()=>({...load()}),set:v=>save({...load(),...v})};
   return true;
 }
-function boot(){render();setTimeout(render,300);setTimeout(render,1200);document.addEventListener('click',()=>setTimeout(render,80),true);document.addEventListener('change',()=>setTimeout(render,80),true)}
+function boot(){render();setTimeout(render,250);setTimeout(render,1000);document.querySelector('[data-page="settingsPage"]')?.addEventListener('click',()=>setTimeout(render,0));}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
