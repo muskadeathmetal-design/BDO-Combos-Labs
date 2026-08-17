@@ -25492,5 +25492,38 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 })();
 </script>
 
+
+<!-- BCL LIVE ACTION REFRESH -->
+<script>
+(function(){
+  let t=0;
+  function schedule(){
+    clearTimeout(t);
+    t=setTimeout(function(){
+      try{
+        if(typeof window.bclRefreshUIV111==='function'){
+          window.bclRefreshUIV111();
+          return;
+        }
+      }catch(e){}
+      try{if(typeof syncActiveContextV105==='function')syncActiveContextV105(true);}catch(e){}
+      try{if(typeof syncSettingsClassContext==='function')syncSettingsClassContext();}catch(e){}
+      ['renderClassStats','renderSkillsPage','renderComboPage','renderPlayerCombosPage','renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'].forEach(function(name){
+        try{const fn=window[name];if(typeof fn==='function')fn();}catch(e){}
+      });
+      try{if(typeof renderAuthUI==='function')renderAuthUI();else if(typeof updateAuthUI==='function')updateAuthUI();}catch(e){}
+    },120);
+  }
+  document.addEventListener('click',function(e){
+    if(e.target.closest('button,a,[role="button"],.tab-btn'))schedule();
+  },true);
+  document.addEventListener('change',schedule,true);
+  document.addEventListener('input',function(e){
+    if(e.target.matches('select,input[type="checkbox"],input[type="radio"],input[type="number"]'))schedule();
+  },true);
+  window.bclScheduleLiveRefresh=schedule;
+})();
+</script>
+
 </body>
 </html>
