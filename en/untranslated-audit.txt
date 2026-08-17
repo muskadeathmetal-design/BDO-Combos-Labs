@@ -1,0 +1,880 @@
+V116 residual French candidates: 878
+
+— durée CC non mesurée
+— lecture du fichier…`,"warn"); try{ const text=await oldDocsManualFileToText(file); await parseManualGuideText(text,`Google Docs importé — ${file.name}`); }catch(e){ manualGoogleDocStatus(`
+— lecture du Google Doc…`,"warn"); try{ // Stable V7.4.86 behavior: convert editor URLs to a public readable view // before trying direct fetch and the Reader fallback. const fetched=await fetchGoogleDocText(url); await parseManualGuideText( fetched.text, /spreadsheets/i.test(url)?"Google Sheets manuel":"Google Docs manuel", url ); }catch(e){ manualGoogleDocStatus(`
+, laisse cochée
+, puis ajoute un marqueur. Le cancel sera associé à la transition vers la compétence suivante.
+: cette valeur alimente le CC Timer du Builder.
+:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}
+. All les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.
+. L’outil calcule la séquence, la durée totale, les temps entre compétences et les points de cancel.
+. Le combo est ajouté à
+. Le lecteur local est la source de temps utilisée pour tous les marqueurs.
+. Recommence pour chaque compétence du combo.
+.skills-cc-duration-v52{display:table-cell} .skills-cc-duration-status-v55{ display:inline-block;margin-left:5px;padding:2px 5px;border-radius:999px; font-size:8px;font-weight:900;text-transform:uppercase;vertical-align:middle } .skills-cc-duration-status-v55.auto{color:#e3b341;background:rgba(210,153,34,.10);border:1px solid rgba(210,153,34,.20)} .skills-cc-duration-status-v55.validée{color:#7ee787;background:rgba(63,185,80,.10);border:1px solid rgba(63,185,80,.20)}
+· ${state.remaining.toFixed(3)}s restantes · ${preferred.length} CC compatible(s) avec le timing.`; }else{ box.className='builder-pvp-recc-status-v68 fallback'; box.innerHTML=`
+· CC appliqué → CAP 2.0 atteint → immunité ensuite
+· validé
+' and other formatting debris before confidence is calculated. const alpha=(raw.match(/[A-Za-zÀ-ÖØ-öø-ÿ]/g)||[]).length; const visible=(raw.match(/[A-Za-zÀ-ÖØ-öø-ÿ0-9]/g)||[]).length; if(alpha
+':'&gt;','"':'&quot;',"'":'&#39;'}[c])); } function renderClassResourceLinksV23(){ const host=document.getElementById('home23ClassLinks'); if(!host)return; const cls=document.getElementById('classSelector')?.value||''; const ctx=document.getElementById('home23ResourceContext'); if(ctx)ctx.textContent=cls?`Resources · ${cls}`:'Sélectionne une classe'; if(!cls){ host.innerHTML='
+'use strict'; // Base volontairement vide. // Noe dataset, aucune compétence, aucune classe, aucun combo, // aucun loader, aucun import et aucun fallback. const APP_STATE = Object.freeze({ classes: [], skills: [], combos: [], transitions: [], effects: [], presets: [] });
+")}`.toLowerCase(); if(!comboMap.has(key)){ const p={ name:`Guide — ${seq.join(" → ")}`, sequence:[...seq],seq:[...seq],type, confidence:"documented-guide", source:ev.sourceUrl, sourceTag:`${ev.sourceName} · guide de classe`, note:ev.excerpt, ownerClass:cls,ownerSpec:spec, guideIntegrated:true, importedBy:"Ancien analyseur Google Docs" }; combos.push(p);comboMap.set(key,p);combosAdded++; } } for(let i=0;i
+« ${name} » existe déjà dans cette spécialisation.
+[Bénédiction] Faveur de l'aventurier — 120 min
+[Bénédiction] Faveur de l'aventurier — 300 min
+{ document.documentElement.dataset.bclWeb=bclIsProductionWebV109()?'production':'local'; if(location.protocol==='file:'){ console.info('BDO Combos Labs V111: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.'); } });
+↩ Début
++ Add une compétence
+<b>${added}</b> nouveau(x) Skill(s) ajouté(s) à ${oldDocsEsc(cls)} ${oldDocsEsc(spec)} ·
+<b>${escapeHtml(file.name)}</b> chargé.
+<b>${oldDocsEsc(cls)} ${oldDocsEsc(spec)}</b> — lecture du Google Doc…
+<b>${oldDocsEsc(file.name)}</b> — lecture du fichier…
+<b>${oldDocsEsc(sourceName)}</b> — lecture terminée. Analyse des lignes/tableaux, noms de compétences, inputs BDO et chaînes explicites…
+<b>${String(text).length.toLocaleString()}</b> caractères lus ·
+<b>${summary.skills?.length||0}</b> skill(s) résolu(s) · <b>${summary.reference?.mentions||0}</b> via référentiel · <b>${summary.inputs?.length||0}</b> input(s) détecté(s) · <b>${summary.unresolvedInputs?.length||0}</b> input(s) non résolu(s) ·
+<b>Lecture…</b> tentative ${oldDocsEsc(candidate.replace(/^https?:\/\//,''))}
+<div class="home23-no-class">Sélectionne une classe pour afficher son Discord et ses guides dédiés.</div>
+<div class="optimizer-note"><b>Active reference :</b> ${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.</div>
+<div class="page-placeholder">No combo de classe vérifié par la communauté.</div>
+<div class="page-placeholder">No combo joueur en attente de validation pour cette classe.</div>
+<div class="page-placeholder">Noe référence joueur pour ces filtres.</div>
+<div class="page-placeholder">Noe segment candidat détecté.</div>
+<div class="page-placeholder">Sélectionne une classe dans l’onglet Class.</div>
+<div class="page-placeholder">Sélectionne une classe pour voir les combos partagés.</div>
+<div class="page-placeholder">Sign in à la communauté…</div>
+<div class="result warn"><b>Noe nom de compétence extrait des chaînes du document.</b></div>
+<div class="result warn">Noe chaîne explicite détectée dans ce document.</div>
+<h4>Chaînes extraites</h4>
+<h4>Skills résolues depuis lignes, tableaux et chaînes</h4><div class="old-doc-skill-grid">
+<span class="consumable-stat-missing">Noe stat détaillée</span>
+<span class="crystal-stat-missing">Stats détaillées non stockées</span>
+<span>CHAIN</span><strong>${escapeHtml(linkV73.seconds.toFixed(3)+' s')}</strong><b>${escapeHtml(linkV73.measured?(linkV73.validated?'Transition validée':'Transition mesurée'):'Timing estimé')}</b>${linkV73.hasCancel?
+<strong>RE-CC PvP obligatoire</strong> · ${state.remaining.toFixed(3)}s restantes · ${preferred.length} CC compatible(s) avec le timing.
+<strong>RE-CC PvP obligatoire</strong> · ${state.remaining.toFixed(3)}s restantes · aucun CC confirmé dans cette fenêtre : affichage des meilleurs CC fallback.
+<thead><tr><th>Name</th><th>Input</th><th>Cooldown</th><th>Timer</th><th>Protection</th><th>CC</th><th>Duration CC</th><th>PvE</th><th>PvP</th><th>Effets</th><th>Catégorie</th><th>Statut</th><th>Actions</th></tr></thead>
+=recoveryThreshold*.70) ){ recovery=cur; break; } } if(!recovery){ if(status)status.textContent='Début CC détecté, mais fin/reprise de mouvement non fiable. Utilise « Marquer fin CC ».'; GENERIC_CC_STATE_V50.start=impact.time; GENERIC_CC_STATE_V50.end=null; GENERIC_CC_STATE_V50.auto=true; genericCCRenderV50(); return; } const duration=recovery.time-impact.time; if(duration
+>🇩🇪 DE</option><option value=
+⚠ Rapporter un bug
+🇩🇪 DE
+✎ modifier · × supprimer · + ajout manuel
+✓ ${escapeHtml(c.name||'Combo de classe')}
+✓ Combo vérifié par la communauté (${combo.likes} Like)
+✓ Partagé dans Combos joueurs · 0/${communityVerifyThresholdV101()} Like
+✓ Verified par la communauté
+${before.toFixed(1)} + ${incoming.toFixed(1)} → CAP · CC #${count} appliqué
+${candidate}: contenu vide ou page d'accès
+${cls} · ${spec} — ${refs.length} référence(s) analysée(s) · ${added} ajoutée(s) · ${enriched} enrichie(s) · ${unchanged} déjà complète(s)
+${count} compétence(s) de référence disponible(s) pour ${cls} · ${spec}. Click to add missing ones.
+${enabled} activé${enabled>1?'s':''}
+${entry.valid!==false?'Valide':'À vérifier'}
+${escapeHtml(linkV73.measured?(linkV73.validated?'Transition validée':'Transition mesurée'):'Timing estimé')}
+${ev.sourceName} · guide de classe
+${history.length} build${history.length>1?'s':''} enregistré${history.length>1?'s':''}
+${Math.max(0,refs.length-skills.length)} référence(s) restent à charger
+${measured}/${transitions.length} transitions ont une mesure
+${Number(validationRow.ccPoints||0).toFixed(1)} / 2.0 · CC #${count} appliqué
+${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.
+${refs.length} entrées
+${resolution.resolved.length}/${resolution.total} compétence(s) reconnue(s)
+${result.valid.length} transition(s) validée(s) · no entries parasite
+${result.valid.length} valide(s) · ${result.removed.length} entrée(s) parasite(s) supprimée(s)
+${rows.length} mesure(s) CC proposée(s). Tu peux les enregistrer maintenant (statut auto) ou les valider/corriger d’abord.
+${rows.length} transition(s) plausible(s) · ${rejected} lien(s) rejeté(s) (écart trop grand / segments non continus).
+2.0 / 2.0 · bloqué
+3 · Vidéo
+À la fin
+À mesurer
+À valider
+À vérifier
+Abilità
+Absentes de la bibliothèque active : ${resolution.missing.join(' · ')}
+Account cloud créé et connecté.
+Account créé
+Account créé avec un espace de travail vide. Rechargement…
+Account créé. Tes données actuelles sont associées à ce profil.
+Account créé. Vérifie ton e-mail puis connecte-toi.
+Active l'éveil
+Active ou limite les différentes phases utilisées par l’Auto-Build.
+Active reference · ${refs.length} entrées
+Actualise une mesure précédemment détectée si elle est mauvaise.
+Adapte le profil d’optimisation au type de cible.
+Add à la suite
+Add les skills détectés
+Affichage ${start+1} à ${Math.min(start+pageSize,total)} sur ${total} compétences
+Ajout, renommage et suppression synchronisent désormais aussi l’historique des builds enregistrés.
+Ajoute au moins 2 compétences au Combo Builder avant de partager.
+Ajoute au moins 2 compétences.
+Ajoute au moins une compétence au combo.
+Ajoute le marqueur
+Ajoute les skills détectés à la liste lorsque la correspondance est correcte.
+Ajoute une suggestion ou une compétence manuellement : la liste est immédiatement recalculée à partir du nouveau dernier skill.
+All les catégories
+All résistances +10%
+All résistances +4%
+Amélioration corporelle
+Analisador de vídeo
+Analizador de vídeo
+Analyse + mesure automatique
+Analyse assistée automatique
+Analyse automatique impossible : ${err?.message||err}
+Analyse depuis une position choisie, détection de skills, transitions/cancels et durées CC validables directement sur un skill.
+Analyse en pause. Tu peux inspecter la vidéo puis reprendre.
+Analyse le combo
+Analyse précise ${range.start.toFixed(2)}–${range.end.toFixed(2)}s · ${Math.min(100,Math.round(i/total*100))}% · pas ${(step*1000).toFixed(0)} ms
+Analyse terminée · zone ${range.duration.toFixed(2)}s · ${samples.length} images échantillonnées · ${segments.length} segment(s) · ${resolved} skill(s) pré-résolu(s).
+Analyse une zone courte du combo pour obtenir des timings précis. Maximum recommandé : 30 à 60 secondes.
+Analyser 30 s depuis ici
+Analyseur vidéo
+AP / dégâts offensifs
+AP / dégâts PvE
+AP caché +${m.ap}
+AP monstre / précision / DR monstre
+application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n
+Appliquer au skill sélectionné
+Après avoir corrigé ou ajouté plusieurs compétences.
+Après avoir mesuré des durées CC importantes.
+Après avoir validé beaucoup de transitions/cancels.
+Après le premier skill, le bloc
+Après une grosse session de mesure vidéo.
+Associer mes données actuelles
+Attends le message de confirmation.
+Attire les ennemis
+Augmente ATQ de la canne
+Augmente la force
+Augmente la menace
+Augmente la précision
+Augmente la priorité des compétences disposant d’une I-frame.
+Augmente la priorité des compétences disposant de Forward Guard.
+Augmente la priorité des compétences disposant de Super Armor.
+Augmente la puissance de compétences
+Augmente le poids de
+Augmente les dégâts
+Auto-measured transition ${tr.transitionSeconds.toFixed(4)}s · cancel ${tr.cancelAtSeconds!==null?tr.cancelAtSeconds.toFixed(4)+'s':'non résolu'} · confidence ${Math.round(tr.confidence*100)}%
+Autorise l’optimiseur à proposer un changement de stance.
+Autorise ou bloque les skills dont certaines données techniques sont inconnues.
+Autorise une même compétence à apparaître plusieurs fois dans la séquence.
+Autoriser changement de stance
+Autoriser données inconnues
+Autoriser la répétition d’une compétence
+Avant de changer de navigateur, de machine, de fichier HTML ou de version de l’application.
+Avant de construire
+Avant de valider
+Avant toute opération qui pourrait vider les données locales du navigateur.
+Avec CC
+Avec dégâts
+Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.
+Avec protection
+avec sa durée mesurée.
+Avertissement de validation
+Backne au Builder et compare le score des suggestions.
+Backne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.
+Backup complète
+Backup exportée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${Object.keys(storage).length} clés locales.
+Backup restaurée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${restoredKeys} clés locales restaurées${skipped?
+Backupr mes données
+Backupr toutes les données
+Backupr TOUTES les données et les restaurer
+Base de données des compétences, objets et données du jeu
+BDFoundry indique que Breath Spike est très rapide et peut être cancel très rapidement vers d'autres compétences. Cette entrée ne fabrique pas de timing exact.
+BDFoundry Tamer guide — Rabam
+BDFoundry Tamer guide — Succession PvE addons
+BDO Combos Labs — analyse, construction et partage communautaire de combos Black Desert Online.
+BDO Combos Labs relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixed / Pre-Awakening, la séquence actuelle et les timings réellement enregistrés.
+BDO Combos Labs V111: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.
+Bénédiction des bêtes mystiques
+Bénédiction des bêtes mystiques — Esquive
+Bénédiction des bêtes mystiques — Précision
+Bénédiction des bêtes mystiques — PV max
+Bénédiction des bêtes mystiques — Réduction dégâts
+Bénédiction des bêtes mystiques — Tous PA
+Bonne base de compétences. La prochaine amélioration utile est de mesurer davantage de transitions/cancels.
+Breuvage de berserk
+Breuvage de corruption
+Breuvage de frénésie
+Breuvage de frénésie corrompu
+Breuvage de fureur
+Breuvage de la bête
+Breuvage de potentiel
+Breuvage de verdure
+Breuvage du géant
+Buff d'équipe
+Build a combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.
+Build enregistré ✓
+Build et corriger la base Skills
+Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · validé':''}
+Cancel estimé
+cancel validé (estimation start-to-start)
+caractères lus · `+ `
+Catégorie
+CC encore immunisé ${currentCCState.immunityRemaining.toFixed(1)}s
+CC frame début
+CC frame fin
+CC impossible · immunité restante ${timeline.immunityRemaining.toFixed(2)}s
+CC mesuré (s)
+CC mesure FPS
+CC mesure note
+CC sûr · ${remainingAtLand.toFixed(2)}s restantes
+CC terminé
+CC Timer et immunité utilisent la même chronologie start-to-start, sans double comptage de la durée des skills.
+CC Timer, CHAIN et statistiques contrôlés
+CC trop tôt · ${remainingAtLand.toFixed(2)}s encore disponibles
+CC valide · timing de liaison inconnu
+CC valide · transition non mesurée
+Ce compte est enregistré uniquement dans ce navigateur. Pour transférer tes données sur un autre PC, utilise aussi
+Ce fichier n’est pas une sauvegarde BDO Combos Labs compatible.
+Ce lecteur utilise directement un fichier vidéo local et permet une navigation frame par frame fiable.
+Ce lien ne ressemble pas à un Google Doc/Sheet.
+Ce nom d’utilisateur existe déjà.
+Ce que la sauvegarde complète contient
+ce skill n’applique aucun CC
+Cet e-mail est déjà utilisé.
+cette compétence
+Chaîne de setup construite uniquement à partir des compétences que le guide BDFoundry recommande pour les add-ons Succession : Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.
+Chaîne décrite comme combo commun du Tamer Discord : Moonlight Strike → Flow: Intimidation → Beast Rampage, puis Allround Spinner/Fearful Trembling/Resonance selon contexte.
+Chaînes extraites
+Change de stance
+Changer le mot de passe
+Charge d’abord une vidéo locale valide.
+Charge la vidéo locale
+Charge une vidéo locale avant d’ajouter un marqueur.
+Charge une vidéo locale et indique son FPS.
+Charge une vidéo locale, puis marque le début des compétences et les cancels.
+Charger dans Combo Builder
+Choisir le contexte de travail
+Choisir une classe
+Choisis Awakening ou la spécialisation disponible.
+Choisis d’abord le FPS de la vidéo (30 ou 60), puis pause au moment exact où l’animation commence. Utilise les boutons ±0.10s ou ±1 frame pour ajuster précisément.
+Choisis la compétence correspondante dans la liste
+Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.
+Class, spécialisation et référentiel
+Clique sur
+Cloud indisponible : bibliothèque Supabase non chargée.
+Colle d’abord l’URL d’un Google Doc ou Google Sheet.
+Combo de classe
+Combo historique documenté : Legendary Beast Dance: Vermillion Bird cancel → Legendary Beast's Power → Moonlight Strike → Flow: Full Moon → Echo Pierce. Le principe de cancel est explicitement décrit ; timing exact à mesurer.
+Combo joueur publié : Evasion → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.
+Combo partagé avec tous les joueurs.
+Combo partagé depuis le Combo Builder.
+Combo partagé par un joueur.
+Combo vérifié
+Combos de clase
+Combos de classe
+Combos de jogadores
+Combos de jugadores
+Combos importés
+Combos validés
+comme type de marqueur.
+Commence par sélectionner la
+communauté
+Communauté
+Communauté · ${Number(c.likes||0)} Like
+Communauté dédiée à la classe ${cls}
+Compétence ajoutée manuellement : ${name}.
+Compétence introuvable dans la liste active.
+Completeness actuelle : ${completeness}%
+Compléter les Skills
+Comprendre le CC Timer PvP
+Configure l’optimiseur, les contraintes du Combo Builder, les priorités de transition/cancel et la sauvegarde de tes données.
+Configure les consommables, les cristaux et jusqu’à 6 compétences avec 2 effets de Skill Add-on chacune.
+Confirm les transitions et cancels
+Confirmer le mot de passe
+Connecte-toi à ton compte cloud pour partager ce combo.
+Connecte-toi pour masquer ce combo.
+Connecte-toi pour voter.
+Connecté. Synchronisation des données…
+Conserve le fichier JSON
+const BDO_CLASS_RESOURCE_LINKS_V23 = { Tamer: { discord: "https://discord.com/servers/bdo-tamer-discord-212106483066732545", foundry: "https://www.blackdesertfoundry.com/tamer-class-guide/", codex: "https://bdocodex.com/us/skills/" } }; function home23Esc(v){ return String(v??'').replace(/[&
+Contexte ajouté automatiquement : Version ${c.version} · Class ${c.className} · Specialization ${c.spec} · Page ${c.activePage} · ${c.time}
+Contraintes de contrôle et de couverture défensive.
+Contrôle la durée et les frames lorsqu’elles sont disponibles.
+Contrôle la qualité des données et les changements de stance.
+Contrôle la réutilisation des compétences.
+Contrôle les compétences importées.
+Contrôle les mesures de
+Contrôle les statistiques sous le combo : durée, dégâts lorsque disponibles, transitions mesurées, couverture timing, CC et protection.
+Contrôler et valider transitions / cancels
+Cooldowns & répétitions
+Copie automatique impossible. Utilise « Télécharger le rapport ».
+Copier le rapport
+Correction manuelle V47 · transition ${tr.timingSeconds.toFixed(4)}s · cancel ${tr.cancelAt===null?'non résolu':tr.cancelAt.toFixed(4)+'s'}
+Corrige ou supprime les détections parasites.
+Corrigée
+Coût maximal de ressource de classe accepté pour le combo.
+Coût maximal de stamina accepté pour le combo.
+Couverture protégée minimale (%)
+Création du compte cloud…
+Création du compte…
+Création impossible :
+Crée ton espace personnel pour séparer tes données de celles des autres utilisateurs de ce navigateur.
+Crée un compte pour séparer automatiquement ton espace de travail des autres utilisateurs de ce navigateur. Une sauvegarde locale du profil est mise à jour périodiquement et à la déconnexion.
+Crée un feu de camp
+Créer mon compte
+Créer un compte
+Créer, renommer, supprimer et renseigner les stats
+Dans
+Data du compte sauvegardées localement.
+Début
+Début = impact estimé · Fin = reprise de mouvement estimée · les mesures auto peuvent être enregistrées puis validées
+Début = position vidéo
+Début analyse
+Début CC
+Début CC (secondes absolues dans la vidéo)
+Début CC détecté, mais fin/reprise de mouvement non fiable. Utilise « Marquer fin CC ».
+Début CC marqué à ${GENERIC_CC_STATE_V50.start.toFixed(4)} s.
+Décris ce que l’application aurait dû faire...
+Décris ce qui s’est passé. Le rapport peut être copié ou téléchargé afin d’être transmis au développeur.
+Décris le bug observé...
+défense / contenu Edania
+défense / survie
+Definições
+Définis le profil général et le type de cible.
+Dégâts + Soin
+Dégâts attaque aérienne +10%
+Dégâts attaque arrière +10%
+Dégâts attaque arrière +5%
+Dégâts attaque au sol +10%
+Dégâts attaque au sol +5%
+Dégâts attaques spéciales +18%
+Dégâts contre Demi-humains +15
+Dégâts contre Humains +11
+Dégâts contre monstres Kamasylviens +17
+dégâts critiques
+Dégâts critiques +${m.critDmgPct}%
+Dégâts critiques +10%
+Dégâts critiques +5%
+Dégâts de toutes attaques spéciales +10%
+Dégâts de toutes attaques spéciales +16%
+Dégâts de toutes attaques spéciales +18%
+Dégâts de toutes attaques spéciales +2%
+Dégâts fixes +15 attaque arrière
+Dégâts fixes +15 critique
+Dégâts fixes +15 sur attaque arrière
+Dégâts fixes +15 sur coup critique
+Dégâts fixes +15 sur critique
+dégâts humains / attaque
+dégâts humains / précision / vitesse
+Dégâts humains +${m.humanDamage}
+Dégâts maximum
+Dégâts PvE
+dégâts PvE / précision selon spot
+Dégâts PvP
+Dégâts rapides
+Dégâts reçus des monstres -10%
+Dégâts reçus des monstres -6%
+dégâts spéciaux / PvE
+Dégâts spéciaux +${m.specialPct}%
+Delete définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.
+Delete définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.
+Delete la compétence
+Déplacement +2
+Dernière connexion
+Dernière sauvegarde
+DERNIÈRES ÉVOLUTIONS
+Désactiver
+Détails: ${errors.slice(0,3).join(' | ')}
+détecté
+Détecter automatiquement
+Détecter skills, CC, transitions et cancels
+Détection de segments par mouvement + rapprochement avec le référentiel actif.
+Dictionnaire de référence
+Discords de classes BDO
+documented-guide
+DONNÉES & SAUVEGARDE
+Down Smash / Air Smash ne sont pas inclus dans le compteur ci-dessus. Source : note de mise à jour officielle Pearl Abyss. Le « CC Timer » utilise uniquement des mesures enregistrées. Un * indique qu'une transition intermédiaire manque : le dernier temps connu reste affiché mais n'est pas utilisé comme timing précis par l'optimiseur. Dans Skills → Edit, renseigne CC mesuré (s), ou FPS + frames début/fin.
+DPS estimé
+DR / esquive / PV / résistance
+du Combo Builder est différent de la spécialisation : il définit l’orientation de la chaîne que le Builder doit proposer.
+du Combo Builder ne sauvegarde qu’une séquence de combo. Pour éviter de perdre les compétences, durées CC, transitions/cancels, mesures vidéo, réglages et loadouts, il faut utiliser la
+Duration CC détectée automatiquement : ${duration.toFixed(4)} s. Vérifie au ralenti si nécessaire.
+Duration CC générique
+Duration CC validée pour ${skillName} : ${duration.toFixed(4)} s.
+Duration de transition corrigée (secondes)
+Duration estimée
+Duration estimée maximale acceptée pour la séquence complète.
+Duration estimée minimale souhaitée pour la séquence.
+Duration max. estimée (s)
+Duration min. estimée (s)
+Duration vidéo
+Durations CC et transitions importantes mesurées
+Durations CC mesurées
+durée ${candidate.timing.toFixed(3)}s
+durée brute skill
+durée de CC
+Effet conservé après la mort
+Effets du Breuvage de frénésie
+Église / Camp
+Élixir
+Élixir d'Edania
+Élixir de Khalk
+Élixir de la mer profonde
+Élixir de parfum spirituel
+Élixir puissant d'Edania
+En attente de votes
+En PvP, lorsque le CC Timer est pratiquement à zéro, le Builder doit prioriser un nouveau CC afin d’éviter que la cible puisse se relever avant la suite du combo.
+Encadre la taille et la durée estimée des combos générés.
+Enregistre les résultats
+Enrichir les métadonnées
+entrées disponibles
+Équilibré
+est la base de données utilisée par le reste de l’application. Chaque compétence peut contenir input, cooldown, timer, protection, CC, durée de CC, dégâts PvE/PvP, effets et catégorie.
+estimée
+et la
+et les mesures sont enregistrées dans
+Étapes pour reproduire
+ÉTAPES POUR REPRODUIRE\n${val('bug77Steps')}
+Éviter les compétences en cooldown
+Ex. Le CC Timer se réinitialise au mauvais endroit
+Exiger au moins une protection
+EXP compétence +10%
+EXP compétence +15%
+EXP compétence +300%
+EXP compétence +50%
+Export la sauvegarde complète JSON
+Favorise les enchaînements qui restent dans la stance actuelle.
+Favorise les séquences qui conservent davantage de ressource.
+Favoriser même stance
+Fenêtre détectée peu plausible (${duration.toFixed(3)} s). Vérifie manuellement.
+Filters avancés
+Fin
+Fin = position vidéo
+Fin analyse
+Fin CC
+Fin CC / reprise de contrôle (secondes absolues dans la vidéo)
+Fin du CC actif (${tl.ccTimerSource||'source inconnue'})
+Fonctionne même si aucune compétence n'est reconnue.
+Format de temps invalide. Utilise par exemple 3:00, 03:15.500, 1:02:30 ou 180.
+Format non pris en charge. Exporte le Google Doc en TXT, HTML, Markdown, CSV ou DOCX.
+Formulaire effacé.
+FPS vidéo
+Frame estimée
+Garde-le dans un dossier sûr, un cloud ou une copie externe. C’est ta sauvegarde de sécurité.
+Générique
+Google Docs importé — ${file.name}
+guide
+Guide — ${seq.join(" → ")}
+Guide ${cls} : skills, gameplay et ressources communautaires
+Guide de l’Aventurier
+Guide rapide — Comment analyser un combo vidéo
+guide-chain
+guide-supported
+Guides de classes, PvE/PvP et ressources communautaires
+Heuklang protège
+home18-panel home18-guide home75-tutorial
+home75-guide-grid
+Il faut au moins 2 segments résolus.
+Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.
+il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Utilise « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.
+Immortel : Breuvage de frénésie
+Immortel : Breuvage de la bête
+Immortel : Breuvage du géant
+Immortel : Parfum de courage
+Immortel : Parfum de ténacité
+IMPORT & DÉTECTION
+Importance de la pénalité appliquée aux compétences gênées par leur cooldown.
+Importance de la vitesse réelle des transitions dans le classement.
+Importance des compétences de mobilité et de repositionnement.
+Importance des contrôles dans le score de l’optimiseur.
+Importance des dégâts dans le score global d’une compétence.
+Importance des protections dans le score global.
+Importance des transitions/cancels rapides, mesurés et validés.
+Impose la présence d’au moins une compétence protégée.
+Impossible de charger le lecteur DOCX.
+Impossible de lire ce document. Vérifie qu’il est accessible à toute personne disposant du lien.
+Impossible de trouver un début CC plausible.
+indique si la transition vers chaque candidat est connue, mesurée ou validée, ainsi que son cancel éventuel.
+input(s) détecté(s) ·
+input(s) non résolu(s) · `+ `
+L'application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n'est présent.
+L’application crée un fichier JSON contenant le travail actuellement enregistré.
+La base principale est bien renseignée
+La communauté confirme que Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt cancel fonctionnait en Succession ; le timing exact a évolué et reste à mesurer.
+La confirmation ne correspond pas.
+La discussion de classe documente explicitement l'utilisation du damage de Celestial Slam → Beast Rampage.
+La fin du CC doit être après le début.
+La page
+La suppression d’un compte cloud doit passer par une procédure sécurisée. Les données partagées restent dans la base commune et ne sont jamais supprimées avec le compte.
+La vidéo publie une rotation d'inputs complète. Les compétences correspondant aux inputs sont rapprochées ici via la chaîne Succession courante : Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.
+La zone « SAUVEGARDE COMPLÈTE » se trouve en haut de cette page.
+La zone d’analyse est trop courte.
+Lance d’abord « Analyse + mesure automatique » sur une zone vidéo.
+Language du site
+le bouton
+Le Builder assemble la séquence et recalcule les suggestions après chaque modification.
+Le Builder suit le budget CC PvP affiché dans l’application :
+Le CC a bien été appliqué, mais sa durée n’est pas encore mesurée.
+Le CC qui fait atteindre/dépasser 2.0 est encore appliqué ; les CC suivants sont ensuite bloqués par la limite.
+Le choix
+Le contexte dispose d’une base exploitable. Tu peux construire et comparer des combos tout en continuant à enrichir les timings.
+Le contexte pilote tout le projet
+Le cristal de résistance peut être remplacé selon la zone. Brutal Decimation peut être remplacé par Elkarr/Visionary Elkarr si la précision manque.
+Le document est vide ou illisible.
+Le guide cite comme rotation principale : Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Référence historique à revalider selon patch courant.
+Le mot de passe doit contenir au moins 8 caractères.
+Le navigateur cherche par timestamp. Pour les mesures importantes, utilise une vidéo à fréquence constante et vérifie plusieurs essais.
+Le navigateur peut perdre ses données après un nettoyage, une réinstallation, un changement de profil ou certaines manipulations. Le fichier JSON exporté est la copie de sécurité à conserver.
+Le nom de la compétence ne peut pas être vide.
+Le nom doit contenir au moins 2 caractères.
+Le nouveau mot de passe doit contenir au moins 8 caractères.
+Le premier CC appliqué démarre son
+Le score n’est pas seulement un score de dégâts : il combine la logique joueur et les facteurs techniques disponibles. Les données absentes limitent forcément la précision de l’optimisation.
+le timer.
+Lecteur vidéo local
+Lecture contrôle
+Lecture…
+Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combos joueurs et rejoint Combos de classe.
+Les deux panneaux utilisent toute la largeur disponible et restent indépendants des anciens layouts.
+Les étapes suivent le workflow recommandé
+Les mesures connues influencent le classement, l’Auto-Build et le temps réellement consommé dans les fenêtres CC.
+Les mots de passe ne correspondent pas.
+Les skills sont chargés, mais beaucoup de métacombat data manquent encore. Enrichis les fiches avant d’optimiser les combos.
+Les transitions et cancels font avancer le temps de la séquence et donc diminuer le temps restant.
+Les transitions/cancels influencent désormais réellement le classement. Une transition rapide, mesurée et validée est favorisée ; une transition inconnue peut être pénalisée selon les Settings.
+Like requis pour vérifier un combo
+Limite 2.0 points · Immunité 5 s
+Limites de stamina et de ressource de classe.
+Liste communautaire des Discords de classes publiée sur le forum officiel
+Liste des compétences (${total})
+Longueur & durée
+Lorsqu’un combo partagé atteint ce nombre de votes uniques, il rejoint automatiquement Combos de classe.
+Maîtrise professions +25
+Marque les animation cancels
+Marquer début CC
+Marquer fin CC
+Même effet que Breuvage de frénésie
+Même effet que Breuvage de la bête
+Même effet que Breuvage du géant
+Même effet que Breuvage sauvage
+Même effet que Harmonie — Demi-humains
+Même effet que Harmonie — Edania
+Même effet que Harmonie — Humains
+Même effet que Parfum d'envie
+Même effet que Parfum de courage
+Même effet que Parfum de ténacité
+Mesure CC générique incomplète.
+Mesure CC invalide.
+Mesure CC réinitialisée.
+Mesure vidéo
+Mesure vidéo V67 · ${Number(m.impactTime||0).toFixed(4)}s → ${Number(m.recoveryTime||0).toFixed(4)}s · ${confirmed?'validated':'auto candidate'}
+mesurée
+Mesurer automatiquement une vidéo
+Mesurer les CC
+Mesurer les timings
+Mesures automatiques à valider
+Mesures CC détectées
+Mesures CC enregistrées : ${saved} · ${confirmed} confirmée(s) · ${pending} auto à valider · ${missing} skill(s) introuvable(s)${invalid?
+Mesures enregistrées : ${added} nouvelle(s), ${updated} mise(s) à jour. Elles restent marquées « à valider ».
+Mesures et validations vidéo
+Mesures précédemment détectées recalculées à partir des segments et sélections actuels.
+Mettre à jour
+mm:ss, hh:mm:ss ou secondes
+Mobilité
+Mode local : ce compte protège uniquement les données de ce navigateur. Le partage communautaire utilise désormais Supabase. Comme cette application n’a pas encore de serveur, ce système n’est pas un compte cloud et ne protège pas contre une personne ayant accès au profil du navigateur.
+Mot de passe
+Mot de passe actuel
+Mot de passe actuel incorrect.
+Mot de passe cloud modifié.
+Mot de passe incorrect.
+Mot de passe modifié.
+Name de la nouvelle compétence · ${className} · ${spec}
+Name du combo partagé :
+Name vide : aucune compétence ajoutée.
+Namebre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
+Namebre maximum d’effets CC autorisés par les contraintes du Builder.
+Namebre maximum de CC
+Namebre maximum de compétences autorisé dans le combo.
+Namebre minimum de CC
+Namebre minimum de compétences souhaité dans un combo généré.
+Ne compte pas uniquement sur le stockage local du navigateur.
+Ne perds pas tes mesures
+ne réinitialise pas
+Nettoyer les transitions invalides
+No combo de classe validé enregistré pour
+No combo de classe vérifié par la communauté.
+No combo joueur en attente de validation pour cette classe.
+No résolu
+No sélectionné
+No sélectionnée
+No skill compatible avec l’orientation ${builderOrientationLabelV71(currentBuilderOrientation())}.
+No skill de ce combo ne correspond à la bibliothèque active.
+Noe build enregistré pour le moment.
+Noe CC mesurable automatiquement dans les segments résolus.
+Noe chaîne explicite détectée dans ce document.
+Noe classe sélectionnée
+Noe compte cloud connecté.
+Noe début défini : cette position a été utilisée comme début CC.
+Noe dictionnaire de référence disponible pour ${cls} · ${spec}.
+Noe mesure automatique à enregistrer.
+Noe mesure CC détectée à enregistrer.
+Noe moteur de dictionnaire de référence n’est disponible.
+Noe nom de compétence extrait des chaînes du document.
+Noe rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.
+Noe référence joueur pour ces filtres.
+Noe sauvegarde exportée pendant cette session.
+Noe segment candidat détecté.
+Noe stat détaillée
+Noe vidéo chargée.
+Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}
+Nouveau mot de passe
+nouveau(x) Skill(s) ajouté(s) à ${oldDocsEsc(cls)} ${oldDocsEsc(spec)} · `+ `
+Open la sauvegarde complète
+Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
+Orage + Dégâts
+Ordre à Heuklang
+ou utilise la touche
+PA contre monstres supplémentaire (version Corrupted Breath)
+Pack de mobs
+paramètres.
+Parchemin EXP combat & compétence +300% (60 min)
+Parfum de charme
+Parfum de courage
+Parfum de ténacité
+Partagé par ${c.author||'Joueur'}
+Pas assez d’échantillons dans la zone sélectionnée.
+Pas assez d’images analysées.
+Pas encore de compte ?
+Passive résistance
+Pause analyse
+Pearl Abyss — Campsite Guide 2026
+Pearl Abyss — données officielles Cron Meal
+Pêche +2
+Pêche +3
+Pénalise ou exclut les compétences indisponibles à cause de leur cooldown.
+permet de décider à quel point le Builder doit privilégier la vitesse des transitions, les cancels et les liaisons connues.
+Place la lecture au moment où le combo intéressant commence, par exemple 3:00.
+Place la vidéo au début/à la fin du CC, ou lance la détection automatique sur la zone analysée.
+Place la vidéo au moment où l’animation d’une compétence est coupée, sélectionne
+Place-toi au début d’une compétence
+Poids de l’optimiseur
+Poids dégâts
+Poids pénalité cooldown
+Point de cancel corrigé (secondes après la première compétence). Laisse vide si inconnu.
+Point de cancel invalide.
+Potion de PV (grande)
+Potion de PV (Jumbo)
+Potion de PV (moyenne)
+Potion de PV (petite)
+Potion de tendon de baleine
+Potion robuste de tendon de baleine
+Potion supérieure de tendon de baleine
+pour de meilleurs timings, marque toujours le premier frame visible du démarrage de chaque compétence, puis le moment exact où l’animation est interrompue pour les cancels.
+pour favoriser les enchaînements disposant d’un cancel.
+pour laisser l’optimiseur poursuivre la chaîne.
+pour préférer les candidats dont la liaison est mesurée/connue.
+pour privilégier les chaînes rapides.
+Pour restaurer : « Import a backup »
+Pour un CC mesuré, renseigne sa
+Pourcentage minimal du combo qui doit bénéficier d’une protection.
+Pré-Awak
+précision / dégâts humains
+précision / ignore résistance
+Précision +${m.accuracy}
+Précision +12
+Précision +13
+Précision +15
+Précision +20
+Précision +8
+Preset polyvalent. Contre forte esquive, augmente Elkarr/Viper; pour glass cannon, remplace davantage de défensifs par dégâts humains.
+Priorité CC
+Priorité communauté
+Priorité protections
+PROBLÈME OBSERVÉ\n${val('bug77Description')}
+Profil général qui détermine les priorités de l’Auto-Build.
+Projet actuel
+PROTECTION DES DONNÉES
+PV / esquive spéciale
+PvE endgame — dégâts généralistes 2026
+PvP passe-partout — DR/offensif général 2026
+Qté
+Quality de données minimale (%)
+Quality minimale des données exigée avant qu’un skill soit privilégié.
+Quand refaire une sauvegarde ?
+Que s’est-il passé ?
+Quel comportement était attendu ?
+Rapport copié dans le presse-papiers.
+Rapport téléchargé. Tu peux maintenant le transmettre au développeur.
+Rapporter un problème
+Récolte +2
+Récolte +3
+Récupération PV +12 par coup
+Récupération PV +17 critique
+Récupération PV +17 sur coup critique
+Récupération PV +17 sur critique
+Récupération PV +3 par coup
+Récupération PV +9 par coup
+Récupération ressource par coup
+Récupère 1 200 PV
+Récupère 1 800 PV
+Récupère 150 PV
+Récupère 250 PV
+Récupère 3 000 PV
+Récupère 400 PV
+Récupère 800 PV
+Récupère du mana
+Réduction de dégâts +10
+Réduction de dégâts +13
+Réduction de dégâts +15
+Réduction de dégâts +8
+Réduction dégâts monstres +10%
+Réduit le coût en mana
+Reference + compétences actives
+Référence communautaire.
+Référence historique Inven conservée, mais adaptée à la bibliothèque active : Soaring Kick (grab) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. La chaîne Bolt/Jolt → Echo est également documentée par des joueurs Tamer. Les timings restent à mesurer.
+Référence joueur/documentée ; timing exact non publié
+Références
+Refresh les mesures détectées
+Régler l’optimiseur / Auto-Build
+Régler le poids des timings, cancels et contraintes
+Règles de validation des combos partagés par les joueurs.
+Réinitialiser
+Rejetée
+Renommer un skill met à jour les références associées lorsque l’application peut les résoudre. Vérifie malgré tout les transitions importantes après un renommage.
+Répartis l’importance des dégâts, de la vitesse, des CC et des transitions/cancels.
+Repas de Cron aux fruits de mer
+Repas de Cron exquis
+Repas de Cron simple
+Répétitions max. par compétence
+Réponse vide
+Reprendre analyse
+résistance adaptée au spot
+Résistance aux CC
+Résistance chaleur/hypothermie +50%
+Ressuscite un allié
+Restaurer une sauvegarde
+Rester connecté sur cet appareil
+Résumé du projet
+Retrouve ton espace de travail local et toutes tes données enregistrées.
+Rôle
+Rotation large-group publiée : Void Lightning → Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Dropping → Flow: Gust → Allround Spinner.
+Routine recommandée :
+Save les CC
+Save les mesures
+Save les réglages
+Scanning guide
+Search un consommable…
+SÉCURITÉ
+Sélectionne d’abord un skill dans « Mark combo skills ».
+Sélectionne d’abord une classe dans l’onglet Class.
+Sélectionne d’abord une classe.
+Sélectionne la classe.
+Sélectionne la compétence
+Sélectionne le fichier
+Sélectionne le fichier JSON précédemment exporté.
+Sélectionne un fichier vidéo local avec le bouton
+Sélectionne une classe
+Sélectionne une classe avant d’ajouter une compétence.
+Sélectionne une classe avant d’enregistrer.
+Sélectionne une classe avant de partager un combo.
+Sélectionne une classe avant de partager.
+Sélectionne une classe avant l’analyse.
+Sélectionne une classe dans l’onglet Class.
+Sélectionne une classe et une spécialisation pour activer le diagnostic.
+Sélectionne une classe pour afficher l’état des données.
+Sélectionne une classe pour afficher son Discord et ses guides dédiés.
+Sélectionne une classe pour voir les combos partagés.
+Sélectionne une classe.
+Sélectionne une compétence puis ses deux effets d’add-on.
+sert à extraire des mesures réelles depuis une vidéo locale. Tu peux choisir le point de départ de l’analyse au lieu de commencer obligatoirement à 0:00.
+Settings → Backup complète
+Settings Auto-Build réinitialisés.
+Settings enregistrés. Optimizer utilisera les
+Settings ont une persistance unique, les rapports de bug indiquent la bonne version et l’export JSON complet reste recommandé.
+si tu veux retrouver exactement l’état sauvegardé.
+si un skill manque.
+Sign in à la communauté…
+Sign in, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
+Site officiel PC · actualités, événements et annonces
+skill(s) résolu(s) ·
+Skills & améliorations
+Skills ajoutés / modifiés
+Skills après
+Skills avec Add-ons
+Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).
+Skills et données de référence pour ${home23Esc(cls)}
+Skills résolues depuis lignes, tableaux et chaînes
+Skills résolus
+Skills vs référentiel
+Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.
+Skills, transitions, mesures, combos et réglages actuels seront rattachés à ce compte.
+Soin + Réanimation
+Source : ${pattern.sourceTag || pattern.source || pattern.importedBy || 'Communauté'}
+spécialisation
+State du Combo Builder
+Stats détaillées non stockées
+Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle source du CC Timer avec sa propre durée mesurée, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.
+Succès transformation +10%
+Succès transformation +20%
+Succession Tamer quick PvE guide
+Supprime les entrées incorrectes avec le bouton de suppression.
+Sustain / sécurité
+Synchronise avec Heuklang
+Système CC PvP officiel
+Télécharger le rapport
+Téléportation
+Téléportation d'urgence
+Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?
+Temps vidéo
+Timing CC non mesuré · placement temporel ignoré
+Timing intermédiaire incomplet · placement temporel ignoré
+Tous ces réglages sont lus automatiquement par Optimizer.
+Transição / Cancel
+Transition / cancel non mesuré · placement CC ignoré
+Transition inconnue · pénalité forte
+transition mesurée
+transition validée
+Transitions / cancels détectés
+Transitions importées
+travaille normalement → mesure/corrige les données → enregistre tes builds utiles → termine la session par
+Trollsies Tamer guide — Reddit
+Trouver le guide ${cls} dans la liste des guides de classes
+Tu as déjà partagé cette séquence.
+Tu as déjà un compte ?
+Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la classe active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
+Type de cible
+Un cancel ne réduit jamais la durée du CC.
+Un nouveau CC appliqué devient la nouvelle source du CC Timer avec sa propre durée mesurée.
+Une compétence nommée « ${name} » existe déjà.
+Une compétence sans nouveau CC
+Une détection automatique est une aide de mesure, pas une vérité absolue. Les valeurs aberrantes doivent être contrôlées dans la vidéo.
+Une donnée absente reste inconnue. Une transition ou une durée de CC non mesurée ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.
+une transition intermédiaire manque : le dernier temps connu reste affiché mais n
+Une transition représente le temps réel nécessaire pour passer du skill A au skill B. Un cancel permet d’interrompre une animation pour enchaîner plus tôt.
+Utilise l’édition pour corriger son
+Utilise la lecture lente et la pause pendant l’analyse pour contrôler une détection.
+Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.
+Utiliser BDO Combos Labs de A à Z
+Utiliser le Combo Builder et ses suggestions
+Validation des transitions
+Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)
+validé
+Valide les mesures fiables.
+validée
+Validée
+validées / mesurées
+Vérification : ${communityVerifyThresholdV101()} Like
+Vérification : 10 Like
+Vérification…
+Vérifie le couple
+Vérifie sur l’accueil que le contexte actif et le référentiel sont corrects.
+Verified le ${communityFormatDateV101(pattern.verifiedAt)}
+Verified par la communauté · ${escapeHtml(author)}
+Version améliorée
+via référentiel ·
+Vidéo
+Vidéo locale
+Vidéo prête. Place-toi au début d’une compétence puis ajoute un marqueur.
+Video-Analyse
+Vitesse / fluidité
+Vitesse déplacement +2
+Vitesse déplacement +3
+Vitesse déplacement +5
+Vitesse déplacement +5%
+Vitesse déplacement/attaque/incantation +5
+Voir début
+Voir fin
+Voir vidéo 0.5×
+x.id===user.id); if(u){u.lastSaveAt=backup.savedAt;accountSaveDBV78(db)} ACCOUNT_ACTIVE_V78=u||user; renderAccountHeaderV78(); if(showStatus)accountStatusV78('Data du compte sauvegardées localement.','good'); return true; } function accountClearProjectStorageV78(){ const remove=[]; for(let i=0;i
+Zone concernée
+Zone insuffisante après le début CC détecté.
+Zone préparée : ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.
+Zone trop longue : limite-la à 90 secondes maximum pour conserver une analyse précise.
