@@ -1,85 +1,12 @@
-V116 es visible French residual candidates: 83
+V116 es visible French residual candidates: 10
 
-. Le lecteur local est la fuente de temps utilisée pour tous les marqueurs.
-. Recommence pour chaque compétence du combinación.
-. Todas les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.
-← Volver au profil
-+ Añadir une compétence
-8 · Sauvegarde
 8 caractères minimum
-Abrir la sauvegarde complète
-Actualizar les mesures détectées
 Añadir les skills détectés
-Avec données combat
-Búsqueda automática des compétences
-Clase, especialización et référentiel
 combos enregistrés
-Compte créé
-Compte local
-Compte local :
-Compte local & données personnelles
-Construire un combinación à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.
-Contrôle / re-CC PvP
-Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.
-Coût ressource max.
-Coût stamina max.
 Décris ce que l’application aurait dû faire...
-Dégâts principaux
-données de combat
-Down Smash / Air Smash ne sont pas inclus dans le compteur ci-dessus. Source : note de mise à jour officielle Pearl Abyss. Le « CC Timer » utilise uniquement des mesures enregistrées. Un * indique qu'falta una transición intermedia: la última hora conocida permanece mostrada pero no'est pas utilisé comme timing précis par l'optimiseur. En Skills → Editar, renseigne CC mesuré (s), ou FPS + frames début/fin.
-Durée CC
-Durée CC générique
-Durée estimada maximale acceptée pour la séquence complète.
-Durée estimada minimale souhaitée pour la séquence.
-Durée max. estimada (s)
-Durée min. estimada (s)
-Durée vidéo
-Durées CC et transitions importantes mesurées
-Durées CC mesurées
-Eliminar mon compte
-ESPACE UTILISATEUR
-Exportar la sauvegarde complète JSON
-Gérer mon compte
-Guardar les mesures
-Guardar les réglages
-Hacer clic en une étape pour ouvrir l’outil correspondant
-il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Usado « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.
-Iniciar sesión, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
-J’aime requis pour vérifier un combinación
-L'application a été remise à zéro. Ninguno dataset ni mécanisme de restauration automatique n'est présent.
-Laboratorios de combos BDO relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Generador combinado. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixto / Pré-Awakening, la séquence actuelle et les timings réellement enregistrés.
 Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combinación atteint le seuil communautaire, il devient automatiquement vérifié, quitte combos de jugadores et rejoint Combinaciones de clases.
-Métadonnées Skills
-Ninguna sauvegarde exportée pendant cette session.
-Ninguna vidéo chargée.
-Ninguno rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.
-Nom d’utilisateur
 Nom, input, effet, CC, protection…
-Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
-Nombre maximum de compétences autorisé dans le combinación.
-Nombre minimum de compétences souhaité dans un combinación généré.
-Poids de l’optimiseur
-Pour restaurer : « Importar copia de seguridad »
-Préparation du combinación
-Préserver la ressource
-Qualité de données minimale (%)
-Qualité minimale des données exigée avant qu’un skill soit privilégié.
-Referencia + compétences actives
-Réglages Auto-Build
-Remplacer les données locales Laboratorios de combos BDO lors de la restauration
 Répète le mot de passe
 Routine recommandée :
-Sauvegarde / Restauration
-Sauvegarde complète
-Sauvegarde manuelle uniquement
 Sauvegarder maintenant
-Sauvegarder mes données
-Sauvegarder toutes les données
-Sauvegarder TOUTES les données et les restaurer
-Sélectionne d’abord une clase dans l’onglet Clase.
-Séquence
-Settings → Sauvegarde complète
-Seuil re-CC PvP
-Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.
 Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la clase active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
-Une donnée absente reste inconnue. Une transición ou une duración del CC non medida ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.

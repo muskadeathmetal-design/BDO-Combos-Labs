@@ -1,10 +1,9 @@
-V116 en visible French residual candidates: 16
+V116 en visible French residual candidates: 13
 
 8 caractères minimum
 Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
 DATA PROTECTION
 Décris ce que l’application aurait dû faire...
-il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Used « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.
 is the database used by the rest of the application. Each skill can contain input, cooldown, timer, protection, CC, CC duration, PvE/PvP damage, effects and category.
 Maintenance & backup
 Minimum percentage of the combo that must benefit from protection.
@@ -13,6 +12,4 @@ Priority: player/community combo choices and observed skill order. Technical fac
 Protection priority
 Répète le mot de passe
 Require at least one protection
-Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.
-Une donnée absente reste inconnue. Une transition ou une duration of CC non measured ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.
 With protection
