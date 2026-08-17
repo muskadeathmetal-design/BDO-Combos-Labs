@@ -12,7 +12,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>BDO Combos Labs · V111</title>
+<title>BDO Combos Labs · V112</title>
 <style>
 :root{
   --bg:#0b0f14;
@@ -5705,6 +5705,13 @@ window.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+<style id="bcl-safe-i18n-style">
+.bcl-lang-wrap{display:flex;align-items:center;gap:7px;padding:5px 7px;border:1px solid rgba(139,148,158,.18);border-radius:12px;background:rgba(22,31,43,.55);min-width:0}
+.bcl-lang-label{margin:0!important;font-size:12px!important;color:#9aa7b5!important;white-space:nowrap}
+.bcl-lang-select{width:78px!important;min-width:78px!important;max-width:78px!important;min-height:34px!important;height:34px!important;padding:4px 8px!important;border-radius:9px!important;font-size:12px!important}
+@media(max-width:900px){.app-header-meta{gap:7px!important;flex-wrap:wrap!important;justify-content:flex-end!important}.bcl-lang-label{display:none}.bcl-lang-select{width:72px!important;min-width:72px!important;max-width:72px!important}}
+@media(max-width:650px){.app-header{align-items:flex-start!important}.app-header-meta{width:100%!important;justify-content:flex-start!important;margin-top:10px!important}.bcl-lang-wrap{order:1}.account78-header{order:2}.app-header-version{order:3}}
+</style>
 </head>
 <body>
 <script>
@@ -5749,10 +5756,16 @@ if(!BDO_DOM_READY){
     </div>
   </div>
   <div class="app-header-meta">
-    <span class="app-header-chip">Local Lab</span>
+    <span class="app-header-chip" data-i18n="header.localLab">Local Lab</span>
+    <div class="bcl-lang-wrap">
+      <label for="bclLanguageSelect" class="bcl-lang-label" data-i18n="header.language">Langue</label>
+      <select id="bclLanguageSelect" class="bcl-lang-select" aria-label="Langue du site">
+        <option value="fr">🇫🇷 FR</option><option value="en">🇬🇧 EN</option><option value="de">🇩🇪 DE</option><option value="es">🇪🇸 ES</option><option value="it">🇮🇹 IT</option><option value="pt">🇵🇹 PT</option>
+      </select>
+    </div>
     <div id="accountHeaderV78" class="account78-header">
-      <button id="accountLoginButtonV78" type="button" class="account78-login-btn" onclick="openAccountModalV78('login')">Connexion</button>
-      <button id="accountRegisterButtonV78" type="button" class="account78-register-btn" onclick="openAccountModalV78('register')">Créer un compte</button>
+      <button id="accountLoginButtonV78" type="button" class="account78-login-btn" onclick="openAccountModalV78('login')"> <span data-i18n="account.login">Connexion</span></button>
+      <button id="accountRegisterButtonV78" type="button" class="account78-register-btn" onclick="openAccountModalV78('register')"> <span data-i18n="account.register">Créer un compte</span></button>
       <button id="accountProfileButtonV78" type="button" class="account78-profile-btn" style="display:none" onclick="toggleAccountMenuV78()">
         <span id="accountAvatarV78" class="account78-avatar">U</span>
         <span id="accountNameV78">Utilisateur</span>
@@ -5760,13 +5773,13 @@ if(!BDO_DOM_READY){
       </button>
       <div id="accountMenuV78" class="account78-menu">
         <div class="account78-menu-user"><b id="accountMenuNameV78">—</b><small id="accountMenuEmailV78">—</small></div>
-        <button type="button" onclick="openAccountModalV78('profile')">Mon profil</button>
-        <button type="button" onclick="accountSaveWorkspaceV78(true)">Sauvegarder maintenant</button>
-        <button type="button" onclick="openAccountModalV78('password')">Changer le mot de passe</button>
-        <button type="button" onclick="logoutAccountV78()">Déconnexion</button>
+        <button type="button" onclick="openAccountModalV78('profile')"> <span data-i18n="account.profile">Mon profil</span></button>
+        <button type="button" onclick="accountSaveWorkspaceV78(true)"> <span data-i18n="account.saveNow">Sauvegarder maintenant</span></button>
+        <button type="button" onclick="openAccountModalV78('password')"> <span data-i18n="account.changePassword">Changer le mot de passe</span></button>
+        <button type="button" onclick="logoutAccountV78()"> <span data-i18n="account.logout">Déconnexion</span></button>
       </div>
     </div>
-    <span class="app-header-version">V111</span>
+    <span class="app-header-version">V112</span>
   </div>
 </header>
 <main>
@@ -5775,21 +5788,21 @@ if(!BDO_DOM_READY){
         Accueil
       </button>
 
-    <button class="tab-btn" data-page="classPage" onclick="showPage('classPage',this)">Class</button>
-    <button class="tab-btn" data-page="skillsPage" onclick="showPage('skillsPage',this);renderSkillsPage()">Skills</button>
-    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()">Combos de classe</button>
+    <button class="tab-btn" data-page="classPage" onclick="showPage('classPage',this)"> <span data-i18n="nav.class">Class</span></button>
+    <button class="tab-btn" data-page="skillsPage" onclick="showPage('skillsPage',this);renderSkillsPage()"> <span data-i18n="nav.skills">Skills</span></button>
+    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()"> <span data-i18n="nav.classCombos">Combos de classe</span></button>
     <button class="tab-btn" data-page="playerCombosPage"
       onclick="showPage('playerCombosPage',this);renderPlayerCombosPage()">
-      Combos joueurs
+      <span data-i18n="nav.playerCombos">Combos joueurs</span>
     </button>
-    <button class="tab-btn" data-page="transitionPage" onclick="showPage('transitionPage',this);renderTransitionPage()">Transition / Cancel</button>
+    <button class="tab-btn" data-page="transitionPage" onclick="showPage('transitionPage',this);renderTransitionPage()"> <span data-i18n="nav.transitions">Transition / Cancel</span></button>
       <button class="tab-btn" type="button" onclick="showPage('youtubeAnalyzerPage', this); renderYouTubeAnalyzer();">
-        Video Analyzer
+        <span data-i18n="nav.videoAnalyzer">Video Analyzer</span>
       </button>
     
-    <button class="tab-btn" data-page="addonsPage" onclick="showPage('addonsPage',this);renderAddonPage()">Skill Add-ons</button>
-    <button class="tab-btn" data-page="builderPage" onclick="showPage('builderPage',this);renderComboBuilder()">Combo Builder</button>
-    <button class="tab-btn" data-page="settingsPage" onclick="showPage('settingsPage',this)">Settings</button>
+    <button class="tab-btn" data-page="addonsPage" onclick="showPage('addonsPage',this);renderAddonPage()"> <span data-i18n="nav.addons">Skill Add-ons</span></button>
+    <button class="tab-btn" data-page="builderPage" onclick="showPage('builderPage',this);renderComboBuilder()"> <span data-i18n="nav.builder">Combo Builder</span></button>
+    <button class="tab-btn" data-page="settingsPage" onclick="showPage('settingsPage',this)"> <span data-i18n="nav.settings">Settings</span></button>
   </div>
 
   
@@ -25525,5 +25538,25 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 })();
 </script>
 
+<!-- BCL V112 SAFE I18N -->
+<script id="bcl-safe-i18n-v112">
+(function(){
+const STORAGE_KEY='bdoCombosLabs.language.v112';
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos joueurs','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mein Profil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
+es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Combos de clase','nav.playerCombos':'Combos de jugadores','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
+it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Combo di classe','nav.playerCombos':'Combo giocatori','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
+pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
+function current(){const saved=localStorage.getItem(STORAGE_KEY);if(dict[saved])return saved;const b=(navigator.language||'fr').slice(0,2).toLowerCase();return dict[b]?b:'fr';}
+function t(key,lang){const l=lang||current();return (dict[l]&&dict[l][key])||(dict.fr&&dict.fr[key])||key;}
+function apply(lang,save){const l=dict[lang]?lang:'fr';document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(function(el){const key=el.getAttribute('data-i18n');if(key)el.textContent=t(key,l);});const sel=document.getElementById('bclLanguageSelect');if(sel&&sel.value!==l)sel.value=l;if(save)localStorage.setItem(STORAGE_KEY,l);window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));}
+window.bclT=t;window.bclApplyLanguageV112=function(lang){apply(lang,true);};window.bclCurrentLanguageV112=current;
+function init(){const sel=document.getElementById('bclLanguageSelect');if(sel&&!sel.dataset.boundV112){sel.dataset.boundV112='1';sel.addEventListener('change',function(){apply(this.value,true);});}apply(current(),false);}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+document.addEventListener('click',function(){setTimeout(function(){apply(current(),false);},140);},true);
+document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
+})();
+</script>
 </body>
 </html>
