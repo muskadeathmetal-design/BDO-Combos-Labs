@@ -440,7 +440,7 @@ input:focus, textarea:focus, select:focus{
 h2{color:#f0f6fc!important}
 h3{color:#dce8f7!important}
 
-/* Status semantic helper classs */
+/* Status semantic helper classes */
 .good, .status-good{color:#7ee787!important}
 .warn, .status-warn{color:#e3b341!important}
 .bad, .status-bad{color:#ff7b72!important}
@@ -5774,7 +5774,7 @@ if(!BDO_DOM_READY){
       <div id="accountMenuV78" class="account78-menu">
         <div class="account78-menu-user"><b id="accountMenuNameV78">—</b><small id="accountMenuEmailV78">—</small></div>
         <button type="button" onclick="openAccountModalV78('profile')"> <span data-i18n="account.profile">My profile</span></button>
-        <button type="button" onclick="accountSaveWorkspaceV78(true)"> <span data-i18n="account.saveNow">Backupr maintenant</span></button>
+        <button type="button" onclick="accountSaveWorkspaceV78(true)"> <span data-i18n="account.saveNow">Sauvegarder maintenant</span></button>
         <button type="button" onclick="openAccountModalV78('password')"> <span data-i18n="account.changePassword">Change password</span></button>
         <button type="button" onclick="logoutAccountV78()"> <span data-i18n="account.logout">Sign out</span></button>
       </div>
@@ -5821,7 +5821,7 @@ if(!BDO_DOM_READY){
       </div>
       <div class="home18-context-card">
         <span>Active context</span>
-        <strong id="home18Context">Noe class sélectionnée</strong>
+        <strong id="home18Context">None class sélectionnée</strong>
         <small id="home18Reference">Reference : —</small>
       </div>
     </section>
@@ -5880,7 +5880,7 @@ if(!BDO_DOM_READY){
       <div class="home19-build-table-wrap">
         <table class="home19-build-table">
           <thead><tr><th>Date</th><th>Contexte</th><th>Type</th><th>Sequence</th><th>Skills</th><th>Validation</th><th style="text-align:right">Actions</th></tr></thead>
-          <tbody id="home19RecentBuildRows"><tr><td colspan="7"><div class="home19-empty">Noe build enregistré pour le moment.</div></td></tr></tbody>
+          <tbody id="home19RecentBuildRows"><tr><td colspan="7"><div class="home19-empty">None build enregistré pour le moment.</div></td></tr></tbody>
         </table>
       </div>
     </section>
@@ -5903,7 +5903,7 @@ if(!BDO_DOM_READY){
 
       <section class="home18-panel">
         <div class="home18-panel-head"><div><span class="home18-section-kicker">DIAGNOSTICS</span><h3>Active context status</h3></div></div>
-        <div id="home18Diagnosticss" class="home18-diagnostics"></div>
+        <div id="home18Diagnostics" class="home18-diagnostics"></div>
       </section>
     </div>
 
@@ -5921,7 +5921,7 @@ if(!BDO_DOM_READY){
         <p>Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.</p>
       </div>
       <div class="home76-backup-reminder-actions">
-        <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Backupr toutes les données</button>
+        <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Sauvegarder toutes les données</button>
         <small>Settings → Backup complète</small>
       </div>
     </section>
@@ -5935,7 +5935,7 @@ if(!BDO_DOM_READY){
         <article><b>Stabilisation CC PvP</b><p>CC Timer and immunity use the same start-to-start timeline, without double counting of skill durations.</p></article>
         <article><b>Transitions & Cancels</b><p>Known metrics influence ranking, Auto-Build, and actual time consumed in CC windows.</p></article>
         <article><b>Video Analyzer</b><p>Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.</p></article>
-        <article><b>Accounts locaux</b><p>Sign in, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.</p></article>
+        <article><b>Comptes locaux</b><p>Sign in, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.</p></article>
         <article><b>Gestion Skills & Builds</b><p>Adding, renaming, and deleting now also syncs saved build history.</p></article>
         <article><b>Maintenance & backup</b><p>Settings have unique persistence, bug reports indicate the correct version and full JSON export is still recommended.</p></article>
       </div>
@@ -5951,7 +5951,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <div class="home75-start">
-        <div><b>Objectif</b><p>Build a combo à partir de données measureds plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classr ses suggestions.</p></div>
+        <div><b>Objectif</b><p>Build a combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.</p></div>
         <div><b>Principe important</b><p>Une donnée absente reste inconnue. Une transition ou une duration of CC non measured ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.</p></div>
       </div>
 
@@ -6025,13 +6025,13 @@ if(!BDO_DOM_READY){
           <summary><span>07</span> Set Optimizer / Auto-Build</summary>
           <div class="home75-detail">
             <p>The page <b>Settings</b> allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.</p>
-            <ol><li>Increases the weight of <b>Speed</b> to favor fast chains.</li><li>Increases the weight of <b>Cancel</b> to favor sequences with a cancel.</li><li>Active <b>Require known transition</b> to prefer candidates whose binding is measured/known.</li><li>Backne au Builder et compare le score des suggestions.</li></ol>
+            <ol><li>Increases the weight of <b>Speed</b> to favor fast chains.</li><li>Increases the weight of <b>Cancel</b> to favor sequences with a cancel.</li><li>Active <b>Require known transition</b> to prefer candidates whose binding is measured/known.</li><li>Retourne au Builder et compare le score des suggestions.</li></ol>
             <p class="home75-tip">The score is not just a damage score: it combines player logic and available technical factors. Missing data necessarily limits the precision of the optimization.</p>
           </div>
         </details>
 
         <details id="tuto75-8" open>
-          <summary><span>08</span> Backupr TOUTES les données et les restaurer</summary>
+          <summary><span>08</span> Sauvegarder TOUTES les données et les restaurer</summary>
           <div class="home75-detail">
             <p><b>Important :</b> the button <b>Save ce build</b> of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the <b>Backup complète</b>.</p>
 
@@ -6046,12 +6046,12 @@ if(!BDO_DOM_READY){
             <div class="home76-backup-items">
               <span>Skills added/modified</span>
               <span>Inputs et statistiques</span>
-              <span>Durations CC measureds</span>
+              <span>Durées CC mesurées</span>
               <span>Transitions / Cancels</span>
               <span>Video measurements and validations</span>
               <span>Saved combos</span>
               <span>State du Combo Builder</span>
-              <span>Settings Auto-Build</span>
+              <span>Réglages Auto-Build</span>
               <span>Skill Add-ons / Loadout</span>
               <span>Data locales BDO Combos Labs</span>
             </div>
@@ -6073,7 +6073,7 @@ if(!BDO_DOM_READY){
               <li>Clique <b>Import a backup</b>.</li>
               <li>Select the file <code>BDO_Combos_Labs_Backup_....json</code>.</li>
               <li>Wait for the confirmation message.</li>
-              <li>Backne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.</li>
+              <li>Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.</li>
             </ol>
 
             <p class="home75-tip"><b>Account local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Used « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
@@ -6089,7 +6089,7 @@ if(!BDO_DOM_READY){
 
       <div class="home75-checklist">
         <div><span>✓</span><b>Before building</b><small>Class + spec + orientation correctes</small></div>
-        <div><span>✓</span><b>Before optimizing</b><small>Durations CC et transitions importantes measureds</small></div>
+        <div><span>✓</span><b>Before optimizing</b><small>Durées CC et transitions importantes mesurées</small></div>
         <div><span>✓</span><b>Before validating</b><small>CC Timer, CHAIN ​​and statistics controlled</small></div>
         <div><span>✓</span><b>At the end</b><small>Export la sauvegarde complète JSON</small></div>
       </div>
@@ -6177,7 +6177,7 @@ if(!BDO_DOM_READY){
     <div class="combo-header">
       <div>
         <h3>Manual Google Docs import</h3>
-        <div id="manualGoogleDocContext" class="badge">Noe class sélectionnée</div>
+        <div id="manualGoogleDocContext" class="badge">None class sélectionnée</div>
       </div>
     </div>
 
@@ -6240,7 +6240,7 @@ if(!BDO_DOM_READY){
     </div>
 
     <div class="empty">
-      L'application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n'est présent.
+      L'application a été remise à zéro. None dataset ni mécanisme de restauration automatique n'est présent.
     </div>
   </div>
 
@@ -6252,7 +6252,7 @@ if(!BDO_DOM_READY){
       <div class="skills-page-head">
         <div>
           <h2>Skills</h2>
-          <div id="skillsClassContext" class="badge">Noe class sélectionnée</div>
+          <div id="skillsClassContext" class="badge">None class sélectionnée</div>
         </div>
         <button id="skillsManualAddBtnV72" type="button" class="optimizer-btn" onclick="skillsManualAddV72()">
           + Add une compétence
@@ -6316,7 +6316,7 @@ if(!BDO_DOM_READY){
       <div class="combo-header">
         <div>
           <h2>Class combos</h2>
-          <div id="comboClassContext" class="badge">Noe class sélectionnée</div>
+          <div id="comboClassContext" class="badge">None class sélectionnée</div>
         </div>
         <span class="verified-badge">Validated combos</span>
       </div>
@@ -6337,7 +6337,7 @@ if(!BDO_DOM_READY){
       <div class="combo-header player-combos-header">
         <div>
           <h2>Player combos</h2>
-          <div id="playerCombosContext" class="badge">Noe class sélectionnée</div>
+          <div id="playerCombosContext" class="badge">None class sélectionnée</div>
         </div>
         <div class="community101-header-actions">
           <span id="communityVerifyThresholdBadgeV101" class="community101-threshold-badge">Vérification : 10 Like</span>
@@ -6467,7 +6467,7 @@ if(!BDO_DOM_READY){
           <div class="addon87-actions">
             <button type="button" onclick="oldApplyCrystalPreset('pve')">Preset PvE</button>
             <button type="button" onclick="oldApplyCrystalPreset('pvp')">Preset PvP</button>
-            <button type="button" onclick="oldApplyCrystalPreset('')">Noe</button>
+            <button type="button" onclick="oldApplyCrystalPreset('')">None</button>
           </div>
         </div>
 
@@ -6696,7 +6696,7 @@ if(!BDO_DOM_READY){
           </div>
 
           <div id="timingVideoStatus" class="result small">
-            Noe vidéo chargée.
+            None vidéo chargée.
           </div>
 
           <video id="timingVideo"
@@ -6894,7 +6894,7 @@ if(!BDO_DOM_READY){
           <h2>Settings</h2>
           <p>Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.</p>
         </div>
-        <div id="settingsClassContext" class="badge settings81-context">Noe class sélectionnée</div>
+        <div id="settingsClassContext" class="badge settings81-context">None class sélectionnée</div>
       </div>
 
       <section class="full-backup-panel-v48">
@@ -6915,7 +6915,7 @@ if(!BDO_DOM_READY){
         <div class="full-backup-options-v48">
           <label class="full-backup-checkbox-v89"><input id="fullBackupReplaceV48" type="checkbox" checked><span>Replace local BDO Combos Labs data during restore</span></label>
         </div>
-        <div id="fullBackupStatusV48" class="optimizer-note">Noe sauvegarde exportée pendant cette session.</div>
+        <div id="fullBackupStatusV48" class="optimizer-note">None sauvegarde exportée pendant cette session.</div>
       </section>
 
       <div class="settings81-section-head"><span>01</span><div><h3>Optimization</h3><p>Define the general profile and target type.</p></div></div>
@@ -6967,12 +6967,12 @@ if(!BDO_DOM_READY){
     <span>Usage</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Skills minimum</b><small>Namebre minimum de compétences souhaité dans un combo généré.</small></div>
+    <div class="settings92-name"><b>Skills minimum</b><small>Nombre minimum de compétences souhaité dans un combo généré.</small></div>
     <div class="settings92-control"><input id="autoBuildMinSkills" type="number" min="1" max="30" value="3" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinSkills">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Skills maximum</b><small>Namebre maximum de compétences autorisé dans le combo.</small></div>
+    <div class="settings92-name"><b>Skills maximum</b><small>Nombre maximum de compétences autorisé dans le combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxSkills" type="number" min="1" max="30" value="8" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxSkills">Automatique</div>
   </div>
@@ -7010,7 +7010,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildAllowReuse">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Max reps. by skill</b><small>Namebre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.</small></div>
+    <div class="settings92-name"><b>Max reps. by skill</b><small>Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxRepeat" type="number" min="1" max="10" value="1" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxRepeat">Automatique</div>
   </div>
@@ -7029,12 +7029,12 @@ if(!BDO_DOM_READY){
     <span>Usage</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Namebre minimum de CC</b><small>Namebre minimum d’effets CC que l’optimiseur doit rechercher.</small></div>
+    <div class="settings92-name"><b>Nombre minimum de CC</b><small>Nombre minimum d’effets CC que l’optimiseur doit rechercher.</small></div>
     <div class="settings92-control"><input id="autoBuildMinCC" type="number" min="0" max="10" value="0" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinCC">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Namebre maximum de CC</b><small>Namebre maximum d’effets CC autorisés par les contraintes du Builder.</small></div>
+    <div class="settings92-name"><b>Nombre maximum de CC</b><small>Nombre maximum d’effets CC autorisés par les contraintes du Builder.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxCC" type="number" min="0" max="10" value="10" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxCC">Automatique</div>
   </div>
@@ -7195,22 +7195,22 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row">
-    <div class="phase90-name"><b>ENDisher</b><small>End of chain / exit</small></div>
-    <select id="autoBuildENDisherEnabled" onchange="saveAutoBuildSettings()">
+    <div class="phase90-name"><b>Finisher</b><small>End of chain / exit</small></div>
+    <select id="autoBuildFinisherEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Enabled</option>
       <option value="false">Disabled</option>
     </select>
-    <input id="autoBuildENDisherMaxSkills" type="number" min="0" max="20" value="1" onchange="saveAutoBuildSettings()">
+    <input id="autoBuildFinisherMaxSkills" type="number" min="0" max="20" value="1" onchange="saveAutoBuildSettings()">
     <span class="phase90-none">—</span>
   </div>
 </div>
 
       <div class="optimizer-note" style="margin-top:8px">
-        Optimizer respectera l’ordre : Engage → Setup → CC → Burst → ENDisher et tiendra compte des durées measureds des transitions.
+        Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions.
         Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
       </div>
 
-      <div class="settings81-section-head"><span>08</span><div><h3>Filters avancés</h3><p>Controls data quality and stance changes.</p></div></div>
+      <div class="settings81-section-head"><span>08</span><div><h3>Filtres avancés</h3><p>Controls data quality and stance changes.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Setting</span>
@@ -7279,11 +7279,11 @@ if(!BDO_DOM_READY){
 'use strict';
 
 // Base volontairement vide.
-// Noe dataset, aucune compétence, aucune class, aucun combo,
+// None dataset, aucune compétence, aucune class, aucun combo,
 // aucun loader, aucun import et aucun fallback.
 
 const APP_STATE = Object.freeze({
-  classs: [],
+  classes: [],
   skills: [],
   combos: [],
   transitions: [],
@@ -7396,11 +7396,11 @@ function collectSkillEffects(skill){
 
 function builderParseNumericV53(value){
   if(value===undefined||value===null||value==='')return null;
-  if(typeof value==='number')return Number.isENDite(value)?value:null;
+  if(typeof value==='number')return Number.isFinite(value)?value:null;
   if(Array.isArray(value)){
     for(const v of value){
       const n=builderParseNumericV53(v);
-      if(Number.isENDite(n))return n;
+      if(Number.isFinite(n))return n;
     }
     return null;
   }
@@ -7409,12 +7409,12 @@ function builderParseNumericV53(value){
   const m=raw.match(/-?\d+(?:\.\d+)?/);
   if(!m)return null;
   const n=Number(m[0]);
-  return Number.isENDite(n)?n:null;
+  return Number.isFinite(n)?n:null;
 }
 
 function builderParseSecondsStrictV53(value){
   if(value===undefined||value===null||value==='')return null;
-  if(typeof value==='number')return Number.isENDite(value)&&value>=0?value:null;
+  if(typeof value==='number')return Number.isFinite(value)&&value>=0?value:null;
   const raw=String(value).trim().toLowerCase().replace(',','.');
   if(!raw||raw==='—'||raw==='-')return null;
   if(/\binstant\b/.test(raw))return 0;
@@ -7423,7 +7423,7 @@ function builderParseSecondsStrictV53(value){
   const sec=raw.match(/(-?\d+(?:\.\d+)?)\s*(?:s|sec|secs|second|seconds)\b/);
   if(sec)return Math.max(0,Number(sec[1]));
   const plain=Number(raw);
-  return Number.isENDite(plain)&&plain>=0?plain:null;
+  return Number.isFinite(plain)&&plain>=0?plain:null;
 }
 
 function builderSkillResolveV53(name){
@@ -7450,7 +7450,7 @@ function skillPveDamageValue(skill){
   const candidates=[skill?.pveDamage,skill?.damage,skill?.damageCoefficient,skill?.coefficient];
   for(const value of candidates){
     const n=builderParseNumericV53(value);
-    if(Number.isENDite(n)&&n!==0)return n;
+    if(Number.isFinite(n)&&n!==0)return n;
   }
   return null;
 }
@@ -7459,30 +7459,30 @@ function skillPvpRatioValue(skill){
   const candidates=[skill?.pvpRatio,skill?.pvp_ratio,skill?.pvpDamageRatio,skill?.pvp_damage_ratio];
   for(const value of candidates){
     const n=builderParseNumericV53(value);
-    if(Number.isENDite(n)&&n>0)return n;
+    if(Number.isFinite(n)&&n>0)return n;
   }
   return null;
 }
 
 function skillPvpDamageValue(skill){
   const explicit=builderParseNumericV53(skill?.pvpDamage);
-  if(Number.isENDite(explicit)&&explicit!==0)return explicit;
+  if(Number.isFinite(explicit)&&explicit!==0)return explicit;
   const pve=skillPveDamageValue(skill);
   const ratio=skillPvpRatioValue(skill);
-  if(Number.isENDite(pve)&&Number.isENDite(ratio))return pve*(ratio/100);
+  if(Number.isFinite(pve)&&Number.isFinite(ratio))return pve*(ratio/100);
   return null;
 }
 
 function skillHitsValue(skill){
   const h = Number(skill?.hits);
-  return Number.isENDite(h) && h > 0 ? h : null;
+  return Number.isFinite(h) && h > 0 ? h : null;
 }
 
 function skillPveDamageDisplay(skill){
   const pve = skillPveDamageValue(skill);
   const hits = skillHitsValue(skill);
 
-  if(!Number.isENDite(pve)) return '—';
+  if(!Number.isFinite(pve)) return '—';
 
   const base = Number.isInteger(pve) ? String(pve) : pve.toFixed(2);
   return hits ? `${base}% × ${hits}` : `${base}%`;
@@ -7493,7 +7493,7 @@ function skillPvpDamageDisplay(skill){
   const ratio = skillPvpRatioValue(skill);
   const hits = skillHitsValue(skill);
 
-  if(!Number.isENDite(pvp)){
+  if(!Number.isFinite(pvp)){
     return ratio ? `${ratio}% PvP ratio` : '—';
   }
 
@@ -7622,7 +7622,7 @@ function skillRankInfo(skill){
     rankLabel:rankLabel || '',
     rankOrder:romanValue !== null
       ? romanValue
-      : (Number.isENDite(numericValue) ? numericValue : 0),
+      : (Number.isFinite(numericValue) ? numericValue : 0),
     fullName:fullName || baseName || 'Unnamed skill'
   };
 }
@@ -7795,18 +7795,18 @@ function skillFullDamageDisplay(skill, mode){
       const hits = Number(skill?.hits);
       const ratio = skill?.pvpRatio ?? skill?.pvp_ratio;
       let text = `${direct}%`;
-      if(Number.isENDite(hits) && hits > 0) text += ` × ${hits}`;
+      if(Number.isFinite(hits) && hits > 0) text += ` × ${hits}`;
       if(ratio !== undefined && ratio !== null && ratio !== '') text += ` · ${ratio}% ratio`;
       return text;
     }
 
     const pve = Number(skill?.pveDamage ?? skill?.damage);
     const ratio = Number(skill?.pvpRatio ?? skill?.pvp_ratio);
-    if(Number.isENDite(pve) && Number.isENDite(ratio)){
+    if(Number.isFinite(pve) && Number.isFinite(ratio)){
       const calc = pve * ratio / 100;
       const hits = Number(skill?.hits);
       let text = `${Number.isInteger(calc) ? calc : calc.toFixed(2)}%`;
-      if(Number.isENDite(hits) && hits > 0) text += ` × ${hits}`;
+      if(Number.isFinite(hits) && hits > 0) text += ` × ${hits}`;
       text += ` · ${ratio}% ratio`;
       return text;
     }
@@ -7818,7 +7818,7 @@ function skillFullDamageDisplay(skill, mode){
 
   const hits = Number(skill?.hits);
   let text = `${pve}%`;
-  if(Number.isENDite(hits) && hits > 0) text += ` × ${hits}`;
+  if(Number.isFinite(hits) && hits > 0) text += ` × ${hits}`;
   return text;
 }
 
@@ -7920,7 +7920,7 @@ function skillsTableCCDurationV52(skill){
     const direct=typeof builderParseSecondsV33==='function'
       ? builderParseSecondsV33(value)
       : Number(value);
-    if(Number.isENDite(direct)&&direct>0){
+    if(Number.isFinite(direct)&&direct>0){
       return `${Number(direct).toFixed(3)} s`;
     }
   }
@@ -7928,7 +7928,7 @@ function skillsTableCCDurationV52(skill){
   const fps=Number(skill?.ccValidatedFPS??skill?.ccMeasureFPS);
   const start=Number(skill?.ccValidatedStartFrame??skill?.ccStartFrame);
   const end=Number(skill?.ccValidatedEndFrame??skill?.ccEndFrame);
-  if(Number.isENDite(fps)&&fps>0&&Number.isENDite(start)&&Number.isENDite(end)&&end>start){
+  if(Number.isFinite(fps)&&fps>0&&Number.isFinite(start)&&Number.isFinite(end)&&end>start){
     return `${((end-start)/fps).toFixed(3)} s`;
   }
   return '—';
@@ -7937,10 +7937,10 @@ function skillsTableCCDurationV52(skill){
 function skillsTableCCDurationStatusV55(skill){
   const value=skillsTableCCDurationV52(skill);
   if(value==='—')return '';
-  if(Number.isENDite(Number(skill?.ccValidatedDuration)))return 'validated';
+  if(Number.isFinite(Number(skill?.ccValidatedDuration)))return 'validée';
   const status=String(skill?.ccMeasureStatus||'').toLowerCase();
-  if(status==='validated')return 'validated';
-  if(status==='auto-pending' || Number.isENDite(Number(skill?.ccAutoMeasuredDuration)))return 'auto';
+  if(status==='validated')return 'validée';
+  if(status==='auto-pending' || Number.isFinite(Number(skill?.ccAutoMeasuredDuration)))return 'auto';
   return '';
 }
 
@@ -7971,7 +7971,7 @@ function skillsRawStoreV72(className,spec){
   return CLASS_SKILLS[className][spec];
 }
 
-function skillsENDdRawItemV72(className,spec,item){
+function skillsFindRawItemV72(className,spec,item){
   const store=skillsRawStoreV72(className,spec);
   if(!store)return null;
   if(store.includes(item))return item;
@@ -8081,7 +8081,7 @@ function skillsReplaceNameInReferencesV72(className,spec,oldName,newName){
 }
 
 function skillsRenameV72(item,className,spec,newName){
-  const raw=skillsENDdRawItemV72(className,spec,item);
+  const raw=skillsFindRawItemV72(className,spec,item);
   if(!raw||typeof raw!=='object')return {ok:false,message:'Skill not found in active list.'};
 
   const name=skillsNormalizeNameV72(newName);
@@ -8103,7 +8103,7 @@ function skillsRenameV72(item,className,spec,newName){
 }
 
 function skillsDeleteV72(item,className,spec){
-  const raw=skillsENDdRawItemV72(className,spec,item);
+  const raw=skillsFindRawItemV72(className,spec,item);
   const store=skillsRawStoreV72(className,spec);
   if(!raw||!store)return false;
 
@@ -8177,7 +8177,7 @@ function skillsManualAddV72(){
   if(rawName===null)return;
   const name=skillsNormalizeNameV72(rawName);
   if(!name){
-    if(status)status.textContent='Name vide : aucune compétence ajoutée.';
+    if(status)status.textContent='Nom vide : aucune compétence ajoutée.';
     return;
   }
 
@@ -8229,7 +8229,7 @@ function skillsTableCreateEditor(item,className,spec,baseName){
   const grid=document.createElement('div');
   grid.className='skills-editor-grid';
   const scalar=[
-    ['Name','__skillNameV72','text',''],
+    ['Nom','__skillNameV72','text',''],
     ['Input','input','text',''],['Cooldown (s)','cooldown','number','0.01'],['Timer / Animation','timer','text',''],
     ['PvE Damage','pveDamage','text',''],['PvP Damage','pvpDamage','text',''],['PvP Ratio (%)','pvpRatio','number','0.01'],
     ['Accuracy (%)','accuracy','number','0.1'],['Critical Rate (%)','critRate','number','0.1'],['Hits','hits','number','1'],
@@ -8267,7 +8267,7 @@ function skillsTableCreateEditor(item,className,spec,baseName){
         const fps=Number(item.ccMeasureFPS);
         const a=Number(item.ccStartFrame);
         const b=Number(item.ccEndFrame);
-        if(Number.isENDite(fps)&&fps>0&&Number.isENDite(a)&&Number.isENDite(b)&&b>a){
+        if(Number.isFinite(fps)&&fps>0&&Number.isFinite(a)&&Number.isFinite(b)&&b>a){
           item.ccMeasuredDuration=Number(((b-a)/fps).toFixed(4));
         }
       }
@@ -8293,8 +8293,8 @@ function skillsTableCreateEditor(item,className,spec,baseName){
   });
   wrap.appendChild(grid);
   const actions=document.createElement('div');actions.className='skills-editor-actions';
-  const del=document.createElement('button');del.type='button';del.className='tab-btn skills-delete-btn-v72';del.textContent='Delete la compétence';del.onclick=()=>skillsDeleteV72(item,className,spec);
-  const close=document.createElement('button');close.type='button';close.className='tab-btn';close.textContent='Close';close.onclick=()=>skillsTableToggleDetail(`${className}::${spec}::${baseName}`);
+  const del=document.createElement('button');del.type='button';del.className='tab-btn skills-delete-btn-v72';del.textContent='Supprimer la compétence';del.onclick=()=>skillsDeleteV72(item,className,spec);
+  const close=document.createElement('button');close.type='button';close.className='tab-btn';close.textContent='Fermer';close.onclick=()=>skillsTableToggleDetail(`${className}::${spec}::${baseName}`);
   actions.append(del,close);wrap.appendChild(actions);
   return wrap;
 }
@@ -8312,7 +8312,7 @@ function renderSkillsPage(){
   const sortEl=document.getElementById('skillsTableSort'); if(sortEl)sortEl.value=SKILLS_TABLE_STATE.sort;
 
   if(!className){
-    context.textContent='Noe class sélectionnée';content.className='page-placeholder';content.textContent='First select a class.';
+    context.textContent='Aucune class sélectionnée';content.className='page-placeholder';content.textContent='First select a class.';
     ['skillsSummaryTotal','skillsSummaryEnabled','skillsSummaryInput','skillsSummaryCombat'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent='0';});
     const ref=document.getElementById('skillsReferenceActive');if(ref)ref.textContent='—';return;
   }
@@ -8407,8 +8407,8 @@ function renderSkillsPage(){
     const statusTd=document.createElement('td');const statusBtn=document.createElement('button');statusBtn.type='button';statusBtn.className='skills-status-pill '+(item?.enabled===false?'off':'on');statusBtn.textContent=item?.enabled===false?'Disabled':'Enabled';statusBtn.onclick=()=>{item.enabled=item.enabled===false;saveImportedAnalyzerData();saveSkillActivationState();renderSkillsPage();if(typeof renderComboBuilder==='function')renderComboBuilder();};statusTd.appendChild(statusBtn);tr.appendChild(statusTd);
     const actTd=document.createElement('td');actTd.className='skills-actions-cell';
     const view=document.createElement('button');view.type='button';view.className='skills-icon-btn view';view.title='Voir / modifier';view.textContent='✎';view.onclick=()=>skillsTableToggleDetail(key);
-    const toggle=document.createElement('button');toggle.type='button';toggle.className='skills-icon-btn';toggle.title=item?.enabled===false?'Activer':'Disable';toggle.textContent=item?.enabled===false?'✓':'⊘';toggle.onclick=()=>{item.enabled=item.enabled===false;saveImportedAnalyzerData();saveSkillActivationState();renderSkillsPage();};
-    const del=document.createElement('button');del.type='button';del.className='skills-icon-btn skills-row-delete-v72';del.title='Delete';del.textContent='×';del.onclick=()=>skillsDeleteV72(item,className,spec);
+    const toggle=document.createElement('button');toggle.type='button';toggle.className='skills-icon-btn';toggle.title=item?.enabled===false?'Activer':'Désactiver';toggle.textContent=item?.enabled===false?'✓':'⊘';toggle.onclick=()=>{item.enabled=item.enabled===false;saveImportedAnalyzerData();saveSkillActivationState();renderSkillsPage();};
+    const del=document.createElement('button');del.type='button';del.className='skills-icon-btn skills-row-delete-v72';del.title='Supprimer';del.textContent='×';del.onclick=()=>skillsDeleteV72(item,className,spec);
     actTd.append(view,toggle,del);tr.appendChild(actTd);
     tbody.appendChild(tr);
 
@@ -8719,7 +8719,7 @@ function playerComboWeight(pattern){
   }
 
   const direct = Number(pattern?.weight ?? pattern?.priority);
-  if(Number.isENDite(direct)) return direct;
+  if(Number.isFinite(direct)) return direct;
 
   const confidence = String(pattern?.confidence || '').toLowerCase();
   if(/community-verified|handbook-documented|user-confirmed/.test(confidence)) return 1.55;
@@ -8984,7 +8984,7 @@ function renderPlayerCombosPage(){
   if(!context || !summary || !list) return;
 
   if(!className){
-    context.textContent = 'Noe class sélectionnée';
+    context.textContent = 'Aucune class sélectionnée';
     summary.innerHTML = '';
     list.innerHTML =
       '<div class="page-placeholder">Sélectionne une class dans l’onglet Class.</div>';
@@ -9044,7 +9044,7 @@ function renderPlayerCombosPage(){
 
   if(!shown.length){
     list.innerHTML =
-      '<div class="page-placeholder">Noe référence joueur pour ces filtres.</div>';
+      '<div class="page-placeholder">None référence joueur pour ces filtres.</div>';
     return;
   }
 
@@ -9119,7 +9119,7 @@ function renderPlayerCombosPage(){
     const append = document.createElement('button');
     append.type = 'button';
     append.className = 'tab-btn';
-    append.textContent = 'Add à la suite';
+    append.textContent = 'Ajouter à la suite';
     append.onclick = () => loadPlayerComboIntoBuilder(realIndex,true);
 
     actions.append(load,append);
@@ -9167,7 +9167,7 @@ function renderPlayerCombosPage(){
 
     const source = document.createElement('span');
     source.textContent =
-      `Source : ${pattern.sourceTag || pattern.source || pattern.importedBy || 'Community'}`;
+      `Source : ${pattern.sourceTag || pattern.source || pattern.importedBy || 'Communauté'}`;
 
     const availability = document.createElement('span');
     availability.textContent =
@@ -9219,7 +9219,7 @@ function renderComboPage(){
   if(!context || !content) return;
 
   if(!className){
-    context.textContent = 'Noe class sélectionnée';
+    context.textContent = 'Aucune class sélectionnée';
     content.className = 'page-placeholder';
     content.textContent = 'Sélectionne d’abord une class dans l’onglet Class.';
     return;
@@ -9264,7 +9264,7 @@ function renderComboPage(){
 
     const verified = document.createElement('span');
     verified.className = 'verified-badge';
-    verified.textContent = '✓ Verified';
+    verified.textContent = '✓ Vérifié';
     meta.appendChild(verified);
 
     if(combo?.communityVerified){
@@ -9402,8 +9402,8 @@ const AUTO_BUILD_FIELDS = {
   pvpReccThreshold:'autoBuildPvpReccThreshold',
   burstEnabled:'autoBuildBurstEnabled',
   burstMaxSkills:'autoBuildBurstMaxSkills',
-  finisherEnabled:'autoBuildENDisherEnabled',
-  finisherMaxSkills:'autoBuildENDisherMaxSkills',
+  finisherEnabled:'autoBuildFinisherEnabled',
+  finisherMaxSkills:'autoBuildFinisherMaxSkills',
   requireVerified:'autoBuildRequireVerified',
   preferVerified:'autoBuildPreferVerified',
   requireKnownTransition:'autoBuildRequireKnownTransition',
@@ -9791,7 +9791,7 @@ function saveAutoBuildSettings(){
     localStorage.setItem('bdoCombosLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Settings enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' settings.';
+  if(status) status.textContent = 'Réglages enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' settings.';
   syncSettingsClassContext();
 }
 
@@ -9815,18 +9815,18 @@ function resetAutoBuildSettings(){
   applyAutoBuildSettingsToUI();
   try{ localStorage.setItem('bdoCombosLabs.autoBuildSettings',JSON.stringify(AUTO_BUILD_SETTINGS)); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Settings Auto-Build réinitialisés.';
+  if(status) status.textContent = 'Réglages Auto-Build réinitialisés.';
 }
 
 function optimizerModeLabel(mode){
   const labels = {
-    balanced:'Balance',
+    balanced:'Équilibré',
     damage:'Maximum damage',
     burst:'Burst court',
     cc:'CC Priority',
     protected:'Protection priority',
     speed:'Speed/fluidity',
-    mobility:'Mobility',
+    mobility:'Mobilité',
     sustain:'Sustain/safety'
   };
   return labels[mode] || mode;
@@ -9856,38 +9856,38 @@ function optimizerTransitionTimingV46Original(fromName,toName){
     tr.cancelAt,
     tr.timer,
     tr.duration
-  ].map(Number).find(v => Number.isENDite(v) && v >= 0);
+  ].map(Number).find(v => Number.isFinite(v) && v >= 0);
 
   const frames = [
     tr.timingFrames,
     tr.cancelFrames,
     tr.frames
-  ].map(Number).find(v => Number.isENDite(v) && v >= 0);
+  ].map(Number).find(v => Number.isFinite(v) && v >= 0);
 
   const fps = Number(tr.timingFPS ?? tr.fps);
 
-  const seconds = Number.isENDite(directSeconds)
+  const seconds = Number.isFinite(directSeconds)
     ? directSeconds
     : (
-        Number.isENDite(frames) &&
-        Number.isENDite(fps) &&
+        Number.isFinite(frames) &&
+        Number.isFinite(fps) &&
         fps > 0
           ? frames / fps
           : null
       );
 
   const attempts = Number(tr.timingAttempts ?? tr.attempts);
-  const measuredAttempts = Number.isENDite(attempts) && attempts > 0 ? attempts : 0;
+  const measuredAttempts = Number.isFinite(attempts) && attempts > 0 ? attempts : 0;
 
   let confidence = 0.35;
-  if(Number.isENDite(seconds)){
+  if(Number.isFinite(seconds)){
     confidence = measuredAttempts >= 3 ? 1.0 : measuredAttempts >= 2 ? 0.85 : 0.70;
   }
 
   return {
-    seconds: Number.isENDite(seconds) ? seconds : null,
-    frames: Number.isENDite(frames) ? frames : null,
-    fps: Number.isENDite(fps) && fps > 0 ? fps : null,
+    seconds: Number.isFinite(seconds) ? seconds : null,
+    frames: Number.isFinite(frames) ? frames : null,
+    fps: Number.isFinite(fps) && fps > 0 ? fps : null,
     attempts: measuredAttempts,
     confidence,
     raw: tr
@@ -9917,7 +9917,7 @@ function optimizerTransitionTiming(fromName,toName){
     });
     const best=ranked[0];
     const seconds=Number(best?.timingSeconds??best?.transitionSeconds??best?.duration);
-    if(Number.isENDite(seconds)&&seconds>=0){
+    if(Number.isFinite(seconds)&&seconds>=0){
       return {
         seconds,
         measured:true,
@@ -9936,7 +9936,7 @@ function optimizerTransitionTiming(fromName,toName){
 function safeTransitionSecondsV58(timing){
   if(!timing || typeof timing!=='object')return null;
   const seconds=Number(timing?.seconds);
-  return Number.isENDite(seconds) && seconds>=0 ? seconds : null;
+  return Number.isFinite(seconds) && seconds>=0 ? seconds : null;
 }
 
 function optimizerSequenceTiming(sequence){
@@ -9954,7 +9954,7 @@ function optimizerSequenceTiming(sequence){
     const to=typeof names[i+1]==='string'?names[i+1]:(names[i+1]?.name||'');
     const link=builderLinkTimingV61(from,to);
 
-    if(link.known && Number.isENDite(Number(link.seconds))){
+    if(link.known && Number.isFinite(Number(link.seconds))){
       total+=Number(link.seconds);
       if(link.measured)measuredLinks++;
       if(link.validated)validatedLinks++;
@@ -10137,7 +10137,7 @@ function optimizeCurrentCombo(){
     addPhase('setup','Setup',settings.setupEnabled,settings.setupMaxSkills ?? 1);
     addPhase('cc','CC',settings.ccPhaseEnabled,settings.ccPhaseMaxSkills ?? 1);
     addPhase('burst','Burst',settings.burstEnabled,settings.burstMaxSkills ?? 4);
-    addPhase('finisher','ENDisher',settings.finisherEnabled,settings.finisherMaxSkills ?? 1);
+    addPhase('finisher','Finisher',settings.finisherEnabled,settings.finisherMaxSkills ?? 1);
 
     if(!phases.length){
       phases.push(
@@ -10145,7 +10145,7 @@ function optimizeCurrentCombo(){
         {key:'setup',label:'Setup',max:1},
         {key:'cc',label:'CC',max:1},
         {key:'burst',label:'Burst',max:Math.max(2,targetSkills-4)},
-        {key:'finisher',label:'ENDisher',max:1}
+        {key:'finisher',label:'Finisher',max:1}
       );
     }
 
@@ -10170,7 +10170,7 @@ function optimizeCurrentCombo(){
       if(typeof scoreSmartBuilderSkill === 'function'){
         try{
           const scored = scoreSmartBuilderSkill(skill,phase,lastName,partialSeq);
-          if(scored && Number.isENDite(Number(scored.score))){
+          if(scored && Number.isFinite(Number(scored.score))){
             score += Number(scored.score);
             if(Array.isArray(scored.reasons)) reasons.push(...scored.reasons);
           }
@@ -10482,7 +10482,7 @@ function renderManualGoogleDocContext(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const el=document.getElementById('manualGoogleDocContext');
-  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'Noe class sélectionnée';
+  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'Aucune class sélectionnée';
 }
 
 function normalizeGuideFetchUrl(url){
@@ -10610,7 +10610,7 @@ function oldDocsDetectionMode(){
 
 function oldDocsMinConfidence(){
   const n = Number(document.getElementById('googleDocsMinConfidence')?.value || .65);
-  return Number.isENDite(n) ? Math.max(.4,Math.min(.95,n)) : .65;
+  return Number.isFinite(n) ? Math.max(.4,Math.min(.95,n)) : .65;
 }
 
 function oldDocsCanonicalText(value){
@@ -10805,7 +10805,7 @@ function oldDocsCurrentSkills(){
   return collected.filter(s=>s?.enabled!==false);
 }
 
-function oldDocsLibraryDiagnostics(){
+function oldDocsLibraryDiagnostic(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const skills=oldDocsCurrentSkills();
@@ -11561,7 +11561,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
         found.map(item=>{
           const name=typeof item==='string'?item:item?.name||'';
           const matched=typeof item==='object'&&item?.matchedExisting;
-          const conf=typeof item==='object'&&Number.isENDite(Number(item?.confidence))
+          const conf=typeof item==='object'&&Number.isFinite(Number(item?.confidence))
             ? Math.round(Number(item.confidence)*100)
             : null;
           return `<div class="old-doc-skill-card">
@@ -11572,7 +11572,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
           </div>`;
         }).join('')+
         `</div>`
-      : `<div class="result warn"><b>Noe nom de compétence extrait des chaînes du document.</b></div>`;
+      : `<div class="result warn"><b>None nom de compétence extrait des chaînes du document.</b></div>`;
   }
 
   const root=document.getElementById('manualGoogleDocResults');
@@ -11592,7 +11592,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
             <div class="old-doc-result-head"><b>${oldDocsEsc(t.kind||'transition')}</b></div>
             <div>${(t.sequence||[t.from,t.to]).filter(Boolean).map(oldDocsEsc).join(' → ')}</div>
           </div>`).join('')
-      : '<div class="result warn">Noe chaîne explicite détectée dans ce document.</div>';
+      : '<div class="result warn">None chaîne explicite détectée dans ce document.</div>';
   }
 
   return {
@@ -11744,11 +11744,11 @@ function parseBdoEffectLines(lines){
     if(dmg){
       const value = Number(String(dmg[1]).replace(',','.'));
       const hits = Number(dmg[2]);
-      if(Number.isENDite(value)){
+      if(Number.isFinite(value)){
         if(parsed.damage === null) parsed.damage = value;
         else parsed.damage = Math.max(parsed.damage,value);
       }
-      if(Number.isENDite(hits)){
+      if(Number.isFinite(hits)){
         if(parsed.hits === null) parsed.hits = hits;
         else parsed.hits = Math.max(parsed.hits,hits);
       }
@@ -11758,7 +11758,7 @@ function parseBdoEffectLines(lines){
     const maxHits = line.match(/max(?:imum)?\s+(\d+)\s+hits?/i);
     if(maxHits){
       const h = Number(maxHits[1]);
-      if(Number.isENDite(h)){
+      if(Number.isFinite(h)){
         parsed.hits = Math.max(parsed.hits || 0,h);
       }
     }
@@ -11767,28 +11767,28 @@ function parseBdoEffectLines(lines){
     const pvp = line.match(/([\d.]+)%\s+damage\s+in\s+pvp\s+only/i);
     if(pvp){
       const value = Number(pvp[1]);
-      if(Number.isENDite(value)) parsed.pvpRatio = value;
+      if(Number.isFinite(value)) parsed.pvpRatio = value;
     }
 
     // Critical hit rate
     const crit = line.match(/critical\s+hit\s+rate\s*([+-]\s*[\d.]+)%/i);
     if(crit){
       const value = Number(crit[1].replace(/\s+/g,''));
-      if(Number.isENDite(value)) parsed.critRate = value;
+      if(Number.isFinite(value)) parsed.critRate = value;
     }
 
     // Accuracy
     const acc = line.match(/accuracy\s*([+-]\s*[\d.]+)%?/i);
     if(acc){
       const value = Number(acc[1].replace(/\s+/g,''));
-      if(Number.isENDite(value)) parsed.accuracy = value;
+      if(Number.isFinite(value)) parsed.accuracy = value;
     }
 
     // Maximum targets
     const targets = line.match(/maximum\s+(\d+)\s+targets?/i);
     if(targets){
       const value = Number(targets[1]);
-      if(Number.isENDite(value)) parsed.maxTargets = value;
+      if(Number.isFinite(value)) parsed.maxTargets = value;
     }
 
     // Recovery
@@ -11796,7 +11796,7 @@ function parseBdoEffectLines(lines){
     if(recovery){
       const value = Number(recovery[1]);
       const type = recovery[2].toLowerCase();
-      if(Number.isENDite(value)){
+      if(Number.isFinite(value)){
         if(type==='hp') parsed.hpRecover = value;
         if(type==='mp') parsed.mpRecover = value;
         if(type==='wp') parsed.wpRecover = value;
@@ -11946,8 +11946,8 @@ function structuredJsonSkill(obj){
     pvpDamage:jsonFirst(obj.pvpDamage,obj.pvp_damage) !== ''
       ? jsonFirst(obj.pvpDamage,obj.pvp_damage)
       : (
-          Number.isENDite(Number(explicitDamage !== '' ? explicitDamage : bdo.damage)) &&
-          Number.isENDite(Number(explicitPvp !== '' ? explicitPvp : bdo.pvpRatio))
+          Number.isFinite(Number(explicitDamage !== '' ? explicitDamage : bdo.damage)) &&
+          Number.isFinite(Number(explicitPvp !== '' ? explicitPvp : bdo.pvpRatio))
             ? Number(explicitDamage !== '' ? explicitDamage : bdo.damage) *
               (Number(explicitPvp !== '' ? explicitPvp : bdo.pvpRatio) / 100)
             : ''
@@ -15148,7 +15148,7 @@ function autoSkillPercentOrValueV13(value){
   if(!s || s==='—' || /^none$/i.test(s)) return '';
   const cleaned=s.replace(/,/g,'').replace(/%$/,'').trim();
   const n=Number(cleaned);
-  return Number.isENDite(n) ? n : s;
+  return Number.isFinite(n) ? n : s;
 }
 
 function autoSkillReferenceToSkillV13(ref,cls,spec){
@@ -15176,7 +15176,7 @@ function autoSkillReferenceToSkillV13(ref,cls,spec){
     ownerSpec:spec,
     referenceSpec:ref?.spec || 'Shared',
     source:ref?.referenceSource || 'Dictionnaire de référence',
-    importedBy:'Search auto dictionnaire V13',
+    importedBy:'Recherche auto dictionnaire V13',
     referenceImported:true
   };
 }
@@ -15224,13 +15224,13 @@ function autoPopulateSkillsFromReferenceV13(){
     return;
   }
   if(typeof guideReferenceForCurrentClassV10!=='function'){
-    setStatus('Noe moteur de dictionnaire de référence n’est disponible.','bad');
+    setStatus('Aucun moteur de dictionnaire de référence n’est disponible.','bad');
     return;
   }
 
   const refs=guideReferenceForCurrentClassV10();
   if(!refs.length){
-    setStatus(`Noe dictionnaire de référence disponible pour ${cls} · ${spec}.`,'warn');
+    setStatus(`None dictionnaire de référence disponible pour ${cls} · ${spec}.`,'warn');
     return;
   }
 
@@ -16354,7 +16354,7 @@ function transitionReviewClassV47(tr){
   return `transition-review-${transitionReviewStatusV47(tr)}`;
 }
 
-function transitionReviewENDdV47(index){
+function transitionReviewFindV47(index){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const store=CLASS_TRANSITIONS?.[cls]?.[spec]||[];
@@ -16362,7 +16362,7 @@ function transitionReviewENDdV47(index){
 }
 
 function transitionReviewSetStatusV47(index,status){
-  const {tr}=transitionReviewENDdV47(index);
+  const {tr}=transitionReviewFindV47(index);
   if(!tr)return;
   tr.reviewStatus=status;
   tr.needsValidation=status!=='validated' && status!=='corrected';
@@ -16378,25 +16378,25 @@ function transitionReviewSetStatusV47(index,status){
 }
 
 function transitionReviewCorrectV47(index){
-  const {tr}=transitionReviewENDdV47(index);
+  const {tr}=transitionReviewFindV47(index);
   if(!tr)return;
 
   const current=Number(tr?.timingSeconds??tr?.transitionSeconds??tr?.duration??0);
-  const timingRaw=prompt('Duration de transition corrigée (secondes)', Number.isENDite(current)&&current>0?String(current):'');
+  const timingRaw=prompt('Durée de transition corrigée (secondes)', Number.isFinite(current)&&current>0?String(current):'');
   if(timingRaw===null)return;
   const timing=Number(String(timingRaw).replace(',','.'));
-  if(!Number.isENDite(timing)||timing<=0){
-    alert('Duration invalide.');
+  if(!Number.isFinite(timing)||timing<=0){
+    alert('Durée invalide.');
     return;
   }
 
   const cancelCurrent=Number(tr?.cancelAt);
   const cancelRaw=prompt('Point de cancel corrigé (secondes après la première compétence). Laisse vide si inconnu.',
-    Number.isENDite(cancelCurrent)&&cancelCurrent>=0?String(cancelCurrent):'');
+    Number.isFinite(cancelCurrent)&&cancelCurrent>=0?String(cancelCurrent):'');
   if(cancelRaw===null)return;
   const cancelText=String(cancelRaw).trim();
   const cancel=cancelText===''?null:Number(cancelText.replace(',','.'));
-  if(cancel!==null && (!Number.isENDite(cancel)||cancel<0||cancel>timing)){
+  if(cancel!==null && (!Number.isFinite(cancel)||cancel<0||cancel>timing)){
     alert('Point de cancel invalide.');
     return;
   }
@@ -16418,14 +16418,14 @@ function transitionReviewCorrectV47(index){
 }
 
 async function transitionReviewVideoV47(index){
-  const {tr}=transitionReviewENDdV47(index);
+  const {tr}=transitionReviewFindV47(index);
   const video=document.getElementById('timingVideo');
   if(!tr||!video)return;
 
   const fromTime=Number(tr?.fromTime ?? tr?.videoFromTime ?? tr?.startTime);
   const cancelAt=Number(tr?.cancelAt);
-  let t=Number.isENDite(fromTime)?fromTime:0;
-  if(Number.isENDite(cancelAt)&&cancelAt>=0)t+=cancelAt;
+  let t=Number.isFinite(fromTime)?fromTime:0;
+  if(Number.isFinite(cancelAt)&&cancelAt>=0)t+=cancelAt;
 
   try{
     if(typeof showPage==='function'){
@@ -16568,22 +16568,22 @@ function renderTransitionPage(){
       item?.cancelAt,
       item?.timer,
       item?.duration
-    ].map(Number).find(v=>Number.isENDite(v) && v >= 0);
+    ].map(Number).find(v=>Number.isFinite(v) && v >= 0);
 
     const framesCandidate = [
       item?.timingFrames,
       item?.cancelFrames,
       item?.frames
-    ].map(Number).find(v=>Number.isENDite(v) && v >= 0);
+    ].map(Number).find(v=>Number.isFinite(v) && v >= 0);
 
     const fpsCandidate = Number(item?.timingFPS ?? item?.fps);
     const attemptsCandidate = Number(item?.timingAttempts ?? item?.attempts);
 
-    const derivedSeconds = Number.isENDite(secondsCandidate)
+    const derivedSeconds = Number.isFinite(secondsCandidate)
       ? secondsCandidate
       : (
-          Number.isENDite(framesCandidate) &&
-          Number.isENDite(fpsCandidate) &&
+          Number.isFinite(framesCandidate) &&
+          Number.isFinite(fpsCandidate) &&
           fpsCandidate > 0
             ? framesCandidate / fpsCandidate
             : null
@@ -16604,13 +16604,13 @@ function renderTransitionPage(){
     };
 
     addMetric('Transition duration',
-      Number.isENDite(derivedSeconds) ? `${derivedSeconds.toFixed(4)} s` : '—');
+      Number.isFinite(derivedSeconds) ? `${derivedSeconds.toFixed(4)} s` : '—');
     addMetric('Frames',
-      Number.isENDite(framesCandidate) ? `${Math.round(framesCandidate)} frames` : '—');
+      Number.isFinite(framesCandidate) ? `${Math.round(framesCandidate)} frames` : '—');
     addMetric('Measured FPS',
-      Number.isENDite(fpsCandidate) && fpsCandidate > 0 ? `${fpsCandidate} FPS` : '—');
+      Number.isFinite(fpsCandidate) && fpsCandidate > 0 ? `${fpsCandidate} FPS` : '—');
     addMetric('Measurements',
-      Number.isENDite(attemptsCandidate) && attemptsCandidate > 0
+      Number.isFinite(attemptsCandidate) && attemptsCandidate > 0
         ? String(Math.round(attemptsCandidate))
         : '—');
 
@@ -16681,8 +16681,8 @@ function builderOrientationStorageKey(){
 
 function builderOrientationLabelV71(value){
   const v=String(value||'awakening').toLowerCase();
-  if(v==='mixed')return 'Mixed';
-  if(v==='preawak')return 'Pre-Awakening';
+  if(v==='mixed')return 'Mixte';
+  if(v==='preawak')return 'Pré-Awakening';
   return 'Awakening';
 }
 
@@ -16989,7 +16989,7 @@ function smartBuilderPhase(){
     {key:'setup', label:'Setup', enabled:settings.setupEnabled !== false, max:Number(settings.setupMaxSkills ?? 2)},
     {key:'cc', label:'CC', enabled:settings.ccPhaseEnabled !== false, max:Number(settings.ccPhaseMaxSkills ?? 2)},
     {key:'burst', label:'Burst', enabled:settings.burstEnabled !== false, max:Number(settings.burstMaxSkills ?? 4)},
-    {key:'finisher', label:'ENDisher', enabled:settings.finisherEnabled !== false, max:Number(settings.finisherMaxSkills ?? 1)},
+    {key:'finisher', label:'Finisher', enabled:settings.finisherEnabled !== false, max:Number(settings.finisherMaxSkills ?? 1)},
   ].filter(x=>x.enabled && x.max>0);
 
   if(seq.length === 0){
@@ -17025,7 +17025,7 @@ function smartBuilderSkillRole(skill){
 
 function smartBuilderCooldown(skill){
   const cd = Number(skill?.cooldown ?? skill?.cd);
-  return Number.isENDite(cd) && cd >= 0 ? cd : null;
+  return Number.isFinite(cd) && cd >= 0 ? cd : null;
 }
 
 function smartBuilderDamage(skill){
@@ -17035,7 +17035,7 @@ function smartBuilderDamage(skill){
     skill?.damage,
     skill?.damageCoefficient,
     skill?.coefficient
-  ].map(Number).filter(Number.isENDite);
+  ].map(Number).filter(Number.isFinite);
   return vals.length ? Math.max(...vals) : 0;
 }
 
@@ -17082,7 +17082,7 @@ function smartBuilderTransitionBonus(fromName,toName){
   const cancelWeight=Math.max(0,Number(settings?.cancelWeight??4));
   const requireKnown=Boolean(settings?.requireKnownTransition);
 
-  if(!link || !link.known || !Number.isENDite(Number(link.seconds))){
+  if(!link || !link.known || !Number.isFinite(Number(link.seconds))){
     return {
       score:requireKnown?-8:-2,
       reason:requireKnown?'Unknown transition · strong penalty':'Unknown transition',
@@ -17095,7 +17095,7 @@ function smartBuilderTransitionBonus(fromName,toName){
   const measured=Boolean(link.measured);
   const validated=Boolean(link.validated);
   const hasCancel=Boolean(link.hasCancel);
-  const cancelAt=Number.isENDite(Number(link.cancelAt))?Number(link.cancelAt):null;
+  const cancelAt=Number.isFinite(Number(link.cancelAt))?Number(link.cancelAt):null;
 
   let score=measured?5.0:1.5;
   if(validated)score+=3.0;
@@ -17111,11 +17111,11 @@ function smartBuilderTransitionBonus(fromName,toName){
 
   const parts=[
     `Transition ${seconds.toFixed(3)}s`,
-    measured?(validated?'validated':'measured'):'estimated'
+    measured?(validated?'validée':'mesurée'):'estimée'
   ];
   if(hasCancel){
     parts.push(cancelAt!==null?`Cancel ${cancelAt.toFixed(3)}s`:'Cancel');
-    parts.push(validated?'valid':'auto');
+    parts.push(validated?'validé':'auto');
   }
 
   return {
@@ -17381,9 +17381,9 @@ function builderCombatModeV68(){
 
 function builderPvpReccThresholdV68(){
   const ui=Number(document.getElementById('autoBuildPvpReccThreshold')?.value);
-  if(Number.isENDite(ui))return Math.min(1.5,Math.max(.05,ui));
+  if(Number.isFinite(ui))return Math.min(1.5,Math.max(.05,ui));
   const saved=Number(AUTO_BUILD_SETTINGS?.pvpReccThreshold);
-  return Number.isENDite(saved)?Math.min(1.5,Math.max(.05,saved)):.35;
+  return Number.isFinite(saved)?Math.min(1.5,Math.max(.05,saved)):.35;
 }
 
 function builderPvpReccStateV68(sequence=getBuilderSequence()){
@@ -17399,13 +17399,13 @@ function builderPvpReccStateV68(sequence=getBuilderSequence()){
 
   // If official immunity is already active, another CC cannot be applied.
   if(ccState?.immune){
-    return {required:false,reason:'immunity',remaining:Number.isENDite(remaining)?remaining:null,threshold};
+    return {required:false,reason:'immunity',remaining:Number.isFinite(remaining)?remaining:null,threshold};
   }
 
   const required=Boolean(
     timeline?.ccTimerKnown &&
     timeline?.timelineComplete &&
-    Number.isENDite(remaining) &&
+    Number.isFinite(remaining) &&
     remaining>0 &&
     remaining<=threshold
   );
@@ -17413,7 +17413,7 @@ function builderPvpReccStateV68(sequence=getBuilderSequence()){
   return {
     required,
     reason:required?'critical-window':'normal',
-    remaining:Number.isENDite(remaining)?remaining:null,
+    remaining:Number.isFinite(remaining)?remaining:null,
     threshold
   };
 }
@@ -17446,14 +17446,14 @@ function builderPvpReccCandidateV68(skill,sequence=getBuilderSequence()){
   if(lastName && skill?.name && typeof builderLinkTimingV61==='function'){
     const link=builderLinkTimingV61(lastName,skill.name);
 
-    if(!link?.known || !Number.isENDite(Number(link.seconds))){
+    if(!link?.known || !Number.isFinite(Number(link.seconds))){
       return {
         allowed:true,
         preferred:false,
         timingKnown:false,
         hardRejected:false,
         ...state,
-        reason:'CC valide · transition non measured'
+        reason:'CC valide · transition non mesurée'
       };
     }
 
@@ -17656,7 +17656,7 @@ function scoreSmartBuilderSkill(skill,phase,lastSkillName,sequenceOverride=null)
   }
 
   const timer=Number(skill?.timer ?? skill?.duration ?? skill?.timingSeconds);
-  if(Number.isENDite(timer) && timer>0){
+  if(Number.isFinite(timer) && timer>0){
     score += Math.max(0,.6-timer*.25);
     if(timer<1) reasons.push('Fast animation');
   }
@@ -17786,7 +17786,7 @@ function bindRealtimePlayerSuggestionRefresh(){
     'autoBuildSetupEnabled','autoBuildSetupMaxSkills',
     'autoBuildCCPhaseEnabled','autoBuildCCPhaseMaxSkills',
     'autoBuildBurstEnabled','autoBuildBurstMaxSkills',
-    'autoBuildENDisherEnabled','autoBuildENDisherMaxSkills',
+    'autoBuildFinisherEnabled','autoBuildFinisherMaxSkills',
     'builderManualSkillSelect'
   ];
 
@@ -17913,7 +17913,7 @@ function renderSmartBuilderSuggestions(){
     if(!previousNameV73){
       linkMeta.innerHTML='<span>CHAIN</span><strong>First skill</strong>';
     }else if(linkV73?.known){
-      linkMeta.innerHTML=`<span>CHAIN</span><strong>${escapeHtml(linkV73.seconds.toFixed(3)+' s')}</strong><b>${escapeHtml(linkV73.measured?(linkV73.validated?'Transition validated':'Measured transition'):'Estimated timing')}</b>${linkV73.hasCancel?`<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · valid':''}</em>`:''}`;
+      linkMeta.innerHTML=`<span>CHAIN</span><strong>${escapeHtml(linkV73.seconds.toFixed(3)+' s')}</strong><b>${escapeHtml(linkV73.measured?(linkV73.validated?'Transition validée':'Measured transition'):'Estimated timing')}</b>${linkV73.hasCancel?`<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · validé':''}</em>`:''}`;
     }else{
       linkMeta.innerHTML='<span>CHAIN</span><strong>Unknown transition</strong>';
       linkMeta.classList.add('unknown');
@@ -17963,17 +17963,17 @@ function builderSkillDamage(skill){
 
   if(String(mode).toLowerCase()==='pvp'){
     const pvp = skillPvpDamageValue(skill);
-    if(Number.isENDite(pvp)) return pvp;
+    if(Number.isFinite(pvp)) return pvp;
   }
 
   const pve = skillPveDamageValue(skill);
-  if(Number.isENDite(pve)) return pve;
+  if(Number.isFinite(pve)) return pve;
 
   const vals = [
     skill?.damage,
     skill?.damageCoefficient,
     skill?.coefficient
-  ].map(Number).filter(Number.isENDite);
+  ].map(Number).filter(Number.isFinite);
 
   return vals.length ? Math.max(...vals) : 0;
 }
@@ -18120,7 +18120,7 @@ function builderDOMMetricsV54(){
   for(let i=0;i<totalLinks;i++){
     try{
       const tr=typeof optimizerTransitionTiming==='function'?optimizerTransitionTiming(seq[i],seq[i+1]):null;
-      if(tr && Number.isENDite(Number(tr.seconds)) && Number(tr.seconds)>=0){
+      if(tr && Number.isFinite(Number(tr.seconds)) && Number(tr.seconds)>=0){
         measuredLinks++;
         transitionTime+=Number(tr.seconds);
       }
@@ -18208,7 +18208,7 @@ function builderUnifiedVisibleMetricsV42(){
     let timing=null;
     try{timing=typeof optimizerTransitionTiming==='function'?optimizerTransitionTiming(seq[i],seq[i+1]):null;}catch(e){}
     const seconds=Number(timing?.seconds);
-    if(timing && Number.isENDite(seconds) && seconds>=0){
+    if(timing && Number.isFinite(seconds) && seconds>=0){
       measuredLinks++;
       transitionTime+=seconds;
     }
@@ -18236,7 +18236,7 @@ function renderBuilderCombatStats(){
   if(!root)return;
 
   const m=builderDOMMetricsV54();
-  const fmt=v=>Number.isENDite(Number(v))?Number(v).toFixed(2):'—';
+  const fmt=v=>Number.isFinite(Number(v))?Number(v).toFixed(2):'—';
   const stat=(label,value,cls='')=>`<div class="builder-combat-stat ${cls}"><span>${label}</span><strong>${value}</strong></div>`;
 
   root.innerHTML=
@@ -18367,7 +18367,7 @@ function builderOfficialCCInfo(skill){
   // Without per-hit structured data, one skill activation counts as its strongest listed
   // official CC application. A future ccApplications field can override this explicitly.
   let points=0;
-  if(Number.isENDite(explicit) && explicit>=0){
+  if(Number.isFinite(explicit) && explicit>=0){
     points=explicit;
   }else if(Array.isArray(skill?.ccApplications) && skill.ccApplications.length){
     points=skill.ccApplications.reduce((sum,item)=>{
@@ -18411,7 +18411,7 @@ function builderCCLockDurationInfoV32(skill){
 
   for(const value of validatedCandidates){
     const seconds=parse(value);
-    if(seconds!==null && Number.isENDite(seconds) && seconds>0){
+    if(seconds!==null && Number.isFinite(seconds) && seconds>0){
       return {
         seconds,
         measured:true,
@@ -18427,7 +18427,7 @@ function builderCCLockDurationInfoV32(skill){
 
   // Legacy canonical measurement (older saves may not have a status yet).
   const canonical=parse(skill?.ccMeasuredDuration);
-  if(canonical!==null && Number.isENDite(canonical) && canonical>0){
+  if(canonical!==null && Number.isFinite(canonical) && canonical>0){
     return {
       seconds:canonical,
       measured:true,
@@ -18442,7 +18442,7 @@ function builderCCLockDurationInfoV32(skill){
 
   // Automatic candidate is allowed only when no validated/canonical measurement exists.
   const auto=parse(skill?.ccAutoMeasuredDuration);
-  if(auto!==null && Number.isENDite(auto) && auto>0){
+  if(auto!==null && Number.isFinite(auto) && auto>0){
     return {
       seconds:auto,
       measured:true,
@@ -18459,7 +18459,7 @@ function builderCCLockDurationInfoV32(skill){
   const fps=Number(skill?.ccMeasureFPS);
   const startFrame=Number(skill?.ccStartFrame);
   const endFrame=Number(skill?.ccEndFrame);
-  if(Number.isENDite(fps)&&fps>0&&Number.isENDite(startFrame)&&Number.isENDite(endFrame)&&endFrame>startFrame){
+  if(Number.isFinite(fps)&&fps>0&&Number.isFinite(startFrame)&&Number.isFinite(endFrame)&&endFrame>startFrame){
     return {
       seconds:(endFrame-startFrame)/fps,
       measured:true,
@@ -18475,7 +18475,7 @@ function builderCCLockDurationInfoV32(skill){
 
 function builderParseSecondsV33(value){
   if(value===undefined||value===null||value==='') return null;
-  if(typeof value==='number') return Number.isENDite(value)&&value>=0 ? value : null;
+  if(typeof value==='number') return Number.isFinite(value)&&value>=0 ? value : null;
 
   const raw=String(value).trim().toLowerCase();
   if(!raw || raw==='—' || raw==='-' || raw==='none' || raw==='n/a') return null;
@@ -18485,15 +18485,15 @@ function builderParseSecondsV33(value){
   const ms=raw.match(/(-?\d+(?:[.,]\d+)?)\s*ms\b/);
   if(ms){
     const n=Number(ms[1].replace(',','.'));
-    return Number.isENDite(n)&&n>=0 ? n/1000 : null;
+    return Number.isFinite(n)&&n>=0 ? n/1000 : null;
   }
   const sec=raw.match(/(-?\d+(?:[.,]\d+)?)\s*(?:s|sec|secs|second|seconds)\b/);
   if(sec){
     const n=Number(sec[1].replace(',','.'));
-    return Number.isENDite(n)&&n>=0 ? n : null;
+    return Number.isFinite(n)&&n>=0 ? n : null;
   }
   const plain=Number(raw.replace(',','.'));
-  return Number.isENDite(plain)&&plain>=0 ? plain : null;
+  return Number.isFinite(plain)&&plain>=0 ? plain : null;
 }
 
 function builderEstimatedAnimationSecondsV33(skill){
@@ -18581,8 +18581,8 @@ function builderCCApplyOffsetV32(skill){
     skill?.ccApplyAt,
     skill?.ccHitTime,
     skill?.impactTime
-  ].map(Number).find(v=>Number.isENDite(v)&&v>=0);
-  if(Number.isENDite(explicit)) return explicit;
+  ].map(Number).find(v=>Number.isFinite(v)&&v>=0);
+  if(Number.isFinite(explicit)) return explicit;
 
   const duration=builderSkillExecutionSecondsV32(skill);
   // Conservative estimate: CC is considered to land halfway through the animation.
@@ -18602,7 +18602,7 @@ function builderLinkTimingV61(fromName,toName){
 
   const transitionSeconds=typeof safeTransitionSecondsV58==='function'
     ? safeTransitionSecondsV58(timing)
-    : (timing && Number.isENDite(Number(timing?.seconds)) ? Number(timing.seconds) : null);
+    : (timing && Number.isFinite(Number(timing?.seconds)) ? Number(timing.seconds) : null);
 
   const tr=timing?.transition||null;
   const cancelCandidates=[
@@ -18617,7 +18617,7 @@ function builderLinkTimingV61(fromName,toName){
     const n=typeof builderParseSecondsV33==='function'
       ? builderParseSecondsV33(value)
       : Number(value);
-    if(Number.isENDite(n)&&n>=0){
+    if(Number.isFinite(n)&&n>=0){
       cancelAt=n;
       break;
     }
@@ -18668,7 +18668,7 @@ function builderLinkTimingV61(fromName,toName){
   try{
     if(fromSkill && typeof builderSkillDuration==='function'){
       const n=Number(builderSkillDuration(fromSkill));
-      if(Number.isENDite(n)&&n>0)raw=n;
+      if(Number.isFinite(n)&&n>0)raw=n;
     }
   }catch(e){}
 
@@ -18721,7 +18721,7 @@ function builderCCTimelineV32(sequence=getBuilderSequence()){
       link=builderLinkTimingV61(seq[i-1],seq[i]);
 
       if(remaining!==null && !timerExpired){
-        if(link.known && Number.isENDite(Number(link.seconds))){
+        if(link.known && Number.isFinite(Number(link.seconds))){
           const before=remaining;
           remaining=Math.max(0,remaining-Number(link.seconds));
           elapsedFromCC+=Number(link.seconds);
@@ -18790,7 +18790,7 @@ function builderCCTimelineV32(sequence=getBuilderSequence()){
         officialRow.ccRemainingPoints ??
         Math.max(0,2-Number(officialRow.ccPoints||0))
       ),
-      ccSortggered:Boolean(officialRow.triggered),
+      ccTriggered:Boolean(officialRow.triggered),
       ccBlocked:blocked,
 
       // Active CC timer is independent of immunity.
@@ -18840,7 +18840,7 @@ function builderCCWindowDensityV63(sequence=getBuilderSequence()){
 
   for(let i=first+1;i<seq.length;i++){
     const link=builderLinkTimingV61(seq[i-1],seq[i]);
-    if(!link.known || !Number.isENDite(Number(link.seconds)))break;
+    if(!link.known || !Number.isFinite(Number(link.seconds)))break;
     elapsed+=Number(link.seconds);
     if(elapsed<=windowSeconds+1e-6)skillsInside++;
     else break;
@@ -18871,7 +18871,7 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   land thending=0;
   if(lastSkillName){
     const link=builderLinkTimingV61(lastSkillName,skill?.name);
-    if(!link.known || !Number.isENDite(Number(link.seconds))){
+    if(!link.known || !Number.isFinite(Number(link.seconds))){
       return {score:0,reason:'Transition/cancel not measured CC placement ignored'};
     }
     landing+=Number(link.seconds);
@@ -18906,7 +18906,7 @@ function builderOfficialCCState(sequence=getBuilderSequence()){
         ? builderLinkTimingV61(String(seq[i-1]||''),String(seq[i]||''))
         : null;
 
-      if(link?.known && Number.isENDite(Number(link.seconds))){
+      if(link?.known && Number.isFinite(Number(link.seconds))){
         immunityElapsed=Math.max(0,Number(link.seconds));
         immunityRemaining=Math.max(0,immunityRemaining-immunityElapsed);
       }else{
@@ -18983,7 +18983,7 @@ function builderSkillCCDuration(skill){
   try{
     if(typeof builderCCLockDurationInfoV32==='function'){
       const info=builderCCLockDurationInfoV32(skill);
-      if(info?.measured && Number.isENDite(Number(info.seconds)) && Number(info.seconds)>0){
+      if(info?.measured && Number.isFinite(Number(info.seconds)) && Number(info.seconds)>0){
         return Number(info.seconds);
       }
     }
@@ -19005,7 +19005,7 @@ function builderSkillCCDuration(skill){
     const seconds=typeof builderParseSecondsV33==='function'
       ? builderParseSecondsV33(value)
       : Number(value);
-    if(Number.isENDite(seconds)&&seconds>0)return Number(seconds);
+    if(Number.isFinite(seconds)&&seconds>0)return Number(seconds);
   }
 
   return 0;
@@ -19016,7 +19016,7 @@ function builderTransitionSeconds(fromName,toName){
 
   if(typeof optimizerTransitionTiming === 'function'){
     const timing = optimizerTransitionTiming(fromName,toName);
-    if(timing && Number.isENDite(Number(timing?.seconds))){
+    if(timing && Number.isFinite(Number(timing?.seconds))){
       return Math.max(0,Number(timing?.seconds));
     }
   }
@@ -19045,18 +19045,18 @@ function builderTransitionSeconds(fromName,toName){
     match.cancelAt,
     match.duration,
     match.time
-  ].map(Number).find(v => Number.isENDite(v) && v >= 0);
+  ].map(Number).find(v => Number.isFinite(v) && v >= 0);
 
-  if(Number.isENDite(direct)) return direct;
+  if(Number.isFinite(direct)) return direct;
 
   const frames = [
     match.timingFrames,
     match.cancelFrames,
     match.frames
-  ].map(Number).find(v => Number.isENDite(v) && v >= 0);
+  ].map(Number).find(v => Number.isFinite(v) && v >= 0);
 
   const fps = Number(match.timingFPS ?? match.fps);
-  if(Number.isENDite(frames) && Number.isENDite(fps) && fps > 0){
+  if(Number.isFinite(frames) && Number.isFinite(fps) && fps > 0){
     return frames / fps;
   }
 
@@ -19127,7 +19127,7 @@ function builderPairSynergy(fromSkill,toSkill,index){
         : {key:'burst',label:'Burst'};
       const scored = scoreSmartBuilderSkill(toSkill,phase,fromSkill.name);
       const playerScore = Number(scored?.score);
-      if(Number.isENDite(playerScore)){
+      if(Number.isFinite(playerScore)){
         // Only normalize lightly; player evidence remains important without dominating.
         score += Math.max(-1.5,Math.min(1.5,playerScore/10));
       }
@@ -19298,7 +19298,7 @@ function builderReplacementSuggestions(errorIndex, limit=3){
 
   const phase = (() => {
     if(errorIndex === 0) return {key:'engage',label:'Engage'};
-    if(errorIndex === seq.length - 1) return {key:'finisher',label:'ENDisher'};
+    if(errorIndex === seq.length - 1) return {key:'finisher',label:'Finisher'};
     if(typeof smartBuilderPhase === 'function'){
       try{return smartBuilderPhase();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
     }
@@ -19348,7 +19348,7 @@ function builderReplacementSuggestions(errorIndex, limit=3){
     if(typeof scoreSmartBuilderSkill === 'function'){
       try{
         const scored = scoreSmartBuilderSkill(skill,phase,previousName);
-        if(Number.isENDite(Number(scored?.score))){
+        if(Number.isFinite(Number(scored?.score))){
           score += Number(scored.score);
           if(Array.isArray(scored.reasons)) reasons.push(...scored.reasons);
         }
@@ -19425,7 +19425,7 @@ function builderSkillCooldownDisplay(skill){
   if(raw === undefined || raw === null || raw === '') return '—';
 
   const n = Number(raw);
-  if(Number.isENDite(n)){
+  if(Number.isFinite(n)){
     return `${n}s`;
   }
   return String(raw);
@@ -19816,7 +19816,7 @@ function addonTierFromCooldown(skillName){
   const skill = skills.find(s => (s?.name || String(s)) === skillName);
   const cd = Number(skill?.cooldown ?? skill?.cd);
 
-  if(!Number.isENDite(cd)) return null;
+  if(!Number.isFinite(cd)) return null;
   if(cd <= 5) return 1;
   if(cd < 13) return 2;
   return 3;
@@ -19827,7 +19827,7 @@ function officialAddonEffectById(id){
 }
 
 function addonEffectDisplay(effectId, skillName=''){
-  if(!effectId) return 'Noe';
+  if(!effectId) return 'None';
   const effect = officialAddonEffectById(effectId);
   if(!effect) return effectId;
 
@@ -19841,7 +19841,7 @@ function addonEffectDisplay(effectId, skillName=''){
 }
 
 function addonEffectOptions(selected='', skillName=''){
-  const options = ['<option value="">Noe</option>'];
+  const options = ['<option value="">None</option>'];
   for(const effect of OFFICIAL_ADDON_EFFECTS){
     const label = addonEffectDisplay(effect.id, skillName);
     options.push(
@@ -20368,7 +20368,7 @@ function oldRenderConsumables(){
             <td class="consumable-stats-cell">
               ${stats.length
                 ? `<div class="consumable-stat-list">${stats.map(s=>`<span class="consumable-stat-chip">${oldEsc(s)}</span>`).join('')}</div>`
-                : `<span class="consumable-stat-missing">Noe stat détaillée</span>`}
+                : `<span class="consumable-stat-missing">None stat détaillée</span>`}
             </td>
             <td class="consumable-remove-cell">
               <button type="button" onclick="oldRemoveConsumable(${i})">×</button>
@@ -20591,7 +20591,7 @@ function loadOldVideoFPS(){
 
 function oldVideoFPS(){
   const fps = Number(document.getElementById('timingVideoFPS')?.value || 60);
-  return Number.isENDite(fps) && fps > 0 ? fps : 60;
+  return Number.isFinite(fps) && fps > 0 ? fps : 60;
 }
 
 function videoAnalysisLoadFile(file){
@@ -20619,7 +20619,7 @@ function videoAnalysisLoadFile(file){
 
   if(analyzerStatus){
     analyzerStatus.textContent =
-      'Video prête. Place yourself at the start of a skill puis ajoute un marqueur.';
+      'Vidéo prête. Place yourself at the start of a skill puis ajoute un marqueur.';
   }
 
   videoAnalysisSyncFrameDisplay();
@@ -20630,7 +20630,7 @@ function videoAnalysisOnMetadata(){
   const duration = document.getElementById('timingVideoDuration');
 
   if(video && duration){
-    duration.textContent = Number.isENDite(video.duration)
+    duration.textContent = Number.isFinite(video.duration)
       ? `${video.duration.toFixed(3)} s`
       : '—';
 
@@ -20662,7 +20662,7 @@ function videoAnalysisSyncFrameDisplay(){
 
   if(timeEl) timeEl.textContent = `${time.toFixed(3)} s`;
   if(frameEl) frameEl.textContent = String(frame);
-  if(durationEl && Number.isENDite(video.duration)){
+  if(durationEl && Number.isFinite(video.duration)){
     durationEl.textContent = `${video.duration.toFixed(3)} s`;
   }
   if(stepEl){
@@ -20690,7 +20690,7 @@ function videoAnalysisStep(frames){
 
   const fps = oldVideoFPS();
   const delta = Number(frames || 0) / fps;
-  const duration = Number.isENDite(video.duration) ? video.duration : Infinity;
+  const duration = Number.isFinite(video.duration) ? video.duration : Infinity;
 
   video.currentTime = Math.max(
     0,
@@ -20713,7 +20713,7 @@ function youtubeCurrentTime(){
   if(!video || !video.src) return null;
 
   const time = Number(video.currentTime);
-  return Number.isENDite(time) && time >= 0 ? time : null;
+  return Number.isFinite(time) && time >= 0 ? time : null;
 }
 
 function youtubeSeekBy(delta){
@@ -20722,7 +20722,7 @@ function youtubeSeekBy(delta){
 
   video.pause();
 
-  const duration = Number.isENDite(video.duration) ? video.duration : Infinity;
+  const duration = Number.isFinite(video.duration) ? video.duration : Infinity;
   video.currentTime = Math.max(
     0,
     Math.min(duration, Number(video.currentTime || 0) + Number(delta || 0))
@@ -21159,11 +21159,11 @@ function videoAutoReferencePoolV43(){
       skill?.timingSeconds,skill?.animationTime,skill?.measuredTime,
       skill?.duration,skill?.castTime,skill?.cast_time,skill?.timer
     ].map(v=>typeof builderParseSecondsV33==='function'?builderParseSecondsV33(v):Number(v))
-      .find(v=>Number.isENDite(v)&&v>0);
+      .find(v=>Number.isFinite(v)&&v>0);
 
     pool.push({
       name,skill,origin,
-      timing:Number.isENDite(explicitTiming)?explicitTiming:null,
+      timing:Number.isFinite(explicitTiming)?explicitTiming:null,
       input:String(skill?.input||skill?.command||skill?.keybind||'').trim(),
       cc:typeof builderOfficialCCInfo==='function'?builderOfficialCCInfo(skill):{types:[],points:0}
     });
@@ -21257,7 +21257,7 @@ function videoAutoRenderV43(){
   if(add)add.disabled=!detections.some(x=>x.selectedName);
 
   if(!detections.length){
-    root.innerHTML='<div class="page-placeholder">Noe segment candidat détecté.</div>';
+    root.innerHTML='<div class="page-placeholder">None segment candidat détecté.</div>';
     return;
   }
 
@@ -21266,7 +21266,7 @@ function videoAutoRenderV43(){
       `<option value="${escapeHtml(c.name)}" ${c.name===d.selectedName?'selected':''}>${escapeHtml(c.name)} · ${Math.round(c.score*100)}%</option>`
     ).join('');
     const best=d.candidates[0];
-    const source=best?.origin==='reference'?'Reference':'Skills';
+    const source=best?.origin==='reference'?'Référentiel':'Skills';
     return `<div class="video-auto-row-v43">
       <div class="video-auto-index-v43">${index+1}</div>
       <div class="video-auto-time-v43">
@@ -21277,7 +21277,7 @@ function videoAutoRenderV43(){
         <select onchange="videoAutoSelectCandidateV43(${index},this.value)">
           <option value="">No résolu</option>${opts}
         </select>
-        <small>${best?`${source} · confiance ${Math.round(best.score*100)}%`:'Noe candidat'}</small>
+        <small>${best?`${source} · confiance ${Math.round(best.score*100)}%`:'Aucun candidat'}</small>
       </div>
       <button type="button" class="tab-btn" onclick="videoAutoSeekSegmentV43(${index})">Voir</button>
     </div>`;
@@ -21322,7 +21322,7 @@ function setVideoReviewSpeedV46(value){
 
 function videoParseTimeV70(value){
   if(value===undefined||value===null)return null;
-  if(typeof value==='number')return Number.isENDite(value)&&value>=0?value:null;
+  if(typeof value==='number')return Number.isFinite(value)&&value>=0?value:null;
 
   const raw=String(value).trim().toLowerCase().replace(',','.');
   if(!raw)return null;
@@ -21332,14 +21332,14 @@ function videoParseTimeV70(value){
 
   if(/^\d+(?:\.\d+)?$/.test(raw)){
     const n=Number(raw);
-    return Number.isENDite(n)&&n>=0?n:null;
+    return Number.isFinite(n)&&n>=0?n:null;
   }
 
   const parts=raw.split(':').map(x=>x.trim());
   if(parts.length===2 || parts.length===3){
     if(parts.some(x=>x===''||!/^\d+(?:\.\d+)?$/.test(x)))return null;
     const nums=parts.map(Number);
-    if(nums.some(n=>!Number.isENDite(n)||n<0))return null;
+    if(nums.some(n=>!Number.isFinite(n)||n<0))return null;
 
     if(parts.length===2){
       const [minutes,seconds]=nums;
@@ -21381,7 +21381,7 @@ function setVideoAutoWindowFromCurrentV70(lengthSeconds=30){
   if(!video)return;
   const start=Math.max(0,Number(video.currentTime||0));
   const duration=Number(video.duration||0);
-  const end=Number.isENDite(duration)&&duration>0
+  const end=Number.isFinite(duration)&&duration>0
     ? Math.min(duration,start+Math.max(.3,Number(lengthSeconds)||30))
     : start+Math.max(.3,Number(lengthSeconds)||30);
 
@@ -21411,11 +21411,11 @@ function videoAutoRangeV46(){
   const endRaw=videoParseTimeV70(document.getElementById('videoAutoEndV46')?.value);
 
   let start=Math.max(0,startRaw===null?0:startRaw);
-  if(Number.isENDite(duration)&&duration>0)start=Math.min(start,duration);
+  if(Number.isFinite(duration)&&duration>0)start=Math.min(start,duration);
 
   let end=endRaw===null?Math.min(duration||start+30,start+30):endRaw;
   end=Math.max(start,end);
-  if(Number.isENDite(duration)&&duration>0)end=Math.min(duration,end);
+  if(Number.isFinite(duration)&&duration>0)end=Math.min(duration,end);
 
   return {start,end,duration:Math.max(0,end-start)};
 }
@@ -21451,7 +21451,7 @@ async function autoAnalyzeLocalVideoV43(){
   const btn=document.getElementById('videoAutoAnalyzeBtnV43');
   const pauseBtn=document.getElementById('videoAutoPauseBtnV46');
 
-  if(!video||!Number.isENDite(video.duration)||video.duration<=0){
+  if(!video||!Number.isFinite(video.duration)||video.duration<=0){
     if(status)status.textContent='Loads a valid local video first.';
     return;
   }
@@ -21625,7 +21625,7 @@ async function autoAnalyzeLocalVideoV43(){
   }
 }
 
-function videoAutoENDdSkillV43(name){
+function videoAutoFindSkillV43(name){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const norm=videoAutoNormV43(name);
@@ -21634,7 +21634,7 @@ function videoAutoENDdSkillV43(name){
   )||null;
 }
 
-function videoAutoENDdReferenceV43(name){
+function videoAutoFindReferenceV43(name){
   const norm=videoAutoNormV43(name);
   return videoAutoReferencePoolV43().find(x=>videoAutoNormV43(x.name)===norm)||null;
 }
@@ -21695,10 +21695,10 @@ function genericCCRenderV50(){
   const end=GENERIC_CC_STATE_V50.end;
   const fps=oldVideoFPS();
 
-  if(startEl)startEl.textContent=Number.isENDite(start)?`${start.toFixed(4)} s`:'—';
-  if(endEl)endEl.textContent=Number.isENDite(end)?`${end.toFixed(4)} s`:'—';
+  if(startEl)startEl.textContent=Number.isFinite(start)?`${start.toFixed(4)} s`:'—';
+  if(endEl)endEl.textContent=Number.isFinite(end)?`${end.toFixed(4)} s`:'—';
 
-  if(Number.isENDite(start)&&Number.isENDite(end)&&end>start){
+  if(Number.isFinite(start)&&Number.isFinite(end)&&end>start){
     const duration=end-start;
     const rendered=`${duration.toFixed(4)} s`;
     if(durationEl)durationEl.textContent=rendered;
@@ -21717,7 +21717,7 @@ function genericCCMarkStartV50(){
   const video=document.getElementById('timingVideo');
   if(!video)return;
   GENERIC_CC_STATE_V50.start=Number(video.currentTime||0);
-  if(Number.isENDite(GENERIC_CC_STATE_V50.end)&&GENERIC_CC_STATE_V50.end<=GENERIC_CC_STATE_V50.start){
+  if(Number.isFinite(GENERIC_CC_STATE_V50.end)&&GENERIC_CC_STATE_V50.end<=GENERIC_CC_STATE_V50.start){
     GENERIC_CC_STATE_V50.end=null;
   }
   GENERIC_CC_STATE_V50.auto=false;
@@ -21730,11 +21730,11 @@ function genericCCMarkEndV50(){
   const video=document.getElementById('timingVideo');
   if(!video)return;
   const t=Number(video.currentTime||0);
-  if(!Number.isENDite(GENERIC_CC_STATE_V50.start)){
+  if(!Number.isFinite(GENERIC_CC_STATE_V50.start)){
     GENERIC_CC_STATE_V50.start=t;
     GENERIC_CC_STATE_V50.end=null;
     const status=document.getElementById('genericCCStatusV50');
-    if(status)status.textContent='Noe début défini : cette position a été utilisée comme début CC.';
+    if(status)status.textContent='Aucun début défini : cette position a été utilisée comme début CC.';
   }else if(t>GENERIC_CC_STATE_V50.start){
     GENERIC_CC_STATE_V50.end=t;
     const duration=t-GENERIC_CC_STATE_V50.start;
@@ -21753,7 +21753,7 @@ function genericCCApplyToSelectedSkillV67(){
   const status=document.getElementById('genericCCStatusV50');
   const start=Number(GENERIC_CC_STATE_V50.start);
   const end=Number(GENERIC_CC_STATE_V50.end);
-  if(!Number.isENDite(start)||!Number.isENDite(end)||end<=start){
+  if(!Number.isFinite(start)||!Number.isFinite(end)||end<=start){
     if(status)status.textContent='Mesure CC générique incomplète.';
     return;
   }
@@ -21764,7 +21764,7 @@ function genericCCApplyToSelectedSkillV67(){
     return;
   }
 
-  const skill=videoCCENDdRawSkillV55(skillName);
+  const skill=videoCCFindRawSkillV55(skillName);
   if(!skill){
     if(status)status.textContent=`Skill introuvable : ${skillName}.`;
     return;
@@ -22019,7 +22019,7 @@ function measureAutoCCV49(){
   if(status){
     status.textContent=rows.length
       ? `${rows.length} proposed CC measure(s). You can save them now (auto status) or validate/correct them first.`
-      : 'Noe CC mesurable automatiquement dans les segments résolus.';
+      : 'Aucun CC mesurable automatiquement dans les segments résolus.';
   }
   return rows;
 }
@@ -22037,7 +22037,7 @@ function renderAutoCCV49(){
   root.innerHTML=`
     <div class="video-auto-cc-head-v49">
       <strong>Mesures CC détectées</strong>
-      <small>Beginning = impact estimé · END = reprise de mouvement estimated · les mesures auto peuvent être enregistrées puis validateds</small>
+      <small>Beginning = impact estimé · END = reprise de mouvement estimated · les mesures auto peuvent être enregistrées puis validées</small>
     </div>
     ${rows.map((m,index)=>`
       <div class="video-auto-cc-row-v49">
@@ -22091,7 +22091,7 @@ function correctAutoCCV49(index){
 
   const start=Number(String(startRaw).replace(',','.'));
   const end=Number(String(endRaw).replace(',','.'));
-  if(!Number.isENDite(start)||!Number.isENDite(end)||end<=start){
+  if(!Number.isFinite(start)||!Number.isFinite(end)||end<=start){
     alert('Mesure CC invalide.');
     return;
   }
@@ -22110,7 +22110,7 @@ function correctAutoCCV49(index){
 }
 
 
-function videoCCENDdRawSkillV55(name){
+function videoCCFindRawSkillV55(name){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const norm=v=>String(v||'')
@@ -22143,7 +22143,7 @@ function videoCCPersistOneV55(skill,m){
   const fps=Number(m.fps);
   const startFrame=Number(m.startFrame);
   const endFrame=Number(m.endFrame);
-  if(!Number.isENDite(duration)||duration<=0)return false;
+  if(!Number.isFinite(duration)||duration<=0)return false;
 
   const reviewStatus=String(m.reviewStatus||'pending').toLowerCase();
   const confirmed=['validated','corrected'].includes(reviewStatus);
@@ -22151,9 +22151,9 @@ function videoCCPersistOneV55(skill,m){
   if(confirmed){
     // Authoritative measurement.
     skill.ccValidatedDuration=Number(duration.toFixed(4));
-    skill.ccValidatedFPS=Number.isENDite(fps)&&fps>0?fps:null;
-    skill.ccValidatedStartFrame=Number.isENDite(startFrame)?startFrame:null;
-    skill.ccValidatedEndFrame=Number.isENDite(endFrame)?endFrame:null;
+    skill.ccValidatedFPS=Number.isFinite(fps)&&fps>0?fps:null;
+    skill.ccValidatedStartFrame=Number.isFinite(startFrame)?startFrame:null;
+    skill.ccValidatedEndFrame=Number.isFinite(endFrame)?endFrame:null;
     skill.ccValidatedSource=String(m.source||'Video Analyzer validated CC');
 
     // Keep legacy fields in sync for compatibility with the rest of the app.
@@ -22169,16 +22169,16 @@ function videoCCPersistOneV55(skill,m){
   }else{
     // Store automatic candidate separately. NEVER overwrite a validated measurement.
     skill.ccAutoMeasuredDuration=Number(duration.toFixed(4));
-    skill.ccAutoMeasureFPS=Number.isENDite(fps)&&fps>0?fps:null;
-    skill.ccAutoStartFrame=Number.isENDite(startFrame)?startFrame:null;
-    skill.ccAutoEndFrame=Number.isENDite(endFrame)?endFrame:null;
+    skill.ccAutoMeasureFPS=Number.isFinite(fps)&&fps>0?fps:null;
+    skill.ccAutoStartFrame=Number.isFinite(startFrame)?startFrame:null;
+    skill.ccAutoEndFrame=Number.isFinite(endFrame)?endFrame:null;
     skill.ccAutoMeasureSource=String(m.source||'Video Analyzer automatic CC');
-    skill.ccAutoMeasureConfidence=Number.isENDite(Number(m.confidence))
+    skill.ccAutoMeasureConfidence=Number.isFinite(Number(m.confidence))
       ? Number(m.confidence)
       : null;
 
     const alreadyValidated=
-      Number.isENDite(Number(skill?.ccValidatedDuration)) ||
+      Number.isFinite(Number(skill?.ccValidatedDuration)) ||
       String(skill?.ccMeasureStatus||'').toLowerCase()==='validated' ||
       skill?.ccMeasureReviewed===true;
 
@@ -22206,14 +22206,14 @@ function saveAutoCCV49(){
     .filter(x=>String(x.reviewStatus||'pending')!=='rejected');
 
   if(!rows.length){
-    if(status)status.textContent='Noe mesure CC détectée à enregistrer.';
+    if(status)status.textContent='Aucune mesure CC détectée à enregistrer.';
     return;
   }
 
   let saved=0,confirmed=0,pending=0,missing=0,invalid=0;
 
   for(const m of rows){
-    const skill=videoCCENDdRawSkillV55(m.skillName);
+    const skill=videoCCFindRawSkillV55(m.skillName);
     if(!skill){missing++;continue;}
 
     if(!videoCCPersistOneV55(skill,m)){invalid++;continue;}
@@ -22340,7 +22340,7 @@ async function seekAutoCancelV45(index){
   const tr=VIDEO_AUTO_STATE_V43.transitionMeasurements?.[index];
   const video=document.getElementById('timingVideo');
   if(!tr||!video)return;
-  const t=Number.isENDite(Number(tr.cancelAbsoluteTime))
+  const t=Number.isFinite(Number(tr.cancelAbsoluteTime))
     ? Number(tr.cancelAbsoluteTime)
     : Number(tr.fromTime||0)+Number(tr.cancelAtSeconds||0);
   await videoAutoSeekV43(video,t);
@@ -22359,7 +22359,7 @@ function saveAutoTransitionsV45(){
     return;
   }
   if(!rows.length){
-    if(status)status.textContent='Noe mesure automatique à enregistrer.';
+    if(status)status.textContent='Aucune mesure automatique à enregistrer.';
     return;
   }
 
@@ -22437,8 +22437,8 @@ function addAutoDetectedSkillsV43(){
   )];
 
   for(const name of selected){
-    if(videoAutoENDdSkillV43(name)){already++;continue;}
-    const ref=videoAutoENDdReferenceV43(name);
+    if(videoAutoFindSkillV43(name)){already++;continue;}
+    const ref=videoAutoFindReferenceV43(name);
     if(!ref?.skill){unresolved++;continue;}
 
     const clone=JSON.parse(JSON.stringify(ref.skill));
@@ -22749,7 +22749,7 @@ function saveCurrentBuildToHistoryV19(source='manual',options={}){
     orientation,source,sequence,skillCount:sequence.length,valid:validation?.ok!==false,
     validationMessage:validation?.ok===false?String(validation?.errors?.[0]||'Avertissement de validation'):'Valid combo',
     measuredLinks:Number(timing?.measuredLinks||0),totalLinks:Number(timing?.totalLinks||Math.max(0,sequence.length-1)),
-    timingCoverage:Number.isENDite(Number(timing?.coverage))?Number(timing.coverage):0
+    timingCoverage:Number.isFinite(Number(timing?.coverage))?Number(timing.coverage):0
   };
   const next=[entry,...history.filter(x=>x?.signature!==signature)].slice(0,40);
   persistBuilderHistoryV19(next);
@@ -22761,7 +22761,7 @@ function formatBuildDateV19(iso){
   const d=new Date(iso);if(Number.isNaN(d.getTime()))return '—';
   try{return d.toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return d.toISOString().slice(0,16).replace('T',' ');}
 }
-function shortOrientationV19(v){return v==='mixed'?'Mixed':v==='preawak'?'Pre-Awak':'Awakening';}
+function shortOrientationV19(v){return v==='mixed'?'Mixte':v==='preawak'?'Pré-Awak':'Awakening';}
 function renderRecentBuildsV19(){
   const body=document.getElementById('home19RecentBuildRows');if(!body)return;
   const cls=document.getElementById('classSelector')?.value||'';
@@ -22779,7 +22779,7 @@ function renderRecentBuildsV19(){
       <td><span class="home19-build-source">${entry.source==='optimizer'?'Optimizer':'Manuel'}</span></td>
       <td><div class="home19-build-sequence" title="${escapeHtmlAttr(seq.join(' → '))}">${sequenceHtml}</div></td>
       <td>${Number(entry.skillCount||seq.length)}</td>
-      <td><span class="${entry.valid!==false?'home19-build-valid':'home19-build-warn'}">${entry.valid!==false?'Valid':'To be checked'}</span><div style="font-size:8px;color:#6f8094;margin-top:2px">${Number(entry.measuredLinks||0)}/${Number(entry.totalLinks||Math.max(0,seq.length-1))} timings</div></td>
+      <td><span class="${entry.valid!==false?'home19-build-valid':'home19-build-warn'}">${entry.valid!==false?'Valide':'To be checked'}</span><div style="font-size:8px;color:#6f8094;margin-top:2px">${Number(entry.measuredLinks||0)}/${Number(entry.totalLinks||Math.max(0,seq.length-1))} timings</div></td>
       <td><div class="home19-build-actions"><button type="button" class="optimizer-btn" onclick="openBuildFromHistoryV19('${entry.id}')">Voir</button><button type="button" class="tab-btn" title="Delete" onclick="deleteBuildHistoryV19('${entry.id}')">×</button></div></td>
     </tr>`;
   }).join('');
@@ -22838,12 +22838,12 @@ function renderHomeDashboardV18(){
   let refs=[];try{refs=typeof guideReferenceForCurrentClassV10==='function'?guideReferenceForCurrentClassV10():[]}catch(e){refs=[]}
   const enabled=skills.filter(s=>s?.enabled!==false).length;
   const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val};
-  set('home18Context',cls?`${cls} · ${spec}`:'Noe class sélectionnée');
+  set('home18Context',cls?`${cls} · ${spec}`:'Aucune class sélectionnée');
   set('home18Reference',refs.length?`Active reference · ${refs.length} entrées`:'Reference: none for this context');
   set('home18Skills',skills.length); set('home18SkillsSub',`${enabled} activé${enabled>1?'s':''}`);
   set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entries available':'no entries');
   set('home18Combos',combos.length); set('home18Transitions',transitions.length);
-  const measured=transitions.filter(x=>Number.isENDite(Number(x?.timingSeconds??x?.transitionSeconds??x?.seconds)) || Number.isENDite(Number(x?.frames))).length;
+  const measured=transitions.filter(x=>Number.isFinite(Number(x?.timingSeconds??x?.transitionSeconds??x?.seconds)) || Number.isFinite(Number(x?.frames))).length;
   set('home18TransitionsSub',`${measured} with timing`);
   const fields=['input','timer','pveDamage','pvpDamage','protection','cc','effects'];
   let possible=skills.length*fields.length,filled=0;
@@ -22865,20 +22865,20 @@ function renderHomeDashboardV18(){
   const recs=[];
   if(!cls) recs.push(['Choose a class','The context drives the entire project','classPage','Class']);
   else{
-    if(refs.length && skills.length<refs.length*.8) recs.push(['Complete the Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Search auto']);
+    if(refs.length && skills.length<refs.length*.8) recs.push(['Complete the Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Recherche auto']);
     if(skills.length && completeness<70) recs.push(['Enrich metadata',`Completeness actuelle : ${completeness}%`,'skillsPage','Inspecter']);
     if(!combos.length) recs.push(['Create a first combo','No combo saved for this context','builderPage','Builder']);
     if(!transitions.length) recs.push(['Add transitions','No validated cancel/transition','transitionPage','Transitions']);
-    else if(timingCoverage<60) recs.push(['Measure timings',`${measured}/${transitions.length} transitions ont une mesure`,'youtubeAnalyzerPage','Video']);
+    else if(timingCoverage<60) recs.push(['Measure timings',`${measured}/${transitions.length} transitions ont une mesure`,'youtubeAnalyzerPage','Vidéo']);
   }
-  if(!recs.length) recs.push(['Continuer l’optimisation','The main database is well informed','builderPage','Open Builder']);
+  if(!recs.length) recs.push(['Continuer l’optimisation','The main database is well informed','builderPage','Ouvrir Builder']);
   const r=document.getElementById('home18Recommendations');
   if(r)r.innerHTML=recs.slice(0,4).map((x,i)=>`<div class="home18-rec"><span class="home18-rec-index">${String(i+1).padStart(2,'0')}</span><div><b>${escapeHtmlText(x[0])}</b><small>${escapeHtmlText(x[1])}</small></div><button type="button" class="tab-btn" onclick="showPage('${x[2]}',document.querySelector('[data-page=${x[2]}]'));${x[2]==='skillsPage'?'renderSkillsPage()':x[2]==='builderPage'?'renderComboBuilder()':x[2]==='transitionPage'?'renderTransitionPage()':x[2]==='youtubeAnalyzerPage'?'renderYouTubeAnalyzer()':''}">${x[3]}</button></div>`).join('');
-  const d=document.getElementById('home18Diagnosticss');
+  const d=document.getElementById('home18Diagnostics');
   if(d)d.innerHTML=[
-    ['Class / spec',cls?`${cls} · ${spec}`:'No sélectionné',!!cls],
-    ['Reference',refs.length?`${refs.length} entrées`:'Unavailable',!!refs.length],
-    ['Active skills',skills.length?`${enabled}/${skills.length}`:'Noe',!!skills.length],
+    ['Class / spec',cls?`${cls} · ${spec}`:'Non sélectionné',!!cls],
+    ['Référentiel',refs.length?`${refs.length} entrées`:'Unavailable',!!refs.length],
+    ['Active skills',skills.length?`${enabled}/${skills.length}`:'Aucun',!!skills.length],
     ['Saved combos',String(combos.length),combos.length>0],
     ['Measured transitions',`${measured}/${transitions.length}`,measured>0],
     ['Data quality',completeness>=70?'Bonne':completeness>=40?'Partielle':'Needs enrichment',completeness>=70]
@@ -22904,17 +22904,17 @@ function renderClassResourceLinksV23(){
   if(!host)return;
   const cls=document.getElementById('classSelector')?.value||'';
   const ctx=document.getElementById('home23ResourceContext');
-  if(ctx)ctx.textContent=cls?`Resources · ${cls}`:'Sélectionne une class';
+  if(ctx)ctx.textContent=cls?`Resources · ${cls}`:'Sélectionne une classe';
   if(!cls){
     host.innerHTML='<div class="home23-no-class">Sélectionne une class pour afficher son Discord et ses guides dédiés.</div>';
     return;
   }
   const exact=BDO_CLASS_RESOURCE_LINKS_V23[cls]||{};
   const discord=exact.discord||'https://www.naeu.playblackdesert.com/en-US/Forum/ForumTopic/Detail?_bigPageNo=1&_categoryNo=12&_forumListType=0&_orderType=False&_pageNo=1&_pageSize=25&_processStatus=99&_searchDay=0&_searchType=1&_sortType=1&_topicNo=62232&_topicNo=69563';
-  const discordTitle=exact.discord?`Discord ${cls}`:`Discords de classs BDO`;
-  const discordDesc=exact.discord?`Community dédiée à la class ${cls}`:`Liste communautaire des Discords de classs publiée sur le forum officiel`;
+  const discordTitle=exact.discord?`Discord ${cls}`:`Discords de classes BDO`;
+  const discordDesc=exact.discord?`Community dédiée à la class ${cls}`:`Liste communautaire des Discords de classes publiée sur le forum officiel`;
   const foundry=exact.foundry||'https://www.blackdesertfoundry.com/guide-list/';
-  const foundryDesc=exact.foundry?`Guide ${cls} : skills, gameplay et ressources communautaires`:`Trouver le guide ${cls} dans la liste des guides de classs`;
+  const foundryDesc=exact.foundry?`Guide ${cls} : skills, gameplay et ressources communautaires`:`Trouver le guide ${cls} dans la liste des guides de classes`;
   const codex=exact.codex||'https://bdocodex.com/us/skills/';
   host.innerHTML=`
     <a class="home22-official-link home23-class-link" href="${home23Esc(discord)}" target="_blank" rel="noopener noreferrer"><b>${home23Esc(discordTitle)}</b><small>${home23Esc(discordDesc)}</small><span>Open ↗</span></a>
@@ -22965,7 +22965,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <div class="account79-intro">
         <span class="account78-kicker">BDO COMBOS LABS ACCOUNT</span>
         <h2>Sign in</h2>
-        <p>ENDd your local workspace and all your saved data.</p>
+        <p>Find your local workspace and all your saved data.</p>
       </div>
 
       <div class="account79-form">
@@ -23049,7 +23049,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <div><span>Mode</span><strong>Account local</strong></div>
       </div>
       <div class="account78-profile-actions">
-        <button type="button" class="optimizer-btn" onclick="accountSaveWorkspaceV78(true)">Backupr mes données</button>
+        <button type="button" class="optimizer-btn" onclick="accountSaveWorkspaceV78(true)">Sauvegarder mes données</button>
         <button type="button" class="tab-btn" onclick="exportFullBackupV48()">Export JSON complet</button>
         <button type="button" class="tab-btn" onclick="switchAccountViewV78('password')">Change password</button>
         <button type="button" class="tab-btn account78-danger" onclick="deleteAccountV78()">Delete mon compte</button>
@@ -23124,7 +23124,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <button type="button" class="tab-btn" onclick="downloadBugReportV77()">Download the report</button>
       <button type="button" class="tab-btn" onclick="clearBugReportV77()">To erase</button>
     </div>
-    <div id="bug77Status" class="bug77-status">Noe rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.</div>
+    <div id="bug77Status" class="bug77-status">None rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.</div>
   </div>
 </div>
 
@@ -23192,7 +23192,7 @@ function accountSaveWorkspaceV78(showStatus=false){
   if(u){u.lastSaveAt=backup.savedAt;accountSaveDBV78(db)}
   ACCOUNT_ACTIVE_V78=u||user;
   renderAccountHeaderV78();
-  if(showStatus)accountStatusV78('Data du compte sauvegardées localement.','good');
+  if(showStatus)accountStatusV78('Données du compte sauvegardées localement.','good');
   return true;
 }
 function accountClearProjectStorageV78(){
@@ -23232,7 +23232,7 @@ async function registerAccountV78(){
   if(importCurrent){
     accountSaveWorkspaceV78(false);
     renderAccountHeaderV78();
-    accountStatusV78('Account créé. Tes données actuelles sont associées à ce profil.','good');
+    accountStatusV78('Compte créé. Tes données actuelles sont associées à ce profil.','good');
     setTimeout(closeAccountModalV78,700);
   }else{
     ACCOUNT_SUPPRESS_AUTOSAVE_V88=true;
@@ -23242,7 +23242,7 @@ async function registerAccountV78(){
     );
     accountClearProjectStorageV78();
     renderAccountHeaderV78();
-    accountStatusV78('Account créé avec un espace de travail vide. Rechargement…','good');
+    accountStatusV78('Compte créé avec un espace de travail vide. Rechargement…','good');
     setTimeout(()=>location.reload(),450);
   }
 }
@@ -23250,7 +23250,7 @@ async function loginAccountV78(){
   const identity=document.getElementById('accountLoginIdentityV78')?.value.trim().toLowerCase()||'';
   const pass=document.getElementById('accountLoginPasswordV78')?.value||'';
   const db=accountLoadDBV78(),user=db.users.find(u=>u.email===identity||u.name.toLowerCase()===identity);
-  if(!user)return accountStatusV78('Account introuvable.','bad');
+  if(!user)return accountStatusV78('Compte introuvable.','bad');
   accountStatusV78('Verification…');
   const sec=await accountHashPasswordV78(pass,user.passwordSalt);
   if(sec.hash!==user.passwordHash)return accountStatusV78('Incorrect password.','bad');
@@ -23361,8 +23361,8 @@ bdoOnReady(()=>{
 
 <script id="bug-report-v77-script">
 function bugContextV77(){
-  const className=document.getElementById('classSelector')?.value||'No sélectionnée';
-  const spec=document.getElementById('specSelector')?.value||'No sélectionnée';
+  const className=document.getElementById('classSelector')?.value||'Non sélectionnée';
+  const spec=document.getElementById('specSelector')?.value||'Non sélectionnée';
   const activePage=document.querySelector('.page.active')?.id||'inconnue';
   const version=document.querySelector('.app-header-version')?.textContent?.trim()||'V88';
   return {version,className,spec,activePage,userAgent:navigator.userAgent,time:new Date().toISOString()};
@@ -24187,7 +24187,7 @@ function communitySaveStoreV101(store){
 
 function communityVerifyThresholdV101(){
   const n=Number(localStorage.getItem(COMMUNITY_THRESHOLD_KEY_V101));
-  return Number.isENDite(n)&&n>=1?Math.round(n):COMMUNITY_DEFAULT_THRESHOLD_V101;
+  return Number.isFinite(n)&&n>=1?Math.round(n):COMMUNITY_DEFAULT_THRESHOLD_V101;
 }
 
 function setCommunityVerifyThresholdV101(value){
@@ -24319,12 +24319,12 @@ function communityVerifiedForClassV101(className,spec){
     }));
 }
 
-function communityENDdByIdV101(id){
+function communityFindByIdV101(id){
   return communityLoadStoreV101().combos.find(c=>c.id===id)||null;
 }
 
 function communityHasLikedV101(id){
-  const combo=communityENDdByIdV101(id);
+  const combo=communityFindByIdV101(id);
   if(!combo)return false;
   const voter=communityVoterIdV101();
   return Array.isArray(combo.likedBy)&&combo.likedBy.includes(voter);
@@ -24388,7 +24388,7 @@ function shareCurrentBuilderComboV101(){
   }
 
   const suggested=`${className} · ${sequence.slice(0,3).join(' → ')}${sequence.length>3?'…':''}`;
-  const name=(prompt('Name du combo partagé :',suggested)||'').trim();
+  const name=(prompt('Nom du combo partagé :',suggested)||'').trim();
   if(!name)return;
 
   const combatMode=String(
@@ -24808,7 +24808,7 @@ async function bclCloudShareV107(){
   const cls=bclCloudClassV107(), spec=bclCloudSpecV107(), seq=bclCloudSequenceV107();
   if(!cls){bclCloudStatusV107('Select a class before sharing.','error');return}
   if(!seq.length){bclCloudStatusV107('Adds at least one skill to the combo.','error');return}
-  const name=(prompt('Name du combo partagé :','Combo '+cls)||'').trim();
+  const name=(prompt('Nom du combo partagé :','Combo '+cls)||'').trim();
   if(!name)return;
   const {error}=await sb.from('shared_combos').insert({
     user_id:user.id,class_name:cls,specialization:spec,name,
@@ -24890,7 +24890,7 @@ function bclCloudRenderVerifiedV107(){
     const author=String(c.profiles?.username||'Joueur');
     return `<article class="community-combo-card-v101 verified">
       <div class="community-combo-head-v101">
-        <div><strong>✓ ${escapeHtml(c.name||'Combo de class')}</strong>
+        <div><strong>✓ ${escapeHtml(c.name||'Combo de classe')}</strong>
         <div class="community-combo-meta-v101">Verified par la communauté · ${escapeHtml(author)}</div></div>
         <span class="verified-badge">♥ ${Number(c.likes_count||0)}</span>
       </div>
@@ -25159,7 +25159,7 @@ async function bclSharedInsertBaseV108(type,item,user,cls,spec){
     const seq=bclComboSequenceV108(item); if(!seq.length)return null;
     const signature=bclComboSignatureV108(item);
     let r=await sb.from('community_class_combos').insert({
-      created_by:user.id,class_name:cls,specialization:spec,name:String(item?.name||'Combo de class'),
+      created_by:user.id,class_name:cls,specialization:spec,name:String(item?.name||'Combo de classe'),
       orientation:String(item?.orientation||''),signature,sequence:seq,data:bclSharedCleanV108(item)
     }).select('*').maybeSingle();
     if(r.error&&String(r.error.code)==='23505'){
@@ -25264,7 +25264,7 @@ function bclCloudAccountObjectV108(user){
   if(!user)return null;
   return {
     id:user.id,
-    name:String(user.user_metadata?.username||user.email?.split('@')[0]||'User'),
+    name:String(user.user_metadata?.username||user.email?.split('@')[0]||'Utilisateur'),
     email:String(user.email||''),
     createdAt:user.created_at||null,
     lastLoginAt:user.last_sign_in_at||null,
@@ -25296,10 +25296,10 @@ window.registerAccountV78=async function(){
     ACCOUNT_ACTIVE_V78=bclCloudAccountObjectV108(data.user);
     if(document.getElementById('accountRegisterImportCurrentV78')?.checked!==false)accountSaveWorkspaceV78(false);
     renderAccountHeaderV78();
-    accountStatusV78('Account cloud créé et connecté.','good');
+    accountStatusV78('Compte cloud créé et connecté.','good');
     setTimeout(()=>{closeAccountModalV78();bclSharedPushV108()},650);
   }else{
-    accountStatusV78('Account créé. Vérifie ton e-mail puis connecte-toi.','good');
+    accountStatusV78('Compte créé. Vérifie ton e-mail puis connecte-toi.','good');
   }
 };
 
@@ -25307,10 +25307,10 @@ window.loginAccountV78=async function(){
   const sb=bclSharedSbV108();
   const email=document.getElementById('accountLoginIdentityV78')?.value.trim().toLowerCase()||'';
   const pass=document.getElementById('accountLoginPasswordV78')?.value||'';
-  if(!email.includes('@'))return accountStatusV78('Used ton adresse e-mail pour te connecter.','bad');
-  accountStatusV78('Sign in cloud…');
+  if(!email.includes('@'))return accountStatusV78('Utilise ton adresse e-mail pour te connecter.','bad');
+  accountStatusV78('Connexion cloud…');
   const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
-  if(error)return accountStatusV78('Sign in impossible : '+error.message,'bad');
+  if(error)return accountStatusV78('Connexion impossible : '+error.message,'bad');
   BCL_CLOUD_USER_V107=data.user;
   ACCOUNT_ACTIVE_V78=bclCloudAccountObjectV108(data.user);
   renderAccountHeaderV78();
@@ -25334,7 +25334,7 @@ window.changeAccountPasswordV78=async function(){
   const next=document.getElementById('accountNewPasswordV78')?.value||'';
   const confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const user=BCL_CLOUD_USER_V107;
-  if(!user)return accountStatusV78('Noe compte cloud connecté.','bad');
+  if(!user)return accountStatusV78('Aucun compte cloud connecté.','bad');
   if(next.length<8)return accountStatusV78('The new password must contain at least 8 characters.','bad');
   if(next!==confirm)return accountStatusV78('The confirmation does not match.','bad');
   const verify=await sb.auth.signInWithPassword({email:user.email,password:old});
@@ -25431,7 +25431,7 @@ window.bclCloudRenderVerifiedV107=async function(){
     const author=String(c.profiles?.username||'Joueur');
     return `<article class="community-combo-card-v101 verified">
       <div class="community-combo-head-v101">
-        <div><strong>✓ ${escapeHtml(c.name||'Combo de class')}</strong>
+        <div><strong>✓ ${escapeHtml(c.name||'Combo de classe')}</strong>
         <div class="community-combo-meta-v101">Verified par la communauté · ${escapeHtml(author)}</div></div>
         <div class="community108-actions">
           <span class="verified-badge">♥ ${Number(c.likes_count||0)}</span>
@@ -25542,12 +25542,12 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdoCombosLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create an account','account.profile':'My profile','account.saveNow':'Backupr maintenant','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class combos','nav.playerCombos':'Player combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Create an account','account.profile':'My profile','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Change password','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Class combos','nav.playerCombos':'Player combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
-de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'My Profile','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analysis','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
+de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'My Profile','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
 es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Class Combos','nav.playerCombos':'Jugadores Combos','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
-it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Class','nav.skills':'Ability','nav.classCombos':'Class Combo','nav.playerCombos':'Combo games','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
-pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Class','nav.skills':'Habilidades','nav.classCombos':'Class combos','nav.playerCombos':'Jogadores Combos','nav.transitions':'Transfer / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definitions'}};
+it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Class Combo','nav.playerCombos':'Combo games','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
+pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Class combos','nav.playerCombos':'Jogadores Combos','nav.transitions':'Transfer / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
 function current(){const saved=localStorage.getItem(STORAGE_KEY);if(dict[saved])return saved;const b=(navigator.language||'fr').slice(0,2).toLowerCase();return dict[b]?b:'fr';}
 function t(key,lang){const l=lang||current();return (dict[l]&&dict[l][key])||(dict.fr&&dict.fr[key])||key;}
 function apply(lang,save){const l=dict[lang]?lang:'fr';document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(function(el){const key=el.getAttribute('data-i18n');if(key)el.textContent=t(key,l);});const sel=document.getElementById('bclLanguageSelect');if(sel&&sel.value!==l)sel.value=l;if(save)localStorage.setItem(STORAGE_KEY,l);window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));}
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

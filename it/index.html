@@ -5664,14 +5664,14 @@ h4{font-size:15px!important}
 .community101-settings-table .community101-setting-status{
   font-size:12px!important;color:#7ee787!important
 }
-#playerComboSummary{
+#playerCombosSummary{
   grid-template-columns:repeat(6,minmax(0,1fr))!important
 }
 @media(max-width:1100px){
-  #playerComboSummary{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  #playerCombosSummary{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 }
 @media(max-width:700px){
-  #playerComboSummary{grid-template-columns:1fr 1fr!important}
+  #playerCombosSummary{grid-template-columns:1fr 1fr!important}
   .community101-header-actions{width:100%}
   .community101-header-actions>*{flex:1 1 auto}
 }
@@ -5790,10 +5790,10 @@ if(!BDO_DOM_READY){
 
     <button class="tab-btn" data-page="classPage" onclick="showPage('classPage',this)"> <span data-i18n="nav.class">Class</span></button>
     <button class="tab-btn" data-page="skillsPage" onclick="showPage('skillsPage',this);renderSkillsPage()"> <span data-i18n="nav.skills">Skills</span></button>
-    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()"> <span data-i18n="nav.classCombo">Combo di classe</span></button>
-    <button class="tab-btn" data-page="playerComboPage"
-      onclick="showPage('playerComboPage',this);renderPlayerComboPage()">
-      <span data-i18n="nav.playerCombo">Combo dei giocatori</span>
+    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()"> <span data-i18n="nav.classCombos">Combo di classe</span></button>
+    <button class="tab-btn" data-page="playerCombosPage"
+      onclick="showPage('playerCombosPage',this);renderPlayerCombosPage()">
+      <span data-i18n="nav.playerCombos">Combo dei giocatori</span>
     </button>
     <button class="tab-btn" data-page="transitionPage" onclick="showPage('transitionPage',this);renderTransitionPage()"> <span data-i18n="nav.transitions">Transition / Cancel</span></button>
       <button class="tab-btn" type="button" onclick="showPage('youtubeAnalyzerPage', this); renderYouTubeAnalyzer();">
@@ -5903,7 +5903,7 @@ if(!BDO_DOM_READY){
 
       <section class="home18-panel">
         <div class="home18-panel-head"><div><span class="home18-section-kicker">DIAGNOSTIC</span><h3>Stato du contexte actif</h3></div></div>
-        <div id="home18Diagnosticas" class="home18-diagnostics"></div>
+        <div id="home18Diagnostics" class="home18-diagnostics"></div>
       </section>
     </div>
 
@@ -6025,7 +6025,7 @@ if(!BDO_DOM_READY){
           <summary><span>07</span> Régler l’optimiseur / Auto-Build</summary>
           <div class="home75-detail">
             <p>La page <b>Settings</b> ti permette di decidere in che misura il Builder deve privilegiare la velocità delle transizioni, delle cancellazioni e delle connessioni conosciute.</p>
-            <ol><li>Augmente le poids de <b>Speed</b> pour privilégier les chaînes rapides.</li><li>Augmente le poids de <b>Cancel</b> per privilegiare le sequenze con un cancel.</li><li>Active <b>Require known transition</b> preferire candidati il ​​cui legame è misurato/conosciuto.</li><li>Indietrone au Builder et compare le score des suggestions.</li></ol>
+            <ol><li>Augmente le poids de <b>Speed</b> pour privilégier les chaînes rapides.</li><li>Augmente le poids de <b>Cancel</b> per privilegiare le sequenze con un cancel.</li><li>Active <b>Require known transition</b> preferire candidati il ​​cui legame è misurato/conosciuto.</li><li>Retourne au Builder et compare le score des suggestions.</li></ol>
             <p class="home75-tip">Il punteggio non è solo un punteggio di danno: combina la logica del giocatore e i fattori tecnici disponibili. I dati mancanti limitano necessariamente la precisione dell'ottimizzazione.</p>
           </div>
         </details>
@@ -6051,7 +6051,7 @@ if(!BDO_DOM_READY){
               <span>Mesures et validations vidéo</span>
               <span>Combo enregistrés</span>
               <span>Stato du Combo Builder</span>
-              <span>Impostaziones Auto-Build</span>
+              <span>Réglages Auto-Build</span>
               <span>Skill Add-ons / Loadout</span>
               <span>Dati locales BDO Combo Labs</span>
             </div>
@@ -6073,7 +6073,7 @@ if(!BDO_DOM_READY){
               <li>Clique <b>Importa backup</b>.</li>
               <li>Sélectionne le fichier <code>BDO_Combo_Labs_Backup_....json</code>.</li>
               <li>Attends le message de confirmation.</li>
-              <li>Indietrone dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.</li>
+              <li>Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.</li>
             </ol>
 
             <p class="home75-tip"><b>Compte local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Utilise « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
@@ -6160,7 +6160,7 @@ if(!BDO_DOM_READY){
       <div class="class-summary-item identity"><span>Classe attiva</span><strong id="statClass">—</strong></div>
       <div class="class-summary-item spec"><span>Specializzazione</span><strong id="statSpec">—</strong></div>
       <div class="class-summary-item skills"><span>Skills</span><strong id="statSkills">0</strong></div>
-      <div class="class-summary-item combos"><span>Combo</span><strong id="statCombo">0</strong></div>
+      <div class="class-summary-item combos"><span>Combo</span><strong id="statCombos">0</strong></div>
       <div class="class-summary-item transitions"><span>Transitions / cancels</span><strong id="statTransitions">0</strong></div>
     </div>
 
@@ -6332,16 +6332,16 @@ if(!BDO_DOM_READY){
 
 
   
-  <section id="playerComboPage" class="page">
+  <section id="playerCombosPage" class="page">
     <div class="card">
       <div class="combo-header player-combos-header">
         <div>
           <h2>Combo dei giocatori</h2>
-          <div id="playerComboContext" class="badge">Nessuna classe sélectionnée</div>
+          <div id="playerCombosContext" class="badge">Nessuna classe sélectionnée</div>
         </div>
         <div class="community101-header-actions">
           <span id="communityVerifyThresholdBadgeV101" class="community101-threshold-badge">Vérification : 10 J’aime</span>
-          <button type="button" class="tab-btn" onclick="renderPlayerComboPage()">Aggiorna</button>
+          <button type="button" class="tab-btn" onclick="renderPlayerCombosPage()">Aggiorna</button>
         </div>
       </div>
 
@@ -6350,12 +6350,12 @@ if(!BDO_DOM_READY){
         Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combo dei giocatori et rejoint Combo di classe.
       </p>
 
-      <div id="playerComboSummary" class="player-combos-summary"></div>
+      <div id="playerCombosSummary" class="player-combos-summary"></div>
 
       <div class="player-combos-toolbar">
         <div>
           <label for="playerComboTypeFilter">Afficher</label>
-          <select id="playerComboTypeFilter" onchange="renderPlayerComboPage()">
+          <select id="playerComboTypeFilter" onchange="renderPlayerCombosPage()">
             <option value="all">Tout</option>
             <option value="combo">Combo complets</option>
             <option value="transition">Transitions</option>
@@ -6365,7 +6365,7 @@ if(!BDO_DOM_READY){
 
         <div>
           <label for="playerComboModeFilter">Mode</label>
-          <select id="playerComboModeFilter" onchange="renderPlayerComboPage()">
+          <select id="playerComboModeFilter" onchange="renderPlayerCombosPage()">
             <option value="all">PvP + PvE</option>
             <option value="PVP">PvP</option>
             <option value="PVE">PvE</option>
@@ -6374,7 +6374,7 @@ if(!BDO_DOM_READY){
 
         <div>
           <label for="playerComboSort">Ordina</label>
-          <select id="playerComboSort" onchange="renderPlayerComboPage()">
+          <select id="playerComboSort" onchange="renderPlayerCombosPage()">
             <option value="priority">Priorité communauté</option>
             <option value="length">Longueur</option>
             <option value="coverage">Skills disponibles</option>
@@ -6382,7 +6382,7 @@ if(!BDO_DOM_READY){
         </div>
       </div>
 
-      <div id="playerComboList" class="player-combos-list"></div>
+      <div id="playerCombosList" class="player-combos-list"></div>
     </div>
   </section>
 
@@ -6533,7 +6533,7 @@ if(!BDO_DOM_READY){
         <div class="builder-smart-head">
           <div>
             <strong>Player-Priority Suggestions</strong>
-            <div id="builderSuggestedFase" class="badge builder-phase-badge">Fase: —</div>
+            <div id="builderSuggestedPhase" class="badge builder-phase-badge">Fase: —</div>
           </div>
           <button type="button" class="tab-btn" onclick="renderSmartBuilderSuggestions()">Refresh Suggestions</button>
         </div>
@@ -7169,11 +7169,11 @@ if(!BDO_DOM_READY){
 
   <div class="phase90-row phase90-cc">
     <div class="phase90-name"><b>CC</b><small>Contrôle / re-CC PvP</small></div>
-    <select id="autoBuildCCFaseEnabled" onchange="saveAutoBuildSettings()">
+    <select id="autoBuildCCPhaseEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Attivato</option>
       <option value="false">Disattivato</option>
     </select>
-    <input id="autoBuildCCFaseMaxSkills" type="number" min="0" max="20" value="2" onchange="saveAutoBuildSettings()">
+    <input id="autoBuildCCPhaseMaxSkills" type="number" min="0" max="20" value="2" onchange="saveAutoBuildSettings()">
     <div class="phase90-special">
       <label for="autoBuildPvpReccThreshold">Seuil re-CC PvP</label>
       <div class="phase90-unit">
@@ -7210,7 +7210,7 @@ if(!BDO_DOM_READY){
         Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
       </div>
 
-      <div class="settings81-section-head"><span>08</span><div><h3>Filtros avancés</h3><p>Controlla la qualità dei dati e i cambiamenti di posizione.</p></div></div>
+      <div class="settings81-section-head"><span>08</span><div><h3>Filtres avancés</h3><p>Controlla la qualità dei dati e i cambiamenti di posizione.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Impostazione</span>
@@ -7319,12 +7319,12 @@ function renderClassStats(){
   if(statSpec) statSpec.textContent = spec;
   document.getElementById('statSkills').textContent =
     (CLASS_SKILLS[name]?.[spec] || []).length;
-  document.getElementById('statCombo').textContent =
+  document.getElementById('statCombos').textContent =
     (VERIFIED_COMBOS[name]?.[spec] || []).length;
   document.getElementById('statTransitions').textContent =
     (CLASS_TRANSITIONS[name]?.[spec] || []).length;
   document.getElementById('classStatsInfo').textContent =
-    'Nessuna donnée de combat n’est encore enregistrée pour ' + name + '.';
+    'Aucune donnée de combat n’est encore enregistrée pour ' + name + '.';
   panel.style.display = 'block';
 }
 </script>
@@ -7543,7 +7543,7 @@ function skillTimerDisplay(skill){
 }
 
 
-const SKILL_LEVEL_SELECTION_KEY = 'bdoComboLabs.skillLevelSelection.v1';
+const SKILL_LEVEL_SELECTION_KEY = 'bdoCombosLabs.skillLevelSelection.v1';
 let SKILL_LEVEL_SELECTION = {};
 
 try{
@@ -8293,8 +8293,8 @@ function skillsTableCreateEditor(item,className,spec,baseName){
   });
   wrap.appendChild(grid);
   const actions=document.createElement('div');actions.className='skills-editor-actions';
-  const del=document.createElement('button');del.type='button';del.className='tab-btn skills-delete-btn-v72';del.textContent='Elimina la compétence';del.onclick=()=>skillsDeleteV72(item,className,spec);
-  const close=document.createElement('button');close.type='button';close.className='tab-btn';close.textContent='Chiudi';close.onclick=()=>skillsTableToggleDetail(`${className}::${spec}::${baseName}`);
+  const del=document.createElement('button');del.type='button';del.className='tab-btn skills-delete-btn-v72';del.textContent='Supprimer la compétence';del.onclick=()=>skillsDeleteV72(item,className,spec);
+  const close=document.createElement('button');close.type='button';close.className='tab-btn';close.textContent='Fermer';close.onclick=()=>skillsTableToggleDetail(`${className}::${spec}::${baseName}`);
   actions.append(del,close);wrap.appendChild(actions);
   return wrap;
 }
@@ -8312,7 +8312,7 @@ function renderSkillsPage(){
   const sortEl=document.getElementById('skillsTableSort'); if(sortEl)sortEl.value=SKILLS_TABLE_STATE.sort;
 
   if(!className){
-    context.textContent='Nessuna classe sélectionnée';content.className='page-placeholder';content.textContent='Sélectionne d’abord une classe.';
+    context.textContent='Aucune classe sélectionnée';content.className='page-placeholder';content.textContent='Sélectionne d’abord une classe.';
     ['skillsSummaryTotal','skillsSummaryEnabled','skillsSummaryInput','skillsSummaryCombat'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent='0';});
     const ref=document.getElementById('skillsReferenceActive');if(ref)ref.textContent='—';return;
   }
@@ -8408,7 +8408,7 @@ function renderSkillsPage(){
     const actTd=document.createElement('td');actTd.className='skills-actions-cell';
     const view=document.createElement('button');view.type='button';view.className='skills-icon-btn view';view.title='Voir / modifier';view.textContent='✎';view.onclick=()=>skillsTableToggleDetail(key);
     const toggle=document.createElement('button');toggle.type='button';toggle.className='skills-icon-btn';toggle.title=item?.enabled===false?'Activer':'Désactiver';toggle.textContent=item?.enabled===false?'✓':'⊘';toggle.onclick=()=>{item.enabled=item.enabled===false;saveImportedAnalyzerData();saveSkillActivationState();renderSkillsPage();};
-    const del=document.createElement('button');del.type='button';del.className='skills-icon-btn skills-row-delete-v72';del.title='Elimina';del.textContent='×';del.onclick=()=>skillsDeleteV72(item,className,spec);
+    const del=document.createElement('button');del.type='button';del.className='skills-icon-btn skills-row-delete-v72';del.title='Supprimer';del.textContent='×';del.onclick=()=>skillsDeleteV72(item,className,spec);
     actTd.append(view,toggle,del);tr.appendChild(actTd);
     tbody.appendChild(tr);
 
@@ -8417,7 +8417,7 @@ function renderSkillsPage(){
   table.appendChild(tbody);scroller.appendChild(table);content.appendChild(scroller);
 
   const foot=document.createElement('div');foot.className='skills-pagination';
-  const range=document.createElement('span');range.textContent=total?`Affichage ${start+1} à ${Math.min(start+pageSize,total)} sur ${total} compétences`:'Nessuno résultat';
+  const range=document.createElement('span');range.textContent=total?`Affichage ${start+1} à ${Math.min(start+pageSize,total)} sur ${total} compétences`:'Aucun résultat';
   const nav=document.createElement('div');nav.className='skills-page-buttons';
   const addPageBtn=(label,page,disabled=false,active=false)=>{const b=document.createElement('button');b.type='button';b.className='skills-page-btn'+(active?' active':'');b.textContent=label;b.disabled=disabled;b.onclick=()=>skillsTableSetPage(page);nav.appendChild(b);};
   addPageBtn('‹',SKILLS_TABLE_STATE.page-1,SKILLS_TABLE_STATE.page<=1);
@@ -8429,8 +8429,8 @@ function renderSkillsPage(){
 
 document.getElementById('classSelector')?.addEventListener('change', renderSkillsPage);
 document.getElementById('classSelector')?.addEventListener('change', ()=>{
-  if(document.getElementById('playerComboPage')?.classList.contains('active')){
-    renderPlayerComboPage();
+  if(document.getElementById('playerCombosPage')?.classList.contains('active')){
+    renderPlayerCombosPage();
   }
 });
 </script>
@@ -8937,7 +8937,7 @@ function loadPlayerComboIntoBuilder(index, append=false){
   const resolution = playerComboSkillResolution(pattern);
 
   if(!resolution.resolved.length){
-    alert('Nessuna compétence de ce combo ne correspond à la bibliothèque active.');
+    alert('Aucune compétence de ce combo ne correspond à la bibliothèque active.');
     return;
   }
 
@@ -8974,17 +8974,17 @@ function loadPlayerComboIntoBuilder(index, append=false){
   },30);
 }
 
-function renderPlayerComboPage(){
+function renderPlayerCombosPage(){
   const className = document.getElementById('classSelector')?.value || '';
   const spec = document.getElementById('specSelector')?.value || 'Awakening';
-  const context = document.getElementById('playerComboContext');
-  const summary = document.getElementById('playerComboSummary');
-  const list = document.getElementById('playerComboList');
+  const context = document.getElementById('playerCombosContext');
+  const summary = document.getElementById('playerCombosSummary');
+  const list = document.getElementById('playerCombosList');
 
   if(!context || !summary || !list) return;
 
   if(!className){
-    context.textContent = 'Nessuna classe sélectionnée';
+    context.textContent = 'Aucune classe sélectionnée';
     summary.innerHTML = '';
     list.innerHTML =
       '<div class="page-placeholder">Sélectionne une classe dans l’onglet Class.</div>';
@@ -9119,7 +9119,7 @@ function renderPlayerComboPage(){
     const append = document.createElement('button');
     append.type = 'button';
     append.className = 'tab-btn';
-    append.textContent = 'Aggiungi à la suite';
+    append.textContent = 'Ajouter à la suite';
     append.onclick = () => loadPlayerComboIntoBuilder(realIndex,true);
 
     actions.append(load,append);
@@ -9219,7 +9219,7 @@ function renderComboPage(){
   if(!context || !content) return;
 
   if(!className){
-    context.textContent = 'Nessuna classe sélectionnée';
+    context.textContent = 'Aucune classe sélectionnée';
     content.className = 'page-placeholder';
     content.textContent = 'Sélectionne d’abord une classe dans l’onglet Classe.';
     return;
@@ -9227,13 +9227,13 @@ function renderComboPage(){
 
   const spec = document.getElementById('specSelector')?.value || 'Awakening';
   context.textContent = 'Class: ' + className + ' · ' + spec;
-  const nativeCombo = VERIFIED_COMBOS[className]?.[spec] || [];
-  const communityCombo = typeof communityVerifiedForClassV101==='function'
+  const nativeCombos = VERIFIED_COMBOS[className]?.[spec] || [];
+  const communityCombos = typeof communityVerifiedForClassV101==='function'
     ? communityVerifiedForClassV101(className,spec)
     : [];
 
   const comboMap=new Map();
-  [...nativeCombo,...communityCombo].forEach(combo=>{
+  [...nativeCombos,...communityCombos].forEach(combo=>{
     const seq=Array.isArray(combo?.sequence)?combo.sequence:(Array.isArray(combo?.seq)?combo.seq:[]);
     const key=seq.map(x=>String(x||'').trim().toLowerCase()).join('>');
     if(!key)return;
@@ -9244,7 +9244,7 @@ function renderComboPage(){
 
   if(!combos.length){
     content.className = 'page-placeholder';
-    content.textContent = 'Nessuno combo de classe validé enregistré pour ' + className + '.';
+    content.textContent = 'Aucun combo de classe validé enregistré pour ' + className + '.';
     return;
   }
 
@@ -9346,8 +9346,8 @@ const DEFAULT_AUTO_BUILD_SETTINGS = {
   engageMaxSkills:2,
   setupEnabled:true,
   setupMaxSkills:2,
-  ccFaseEnabled:true,
-  ccFaseMaxSkills:2,
+  ccPhaseEnabled:true,
+  ccPhaseMaxSkills:2,
   pvpReccThreshold:0.35,
   burstEnabled:true,
   burstMaxSkills:4,
@@ -9397,8 +9397,8 @@ const AUTO_BUILD_FIELDS = {
   engageMaxSkills:'autoBuildEngageMaxSkills',
   setupEnabled:'autoBuildSetupEnabled',
   setupMaxSkills:'autoBuildSetupMaxSkills',
-  ccFaseEnabled:'autoBuildCCFaseEnabled',
-  ccFaseMaxSkills:'autoBuildCCFaseMaxSkills',
+  ccPhaseEnabled:'autoBuildCCPhaseEnabled',
+  ccPhaseMaxSkills:'autoBuildCCPhaseMaxSkills',
   pvpReccThreshold:'autoBuildPvpReccThreshold',
   burstEnabled:'autoBuildBurstEnabled',
   burstMaxSkills:'autoBuildBurstMaxSkills',
@@ -9415,7 +9415,7 @@ const AUTO_BUILD_FIELDS = {
 
 const BOOLEAN_SETTINGS = new Set([
   'avoidCooldown','allowReuse','requireProtection','preferSA','preferFG','preferIframe',
-  'preserveResource','engageEnabled','setupEnabled','ccFaseEnabled','burstEnabled','finisherEnabled','requireVerified',
+  'preserveResource','engageEnabled','setupEnabled','ccPhaseEnabled','burstEnabled','finisherEnabled','requireVerified',
   'requireKnownTransition','allowUnknownData','preferSameStance','allowStanceSwap'
 ]);
 
@@ -9423,7 +9423,7 @@ const NUMBER_SETTINGS = new Set([
   'minSkills','maxSkills','minDuration','maxDuration','maxRepeat','cooldownWeight',
   'minCC','maxCC','protectionCoverage','damageWeight','speedWeight','ccWeight',
   'protectionWeight','mobilityWeight','cancelWeight','maxResourceCost',
-  'maxStaminaCost','preferVerified','minDataQuality','engageMaxSkills','setupMaxSkills','ccFaseMaxSkills','pvpReccThreshold','burstMaxSkills','finisherMaxSkills'
+  'maxStaminaCost','preferVerified','minDataQuality','engageMaxSkills','setupMaxSkills','ccPhaseMaxSkills','pvpReccThreshold','burstMaxSkills','finisherMaxSkills'
 ]);
 
 function syncSettingsClassContext(){
@@ -9471,7 +9471,7 @@ function readAutoBuildSettingsFromUI(){
   result.minDataQuality = Math.min(100, Math.max(0, result.minDataQuality || 0));
   result.engageMaxSkills = Math.max(0, result.engageMaxSkills || 0);
   result.setupMaxSkills = Math.max(0, result.setupMaxSkills || 0);
-  result.ccFaseMaxSkills = Math.max(0, result.ccFaseMaxSkills || 0);
+  result.ccPhaseMaxSkills = Math.max(0, result.ccPhaseMaxSkills || 0);
   result.pvpReccThreshold = Math.min(1.5,Math.max(0.05,Number(result.pvpReccThreshold)||0.35));
   result.burstMaxSkills = Math.max(0, result.burstMaxSkills || 0);
   result.finisherMaxSkills = Math.max(0, result.finisherMaxSkills || 0);
@@ -9530,7 +9530,7 @@ function fullBackupShouldIncludeStorageKeyV110(key){
   const k=String(key||'');
   if(!k || fullBackupIsCacheKeyV110(k))return false;
   return (
-    /^bdoComboLabs[.:]/i.test(k) ||
+    /^bdoCombosLabs[.:]/i.test(k) ||
     /^bcl/i.test(k) ||
     /combo|skill|transition|cancel|addon|loadout|crystal|consumable|youtube|video|builder|account|setting|measure|timer|cc|class/i.test(k)
   );
@@ -9758,7 +9758,7 @@ async function importFullBackupV48(file){
     }catch(e){}
 
     const renderers=[
-      'renderClassStats','renderSkillsPage','renderComboPage','renderPlayerComboPage',
+      'renderClassStats','renderSkillsPage','renderComboPage','renderPlayerCombosPage',
       'renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'
     ];
     for(const name of renderers){
@@ -9788,16 +9788,16 @@ async function importFullBackupV48(file){
 function saveAutoBuildSettings(){
   AUTO_BUILD_SETTINGS = readAutoBuildSettingsFromUI();
   try{
-    localStorage.setItem('bdoComboLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
+    localStorage.setItem('bdoCombosLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Impostaziones enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' paramètres.';
+  if(status) status.textContent = 'Réglages enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' paramètres.';
   syncSettingsClassContext();
 }
 
 function loadAutoBuildSettings(){
   try{
-    const raw = localStorage.getItem('bdoComboLabs.autoBuildSettings');
+    const raw = localStorage.getItem('bdoCombosLabs.autoBuildSettings');
     if(raw) AUTO_BUILD_SETTINGS = {...DEFAULT_AUTO_BUILD_SETTINGS, ...JSON.parse(raw)};
   }catch(e){
     AUTO_BUILD_SETTINGS = {...DEFAULT_AUTO_BUILD_SETTINGS};
@@ -9813,9 +9813,9 @@ if(typeof bdoOnReady==='function'){
 function resetAutoBuildSettings(){
   AUTO_BUILD_SETTINGS = {...DEFAULT_AUTO_BUILD_SETTINGS};
   applyAutoBuildSettingsToUI();
-  try{ localStorage.setItem('bdoComboLabs.autoBuildSettings',JSON.stringify(AUTO_BUILD_SETTINGS)); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
+  try{ localStorage.setItem('bdoCombosLabs.autoBuildSettings',JSON.stringify(AUTO_BUILD_SETTINGS)); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Impostaziones Auto-Build réinitialisés.';
+  if(status) status.textContent = 'Réglages Auto-Build réinitialisés.';
 }
 
 function optimizerModeLabel(mode){
@@ -10126,18 +10126,18 @@ function optimizeCurrentCombo(){
     );
 
     const phases = [];
-    const addFase = (key,label,enabled,max) => {
+    const addPhase = (key,label,enabled,max) => {
       const count = Math.max(0,Number(max)||0);
       if(enabled !== false && count > 0){
         phases.push({key,label,max:count});
       }
     };
 
-    addFase('engage','Engage',settings.engageEnabled,settings.engageMaxSkills ?? 1);
-    addFase('setup','Setup',settings.setupEnabled,settings.setupMaxSkills ?? 1);
-    addFase('cc','CC',settings.ccFaseEnabled,settings.ccFaseMaxSkills ?? 1);
-    addFase('burst','Burst',settings.burstEnabled,settings.burstMaxSkills ?? 4);
-    addFase('finisher','Finisher',settings.finisherEnabled,settings.finisherMaxSkills ?? 1);
+    addPhase('engage','Engage',settings.engageEnabled,settings.engageMaxSkills ?? 1);
+    addPhase('setup','Setup',settings.setupEnabled,settings.setupMaxSkills ?? 1);
+    addPhase('cc','CC',settings.ccPhaseEnabled,settings.ccPhaseMaxSkills ?? 1);
+    addPhase('burst','Burst',settings.burstEnabled,settings.burstMaxSkills ?? 4);
+    addPhase('finisher','Finisher',settings.finisherEnabled,settings.finisherMaxSkills ?? 1);
 
     if(!phases.length){
       phases.push(
@@ -10482,7 +10482,7 @@ function renderManualGoogleDocContext(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const el=document.getElementById('manualGoogleDocContext');
-  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'Nessuna classe sélectionnée';
+  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'Aucune classe sélectionnée';
 }
 
 function normalizeGuideFetchUrl(url){
@@ -10805,7 +10805,7 @@ function oldDocsCurrentSkills(){
   return collected.filter(s=>s?.enabled!==false);
 }
 
-function oldDocsLibraryDiagnostica(){
+function oldDocsLibraryDiagnostic(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const skills=oldDocsCurrentSkills();
@@ -11456,7 +11456,7 @@ function integrateGuideEvidence(evidence,cls,spec){
   try{ if(typeof saveAppState==='function')saveAppState(); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   try{ if(typeof renderComboPage==='function')renderComboPage(); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   try{ if(typeof renderTransitionPage==='function')renderTransitionPage(); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
-  try{ if(typeof renderPlayerComboPage==='function')renderPlayerComboPage(); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
+  try{ if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage(); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   try{ if(typeof renderComboBuilder==='function')renderComboBuilder(); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
 
   return {combosAdded,transitionsAdded,transitionsEnriched,evidenceCount:evidence.length};
@@ -11521,7 +11521,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
   try{if(typeof renderSkillsPage==='function')renderSkillsPage();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
   try{if(typeof renderComboPage==='function')renderComboPage();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
   try{if(typeof renderTransitionPage==='function')renderTransitionPage();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
-  try{if(typeof renderPlayerComboPage==='function')renderPlayerComboPage();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
+  try{if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
 
   const afterSkills=CLASS_SKILLS[cls][spec].length;
@@ -15176,7 +15176,7 @@ function autoSkillReferenceToSkillV13(ref,cls,spec){
     ownerSpec:spec,
     referenceSpec:ref?.spec || 'Shared',
     source:ref?.referenceSource || 'Dictionnaire de référence',
-    importedBy:'Cerca auto dictionnaire V13',
+    importedBy:'Recherche auto dictionnaire V13',
     referenceImported:true
   };
 }
@@ -15224,7 +15224,7 @@ function autoPopulateSkillsFromReferenceV13(){
     return;
   }
   if(typeof guideReferenceForCurrentClassV10!=='function'){
-    setStatus('Nessuno moteur de dictionnaire de référence n’est disponible.','bad');
+    setStatus('Aucun moteur de dictionnaire de référence n’est disponible.','bad');
     return;
   }
 
@@ -16099,7 +16099,7 @@ function autoImportAnalysisResults(summary){
   ensureClassSpecStores(className, spec);
 
   let addedSkills = 0;
-  let addedCombo = 0;
+  let addedCombos = 0;
   let addedTransitions = 0;
 
   for(const skill of (summary.skills || [])){
@@ -16181,7 +16181,7 @@ function autoImportAnalysisResults(summary){
       source,
       importedBy:'Google Docs Analyzer',
       verified:true
-    })) addedCombo++;
+    })) addedCombos++;
   }
 
   for(const transition of (summary.transitions || [])){
@@ -16207,7 +16207,7 @@ function autoImportAnalysisResults(summary){
 
   return {
     skills:addedSkills,
-    combos:addedCombo,
+    combos:addedCombos,
     transitions:addedTransitions,
     skipped:false
   };
@@ -16215,17 +16215,17 @@ function autoImportAnalysisResults(summary){
 
 function saveImportedAnalyzerData(){
   try{
-    localStorage.setItem('bdoComboLabs.imported.skills', JSON.stringify(CLASS_SKILLS));
-    localStorage.setItem('bdoComboLabs.imported.combos', JSON.stringify(VERIFIED_COMBOS));
-    localStorage.setItem('bdoComboLabs.imported.transitions', JSON.stringify(CLASS_TRANSITIONS));
+    localStorage.setItem('bdoCombosLabs.imported.skills', JSON.stringify(CLASS_SKILLS));
+    localStorage.setItem('bdoCombosLabs.imported.combos', JSON.stringify(VERIFIED_COMBOS));
+    localStorage.setItem('bdoCombosLabs.imported.transitions', JSON.stringify(CLASS_TRANSITIONS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
 }
 
 function loadImportedAnalyzerData(){
   try{
-    const s = JSON.parse(localStorage.getItem('bdoComboLabs.imported.skills') || 'null');
-    const c = JSON.parse(localStorage.getItem('bdoComboLabs.imported.combos') || 'null');
-    const t = JSON.parse(localStorage.getItem('bdoComboLabs.imported.transitions') || 'null');
+    const s = JSON.parse(localStorage.getItem('bdoCombosLabs.imported.skills') || 'null');
+    const c = JSON.parse(localStorage.getItem('bdoCombosLabs.imported.combos') || 'null');
+    const t = JSON.parse(localStorage.getItem('bdoCombosLabs.imported.transitions') || 'null');
 
     if(s){
       for(const [className, specs] of Object.entries(s)){
@@ -16257,7 +16257,7 @@ bdoOnReady( () => {
 
 
 <script>
-const APP_STATE_KEY = 'bdoComboLabs.sessionState.v1';
+const APP_STATE_KEY = 'bdoCombosLabs.sessionState.v1';
 
 function collectAppState(){
   const ids=['classSelector','specSelector'];
@@ -16670,7 +16670,7 @@ bdoOnReady( () => {
 const BUILDER_STATE = {};
 
 
-const BUILDER_ORIENTATION_KEY = 'bdoComboLabs.builderOrientation.v1';
+const BUILDER_ORIENTATION_KEY = 'bdoCombosLabs.builderOrientation.v1';
 
 function builderOrientationStorageKey(){
   const cls = document.getElementById('classSelector')?.value || '';
@@ -16681,7 +16681,7 @@ function builderOrientationStorageKey(){
 
 function builderOrientationLabelV71(value){
   const v=String(value||'awakening').toLowerCase();
-  if(v==='mixed')return 'Misto';
+  if(v==='mixed')return 'Mixte';
   if(v==='preawak')return 'Pré-Awakening';
   return 'Awakening';
 }
@@ -16978,7 +16978,7 @@ function getBuilderSequence(){
 }
 
 
-function smartBuilderFase(){
+function smartBuilderPhase(){
   const seq = getBuilderSequence();
   const settings = (typeof readAutoBuildSettingsFromUI === 'function')
     ? readAutoBuildSettingsFromUI()
@@ -16987,7 +16987,7 @@ function smartBuilderFase(){
   const phases = [
     {key:'engage', label:'Engage', enabled:settings.engageEnabled !== false, max:Number(settings.engageMaxSkills ?? 2)},
     {key:'setup', label:'Setup', enabled:settings.setupEnabled !== false, max:Number(settings.setupMaxSkills ?? 2)},
-    {key:'cc', label:'CC', enabled:settings.ccFaseEnabled !== false, max:Number(settings.ccFaseMaxSkills ?? 2)},
+    {key:'cc', label:'CC', enabled:settings.ccPhaseEnabled !== false, max:Number(settings.ccPhaseMaxSkills ?? 2)},
     {key:'burst', label:'Burst', enabled:settings.burstEnabled !== false, max:Number(settings.burstMaxSkills ?? 4)},
     {key:'finisher', label:'Finisher', enabled:settings.finisherEnabled !== false, max:Number(settings.finisherMaxSkills ?? 1)},
   ].filter(x=>x.enabled && x.max>0);
@@ -17677,7 +17677,7 @@ function getSmartBuilderSuggestions(limit=6){
 
   const seq=getBuilderSequence();
   const last=seq.length ? seq[seq.length-1] : null;
-  const phase=smartBuilderFase();
+  const phase=smartBuilderPhase();
 
   const skills=(CLASS_SKILLS?.[cls]?.[spec]||[])
     .filter(s=>s?.enabled!==false)
@@ -17784,7 +17784,7 @@ function bindRealtimePlayerSuggestionRefresh(){
     'autoBuildMobilityWeight','autoBuildCancelWeight',
     'autoBuildEngageEnabled','autoBuildEngageMaxSkills',
     'autoBuildSetupEnabled','autoBuildSetupMaxSkills',
-    'autoBuildCCFaseEnabled','autoBuildCCFaseMaxSkills',
+    'autoBuildCCPhaseEnabled','autoBuildCCPhaseMaxSkills',
     'autoBuildBurstEnabled','autoBuildBurstMaxSkills',
     'autoBuildFinisherEnabled','autoBuildFinisherMaxSkills',
     'builderManualSkillSelect'
@@ -17868,10 +17868,10 @@ function addPlayerSuggestedSkill(name){
 function renderSmartBuilderSuggestions(){
   populateBuilderManualSkillSelect();
   const wrap=document.getElementById('builderSuggestions');
-  const phaseBadge=document.getElementById('builderSuggestedFase');
+  const phaseBadge=document.getElementById('builderSuggestedPhase');
   if(!wrap) return;
 
-  const phase=smartBuilderFase();
+  const phase=smartBuilderPhase();
   if(phaseBadge) phaseBadge.textContent=`Fase: ${phase.label}`;
 
   const suggestions=getSmartBuilderSuggestions();
@@ -18790,7 +18790,7 @@ function builderCCTimelineV32(sequence=getBuilderSequence()){
         officialRow.ccRemainingPoints ??
         Math.max(0,2-Number(officialRow.ccPoints||0))
       ),
-      ccOrdinaggered:Boolean(officialRow.triggered),
+      ccTriggered:Boolean(officialRow.triggered),
       ccBlocked:blocked,
 
       // Active CC timer is independent of immunity.
@@ -19122,8 +19122,8 @@ function builderPairSynergy(fromSkill,toSkill,index){
   // If there is actual player-logic scoring for this continuation, use it as evidence.
   if(typeof scoreSmartBuilderSkill === 'function'){
     try{
-      const phase = typeof smartBuilderFase === 'function'
-        ? smartBuilderFase()
+      const phase = typeof smartBuilderPhase === 'function'
+        ? smartBuilderPhase()
         : {key:'burst',label:'Burst'};
       const scored = scoreSmartBuilderSkill(toSkill,phase,fromSkill.name);
       const playerScore = Number(scored?.score);
@@ -19299,8 +19299,8 @@ function builderReplacementSuggestions(errorIndex, limit=3){
   const phase = (() => {
     if(errorIndex === 0) return {key:'engage',label:'Engage'};
     if(errorIndex === seq.length - 1) return {key:'finisher',label:'Finisher'};
-    if(typeof smartBuilderFase === 'function'){
-      try{return smartBuilderFase();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
+    if(typeof smartBuilderPhase === 'function'){
+      try{return smartBuilderPhase();}catch(e){ bdoDebugError('Suppressed runtime error', e); }
     }
     return {key:'burst',label:'Burst'};
   })();
@@ -19621,13 +19621,13 @@ function renderBuilderSequence(){
 
 function saveBuilderState(){
   try{
-    localStorage.setItem('bdoComboLabs.builderState', JSON.stringify(BUILDER_STATE));
+    localStorage.setItem('bdoCombosLabs.builderState', JSON.stringify(BUILDER_STATE));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
 }
 
 function loadBuilderState(){
   try{
-    const raw = localStorage.getItem('bdoComboLabs.builderState');
+    const raw = localStorage.getItem('bdoCombosLabs.builderState');
     if(raw){
       const parsed = JSON.parse(raw);
       if(parsed && typeof parsed === 'object'){
@@ -19648,7 +19648,7 @@ bdoOnReady( () => {
 
 
 <script>
-const SKILL_ACTIVATION_KEY = 'bdoComboLabs.skillActivation.v1';
+const SKILL_ACTIVATION_KEY = 'bdoCombosLabs.skillActivation.v1';
 
 function saveSkillActivationState(){
   try{
@@ -19697,7 +19697,7 @@ bdoOnReady( () => {
 
 
 <script>
-const SKILL_ADVANCED_KEY = 'bdoComboLabs.skillAdvanced.v1';
+const SKILL_ADVANCED_KEY = 'bdoCombosLabs.skillAdvanced.v1';
 
 function saveSkillAdvancedData(){
   try{
@@ -19734,7 +19734,7 @@ bdoOnReady( () => {
 
 
 <script>
-const CLASS_LOADOUT_KEY = 'bdoComboLabs.classLoadouts.v1';
+const CLASS_LOADOUT_KEY = 'bdoCombosLabs.classLoadouts.v1';
 let CLASS_LOADOUTS = {};
 
 function classLoadoutKey(){
@@ -19802,7 +19802,7 @@ function currentClassSkillsForAddons(){
     .filter(skill => skillUsableInSpec(skill, spec));
 }
 
-function addonSkillOpziones(selected=''){
+function addonSkillOptions(selected=''){
   const skills = currentClassSkillsForAddons();
   const names = [...new Set(skills.map(s => s?.name || String(s)).filter(Boolean))];
   return ['<option value="">Select skill</option>']
@@ -19827,7 +19827,7 @@ function officialAddonEffectById(id){
 }
 
 function addonEffectDisplay(effectId, skillName=''){
-  if(!effectId) return 'Noe';
+  if(!effectId) return 'None';
   const effect = officialAddonEffectById(effectId);
   if(!effect) return effectId;
 
@@ -19840,8 +19840,8 @@ function addonEffectDisplay(effectId, skillName=''){
   return `${effect.label} for ${duration} sec${effect.target ? ' to target' : ''}`;
 }
 
-function addonEffectOpziones(selected='', skillName=''){
-  const options = ['<option value="">Noe</option>'];
+function addonEffectOptions(selected='', skillName=''){
+  const options = ['<option value="">None</option>'];
   for(const effect of OFFICIAL_ADDON_EFFECTS){
     const label = addonEffectDisplay(effect.id, skillName);
     options.push(
@@ -19888,11 +19888,11 @@ function renderAddonLines(lines=createEmptyAddonLines()){
     skillLabel.textContent = 'Skill';
     const skillSelect = document.createElement('select');
     skillSelect.className = 'addon-skill-select';
-    skillSelect.innerHTML = addonSkillOpziones(line.skill);
+    skillSelect.innerHTML = addonSkillOptions(line.skill);
     skillSelect.onchange = () => {
       const currentEffects = [...row.querySelectorAll('.addon-effect-select')].map(x => x.value || '');
       row.querySelectorAll('.addon-effect-select').forEach((fx,index) => {
-        fx.innerHTML = addonEffectOpziones(currentEffects[index] || '', skillSelect.value);
+        fx.innerHTML = addonEffectOptions(currentEffects[index] || '', skillSelect.value);
       });
       updateTierInfo();
       saveClassLoadoutSettings();
@@ -19915,7 +19915,7 @@ function renderAddonLines(lines=createEmptyAddonLines()){
       const select = document.createElement('select');
       select.className = 'addon-effect-select';
       select.dataset.effectIndex = String(j);
-      select.innerHTML = addonEffectOpziones(line.effects[j], line.skill);
+      select.innerHTML = addonEffectOptions(line.effects[j], line.skill);
       select.onchange = saveClassLoadoutSettings;
       fxWrap.append(lab,select);
       row.appendChild(fxWrap);
@@ -20308,7 +20308,7 @@ function oldEsc(v){return escapeHtmlText(String(v??''));}
 function oldOfficialConsumable(id){return OLD_OFFICIAL_CONSUMABLES.find(x=>x.id===id)||OLD_OFFICIAL_CONSUMABLES[0];}
 function oldHydrate(e){const p=oldOfficialConsumable(e.presetId||'exquisite_cron'); const base=p.mirror?oldOfficialConsumable(p.mirror):p; return Object.assign(e,{presetId:p.id,name:p.name,category:p.category,duration:p.duration,stackGroup:p.stackGroup||p.category,stats:p.mirror?[...(base.stats||[]),'Effet conservé après la mort']:[...(p.stats||[])],source:p.source||base.source||'Pearl Abyss',enabled:e.enabled!==false});}
 function oldEnforce(changed=-1){const active=new Map(); oldEffects.forEach((e,i)=>{oldHydrate(e);if(e.enabled===false)return;if(active.has(e.stackGroup)){if(i===changed){oldEffects[active.get(e.stackGroup)].enabled=false;active.set(e.stackGroup,i)}else e.enabled=false}else active.set(e.stackGroup,i)});}
-function oldOpziones(sel){const q=(document.getElementById('oldConsumableSearch')?.value||'').toLowerCase().trim();const cat=document.getElementById('oldConsumableCategory')?.value||'';return OLD_OFFICIAL_CONSUMABLES.filter(p=>(!cat||p.category===cat)&&(!q||(`${p.name} ${p.category} ${(p.stats||[]).join(' ')}`).toLowerCase().includes(q))).map(p=>`<option value="${oldEsc(p.id)}" ${p.id===sel?'selected':''}>${oldEsc(p.name)}</option>`).join('')}
+function oldOptions(sel){const q=(document.getElementById('oldConsumableSearch')?.value||'').toLowerCase().trim();const cat=document.getElementById('oldConsumableCategory')?.value||'';return OLD_OFFICIAL_CONSUMABLES.filter(p=>(!cat||p.category===cat)&&(!q||(`${p.name} ${p.category} ${(p.stats||[]).join(' ')}`).toLowerCase().includes(q))).map(p=>`<option value="${oldEsc(p.id)}" ${p.id===sel?'selected':''}>${oldEsc(p.name)}</option>`).join('')}
 function oldSave(){ if(typeof saveClassLoadoutSettings==='function') saveClassLoadoutSettings(); }
 function oldRenderConsumables(){
   const tb=document.querySelector('#oldEffectsTable tbody');
@@ -20358,7 +20358,7 @@ function oldRenderConsumables(){
             </td>
             <td class="consumable-name-cell">
               <select onchange="oldSetConsumable(${i},this.value)">
-                ${oldOpziones(e.presetId)}
+                ${oldOptions(e.presetId)}
               </select>
             </td>
             <td class="consumable-role-cell">
@@ -20557,7 +20557,7 @@ function escapeHtml(value){
     .replace(/'/g,'&#39;');
 }
 
-const YOUTUBE_ANALYZER_STORAGE_KEY = 'bdoComboLabs.youtubeAnalyzer.v1';
+const YOUTUBE_ANALYZER_STORAGE_KEY = 'bdoCombosLabs.youtubeAnalyzer.v1';
 
 let YOUTUBE_ANALYZER_STATE = {
   videoId:'',
@@ -20572,7 +20572,7 @@ let OLD_VIDEO_OBJECT_URL = '';
 function saveOldVideoFPS(){
   try{
     localStorage.setItem(
-      'bdoComboLabs.oldVideoFPS',
+      'bdoCombosLabs.oldVideoFPS',
       String(document.getElementById('timingVideoFPS')?.value || '60')
     );
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
@@ -20582,7 +20582,7 @@ function loadOldVideoFPS(){
   const select = document.getElementById('timingVideoFPS');
   if(!select) return;
   try{
-    const value = localStorage.getItem('bdoComboLabs.oldVideoFPS') || '60';
+    const value = localStorage.getItem('bdoCombosLabs.oldVideoFPS') || '60';
     if([...select.options].some(o => o.value === value)){
       select.value = value;
     }
@@ -20784,7 +20784,7 @@ function loadYouTubeAnalyzerState(){
 }
 
 
-const YOUTUBE_ANALYZER_FPS_KEY = 'bdoComboLabs.youtubeAnalyzerFPS.v1';
+const YOUTUBE_ANALYZER_FPS_KEY = 'bdoCombosLabs.youtubeAnalyzerFPS.v1';
 
 function youtubeAnalyzerSkills(){
   const cls = document.getElementById('classSelector')?.value || '';
@@ -21277,7 +21277,7 @@ function videoAutoRenderV43(){
         <select onchange="videoAutoSelectCandidateV43(${index},this.value)">
           <option value="">No résolu</option>${opts}
         </select>
-        <small>${best?`${source} · confiance ${Math.round(best.score*100)}%`:'Nessuno candidat'}</small>
+        <small>${best?`${source} · confiance ${Math.round(best.score*100)}%`:'Aucun candidat'}</small>
       </div>
       <button type="button" class="tab-btn" onclick="videoAutoSeekSegmentV43(${index})">Voir</button>
     </div>`;
@@ -21734,7 +21734,7 @@ function genericCCMarkEndV50(){
     GENERIC_CC_STATE_V50.start=t;
     GENERIC_CC_STATE_V50.end=null;
     const status=document.getElementById('genericCCStatusV50');
-    if(status)status.textContent='Nessuno début défini : cette position a été utilisée comme début CC.';
+    if(status)status.textContent='Aucun début défini : cette position a été utilisée comme début CC.';
   }else if(t>GENERIC_CC_STATE_V50.start){
     GENERIC_CC_STATE_V50.end=t;
     const duration=t-GENERIC_CC_STATE_V50.start;
@@ -22019,7 +22019,7 @@ function measureAutoCCV49(){
   if(status){
     status.textContent=rows.length
       ? `${rows.length} misure CC proposte. Puoi salvarli ora (stato automatico) o prima convalidarli/correggerli.`
-      : 'Nessuno CC mesurable automatiquement dans les segments résolus.';
+      : 'Aucun CC mesurable automatiquement dans les segments résolus.';
   }
   return rows;
 }
@@ -22206,7 +22206,7 @@ function saveAutoCCV49(){
     .filter(x=>String(x.reviewStatus||'pending')!=='rejected');
 
   if(!rows.length){
-    if(status)status.textContent='Nessuna mesure CC détectée à enregistrer.';
+    if(status)status.textContent='Aucune mesure CC détectée à enregistrer.';
     return;
   }
 
@@ -22359,7 +22359,7 @@ function saveAutoTransitionsV45(){
     return;
   }
   if(!rows.length){
-    if(status)status.textContent='Nessuna mesure automatique à enregistrer.';
+    if(status)status.textContent='Aucune mesure automatique à enregistrer.';
     return;
   }
 
@@ -22716,7 +22716,7 @@ document.getElementById('specSelector')?.addEventListener('change',()=>setTimeou
 
 
 <script id="builder-history-v19-script">
-const BUILDER_HISTORY_KEY_V19='bdoComboLabs.builderHistory.v1';
+const BUILDER_HISTORY_KEY_V19='bdoCombosLabs.builderHistory.v1';
 function loadBuilderHistoryV19(){
   try{
     const raw=localStorage.getItem(BUILDER_HISTORY_KEY_V19);
@@ -22761,7 +22761,7 @@ function formatBuildDateV19(iso){
   const d=new Date(iso);if(Number.isNaN(d.getTime()))return '—';
   try{return d.toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return d.toISOString().slice(0,16).replace('T',' ');}
 }
-function shortOrientationV19(v){return v==='mixed'?'Misto':v==='preawak'?'Pré-Awak':'Awakening';}
+function shortOrientationV19(v){return v==='mixed'?'Mixte':v==='preawak'?'Pré-Awak':'Awakening';}
 function renderRecentBuildsV19(){
   const body=document.getElementById('home19RecentBuildRows');if(!body)return;
   const cls=document.getElementById('classSelector')?.value||'';
@@ -22838,11 +22838,11 @@ function renderHomeDashboardV18(){
   let refs=[];try{refs=typeof guideReferenceForCurrentClassV10==='function'?guideReferenceForCurrentClassV10():[]}catch(e){refs=[]}
   const enabled=skills.filter(s=>s?.enabled!==false).length;
   const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val};
-  set('home18Context',cls?`${cls} · ${spec}`:'Nessuna classe sélectionnée');
+  set('home18Context',cls?`${cls} · ${spec}`:'Aucune classe sélectionnée');
   set('home18Reference',refs.length?`Riferimento attivo · ${refs.length} entrées`:'Riferimento: nessuno per questo contesto');
   set('home18Skills',skills.length); set('home18SkillsSub',`${enabled} activé${enabled>1?'s':''}`);
   set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entrées disponibles':'aucune entrée');
-  set('home18Combo',combos.length); set('home18Transitions',transitions.length);
+  set('home18Combos',combos.length); set('home18Transitions',transitions.length);
   const measured=transitions.filter(x=>Number.isFinite(Number(x?.timingSeconds??x?.transitionSeconds??x?.seconds)) || Number.isFinite(Number(x?.frames))).length;
   set('home18TransitionsSub',`${measured} avec timing`);
   const fields=['input','timer','pveDamage','pvpDamage','protection','cc','effects'];
@@ -22865,21 +22865,21 @@ function renderHomeDashboardV18(){
   const recs=[];
   if(!cls) recs.push(['Choisir une classe','Le contexte pilote tout le projet','classPage','Class']);
   else{
-    if(refs.length && skills.length<refs.length*.8) recs.push(['Compléter les Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Cerca auto']);
+    if(refs.length && skills.length<refs.length*.8) recs.push(['Compléter les Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Recherche auto']);
     if(skills.length && completeness<70) recs.push(['Enrichir les métadonnées',`Completezza actuelle : ${completeness}%`,'skillsPage','Inspecter']);
-    if(!combos.length) recs.push(['Crea una prima combo','Nessuno combo enregistré pour ce contexte','builderPage','Builder']);
-    if(!transitions.length) recs.push(['Aggiungi transizioni','Nessuno cancel/transition validé','transitionPage','Transitions']);
+    if(!combos.length) recs.push(['Crea una prima combo','Aucun combo enregistré pour ce contexte','builderPage','Builder']);
+    if(!transitions.length) recs.push(['Aggiungi transizioni','Aucun cancel/transition validé','transitionPage','Transitions']);
     else if(timingCoverage<60) recs.push(['Mesurer les timings',`${measured}/${transitions.length} transitions ont une mesure`,'youtubeAnalyzerPage','Vidéo']);
   }
-  if(!recs.length) recs.push(['Continuer l’optimisation','La base principale est bien renseignée','builderPage','Apri Builder']);
+  if(!recs.length) recs.push(['Continuer l’optimisation','La base principale est bien renseignée','builderPage','Ouvrir Builder']);
   const r=document.getElementById('home18Recommendations');
   if(r)r.innerHTML=recs.slice(0,4).map((x,i)=>`<div class="home18-rec"><span class="home18-rec-index">${String(i+1).padStart(2,'0')}</span><div><b>${escapeHtmlText(x[0])}</b><small>${escapeHtmlText(x[1])}</small></div><button type="button" class="tab-btn" onclick="showPage('${x[2]}',document.querySelector('[data-page=${x[2]}]'));${x[2]==='skillsPage'?'renderSkillsPage()':x[2]==='builderPage'?'renderComboBuilder()':x[2]==='transitionPage'?'renderTransitionPage()':x[2]==='youtubeAnalyzerPage'?'renderYouTubeAnalyzer()':''}">${x[3]}</button></div>`).join('');
-  const d=document.getElementById('home18Diagnosticas');
+  const d=document.getElementById('home18Diagnostics');
   if(d)d.innerHTML=[
-    ['Classe / spec',cls?`${cls} · ${spec}`:'No sélectionné',!!cls],
-    ['Référentiel',refs.length?`${refs.length} entrées`:'No disponible',!!refs.length],
-    ['Skills actifs',skills.length?`${enabled}/${skills.length}`:'Nessuno',!!skills.length],
-    ['Combo enregistrés',String(combos.length),combos.length>0],
+    ['Classe / spec',cls?`${cls} · ${spec}`:'Non sélectionné',!!cls],
+    ['Référentiel',refs.length?`${refs.length} entrées`:'Non disponible',!!refs.length],
+    ['Skills actifs',skills.length?`${enabled}/${skills.length}`:'Aucun',!!skills.length],
+    ['Combos enregistrés',String(combos.length),combos.length>0],
     ['Transitions mesurées',`${measured}/${transitions.length}`,measured>0],
     ['Qualité des données',completeness>=70?'Bonne':completeness>=40?'Partielle':'À enrichir',completeness>=70]
   ].map(x=>`<div class="home18-diag"><span>${x[0]}</span><b class="${x[2]?'good':'warn'}">${escapeHtmlText(x[1])}</b></div>`).join('');
@@ -23192,7 +23192,7 @@ function accountSaveWorkspaceV78(showStatus=false){
   if(u){u.lastSaveAt=backup.savedAt;accountSaveDBV78(db)}
   ACCOUNT_ACTIVE_V78=u||user;
   renderAccountHeaderV78();
-  if(showStatus)accountStatusV78('Dati du compte sauvegardées localement.','good');
+  if(showStatus)accountStatusV78('Données du compte sauvegardées localement.','good');
   return true;
 }
 function accountClearProjectStorageV78(){
@@ -23361,8 +23361,8 @@ bdoOnReady(()=>{
 
 <script id="bug-report-v77-script">
 function bugContextV77(){
-  const className=document.getElementById('classSelector')?.value||'No sélectionnée';
-  const spec=document.getElementById('specSelector')?.value||'No sélectionnée';
+  const className=document.getElementById('classSelector')?.value||'Non sélectionnée';
+  const spec=document.getElementById('specSelector')?.value||'Non sélectionnée';
   const activePage=document.querySelector('.page.active')?.id||'inconnue';
   const version=document.querySelector('.app-header-version')?.textContent?.trim()||'V88';
   return {version,className,spec,activePage,userAgent:navigator.userAgent,time:new Date().toISOString()};
@@ -24196,7 +24196,7 @@ function setCommunityVerifyThresholdV101(value){
   const input=document.getElementById('communityVerifyThresholdInputV101');
   if(input)input.value=String(threshold);
   communityReevaluateAllV101();
-  if(typeof renderPlayerComboPage==='function')renderPlayerComboPage();
+  if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
   if(typeof renderComboPage==='function')renderComboPage();
 }
 
@@ -24354,7 +24354,7 @@ function toggleCommunityLikeV101(id){
     if(status)status.textContent=`✓ Combo vérifié par la communauté (${combo.likes} J’aime)`;
   }
 
-  if(typeof renderPlayerComboPage==='function')renderPlayerComboPage();
+  if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
   if(typeof renderComboPage==='function')renderComboPage();
 }
 
@@ -24427,7 +24427,7 @@ function shareCurrentBuilderComboV101(){
     status.textContent=`✓ Partagé dans Combo dei giocatori · 0/${communityVerifyThresholdV101()} J’aime`;
   }
 
-  if(typeof renderPlayerComboPage==='function')renderPlayerComboPage();
+  if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
 }
 
 function communitySyncSettingsUIV101(){
@@ -24443,11 +24443,11 @@ if(typeof bdoOnReady==='function'){
     communityReevaluateAllV101();
 
     document.getElementById('classSelector')?.addEventListener('change',()=>{
-      if(typeof renderPlayerComboPage==='function')renderPlayerComboPage();
+      if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
       if(typeof renderComboPage==='function')renderComboPage();
     });
     document.getElementById('specSelector')?.addEventListener('change',()=>{
-      if(typeof renderPlayerComboPage==='function')renderPlayerComboPage();
+      if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
       if(typeof renderComboPage==='function')renderComboPage();
     });
   });
@@ -24640,7 +24640,7 @@ function syncActiveContextV105(persist=true){
     try{if(typeof renderClassStats==='function')renderClassStats()}catch(e){}
     try{if(typeof renderSkillsPage==='function')renderSkillsPage()}catch(e){}
     try{if(typeof renderComboPage==='function')renderComboPage()}catch(e){}
-    try{if(typeof renderPlayerComboPage==='function')renderPlayerComboPage()}catch(e){}
+    try{if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage()}catch(e){}
     try{if(typeof renderComboBuilder==='function')renderComboBuilder()}catch(e){}
     try{if(typeof renderTransitionPage==='function')renderTransitionPage()}catch(e){}
     try{if(typeof renderAddonPage==='function')renderAddonPage()}catch(e){}
@@ -24780,7 +24780,7 @@ async function bclCloudRefreshV107(){
       }
     }
     BCL_CLOUD_READY_V107=true;
-    try{if(typeof renderPlayerComboPage==='function')renderPlayerComboPage()}catch(e){}
+    try{if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage()}catch(e){}
     try{if(typeof renderComboPage==='function')renderComboPage()}catch(e){}
     return true;
   }catch(e){
@@ -24840,7 +24840,7 @@ async function bclCloudToggleLikeV107(comboId){
 }
 
 function bclCloudRenderPlayersV107(){
-  const root=document.getElementById('playerComboLibraryV101');
+  const root=document.getElementById('playerCombosLibraryV101');
   if(!root)return;
   const cls=bclCloudClassV107();
   if(!cls){
@@ -24908,8 +24908,8 @@ function bclInstallCloudOverridesV107(){
   if(typeof window.toggleCommunityLikeV101==='function'&&!window.toggleCommunityLikeLocalV107)
     window.toggleCommunityLikeLocalV107=window.toggleCommunityLikeV101;
 
-  const oldPlayers=window.renderPlayerComboPage;
-  window.renderPlayerComboPage=function(){
+  const oldPlayers=window.renderPlayerCombosPage;
+  window.renderPlayerCombosPage=function(){
     try{if(typeof oldPlayers==='function')oldPlayers()}catch(e){}
     setTimeout(bclCloudRenderPlayersV107,0);
   };
@@ -25286,10 +25286,10 @@ window.registerAccountV78=async function(){
   if(pass.length<8)return accountStatusV78('La password deve contenere almeno 8 caratteri.','bad');
   if(pass!==confirmPass)return accountStatusV78('Les mots de passe ne correspondent pas.','bad');
   accountStatusV78('Création du compte cloud…');
-  const signUpOpziones={data:{username:name}};
+  const signUpOptions={data:{username:name}};
   const redirect=bclAuthRedirectV109();
-  if(redirect)signUpOpziones.emailRedirectTo=redirect;
-  const {data,error}=await sb.auth.signUp({email,password:pass,options:signUpOpziones});
+  if(redirect)signUpOptions.emailRedirectTo=redirect;
+  const {data,error}=await sb.auth.signUp({email,password:pass,options:signUpOptions});
   if(error)return accountStatusV78('Création impossible : '+error.message,'bad');
   if(data?.session){
     BCL_CLOUD_USER_V107=data.user;
@@ -25308,9 +25308,9 @@ window.loginAccountV78=async function(){
   const email=document.getElementById('accountLoginIdentityV78')?.value.trim().toLowerCase()||'';
   const pass=document.getElementById('accountLoginPasswordV78')?.value||'';
   if(!email.includes('@'))return accountStatusV78('Utilise ton adresse e-mail pour te connecter.','bad');
-  accountStatusV78('Accedi cloud…');
+  accountStatusV78('Connexion cloud…');
   const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
-  if(error)return accountStatusV78('Accedi impossible : '+error.message,'bad');
+  if(error)return accountStatusV78('Connexion impossible : '+error.message,'bad');
   BCL_CLOUD_USER_V107=data.user;
   ACCOUNT_ACTIVE_V78=bclCloudAccountObjectV108(data.user);
   renderAccountHeaderV78();
@@ -25334,7 +25334,7 @@ window.changeAccountPasswordV78=async function(){
   const next=document.getElementById('accountNewPasswordV78')?.value||'';
   const confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const user=BCL_CLOUD_USER_V107;
-  if(!user)return accountStatusV78('Nessuno compte cloud connecté.','bad');
+  if(!user)return accountStatusV78('Aucun compte cloud connecté.','bad');
   if(next.length<8)return accountStatusV78('La nuova password deve contenere almeno 8 caratteri.','bad');
   if(next!==confirm)return accountStatusV78('La confirmation ne correspond pas.','bad');
   const verify=await sb.auth.signInWithPassword({email:user.email,password:old});
@@ -25382,7 +25382,7 @@ if(typeof window.saveSkillAdvancedData==='function'){
 /* Cloud renderers: hide player combos only for the current user. */
 const _bclCloudRenderPlayersV107=bclCloudRenderPlayersV107;
 window.bclCloudRenderPlayersV107=async function(){
-  const root=document.getElementById('playerComboLibraryV101');
+  const root=document.getElementById('playerCombosLibraryV101');
   if(!root)return;
   const hidden=await bclPlayerHiddenIdsV108();
   const cls=bclCloudClassV107();
@@ -25485,7 +25485,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
       const now=Date.now(); if(now-lastRefresh<250)return; lastRefresh=now;
       try{if(typeof syncActiveContextV105==='function')syncActiveContextV105(true);}catch(e){}
       try{if(typeof syncSettingsClassContext==='function')syncSettingsClassContext();}catch(e){}
-      ['renderClassStats','renderSkillsPage','renderComboPage','renderPlayerComboPage','renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'].forEach(function(name){
+      ['renderClassStats','renderSkillsPage','renderComboPage','renderPlayerCombosPage','renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'].forEach(function(name){
         try{const fn=window[name];if(typeof fn==='function')fn();}catch(e){}
       });
       try{if(typeof renderAuthUI==='function')renderAuthUI();else if(typeof updateAuthUI==='function')updateAuthUI();}catch(e){}
@@ -25521,7 +25521,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
       }catch(e){}
       try{if(typeof syncActiveContextV105==='function')syncActiveContextV105(true);}catch(e){}
       try{if(typeof syncSettingsClassContext==='function')syncSettingsClassContext();}catch(e){}
-      ['renderClassStats','renderSkillsPage','renderComboPage','renderPlayerComboPage','renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'].forEach(function(name){
+      ['renderClassStats','renderSkillsPage','renderComboPage','renderPlayerCombosPage','renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'].forEach(function(name){
         try{const fn=window[name];if(typeof fn==='function')fn();}catch(e){}
       });
       try{if(typeof renderAuthUI==='function')renderAuthUI();else if(typeof updateAuthUI==='function')updateAuthUI();}catch(e){}
@@ -25541,13 +25541,13 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <!-- BCL V112 SAFE I18N -->
 <script id="bcl-safe-i18n-v112">
 (function(){
-const STORAGE_KEY='bdoComboLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Skills','nav.classCombo':'Combo di classe','nav.playerCombo':'Combo dei giocatori','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
-en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombo':'Class Combo','nav.playerCombo':'Player Combo','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
-de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mein Profil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombo':'Klassen-Combo','nav.playerCombo':'Spieler-Combo','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
-es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombo':'Combo de clase','nav.playerCombo':'Combo de jugadores','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
-it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombo':'Combo di classe','nav.playerCombo':'Combo giocatori','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
-pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombo':'Combo di classe','nav.playerCombo':'Combo de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
+const STORAGE_KEY='bdoCombosLabs.language.v112';
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Combo di classe','nav.playerCombos':'Combo dei giocatori','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mein Profil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
+es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Combos de clase','nav.playerCombos':'Combos de jugadores','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
+it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Combo di classe','nav.playerCombos':'Combo giocatori','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
+pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Combo di classe','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
 function current(){const saved=localStorage.getItem(STORAGE_KEY);if(dict[saved])return saved;const b=(navigator.language||'fr').slice(0,2).toLowerCase();return dict[b]?b:'fr';}
 function t(key,lang){const l=lang||current();return (dict[l]&&dict[l][key])||(dict.fr&&dict.fr[key])||key;}
 function apply(lang,save){const l=dict[lang]?lang:'fr';document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(function(el){const key=el.getAttribute('data-i18n');if(key)el.textContent=t(key,l);});const sel=document.getElementById('bclLanguageSelect');if(sel&&sel.value!==l)sel.value=l;if(save)localStorage.setItem(STORAGE_KEY,l);window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));}
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
