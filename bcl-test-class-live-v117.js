@@ -1,6 +1,6 @@
 (()=>{'use strict';
 const CLASS='Optimizer Test Class';
-const VERSION='v120-sparse-fixture';
+const VERSION='v121-hard-reset-fixture';
 let state=0x51A7C0DE;
 const rnd=()=>{state=(state*1664525+1013904223)>>>0;return state/4294967296};
 const r=(a,b,d=3)=>Number((a+rnd()*(b-a)).toFixed(d));
@@ -73,7 +73,7 @@ function makeSkill(i){
     mobility:rnd()<.35?r(1,10,2):0,
     range:rnd()<.50?r(.8,16,1):null,
     aoe:rnd()<.44?r(1,10,2):null,
-    enabled:true,synthetic:true,referenceSource:'BDO Combos Labs sparse deterministic stress fixture',
+    enabled:true,synthetic:true,fixtureVersion:VERSION,referenceSource:'BDO Combos Labs sparse deterministic stress fixture',
     tags:[role,hasCC?'cc':'',hasProtection?protection.toLowerCase():'',hasPvp?'pvp-profile':'',downAttack?'down-attack':'',airAttack?'air-attack':'',backAttack?'back-attack':''].filter(Boolean)
   };
 }
@@ -83,8 +83,7 @@ const common=allSkills.slice(0,50);
 const awakening=allSkills.slice(50);
 const commonNames=new Set(common.map(s=>s.name));
 
-/* Exactly 3 sparse cancel chains and 20 total transition/cancel edges. */
-const chainLengths=[8,8,7]; // edges = 7 + 7 + 6 = 20
+const chainLengths=[8,8,7];
 const transitionPool=shuffle(allSkills.map((_,i)=>i));
 let cursor=0;
 const transitionChains=chainLengths.map((length,chainIndex)=>{
@@ -105,33 +104,72 @@ for(let chainIndex=0;chainIndex<transitionChains.length;chainIndex++){
       cancelAt:timing,hasCancel:true,cancelSeconds:timing,
       timingAttempts:ri(2,6),timingConfidence:r(.7,.98,2),
       measured:true,validated:rnd()>.2,manualValidation:false,reviewStatus:'synthetic',needsValidation:false,
-      source:'BDO Combos Labs sparse deterministic stress fixture',sourceTag:'synthetic',
-      enabled:true,synthetic:true
+      fixtureVersion:VERSION,source:'BDO Combos Labs sparse deterministic stress fixture',sourceTag:'synthetic',enabled:true,synthetic:true
     });
   }
+}
+
+function fixtureSkills(){return {Common:common.map(x=>({...x})),Shared:[],Awakening:allSkills.map(x=>({...x})),Succession:common.map(x=>({...x}))}}
+function fixtureTransitions(){return {Awakening:transitions.map(x=>({...x})),Succession:transitions.filter(t=>commonNames.has(t.from)&&commonNames.has(t.to)).map(x=>({...x}))}}
+
+function enforceFixtureStores(){
+  let changed=false;
+  try{
+    if(typeof CLASS_SKILLS!=='undefined'){
+      const current=CLASS_SKILLS[CLASS]?.Awakening;
+      const wrong=!Array.isArray(current)||current.length!==100||current.some(s=>!s||s.fixtureVersion!==VERSION);
+      if(wrong){CLASS_SKILLS[CLASS]=fixtureSkills();changed=true}
+    }
+  }catch(e){console.error('[BCL test fixture] skill hard reset failed',e)}
+  try{
+    if(typeof CLASS_TRANSITIONS!=='undefined'){
+      const current=CLASS_TRANSITIONS[CLASS]?.Awakening;
+      const wrong=!Array.isArray(current)||current.length!==20||current.some(t=>!t||t.fixtureVersion!==VERSION);
+      if(wrong){CLASS_TRANSITIONS[CLASS]=fixtureTransitions();changed=true}
+    }
+  }catch(e){console.error('[BCL test fixture] transition hard reset failed',e)}
+  return changed;
+}
+
+function renderIfActive(){
+  const sel=document.getElementById('classSelector');
+  if(!sel||sel.value!==CLASS)return;
+  try{if(typeof renderClassStats==='function')renderClassStats()}catch(e){}
+  try{if(typeof renderSkillsPage==='function')renderSkillsPage()}catch(e){}
+  try{if(typeof renderTransitionPage==='function')renderTransitionPage()}catch(e){}
+  try{if(typeof renderComboBuilder==='function')renderComboBuilder()}catch(e){}
+  try{if(typeof updateBuilder==='function')updateBuilder()}catch(e){}
 }
 
 function install(){
   const sel=document.getElementById('classSelector');
   if(!sel)return false;
-  if(![...sel.options].some(o=>o.value===CLASS)){
-    const o=document.createElement('option');o.value=CLASS;o.textContent='🧪 Optimizer Test Class (100 sparse synthetic skills)';sel.appendChild(o);
-  }
-  try{if(typeof CLASS_SKILLS!=='undefined')CLASS_SKILLS[CLASS]={Common:common,Shared:common,Awakening:allSkills,Succession:common}}catch(e){console.error('[BCL test fixture] CLASS_SKILLS install failed',e)}
-  try{if(typeof CLASS_TRANSITIONS!=='undefined')CLASS_TRANSITIONS[CLASS]={Awakening:transitions,Succession:transitions.filter(t=>commonNames.has(t.from)&&commonNames.has(t.to))}}catch(e){console.error('[BCL test fixture] CLASS_TRANSITIONS install failed',e)}
-  globalThis.BCL_TEST_CLASS_V120={
+  const oldOptions=[...sel.options].filter(o=>o.value===CLASS);
+  oldOptions.slice(1).forEach(o=>o.remove());
+  if(!oldOptions.length){const o=document.createElement('option');o.value=CLASS;o.textContent='🧪 Optimizer Test Class (100 sparse synthetic skills)';sel.appendChild(o)}
+  else oldOptions[0].textContent='🧪 Optimizer Test Class (100 sparse synthetic skills)';
+
+  try{if(typeof CLASS_SKILLS!=='undefined')CLASS_SKILLS[CLASS]=fixtureSkills()}catch(e){console.error('[BCL test fixture] CLASS_SKILLS install failed',e)}
+  try{if(typeof CLASS_TRANSITIONS!=='undefined')CLASS_TRANSITIONS[CLASS]=fixtureTransitions()}catch(e){console.error('[BCL test fixture] CLASS_TRANSITIONS install failed',e)}
+
+  globalThis.BCL_TEST_CLASS_V121={
     version:VERSION,name:CLASS,synthetic:true,skills:allSkills,common,awakening,transitions,transitionChains,
-    counts:{skills:allSkills.length,common:common.length,awakening:awakening.length,cc:allSkills.filter(s=>s.cc!=='None').length,pvpProfiled:allSkills.filter(s=>s.pvpDamage!=='').length,transitions:transitions.length,cancels:transitions.filter(t=>t.hasCancel).length,chains:transitionChains.length}
+    counts:{skills:100,common:50,awakening:50,cc:20,pvpProfiled:60,transitions:20,cancels:20,chains:3}
   };
-  if(sel.value===CLASS){
-    try{if(typeof renderClassStats==='function')renderClassStats()}catch(e){}
-    try{if(typeof renderSkillsPage==='function')renderSkillsPage()}catch(e){}
-    try{if(typeof renderTransitionPage==='function')renderTransitionPage()}catch(e){}
-    try{if(typeof renderComboBuilder==='function')renderComboBuilder()}catch(e){}
-    try{if(typeof updateBuilder==='function')updateBuilder()}catch(e){}
-  }
+  renderIfActive();
   return true;
 }
-function boot(){install();setTimeout(install,120);setTimeout(install,500);setTimeout(install,1500)}
+
+function guard(){
+  const changed=enforceFixtureStores();
+  if(changed)renderIfActive();
+}
+function boot(){
+  install();
+  [120,500,1500,3000,6000].forEach(ms=>setTimeout(()=>{install();guard()},ms));
+  setInterval(guard,1500);
+  document.addEventListener('change',()=>setTimeout(guard,80),true);
+  document.addEventListener('bcl-cloud-sync-complete',()=>setTimeout(guard,50));
+}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
