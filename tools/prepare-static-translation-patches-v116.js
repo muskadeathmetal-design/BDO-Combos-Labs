@@ -3,6 +3,7 @@ const path = require('path');
 
 const locales = ['en','de','es','it','pt'];
 const sourceCache = 'bcl-static-auto-translations-v116.json';
+const sharedPatchFile = path.join('translations','common-v116.json');
 const outputCache = 'bcl-static-prepared-translations-v116.json';
 
 function readJson(file, fallback = {}) {
@@ -24,23 +25,33 @@ function unsafePair(from, to) {
 }
 
 const existing = readJson(sourceCache, {});
+const shared = readJson(sharedPatchFile, {});
 const safe = {};
 for (const locale of locales) {
   safe[locale] = {};
+
   for (const [from, to] of Object.entries(existing[locale] || {})) {
     if (!unsafePair(from, to)) safe[locale][from] = to;
+  }
+
+  let sharedCount = 0;
+  for (const [from, translations] of Object.entries(shared)) {
+    const to = translations && translations[locale];
+    if (!from || !to || unsafePair(from, to)) continue;
+    safe[locale][from] = to;
+    sharedCount++;
   }
 
   const patchFile = path.join('translations', `${locale}.json`);
   const patch = readJson(patchFile, {});
   for (const [from, to] of Object.entries(patch)) {
     if (from.startsWith('_')) continue;
-    if (!from || !to) continue;
+    if (!from || !to || unsafePair(from, to)) continue;
     safe[locale][from] = to;
   }
 
-  console.log(`${locale}: ${Object.keys(safe[locale]).length} safe translations (${Object.keys(patch).filter(k=>!k.startsWith('_')).length} explicit patch entries)`);
+  console.log(`${locale}: ${Object.keys(safe[locale]).length} safe translations (${sharedCount} shared + ${Object.keys(patch).filter(k=>!k.startsWith('_')).length} locale patch entries)`);
 }
 
 fs.writeFileSync(outputCache, JSON.stringify(safe, null, 2), 'utf8');
-console.log('Prepared temporary V116 translation cache with explicit patches applied last.');
+console.log('Prepared temporary V116 translation cache with shared + locale patches applied last.');
