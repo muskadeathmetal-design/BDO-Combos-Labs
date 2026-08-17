@@ -5,23 +5,36 @@ const srcFile = 'tools/build-static-locales-v116.js';
 const tmpFile = 'tools/.build-static-locales-v116-safe.tmp.js';
 let src = fs.readFileSync(srcFile, 'utf8');
 
-const needle = "    out = out.split(from).join(to);";
-if (!src.includes(needle)) {
-  throw new Error('Expected translation replacement line not found');
+const conditionNeedle = "    if (!from || from === to || !out.includes(from)) continue;";
+const replaceNeedle = "    out = out.split(from).join(to);";
+if (!src.includes(conditionNeedle) || !src.includes(replaceNeedle)) {
+  throw new Error('Expected translation loop lines not found');
 }
 
-const replacement = [
+const protectedCondition = [
+  "    const protectKey = function(text){",
+  "      let s=String(text||'');",
+  "      PROTECTED.forEach(function(value,i){ s=s.split(value).join('§§BCLKEEP'+i+'§§'); });",
+  "      return s;",
+  "    };",
+  "    const fromProtected = protectKey(from);",
+  "    const toProtected = protectKey(to);",
+  "    if (!fromProtected || fromProtected === toProtected || !out.includes(fromProtected)) continue;"
+].join('\n');
+
+const safeReplacement = [
   "    const singleToken = /^[\\p{L}\\p{M}'-]+$/u.test(from);",
   "    if (singleToken) {",
-  "      const escaped = from.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');",
+  "      const escaped = fromProtected.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');",
   "      const re = new RegExp('(^|[^\\\\p{L}\\\\p{M}\\\'-])(' + escaped + ')(?=$|[^\\\\p{L}\\\\p{M}\\\'-])', 'gu');",
-  "      out = out.replace(re, function(match, lead){ return lead + to; });",
+  "      out = out.replace(re, function(match, lead){ return lead + toProtected; });",
   "    } else {",
-  "      out = out.split(from).join(to);",
+  "      out = out.split(fromProtected).join(toProtected);",
   "    }"
 ].join('\n');
 
-src = src.replace(needle, replacement);
+src = src.replace(conditionNeedle, protectedCondition);
+src = src.replace(replaceNeedle, safeReplacement);
 fs.writeFileSync(tmpFile, src, 'utf8');
 
 try {
