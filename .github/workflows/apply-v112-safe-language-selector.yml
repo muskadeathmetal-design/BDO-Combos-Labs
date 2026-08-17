@@ -1,0 +1,87 @@
+name: Apply V112 safe language selector
+
+on:
+  push:
+    paths:
+      - '.github/v112-safe-lang-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Patch safe language selector
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          s=s.replace('<title>BDO Combos Labs · V111</title>','<title>BDO Combos Labs · V112</title>',1)
+          s=s.replace('<span class="app-header-version">V111</span>','<span class="app-header-version">V112</span>',1)
+
+          old='''  <div class="app-header-meta">\n    <span class="app-header-chip">Local Lab</span>\n    <div id="accountHeaderV78" class="account78-header">'''
+          new='''  <div class="app-header-meta">\n    <span class="app-header-chip" data-i18n="header.localLab">Local Lab</span>\n    <div class="bcl-lang-wrap" aria-label="Language selector">\n      <label for="bclLanguageSelect" class="bcl-lang-label" data-i18n="header.language">Langue</label>\n      <select id="bclLanguageSelect" class="bcl-lang-select" aria-label="Langue du site">\n        <option value="fr">🇫🇷 FR</option>\n        <option value="en">🇬🇧 EN</option>\n        <option value="de">🇩🇪 DE</option>\n        <option value="es">🇪🇸 ES</option>\n        <option value="it">🇮🇹 IT</option>\n        <option value="pt">🇵🇹 PT</option>\n      </select>\n    </div>\n    <div id="accountHeaderV78" class="account78-header">'''
+          if old not in s:
+            raise SystemExit('header anchor not found')
+          s=s.replace(old,new,1)
+
+          replacements={
+            '>Connexion</button>':'> <span data-i18n="account.login">Connexion</span></button>',
+            '>Créer un compte</button>':'> <span data-i18n="account.register">Créer un compte</span></button>',
+            '>Mon profil</button>':'> <span data-i18n="account.profile">Mon profil</span></button>',
+            '>Sauvegarder maintenant</button>':'> <span data-i18n="account.saveNow">Sauvegarder maintenant</span></button>',
+            '>Changer le mot de passe</button>':'> <span data-i18n="account.changePassword">Changer le mot de passe</span></button>',
+            '>Déconnexion</button>':'> <span data-i18n="account.logout">Déconnexion</span></button>',
+            '>Accueil\n      </button>':'> <span data-i18n="nav.home">Accueil</span>\n      </button>',
+            '>Class</button>':'> <span data-i18n="nav.class">Class</span></button>',
+            '>Skills</button>':'> <span data-i18n="nav.skills">Skills</span></button>',
+            '>Combos de classe</button>':'> <span data-i18n="nav.classCombos">Combos de classe</span></button>',
+            '      Combos joueurs\n    </button>':'      <span data-i18n="nav.playerCombos">Combos joueurs</span>\n    </button>',
+            '>Transition / Cancel</button>':'> <span data-i18n="nav.transitions">Transition / Cancel</span></button>',
+            '        Video Analyzer\n      </button>':'        <span data-i18n="nav.videoAnalyzer">Video Analyzer</span>\n      </button>',
+            '>Skill Add-ons</button>':'> <span data-i18n="nav.addons">Skill Add-ons</span></button>',
+            '>Combo Builder</button>':'> <span data-i18n="nav.builder">Combo Builder</span></button>',
+            '>Settings</button>':'> <span data-i18n="nav.settings">Settings</span></button>',
+          }
+          for a,b in replacements.items():
+            s=s.replace(a,b,1)
+
+          css='''\n<style id="bcl-safe-i18n-style">\n.bcl-lang-wrap{display:flex;align-items:center;gap:7px;padding:5px 7px;border:1px solid rgba(139,148,158,.18);border-radius:12px;background:rgba(22,31,43,.55);min-width:0}\n.bcl-lang-label{margin:0!important;font-size:12px!important;color:#9aa7b5!important;white-space:nowrap}\n.bcl-lang-select{width:78px!important;min-width:78px!important;max-width:78px!important;min-height:34px!important;height:34px!important;padding:4px 8px!important;border-radius:9px!important;font-size:12px!important}\n@media(max-width:900px){.app-header-meta{gap:7px!important;flex-wrap:wrap!important;justify-content:flex-end!important}.bcl-lang-label{display:none}.bcl-lang-select{width:72px!important;min-width:72px!important;max-width:72px!important}}\n@media(max-width:650px){.app-header{align-items:flex-start!important}.app-header-meta{width:100%!important;justify-content:flex-start!important;margin-top:10px!important}.bcl-lang-wrap{order:1}.account78-header{order:2}.app-header-version{order:3}}\n</style>\n'''
+          s=s.replace('</head>',css+'\n</head>',1)
+
+          script=r'''\n<!-- BCL V112 SAFE I18N -->\n<script id="bcl-safe-i18n-v112">\n(function(){\n  const STORAGE_KEY='bdoCombosLabs.language.v112';\n  const dict={\n    fr:{\n      'header.localLab':'Local Lab','header.language':'Langue',\n      'account.login':'Connexion','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Déconnexion',\n      'nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos joueurs','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'\n    },\n    en:{\n      'header.localLab':'Local Lab','header.language':'Language',\n      'account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out',\n      'nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'\n    },\n    de:{\n      'header.localLab':'Local Lab','header.language':'Sprache',\n      'account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mein Profil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden',\n      'nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'\n    },\n    es:{\n      'header.localLab':'Local Lab','header.language':'Idioma',\n      'account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión',\n      'nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Combos de clase','nav.playerCombos':'Combos de jugadores','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'\n    },\n    it:{\n      'header.localLab':'Local Lab','header.language':'Lingua',\n      'account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci',\n      'nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Combo di classe','nav.playerCombos':'Combo giocatori','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'\n    },\n    pt:{\n      'header.localLab':'Local Lab','header.language':'Idioma',\n      'account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair',\n      'nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'\n    }\n  };\n\n  function current(){\n    const saved=localStorage.getItem(STORAGE_KEY);\n    if(dict[saved])return saved;\n    const browser=(navigator.language||'fr').slice(0,2).toLowerCase();\n    return dict[browser]?browser:'fr';\n  }\n  function t(key,lang){\n    const l=lang||current();\n    return dict[l]?.[key] ?? dict.fr[key] ?? key;\n  }\n  function apply(lang,save){\n    const l=dict[lang]?lang:'fr';\n    document.documentElement.lang=l;\n    document.querySelectorAll('[data-i18n]').forEach(function(el){\n      const key=el.getAttribute('data-i18n');\n      if(key)el.textContent=t(key,l);\n    });\n    const sel=document.getElementById('bclLanguageSelect');\n    if(sel&&sel.value!==l)sel.value=l;\n    if(save)localStorage.setItem(STORAGE_KEY,l);\n    window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));\n  }\n  window.bclT=t;\n  window.bclApplyLanguageV112=function(lang){apply(lang,true);};\n  window.bclCurrentLanguageV112=current;\n\n  function init(){\n    const sel=document.getElementById('bclLanguageSelect');\n    if(sel&&!sel.dataset.boundV112){\n      sel.dataset.boundV112='1';\n      sel.addEventListener('change',function(){apply(this.value,true);});\n    }\n    apply(current(),false);\n  }\n  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});\n  else init();\n\n  document.addEventListener('click',function(){setTimeout(function(){apply(current(),false);},140);},true);\n  document.addEventListener('change',function(e){if(e.target?.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);\n})();\n</script>\n'''
+          s=s.replace('</body>',script+'\n</body>',1)
+          p.write_text(s,encoding='utf-8')
+
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, subprocess, tempfile, sys
+          text=Path('index.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script\b(?![^>]*\bsrc=)[^>]*>(.*?)</script>',text,re.I|re.S)
+          for i,src in enumerate(scripts,1):
+            f=Path(tempfile.gettempdir())/f'bcl_safe_i18n_{i}.js'
+            f.write_text(src,encoding='utf-8')
+            r=subprocess.run(['node','--check',str(f)],capture_output=True,text=True)
+            if r.returncode:
+              print('Script',i,'failed')
+              print(r.stderr)
+              sys.exit(1)
+          print(len(scripts),'inline scripts valid')
+          PY
+
+      - name: Commit V112 safe language selector
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Add safe language selector (V112)'
+          git push origin main
