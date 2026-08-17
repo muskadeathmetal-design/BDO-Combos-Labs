@@ -16,73 +16,26 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Expand translations
+      - name: Insert translation dictionary
         shell: python
         run: |
           from pathlib import Path
           p=Path('bcl-full-ui-i18n-v113.js')
           s=p.read_text(encoding='utf-8')
           marker='  const fallbackWords={'
+          extra=Path('.github/v113-extra-translations.jsfrag').read_text(encoding='utf-8')
           if 'V113_EXTRA_UI_TRANSLATIONS' not in s:
-              block=r'''
-  // V113_EXTRA_UI_TRANSLATIONS: broad UI coverage while preserving skill names, combat inputs and CC values.
-  Object.assign(exact.en,{
-    'Accueil':'Home','Class':'Class','Skills':'Skills','Class Combos':'Class Combos','Player Combos':'Player Combos','Video Analyzer':'Video Analyzer','Skill Add-ons':'Skill Add-ons','Combo Builder':'Combo Builder','Settings':'Settings',
-    'Mesure, construis et optimise tes combos BDO':'Measure, build and optimize your BDO combos',
-    'BDO Combos Labs relie désormais the référentiel of skills, the mesures vidéo, the transitions/cancels, the système CC PvP officiel and the Combo Builder. Les suggestions of the Builder se recalculent selon l’orientation Awakening / Mixte / Pré-Awakening, the séquence actuelle and the timings réellement enregistrés.':'BDO Combos Labs now connects the skill reference, video measurements, transitions/cancels, the official PvP CC system and the Combo Builder. Builder suggestions are recalculated according to the Awakening / Mixed / Pre-Awakening orientation, the current sequence and the timings actually recorded.',
-    'BDO Combos Labs relie désormais le référentiel de skills, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixte / Pré-Awakening, la séquence actuelle et les timings réellement enregistrés.':'BDO Combos Labs now connects the skill reference, video measurements, transitions/cancels, the official PvP CC system and the Combo Builder. Builder suggestions are recalculated according to the Awakening / Mixed / Pre-Awakening orientation, the current sequence and the timings actually recorded.',
-    'Ouvrir Skills':'Open Skills','Ouvrir Combo Builder':'Open Combo Builder','Transitions / Cancels':'Transitions / Cancels',
-    'Référentiel : aucun pour ce contexte':'Reference: none for this context','Skills chargés':'Loaded skills','Référentiel':'Reference','Combos':'Combos','Transitions':'Transitions','Complétude':'Completeness',
-    '0 activé':'0 active','aucune entrée':'no entries','for ce context':'for this context','pour ce contexte':'for this context','0 avec timing':'0 with timing','data of combat':'combat data','données de combat':'combat data',
-    'ÉTAT DES DONNÉES':'DATA STATUS','Couverture of the build':'Build coverage','Couverture du build':'Build coverage','Skills vs référentiel':'Skills vs reference','Métadonnées Skills':'Skill metadata','Transitions with timing':'Transitions with timing','Transitions avec timing':'Transitions with timing',
-    'Le contexte est prêt, mais aucune compétence n’est chargée. Commence par la recherche automatique depuis le dictionnaire.':'The context is ready, but no skill is loaded. Start with the automatic search from the dictionary.',
-    'PROCHAINES ACTIONS':'NEXT ACTIONS','Priorités recommandées':'Recommended priorities','Créer un premier combo':'Create a first combo','Aucun combo enregistré pour ce contexte':'No combo saved for this context','Builder':'Builder',
-    'Ajouter des transitions':'Add transitions','Aucun cancel/transition validé':'No validated cancel/transition','Transitions':'Transitions',
-    'WORKFLOW':'WORKFLOW','De the donnée brute au combo optimisé':'From raw data to an optimized combo','De la donnée brute au combo optimisé':'From raw data to an optimized combo','Clique sur une étape for open l’outil correspondant':'Click a step to open the corresponding tool','Clique sur une étape pour ouvrir l’outil correspondant':'Click a step to open the corresponding tool',
-    'Classe & spécialisation':'Class & specialization','Importer les données':'Import data','Vérifier les Skills':'Review Skills','Mesurer les transitions':'Measure transitions','Construire un combo':'Build a combo','Optimiser':'Optimize',
-    'Aucune donnée':'No data','Aucune donnée disponible':'No data available','Aucune entrée':'No entries','Aucun résultat':'No results','Aucun résultat trouvé':'No results found','Non disponible':'Unavailable','À enrichir':'Needs enrichment',
-    'Compétences actives':'Active skills','Combos enregistrés':'Saved combos','Transitions mesurées':'Measured transitions','Qualité des données':'Data quality',
-    'Derniers builds construits':'Latest builds','0 build enregistré':'0 saved builds','Aucun build enregistré. Construis un combo puis utilise « Enregistrer ce build ».':'No saved build. Build a combo, then use “Save this build”.',
-    'DATE':'DATE','CONTEXTE':'CONTEXT','TYPE':'TYPE','SÉQUENCE':'SEQUENCE','SKILLS':'SKILLS','VALIDATION':'VALIDATION','ACTIONS':'ACTIONS',
-    'LIENS UTILES':'USEFUL LINKS','Ressources de la classe':'Class resources','Ressources générales':'General resources','DIAGNOSTIC':'DIAGNOSTICS','État du contexte actif':'Active context status',
-    'Classe / spec':'Class / spec','Référentiel':'Reference','Skills actifs':'Active skills','Combos enregistrés':'Saved combos','Transitions mesurées':'Measured transitions','Qualité des données':'Data quality',
-    'ESPACE UTILISATEUR':'USER AREA','Compte local & données personnelles':'Local account & personal data','Gérer mon compte':'Manage my account',
-    'CONFIGURATION':'CONFIGURATION','Données BDO Combos Labs':'BDO Combos Labs data','Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.':'Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.',
-    'Optimisation':'Optimization','Ressources':'Resources','Structure du combo':'Combo structure','Poids mobilité':'Mobility weight','Poids cancels / transitions':'Cancels / transitions weight','Coût ressource max.':'Max resource cost','Coût stamina max.':'Max stamina cost','Préserver la ressource':'Preserve resource',
-    'Maximum de compétences':'Maximum skills','Seuil re-CC PvP':'PvP re-CC threshold','En dessous, le prochain skill doit appliquer un CC.':'Below this threshold, the next skill must apply a CC.',
-    'Entrée / prise d’initiative':'Entry / initiative','Préparation du combo':'Combo setup','Contrôle / re-CC PvP':'Control / PvP re-CC','Dégâts principaux':'Main damage','Fin de chaîne / sortie':'End of chain / exit',
-    'Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée.':'The optimizer will follow the order Engage → Setup → CC → Burst → Finisher and account for measured transition durations. A disabled phase is ignored.',
-    'Recherche':'Search','Filtre':'Filter','Tri':'Sort','Actives uniquement':'Active only','Toutes':'All','Recherche auto des compétences':'Automatic skill search','Référentiel actif':'Active reference','Avec input':'With input','Avec données combat':'With combat data',
-    '0 compétence(s) de référence disponible(s) pour':'0 reference skill(s) available for','Clique pour ajouter les manquantes.':'Click to add missing ones.','Aucune compétence enregistrée pour':'No skill registered for','Ajouter une compétence manuellement':'Add a skill manually',
-    'Préparation du build':'Build preparation','Gère les consommables, les cristaux et les Skill Add-ons pour la classe / spécialisation sélectionnée.':'Manage consumables, crystals and Skill Add-ons for the selected class / specialization.',
-    'Consommables officiels':'Official consumables','Sets de cristaux joueurs':'Player crystal sets','Aucun set de cristaux appliqué.':'No crystal set applied.','Aucun preset actif.':'No active preset.','Aucun consommable actif':'No active consumable',
-    'Connexion':'Sign in','Déconnexion':'Sign out','Langue':'Language','Local Lab':'Local Lab','Contexte actif':'Active context'
-  });
-  Object.assign(exact.de,{
-    'Accueil':'Startseite','Mesure, construis et optimise tes combos BDO':'Messe, baue und optimiere deine BDO-Combos','ÉTAT DES DONNÉES':'DATENSTATUS','Couverture du build':'Build-Abdeckung','PROCHAINES ACTIONS':'NÄCHSTE AKTIONEN','Priorités recommandées':'Empfohlene Prioritäten','Créer un premier combo':'Erste Combo erstellen','Ajouter des transitions':'Übergänge hinzufügen','WORKFLOW':'WORKFLOW','De la donnée brute au combo optimisé':'Von Rohdaten zur optimierten Combo','Référentiel : aucun pour ce contexte':'Referenz: keine für diesen Kontext','Skills chargés':'Geladene Skills','Complétude':'Vollständigkeit','Langue':'Sprache','Connexion':'Anmelden','Déconnexion':'Abmelden'
-  });
-  Object.assign(exact.es,{
-    'Accueil':'Inicio','Mesure, construis et optimise tes combos BDO':'Mide, construye y optimiza tus combos de BDO','ÉTAT DES DONNÉES':'ESTADO DE DATOS','Couverture du build':'Cobertura del build','PROCHAINES ACTIONS':'PRÓXIMAS ACCIONES','Priorités recommandées':'Prioridades recomendadas','Créer un premier combo':'Crear un primer combo','Ajouter des transitions':'Añadir transiciones','WORKFLOW':'FLUJO DE TRABAJO','De la donnée brute au combo optimisé':'De datos sin procesar al combo optimizado','Référentiel : aucun pour ce contexte':'Referencia: ninguna para este contexto','Skills chargés':'Skills cargadas','Complétude':'Completitud','Langue':'Idioma','Connexion':'Iniciar sesión','Déconnexion':'Cerrar sesión'
-  });
-  Object.assign(exact.it,{
-    'Accueil':'Home','Mesure, construis et optimise tes combos BDO':'Misura, costruisci e ottimizza le tue combo BDO','ÉTAT DES DONNÉES':'STATO DATI','Couverture du build':'Copertura build','PROCHAINES ACTIONS':'PROSSIME AZIONI','Priorités recommandées':'Priorità consigliate','Créer un premier combo':'Crea una prima combo','Ajouter des transitions':'Aggiungi transizioni','WORKFLOW':'FLUSSO DI LAVORO','De la donnée brute au combo optimisé':'Dai dati grezzi alla combo ottimizzata','Référentiel : aucun pour ce contexte':'Riferimento: nessuno per questo contesto','Skills chargés':'Skill caricate','Complétude':'Completezza','Langue':'Lingua','Connexion':'Accedi','Déconnexion':'Esci'
-  });
-  Object.assign(exact.pt,{
-    'Accueil':'Início','Mesure, construis et optimise tes combos BDO':'Mede, constrói e otimiza os teus combos BDO','ÉTAT DES DONNÉES':'ESTADO DOS DADOS','Couverture du build':'Cobertura da build','PROCHAINES ACTIONS':'PRÓXIMAS AÇÕES','Priorités recommandées':'Prioridades recomendadas','Créer un premier combo':'Criar um primeiro combo','Ajouter des transitions':'Adicionar transições','WORKFLOW':'FLUXO DE TRABALHO','De la donnée brute au combo optimisé':'Dos dados brutos ao combo otimizado','Référentiel : aucun pour ce contexte':'Referência: nenhuma para este contexto','Skills chargés':'Skills carregadas','Complétude':'Completude','Langue':'Idioma','Connexion':'Entrar','Déconnexion':'Sair'
-  });
-
-'''
               if marker not in s:
                   raise RuntimeError('fallbackWords marker not found')
-              s=s.replace(marker,block+marker,1)
-          p.write_text(s,encoding='utf-8')
+              s=s.replace(marker,extra+'\n'+marker,1)
+              p.write_text(s,encoding='utf-8')
       - name: Validate JavaScript
         run: node --check bcl-full-ui-i18n-v113.js
       - name: Commit coverage expansion
         run: |
-          rm -f .github/workflows/expand-v113-i18n.yml
+          rm -f .github/workflows/expand-v113-i18n.yml .github/v113-extra-translations.jsfrag
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add bcl-full-ui-i18n-v113.js .github/workflows/expand-v113-i18n.yml
+          git add bcl-full-ui-i18n-v113.js .github/workflows/expand-v113-i18n.yml .github/v113-extra-translations.jsfrag
           git commit -m 'Expand V113 UI translation coverage'
           git push origin main
