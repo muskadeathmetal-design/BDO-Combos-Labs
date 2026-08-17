@@ -9780,7 +9780,7 @@ async function importFullBackupV48(file){
     console.error('Full backup import failed',err);
     if(status){
       status.className='optimizer-note status-bad';
-      status.textContent=`Import impossible : ${err?.message||err}`;
+      status.textContent=`Import failed: ${err?.message||err}`;
     }
   }
 }
@@ -10592,7 +10592,7 @@ async function fetchGoogleDocText(originalUrl){
 
   throw new Error(
     'Impossible de lire ce document. Vérifie qu’il est accessible à toute personne disposant du lien. ' +
-    (errors.length ? `Détails: ${errors.slice(0,3).join(' | ')}` : '')
+    (errors.length ? `Details: ${errors.slice(0,3).join(' | ')}` : '')
   );
 }
 
@@ -16603,7 +16603,7 @@ function renderTransitionPage(){
       grid.appendChild(box);
     };
 
-    addMetric('Transition Duration',
+    addMetric('Transition duration',
       Number.isENDite(derivedSeconds) ? `${derivedSeconds.toFixed(4)} s` : '—');
     addMetric('Frames',
       Number.isENDite(framesCandidate) ? `${Math.round(framesCandidate)} frames` : '—');
@@ -20396,13 +20396,13 @@ function oldRenderCrystals(){
     }else{
       const m=p.mods||{};
       const aggregate=[];
-      if(m.ap) aggregate.push(`AP caché +${m.ap}`);
+      if(m.ap) aggregate.push(`Hidden AP +${m.ap}`);
       if(m.monsterAP) aggregate.push(`AP monstre +${m.monsterAP}`);
-      if(m.humanDamage) aggregate.push(`Dégâts humains +${m.humanDamage}`);
-      if(m.accuracy) aggregate.push(`Précision +${m.accuracy}`);
-      if(m.critDmgPct) aggregate.push(`Dégâts critiques +${m.critDmgPct}%`);
+      if(m.humanDamage) aggregate.push(`Human damage +${m.humanDamage}`);
+      if(m.accuracy) aggregate.push(`Accuracy +${m.accuracy}`);
+      if(m.critDmgPct) aggregate.push(`Critical damage +${m.critDmgPct}%`);
       if(m.backDmgPct) aggregate.push(`Back Attack +${m.backDmgPct}%`);
-      if(m.specialPct) aggregate.push(`Dégâts spéciaux +${m.specialPct}%`);
+      if(m.specialPct) aggregate.push(`Special damage +${m.specialPct}%`);
       if(m.atkSpeedPct) aggregate.push(`Vitesse attaque +${m.atkSpeedPct}%`);
       if(m.castingSpeedPct) aggregate.push(`Vitesse incantation +${m.castingSpeedPct}%`);
 
@@ -21613,7 +21613,7 @@ async function autoAnalyzeLocalVideoV43(){
     }
   }catch(err){
     console.error('Automatic video analysis failed',err);
-    if(status)status.textContent=`Analyse automatique impossible : ${err?.message||err}`;
+    if(status)status.textContent=`Automatic analysis failed: ${err?.message||err}`;
   }finally{
     VIDEO_AUTO_STATE_V43.running=false;
     VIDEO_AUTO_STATE_V43.paused=false;
@@ -24290,7 +24290,7 @@ function communityPatternsForContextV101(className,spec){
       seq:communityNormalizeSequenceV101(c.sequence),
       type:'PLAYER COMBO',
       confidence:c.communityVerified?'community-verified':'community-shared',
-      sourceTag:`Partagé par ${c.author||'Joueur'}`,
+      sourceTag:`Shared by ${c.author||'Player'}`,
       note:c.note||'Combo shared by a player.',
       ownerClass:c.className,
       ownerSpec:c.spec,
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
