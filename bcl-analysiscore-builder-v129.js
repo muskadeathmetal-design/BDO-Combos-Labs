@@ -1,6 +1,6 @@
 (()=>{'use strict';
 const ENDPOINT='https://rxwlcwziuhtlujdmjwom.supabase.co/functions/v1/analysiscore-builder-v2';
-const ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIUzI1NiIsInJlZiI6InJ4d2xjd3ppdWh0bHVqZG1qd29tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NDgwMzMsImV4cCI6MjEwMjUyNDAzM30.EIFJXVhKlIyOcfcYPmiz4ct10iTpMqe_Dk4Jal49ChU';
+const ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4d2xjd3ppdWh0bHVqZG1qd29tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NDgwMzMsImV4cCI6MjEwMjUyNDAzM30.EIFJXVhKlIyOcfcYPmiz4ct10iTpMqe_Dk4Jal49ChU';
 const VERSION='v132-analysiscore-phases';
 const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
 const LABEL={engagement:'Engagement',setup:'Setup',cc:'CC',burst:'Burst',finish:'Finish'};
