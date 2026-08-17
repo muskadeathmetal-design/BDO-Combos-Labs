@@ -1,0 +1,21 @@
+name: Audit V116 untranslated UI
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/audit-static-en-v116.js'
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node tools/audit-static-en-v116.js
+      - name: Commit audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add en/untranslated-audit.txt
+          git diff --cached --quiet || git commit -m "Audit remaining V116 French UI strings"
+          git push
