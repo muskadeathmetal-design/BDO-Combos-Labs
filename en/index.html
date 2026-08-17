@@ -4,9 +4,9 @@
 
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#0d1117">
-<meta name="description" content="BDO Combos Labs — analyse, construction et partage communautaire de combos Black Desert Online.">
+<meta name="description" content="BDO Combos Labs — analysis, building and community sharing of Black Desert Online combos.">
 <meta property="og:title" content="BDO Combos Labs">
-<meta property="og:description" content="Skills, transitions, cancels et combos communautaires BDO.">
+<meta property="og:description" content="Skills, transitions, cancels and community BDO combos.">
 <meta property="og:type" content="website">
 
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -6076,7 +6076,7 @@ if(!BDO_DOM_READY){
               <li>Return to Skills, Transition / Cancel and Combo Builder to verify the restored data.</li>
             </ol>
 
-            <p class="home75-tip"><b>Account local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Used « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
+            <p class="home75-tip"><b>Local account :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Used « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
             <p class="home75-warning"><b>Don't rely solely on local browser storage.</b> The browser may lose its data after cleaning, reinstallation, profile change or certain manipulations. The exported JSON file is the backup copy to keep.</p>
             <p class="home75-tip"><b>Recommended routine:</b> work normally → measure/correct the data → save your useful builds → end the session with <b>Export all data</b>.</p>
 
@@ -6582,7 +6582,7 @@ if(!BDO_DOM_READY){
         <span class="builder-history-actions">
   <button type="button" class="tab-btn" onclick="saveCurrentBuildToHistoryV19('manual')">Save ce build</button>
   <button type="button" class="optimizer-btn community101-share-btn" onclick="shareCurrentBuilderComboV101()">Share ce combo</button>
-</span><span id="builderHistorySaveStatus" class="builder-history-save-status"></span><span style="font-size:9px;color:#6f8094;margin-left:7px">Backup manuelle uniquement</span>
+</span><span id="builderHistorySaveStatus" class="builder-history-save-status"></span><span style="font-size:9px;color:#6f8094;margin-left:7px">Manual backup only</span>
 <div id="builderOptimizerOutput" style="margin-top:10px"></div>
         <div id="optimizerStatus" class="optimizer-note">
           Add skills from the selected class to build a combo.
@@ -6931,7 +6931,7 @@ if(!BDO_DOM_READY){
             <option value="pvp">PvP</option>
             <option value="pve">PvE</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildCombatMode">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildCombatMode">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Optimization profile</b><small>General profile that determines Auto-Build priorities.</small></div>
@@ -6945,7 +6945,7 @@ if(!BDO_DOM_READY){
             <option value="mobility">Mobility</option>
             <option value="sustain">Sustain/safety</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildMode">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMode">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Target type</b><small>Adapts the optimization profile to the target type.</small></div>
@@ -6955,7 +6955,7 @@ if(!BDO_DOM_READY){
             <option value="boss">Boss</option>
             <option value="pack">Mob Pack</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildTargetType">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildTargetType">Automatic</div>
   </div>
 </div>
 
@@ -6969,22 +6969,22 @@ if(!BDO_DOM_READY){
   <div class="settings92-row">
     <div class="settings92-name"><b>Skills minimum</b><small>Minimum number of skills desired in a generated combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMinSkills" type="number" min="1" max="30" value="3" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMinSkills">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMinSkills">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Skills maximum</b><small>Maximum number of skills allowed in the combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxSkills" type="number" min="1" max="30" value="8" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMaxSkills">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMaxSkills">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Duration max. estimated (s)</b><small>Maximum estimated duration accepted for the full sequence.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxDuration" type="number" min="0.5" max="60" step="0.1" value="8" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMaxDuration">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMaxDuration">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Duration min. estimated (s)</b><small>Minimum estimated duration desired for the sequence.</small></div>
     <div class="settings92-control"><input id="autoBuildMinDuration" type="number" min="0" max="60" step="0.1" value="0" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMinDuration">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMinDuration">Automatic</div>
   </div>
 </div>
 
@@ -7000,24 +7000,24 @@ if(!BDO_DOM_READY){
     <div class="settings92-control"><select id="autoBuildAvoidCooldown" onchange="saveAutoBuildSettings()">
             <option value="yes" selected>Yes</option><option value="no">No</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildAvoidCooldown">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildAvoidCooldown">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Allow repetition of a skill</b><small>Allows the same skill to appear multiple times in the sequence.</small></div>
     <div class="settings92-control"><select id="autoBuildAllowReuse" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Yes</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildAllowReuse">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildAllowReuse">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Max reps. by skill</b><small>Maximum uses of the same skill when repetition is allowed.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxRepeat" type="number" min="1" max="10" value="1" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMaxRepeat">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMaxRepeat">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Cooldown penalty weight</b><small>Importance of the penalty applied to skills hindered by their cooldown.</small></div>
     <div class="settings92-control"><input id="autoBuildCooldownWeight" type="number" min="0" max="10" step="0.1" value="3" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildCooldownWeight">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildCooldownWeight">Automatic</div>
   </div>
 </div>
 
@@ -7029,47 +7029,47 @@ if(!BDO_DOM_READY){
     <span>Usage</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Minimum CC count</b><small>Nombre minimum d’effets CC que l’optimiseur doit rechercher.</small></div>
+    <div class="settings92-name"><b>Minimum CC count</b><small>Minimum number of CC effects the optimizer must look for.</small></div>
     <div class="settings92-control"><input id="autoBuildMinCC" type="number" min="0" max="10" value="0" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMinCC">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMinCC">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Maximum CC count</b><small>Maximum number of CC effects allowed by Builder constraints.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxCC" type="number" min="0" max="10" value="10" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMaxCC">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMaxCC">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Require at least one protection</b><small>Requires the presence of at least one protected skill.</small></div>
     <div class="settings92-control"><select id="autoBuildRequireProtection" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Yes</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildRequireProtection">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildRequireProtection">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Minimum protected coverage (%)</b><small>Minimum percentage of the combo that must benefit from protection.</small></div>
     <div class="settings92-control"><input id="autoBuildProtectionCoverage" type="number" min="0" max="100" value="0" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildProtectionCoverage">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildProtectionCoverage">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Favoriser Super Armor</b><small>Increase the priority of skills with Super Armor.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferSA" onchange="saveAutoBuildSettings()">
             <option value="no">No</option><option value="yes">Yes</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildPreferSA">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildPreferSA">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Favoriser Forward Guard</b><small>Increase the priority of skills with Forward Guard.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferFG" onchange="saveAutoBuildSettings()">
             <option value="no">No</option><option value="yes">Yes</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildPreferFG">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildPreferFG">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Favoriser I-frame</b><small>Increases the priority of skills with an I-frame.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferIframe" onchange="saveAutoBuildSettings()">
             <option value="no">No</option><option value="yes">Yes</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildPreferIframe">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildPreferIframe">Automatic</div>
   </div>
 </div>
 
@@ -7083,32 +7083,32 @@ if(!BDO_DOM_READY){
   <div class="settings92-row">
     <div class="settings92-name"><b>Damage weight</b><small>Importance of damage in the overall score of a skill.</small></div>
     <div class="settings92-control"><input id="autoBuildDamageWeight" type="number" min="0" max="10" step="0.1" value="5" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildDamageWeight">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildDamageWeight">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Poids vitesse</b><small>Importance of actual speed of transitions in ranking.</small></div>
     <div class="settings92-control"><input id="autoBuildSpeedWeight" type="number" min="0" max="10" step="0.1" value="3" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildSpeedWeight">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildSpeedWeight">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Poids CC</b><small>Importance of controls in the optimizer score.</small></div>
     <div class="settings92-control"><input id="autoBuildCCWeight" type="number" min="0" max="10" step="0.1" value="2" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildCCWeight">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildCCWeight">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Poids protections</b><small>Importance of protections in the overall score.</small></div>
     <div class="settings92-control"><input id="autoBuildProtectionWeight" type="number" min="0" max="10" step="0.1" value="2" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildProtectionWeight">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildProtectionWeight">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Mobility weight</b><small>Importance of mobility and repositioning skills.</small></div>
     <div class="settings92-control"><input id="autoBuildMobilityWeight" type="number" min="0" max="10" step="0.1" value="1" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMobilityWeight">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMobilityWeight">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Cancels / transitions weight</b><small>Importance of rapid, measured and validated transitions/cancels.</small></div>
     <div class="settings92-control"><input id="autoBuildCancelWeight" type="number" min="0" max="10" step="0.1" value="4" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildCancelWeight">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildCancelWeight">Automatic</div>
   </div>
 </div>
 
@@ -7122,19 +7122,19 @@ if(!BDO_DOM_READY){
   <div class="settings92-row">
     <div class="settings92-name"><b>Max resource cost</b><small>Maximum class resource cost accepted for the combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxResourceCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMaxResourceCost">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMaxResourceCost">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Max stamina cost</b><small>Maximum stamina cost accepted for the combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxStaminaCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMaxStaminaCost">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMaxStaminaCost">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Preserve resource</b><small>Favors sequences which conserve more resources.</small></div>
     <div class="settings92-control"><select id="autoBuildPreserveResource" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Yes</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildPreserveResource">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildPreserveResource">Automatic</div>
   </div>
 </div>
 
@@ -7222,26 +7222,26 @@ if(!BDO_DOM_READY){
     <div class="settings92-control"><select id="autoBuildAllowUnknownData" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Yes</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildAllowUnknownData">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildAllowUnknownData">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Minimum data quality (%)</b><small>Minimum data quality required before a skill is prioritized.</small></div>
     <div class="settings92-control"><input id="autoBuildMinDataQuality" type="number" min="0" max="100" value="80" onchange="saveAutoBuildSettings()"></div>
-    <div class="settings92-state" data-setting-id="autoBuildMinDataQuality">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildMinDataQuality">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Favor same stance</b><small>Favors sequences that remain in the current stanza.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferSameStance" onchange="saveAutoBuildSettings()">
             <option value="yes" selected>Yes</option><option value="no">No</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildPreferSameStance">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildPreferSameStance">Automatic</div>
   </div>
   <div class="settings92-row">
     <div class="settings92-name"><b>Allow stance change</b><small>Allows the optimizer to suggest a stance change.</small></div>
     <div class="settings92-control"><select id="autoBuildAllowStanceSwap" onchange="saveAutoBuildSettings()">
             <option value="yes" selected>Yes</option><option value="no">No</option>
           </select></div>
-    <div class="settings92-state" data-setting-id="autoBuildAllowStanceSwap">Automatique</div>
+    <div class="settings92-state" data-setting-id="autoBuildAllowStanceSwap">Automatic</div>
   </div>
 </div>
 
@@ -7261,7 +7261,7 @@ if(!BDO_DOM_READY){
           <div class="settings92-control">
             <input id="communityVerifyThresholdInputV101" type="number" min="1" max="1000" step="1" value="10" onchange="setCommunityVerifyThresholdV101(this.value)">
           </div>
-          <div class="settings92-state community101-setting-status">Validation automatique</div>
+          <div class="settings92-state community101-setting-status">Automatic validation</div>
         </div>
       </div>
 
@@ -23046,7 +23046,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <div><span>Account created</span><strong id="accountCreatedV78">—</strong></div>
         <div><span>Last connection</span><strong id="accountLastLoginV78">—</strong></div>
         <div><span>Last backup</span><strong id="accountLastSaveV78">—</strong></div>
-        <div><span>Mode</span><strong>Account local</strong></div>
+        <div><span>Mode</span><strong>Local account</strong></div>
       </div>
       <div class="account78-profile-actions">
         <button type="button" class="optimizer-btn" onclick="accountSaveWorkspaceV78(true)">Back up my data</button>
@@ -23062,7 +23062,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <h2>Change password</h2>
       <label>Current password<input id="accountOldPasswordV78" type="password" autocomplete="current-password"></label>
       <label>New Password<input id="accountNewPasswordV78" type="password" minlength="8" autocomplete="new-password"></label>
-      <label>Confirmer<input id="accountNewPasswordConfirmV78" type="password" minlength="8" autocomplete="new-password"></label>
+      <label>Confirm<input id="accountNewPasswordConfirmV78" type="password" minlength="8" autocomplete="new-password"></label>
       <button type="button" class="optimizer-btn account78-primary" onclick="changeAccountPasswordV78()">To update</button>
       <div class="account78-switch"><button onclick="switchAccountViewV78('profile')">← Back to profile</button></div>
     </section>
@@ -23091,7 +23091,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <select id="bug77Category">
           <option>Combo Builder</option><option>Video Analyzer</option><option>Skills</option>
           <option>Transition / Cancel</option><option>CC / CC Timer</option><option>Auto-Build</option>
-          <option>Backup / Restauration</option><option>Interface</option><option>Autre</option>
+          <option>Backup / Restore</option><option>Interface</option><option>Autre</option>
         </select>
       </div>
       <div class="bug77-field">
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
