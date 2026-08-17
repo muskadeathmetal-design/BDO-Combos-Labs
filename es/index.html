@@ -5793,7 +5793,7 @@ if(!BDO_DOM_READY){
     <button class="tab-btn" data-page="combinaciónPage" onclick="showPage('combinaciónPage',this);rendercombinadoPage()"> <span data-i18n="nav.classcombinacións">Combinaciones de clases</span></button>
     <button class="tab-btn" data-page="playercombinaciónsPage"
       onclick="showPage('playercombinaciónsPage',this);renderPlayercombinaciónsPage()">
-      <span data-i18n="nav.playercombinacións">Combinaciones de jugadores</span>
+      <span data-i18n="nav.playercombinacións">combinacións de jugadores</span>
     </button>
     <button class="tab-btn" data-page="transiciónPage" onclick="showPage('transiciónPage',this);renderTransitionPage()"> <span data-i18n="transiciones.nav.">Transición / Cancelar</span></button>
       <button class="tab-btn" type="button" onclick="showPage('youtubeAnalyzerPage', this); renderYouTubeAnalyzer();">
@@ -5811,7 +5811,7 @@ if(!BDO_DOM_READY){
     <section class="home18-hero">
       <div class="home18-hero-copy">
         <div class="home18-eyebrow">LABORATORIOS BDO COMBOS · CENTRO DE CONTROL</div>
-        <h2>Mide, construye y optimiza tus combinacións de BDO</h2>
+        <h2>Mide, crea y optimiza tus combinacións de BDO</h2>
         <p>Laboratorios de combinacións BDO relie désormais le référentiel de compétences, les mesures vidéo, les transicións/cancels, le système CC PvP officiel et le Generador combinado. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixto / Pre-despertarening, la séquence actuelle et les timings réellement enregistrés.</p>
         <div class="inicio18-acciones">
           <button class="optimizer-btn" type="button" onclick="showPage('skillsPage',document.querySelector('[data-page=skillsPage]'));renderSkillsPage()">Abrir Skills</button>
@@ -5837,11 +5837,11 @@ if(!BDO_DOM_READY){
     <div class="home18-main-grid">
       <section class="home18-panel home18-progress-panel">
         <div class="home18-panel-head">
-          <div><span class="home18-section-kicker">ESTADO DE DATOS</span><h3>Cobertura del build</h3></div>
+          <div><span class="home18-section-kicker">ESTADO DE LOS DATOS</span><h3>Cobertura del build</h3></div>
           <button class="tab-btn home18-mini-btn" type="button" onclick="renderHomeDashboardV18()">Actualizar</button>
         </div>
         <div class="home18-progress-list">
-          <div class="home18-progress-row"><div><span>Habilidades vs référentiel</span><b id="home18SkillCoverageText">0 / 0</b></div><div class="home18-progress-track"><i id="home18SkillCoverage"></i></div></div>
+          <div class="home18-progress-row"><div><span>Skills vs référentiel</span><b id="home18SkillCoverageText">0 / 0</b></div><div class="home18-progress-track"><i id="home18SkillCoverage"></i></div></div>
           <div class="home18-progress-row"><div><span>Métadonnées Skills</span><b id="home18MetaCoverageText">0%</b></div><div class="home18-progress-track"><i id="home18MetaCoverage"></i></div></div>
           <div class="home18-progress-row"><div><span>Transiciones avec timing</span><b id="home18TimingCoverageText">0%</b></div><div class="home18-progress-track"><i id="home18TimingCoverage"></i></div></div>
         </div>
@@ -6159,7 +6159,7 @@ if(!BDO_DOM_READY){
     <div class="class-summary-strip">
       <div class="class-summary-item identity"><span>Clase activa</span><strong id="statClass">—</strong></div>
       <div class="class-summary-item spec"><span>Especialización</span><strong id="statSpec">—</strong></div>
-      <div class="class-summary-item skills"><span>Habilidades</span><strong id="statSkills">0</strong></div>
+      <div class="class-summary-item skills"><span>Skills</span><strong id="statSkills">0</strong></div>
       <div class="class-summary-item combinacións"><span>combinacións</span><strong id="statcombinacións">0</strong></div>
       <div class="class-summary-item transicións"><span>Transiciones / cancels</span><strong id="statTransiciones">0</strong></div>
     </div>
@@ -6261,7 +6261,7 @@ if(!BDO_DOM_READY){
 
       <div class="skills-reference-summary skills95-reference-summary">
         <div class="skills-reference-title"><span>Referencia activa</span><strong id="skillsReferenceActive">—</strong></div>
-        <div><span>Habilidades</span><strong id="skillsSummaryTotal">0</strong></div>
+        <div><span>Skills</span><strong id="skillsSummaryTotal">0</strong></div>
         <div><span>Actives</span><strong id="skillsSummaryEnabled">0</strong></div>
         <div><span>Avec input</span><strong id="skillsSummaryInput">0</strong></div>
         <div><span>Avec données combat</span><strong id="skillsSummaryCombat">0</strong></div>
@@ -6336,7 +6336,7 @@ if(!BDO_DOM_READY){
     <div class="card">
       <div class="combinación-header player-combinacións-header">
         <div>
-          <h2>Combinaciones de jugadores</h2>
+          <h2>combinacións de jugadores</h2>
           <div id="playercombinaciónsContext" class="badge">Ninguna clase sélectionnée</div>
         </div>
         <div class="community101-header-actions">
@@ -6347,7 +6347,7 @@ if(!BDO_DOM_READY){
 
       <p class="player-combinacións-intro">
         Les combinacións partagés par les joueurs restent ici pendant leur phase de vote.
-        Lorsqu’un combinación atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combinaciones de jugadores et rejoint Combinaciones de clases.
+        Lorsqu’un combinación atteint le seuil communautaire, il devient automatiquement vérifié, quitte combinacións de jugadores et rejoint Combinaciones de clases.
       </p>
 
       <div id="playercombinaciónsSummary" class="player-combinacións-summary"></div>
@@ -6377,7 +6377,7 @@ if(!BDO_DOM_READY){
           <select id="playercombinadoSort" onchange="renderPlayercombinaciónsPage()">
             <option value="priority">Prioridad comunitaria</option>
             <option value="length">Longueur</option>
-            <option value="coverage">Habilidades disponibles</option>
+            <option value="coverage">Skills disponibles</option>
           </select>
         </div>
       </div>
@@ -6487,7 +6487,7 @@ if(!BDO_DOM_READY){
     <div class="addon87-section-head addon87-skill-head">
       <div>
         <span class="addon87-kicker">SKILL ADD-ONS</span>
-        <h3>Habilidades & améliorations</h3>
+        <h3>Skills & améliorations</h3>
         <p>Selecciona una habilidad y luego sus dos efectos adicionales.</p>
       </div>
     </div>
@@ -6967,12 +6967,12 @@ if(!BDO_DOM_READY){
     <span>Uso</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Habilidades minimum</b><small>Nombre minimum de compétences souhaité dans un combinación généré.</small></div>
+    <div class="settings92-name"><b>Skills minimum</b><small>Nombre minimum de compétences souhaité dans un combinación généré.</small></div>
     <div class="settings92-control"><input id="autoBuildMinSkills" type="number" min="1" max="30" value="3" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinSkills">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Habilidades maximum</b><small>Nombre maximum de compétences autorisé dans le combinación.</small></div>
+    <div class="settings92-name"><b>Skills maximum</b><small>Nombre maximum de compétences autorisé dans le combinación.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxSkills" type="number" min="1" max="30" value="8" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxSkills">Automatique</div>
   </div>
@@ -11557,7 +11557,7 @@ async function parseManualGuideText(text,fuenteName,fuenteUrl=''){
   if(skillRoot){
     const found=summary.skills||[];
     skillRoot.innerHTML=found.length
-      ? `<h4>Habilidades résolues depuis lignes, tableaux et chaînes</h4><div class="old-doc-skill-grid">`+
+      ? `<h4>Skills résolues depuis lignes, tableaux et chaînes</h4><div class="old-doc-skill-grid">`+
         found.map(item=>{
           const name=typeof item==='string'?item:item?.name||'';
           const matched=typeof item==='object'&&item?.matchedExisting;
@@ -19534,7 +19534,7 @@ function renderBuilderSequence(){
               tl.timelineComplete?'cc-active':'cc-bound-v60'
             );
             chip.title=tl.ccApplied
-              ? `Nuevo CC aplicado: ${tl.ccTimerSource} · Duración del CC utilizado ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · fuente ${tl.ccTimerMeasurement?.fuente||'inconnue'}`
+              ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · fuente ${tl.ccTimerMeasurement?.fuente||'inconnue'}`
               : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transiciónSeconds!==null&&tl.transiciónSeconds!==undefined?` · ${Number(tl.transiciónSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
             return chip;
           }
@@ -22918,7 +22918,7 @@ function renderClassRefuenteLinksV23(){
   const codex=exact.codex||'https://bdocodex.com/us/skills/';
   host.innerHTML=`
     <a class="home22-official-link home23-class-link" href="${home23Esc(discord)}" target="_blank" rel="noopener noreferrer"><b>${home23Esc(discordTitle)}</b><small>${home23Esc(discordDesc)}</small><span>Abrir ↗</span></a>
-    <a class="home22-official-link home23-class-link" href="${home23Esc(codex)}" target="_blank" rel="noopener noreferrer"><b>BDO Codex · ${home23Esc(cls)}</b><small>Habilidades et données de référence pour ${home23Esc(cls)}</small><span>Abrir ↗</span></a>
+    <a class="home22-official-link home23-class-link" href="${home23Esc(codex)}" target="_blank" rel="noopener noreferrer"><b>BDO Codex · ${home23Esc(cls)}</b><small>Skills et données de référence pour ${home23Esc(cls)}</small><span>Abrir ↗</span></a>
     <a class="home22-official-link home23-class-link" href="${home23Esc(foundry)}" target="_blank" rel="noopener noreferrer"><b>BDO Foundry · ${home23Esc(cls)}</b><small>${home23Esc(foundryDesc)}</small><span>Abrir ↗</span></a>`;
 }
 if(typeof bdoOnReady==='function')bdoOnReady(()=>{
@@ -24424,7 +24424,7 @@ function shareCurrentBuildercombinadoV101(){
 
   const status=document.getElementById('builderHistorySaveStatus');
   if(status){
-    status.textContent=`✓ Partagé dans Combinaciones de jugadores · 0/${communityVerifyThresholdV101()} J’aime`;
+    status.textContent=`✓ Partagé dans combinacións de jugadores · 0/${communityVerifyThresholdV101()} J’aime`;
   }
 
   if(typeof renderPlayercombinaciónsPage==='function')renderPlayercombinaciónsPage();
@@ -25542,7 +25542,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdocombinaciónsLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear una cuenta','account.profile':'mi perfil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Cambiar la contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classcombinacións':'Combinaciones de clases','nav.playercombinacións':'Combinaciones de jugadores','transiciones.nav.':'Transición / Cancelar','nav.videoAnalyzer':'analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Generador combinado','nav.settings':'Settings'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear una cuenta','account.profile':'mi perfil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Cambiar la contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Skills','nav.classcombinacións':'Combinaciones de clases','nav.playercombinacións':'combinacións de jugadores','transiciones.nav.':'Transición / Cancelar','nav.videoAnalyzer':'analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Generador combinado','nav.settings':'Settings'},
 en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classcombinacións':'Combinaciones de clases','nav.playercombinacións':'Combinaciones de jugadores','transiciones.nav.':'Transición / Cancelar','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Generador combinado','nav.settings':'Settings'},
 de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mi perfil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classcombinacións':'combinacións de clase','nav.playercombinacións':'combinacións de juego','transiciones.nav.':'Transición / Cancelar','nav.videoAnalyzer':'Videoanálisis','nav.addons':'Skill Add-ons','nav.builder':'Generador combinado','nav.settings':'Einstellungen'},
 es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classcombinacións':'Combinaciones de clases','nav.playercombinacións':'combinacións de jugadores','transiciones.nav.':'Transición / Cancel','nav.videoAnalyzer':'analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Generador combinado','nav.settings':'Ajustes'},
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

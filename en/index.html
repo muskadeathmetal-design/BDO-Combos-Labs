@@ -5790,7 +5790,7 @@ if(!BDO_DOM_READY){
 
     <button class="tab-btn" data-page="classPage" onclick="showPage('classPage',this)"> <span data-i18n="nav.class">Class</span></button>
     <button class="tab-btn" data-page="skillsPage" onclick="showPage('skillsPage',this);renderSkillsPage()"> <span data-i18n="nav.skills">Skills</span></button>
-    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()"> <span data-i18n="nav.classCombos">Class Combos</span></button>
+    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()"> <span data-i18n="nav.classCombos">Class combos</span></button>
     <button class="tab-btn" data-page="playerCombosPage"
       onclick="showPage('playerCombosPage',this);renderPlayerCombosPage()">
       <span data-i18n="nav.playerCombos">Player combos</span>
@@ -5999,7 +5999,7 @@ if(!BDO_DOM_READY){
           <div class="home75-detail">
             <p>A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.</p>
             <ol><li>Ouvre <b>Transition / Cancel</b>.</li><li>Check the torque <b>A → B</b>.</li><li>Controls duration and frames when available.</li><li>Validates reliable measurements.</li><li>Corrects or removes spurious detections.</li></ol>
-            <p class="home75-tip"><b>A cancel never reduces the duration of the CC.</b> It reduces combo execution/chain time, which can allow more skills to be placed during the same control window.</p>
+            <p class="home75-tip"><b>A cancel never reduces the duration of the CC.</b> Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.</p>
           </div>
         </details>
 
@@ -6007,7 +6007,7 @@ if(!BDO_DOM_READY){
           <summary><span>05</span> Use the Combo Builder and its suggestions</summary>
           <div class="home75-detail">
             <p>The Builder assembles the sequence and recalculates the suggestions after each modification.</p>
-            <ol><li>Choisis <b>Awakening</b>, <b>Mixed</b> ou <b>Pre-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>After the first skill, the block <b>CHAIN</b> indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.</li><li>Add a suggestion or skill manually: the list is immediately recalculated from the new last skill.</li><li>Used <b>Complete Current Combo</b> ou <b>Add Best Suggestion</b> to let the optimizer continue the chain.</li><li>Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.</li></ol>
+            <ol><li>Choisis <b>Awakening</b>, <b>Mixed</b> ou <b>Pre-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>After the first skill, the block <b>CHAIN</b> indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.</li><li>Add a suggestion or skill manually: the list is immediately recalculated from the new last skill.</li><li>Used <b>Complete Current Combo</b> ou <b>Add Best Suggestion</b> pour laisser l’optimiseur poursuivre la chaîne.</li><li>Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.</li></ol>
             <p class="home75-tip">Transitions/cancels now actually influence ranking. A rapid, measured and validated transition is favored; an unknown transition may be penalized depending on the Settings.</p>
           </div>
         </details>
@@ -6315,7 +6315,7 @@ if(!BDO_DOM_READY){
     <div class="card">
       <div class="combo-header">
         <div>
-          <h2>Class Combos</h2>
+          <h2>Class combos</h2>
           <div id="comboClassContext" class="badge">Noe class sélectionnée</div>
         </div>
         <span class="verified-badge">Validated combos</span>
@@ -6347,7 +6347,7 @@ if(!BDO_DOM_READY){
 
       <p class="player-combos-intro">
         Les combos partagés par les joueurs restent ici pendant leur phase de vote.
-        Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Player combos et rejoint Class Combos.
+        Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Player combos et rejoint Class combos.
       </p>
 
       <div id="playerCombosSummary" class="player-combos-summary"></div>
@@ -19534,7 +19534,7 @@ function renderBuilderSequence(){
               tl.timelineComplete?'cc-active':'cc-bound-v60'
             );
             chip.title=tl.ccApplied
-              ? `New CC applied: ${tl.ccTimerSource} · CC duration used ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}`
+              ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}`
               : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
             return chip;
           }
@@ -25542,12 +25542,12 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdoCombosLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create an account','account.profile':'My profile','account.saveNow':'Backupr maintenant','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create an account','account.profile':'My profile','account.saveNow':'Backupr maintenant','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class combos','nav.playerCombos':'Player combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'My Profile','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analysis','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
 es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Class Combos','nav.playerCombos':'Jugadores Combos','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
 it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Class','nav.skills':'Ability','nav.classCombos':'Class Combo','nav.playerCombos':'Combo games','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
-pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Class','nav.skills':'Habilidades','nav.classCombos':'Class Combos','nav.playerCombos':'Jogadores Combos','nav.transitions':'Transfer / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definitions'}};
+pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Class','nav.skills':'Habilidades','nav.classCombos':'Class combos','nav.playerCombos':'Jogadores Combos','nav.transitions':'Transfer / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definitions'}};
 function current(){const saved=localStorage.getItem(STORAGE_KEY);if(dict[saved])return saved;const b=(navigator.language||'fr').slice(0,2).toLowerCase();return dict[b]?b:'fr';}
 function t(key,lang){const l=lang||current();return (dict[l]&&dict[l][key])||(dict.fr&&dict.fr[key])||key;}
 function apply(lang,save){const l=dict[lang]?lang:'fr';document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(function(el){const key=el.getAttribute('data-i18n');if(key)el.textContent=t(key,l);});const sel=document.getElementById('bclLanguageSelect');if(sel&&sel.value!==l)sel.value=l;if(save)localStorage.setItem(STORAGE_KEY,l);window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));}
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

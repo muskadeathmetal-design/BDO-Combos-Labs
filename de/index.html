@@ -5790,10 +5790,10 @@ if(!BDO_DOM_READY){
 
     <button class="tab-btn" data-page="classPage" onclick="showPage('classPage',this)"> <span data-i18n="nav.class">Class</span></button>
     <button class="tab-btn" data-page="skillsPage" onclick="showPage('skillsPage',this);renderSkillsPage()"> <span data-i18n="nav.skills">Skills</span></button>
-    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()"> <span data-i18n="nav.classCombos">Combos de classe</span></button>
+    <button class="tab-btn" data-page="comboPage" onclick="showPage('comboPage',this);renderComboPage()"> <span data-i18n="nav.classCombos">Klassen-Combos</span></button>
     <button class="tab-btn" data-page="playerCombosPage"
       onclick="showPage('playerCombosPage',this);renderPlayerCombosPage()">
-      <span data-i18n="nav.playerCombos">Combos joueurs</span>
+      <span data-i18n="nav.playerCombos">Spieler-Combos</span>
     </button>
     <button class="tab-btn" data-page="transitionPage" onclick="showPage('transitionPage',this);renderTransitionPage()"> <span data-i18n="nav.transitions">Transition / Cancel</span></button>
       <button class="tab-btn" type="button" onclick="showPage('youtubeAnalyzerPage', this); renderYouTubeAnalyzer();">
@@ -5811,7 +5811,7 @@ if(!BDO_DOM_READY){
     <section class="home18-hero">
       <div class="home18-hero-copy">
         <div class="home18-eyebrow">BDO COMBOS LABS · CONTROL CENTER</div>
-        <h2>Messe, baue und optimiere deine BDO-Combos</h2>
+        <h2>Messe, erstelle und optimiere deine BDO-Combos</h2>
         <p>BDO Combos Labs relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Gemischt / Pré-Awakening, la séquence actuelle et les timings réellement enregistrés.</p>
         <div class="home18-actions">
           <button class="optimizer-btn" type="button" onclick="showPage('skillsPage',document.querySelector('[data-page=skillsPage]'));renderSkillsPage()">Öffnen Skills</button>
@@ -6315,7 +6315,7 @@ if(!BDO_DOM_READY){
     <div class="card">
       <div class="combo-header">
         <div>
-          <h2>Combos de classe</h2>
+          <h2>Klassen-Combos</h2>
           <div id="comboClassContext" class="badge">Keine classe sélectionnée</div>
         </div>
         <span class="verified-badge">Combos validés</span>
@@ -6336,7 +6336,7 @@ if(!BDO_DOM_READY){
     <div class="card">
       <div class="combo-header player-combos-header">
         <div>
-          <h2>Combos joueurs</h2>
+          <h2>Spieler-Combos</h2>
           <div id="playerCombosContext" class="badge">Keine classe sélectionnée</div>
         </div>
         <div class="community101-header-actions">
@@ -6347,7 +6347,7 @@ if(!BDO_DOM_READY){
 
       <p class="player-combos-intro">
         Les combos partagés par les joueurs restent ici pendant leur phase de vote.
-        Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combos joueurs et rejoint Combos de classe.
+        Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Spieler-Combos et rejoint Klassen-Combos.
       </p>
 
       <div id="playerCombosSummary" class="player-combos-summary"></div>
@@ -19534,7 +19534,7 @@ function renderBuilderSequence(){
               tl.timelineComplete?'cc-active':'cc-bound-v60'
             );
             chip.title=tl.ccApplied
-              ? `Neues CC angewendet: ${tl.ccTimerSource} · Verwendete CC-Dauer ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · Quelle ${tl.ccTimerMeasurement?.source||'inconnue'}`
+              ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}`
               : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
             return chip;
           }
@@ -24424,7 +24424,7 @@ function shareCurrentBuilderComboV101(){
 
   const status=document.getElementById('builderHistorySaveStatus');
   if(status){
-    status.textContent=`✓ Partagé dans Combos joueurs · 0/${communityVerifyThresholdV101()} J’aime`;
+    status.textContent=`✓ Partagé dans Spieler-Combos · 0/${communityVerifyThresholdV101()} J’aime`;
   }
 
   if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
@@ -25542,12 +25542,12 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdoCombosLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Abmelden','nav.home':'Startseite','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos joueurs','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Abmelden','nav.home':'Startseite','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mein Profil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
 es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Combos de clase','nav.playerCombos':'Combos de jugadores','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
 it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Klasse','nav.skills':'Abilità','nav.classCombos':'Combo di classe','nav.playerCombos':'Combo giocatori','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
-pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Klasse','nav.skills':'Habilidades','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
+pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Klasse','nav.skills':'Habilidades','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
 function current(){const saved=localStorage.getItem(STORAGE_KEY);if(dict[saved])return saved;const b=(navigator.language||'fr').slice(0,2).toLowerCase();return dict[b]?b:'fr';}
 function t(key,lang){const l=lang||current();return (dict[l]&&dict[l][key])||(dict.fr&&dict.fr[key])||key;}
 function apply(lang,save){const l=dict[lang]?lang:'fr';document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(function(el){const key=el.getAttribute('data-i18n');if(key)el.textContent=t(key,l);});const sel=document.getElementById('bclLanguageSelect');if(sel&&sel.value!==l)sel.value=l;if(save)localStorage.setItem(STORAGE_KEY,l);window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));}
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
