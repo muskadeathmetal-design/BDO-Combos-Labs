@@ -1,105 +1,35 @@
-V116 pt visible French residual candidates: 284
+V116 pt visible French residual candidates: 85
 
-. A ferramenta calcula a sequência, a duração total, os tempos entre skills e os pontos de cancel.
-. Le combinação est ajouté à
 . Le lecteur local est la fonte de temps utilisée pour tous les marqueurs.
 . Recommence pour chaque compétence du combinação.
 . Todas les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.
-↩ Começo
+← Voltar au profil
 + Adicionar une compétence
-0 activés
-0 build enregistré
-4 · Transições
-5 · Construtor de Combinação
 8 · Sauvegarde
 8 caractères minimum
-A detecção automática é um auxílio à medição, não uma verdade absoluta. Outliers devem ser controlados no vídeo.
-A pontuação não é apenas uma pontuação de dano: ela combina a lógica do jogador e os fatores técnicos disponíveis. A falta de dados limita necessariamente a precisão da otimização.
 Abrir la sauvegarde complète
-Ações
-Adapta o perfil de otimização ao tipo de destino.
-Adiciona habilidades detectadas à lista quando a correspondência está correta.
 Adicionar les skills détectés
-Adicione habilidades da aula selecionada para construir um combinação.
-Adicione uma sugestão ou habilidade manualmente: a lista é imediatamente recalculada a partir da última habilidade.
-Adicione, renomeie e exclua agora e também sincronize o histórico de construção salvo.
-Aguarde a mensagem de confirmação.
-Ajustar o peso dos horários, cancelamentos e restrições
-Ambos os painéis utilizam toda a largura disponível e permanecem independentes dos layouts antigos.
-Analisa uma pequena área do combinação para obter tempos precisos. Máximo recomendado: 30 a 60 segundos.
-Analisador de combinação de vídeo
-Analisar combinação marcada
-Análise + medição automática
-Analise a combinação
-Análise a partir de uma posição escolhida, detecção de habilidades, transições/cancelamentos e durações de CC validadas diretamente em uma habilidade.
-Antes de alterar a versão do navegador, da máquina, do arquivo HTML ou da aplicação.
-Antes de qualquer operação que possa esvaziar os dados locais do navegador.
-Aplicar à habilidade selecionada
 Après une grosse session de mesure vidéo.
-As configurações têm persistência única, os relatórios de bugs indicam a versão correta e a exportação JSON completa ainda é recomendada.
-Atualiza uma medição detectada anteriormente se ela estiver incorreta.
 Atualizar les mesures détectées
 Autoriser la répétition d’une compétence
-Autoriza ou bloqueia habilidades para as quais determinados dados técnicos são desconhecidos.
 Avec données combat
-Awakening / Misto / Pré-Awakening
-CC Timer e imunidade usam o mesmo cronograma de início a início, sem contagem dupla da duração das habilidades.
-CC Timer, CHAIN et statistiques contrôlés
 Ce que la sauvegarde complète contient
-Choisis la aula e o especialização qui pilotent les Skills, Combos, Transições et imports.
 Classe, especialização et référentiel
 Clique em une étape pour ouvrir l’outil correspondant
-Coloque a reprodução no horário em que o combinação interessante começa, por exemplo 3:00.
-Coloque o vídeo no início/fim do CC, ou inicie a detecção automática na área analisada.
-Coloque o vídeo no momento em que a animação de uma habilidade é cortada, selecione
-Com proteção
-Com Stiffness em 0,7, podem ser necessárias três aplicações para ultrapassar o limite; com CC em 1,0, dois são suficientes.
-com sua duração medida.
-Combinação Atual Completo
 Combos enregistrés
-Começo
-Comprimento e duração
 Compte créé
 Compte local
 Compte local :
 Compte local & données personnelles
-Confiança mínima
-Configura consumíveis, cristais e até 6 habilidades com 2 efeitos complementares de habilidade cada.
-Configure o otimizador, as restrições do Construtor de combinação, as prioridades de transição/cancelamento e o backup dos seus dados.
 Construire un combinação à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.
-Construtor de combinação
-Controla a duração e os frames quando disponíveis.
-Controla a qualidade dos dados e as mudanças de postura.
-Controla a reutilização de habilidades.
-Controla as estatísticas do combinação: duração, dano quando disponível, transições medidas, tempo de cobertura, CC e proteção.
-Controla as medições de
-Controla o tamanho e a duração estimada dos combos gerados.
-Controlar e validar transições/cancelamentos
 Contrôle / re-CC PvP
 Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.
-Corrige ou remove detecções falsas.
 Coût ressource max.
 Coût stamina max.
-Crie seu espaço pessoal para separar seus dados dos de outros usuários deste navegador.
-Crie uma conta para separar automaticamente seu espaço de trabalho de outros usuários deste navegador. Um backup local do perfil é atualizado periodicamente e após o logout.
-Custo máximo de recurso de aula aceito para o combinação.
-Custo máximo de resistência aceito para o combinação.
 Décris ce que l’application aurait dû faire...
-Décris le bug observé...
-Definição
-Definir otimizador/construção automática
 Dégâts principaux
-Depois de medir durações DC significativas.
-Depois de validar muitas transições/cancelamentos.
-Detecção de segmentos por movimento + aproximação com o referencial ativo.
-Detecte habilidades, CC, transições e cancelamentos
-Divida a importância do dano, velocidade, CC e transições/cancelamentos.
-do Construtor de combinação é diferente da especialização: define a orientação da cadeia que o Builder deve propor.
-do Construtor de combinação salva apenas uma sequência de combinação. Para evitar perder habilidades, durações de CC, transições/cancelamentos, medições de vídeo, configurações e carregamentos, você deve usar o
 données de combat
-Dos dados brutos ao combinação otimizado
 Down Smash / Air Smash ne sont pas inclus dans le compteur ci-dessus. Source : note de mise à jour officielle Pearl Abyss. Le « CC Timer » utilise uniquement des mesures enregistrées. Un * indique qu'falta uma transição intermediária: a última hora conhecida permanece exibida, mas não'est pas utilisé comme timing précis par l'optimiseur. Em Skills → Editar, renseigne CC mesuré (s), ou FPS + frames début/fin.
-duração do CC
 Durée CC
 Durée CC générique
 Durée estimada maximale acceptée pour la séquence complète.
@@ -109,136 +39,37 @@ Durée min. estimada (s)
 Durée vidéo
 Durées CC et transitions importantes mesurées
 Durées CC mesurées
-e adiciona um marcador. O cancelamento estará associado à transição para a próxima habilidade.
-e as medições são registradas em
-é o banco de dados usado pelo restante do aplicativo. Cada habilidade pode conter entrada, tempo de espera, cronômetro, proteção, CC, duração do CC, dano PvE/PvP, efeitos e categoria.
-é usado para extrair medidas reais de um vídeo local. Você pode escolher o ponto de partida para a análise em vez de necessariamente começar às 0:00.
 Eliminar mon compte
-Encontre seu espaço de trabalho local e todos os seus dados salvos.
 Entrar, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
-Entrée / prise d’initiative
-Escolha Despertar ou a especialização disponível.
-Escolha primeiro o FPS do vídeo (30 ou 60) e depois pause no momento exato em que a animação começa. Use os botões de quadro ±0,10s ou ±1 para fazer o ajuste fino.
-Escolhe as regras de otimização PvP ou PvE usadas pelo Construtor.
 ESPACE UTILISATEUR
-especialização
-Especialização
-Esta conta é salva apenas neste navegador. Para transferir seus dados para outro PC, use também
-Estado du Construtor de combinação
-Este player usa diretamente um arquivo de vídeo local e fornece navegação confiável quadro a quadro.
-Estrutura do combinação
-Ex. Le CC Timer se réinitialise au mauvais endroit
-Exigir pelo menos uma proteção
-Exigir transição conhecida
 Exportar la sauvegarde complète JSON
-Favoreça a mesma postura
-Favorece sequências que conservam mais recursos.
-Favorece sequências que permanecem na estrofe atual.
-Filtres avancés
-Fim = posição do vídeo
-FIM de chaîne / sortie
-funcione normalmente → meça/corrija os dados → salve suas compilações úteis → termine a sessão com
-Genérico
 Gérer mon compte
 Guardar les mesures
 Guardar les réglages
-Guia rápido — Como analisar um combinação de vídeo
-Habilidades atuais, transições, medidas, combos e configurações serão anexadas a esta conta.
 il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Usado « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.
-IMPORTAÇÃO E DETECÇÃO
-Importação manual Google Docs
-Importância da penalidade aplicada às habilidades prejudicadas pelo seu tempo de recarga.
-Importância da velocidade real das transições na classificação.
-Importância das habilidades de mobilidade e reposicionamento.
-Importância das proteções na pontuação geral.
-Importância de transições/cancelamentos rápidos, medidos e validados.
-Importância do dano na pontuação geral de uma habilidade.
-Importância dos controles na pontuação do otimizador.
-Importar cópia de segurança
-indica se a transição para cada candidato é conhecida, medida ou validada, bem como o seu possível cancelamento.
-Início = posição do vídeo
 J’aime requis pour vérifier un combinação
 L'application a été remise à zéro. Nenhum dataset ni mécanisme de restauration automatique n'est présent.
 Laboratórios BDO Combos relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Construtor de combinação. Les suggestions du Builder se recalculent selon l’orientation Awakening / Misto / Pré-Awakening, la séquence actuelle et les timings réellement enregistrés.
-Le contenu importé est associé au contexte sélectionné ci-dessus.
 Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combinação atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combos de jogadores et rejoint Combos de aula.
-Les étapes suivent le workflow recommandé
-Limite 2,0 pontos · Imunidade 5 s
-Limites de resistência e recursos de aula.
-Limpe transições inválidas
-Mantenha-o em uma pasta segura, nuvem ou cópia externa. Este é o seu backup de segurança.
-Manutenção e backup
-Marcar cancelamento de animação
-Marcar habilidades de combinação
-Máximo de repetições. por habilidade
-Medição de vídeo
-Medições e validações de vídeo
-Medir transições + cancelamentos
 Métadonnées Skills
-Métricas conhecidas influenciam a classificação, a construção automática e o tempo real consumido nas janelas CC.
-Modo local: esta conta protege apenas os dados deste navegador. O compartilhamento comunitário agora usa Supabase. Como este aplicativo ainda não possui servidor, este sistema não é uma conta na nuvem e não protege contra alguém que tenha acesso ao perfil do navegador.
-Nenhum build enregistré pour le moment.
 Nenhum rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.
-Nenhum set de cristaux appliqué.
-Nenhuma aula sélectionnée
 Nenhuma sauvegarde exportée pendant cette session.
-Nenhuma transição/cancelamento registrado.
 Nenhuma vidéo chargée.
-No PvP, quando o CC Timer está praticamente zerado, o Construtor deve priorizar um novo CC para evitar que o alvo consiga se levantar antes da continuação do combinação.
 Nom d’utilisateur
+Nom, input, effet, CC, protection…
 Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
-Nombre maximum d’effets CC autorisés par les contraintes du Builder.
 Nombre maximum de compétences autorisé dans le combinação.
 Nombre minimum de compétences souhaité dans un combinação généré.
-O Builder segue o orçamento CC PvP exibido no aplicativo:
-O CC que atinge/excede 2.0 ainda é aplicado; CCs subsequentes são então bloqueados pelo limite.
-O Construtor monta a sequência e recalcula as sugestões após cada modificação.
-O navegador pode perder seus dados após limpeza, reinstalação, alteração de perfil ou certas manipulações. O arquivo JSON exportado é a cópia de backup a ser mantida.
-O navegador procura por timestamp. Para medições importantes, usa um vídeo com frame rate constante e verifica várias tentativas.
-O que o aplicativo agora leva em consideração
-Opção
-Optimizer seguirá a ordem Engage → Setup → CC → Burst → Finisher e terá em conta as durações medidas das transições. Uma fase desativada é ignorada. O limite indica o número máximo de skills permitidas nessa fase.
-Orientação do combinação
-Otimização
-para favorecer sequências com cancelamento.
-para melhores tempos, marque sempre o primeiro quadro visível do início de cada habilidade, depois o momento exato em que a animação é interrompida para cancelamentos.
-Partager ce combinação
-Perfil de otimização
-permite decidir até que ponto o Construtor deve favorecer a velocidade das transições, cancelamentos e conexões conhecidas.
-Permite que a mesma habilidade apareça várias vezes na sequência.
-Permite que o otimizador sugira uma mudança de postura.
-Permitir mudança de postura
 Pesquisa automática des compétences
-Poids mobilité
-Porcentagem mínima do combinação que deve se beneficiar de proteção.
 Pour restaurer : « Importar cópia de segurança »
-Pré-Awakening
-preferir candidatos cuja ligação seja medida/conhecida.
-Preparação da build
 Préparation du combinação
 Préserver la ressource
-Prioridade de proteção
-Prioridade: escolhas de combinação entre jogador/comunidade e ordem de habilidade observada. Fatores técnicos como tempos, CC, danos, tempos de espera e proteção são secundários.
-PROTEÇÃO DE DADOS
-PRÓXIMAS AÇÕES
-Qualidade da deteção
 Qualité de données minimale (%)
 Qualité minimale des données exigée avant qu’un skill soit privilégié.
-Quando um combinação compartilhado atinge esse número de votos únicos, ele automaticamente entra nos Combos de Classe.
-Recargas e repetições
-Reduz o tempo de execução/encadeamento do combinação, podendo permitir mais skills na mesma janela de controlo.
-Referência
-Referência : —
 Referência + compétences actives
-Referência ativa
 Réglages Auto-Build
-Regras de validação de combinação compartilhadas pelos jogadores.
 Remplacer les données locales Laboratórios BDO Combos lors de la restauration
-Renomear uma habilidade atualiza as referências associadas quando o aplicativo pode resolvê-las. Ainda verifica transições importantes após uma renomeação.
 Répète le mot de passe
-Requer a presença de pelo menos uma habilidade protegida.
-Restrições de controle e cobertura defensiva.
-Salvar Combinação + Transições
 Sauvegarde / Restauration
 Sauvegarde complète
 Sauvegarde manuelle uniquement
@@ -246,41 +77,11 @@ Sauvegarder maintenant
 Sauvegarder mes données
 Sauvegarder toutes les données
 Sauvegarder TOUTES les données et les restaurer
-se você quiser encontrar exatamente o estado salvo.
-SEGURANÇA
 Sélectionne d’abord une aula dans l’onglet Classe.
 Séquence
 Settings → Sauvegarde complète
 Seuil re-CC PvP
-Skills vs referência
 Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.
-Stiffness = 0,7 pt; outros CCs contados = 1,0 pt. O CC que faz 2.0 atingir/exceder é aplicado normalmente, torna-se a nova fonte do CC Timer com sua própria duração medida e então a imunidade começa. A imunidade apenas bloqueia CCs subsequentes e nunca remove esta contagem. Exemplo: 1,0 + 1,0 = 2 CC aplicados; 0,7 + 0,7 + 0,7 = 3 CC aplicados.
-Sustentação/segurança
-Todas essas configurações são lidas automaticamente pelo Optimizer.
-Todas les catégories
-transição
-Transições
-Transições / Cancels
-Transições avec timing
-Transições e cancelamentos avançam o tempo da sequência e, portanto, reduzem o tempo restante.
-Transições e Cancels
-Transições máximas
-Transições/cancelamentos
-Transições/cancelamentos agora realmente influenciam a classificação. Favorece-se uma transição rápida, medida e validada; uma transição desconhecida pode ser penalizada dependendo das configurações.
 Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la aula active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
-Um novo CC aplicado torna-se a nova fonte do CC Timer com sua própria duração medida.
-Uma transição representa o tempo real necessário para passar da habilidade A para a habilidade B. Um cancelamento permite interromper uma animação para continuar mais cedo.
 Un cancel ne réduit jamais la durée du CC.
 Une donnée absente reste inconnue. Une transição ou une duração do CC non medida ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.
-Usa o dicionário de referência para a aula e especialização selecionada.
-Usa reprodução lenta e pausa durante a varredura para monitorar uma detecção.
-Use a edição para corrigir o som
-Use o Construtor de combinação e suas sugestões
-Utilização
-Valida medições confiáveis.
-Validação automática
-Validando transições
-Vérification : 10 J’aime
-Você já tem uma conta?
-Volta a Skills, Transferir/Cancelar e Construtor de combinação para verificar os dados restaurados.
-Volta ao Builder e compara as pontuações das sugestões.

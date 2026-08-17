@@ -1,66 +1,49 @@
-V116 it visible French residual candidates: 273
+V116 it visible French residual candidates: 185
 
-, laisse cochée
-, quindi aggiunge un marcatore. L'annullamento sarà associato al passaggio alla competenza successiva.
-. Il player locale è la sorgente temporale usata per tutti i marcatori.
 . Tutte les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.
+← Indietro au profil
 ↩ Début
 + Aggiungi une compétence
-0 activés
-0 build enregistré
 8 · Sauvegarde
 8 caractères minimum
-À la fin
 Accedi, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
 Afficher
 Aggiorna les mesures détectées
-Aggiorna una misurazione rilevata in precedenza se è errata.
-Aggiungi abilità dalla classe selezionata per creare una combo.
-Aggiungi le skill rilevate alla lista quando la corrispondenza è corretta.
 Aggiungi les skills détectés
 Ajoute le marqueur
 Analyse + mesure automatique
-Analyse assistée automatique
-Appliquer au skill sélectionné
+Analyse le combo
 Après avoir mesuré des durées CC importantes.
 Après le premier skill, le bloc
 Après une grosse session de mesure vidéo.
 Apri la sauvegarde complète
 Associer mes données actuelles
-Aumenta la priorità delle abilità con un I-frame.
-Aumenta la priorità delle skill con Forward Guard.
-Aumenta la priorità delle skill con Super Armor.
 Autorise ou bloque les skills dont certaines données techniques sont inconnues.
 Autorise une même compétence à apparaître plusieurs fois dans la séquence.
 Autoriser données inconnues
 Autoriser la répétition d’une compétence
+Avant de construire
 Avant de valider
 Avant toute opération qui pourrait vider les données locales du navigateur.
 Avec dégâts
 Avec données combat
+Avec protection
 avec sa durée misurata.
-Awakening / Misto / Pré-Awakening
 BDO Combo Labs relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Misto / Pré-Awakening, la séquence actuelle et les timings réellement enregistrés.
 Catégorie
-CC Timer, CHAIN et statistiques contrôlés
 Ce que la sauvegarde complète contient
+Changer le mot de passe
 Charge la vidéo locale
 Choisis la classe et la spécialisation qui pilotent les Skills, Combo, Transitions et imports.
-Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.
 Classe, spécialisation et référentiel
 Clique sur une étape pour ouvrir l’outil correspondant
 Combo enregistrés
-Combo validés
 Commence par sélectionner la
-Communauté
 Compte créé
 Compte local
 Compte local :
 Compte local & données personnelles
-Con Stiffness a 0,7 potrebbero quindi essere necessarie tre applicazioni per superare il limite; con CC a 1.0, ne bastano due.
-Configura l'ottimizzatore, i vincoli del Combo Builder, le priorità di transizione/annullamento e il backup dei tuoi dati.
-Configura materiali di consumo, cristalli e fino a 6 abilità con 2 effetti aggiuntivi abilità ciascuna.
-Conservalo in una cartella sicura, nel cloud o in una copia esterna. Questo è il tuo backup di sicurezza.
+Conferma le mot de passe
 Conserve le fichier JSON
 Construire un combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.
 Contrôle / re-CC PvP
@@ -68,37 +51,25 @@ Contrôle la réutilisation des compétences.
 Contrôle les compétences importées.
 Contrôle les mesures de
 Contrôler et valider transitions / cancels
-Controlla la qualità dei dati e i cambiamenti di posizione.
-Cooldowns & répétitions
 Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.
-Corrige ou supprime les détections parasites.
 Coût ressource max.
 Coût stamina max.
 Couverture protégée minimale (%)
 Créer mon compte
 Créer un compte
-Database di abilità, oggetti e dati di gioco
 Début
 Début = position vidéo
 Début analyse
 Décris ce que l’application aurait dû faire...
-Décris le bug observé...
 Dégâts maximum
 Dégâts principaux
 Dégâts PvE
 Dégâts PvP
-del Combo Builder è diverso dalla specializzazione: definisce l'orientamento della catena che il Builder deve proporre.
-del Combo Builder salva solo una sequenza combo. Per evitare di perdere abilità, durate CC, transizioni/annullamenti, misurazioni video, impostazioni e caricamenti, è necessario utilizzare il
 Dernière connexion
 Dernière sauvegarde
-DERNIÈRES ÉVOLUTIONS
-Descrivi cosa è successo. Il report può essere copiato o scaricato per inviarlo allo sviluppatore.
-Détecter automatiquement
-Détecter skills, CC, transitions et cancels
 Détection de segments par mouvement + rapprochement avec le référentiel actif.
 DONNÉES & SAUVEGARDE
 données de combat
-Dopo aver corretto o aggiunto diverse abilità.
 Down Smash / Air Smash ne sont pas inclus dans le compteur ci-dessus. Source : note de mise à jour officielle Pearl Abyss. Le « CC Timer » utilise uniquement des mesures enregistrées. Un * indique qu'une transition intermédiaire manque : le dernier temps connu reste affiché mais n'est pas utilisé comme timing précis par l'optimiseur. Dans Skills → Modifica, renseigne CC mesuré (s), ou FPS + frames début/fin.
 Durée CC
 Durée CC générique
@@ -110,106 +81,63 @@ Durée stimata minimale souhaitée pour la séquence.
 Durée vidéo
 Durées CC et transitions importantes mesurées
 Durées CC mesurées
-è il database utilizzato dal resto dell'applicazione. Ogni abilità può contenere input, tempo di recupero, timer, protezione, CC, durata CC, danni PvE/PvP, effetti e categoria.
 Elimina mon compte
-Enregistre les résultats
-Entrée / prise d’initiative
-entrées disponibles
 ESPACE UTILISATEUR
 Esporta la sauvegarde complète JSON
 et les mesures sont enregistrées dans
-Étapes pour reproduire
 Éviter les compétences en cooldown
-Ex. Le CC Timer se réinitialise au mauvais endroit
-Favoriser même stance
-Filtres avancés
+Exiger au moins une protection
 Fin = position vidéo
-Fin de chaîne / sortie
 FPS vidéo
 Générique
 Gérer mon compte
-Il browser cerca tramite timestamp. Per misure importanti, usa un video a frame rate costante e verifica più tentativi.
-Il browser potrebbe perdere i propri dati dopo la pulizia, la reinstallazione, la modifica del profilo o determinate manipolazioni. Il file JSON esportato è la copia di backup da conservare.
-Il punteggio non è solo un punteggio di danno: combina la logica del giocatore e i fattori tecnici disponibili. I dati mancanti limitano necessariamente la precisione dell'ottimizzazione.
-Il rilevamento automatico è un ausilio alla misurazione, non una verità assoluta. I valori anomali dovrebbero essere controllati nel video.
 il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Utilise « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.
-Il timer CC e l'immunità utilizzano la stessa sequenza temporale dall'inizio alla fine, senza contare due volte la durata delle abilità.
 IMPORT & DÉTECTION
 Importance de la pénalité appliquée aux compétences gênées par leur cooldown.
-Importanza del danno nel punteggio complessivo di un'abilità.
-Importanza della velocità effettiva delle transizioni nella classifica.
-Importanza delle capacità di mobilità e riposizionamento.
-In PvP, quando il CC Timer è praticamente a zero, il Builder deve dare priorità ad un nuovo CC per evitare che il bersaglio riesca ad alzarsi prima del proseguimento della combo.
-indica se il passaggio per ciascun candidato è noto, misurato o validato, nonché il suo eventuale annullamento.
 J’aime requis pour vérifier un combo
 L'application a été remise à zéro. Nessuno dataset ni mécanisme de restauration automatique n'est présent.
 L’application crée un fichier JSON contenant le travail actuellement enregistré.
 Le abilità, le transizioni, le misure, le combo e le impostazioni attuali verranno allegate a questo account.
-Le contenu importé est associé au contexte sélectionné ci-dessus.
 Le premier CC appliqué démarre son
-Le transizioni/annullamenti ora influenzano effettivamente la classifica. È privilegiata una transizione rapida, misurata e validata; una transizione sconosciuta potrebbe essere penalizzata a seconda delle Impostazioni.
 Lecteur vidéo local
 Lecture contrôle
 Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combo dei giocatori et rejoint Combo di classe.
-Les étapes suivent le workflow recommandé
-Limite 2.0 points · Immunité 5 s
+Limites de stamina et de ressource de classe.
 Longueur & durée
 Maintenance & sauvegarde
 Marquer début CC
-Massimo abilità
 Mesure vidéo
 Mesures et validations vidéo
 Métadonnées Skills
-Mettre à jour
-Mobilità
-Modalità locale: questo account protegge solo i dati di questo browser. La condivisione della comunità ora utilizza Supabase. Poiché questa applicazione non dispone ancora di un server, questo sistema non è un account cloud e non protegge da qualcuno che ha accesso al profilo del browser.
+Mot de passe
+Mot de passe actuel
 Ne perds pas tes mesures
-ne réinitialise pas
-Nessuna classe sélectionnée
 Nessuna sauvegarde exportée pendant cette session.
 Nessuna vidéo chargée.
-Nessuno build enregistré pour le moment.
 Nessuno rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.
-Nessuno set de cristaux appliqué.
 Nom d’utilisateur
+Nom, input, effet, CC, protection…
 Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
-Nombre maximum d’effets CC autorisés par les contraintes du Builder.
 Nombre maximum de compétences autorisé dans le combo.
 Nombre minimum de compétences souhaité dans un combo généré.
 NOUVEAU COMPTE LOCAL
-Optimizer seguirà l’ordine Engage → Setup → CC → Burst → Finisher e terrà conto delle durate misurate delle transizioni. Una fase disattivata viene ignorata. Il limite indica il numero massimo di skill consentite in quella fase.
+Nouveau mot de passe
+ou utilise la touche
 Pas encore de compte ?
 Pénalise ou exclut les compétences indisponibles à cause de leur cooldown.
-per una tempistica migliore, segna sempre il primo fotogramma visibile all'avvio di ciascuna abilità, poi il momento esatto in cui l'animazione viene interrotta per cancellazioni.
 Place la vidéo au moment où l’animation d’une compétence est coupée, sélectionne
 Place-toi au début d’une compétence
 Poids de l’optimiseur
 Poids dégâts
-Poids mobilité
-Poids pénalité cooldown
 pour privilégier les chaînes rapides.
 Pour restaurer : « Importa backup »
-Pour un CC mesuré, renseigne sa
-Pré-Awakening
-preferire candidati il ​​cui legame è misurato/conosciuto.
-Preferisce sequenze che risparmiano più risorse.
 Préparation du combo
 Préserver la ressource
-Priorità consigliate
-Priorità: scelte della combo giocatore/comunità e ordine delle abilità osservato. Fattori tecnici come tempi, CC, danni, tempi di recupero e protezione sono secondari.
-Priorité CC
-Priorité communauté
-Priorité protections
-Profilo generale che determina le priorità di creazione automatica.
 PROTECTION DES DONNÉES
-Qté
-Qualità rilevamento
 Qualité de données minimale (%)
 Qualité minimale des données exigée avant qu’un skill soit privilégié.
 Quand refaire une sauvegarde ?
-Que s’est-il passé ?
 Quel comportement était attendu ?
-Rapporter un problème
 Réglages Auto-Build
 Régler l’optimiseur / Auto-Build
 Réinitialiser
@@ -217,14 +145,9 @@ Remplacer les données locales BDO Combo Labs lors de la restauration
 Répartis l’importance des dégâts, de la vitesse, des CC et des transitions/cancels.
 Répète le mot de passe
 Répétitions max. par compétence
-Resta applicato il CC che raggiunge/supera 2.0; i CC successivi vengono quindi bloccati dal limite.
 Restaurer une sauvegarde
-Rester connecté sur cet appareil
-Résumé du projet
 Retrouve ton espace de travail local et toutes tes données enregistrées.
 Ricerca automatica des compétences
-Richiede la presenza di almeno una abilità protetta.
-Riduce il tempo di esecuzione/concatenazione della combo, permettendo potenzialmente più skill nella stessa finestra di controllo.
 Riferimento + compétences actives
 Rôle
 Routine recommandée :
@@ -237,39 +160,28 @@ Sauvegarder maintenant
 Sauvegarder mes données
 Sauvegarder toutes les données
 Sauvegarder TOUTES les données et les restaurer
-Scegli l'abilità corrispondente dall'elenco
-SÉCURITÉ
 Sélectionne d’abord une classe dans l’onglet Classe.
 Sélectionne la classe.
 Sélectionne la compétence
 Sélectionne le fichier
-Seleziona un'abilità e poi i suoi due effetti aggiuntivi.
 Séquence
 Settings → Sauvegarde complète
 Seuil re-CC PvP
 Skills ajoutés / modifiés
 Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.
 spécialisation
-Stiffness = 0,7 pt; altri CC contati = 1,0 pt. Il CC che fa raggiungere/superare 2.0 viene applicato normalmente, diventa la nuova fonte del CC Timer con la propria durata misurata, quindi inizia l'immunità. L'immunità blocca solo i CC successivi e non rimuove mai questo conteggio. Esempio: 1,0 + 1,0 = 2 CC applicati; 0,7 + 0,7 + 0,7 = 3 CC applicati.
-Sustain / sécurité
-Système CC PvP officiel
+Stato du Combo Builder
 Télécharger le rapport
 Temps vidéo
-ti permette di decidere in che misura il Builder deve privilegiare la velocità delle transizioni, delle cancellazioni e delle connessioni conosciute.
 Tu as déjà un compte ?
 Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la classe active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
-Tutte les catégories
 Un cancel ne réduit jamais la durée du CC.
-Una transizione rappresenta il tempo reale necessario per passare dall'abilità A all'abilità B. Un annullamento consente di interrompere un'animazione per continuare prima.
 Une compétence sans nouveau CC
 Une donnée absente reste inconnue. Une transition ou une durée de CC non misurata ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.
 Utilisateur
+Utilise
 Utilise l’édition pour corriger son
-Utiliser BDO Combo Labs de A à Z
+Utiliser le Combo Builder et ses suggestions
 Valide les mesures fiables.
-validées / mesurées
-Vérification : 10 J’aime
 Vérifie le couple
 Vérifie sur l’accueil que le contexte actif et le référentiel sont corrects.
-Vitesse / fluidité
-Zone concernée
