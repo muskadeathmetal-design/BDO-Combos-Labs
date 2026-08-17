@@ -1,4 +1,4 @@
-V116 human residual French candidates: 228
+V116 human residual French candidates: 219
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
@@ -55,9 +55,7 @@ All résistances +10%
 All résistances +4%
 allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.
 an intermediate transition is missing: the last known time remains displayed but no
-Analyse automatique impossible : ${err?.message||err}
 Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
-AP caché +${m.ap}
 application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n
 Augmente la priorité des compétences disposant de Forward Guard.
 Augmente la priorité des compétences disposant de Super Armor.
@@ -88,13 +86,9 @@ Control and validate transitions / cancellations
 Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
 Current skills, transitions, measures, combos and settings will be attached to this account.
 Data du compte sauvegardées localement.
-Dégâts critiques +${m.critDmgPct}%
-Dégâts humains +${m.humanDamage}
-Dégâts spéciaux +${m.specialPct}%
 Delete définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.
 Delete définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.
 Delete mon compte
-Détails: ${errors.slice(0,3).join(' | ')}
 Detect skills, CC, transitions and cancellations
 documented-guide
 Duration CC détectée automatiquement : ${duration.toFixed(4)} s. Vérifie au ralenti si nécessaire.
@@ -119,7 +113,6 @@ home19-build-actions
 home75-guide-grid
 home76-backup-actions
 Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.
-Import impossible : ${err?.message||err}
 Importance of actual speed of transitions in ranking.
 Importance of rapid, measured and validated transitions/cancels.
 indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.
@@ -160,14 +153,12 @@ of the Combo Builder only saves a combo sequence. To avoid losing skills, CC dur
 Open la sauvegarde complète
 Optimizer ne sauvegarde plus automatiquement le build. // L
 Optimizer respectera l’ordre : Engage → Setup → CC → Burst → ENDisher et tiendra compte des durées measureds des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
-Partagé par ${c.author||'Joueur'}
 Pearl Abyss — Campsite Guide 2026
 PLAYER TRANSITION
 Player transition (${pair.toFixed(1)})
 player-combo-actions
 pour laisser l’optimiseur poursuivre la chaîne.
 Pour restaurer : « Import a backup »
-Précision +${m.accuracy}
 Quality de données minimale (%)
 Quality minimale des données exigée avant qu’un skill soit privilégié.
 Quick Guide — How to Analyze a Video Combo
@@ -200,7 +191,7 @@ The guide lists as the main rotation: Void → Bolt/Jolt cancel → Lightning of
 transition
 Transition / Cancel
 Transition ${seconds.toFixed(3)}s
-Transition Duration
+Transition duration
 Transition V17 startup cleanup failed
 transition validated
 transition-cancel-aware-v73-style
