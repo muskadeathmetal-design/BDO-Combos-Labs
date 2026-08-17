@@ -140,8 +140,8 @@ function translateText(text, dict) {
     const singleToken = /^[\p{L}\p{M}'-]+$/u.test(fromRaw);
     if (singleToken) {
       const escaped = escapeRegex(fromProtected);
-      const re = new RegExp('(^|[^\\p{L}\\p{M}\\\'-])(' + escaped + ')(?=$|[^\\p{L}\\p{M}\\\'-])', 'gu');
-      out = out.replace(re, (match, lead) => lead + toProtected);
+      const re = new RegExp("(?<![\\p{L}\\p{M}'-])" + escaped + "(?![\\p{L}\\p{M}'-])", 'gu');
+      out = out.replace(re, toProtected);
     } else {
       out = out.split(fromProtected).join(toProtected);
     }
