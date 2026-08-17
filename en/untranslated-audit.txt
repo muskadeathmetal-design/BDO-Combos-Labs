@@ -1,4 +1,4 @@
-V116 human residual French candidates: 208
+V116 human residual French candidates: 204
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
@@ -55,6 +55,7 @@ Analysis from a chosen position, detection of skills, transitions/cancels and CC
 application a été remise à zéro. None dataset ni mécanisme de restauration automatique n
 Augmente la priorité des compétences disposant de Forward Guard.
 Augmente la priorité des compétences disposant de Super Armor.
+Automatic search impossible : ${e?.message||String(e)}
 Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.
 Backup complète
 BDFoundry Tamer guide — Rabam
@@ -65,7 +66,6 @@ Build a combo à partir de données mesurées plutôt que de timings inventés. 
 Build et corriger la base Skills
 Cancels / transitions weight
 CC impossible · remaining immunity ${timeline.immunityRemaining.toFixed(2)}s
-CC sûr · ${remainingAtLand.toFixed(2)}s restantes
 Choose the class and specialization used for Skills, Combos, Transitions and imports.
 Class, specialization et référentiel
 Classe
@@ -147,12 +147,10 @@ Pré-Awak
 Quality de données minimale (%)
 Quality minimale des données exigée avant qu’un skill soit privilégié.
 Quick Guide — How to Analyze a Video Combo
-Recherche auto
 Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.
 Reference + compétences actives
 Référentiel
 Refresh les mesures détectées
-Réglages enregistrés. Optimizer utilisera les
 Renaming a skill updates the associated references when the application can resolve them. Still checks important transitions after a rename.
 Require known transition
 Retourne au Builder et compare le score des suggestions.
@@ -161,13 +159,11 @@ Save Combo + Transitions
 Save les mesures
 Save les réglages
 Scanning guide
-Search auto impossible : ${e?.message||String(e)}
 Sélectionne d’abord une class dans l’onglet Class.
 Settings → Backup complète
 Setup chain built only from skills that the BDFoundry guide recommends for Succession add-ons: Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.
 Sign in, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
 Skills & améliorations
-Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).
 Skills vs référentiel
 Slow transition ${transitionSeconds.toFixed(3)}s
 State du Combo Builder
