@@ -27,4 +27,4 @@ for(const m of src.matchAll(/(["'`])((?:\\.|(?!\1).){3,380})\1/gs))add(m[2]);
 const rows=[...found].sort((a,b)=>a.localeCompare(b,'fr'));
 fs.writeFileSync('en/untranslated-audit.txt',`V116 human residual French candidates: ${rows.length}\n\n`+rows.join('\n'),'utf8');
 console.log('Human residual French candidates:',rows.length);
-// Rerun marker: residual English cleanup build completed successfully.
+// Rerun marker: shared multi-locale patch build completed successfully.
