@@ -1,14 +1,9 @@
-V116 de visible French residual candidates: 12
+V116 de visible French residual candidates: 7
 
-8 caractères minimum
 Bewahren Sie die Ressource
-Décris ce que l’application aurait dû faire...
 Geschätzte maximale Dauer(n)
 Maximale Anzahl an Wiederholungen. nach Können
 Maximale Anzahl der Verwendungen derselben Fertigkeit, wenn Wiederholungen zulässig sind.
 Maximale Fähigkeiten
 Maximale geschätzte Dauer, die für die gesamte Sequenz akzeptiert wird.
 Maximale Ressourcenkosten
-Nom, input, effet, CC, protection…
-Optimizer folgt der Reihenfolge Engage → Setup → CC → Burst → Finisher und berücksichtigt gemessene Transition-Dauern. Eine deaktivierte Phase wird ignoriert. Das Limit gibt die maximale Anzahl an Skills in dieser Phase an.
-Répète le mot de passe

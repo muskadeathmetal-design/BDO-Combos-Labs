@@ -1,15 +1,12 @@
-V116 en visible French residual candidates: 13
+V116 en visible French residual candidates: 10
 
-8 caractères minimum
 Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
 DATA PROTECTION
-Décris ce que l’application aurait dû faire...
 is the database used by the rest of the application. Each skill can contain input, cooldown, timer, protection, CC, CC duration, PvE/PvP damage, effects and category.
 Maintenance & backup
 Minimum percentage of the combo that must benefit from protection.
 Name, input, effet, CC, protection…
 Priority: player/community combo choices and observed skill order. Technical factors such as timings, CC, damage, cooldowns and protection are secondary.
 Protection priority
-Répète le mot de passe
 Require at least one protection
 With protection
