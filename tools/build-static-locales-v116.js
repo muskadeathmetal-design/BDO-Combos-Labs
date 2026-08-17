@@ -8,7 +8,7 @@ const CURRENT_I18N_FILE = 'bcl-i18n-v115-master.js';
 const AUTO_I18N_FILE = 'bcl-static-prepared-translations-v116.json';
 const LEGACY_V113_REF = '03ed2d779fc4a0327e87f88700c0b9e905670983';
 const LEGACY_V113_PATH = 'bcl-full-ui-i18n-v113.js';
-const BUILD_REASON = 'prepared-patches-ready';
+const BUILD_REASON = 'visible-html-only-safe-build';
 
 function extractObjectLiteral(js, marker, fromIndex = 0) {
   const start = js.indexOf(marker, fromIndex);
@@ -105,7 +105,7 @@ const PROTECTED = [
 
 function protect(text) {
   const values = [];
-  let out = text;
+  let out = String(text || '');
   PROTECTED.forEach((value, i) => {
     const token = `§§BCLKEEP${i}§§`;
     if (out.includes(value)) {
@@ -122,16 +122,59 @@ function restore(text, values) {
   return out;
 }
 
-function translateSource(source, locale, maps) {
+function escapeRegex(s) {
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function translateText(text, dict) {
+  if (!text || !dict) return text;
+  const protectedText = protect(text);
+  let out = protectedText.out;
+
+  for (const [fromRaw, toRaw] of Object.entries(dict).sort((a,b) => b[0].length - a[0].length)) {
+    if (!fromRaw || fromRaw === toRaw) continue;
+    const fromProtected = protect(fromRaw).out;
+    const toProtected = protect(toRaw).out;
+    if (!out.includes(fromProtected)) continue;
+
+    const singleToken = /^[\p{L}\p{M}'-]+$/u.test(fromRaw);
+    if (singleToken) {
+      const escaped = escapeRegex(fromProtected);
+      const re = new RegExp('(^|[^\\p{L}\\p{M}\\\'-])(' + escaped + ')(?=$|[^\\p{L}\\p{M}\\\'-])', 'gu');
+      out = out.replace(re, (match, lead) => lead + toProtected);
+    } else {
+      out = out.split(fromProtected).join(toProtected);
+    }
+  }
+
+  return restore(out, protectedText.values);
+}
+
+function translateVisibleHtml(source, locale, maps) {
   if (locale === 'fr') return source;
   const dict = maps[locale] || maps.en || {};
-  const { out: protectedSource, values } = protect(source);
-  let out = protectedSource;
-  for (const [from, to] of Object.entries(dict).sort((a,b) => b[0].length - a[0].length)) {
-    if (!from || from === to || !out.includes(from)) continue;
-    out = out.split(from).join(to);
-  }
-  return restore(out, values);
+
+  const blocks = [];
+  let html = source.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, block => {
+    const token = `§§BCLCODEBLOCK${blocks.length}§§`;
+    blocks.push([token, block]);
+    return token;
+  });
+
+  html = html.replace(/<[^>]+>|[^<]+/g, chunk => {
+    if (!chunk) return chunk;
+    if (chunk[0] !== '<') return translateText(chunk, dict);
+
+    return chunk.replace(/\b(title|placeholder|aria-label|alt)\s*=\s*(["'])([\s\S]*?)\2/gi,
+      (whole, attr, quote, value) => `${attr}=${quote}${translateText(value, dict)}${quote}`);
+  });
+
+  for (const [token, block] of blocks) html = html.split(token).join(block);
+  return html;
+}
+
+function translateSource(source, locale, maps) {
+  return translateVisibleHtml(source, locale, maps);
 }
 
 function addStaticRouter(html, locale) {
@@ -149,11 +192,13 @@ function setVersionAndLang(html, locale) {
 }
 
 function validate(page, locale) {
-  if (page.includes('__BCL_PROTECTED_') || page.includes('§§BCLKEEP')) throw new Error(locale + ': unrecovered protection token');
+  if (page.includes('__BCL_PROTECTED_') || page.includes('§§BCLKEEP') || page.includes('§§BCLCODEBLOCK')) throw new Error(locale + ': unrecovered protection token');
   if (/bcl-(?:full-ui-i18n-v113|i18n-v114|i18n-v115-master)\.js/i.test(page)) throw new Error(locale + ': dynamic i18n script still present');
   if (!page.includes('bcl-static-locale-router')) throw new Error(locale + ': static router missing');
   if (!/<html[^>]*lang=["'](?:fr|en|de|es|it|pt)["']/i.test(page)) throw new Error(locale + ': html language missing');
   if (page.length < 500000) throw new Error(locale + ': generated application unexpectedly small');
+  if (/\b(?:transición|transizione|transição)\s*:/i.test(page)) throw new Error(locale + ': translated CSS/JS transition keyword detected');
+  if (/\bfuente\s*:\s*transition/i.test(page)) throw new Error(locale + ': translated JS property detected');
 }
 
 function sourceApplication() {
@@ -182,7 +227,7 @@ function main() {
 
   const root = `<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDO Combos Labs · V116</title></head><body><script>(function(){var l='fr';try{var s=localStorage.getItem('bcl_language')||localStorage.getItem('bclLanguage');if(/^(fr|en|de|es|it|pt)$/.test(s))l=s;}catch(e){}location.replace('/'+l+'/'+(location.search||'')+(location.hash||''));})();</script><noscript><a href="/fr/">Ouvrir BDO Combos Labs</a></noscript></body></html>\n`;
   fs.writeFileSync(ROOT_FILE, root, 'utf8');
-  console.log('V116 static locales rebuilt with V113+V115+prepared patches:', LOCALES.join(', '), BUILD_REASON);
+  console.log('V116 static locales rebuilt safely:', LOCALES.join(', '), BUILD_REASON);
 }
 
 main();
