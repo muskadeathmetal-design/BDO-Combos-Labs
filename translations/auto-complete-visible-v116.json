@@ -1,0 +1,1325 @@
+{
+  ". Le lecteur local est la source de temps utilisée pour tous les marqueurs.": {
+    "en": ". The local player is the time source used for all markers.",
+    "de": ". Der lokale Player ist die Zeitquelle für alle Marker.",
+    "es": ". El jugador local es la fuente de tiempo utilizada para todos los marcadores.",
+    "it": ". Il player locale è la sorgente temporale usata per tutti i marcatori.",
+    "pt": ". O player local é a fonte de tempo usada para todos os marcadores."
+  },
+  ". Recommence pour chaque compétence du combo.": {
+    "en": ". Repeat for each skill in the combo.",
+    "de": ". Wiederhole dies für jeden Skill der Combo.",
+    "es": ". Repita para cada habilidad en el combo.",
+    "it": ". Ripeti per ogni skill della combo.",
+    "pt": ". Repita para cada habilidade do combo."
+  },
+  ". Toutes les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.": {
+    "en": ". All pages use this context to load the correct reference, skills, combos and measurements.",
+    "de": ". Alle Seiten nutzen diesen Kontext, um das richtige Repository, die richtigen Fertigkeiten, Kombinationen und Maßnahmen zu laden.",
+    "es": ". Todas las páginas utilizan este contexto para cargar el repositorio, habilidades, combos y medidas correctos.",
+    "it": ". Tutte le pagine utilizzano questo contesto per caricare il repository, le competenze, le combo e le misure corrette.",
+    "pt": ". Todas as páginas usam este contexto para carregar o repositório, habilidades, combos e medidas corretas."
+  },
+  "← Retour au profil": {
+    "en": "← Back to profile",
+    "de": "← Zurück zum Profil",
+    "es": "← Volver al perfil",
+    "it": "← Torna al profilo",
+    "pt": "← Voltar ao perfil"
+  },
+  "↩ Début": {
+    "en": "↩ Beginning",
+    "de": "↩ Start",
+    "es": "↩ Comienzo",
+    "it": "↩ Inizio",
+    "pt": "↩ Começo"
+  },
+  "+ Ajouter une compétence": {
+    "en": "+ Add a skill",
+    "de": "+ Eine Fertigkeit hinzufügen",
+    "es": "+ Agregar una habilidad",
+    "it": "+ Aggiungi un'abilità",
+    "pt": "+ Adicione uma habilidade"
+  },
+  "8 · Sauvegarde": {
+    "en": "8 · Backup",
+    "de": "8 · Sicherung",
+    "es": "8 · Copia de seguridad",
+    "it": "8 · Backup",
+    "pt": "8 · Backup"
+  },
+  "Actualiser les mesures détectées": {
+    "en": "Refresh detected measurements",
+    "de": "Erkannte Messungen aktualisieren",
+    "es": "Actualizar medidas detectadas",
+    "it": "Aggiorna le misurazioni rilevate",
+    "pt": "Atualizar medições detectadas"
+  },
+  "Afficher": {
+    "en": "Display",
+    "de": "Anzeige",
+    "es": "Mostrar",
+    "it": "Display",
+    "pt": "Mostrar"
+  },
+  "Ajoute le marqueur": {
+    "en": "Add the marker",
+    "de": "Fügen Sie die Markierung hinzu",
+    "es": "Añade el marcador",
+    "it": "Aggiungi il pennarello",
+    "pt": "Adicione o marcador"
+  },
+  "Ajouter les skills détectés": {
+    "en": "Add detected skills",
+    "de": "Hinzufügen les skills détectés",
+    "es": "Añadir les skills détectés",
+    "it": "Aggiungi les skills détectés",
+    "pt": "Adicionar les skills détectés"
+  },
+  "Analyse + mesure automatique": {
+    "en": "Analysis + automatic measurement",
+    "de": "Analyse + automatische Messung",
+    "es": "Análisis + medición automática",
+    "it": "Analisi + misurazione automatica",
+    "pt": "Análise + medição automática"
+  },
+  "Analyse le combo": {
+    "en": "Analyze the combo",
+    "de": "Analysieren Sie die Kombination",
+    "es": "analiza el combinación",
+    "it": "Analizza la combinazione",
+    "pt": "Analise a combinação"
+  },
+  "Après avoir mesuré des durées CC importantes.": {
+    "en": "After measuring significant DC durations.",
+    "de": "Nach Messung erheblicher Gleichstromdauern.",
+    "es": "Después de medir duraciones significativas de DC.",
+    "it": "Dopo aver misurato durate DC significative.",
+    "pt": "Depois de medir durações DC significativas."
+  },
+  "Après le premier skill, le bloc": {
+    "en": "After the first skill, the block",
+    "de": "Après le premier skill, le bloc",
+    "es": "Después de la primera habilidad, el bloque.",
+    "it": "Après le premier skill, le bloc",
+    "pt": "Após a primeira habilidade, o bloco"
+  },
+  "Après une grosse session de mesure vidéo.": {
+    "en": "After a big video measurement session.",
+    "de": "Nach einer großen Videomesssitzung.",
+    "es": "Después de una gran sesión de medición de vídeo.",
+    "it": "Dopo una grande sessione di misurazione video.",
+    "pt": "Depois de uma grande sessão de medição de vídeo."
+  },
+  "Associer mes données actuelles": {
+    "en": "Associate my current data",
+    "de": "Meine aktuellen Daten verknüpfen",
+    "es": "Asociar mis datos actuales",
+    "it": "Associa i miei dati attuali",
+    "pt": "Associar meus dados atuais"
+  },
+  "Aucun rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.": {
+    "en": "No report is sent automatically: the file or text must be sent to the developer.",
+    "de": "Kein automatischer Versand des Berichts: Die Datei oder der Text muss an den Entwickler gesendet werden.",
+    "es": "Ningún informe se envía automáticamente: el archivo o texto debe enviarse al desarrollador.",
+    "it": "Nessun report inviato automaticamente: il file o il testo devono essere inviati allo sviluppatore.",
+    "pt": "Nenhum relatório enviado automaticamente: o arquivo ou texto deve ser enviado ao desenvolvedor."
+  },
+  "Aucune sauvegarde exportée pendant cette session.": {
+    "en": "No backup exported during this session.",
+    "de": "Während dieser Sitzung wurden keine Backups exportiert.",
+    "es": "No se exportaron copias de seguridad durante esta sesión.",
+    "it": "Nessun backup esportato durante questa sessione.",
+    "pt": "Nenhum backup foi exportado durante esta sessão."
+  },
+  "Aucune vidéo chargée.": {
+    "en": "No video loaded.",
+    "de": "Keine Videos geladen.",
+    "es": "No hay vídeos cargados.",
+    "it": "Nessun video caricato.",
+    "pt": "Nenhum vídeo carregado."
+  },
+  "Autorise ou bloque les skills dont certaines données techniques sont inconnues.": {
+    "en": "Authorizes or blocks skills for which certain technical data is unknown.",
+    "de": "Autorisiert oder blockiert Fertigkeiten, für die bestimmte technische Daten unbekannt sind.",
+    "es": "Autoriza o bloquea habilidades de las que se desconocen ciertos datos técnicos.",
+    "it": "Autorizza o blocca competenze per le quali non si conoscono alcuni dati tecnici.",
+    "pt": "Autoriza ou bloqueia habilidades para as quais determinados dados técnicos são desconhecidos."
+  },
+  "Autorise une même compétence à apparaître plusieurs fois dans la séquence.": {
+    "en": "Allows the same skill to appear multiple times in the sequence.",
+    "de": "Ermöglicht das mehrfache Erscheinen derselben Fertigkeit in der Sequenz.",
+    "es": "Permite que la misma habilidad aparezca varias veces en la secuencia.",
+    "it": "Permette alla stessa abilità di apparire più volte nella sequenza.",
+    "pt": "Permite que a mesma habilidade apareça várias vezes na sequência."
+  },
+  "Autoriser données inconnues": {
+    "en": "Allow unknown data",
+    "de": "Unbekannte Daten zulassen",
+    "es": "Permitir datos desconocidos",
+    "it": "Consenti dati sconosciuti",
+    "pt": "Permitir dados desconhecidos"
+  },
+  "Autoriser la répétition d’une compétence": {
+    "en": "Allow repetition of a skill",
+    "de": "Erlauben Sie die Wiederholung einer Fertigkeit",
+    "es": "Permitir la repetición de una habilidad.",
+    "it": "Consentire la ripetizione di un'abilità",
+    "pt": "Permitir a repetição de uma habilidade"
+  },
+  "Avant de construire": {
+    "en": "Before building",
+    "de": "Vor dem Bau",
+    "es": "antes de construir",
+    "it": "Prima di costruire",
+    "pt": "Antes de construir"
+  },
+  "Avant de valider": {
+    "en": "Before validating",
+    "de": "Vor der Validierung",
+    "es": "Antes de validar",
+    "it": "Prima di convalidare",
+    "pt": "Antes de validar"
+  },
+  "Avant toute opération qui pourrait vider les données locales du navigateur.": {
+    "en": "Before any operation that could empty the browser's local data.",
+    "de": "Vor jedem Vorgang, der die lokalen Daten des Browsers leeren könnte.",
+    "es": "Ante cualquier operación que pueda vaciar los datos locales del navegador.",
+    "it": "Prima di qualsiasi operazione che possa svuotare i dati locali del browser.",
+    "pt": "Antes de qualquer operação que possa esvaziar os dados locais do navegador."
+  },
+  "Avec dégâts": {
+    "en": "With damage",
+    "de": "Mit Schaden",
+    "es": "Con daño",
+    "it": "Con danni",
+    "pt": "Com danos"
+  },
+  "Avec données combat": {
+    "en": "With combat data",
+    "de": "Mit Kampfdaten",
+    "es": "Con datos de combate",
+    "it": "Con dati di combattimento",
+    "pt": "Com dados de combate"
+  },
+  "Avec protection": {
+    "en": "With protection",
+    "de": "Mit Schutz",
+    "es": "Con proteccion",
+    "it": "Con protezione",
+    "pt": "Com proteção"
+  },
+  "avec sa durée mesurée.": {
+    "en": "with its measured duration.",
+    "de": "mit seiner gemessenen Dauer.",
+    "es": "con su duración medida.",
+    "it": "con la sua durata misurata.",
+    "pt": "com sua duração medida."
+  },
+  "BDO Combos Labs relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixte / Pré-Awakening, la séquence actuelle et les timings réellement enregistrés.": {
+    "en": "BDO Combos Labs now links the skill reference, video measurements, transitions/cancels, the official PvP CC system and the Combo Builder. Builder suggestions recalculate according to Awakening / Mixed / Pre-Awakening orientation, the current sequence and recorded timings.",
+    "de": "BDO Combos Labs verknüpft jetzt das Skill-Repository, Videometriken, Übergänge/Abbrüche, das offizielle PvP-CC-System und Combo Builder. Die Vorschläge des Builders werden entsprechend der Ausrichtung Awakening / Mixed / Pre-Awakening, der aktuellen Sequenz und den tatsächlich aufgezeichneten Timings neu berechnet.",
+    "es": "BDO Combos Labs ahora vincula el repositorio de habilidades, métricas de video, transiciones/cancelaciones, el sistema oficial PvP CC y Combo Builder. Las sugerencias del Constructor se recalculan según la orientación Awakening / Mixta / Pre-Awakening, la secuencia actual y los tiempos realmente registrados.",
+    "it": "BDO Combos Labs ora collega il repository delle abilità, le metriche video, le transizioni/annullamenti, il sistema PvP CC ufficiale e Combo Builder. I suggerimenti del Costruttore vengono ricalcolati in base all'orientamento Awakening / Misto / Pre-Awakening, alla sequenza attuale e ai tempi effettivamente registrati.",
+    "pt": "BDO Combos Labs agora vincula o repositório de habilidades, métricas de vídeo, transições/cancelamentos, sistema PvP CC oficial e Combo Builder. As sugestões do Construtor são recalculadas de acordo com a orientação Awakening / Mista / Pré-Awakening, a sequência atual e os tempos efetivamente registrados."
+  },
+  "Catégorie": {
+    "en": "Category",
+    "de": "Kategorie",
+    "es": "Categoría",
+    "it": "Categoria",
+    "pt": "Categoria"
+  },
+  "Ce que la sauvegarde complète contient": {
+    "en": "What the full backup contains",
+    "de": "Was das vollständige Backup enthält",
+    "es": "Qué contiene la copia de seguridad completa",
+    "it": "Cosa contiene il backup completo",
+    "pt": "O que o backup completo contém"
+  },
+  "Changer le mot de passe": {
+    "en": "Change password",
+    "de": "Kennwort ändern",
+    "es": "Cambiar la contraseña",
+    "it": "Cambiare la password",
+    "pt": "Alterar a senha"
+  },
+  "Charge la vidéo locale": {
+    "en": "Load local video",
+    "de": "Lokales Video laden",
+    "es": "Cargar vídeo local",
+    "it": "Carica video locale",
+    "pt": "Carregar vídeo local"
+  },
+  "Choisis la classe et la spécialisation qui pilotent les Skills, Combos, Transitions et imports.": {
+    "en": "Choose the class and specialization used for Skills, Combos, Transitions and imports.",
+    "de": "Wählen Sie die Klasse und Spezialisierung, die Fertigkeiten, Combos, Übergänge und Importe steuert.",
+    "es": "Choisis la clase y el especialización qui pilotent les Skills, combos, Transiciones et imports.",
+    "it": "Scegli la classe e la specializzazione che controlla Abilità, Combo, Transizioni e importazioni.",
+    "pt": "Choisis la aula e o especialização qui pilotent les Skills, Combos, Transições et imports."
+  },
+  "Classe, spécialisation et référentiel": {
+    "en": "Class, specialization and reference",
+    "de": "Klasse, Spezialisierung und Referenz",
+    "es": "Clase, especialización y referencia.",
+    "it": "Classe, specializzazione e riferimento",
+    "pt": "Classe, especialização e referência"
+  },
+  "Clique sur une étape pour ouvrir l’outil correspondant": {
+    "en": "Click a step to open the corresponding tool",
+    "de": "Klicken Sie auf einen Schritt, um das entsprechende Tool zu öffnen",
+    "es": "Haga clic en un paso para abrir la herramienta correspondiente",
+    "it": "Fare clic su un passaggio per aprire lo strumento corrispondente",
+    "pt": "Clique em uma etapa para abrir a ferramenta correspondente"
+  },
+  "Combos enregistrés": {
+    "en": "Saved combos",
+    "de": "Combos enregistrés",
+    "es": "combos enregistrés",
+    "it": "Combo enregistrés",
+    "pt": "Combos enregistrés"
+  },
+  "Commence par sélectionner la": {
+    "en": "Start by selecting the",
+    "de": "Beginnen Sie mit der Auswahl von",
+    "es": "Comience seleccionando el",
+    "it": "Inizia selezionando il",
+    "pt": "Comece selecionando o"
+  },
+  "Compte créé": {
+    "en": "Account created",
+    "de": "Konto erstellt",
+    "es": "Cuenta creada",
+    "it": "Conto creato",
+    "pt": "Conta criada"
+  },
+  "Compte local": {
+    "en": "Local account",
+    "de": "Lokales Konto",
+    "es": "cuenta local",
+    "it": "Conto locale",
+    "pt": "Conta local"
+  },
+  "Compte local :": {
+    "en": "Local account :",
+    "de": "Lokales Konto:",
+    "es": "Cuenta local:",
+    "it": "Conto locale:",
+    "pt": "Conta local:"
+  },
+  "Compte local & données personnelles": {
+    "en": "Local account & personal data",
+    "de": "Lokales Konto und persönliche Daten",
+    "es": "Cuenta local y datos personales",
+    "it": "Account locale e dati personali",
+    "pt": "Conta local e dados pessoais"
+  },
+  "Confirmer le mot de passe": {
+    "en": "Confirm password",
+    "de": "Passwort bestätigen",
+    "es": "Confirmar Contraseña",
+    "it": "Conferma password",
+    "pt": "Confirme sua senha"
+  },
+  "Connexion, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.": {
+    "en": "Sign in, separate profiles and local workspaces. A newly created empty account no longer pulls anonymous data by mistake.",
+    "de": "Verbindung, separate Profile und lokale Arbeitsbereiche. Ein leer erstelltes Konto sammelt versehentlich keine anonymen Daten mehr.",
+    "es": "Conexión, perfiles separados y espacios de trabajo locales. Una cuenta creada vacía ya no recopila datos anónimos por error.",
+    "it": "Connessione, profili separati e spazi di lavoro locali. Un account creato vuoto non raccoglie più dati anonimi per errore.",
+    "pt": "Conexão, perfis separados e espaços de trabalho locais. Uma conta criada vazia não coleta mais dados anônimos por engano."
+  },
+  "Conserve le fichier JSON": {
+    "en": "Keep JSON file",
+    "de": "Behalten Sie die JSON-Datei",
+    "es": "Mantener el archivo JSON",
+    "it": "Conserva il file JSON",
+    "pt": "Manter arquivo JSON"
+  },
+  "Construire un combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.": {
+    "en": "Build a combo from measured data instead of invented timings. The Builder uses skills, CC, transitions and recorded cancels to rank its suggestions.",
+    "de": "Erstellen Sie eine Kombination aus gemessenen Daten statt erfundenen Timings. Der Builder verwendet aufgezeichnete Fertigkeiten, CCs, Übergänge und Abbrüche, um seine Vorschläge zu klassifizieren.",
+    "es": "Cree una combinación a partir de datos medidos en lugar de tiempos inventados. El Constructor utiliza habilidades registradas, CC, transiciones y cancelaciones para clasificar sus sugerencias.",
+    "it": "Costruisci una combinazione partendo da dati misurati piuttosto che da tempi inventati. Il Costruttore utilizza competenze registrate, CC, transizioni e annullamenti per classificare i suoi suggerimenti.",
+    "pt": "Crie uma combinação a partir de dados medidos em vez de tempos inventados. O Construtor utiliza habilidades registradas, CCs, transições e cancelamentos para classificar suas sugestões."
+  },
+  "Contrôle / re-CC PvP": {
+    "en": "Control / PvP re-CC",
+    "de": "Kontroll-/Re-CC-PvP",
+    "es": "Controlar/re-CC PvP",
+    "it": "Controlla/ri-CC PvP",
+    "pt": "Controle/re-CC PvP"
+  },
+  "Contrôle la réutilisation des compétences.": {
+    "en": "Controls skill reuse.",
+    "de": "Steuert die Wiederverwendung von Fertigkeiten.",
+    "es": "Controla la reutilización de habilidades.",
+    "it": "Controlla il riutilizzo delle competenze.",
+    "pt": "Controla a reutilização de habilidades."
+  },
+  "Contrôle les compétences importées.": {
+    "en": "Controls imported skills.",
+    "de": "Steuert importierte Fertigkeiten.",
+    "es": "Controla las habilidades importadas.",
+    "it": "Controlla le competenze importate.",
+    "pt": "Controla habilidades importadas."
+  },
+  "Contrôle les mesures de": {
+    "en": "Controls the measurements of",
+    "de": "Steuert die Messungen von",
+    "es": "Controla las medidas de",
+    "it": "Controlla le misurazioni di",
+    "pt": "Controla as medições de"
+  },
+  "Contrôle les statistiques sous le combo : durée, dégâts lorsque disponibles, transitions mesurées, couverture timing, CC et protection.": {
+    "en": "Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.",
+    "de": "Steuert die Statistiken unter der Combo: Dauer, Schaden, wenn verfügbar, gemessene Übergänge, Abdeckungszeitpunkt, CC und Schutz.",
+    "es": "Controla las estadísticas del combinación: duración, daño cuando esté disponible, transiciones medidas, tiempo de cobertura, CC y protección.",
+    "it": "Controlla le statistiche sotto la combo: durata, danno quando disponibile, transizioni misurate, tempi di copertura, CC e protezione.",
+    "pt": "Controla as estatísticas do combinação: duração, dano quando disponível, transições medidas, tempo de cobertura, CC e proteção."
+  },
+  "Contrôler et valider transitions / cancels": {
+    "en": "Control and validate transitions / cancellations",
+    "de": "Contrôler et valider transitions / cancels",
+    "es": "Controlar y validar transiciones / cancelaciones",
+    "it": "Contrôler et valider transitions / cancels",
+    "pt": "Controlar e validar transições/cancelamentos"
+  },
+  "Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.": {
+    "en": "Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.",
+    "de": "Empfohlenes Backup: Exportiert Skills, CC-Dauer, Combos, Übergänge/Abbrüche, Videomessungen, Validierungen, Add-ons, Loadout, Builder-Status und Einstellungen in eine JSON-Datei. Bewahren Sie diese Datei auf, damit Sie alles wiederherstellen können, ohne es erneut eingeben zu müssen.",
+    "es": "Copia de seguridad recomendada: exporta habilidades, duraciones de CC, combos, transiciones/cancelaciones, mediciones de video, validaciones, complementos, equipamiento, estado del constructor y configuraciones a un archivo JSON. Guarde este archivo para que pueda restaurar todo sin tener que volver a escribir.",
+    "it": "Backup consigliato: esporta competenze, durate CC, combo, transizioni/annullamenti, misurazioni video, convalide, componenti aggiuntivi, caricamento, stato del builder e impostazioni in un file JSON. Conserva questo file in modo da poter ripristinare tutto senza ridigitare.",
+    "pt": "Backup recomendado: exporta habilidades, durações de CC, combos, transições/cancelamentos, medições de vídeo, validações, complementos, carregamento, status do Construtor e configurações para um arquivo JSON. Guarde este arquivo para que você possa restaurar tudo sem precisar digitá-lo novamente."
+  },
+  "Coût ressource max.": {
+    "en": "Max resource cost",
+    "de": "Maximale Ressourcenkosten",
+    "es": "Costo máximo de recursos",
+    "it": "Costo massimo delle risorse",
+    "pt": "Custo máximo de recursos"
+  },
+  "Coût stamina max.": {
+    "en": "Max stamina cost",
+    "de": "Ausdauerkosten max.",
+    "es": "Costo de resistencia máximo.",
+    "it": "Costo resistenza massimo",
+    "pt": "Custo de resistência máximo."
+  },
+  "Couverture protégée minimale (%)": {
+    "en": "Minimum protected coverage (%)",
+    "de": "Couverture protégée minimale (%)",
+    "es": "Cobertura mínima protegida (%)",
+    "it": "Couverture protégée minimale (%)",
+    "pt": "Cobertura mínima protegida (%)"
+  },
+  "Créer mon compte": {
+    "en": "Create my account",
+    "de": "Mein Konto erstellen",
+    "es": "crear mi cuenta",
+    "it": "Crea il mio account",
+    "pt": "Criar minha conta"
+  },
+  "Créer un compte": {
+    "en": "Create an account",
+    "de": "Ein Konto erstellen",
+    "es": "Crear una cuenta",
+    "it": "Creare un account",
+    "pt": "Crie uma conta"
+  },
+  "Début": {
+    "en": "Beginning",
+    "de": "Anfang",
+    "es": "Comienzo",
+    "it": "Inizio",
+    "pt": "Começo"
+  },
+  "Début = position vidéo": {
+    "en": "Start = video position",
+    "de": "Start = Videoposition",
+    "es": "Inicio = posición del vídeo",
+    "it": "Inizio = posizione del video",
+    "pt": "Início = posição do vídeo"
+  },
+  "Début analyse": {
+    "en": "Start analysis",
+    "de": "Analyse starten",
+    "es": "Iniciar análisis",
+    "it": "Avvia l'analisi",
+    "pt": "Iniciar análise"
+  },
+  "Dégâts maximum": {
+    "en": "Maximum damage",
+    "de": "Maximaler Schaden",
+    "es": "Daño máximo",
+    "it": "Danno massimo",
+    "pt": "Dano máximo"
+  },
+  "Dégâts principaux": {
+    "en": "Main damage",
+    "de": "Hauptschaden",
+    "es": "Daños principales",
+    "it": "Danno principale",
+    "pt": "Danos principais"
+  },
+  "Dégâts PvE": {
+    "en": "PvE damage",
+    "de": "PvE-Schaden",
+    "es": "Daño JcE",
+    "it": "Danno PvE",
+    "pt": "Dano PvE"
+  },
+  "Dégâts PvP": {
+    "en": "PvP damage",
+    "de": "PvP-Schaden",
+    "es": "Daño JcJ",
+    "it": "Danno PvP",
+    "pt": "Danos JxJ"
+  },
+  "Dernière connexion": {
+    "en": "Last connection",
+    "de": "Letzte Verbindung",
+    "es": "Última conexión",
+    "it": "Ultimo collegamento",
+    "pt": "Última conexão"
+  },
+  "Dernière sauvegarde": {
+    "en": "Last backup",
+    "de": "Letzte Sicherung",
+    "es": "Última copia de seguridad",
+    "it": "Ultimo backup",
+    "pt": "Último backup"
+  },
+  "Détection de segments par mouvement + rapprochement avec le référentiel actif.": {
+    "en": "Detection of segments by movement + approximation with the active frame of reference.",
+    "de": "Erkennung von Segmenten durch Bewegung + Annäherung an das aktive Bezugssystem.",
+    "es": "Detección de segmentos por movimiento + aproximación con el marco de referencia activo.",
+    "it": "Rilevamento dei segmenti mediante movimento + approssimazione con il sistema di riferimento attivo.",
+    "pt": "Detecção de segmentos por movimento + aproximação com o referencial ativo."
+  },
+  "DONNÉES & SAUVEGARDE": {
+    "en": "DATA & BACKUP",
+    "de": "DATEN & BACKUP",
+    "es": "DATOS Y RESPALDO",
+    "it": "DATI E BACKUP",
+    "pt": "DADOS E BACKUP"
+  },
+  "données de combat": {
+    "en": "combat data",
+    "de": "Kampfdaten",
+    "es": "datos de combate",
+    "it": "dati di combattimento",
+    "pt": "dados de combate"
+  },
+  "Down Smash / Air Smash ne sont pas inclus dans le compteur ci-dessus. Source : note de mise à jour officielle Pearl Abyss. Le « CC Timer » utilise uniquement des mesures enregistrées. Un * indique qu'une transition intermédiaire manque : le dernier temps connu reste affiché mais n'est pas utilisé comme timing précis par l'optimiseur. Dans Skills → Modifier, renseigne CC mesuré (s), ou FPS + frames début/fin.": {
+    "en": "Down Smash / Air Smash are not included in the counter above. Source: official Pearl Abyss patch note. The “CC Timer” only uses recorded measurements. An * indicates that an intermediate transition is missing: the last known time remains displayed but is not used as precise timing by the optimizer. In Skills → Edit, enter measured CC (s), or FPS + start/end frames.",
+    "de": "Down Smash / Air Smash sind im oben genannten Zähler nicht enthalten. Quelle: Offizielle Patchnotiz Pearl Abyss. Der „CC Timer“ verwendet ausschließlich aufgezeichnete Messungen. Ein * zeigt an, dass ein Zwischenübergang fehlt: Der letzte bekannte Zeitpunkt wird weiterhin angezeigt, wird jedoch vom Optimierer nicht als präziser Zeitpunkt verwendet. Geben Sie unter Fähigkeiten → Ändern die gemessenen CC (s) oder FPS + Frames Start/Ende ein.",
+    "es": "Down Smash / Air Smash no están incluidos en el contador anterior. Fuente: Nota oficial del parche Pearl Abyss. El “CC Timer” solo utiliza mediciones registradas. Un * indica que falta una transición intermedia: el último tiempo conocido permanece mostrado pero el optimizador no lo utiliza como tiempo preciso. En Habilidades → Modificar, ingrese CC (s) medidos o FPS + inicio/final de fotogramas.",
+    "it": "Down Smash / Air Smash non sono inclusi nel contatore sopra. Fonte: nota ufficiale della patch Pearl Abyss. Lo “CC Timer” utilizza solo misurazioni registrate. Un * indica che manca una transizione intermedia: l'ultimo tempo noto rimane visualizzato ma non viene utilizzato come tempo preciso dall'ottimizzatore. In Abilità → Modifica, inserisci CC misurati (s) o FPS + inizio/fine fotogrammi.",
+    "pt": "Down Smash / Air Smash não estão incluídos no contador acima. Fonte: nota oficial do patch Pearl Abyss. O “CC Timer” usa apenas medições registradas. Um * indica que está faltando uma transição intermediária: o último tempo conhecido permanece exibido, mas não é usado como tempo preciso pelo otimizador. Em Habilidades → Modificar, insira CC(s) medido(s) ou FPS + início/fim de quadros."
+  },
+  "Durée CC": {
+    "en": "Duration CC",
+    "de": "CC-Dauer",
+    "es": "duración del CC",
+    "it": "Durata del CC",
+    "pt": "Duração do CC"
+  },
+  "Durée CC générique": {
+    "en": "Generic CC duration",
+    "de": "Generische CC-Dauer",
+    "es": "Duración del CC genérico",
+    "it": "Durata CC generica",
+    "pt": "Duração genérica do CC"
+  },
+  "durée de CC": {
+    "en": "duration of CC",
+    "de": "Dauer von CC",
+    "es": "duración del CC",
+    "it": "durata del CC",
+    "pt": "duração do CC"
+  },
+  "Durée estimée maximale acceptée pour la séquence complète.": {
+    "en": "Maximum estimated duration accepted for the full sequence.",
+    "de": "Maximale geschätzte Dauer, die für die gesamte Sequenz akzeptiert wird.",
+    "es": "Duración máxima estimada aceptada para la secuencia completa.",
+    "it": "Durata massima stimata accettata per la sequenza completa.",
+    "pt": "Duração máxima estimada aceita para a sequência completa."
+  },
+  "Durée estimée minimale souhaitée pour la séquence.": {
+    "en": "Minimum estimated duration desired for the sequence.",
+    "de": "Geschätzte Mindestdauer, die für die Sequenz gewünscht wird.",
+    "es": "Duración mínima estimada deseada para la secuencia.",
+    "it": "Durata minima stimata desiderata per la sequenza.",
+    "pt": "Duração mínima estimada desejada para a sequência."
+  },
+  "Durée max. estimée (s)": {
+    "en": "Duration max. estimated (s)",
+    "de": "Geschätzte maximale Dauer(n)",
+    "es": "Duración máxima estimada(s)",
+    "it": "Durata massima stimata/e",
+    "pt": "Duração máxima estimada(s)"
+  },
+  "Durée min. estimée (s)": {
+    "en": "Duration min. estimated (s)",
+    "de": "Geschätzte Mindestdauer(n)",
+    "es": "Duración mínima estimada(s)",
+    "it": "Durata minima stimata/e",
+    "pt": "Duração mínima estimada(s)"
+  },
+  "Durée vidéo": {
+    "en": "Video duration",
+    "de": "Videodauer",
+    "es": "Duración del vídeo",
+    "it": "Durata del video",
+    "pt": "Duração do vídeo"
+  },
+  "Durées CC et transitions importantes mesurées": {
+    "en": "Important measured CC durations and transitions",
+    "de": "DC-Dauer und signifikante Übergänge gemessen",
+    "es": "Duraciones de DC y transiciones importantes medidas",
+    "it": "Durate DC e transizioni significative misurate",
+    "pt": "Durações DC e transições significativas medidas"
+  },
+  "Durées CC mesurées": {
+    "en": "Measured CC durations",
+    "de": "Gemessene CC-Zeiten",
+    "es": "Tiempos CC medidos",
+    "it": "Tempi CC misurati",
+    "pt": "Tempos CC medidos"
+  },
+  "Enregistrer les mesures": {
+    "en": "Save measurements",
+    "de": "Messungen speichern",
+    "es": "Guardar medidas",
+    "it": "Salva le misurazioni",
+    "pt": "Salvar medições"
+  },
+  "Enregistrer les réglages": {
+    "en": "Save settings",
+    "de": "Einstellungen speichern",
+    "es": "Guardar configuración",
+    "it": "Salva impostazioni",
+    "pt": "Salvar configurações"
+  },
+  "ESPACE UTILISATEUR": {
+    "en": "USER AREA",
+    "de": "BENUTZERBEREICH",
+    "es": "ÁREA DE USUARIO",
+    "it": "AREA UTENTE",
+    "pt": "ÁREA DO USUÁRIO"
+  },
+  "est la base de données utilisée par le reste de l’application. Chaque compétence peut contenir input, cooldown, timer, protection, CC, durée de CC, dégâts PvE/PvP, effets et catégorie.": {
+    "en": "is the database used by the rest of the application. Each skill can contain input, cooldown, timer, protection, CC, CC duration, PvE/PvP damage, effects and category.",
+    "de": "ist die Datenbank, die vom Rest der Anwendung verwendet wird. Jede Fertigkeit kann Eingabe, Abklingzeit, Timer, Schutz, CC, CC-Dauer, PvE/PvP-Schaden, Effekte und Kategorie enthalten.",
+    "es": "es la base de datos utilizada por el resto de la aplicación. Cada habilidad puede contener entrada, tiempo de reutilización, temporizador, protección, CC, duración de CC, daño PvE/PvP, efectos y categoría.",
+    "it": "è il database utilizzato dal resto dell'applicazione. Ogni abilità può contenere input, tempo di recupero, timer, protezione, CC, durata CC, danni PvE/PvP, effetti e categoria.",
+    "pt": "é o banco de dados usado pelo restante do aplicativo. Cada habilidade pode conter entrada, tempo de espera, cronômetro, proteção, CC, duração do CC, dano PvE/PvP, efeitos e categoria."
+  },
+  "et les mesures sont enregistrées dans": {
+    "en": "and the measurements are recorded in",
+    "de": "und die Messungen werden aufgezeichnet",
+    "es": "y las medidas se registran en",
+    "it": "e le misurazioni vengono registrate",
+    "pt": "e as medições são registradas em"
+  },
+  "État du Combo Builder": {
+    "en": "Combo Builder state",
+    "de": "Combo Builder-Status",
+    "es": "Estado du Generador combinado",
+    "it": "Stato Combo Builder",
+    "pt": "Estado du Construtor de combinação"
+  },
+  "Éviter les compétences en cooldown": {
+    "en": "Avoiding cooldown skills",
+    "de": "Abklingfähigkeiten vermeiden",
+    "es": "Evitar habilidades de enfriamiento",
+    "it": "Evitare le abilità di ricarica",
+    "pt": "Evitando habilidades de resfriamento"
+  },
+  "Exiger au moins une protection": {
+    "en": "Require at least one protection",
+    "de": "Erfordert mindestens einen Schutz",
+    "es": "Requiere al menos una protección",
+    "it": "Richiede almeno una protezione",
+    "pt": "Exigir pelo menos uma proteção"
+  },
+  "Exporter la sauvegarde complète JSON": {
+    "en": "Export full JSON backup",
+    "de": "Vollständige JSON-Sicherung exportieren",
+    "es": "Exportar copia de seguridad completa JSON",
+    "it": "Esporta JSON di backup completo",
+    "pt": "Exportar JSON de backup completo"
+  },
+  "Fin = position vidéo": {
+    "en": "End = video position",
+    "de": "Ende = Videoposition",
+    "es": "FIN = posición del vídeo",
+    "it": "Fine = posizione del video",
+    "pt": "Fim = posição do vídeo"
+  },
+  "FPS vidéo": {
+    "en": "Video FPS",
+    "de": "Video-FPS",
+    "es": "FPS de vídeo",
+    "it": "VideoFPS",
+    "pt": "FPS de vídeo"
+  },
+  "Générique": {
+    "en": "Generic",
+    "de": "Generisch",
+    "es": "Genérico",
+    "it": "Generico",
+    "pt": "Genérico"
+  },
+  "Gérer mon compte": {
+    "en": "Manage my account",
+    "de": "Mein Konto verwalten",
+    "es": "Administrar mi cuenta",
+    "it": "Gestisci il mio account",
+    "pt": "Gerenciar minha conta"
+  },
+  "il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Utilise « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.": {
+    "en": "it separates workspaces on this browser, but does not replace JSON export. Use \"Report a Bug\" if a restore or backup produces unexpected behavior.",
+    "de": "Es trennt Arbeitsbereiche in diesem Browser, ersetzt jedoch nicht den JSON-Export. Verwenden Sie „Fehler melden“, wenn eine Wiederherstellung oder Sicherung zu unerwartetem Verhalten führt.",
+    "es": "separa los espacios de trabajo en este navegador, pero no reemplaza la exportación JSON. Utilice \"Informar un error\" si una restauración o copia de seguridad produce un comportamiento inesperado.",
+    "it": "separa gli spazi di lavoro su questo browser, ma non sostituisce l'esportazione JSON. Utilizza \"Segnala un bug\" se un ripristino o un backup produce un comportamento imprevisto.",
+    "pt": "ele separa os espaços de trabalho neste navegador, mas não substitui a exportação JSON. Use \"Reportar um bug\" se uma restauração ou backup produzir um comportamento inesperado."
+  },
+  "IMPORT & DÉTECTION": {
+    "en": "IMPORT & DETECTION",
+    "de": "IMPORT & ERKENNUNG",
+    "es": "IMPORTACIÓN Y DETECCIÓN",
+    "it": "IMPORTAZIONE E RILEVAMENTO",
+    "pt": "IMPORTAÇÃO E DETECÇÃO"
+  },
+  "Importance de la pénalité appliquée aux compétences gênées par leur cooldown.": {
+    "en": "Importance of the penalty applied to skills hindered by their cooldown.",
+    "de": "Bedeutung der Strafe, die auf Fertigkeiten angewendet wird, deren Abklingzeit beeinträchtigt ist.",
+    "es": "Importancia de la penalización aplicada a las habilidades obstaculizadas por su tiempo de reutilización.",
+    "it": "Importanza della penalità applicata alle abilità ostacolate dal loro cooldown.",
+    "pt": "Importância da penalidade aplicada às habilidades prejudicadas pelo seu tempo de recarga."
+  },
+  "J’aime requis pour vérifier un combo": {
+    "en": "Likes required to verify a combo",
+    "de": "Wie erforderlich, um eine Combo zu überprüfen",
+    "es": "Como requerido para marcar un combo",
+    "it": "Come richiesto per controllare una combo",
+    "pt": "Como necessário para verificar um combo"
+  },
+  "L'application a été remise à zéro. Aucun dataset ni mécanisme de restauration automatique n'est présent.": {
+    "en": "The application has been reset. No dataset or automatic restoration mechanism is present.",
+    "de": "Die Anwendung wurde zurückgesetzt. Es ist kein Datensatz oder automatischer Wiederherstellungsmechanismus vorhanden.",
+    "es": "La aplicación ha sido reiniciada. No existe ningún conjunto de datos ni mecanismo de recuperación automática.",
+    "it": "L'applicazione è stata reimpostata. Non è presente alcun set di dati o meccanismo di ripristino automatico.",
+    "pt": "O aplicativo foi redefinido. Nenhum conjunto de dados ou mecanismo de recuperação automática está presente."
+  },
+  "L’application crée un fichier JSON contenant le travail actuellement enregistré.": {
+    "en": "The application creates a JSON file containing the currently saved work.",
+    "de": "Die Anwendung erstellt eine JSON-Datei, die die aktuell gespeicherte Arbeit enthält.",
+    "es": "La aplicación crea un archivo JSON que contiene el trabajo guardado actualmente.",
+    "it": "L'applicazione crea un file JSON contenente il lavoro attualmente salvato.",
+    "pt": "O aplicativo cria um arquivo JSON contendo o trabalho salvo atualmente."
+  },
+  "Le premier CC appliqué démarre son": {
+    "en": "The first CC applied starts its",
+    "de": "Le premier CC appliqué démarre son",
+    "es": "El primer CC aplicado inicia su",
+    "it": "Le premier CC appliqué démarre son",
+    "pt": "O primeiro CC aplicado inicia seu"
+  },
+  "Lecteur vidéo local": {
+    "en": "Local video player",
+    "de": "Lokaler Videoplayer",
+    "es": "Reproductor de vídeo local",
+    "it": "Lettore video locale",
+    "pt": "Reprodutor de vídeo local"
+  },
+  "Lecture contrôle": {
+    "en": "Reading control",
+    "de": "Lesekontrolle",
+    "es": "Control de lectura",
+    "it": "Controllo della lettura",
+    "pt": "Controle de leitura"
+  },
+  "Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combos joueurs et rejoint Combos de classe.": {
+    "en": "Player-shared combos remain here during voting. When a combo reaches the community threshold, it is automatically verified, leaves Player combos and joins Class combos.",
+    "de": "Von Spielern geteilte Combos bleiben während ihrer Abstimmungsphase hier. Wenn eine Combo den Community-Grenzwert erreicht, wird sie automatisch verifiziert, verlässt Spieler-Combos und tritt Klassen-Combos bei.",
+    "es": "Los combos compartidos por los jugadores permanecen aquí durante su fase de votación. Cuando un combo alcanza el umbral de la comunidad, automáticamente se verifica, abandona los combos de jugadores y se une a los combos de clase.",
+    "it": "Le combo condivise dai giocatori rimangono qui durante la fase di votazione. Quando una combo raggiunge la soglia della community, viene automaticamente verificata, abbandona le combo giocatore e si unisce alle combo classe.",
+    "pt": "Os combos compartilhados pelos jogadores permanecem aqui durante a fase de votação. Quando um combo atinge o limite da comunidade, ele é verificado automaticamente, sai dos Player Combos e entra nos Class Combos."
+  },
+  "Limites de stamina et de ressource de classe.": {
+    "en": "Stamina and class resource limits.",
+    "de": "Ausdauer- und Klassenressourcenlimits.",
+    "es": "Límites de recursos de resistencia y clase.",
+    "it": "Limiti di resistenza e risorse di classe.",
+    "pt": "Limites de resistência e recursos de aula."
+  },
+  "Longueur & durée": {
+    "en": "Length & duration",
+    "de": "Länge und Dauer",
+    "es": "Longitud y duración",
+    "it": "Lunghezza e durata",
+    "pt": "Comprimento e duração"
+  },
+  "Maintenance & sauvegarde": {
+    "en": "Maintenance & backup",
+    "de": "Wartung und Backup",
+    "es": "Mantenimiento y respaldo",
+    "it": "Manutenzione e backup",
+    "pt": "Manutenção e backup"
+  },
+  "Marquer début CC": {
+    "en": "Mark start CC",
+    "de": "Markieren Sie Start-CC",
+    "es": "Marcar inicio CC",
+    "it": "Segna inizio CC",
+    "pt": "Marcar início CC"
+  },
+  "Maximum de compétences": {
+    "en": "Maximum skills",
+    "de": "Maximale Skills",
+    "es": "Máximo de habilidades",
+    "it": "Massimo abilità",
+    "pt": "Máximo de habilidades"
+  },
+  "Mesure vidéo": {
+    "en": "Video measurement",
+    "de": "Videomessung",
+    "es": "Medición de vídeo",
+    "it": "Misurazione video",
+    "pt": "Medição de vídeo"
+  },
+  "Mesures et validations vidéo": {
+    "en": "Video measurements and validations",
+    "de": "Videomessungen und Validierungen",
+    "es": "Mediciones y validaciones en vídeo.",
+    "it": "Misurazioni e validazioni video",
+    "pt": "Medições e validações de vídeo"
+  },
+  "Métadonnées Skills": {
+    "en": "Skill metadata",
+    "de": "Metadaten zu Fertigkeiten",
+    "es": "Metadatos de habilidades",
+    "it": "Metadati delle competenze",
+    "pt": "Metadados de habilidades"
+  },
+  "Mot de passe": {
+    "en": "Password",
+    "de": "Passwort",
+    "es": "Contraseña",
+    "it": "Password",
+    "pt": "Senha"
+  },
+  "Mot de passe actuel": {
+    "en": "Current password",
+    "de": "Aktuelles Passwort",
+    "es": "Contraseña actual",
+    "it": "Password attuale",
+    "pt": "Senha atual"
+  },
+  "Ne perds pas tes mesures": {
+    "en": "Don't lose your measurements",
+    "de": "Verlieren Sie nicht Ihre Maße",
+    "es": "No pierdas tus medidas",
+    "it": "Non perdere le tue misure",
+    "pt": "Não perca suas medidas"
+  },
+  "Nom d’utilisateur": {
+    "en": "Username",
+    "de": "Benutzername",
+    "es": "Nombre de usuario",
+    "it": "Nome utente",
+    "pt": "Nome de usuário"
+  },
+  "Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.": {
+    "en": "Maximum uses of the same skill when repetition is allowed.",
+    "de": "Maximale Anzahl der Verwendungen derselben Fertigkeit, wenn Wiederholungen zulässig sind.",
+    "es": "Número máximo de usos de la misma habilidad cuando se permite la repetición.",
+    "it": "Numero massimo di utilizzi della stessa abilità quando è consentita la ripetizione.",
+    "pt": "Número máximo de utilizações da mesma habilidade quando a repetição é permitida."
+  },
+  "Nombre maximum de compétences autorisé dans le combo.": {
+    "en": "Maximum number of skills allowed in the combo.",
+    "de": "Maximal zulässige Anzahl an Fertigkeiten in der Combo.",
+    "es": "Número máximo de habilidades permitidas en el combo.",
+    "it": "Numero massimo di abilità consentite nella combo.",
+    "pt": "Número máximo de habilidades permitidas no combo."
+  },
+  "Nombre minimum de compétences souhaité dans un combo généré.": {
+    "en": "Minimum number of skills desired in a generated combo.",
+    "de": "Mindestanzahl der gewünschten Fertigkeiten in einer generierten Combo.",
+    "es": "Número mínimo de habilidades deseadas en un combo generado.",
+    "it": "Numero minimo di abilità desiderate in una combo generata.",
+    "pt": "Número mínimo de habilidades desejadas em um combo gerado."
+  },
+  "NOUVEAU COMPTE LOCAL": {
+    "en": "NEW LOCAL ACCOUNT",
+    "de": "NEUES LOKALES KONTO",
+    "es": "NUEVA CUENTA LOCAL",
+    "it": "NUOVO ACCOUNT LOCALE",
+    "pt": "NOVA CONTA LOCAL"
+  },
+  "Nouveau mot de passe": {
+    "en": "New Password",
+    "de": "Neues Passwort",
+    "es": "Nueva contraseña",
+    "it": "Nuova parola d'ordine",
+    "pt": "Nova Senha"
+  },
+  "Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.": {
+    "en": "Optimizer will follow the order Engage → Setup → CC → Burst → Finisher and account for measured transition durations. A disabled phase is ignored. The limit is the maximum number of skills allowed in that phase.",
+    "de": "Optimizer folgt der Reihenfolge Engage → Setup → CC → Burst → Finisher und berücksichtigt gemessene Transition-Dauern. Eine deaktivierte Phase wird ignoriert. Das Limit gibt die maximale Anzahl an Skills in dieser Phase an.",
+    "es": "Optimizer seguirá el orden Engage → Setup → CC → Burst → Finisher y tendrá en cuenta las duraciones medidas de las transiciones. Una fase desactivada se ignora. El límite indica el número máximo de skills permitidas en esa fase.",
+    "it": "Optimizer seguirà l’ordine Engage → Setup → CC → Burst → Finisher e terrà conto delle durate misurate delle transizioni. Una fase disattivata viene ignorata. Il limite indica il numero massimo di skill consentite in quella fase.",
+    "pt": "Optimizer seguirá a ordem Engage → Setup → CC → Burst → Finisher e terá em conta as durações medidas das transições. Uma fase desativada é ignorada. O limite indica o número máximo de skills permitidas nessa fase."
+  },
+  "ou utilise la touche": {
+    "en": "or use the key",
+    "de": "ou utilise la touche",
+    "es": "o usa la llave",
+    "it": "ou utilise la touche",
+    "pt": "ou use a chave"
+  },
+  "Ouvrir la sauvegarde complète": {
+    "en": "Open full backup",
+    "de": "Vollständiges Backup öffnen",
+    "es": "Abrir copia de seguridad completa",
+    "it": "Apri il backup completo",
+    "pt": "Abra o backup completo"
+  },
+  "Pas encore de compte ?": {
+    "en": "No account yet?",
+    "de": "Noch kein Konto?",
+    "es": "¿Aún no tienes cuenta?",
+    "it": "Non hai ancora un account?",
+    "pt": "Ainda não tem conta?"
+  },
+  "Pénalise ou exclut les compétences indisponibles à cause de leur cooldown.": {
+    "en": "Penalizes or excludes skills that are unavailable due to their cooldown.",
+    "de": "Bestraft oder schließt Fertigkeiten aus, die aufgrund ihrer Abklingzeit nicht verfügbar sind.",
+    "es": "Penaliza o excluye habilidades que no están disponibles debido a su tiempo de reutilización.",
+    "it": "Penalizza o esclude le abilità che non sono disponibili a causa del loro tempo di recupero.",
+    "pt": "Penaliza ou exclui habilidades que estão indisponíveis devido ao seu tempo de espera."
+  },
+  "Place la vidéo au moment où l’animation d’une compétence est coupée, sélectionne": {
+    "en": "Place the video at the moment when the animation of a skill is cut, select",
+    "de": "Platzieren Sie das Video in dem Moment, in dem die Animation einer Fertigkeit geschnitten wird, wählen Sie aus",
+    "es": "Coloca el video en el momento en que se corta la animación de una habilidad, selecciona",
+    "it": "Posiziona il video nel momento in cui viene tagliata l'animazione di un'abilità, seleziona",
+    "pt": "Coloque o vídeo no momento em que a animação de uma habilidade é cortada, selecione"
+  },
+  "Place-toi au début d’une compétence": {
+    "en": "Place yourself at the start of a skill",
+    "de": "Stellen Sie sich an den Anfang einer Fertigkeit",
+    "es": "Colócate al comienzo de una habilidad.",
+    "it": "Posizionati all'inizio di un'abilità",
+    "pt": "Coloque-se no início de uma habilidade"
+  },
+  "Poids de l’optimiseur": {
+    "en": "Optimizer weight",
+    "de": "Optimierergewicht",
+    "es": "Peso optimizador",
+    "it": "Peso dell'ottimizzatore",
+    "pt": "Peso do otimizador"
+  },
+  "Poids dégâts": {
+    "en": "Damage weight",
+    "de": "Schadensgewicht",
+    "es": "Peso del daño",
+    "it": "Peso del danno",
+    "pt": "Peso do dano"
+  },
+  "pour privilégier les chaînes rapides.": {
+    "en": "to favor fast chains.",
+    "de": "schnelle Ketten zu bevorzugen.",
+    "es": "para favorecer las cadenas rápidas.",
+    "it": "favorire le catene veloci.",
+    "pt": "para favorecer cadeias rápidas."
+  },
+  "Pour restaurer : « Importer une sauvegarde »": {
+    "en": "To restore: “Import a backup”",
+    "de": "Zum Wiederherstellen: „Backup importieren“",
+    "es": "Para restaurar: \"Importar una copia de seguridad\"",
+    "it": "Per ripristinare: “Importa un backup”",
+    "pt": "Para restaurar: “Importar um backup”"
+  },
+  "Pourcentage minimal du combo qui doit bénéficier d’une protection.": {
+    "en": "Minimum percentage of the combo that must benefit from protection.",
+    "de": "Mindestprozentsatz der Combo, der vom Schutz profitieren muss.",
+    "es": "Porcentaje mínimo del combinación que debe beneficiarse de la protección.",
+    "it": "Percentuale minima della combo che deve beneficiare della protezione.",
+    "pt": "Porcentagem mínima do combinação que deve se beneficiar de proteção."
+  },
+  "Préparation du combo": {
+    "en": "Combo setup",
+    "de": "Vorbereitung der Combo",
+    "es": "Preparando la combinación",
+    "it": "Preparazione della combinazione",
+    "pt": "Preparando o combo"
+  },
+  "Préserver la ressource": {
+    "en": "Preserve resource",
+    "de": "Bewahren Sie die Ressource",
+    "es": "Preservar el recurso",
+    "it": "Preservare la risorsa",
+    "pt": "Preservar o recurso"
+  },
+  "Priority: player/community combo choices and observed skill order. Technical factors such as timings, CC, damage, cooldowns and protection are secondary.": {
+    "en": "Priority: player/community combo choices and observed skill order. Technical factors such as timings, CC, damage, cooldowns and protection are secondary.",
+    "de": "Priorität: Spieler-/Community-Kombinationsauswahl und beobachtete Fertigkeitsreihenfolge. Technische Faktoren wie Timings, CC, Schaden, Abklingzeiten und Schutz sind zweitrangig.",
+    "es": "Prioridad: opciones combinadas de jugador/comunidad y orden de habilidades observado. Los factores técnicos como tiempos, CC, daños, tiempos de reutilización y protección son secundarios.",
+    "it": "Priorità: scelte della combo giocatore/comunità e ordine delle abilità osservato. Fattori tecnici come tempi, CC, danni, tempi di recupero e protezione sono secondari.",
+    "pt": "Prioridade: escolhas de combinação entre jogador/comunidade e ordem de habilidade observada. Fatores técnicos como tempos, CC, danos, tempos de espera e proteção são secundários."
+  },
+  "PROTECTION DES DONNÉES": {
+    "en": "DATA PROTECTION",
+    "de": "DATENSCHUTZ",
+    "es": "PROTECCIÓN DE DATOS",
+    "it": "PROTEZIONE DEI DATI",
+    "pt": "PROTEÇÃO DE DADOS"
+  },
+  "Qualité de données minimale (%)": {
+    "en": "Minimum data quality (%)",
+    "de": "Mindestdatenqualität (%)",
+    "es": "Calidad mínima de los datos (%)",
+    "it": "Qualità minima dei dati (%)",
+    "pt": "Qualidade mínima dos dados (%)"
+  },
+  "Qualité minimale des données exigée avant qu’un skill soit privilégié.": {
+    "en": "Minimum data quality required before a skill is prioritized.",
+    "de": "Mindestdatenqualität erforderlich, bevor ein Skill privilegiert wird.",
+    "es": "Se requiere una calidad de datos mínima antes de privilegiar una habilidad.",
+    "it": "Qualità minima dei dati richiesta prima che una competenza venga privilegiata.",
+    "pt": "Qualidade mínima de dados necessária antes que uma habilidade seja privilegiada."
+  },
+  "Quand refaire une sauvegarde ?": {
+    "en": "When to make a backup again?",
+    "de": "Wann erneut ein Backup erstellen?",
+    "es": "¿Cuándo volver a hacer una copia de seguridad?",
+    "it": "Quando eseguire nuovamente il backup?",
+    "pt": "Quando fazer um backup novamente?"
+  },
+  "Quel comportement était attendu ?": {
+    "en": "What behavior was expected?",
+    "de": "Welches Verhalten wurde erwartet?",
+    "es": "¿Qué comportamiento se esperaba?",
+    "it": "Quale comportamento ci si aspettava?",
+    "pt": "Que comportamento era esperado?"
+  },
+  "Recherche auto des compétences": {
+    "en": "Automatic skill search",
+    "de": "Automatische Suche nach Fähigkeiten",
+    "es": "Búsqueda automática de habilidades",
+    "it": "Ricerca automatica delle competenze",
+    "pt": "Pesquisa automática de habilidades"
+  },
+  "Référentiel + compétences actives": {
+    "en": "Reference + active skills",
+    "de": "Referenz + aktive Fähigkeiten",
+    "es": "Referencia + habilidades activas",
+    "it": "Riferimento + competenze attive",
+    "pt": "Referência + habilidades ativas"
+  },
+  "Réglages Auto-Build": {
+    "en": "Auto-Build settings",
+    "de": "Auto-Build-Einstellungen",
+    "es": "Configuración de Auto-Build",
+    "it": "Impostazioni Auto-Build",
+    "pt": "Configurações Auto-Build"
+  },
+  "Régler l’optimiseur / Auto-Build": {
+    "en": "Set Optimizer / Auto-Build",
+    "de": "Optimierer / Auto-Build einstellen",
+    "es": "Establecer optimizador/compilación automática",
+    "it": "Imposta ottimizzatore / Auto-Build",
+    "pt": "Definir otimizador/construção automática"
+  },
+  "Réinitialiser": {
+    "en": "Reset",
+    "de": "Zurücksetzen",
+    "es": "Reiniciar",
+    "it": "Reset",
+    "pt": "Reiniciar"
+  },
+  "Remplacer les données locales BDO Combos Labs lors de la restauration": {
+    "en": "Replace local BDO Combos Labs data during restore",
+    "de": "Lokale Daten BDO Combos Labs beim Wiederherstellen überschreiben",
+    "es": "Sobrescribir los datos locales BDO Combos Labs al restaurar",
+    "it": "Sovrascrivi i dati locali BDO Combos Labs durante il ripristino",
+    "pt": "Substituir dados locais BDO Combos Labs ao restaurar"
+  },
+  "Répartis l’importance des dégâts, de la vitesse, des CC et des transitions/cancels.": {
+    "en": "Break down the importance of damage, speed, CC and transitions/cancels.",
+    "de": "Unterteilen Sie die Bedeutung von Schaden, Geschwindigkeit, CC und Übergängen/Abbrüchen.",
+    "es": "Desglosa la importancia del daño, la velocidad, el CC y las transiciones/cancelaciones.",
+    "it": "Analizza l'importanza di danni, velocità, CC e transizioni/annullazioni.",
+    "pt": "Divida a importância do dano, velocidade, CC e transições/cancelamentos."
+  },
+  "Répétitions max. par compétence": {
+    "en": "Max reps. by skill",
+    "de": "Maximale Anzahl an Wiederholungen. nach Können",
+    "es": "Repeticiones máximas. por habilidad",
+    "it": "Numero massimo di ripetizioni. per abilità",
+    "pt": "Máximo de repetições. por habilidade"
+  },
+  "Restaurer une sauvegarde": {
+    "en": "Restore a backup",
+    "de": "Stellen Sie ein Backup wieder her",
+    "es": "Restaurar una copia de seguridad",
+    "it": "Ripristina un backup",
+    "pt": "Restaurar um backup"
+  },
+  "Retrouve ton espace de travail local et toutes tes données enregistrées.": {
+    "en": "Find your local workspace and all your saved data.",
+    "de": "Finden Sie Ihren lokalen Arbeitsbereich und alle Ihre gespeicherten Daten.",
+    "es": "Encuentre su espacio de trabajo local y todos sus datos guardados.",
+    "it": "Trova il tuo spazio di lavoro locale e tutti i tuoi dati salvati.",
+    "pt": "Encontre seu espaço de trabalho local e todos os seus dados salvos."
+  },
+  "Rôle": {
+    "en": "Role",
+    "de": "Rolle",
+    "es": "Role",
+    "it": "Ruolo",
+    "pt": "Papel"
+  },
+  "Routine recommandée :": {
+    "en": "Recommended routine:",
+    "de": "Routine recommandée :",
+    "es": "Routine recommandée :",
+    "it": "Routine recommandée :",
+    "pt": "Rotina recomendada:"
+  },
+  "Sauvegarde / Restauration": {
+    "en": "Backup / Restore",
+    "de": "Sichern/Wiederherstellen",
+    "es": "Copia de seguridad/Restaurar",
+    "it": "Backup/Ripristino",
+    "pt": "Backup/Restauração"
+  },
+  "Sauvegarde complète": {
+    "en": "Full backup",
+    "de": "Vollständige Sicherung",
+    "es": "Copia de seguridad completa",
+    "it": "Backup completo",
+    "pt": "Backup completo"
+  },
+  "Sauvegarde manuelle uniquement": {
+    "en": "Manual backup only",
+    "de": "Nur manuelles Backup",
+    "es": "Sólo copia de seguridad manual",
+    "it": "Solo backup manuale",
+    "pt": "Somente backup manual"
+  },
+  "Sauvegarder maintenant": {
+    "en": "Back up now",
+    "de": "Sauvegarder maintenant",
+    "es": "Sauvegarder maintenant",
+    "it": "Sauvegarder maintenant",
+    "pt": "Sauvegarder maintenant"
+  },
+  "Sauvegarder mes données": {
+    "en": "Back up my data",
+    "de": "Sichern Sie meine Daten",
+    "es": "hacer una copia de seguridad de mis datos",
+    "it": "Esegui il backup dei miei dati",
+    "pt": "Fazer backup dos meus dados"
+  },
+  "Sauvegarder toutes les données": {
+    "en": "Back up all data",
+    "de": "Sichern Sie alle Daten",
+    "es": "Copia de seguridad de todos los datos",
+    "it": "Eseguire il backup di tutti i dati",
+    "pt": "Faça backup de todos os dados"
+  },
+  "Sauvegarder TOUTES les données et les restaurer": {
+    "en": "Back up ALL data and restore it",
+    "de": "Sichern Sie ALLE Daten und stellen Sie sie wieder her",
+    "es": "Haga una copia de seguridad de TODOS los datos y restáurelos",
+    "it": "Eseguire il backup di TUTTI i dati e ripristinarli",
+    "pt": "Faça backup de TODOS os dados e restaure-os"
+  },
+  "Sélectionne d’abord une classe dans l’onglet Classe.": {
+    "en": "Select a class first in the Class tab.",
+    "de": "Wählen Sie zunächst im Reiter „Klasse“ eine Klasse aus.",
+    "es": "Primero seleccione una clase en la pestaña Clase.",
+    "it": "Per prima cosa seleziona una classe nella scheda Classe.",
+    "pt": "Primeiro selecione uma turma na guia Turma."
+  },
+  "Sélectionne la classe.": {
+    "en": "Select the class.",
+    "de": "Sélectionne la classe.",
+    "es": "Seleccione la clase.",
+    "it": "Sélectionne la classe.",
+    "pt": "Selecione a turma."
+  },
+  "Sélectionne la compétence": {
+    "en": "Select the skill",
+    "de": "Wählen Sie die Fertigkeit aus",
+    "es": "Selecciona la habilidad",
+    "it": "Seleziona l'abilità",
+    "pt": "Selecione a habilidade"
+  },
+  "Sélectionne le fichier": {
+    "en": "Select the file",
+    "de": "Wählen Sie die Datei aus",
+    "es": "Seleccione el archivo",
+    "it": "Seleziona il file",
+    "pt": "Selecione o arquivo"
+  },
+  "Séquence": {
+    "en": "Sequence",
+    "de": "Sequenz",
+    "es": "Secuencia",
+    "it": "Sequenza",
+    "pt": "Sequência"
+  },
+  "Settings → Sauvegarde complète": {
+    "en": "Settings → Full backup",
+    "de": "Einstellungen → Vollständige Sicherung",
+    "es": "Configuración → Copia de seguridad completa",
+    "it": "Impostazioni → Backup completo",
+    "pt": "Configurações → Backup completo"
+  },
+  "Seuil re-CC PvP": {
+    "en": "PvP re-CC threshold",
+    "de": "PvP-Re-CC-Schwellenwert",
+    "es": "Umbral de re-CC PvP",
+    "it": "Soglia di ri-CC PvP",
+    "pt": "Limite de re-CC PvP"
+  },
+  "Skills ajoutés / modifiés": {
+    "en": "Skills added/modified",
+    "de": "Skills ajoutés / modifiés",
+    "es": "Habilidades agregadas/modificadas",
+    "it": "Skills ajoutés / modifiés",
+    "pt": "Habilidades adicionadas/modificadas"
+  },
+  "Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.": {
+    "en": "Skills, CC durations, transitions/cancels, video measurements, settings and builds can be exported together in a JSON backup. Make a copy regularly.",
+    "de": "Fertigkeiten, CC-Dauer, Übergänge/Abbrüche, Videomessungen, Einstellungen und Builds können zusammen in einem JSON-Backup exportiert werden. Erstellen Sie regelmäßig eine Kopie.",
+    "es": "Las habilidades, duraciones de CC, transiciones/cancelaciones, mediciones de video, configuraciones y compilaciones se pueden exportar juntas en una copia de seguridad JSON. Haga una copia periódicamente.",
+    "it": "Competenze, durate CC, transizioni/annullamenti, misurazioni video, impostazioni e build possono essere esportati insieme in un backup JSON. Fai una copia regolarmente.",
+    "pt": "Habilidades, durações de CC, transições/cancelamentos, medições de vídeo, configurações e compilações podem ser exportadas juntas em um backup JSON. Faça uma cópia regularmente."
+  },
+  "Skills, transitions, mesures, combos et réglages actuels seront rattachés à ce compte.": {
+    "en": "Current skills, transitions, measures, combos and settings will be attached to this account.",
+    "de": "Aktuelle Fähigkeiten, Übergänge, Maßnahmen, Combos und Einstellungen werden diesem Konto zugeordnet.",
+    "es": "Las habilidades, transiciones, medidas, combos y configuraciones actuales se adjuntarán a esta cuenta.",
+    "it": "Le abilità, le transizioni, le misure, le combo e le impostazioni attuali verranno allegate a questo account.",
+    "pt": "Habilidades atuais, transições, medidas, combos e configurações serão anexadas a esta conta."
+  },
+  "spécialisation": {
+    "en": "specialization",
+    "de": "Spezialisierung",
+    "es": "especialización",
+    "it": "specializzazione",
+    "pt": "especialização"
+  },
+  "Supprimer mon compte": {
+    "en": "Delete my account",
+    "de": "Mein Konto löschen",
+    "es": "eliminar mi cuenta",
+    "it": "Elimina il mio account",
+    "pt": "Excluir minha conta"
+  },
+  "Télécharger le rapport": {
+    "en": "Download the report",
+    "de": "Laden Sie den Bericht herunter",
+    "es": "Descargar el informe",
+    "it": "Scarica il rapporto",
+    "pt": "Baixe o relatório"
+  },
+  "Temps vidéo": {
+    "en": "Video time",
+    "de": "Videozeit",
+    "es": "tiempo de vídeo",
+    "it": "Tempo del video",
+    "pt": "Hora do vídeo"
+  },
+  "Tu as déjà un compte ?": {
+    "en": "Do you already have an account?",
+    "de": "Haben Sie bereits ein Konto?",
+    "es": "¿Ya tienes una cuenta?",
+    "it": "Hai già un account?",
+    "pt": "Você já tem uma conta?"
+  },
+  "Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la classe active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.": {
+    "en": "You can paste a public Google Doc/Sheet link or load a file exported from Google Docs. The document is first analyzed independently of the Skill Library: names found in explicit chains are extracted, then added to the active class Skills if they do not already exist. Combos and transitions are imported afterward.",
+    "de": "Sie können den Link aus einem öffentlichen Google Doc/Sheet einfügen oder eine aus Google Docs exportierte Datei hochladen. Das Dokument wird zunächst unabhängig von der Skill-Bibliothek analysiert: Die in den expliziten Zeichenfolgen vorhandenen Namen werden extrahiert und dann den Skills der aktiven Klasse hinzugefügt, sofern sie noch nicht vorhanden sind. Als nächstes werden die Combos und Übergänge importiert.",
+    "es": "Puede pegar el enlace desde un documento/hoja de Google público o cargar un archivo exportado desde Google Docs. El documento se analiza primero independientemente de la biblioteca de habilidades: los nombres presentes en las cadenas explícitas se extraen y luego se agregan a las habilidades de la clase activa si aún no existen. Los combos y transiciones se importan a continuación.",
+    "it": "Puoi incollare il collegamento da un documento/foglio Google pubblico o caricare un file esportato da Google Documenti. Il documento viene prima analizzato indipendentemente dalla Libreria delle Competenze: vengono estratti i nomi presenti nelle stringhe esplicite, poi aggiunti alle Competenze della classe attiva se non esistono ancora. Successivamente vengono importate le combo e le transizioni.",
+    "pt": "Você pode colar o link de um Documento/Planilha Google público ou fazer upload de um arquivo exportado do Google Docs. O documento é primeiro analisado independentemente da Biblioteca de Habilidades: os nomes presentes nas strings explícitas são extraídos e depois adicionados às Habilidades da classe ativa caso ainda não existam. Os combos e transições são importados em seguida."
+  },
+  "Un cancel ne réduit jamais la durée du CC.": {
+    "en": "A cancel never reduces the duration of the CC.",
+    "de": "Eine Stornierung verkürzt niemals die Dauer des CC.",
+    "es": "Una cancelación nunca reduce la duración del CC.",
+    "it": "Una cancellazione non riduce mai la durata del CC.",
+    "pt": "Um cancelamento nunca reduz a duração do CC."
+  },
+  "Une compétence sans nouveau CC": {
+    "en": "A skill without a new CC",
+    "de": "Eine Fertigkeit ohne neues CC",
+    "es": "Una habilidad sin un nuevo CC",
+    "it": "Un'abilità senza un nuovo CC",
+    "pt": "Uma habilidade sem um novo CC"
+  },
+  "Une donnée absente reste inconnue. Une transition ou une durée de CC non mesurée ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.": {
+    "en": "Absent data remains unknown. An unmeasured CC transition or duration should not be silently replaced by an arbitrary value. After a large session, always exports a full JSON backup.",
+    "de": "Fehlende Daten bleiben unbekannt. Ein nicht gemessener CC-Übergang oder eine nicht gemessene CC-Dauer sollte nicht stillschweigend durch einen willkürlichen Wert ersetzt werden. Nach einer großen Sitzung wird immer ein vollständiges JSON-Backup exportiert.",
+    "es": "Los datos faltantes siguen siendo desconocidos. Una transición o duración de CC no medida no debe ser reemplazada silenciosamente por un valor arbitrario. Después de una sesión larga, siempre exporta una copia de seguridad JSON completa.",
+    "it": "I dati assenti rimangono sconosciuti. Una transizione o durata CC non misurata non dovrebbe essere sostituita silenziosamente da un valore arbitrario. Dopo una sessione di grandi dimensioni, esporta sempre un backup JSON completo.",
+    "pt": "Os dados ausentes permanecem desconhecidos. Uma transição ou duração CC não medida não deve ser substituída silenciosamente por um valor arbitrário. Após uma sessão grande, sempre exporta um backup JSON completo."
+  },
+  "Utilisateur": {
+    "en": "User",
+    "de": "Benutzer",
+    "es": "Usuario",
+    "it": "Utente",
+    "pt": "Usuário"
+  },
+  "Utilise": {
+    "en": "Used",
+    "de": "Utilise",
+    "es": "Usado",
+    "it": "Utilise",
+    "pt": "Usado"
+  },
+  "Utilise l’édition pour corriger son": {
+    "en": "Use editing to correct sound",
+    "de": "Utilise l’édition pour corriger son",
+    "es": "Utilice la edición para corregir el sonido.",
+    "it": "Utilise l’édition pour corriger son",
+    "pt": "Use a edição para corrigir o som"
+  },
+  "Utiliser le Combo Builder et ses suggestions": {
+    "en": "Use the Combo Builder and its suggestions",
+    "de": "Verwendung des Combo Builder und seiner Vorschläge",
+    "es": "Utilice el Generador combinado y sus sugerencias",
+    "it": "Utilizzo dello Combo Builder e dei suoi suggerimenti",
+    "pt": "Use o Construtor de combinação e suas sugestões"
+  },
+  "Valide les mesures fiables.": {
+    "en": "Validates reliable measurements.",
+    "de": "Validiert zuverlässige Messungen.",
+    "es": "Valida mediciones confiables.",
+    "it": "Convalida misurazioni affidabili.",
+    "pt": "Valida medições confiáveis."
+  },
+  "Vérifie le couple": {
+    "en": "Check the torque",
+    "de": "Vérifie le couple",
+    "es": "Compruebe el par",
+    "it": "Vérifie le couple",
+    "pt": "Verifique o torque"
+  },
+  "Vérifie sur l’accueil que le contexte actif et le référentiel sont corrects.": {
+    "en": "Checks on the home page that the active context and repository are correct.",
+    "de": "Überprüft auf der Startseite, ob der aktive Kontext und das Repository korrekt sind.",
+    "es": "Comprueba en la página de inicio que el contexto activo y el repositorio sean correctos.",
+    "it": "Controlla sulla home page che il contesto attivo e il repository siano corretti.",
+    "pt": "Verifica na página inicial se o contexto ativo e o repositório estão corretos."
+  }
+}
