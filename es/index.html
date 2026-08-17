@@ -6007,7 +6007,7 @@ if(!BDO_DOM_READY){
           <summary><span>05</span> Utilice el Generador combinado y sus sugerencias</summary>
           <div class="home75-detail">
             <p>El Constructor ensambla la secuencia y recalcula las sugerencias después de cada modificación.</p>
-            <ol><li>Choisis <b>Awakening</b>, <b>Mixto</b> ou <b>Pré-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>Después de la primera habilidad, el bloque. <b>CHAIN</b> Indica si se conoce, mide o valida la transición a cada candidato, así como su posible cancelación.</li><li>Agregar una sugerencia o habilidad manualmente: la lista se recalcula inmediatamente a partir de la última habilidad nueva.</li><li>Usado <b>Combinación actual completa</b> ou <b>Add Best Suggestion</b> para permitir que el optimizador continúe la cadena.</li><li>Controla las estadísticas del combo: duración, daño cuando esté disponible, transiciones medidas, tiempo de cobertura, CC y protección.</li></ol>
+            <ol><li>Choisis <b>Awakening</b>, <b>Mixto</b> ou <b>Pré-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>Después de la primera habilidad, el bloque. <b>CHAIN</b> Indica si se conoce, mide o valida la transición a cada candidato, así como su posible cancelación.</li><li>Agregar una sugerencia o habilidad manualmente: la lista se recalcula inmediatamente a partir de la última habilidad nueva.</li><li>Usado <b>Combinación actual completa</b> ou <b>Add Best Suggestion</b> para permitir que el optimizador continúe la cadena.</li><li>Controla las estadísticas del combinación: duración, daño cuando esté disponible, transiciones medidas, tiempo de cobertura, CC y protección.</li></ol>
             <p class="home75-tip">Las transiciones/cancelaciones ahora influyen en la clasificación. Se favorece una transición rápida, medida y validada; una transición desconocida puede ser penalizada según la configuración.</p>
           </div>
         </details>
@@ -6182,8 +6182,7 @@ if(!BDO_DOM_READY){
     </div>
 
     <p class="note">
-      Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs.
-      Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la clase active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
+      Puede pegar el enlace desde un documento/hoja de Google público o cargar un archivo exportado desde Google Docs. El documento se analiza primero independientemente de la biblioteca de habilidades: los nombres presentes en las cadenas explícitas se extraen y luego se agregan a las habilidades de la clase activa si aún no existen. Los combos y transiciones se importan a continuación.
     </p>
 
     <div class="toolbar old-doc-toolbar" style="margin-top:8px">
@@ -6346,8 +6345,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <p class="player-combos-intro">
-        Les combos partagés par les joueurs restent ici pendant leur phase de vote.
-        Lorsqu’un combinación atteint le seuil communautaire, il devient automatiquement vérifié, quitte combos de jugadores et rejoint Combinaciones de clases.
+        Los combos compartidos por los jugadores permanecen aquí durante su fase de votación. Cuando un combo alcanza el umbral de la comunidad, automáticamente se verifica, abandona los combos de jugadores y se une a los combos de clase.
       </p>
 
       <div id="playerCombosSummary" class="player-combos-summary"></div>
@@ -7045,7 +7043,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildRequireProtection">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Cobertura mínima protegida (%)</b><small>Porcentaje mínimo del combo que debe beneficiarse de la protección.</small></div>
+    <div class="settings92-name"><b>Cobertura mínima protegida (%)</b><small>Porcentaje mínimo del combinación que debe beneficiarse de la protección.</small></div>
     <div class="settings92-control"><input id="autoBuildProtectionCoverage" type="number" min="0" max="100" value="0" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildProtectionCoverage">Automático</div>
   </div>
@@ -7205,7 +7203,7 @@ if(!BDO_DOM_READY){
 </div>
 
       <div class="optimizer-note" style="margin-top:8px">
-        El optimizador respetará el orden: Activar → Configuración → CC → Ráfaga → Finalizador y tendrá en cuenta las duraciones medidas de las transiciones. Una fase desactivada se ignora. El límite indica el número máximo de habilidades permitidas en esta fase.
+        Optimizer seguirá el orden Engage → Setup → CC → Burst → Finisher y tendrá en cuenta las duraciones medidas de las transiciones. Una fase desactivada se ignora. El límite indica el número máximo de skills permitidas en esa fase.
       </div>
 
       <div class="settings81-section-head"><span>08</span><div><h3>Filtres avancés</h3><p>Controla la calidad de los datos y los cambios de postura.</p></div></div>
@@ -25557,6 +25555,7 @@ document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclL
 })();
 </script>
 
+
 <script id="bcl-static-locale-router">
 (function(){
   'use strict';
@@ -25577,5 +25576,6 @@ document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclL
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true}); else bind();
 })();
 </script>
+<script src="/bcl-test-class-live-v117.js"></script>
 </body>
 </html>

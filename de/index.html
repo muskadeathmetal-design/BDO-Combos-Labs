@@ -7203,7 +7203,7 @@ if(!BDO_DOM_READY){
 </div>
 
       <div class="optimizer-note" style="margin-top:8px">
-        Der Optimierer beachtet die Reihenfolge: Engage → Setup → CC → Burst → Finisher und berücksichtigt die gemessene Dauer der Übergänge. Eine deaktivierte Phase wird ignoriert. Das Limit gibt die maximal zulässige Anzahl an Fähigkeiten in dieser Phase an.
+        Optimizer folgt der Reihenfolge Engage → Setup → CC → Burst → Finisher und berücksichtigt gemessene Transition-Dauern. Eine deaktivierte Phase wird ignoriert. Das Limit gibt die maximale Anzahl an Skills in dieser Phase an.
       </div>
 
       <div class="settings81-section-head"><span>08</span><div><h3>Filtres avancés</h3><p>Steuert die Datenqualität und Haltungsänderungen.</p></div></div>
@@ -25555,6 +25555,7 @@ document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclL
 })();
 </script>
 
+
 <script id="bcl-static-locale-router">
 (function(){
   'use strict';
@@ -25575,5 +25576,6 @@ document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclL
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true}); else bind();
 })();
 </script>
+<script src="/bcl-test-class-live-v117.js"></script>
 </body>
 </html>
