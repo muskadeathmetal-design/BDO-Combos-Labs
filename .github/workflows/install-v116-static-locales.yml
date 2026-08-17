@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tools/build-static-locales-v116.js'
+      - 'tools/run-safe-static-build-v116.js'
       - 'tools/prepare-static-translation-patches-v116.js'
       - 'bcl-static-auto-translations-v116.json'
       - 'translations/**.json'
@@ -26,8 +27,8 @@ jobs:
       - name: Prepare safe translation patches
         run: node tools/prepare-static-translation-patches-v116.js
 
-      - name: Build static language versions
-        run: node tools/build-static-locales-v116.js
+      - name: Build static language versions safely
+        run: node tools/run-safe-static-build-v116.js
 
       - name: Verify dynamic i18n is absent from locale pages
         run: |
