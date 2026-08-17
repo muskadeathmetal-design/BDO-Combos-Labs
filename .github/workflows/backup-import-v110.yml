@@ -1,0 +1,241 @@
+name: Apply V110 backup import fix
+
+on:
+  push:
+    paths:
+      - '.github/workflows/backup-import-v110.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Patch backup export/import
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+
+          anchor = 'function fullBackupLocalStorageV48(){'
+          helpers = r'''function fullBackupIsCacheKeyV110(key){
+            const k=String(key||'');
+            return (
+              /^bdoCodexV\d*:page:/i.test(k) ||
+              /bdocodex\.com\/(?:us|eu|kr|sea|tw|jp|ru)\//i.test(k) ||
+              /(?:^|[:._-])cache(?:[:._-]|$)/i.test(k) ||
+              /(?:page|html|fetch)(?:Cache|:v\d*:https?:)/i.test(k)
+            );
+          }
+
+          function fullBackupShouldIncludeStorageKeyV110(key){
+            const k=String(key||'');
+            if(!k || fullBackupIsCacheKeyV110(k))return false;
+            return (
+              /^bdoCombosLabs[.:]/i.test(k) ||
+              /^bcl/i.test(k) ||
+              /combo|skill|transition|cancel|addon|loadout|crystal|consumable|youtube|video|builder|account|setting|measure|timer|cc|class/i.test(k)
+            );
+          }
+
+          function fullBackupIsQuotaErrorV110(err){
+            return !!err && (
+              err?.name==='QuotaExceededError' ||
+              err?.name==='NS_ERROR_DOM_QUOTA_REACHED' ||
+              err?.code===22 || err?.code===1014 ||
+              /quota/i.test(String(err?.message||err))
+            );
+          }
+
+          '''
+          if 'function fullBackupIsCacheKeyV110(' not in text:
+              if anchor not in text:
+                  raise RuntimeError('Backup storage function anchor not found')
+              text = text.replace(anchor, helpers + anchor, 1)
+
+          pattern = r'function fullBackupLocalStorageV48\(\)\{.*?\n\}\n\nfunction fullBackupRuntimeV48\(\)\{'
+          match = re.search(pattern, text, re.S)
+          if not match:
+              raise RuntimeError('Backup exporter block not found')
+          exporter = r'''function fullBackupLocalStorageV48(){
+            const out={};
+            try{
+              for(let i=0;i<localStorage.length;i++){
+                const key=localStorage.key(i);
+                if(!fullBackupShouldIncludeStorageKeyV110(key))continue;
+                try{out[key]=localStorage.getItem(key);}catch(e){}
+              }
+            }catch(e){}
+            return out;
+          }
+
+          function fullBackupRuntimeV48(){'''
+          text = text[:match.start()] + exporter + text[match.end():]
+
+          start = text.find('async function importFullBackupV48(file){')
+          if start < 0:
+              raise RuntimeError('Backup importer not found')
+          brace = text.find('{', start)
+          depth = 0
+          end = None
+          for i in range(brace, len(text)):
+              if text[i] == '{': depth += 1
+              elif text[i] == '}':
+                  depth -= 1
+                  if depth == 0:
+                      end = i + 1
+                      break
+          if end is None:
+              raise RuntimeError('Backup importer closing brace not found')
+
+          importer = r'''async function importFullBackupV48(file){
+            const status=document.getElementById('fullBackupStatusV48');
+            if(!file)return;
+
+            try{
+              const raw=await file.text();
+              const backup=JSON.parse(raw);
+
+              if(
+                !backup ||
+                backup.schema!==FULL_BACKUP_SCHEMA_V48 ||
+                !backup.localStorage ||
+                typeof backup.localStorage!=='object'
+              ){
+                throw new Error('Ce fichier n’est pas une sauvegarde BDO Combos Labs compatible.');
+              }
+
+              const replace=document.getElementById('fullBackupReplaceV48')?.checked!==false;
+              let restoredKeys=0;
+              let skippedCacheKeys=0;
+              let skippedQuotaKeys=0;
+              let skippedOtherKeys=0;
+
+              if(replace){
+                const remove=[];
+                try{
+                  for(let i=0;i<localStorage.length;i++){
+                    const key=localStorage.key(i);
+                    if(key && (
+                      fullBackupShouldIncludeStorageKeyV110(key) ||
+                      fullBackupIsCacheKeyV110(key)
+                    ))remove.push(key);
+                  }
+                }catch(e){}
+                remove.forEach(key=>{try{localStorage.removeItem(key);}catch(e){}});
+              }
+
+              // The runtime contains the important datasets. Restore it independently
+              // from browser storage so a localStorage quota cannot destroy an import.
+              fullBackupRestoreRuntimeV48(backup.runtime);
+
+              // Old backups can contain multi-megabyte BDO Codex/page caches.
+              // They are disposable and are never restored.
+              for(const [key,value] of Object.entries(backup.localStorage)){
+                if(value===null||value===undefined)continue;
+                if(fullBackupIsCacheKeyV110(key)){
+                  skippedCacheKeys++;
+                  continue;
+                }
+                if(!fullBackupShouldIncludeStorageKeyV110(key)){
+                  skippedOtherKeys++;
+                  continue;
+                }
+                try{
+                  localStorage.setItem(key,String(value));
+                  restoredKeys++;
+                }catch(err){
+                  if(fullBackupIsQuotaErrorV110(err)){
+                    skippedQuotaKeys++;
+                    console.warn('Backup key skipped because localStorage quota is full',key,err);
+                    continue;
+                  }
+                  skippedOtherKeys++;
+                  console.warn('Backup key skipped',key,err);
+                }
+              }
+
+              fullBackupFlushV48();
+
+              if(backup.context?.className){
+                const cls=document.getElementById('classSelector');
+                if(cls && [...cls.options].some(o=>o.value===backup.context.className))cls.value=backup.context.className;
+              }
+              if(backup.context?.specialization){
+                const spec=document.getElementById('specSelector');
+                if(spec && [...spec.options].some(o=>o.value===backup.context.specialization))spec.value=backup.context.specialization;
+              }
+
+              try{
+                if(typeof syncActiveContextV105==='function')syncActiveContextV105(true);
+              }catch(e){}
+
+              const renderers=[
+                'renderClassStats','renderSkillsPage','renderComboPage','renderPlayerCombosPage',
+                'renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'
+              ];
+              for(const name of renderers){
+                try{if(typeof window[name]==='function')window[name]();}catch(e){}
+              }
+
+              // Send imported shared data to Supabase after a successful restore.
+              try{
+                if(typeof bclSharedPushV108==='function')setTimeout(()=>bclSharedPushV108(),250);
+              }catch(e){}
+
+              const c=fullBackupCountsV48(backup.runtime||{});
+              const skipped=skippedCacheKeys+skippedQuotaKeys+skippedOtherKeys;
+              if(status){
+                status.className='optimizer-note status-good';
+                status.textContent=`Sauvegarde restaurée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${restoredKeys} clés locales restaurées${skipped?` · ${skipped} clé(s) non essentielle(s) ignorée(s) (${skippedCacheKeys} cache, ${skippedQuotaKeys} quota)`:''}.`;
+              }
+            }catch(err){
+              console.error('Full backup import failed',err);
+              if(status){
+                status.className='optimizer-note status-bad';
+                status.textContent=`Import impossible : ${err?.message||err}`;
+              }
+            }
+          }'''
+          text = text[:start] + importer + text[end:]
+
+          text = text.replace('<title>BDO Combos Labs · V109</title>', '<title>BDO Combos Labs · V110</title>', 1)
+          text = text.replace('<span class="app-header-version">V109</span>', '<span class="app-header-version">V110</span>', 1)
+          text = text.replace("const BCL_WEB_VERSION_V109='V109';", "const BCL_WEB_VERSION_V109='V110';", 1)
+          text = text.replace('BDO Combos Labs V109: mode fichier local.', 'BDO Combos Labs V110: mode fichier local.', 1)
+
+          p.write_text(text, encoding='utf-8')
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, subprocess, sys, tempfile
+          text=Path('index.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script\b(?![^>]*\bsrc=)[^>]*>(.*?)</script>',text,re.I|re.S)
+          errors=[]
+          for i,s in enumerate(scripts,1):
+              f=Path(tempfile.gettempdir())/f'bcl_v110_{i}.js'
+              f.write_text(s,encoding='utf-8')
+              r=subprocess.run(['node','--check',str(f)],capture_output=True,text=True)
+              if r.returncode: errors.append((i,r.stderr))
+          if errors:
+              print(errors)
+              sys.exit(1)
+          print(f'{len(scripts)} inline scripts valid')
+          PY
+      - name: Commit V110 and remove one-shot workflow
+        run: |
+          rm -f .github/workflows/backup-import-v110.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html .github/workflows/backup-import-v110.yml
+          git commit -m 'Fix backup import quota and exclude BDO Codex caches'
+          git push origin main
