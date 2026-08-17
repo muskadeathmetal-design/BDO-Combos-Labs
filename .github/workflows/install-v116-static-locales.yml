@@ -1,0 +1,47 @@
+name: Install V116 static locales
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build-static-locales-v116.js'
+      - '.github/workflows/install-v116-static-locales.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-static-locales:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build static language versions
+        run: node tools/build-static-locales-v116.js
+
+      - name: Verify dynamic i18n is absent from locale pages
+        run: |
+          set -e
+          for lang in fr en de es it pt; do
+            test -f "$lang/index.html"
+            ! grep -q 'bcl-i18n-v114.js' "$lang/index.html"
+            ! grep -q 'bcl-i18n-v115-master.js' "$lang/index.html"
+            ! grep -q 'bcl-full-ui-i18n-v113.js' "$lang/index.html"
+            grep -q 'bcl-static-locale-router' "$lang/index.html"
+          done
+
+      - name: Commit generated static locales
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html fr/index.html en/index.html de/index.html es/index.html it/index.html pt/index.html
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git commit -m "Build V116 static language versions"
+          git push
