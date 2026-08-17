@@ -1,4 +1,4 @@
-V116 human residual French candidates: 204
+V116 human residual French candidates: 200
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
@@ -53,10 +53,7 @@ an intermediate transition is missing: the last known time remains displayed but
 Analyse automatique impossible : ${err?.message||err}
 Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
 application a été remise à zéro. None dataset ni mécanisme de restauration automatique n
-Augmente la priorité des compétences disposant de Forward Guard.
-Augmente la priorité des compétences disposant de Super Armor.
 Automatic search impossible : ${e?.message||String(e)}
-Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.
 Backup complète
 BDFoundry Tamer guide — Rabam
 BDFoundry Tamer guide — Succession PvE addons
@@ -167,7 +164,6 @@ Skills & améliorations
 Skills vs référentiel
 Slow transition ${transitionSeconds.toFixed(3)}s
 State du Combo Builder
-Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle source du CC Timer avec sa propre durée measured, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.
 Succession Tamer quick PvE guide
 The guide lists as the main rotation: Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Historical reference to be revalidate according to current patch.
 transition
