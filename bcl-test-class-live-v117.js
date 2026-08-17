@@ -1,121 +1,111 @@
 (()=>{'use strict';
 const CLASS='Optimizer Test Class';
-const VERSION='v119-fixture-only';
-let state=0x0BADC0DE;
+const VERSION='v120-sparse-fixture';
+let state=0x51A7C0DE;
 const rnd=()=>{state=(state*1664525+1013904223)>>>0;return state/4294967296};
 const r=(a,b,d=3)=>Number((a+rnd()*(b-a)).toFixed(d));
 const ri=(a,b)=>Math.floor(a+rnd()*(b-a+1));
 const pick=a=>a[Math.floor(rnd()*a.length)];
+const shuffle=a=>{const out=[...a];for(let i=out.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[out[i],out[j]]=[out[j],out[i]]}return out};
 
-const ccTypes=['None','Stiffness','Stun','Knockdown','Bound','Floating','Knockback'];
-const protections=['None','SA','FG','IFRAME'];
+const prefixes=['Ashen','Astral','Azure','Black','Blood','Broken','Celestial','Crimson','Dusk','Echo','Ember','Feral','Frost','Ghost','Golden','Grim','Hollow','Iron','Ivory','Jade','Lunar','Night','Obsidian','Phantom','Raven','Scarlet','Shadow','Silent','Solar','Storm','Thunder','Umbral','Violet','Void','Wild','Winter'];
+const suffixes=['Arc','Bane','Bite','Bloom','Brand','Break','Burst','Claw','Crash','Crescent','Dance','Edge','Fang','Flare','Gale','Grip','Howl','Lance','Mark','Pulse','Rift','Rush','Shard','Slash','Spiral','Step','Strike','Surge','Talon','Thorn','Torrent','Veil','Wave','Whisper'];
+const ccTypes=['Stiffness','Knockback','Stun','Knockdown','Bound','Floating'];
+const protections=['SA','FG','IFRAME'];
 const roles=['opener','bridge','damage','cc','protected','resource','finisher','mobility'];
-const inputs=['W+F','S+F','Shift+F','Shift+LMB','Shift+RMB','W+RMB','S+RMB','Q','E','F','LMB','RMB','Space','W+Space'];
-const nameA=['Astral','Crimson','Iron','Moon','Storm','Phantom','Solar','Void','Thunder','Silent'];
-const nameB=['Fang','Rush','Spiral','Break','Claw','Pulse','Bloom','Crash','Step','Lance'];
-const clusters=['catch','air','down','burst','guard','stamina','resource','mobility','cancel','finisher'];
+const inputs=['W+F','S+F','Shift+F','Shift+LMB','Shift+RMB','W+RMB','S+RMB','Q','E','F','LMB','RMB','Space','W+Space','S+Q'];
 
-const makeName=i=>`${nameA[Math.floor(i/10)]} ${nameB[i%10]}`;
-const ccPoints=t=>t==='Stiffness'||t==='Knockback'?0.7:t==='None'?0:1;
-const protectionLabel=t=>t==='SA'?'Super Armor':t==='FG'?'Forward Guard':t==='IFRAME'?'i-Frames':'';
+function uniqueNames(count){
+  const pool=[];
+  for(const a of prefixes)for(const b of suffixes)pool.push(`${a} ${b}`);
+  return shuffle(pool).slice(0,count);
+}
+const names=uniqueNames(100);
+const ccIndexes=new Set(shuffle(Array.from({length:100},(_,i)=>i)).slice(0,20));
+const pvpIndexes=new Set(shuffle(Array.from({length:100},(_,i)=>i)).slice(0,60));
+const protectionIndexes=new Set(shuffle(Array.from({length:100},(_,i)=>i)).slice(0,34));
+const specialIndexes=new Set(shuffle(Array.from({length:100},(_,i)=>i)).slice(0,28));
 
-function makeSkill(i,spec){
-  const role=roles[i%roles.length];
-  const cluster=clusters[i%clusters.length];
-  const protection=pick(protections);
-  const cc=pick(ccTypes);
-  const duration=r(.18,1.55);
-  const damage=ri(450,5600);
+function ccPoints(type){return type==='Stiffness'||type==='Knockback'?0.7:type?1:0}
+function protectionLabel(type){return type==='SA'?'Super Armor':type==='FG'?'Forward Guard':type==='IFRAME'?'i-Frames':''}
+
+function makeSkill(i){
+  const spec=i<50?'Common':'Awakening';
+  const damage=ri(500,8000);
+  const duration=r(.25,2.1);
   const hits=ri(1,12);
-  const critRate=r(0,100,1);
-  const accuracy=r(-12,20,1);
-  const staminaCost=ri(0,240);
-  const resourceDelta=ri(-90,130);
-  const cooldown=r(0,20,1);
-  const pvpFactor=r(.58,.88,3);
-  const pvpDamage=Math.round(damage*pvpFactor);
-  const name=makeName(i);
+  const hasCC=ccIndexes.has(i);
+  const cc=hasCC?pick(ccTypes):'None';
+  const ccTimer=hasCC?r(1,2.5,2):null;
+  const hasPvp=pvpIndexes.has(i);
+  const pvpDamage=hasPvp?ri(30,80):null;
+  const hasProtection=protectionIndexes.has(i);
+  const protection=hasProtection?pick(protections):'None';
   const pLabel=protectionLabel(protection);
-  const downAttack=rnd()>.48;
-  const airAttack=rnd()>.70;
-  const backAttack=rnd()>.30;
-  const downSmash=cc==='None'&&rnd()>.88;
-  const airSmash=cc==='None'&&rnd()>.94;
-  const recovery=rnd()>.72?ri(20,180):0;
-  const mobility=r(0,10,2);
-  const range=r(.8,14,1);
-  const aoe=r(1,10,2);
+  const hasSpecial=specialIndexes.has(i);
   const input=pick(inputs);
-  const start=r(0,.08);
-  const end=Math.max(.12,duration-r(0,.14));
-
+  const cooldown=r(0,24,1);
+  const staminaCost=rnd()<.58?ri(40,320):0;
+  const resourceDelta=rnd()<.55?ri(-120,160):0;
+  const accuracy=rnd()<.48?r(-15,25,1):0;
+  const critRate=rnd()<.52?r(0,100,1):0;
+  const recovery=rnd()<.18?ri(20,220):0;
+  const role=pick(roles);
+  const downAttack=hasSpecial&&rnd()<.45;
+  const airAttack=hasSpecial&&rnd()<.30;
+  const backAttack=hasSpecial&&rnd()<.55;
+  const downSmash=!hasCC&&rnd()<.06;
+  const airSmash=!hasCC&&rnd()<.03;
+  const protectionStart=hasProtection?r(0,.18):null;
+  const protectionEnd=hasProtection?Number(Math.max(.15,duration-r(0,.22)).toFixed(3)):null;
   return {
-    id:`TST-${spec==='Common'?'C':'A'}-${String(i+1).padStart(3,'0')}`,
-    name,
-    spec,category:spec,cluster,role,
+    id:`TST-${spec==='Common'?'C':'A'}-${String(i%50+1).padStart(3,'0')}`,
+    name:names[i],spec,category:spec,role,
     input,inputs:[input],
     duration,executionSeconds:duration,timingSeconds:duration,timer:duration,
-    damage,hits,dps:Number((damage/duration).toFixed(2)),
-    pveDamage:String(damage),pvpDamage:String(pvpDamage),
-    staminaCost,resourceDelta,cooldown,
-    cc,ccPoints:ccPoints(cc),
+    damage,hits,dps:Number((damage/duration).toFixed(2)),pveDamage:String(damage),
+    pvpDamage:hasPvp?String(pvpDamage):'',pvpDamagePercent:hasPvp?pvpDamage:null,
+    staminaCost,resourceDelta,cooldown,accuracy,critRate,recovery,
+    cc,ccPoints:ccPoints(cc),ccTimerSeconds:ccTimer,ccDuration:ccTimer,
     protection,protections:pLabel?[pLabel]:[],
-    protectionWindows:protection==='None'?[]:[{
-      type:protection,start,end:Number(end.toFixed(3)),
-      quality:'synthetic',confidence:r(.72,.99,2)
-    }],
-    accuracy,critRate,downAttack,airAttack,backAttack,downSmash,airSmash,
-    recovery,mobility,range,aoe,
-    enabled:true,synthetic:true,
-    referenceSource:'BDO Combos Labs deterministic optimizer stress fixture',
-    tags:[role,cluster,protection.toLowerCase(),cc.toLowerCase(),downAttack?'down-attack':'',airAttack?'air-attack':'',backAttack?'back-attack':''].filter(Boolean).filter(x=>x!=='none')
+    protectionWindows:hasProtection?[{type:protection,start:protectionStart,end:protectionEnd,quality:'synthetic',confidence:r(.7,.98,2)}]:[],
+    downAttack,airAttack,backAttack,downSmash,airSmash,
+    mobility:rnd()<.35?r(1,10,2):0,
+    range:rnd()<.50?r(.8,16,1):null,
+    aoe:rnd()<.44?r(1,10,2):null,
+    enabled:true,synthetic:true,referenceSource:'BDO Combos Labs sparse deterministic stress fixture',
+    tags:[role,hasCC?'cc':'',hasProtection?protection.toLowerCase():'',hasPvp?'pvp-profile':'',downAttack?'down-attack':'',airAttack?'air-attack':'',backAttack?'back-attack':''].filter(Boolean)
   };
 }
 
-/* Exactly 100 unique skills: 50 Common + 50 Awakening. */
-const common=Array.from({length:50},(_,i)=>makeSkill(i,'Common'));
-const awakening=Array.from({length:50},(_,i)=>makeSkill(i+50,'Awakening'));
-const allSkills=[...common,...awakening];
+const allSkills=Array.from({length:100},(_,i)=>makeSkill(i));
+const common=allSkills.slice(0,50);
+const awakening=allSkills.slice(50);
 const commonNames=new Set(common.map(s=>s.name));
 
-/* Dense deterministic graph to stress transition/cancel search without exposing optimizer logic. */
+/* Exactly 3 sparse cancel chains and 20 total transition/cancel edges. */
+const chainLengths=[8,8,7]; // edges = 7 + 7 + 6 = 20
+const transitionPool=shuffle(allSkills.map((_,i)=>i));
+let cursor=0;
+const transitionChains=chainLengths.map((length,chainIndex)=>{
+  const indexes=transitionPool.slice(cursor,cursor+length);cursor+=length;
+  return indexes.map(i=>allSkills[i]);
+});
 const transitions=[];
-for(let i=0;i<allSkills.length;i++){
-  const from=allSkills[i];
-  for(let j=0;j<allSkills.length;j++){
-    if(i===j)continue;
-    const to=allSkills[j];
-    const sameCluster=from.cluster===to.cluster;
-    const roleChain=(from.role==='opener'&&['cc','bridge'].includes(to.role))||
-      (from.role==='cc'&&['damage','finisher'].includes(to.role))||
-      (from.role==='bridge'&&['damage','protected'].includes(to.role))||
-      (from.role==='damage'&&['finisher','resource'].includes(to.role))||
-      (from.role==='mobility'&&['opener','cc'].includes(to.role));
-    if(!sameCluster&&!roleChain&&rnd()>.055)continue;
-
-    let timing=r(.035,.46);
-    if(sameCluster)timing*=.68;
-    if(roleChain)timing*=.72;
-    timing=Number(Math.max(.02,timing).toFixed(3));
-
-    const hasCancel=rnd()<(sameCluster?.72:.38);
-    const cancelAt=hasCancel?r(.02,Math.max(.03,Math.min(from.duration*.7,.45))):null;
-    const confidence=r(.70,.99,2);
-    const validated=rnd()>.18;
-
+for(let chainIndex=0;chainIndex<transitionChains.length;chainIndex++){
+  const chain=transitionChains[chainIndex];
+  for(let step=0;step<chain.length-1;step++){
+    const from=chain[step],to=chain[step+1];
+    const timing=r(.3,.8,3);
     transitions.push({
-      id:`TR-${String(i+1).padStart(3,'0')}-${String(j+1).padStart(3,'0')}`,
-      from:from.name,to:to.name,fromId:from.id,toId:to.id,
-      sequence:[from.name,to.name],
+      id:`TST-CHAIN-${chainIndex+1}-${step+1}`,
+      chainId:`synthetic-chain-${chainIndex+1}`,chainIndex,step,
+      from:from.name,to:to.name,fromId:from.id,toId:to.id,sequence:[from.name,to.name],
       timingSeconds:timing,transitionSeconds:timing,duration:timing,
-      timingAttempts:ri(2,8),timingConfidence:confidence,
-      measured:true,validated,manualValidation:validated,
-      reviewStatus:validated?'validated':'pending',needsValidation:!validated,
-      cancelAt,hasCancel:cancelAt!==null,cancelSeconds:cancelAt,
-      synergyGroup:sameCluster?from.cluster:(roleChain?`${from.role}->${to.role}`:'exploration'),
-      syntheticAffinity:Number(((sameCluster?.45:0)+(roleChain?.4:0)+r(-.12,.22)).toFixed(3)),
-      reason:sameCluster&&roleChain?'cluster+role':sameCluster?'cluster':roleChain?'role':'exploration',
-      source:'BDO Combos Labs deterministic optimizer stress fixture',sourceTag:'synthetic',
+      cancelAt:timing,hasCancel:true,cancelSeconds:timing,
+      timingAttempts:ri(2,6),timingConfidence:r(.7,.98,2),
+      measured:true,validated:rnd()>.2,manualValidation:false,reviewStatus:'synthetic',needsValidation:false,
+      source:'BDO Combos Labs sparse deterministic stress fixture',sourceTag:'synthetic',
       enabled:true,synthetic:true
     });
   }
@@ -124,41 +114,15 @@ for(let i=0;i<allSkills.length;i++){
 function install(){
   const sel=document.getElementById('classSelector');
   if(!sel)return false;
-
   if(![...sel.options].some(o=>o.value===CLASS)){
-    const o=document.createElement('option');
-    o.value=CLASS;
-    o.textContent='🧪 Optimizer Test Class (100 synthetic skills)';
-    sel.appendChild(o);
+    const o=document.createElement('option');o.value=CLASS;o.textContent='🧪 Optimizer Test Class (100 sparse synthetic skills)';sel.appendChild(o);
   }
-
-  try{
-    if(typeof CLASS_SKILLS!=='undefined'){
-      CLASS_SKILLS[CLASS]={Common:common,Shared:common,Awakening:allSkills,Succession:common};
-    }
-  }catch(e){console.error('[BCL test fixture] CLASS_SKILLS install failed',e)}
-
-  try{
-    if(typeof CLASS_TRANSITIONS!=='undefined'){
-      CLASS_TRANSITIONS[CLASS]={
-        Awakening:transitions,
-        Succession:transitions.filter(t=>commonNames.has(t.from)&&commonNames.has(t.to))
-      };
-    }
-  }catch(e){console.error('[BCL test fixture] CLASS_TRANSITIONS install failed',e)}
-
-  globalThis.BCL_TEST_CLASS_V119={
-    version:VERSION,name:CLASS,synthetic:true,
-    skills:allSkills,common,awakening,transitions,
-    counts:{
-      skills:allSkills.length,
-      common:common.length,
-      awakening:awakening.length,
-      transitions:transitions.length,
-      cancels:transitions.filter(t=>t.hasCancel).length
-    }
+  try{if(typeof CLASS_SKILLS!=='undefined')CLASS_SKILLS[CLASS]={Common:common,Shared:common,Awakening:allSkills,Succession:common}}catch(e){console.error('[BCL test fixture] CLASS_SKILLS install failed',e)}
+  try{if(typeof CLASS_TRANSITIONS!=='undefined')CLASS_TRANSITIONS[CLASS]={Awakening:transitions,Succession:transitions.filter(t=>commonNames.has(t.from)&&commonNames.has(t.to))}}catch(e){console.error('[BCL test fixture] CLASS_TRANSITIONS install failed',e)}
+  globalThis.BCL_TEST_CLASS_V120={
+    version:VERSION,name:CLASS,synthetic:true,skills:allSkills,common,awakening,transitions,transitionChains,
+    counts:{skills:allSkills.length,common:common.length,awakening:awakening.length,cc:allSkills.filter(s=>s.cc!=='None').length,pvpProfiled:allSkills.filter(s=>s.pvpDamage!=='').length,transitions:transitions.length,cancels:transitions.filter(t=>t.hasCancel).length,chains:transitionChains.length}
   };
-
   if(sel.value===CLASS){
     try{if(typeof renderClassStats==='function')renderClassStats()}catch(e){}
     try{if(typeof renderSkillsPage==='function')renderSkillsPage()}catch(e){}
@@ -168,7 +132,6 @@ function install(){
   }
   return true;
 }
-
 function boot(){install();setTimeout(install,120);setTimeout(install,500);setTimeout(install,1500)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
