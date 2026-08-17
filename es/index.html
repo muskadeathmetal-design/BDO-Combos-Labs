@@ -5999,7 +5999,7 @@ if(!BDO_DOM_READY){
           <div class="home75-detail">
             <p>Una transición representa el tiempo real necesario para pasar de la habilidad A a la habilidad B. Una cancelación te permite interrumpir una animación para continuar antes.</p>
             <ol><li>Ouvre <b>Transición / Cancel</b>.</li><li>Compruebe el par <b>A → B</b>.</li><li>Controla la duración y los fotogramas cuando están disponibles.</li><li>Valida mediciones confiables.</li><li>Corrige o elimina detecciones espurias.</li></ol>
-            <p class="home75-tip"><b>Una cancelación nunca reduce la duración del CC.</b> Reduce el tiempo de ejecución/cadena del combinación, lo que puede permitir que se coloquen más habilidades durante la misma ventana de control.</p>
+            <p class="home75-tip"><b>Una cancelación nunca reduce la duración del CC.</b> Reduce el tiempo de ejecución/encadenamiento del combinación, lo que puede permitir usar más skills durante la misma ventana de control.</p>
           </div>
         </details>
 
@@ -6025,7 +6025,7 @@ if(!BDO_DOM_READY){
           <summary><span>07</span> Establecer optimizador/compilación automática</summary>
           <div class="home75-detail">
             <p>la pagina <b>Settings</b> le permite decidir en qué medida el Constructor debe favorecer la velocidad de las transiciones, cancelaciones y conexiones conocidas.</p>
-            <ol><li>Aumenta el peso de <b>Speed</b> para favorecer las cadenas rápidas.</li><li>Aumenta el peso de <b>Cancel</b> para favorecer secuencias con una cancelación.</li><li>Active <b>Requerir transición conocida</b> preferir candidatos cuya vinculación se mida/conozca.</li><li>Retourne au Builder et compare le score des suggestions.</li></ol>
+            <ol><li>Aumenta el peso de <b>Speed</b> para favorecer las cadenas rápidas.</li><li>Aumenta el peso de <b>Cancel</b> para favorecer secuencias con una cancelación.</li><li>Active <b>Requerir transición conocida</b> preferir candidatos cuya vinculación se mida/conozca.</li><li>Vuelve al Builder y compara las puntuaciones de las sugerencias.</li></ol>
             <p class="home75-tip">La puntuación no es sólo una puntuación de daño: combina la lógica del jugador y los factores técnicos disponibles. Los datos faltantes necesariamente limitan la precisión de la optimización.</p>
           </div>
         </details>
@@ -6073,7 +6073,7 @@ if(!BDO_DOM_READY){
               <li>Clique <b>Importar copia de seguridad</b>.</li>
               <li>Seleccione el archivo <code>BDO_combos_Labs_Backup_....json</code>.</li>
               <li>Espere el mensaje de confirmación.</li>
-              <li>Retourne dans Skills, Transición / Cancel et Generador combinado pour vérifier les données restaurées.</li>
+              <li>Vuelve a Skills, Transición / Cancel y Generador combinado para verificar los datos restaurados.</li>
             </ol>
 
             <p class="home75-tip"><b>Compte local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Usado « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
@@ -6297,7 +6297,7 @@ if(!BDO_DOM_READY){
           </select>
         </div>
         <button id="autoSkillReferenceSearchBtn" type="button" class="optimizer-btn skills-auto-main-btn" onclick="autoPopulateSkillsFromReferenceV13()">
-          Buscar auto des compétences
+          Búsqueda automática des compétences
         </button>
       </div>
 
@@ -9791,7 +9791,7 @@ function saveAutoBuildSettings(){
     localStorage.setItem('bdoCombosLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Réglages enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' ajustes.';
+  if(status) status.textContent = 'Ajustes guardados. Optimizer utilizará los ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' ajustes.';
   syncSettingsClassContext();
 }
 
@@ -15176,7 +15176,7 @@ function autoSkillReferenceToSkillV13(ref,cls,spec){
     ownerSpec:spec,
     referenceSpec:ref?.spec || 'Shared',
     fuente:ref?.referenceSource || 'Dictionnaire de référence',
-    importedBy:'Recherche auto dictionnaire V13',
+    importedBy:'Búsqueda automática dictionnaire V13',
     referenceImported:true
   };
 }
@@ -15275,7 +15275,7 @@ function autoPopulateSkillsFromReferenceV13(){
     );
   }catch(e){
     if(typeof bdoDebugError==='function') bdoDebugError('Auto skill dictionary import failed',e);
-    setStatus(`Buscar auto impossible : ${e?.message||String(e)}`,'bad');
+    setStatus(`Búsqueda automática impossible : ${e?.message||String(e)}`,'bad');
   }finally{
     if(btn)btn.disabled=false;
   }
@@ -18881,7 +18881,7 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   if(remainingAtLand<0) return {score:-7,reason:`CC arriverait ${Math.abs(remainingAtLand).toFixed(2)}s trop tard`};
   if(remainingAtLand<=0.25) return {score:5.5,reason:`Re-CC optimal · ${remainingAtLand.toFixed(2)}s restantes`};
   if(remainingAtLand<=0.55) return {score:4,reason:`Bon timing CC · ${remainingAtLand.toFixed(2)}s restantes`};
-  if(remainingAtLand<=0.90) return {score:2,reason:`CC sûr · ${remainingAtLand.toFixed(2)}s restantes`};
+  if(remainingAtLand<=0.90) return {score:2,reason:`CC seguro · quedan ${remainingAtLand.toFixed(2)}s`};
   return {score:-2.5,reason:`CC demasiado pronto · ${remainingAtLand.toFixed(2)} aún están disponibles`};
 }
 
@@ -22458,7 +22458,7 @@ function addAutoDetectedSkillsV43(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
   try{if(typeof renderYouTubeAnalyzer==='function')renderYouTubeAnalyzer();}catch(e){}
 
-  if(status)status.textContent=`Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).`;
+  if(status)status.textContent=`Skills detectadas: ${added} añadidas · ${already} ya presentes · ${unresolved} sin resolver.`;
 }
 
 
@@ -22865,7 +22865,7 @@ function renderHomeDashboardV18(){
   const recs=[];
   if(!cls) recs.push(['Elige una clase','El contexto impulsa todo el proyecto.','classPage','Class']);
   else{
-    if(refs.length && skills.length<refs.length*.8) recs.push(['Completa las habilidades',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Recherche auto']);
+    if(refs.length && skills.length<refs.length*.8) recs.push(['Completa las habilidades',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Búsqueda automática']);
     if(skills.length && completeness<70) recs.push(['Enriquecer metadatos',`Completitud actuelle : ${completeness}%`,'skillsPage','Inspecter']);
     if(!combos.length) recs.push(['Crear un primer combo','Aucun combinación enregistré pour ce contexte','builderPage','Builder']);
     if(!transitions.length) recs.push(['Añadir transiciones','Aucun cancel/transición validé','transitionPage','Transitions']);
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

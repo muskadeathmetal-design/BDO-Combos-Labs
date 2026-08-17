@@ -5999,7 +5999,7 @@ if(!BDO_DOM_READY){
           <div class="home75-detail">
             <p>Ein Übergang stellt die tatsächliche Zeit dar, die erforderlich ist, um von Fertigkeit A zu Fertigkeit B zu gelangen. Durch einen Abbruch können Sie eine Animation unterbrechen, um früher fortzufahren.</p>
             <ol><li>Ouvre <b>Transition / Cancel</b>.</li><li>Vérifie le couple <b>A → B</b>.</li><li>Steuert Dauer und Frames, sofern verfügbar.</li><li>Valide les mesures fiables.</li><li>Corrige ou supprime les détections parasites.</li></ol>
-            <p class="home75-tip"><b>Un cancel ne réduit jamais la durée du CC.</b> Es reduziert die Ausführungs-/Kettenzeit von Combos, wodurch mehr Fertigkeiten im selben Kontrollfenster platziert werden können.</p>
+            <p class="home75-tip"><b>Un cancel ne réduit jamais la durée du CC.</b> Es reduziert die Ausführungs-/Verkettungszeit der Combo und kann dadurch mehr Skills im selben Kontrollfenster ermöglichen.</p>
           </div>
         </details>
 
@@ -6025,7 +6025,7 @@ if(!BDO_DOM_READY){
           <summary><span>07</span> Régler l’optimiseur / Auto-Build</summary>
           <div class="home75-detail">
             <p>La page <b>Settings</b> ermöglicht Ihnen zu entscheiden, inwieweit der Builder die Geschwindigkeit von Übergängen, Abbrüchen und bekannten Verbindungen bevorzugen soll.</p>
-            <ol><li>Augmente le poids de <b>Speed</b> pour privilégier les chaînes rapides.</li><li>Augmente le poids de <b>Cancel</b> um Sequenzen mit einem Abbruch zu bevorzugen.</li><li>Active <b>Require known transition</b> Kandidaten zu bevorzugen, deren Bindung gemessen/bekannt ist.</li><li>Retourne au Builder et compare le score des suggestions.</li></ol>
+            <ol><li>Augmente le poids de <b>Speed</b> pour privilégier les chaînes rapides.</li><li>Augmente le poids de <b>Cancel</b> um Sequenzen mit einem Abbruch zu bevorzugen.</li><li>Active <b>Require known transition</b> Kandidaten zu bevorzugen, deren Bindung gemessen/bekannt ist.</li><li>Kehre zum Builder zurück und vergleiche die Vorschlagswerte.</li></ol>
             <p class="home75-tip">Der Punktestand ist nicht nur ein Schadenswert: Er kombiniert Spielerlogik und verfügbare technische Faktoren. Fehlende Daten schränken zwangsläufig die Präzision der Optimierung ein.</p>
           </div>
         </details>
@@ -6073,7 +6073,7 @@ if(!BDO_DOM_READY){
               <li>Clique <b>Backup importieren</b>.</li>
               <li>Sélectionne le fichier <code>BDO_Combos_Labs_Backup_....json</code>.</li>
               <li>Attends le message de confirmation.</li>
-              <li>Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.</li>
+              <li>Kehre zu Skills, Transition / Cancel und Combo Builder zurück, um die wiederhergestellten Daten zu prüfen.</li>
             </ol>
 
             <p class="home75-tip"><b>Compte local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Utilise « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
@@ -6297,7 +6297,7 @@ if(!BDO_DOM_READY){
           </select>
         </div>
         <button id="autoSkillReferenceSearchBtn" type="button" class="optimizer-btn skills-auto-main-btn" onclick="autoPopulateSkillsFromReferenceV13()">
-          Suche auto des compétences
+          Automatische Suche des compétences
         </button>
       </div>
 
@@ -9791,7 +9791,7 @@ function saveAutoBuildSettings(){
     localStorage.setItem('bdoCombosLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Réglages enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' paramètres.';
+  if(status) status.textContent = 'Einstellungen gespeichert. Optimizer verwendet die ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' paramètres.';
   syncSettingsClassContext();
 }
 
@@ -15176,7 +15176,7 @@ function autoSkillReferenceToSkillV13(ref,cls,spec){
     ownerSpec:spec,
     referenceSpec:ref?.spec || 'Shared',
     source:ref?.referenceSource || 'Dictionnaire de référence',
-    importedBy:'Recherche auto dictionnaire V13',
+    importedBy:'Automatische Suche dictionnaire V13',
     referenceImported:true
   };
 }
@@ -15275,7 +15275,7 @@ function autoPopulateSkillsFromReferenceV13(){
     );
   }catch(e){
     if(typeof bdoDebugError==='function') bdoDebugError('Auto skill dictionary import failed',e);
-    setStatus(`Suche auto impossible : ${e?.message||String(e)}`,'bad');
+    setStatus(`Automatische Suche impossible : ${e?.message||String(e)}`,'bad');
   }finally{
     if(btn)btn.disabled=false;
   }
@@ -18881,7 +18881,7 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   if(remainingAtLand<0) return {score:-7,reason:`CC arriverait ${Math.abs(remainingAtLand).toFixed(2)}s trop tard`};
   if(remainingAtLand<=0.25) return {score:5.5,reason:`Re-CC optimal · ${remainingAtLand.toFixed(2)}s restantes`};
   if(remainingAtLand<=0.55) return {score:4,reason:`Bon timing CC · ${remainingAtLand.toFixed(2)}s restantes`};
-  if(remainingAtLand<=0.90) return {score:2,reason:`CC sûr · ${remainingAtLand.toFixed(2)}s restantes`};
+  if(remainingAtLand<=0.90) return {score:2,reason:`Sicherer CC · ${remainingAtLand.toFixed(2)}s verbleibend`};
   return {score:-2.5,reason:`CC zu früh · ${remainingAtLand.toFixed(2)}s noch verfügbar`};
 }
 
@@ -22458,7 +22458,7 @@ function addAutoDetectedSkillsV43(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
   try{if(typeof renderYouTubeAnalyzer==='function')renderYouTubeAnalyzer();}catch(e){}
 
-  if(status)status.textContent=`Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).`;
+  if(status)status.textContent=`Skills erkannt: ${added} hinzugefügt · ${already} bereits vorhanden · ${unresolved} ungelöst.`;
 }
 
 
@@ -22865,7 +22865,7 @@ function renderHomeDashboardV18(){
   const recs=[];
   if(!cls) recs.push(['Choisir une classe','Le contexte pilote tout le projet','classPage','Class']);
   else{
-    if(refs.length && skills.length<refs.length*.8) recs.push(['Compléter les Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Recherche auto']);
+    if(refs.length && skills.length<refs.length*.8) recs.push(['Compléter les Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Automatische Suche']);
     if(skills.length && completeness<70) recs.push(['Enrichir les métadonnées',`Vollständigkeit actuelle : ${completeness}%`,'skillsPage','Inspecter']);
     if(!combos.length) recs.push(['Erste Combo erstellen','Aucun combo enregistré pour ce contexte','builderPage','Builder']);
     if(!transitions.length) recs.push(['Übergänge hinzufügen','Aucun cancel/transition validé','transitionPage','Transitions']);
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

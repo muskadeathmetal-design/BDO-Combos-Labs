@@ -9791,7 +9791,7 @@ function saveAutoBuildSettings(){
     localStorage.setItem('bdoCombosLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Réglages enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' settings.';
+  if(status) status.textContent = 'Settings saved. Optimizer will use the ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' settings.';
   syncSettingsClassContext();
 }
 
@@ -15176,7 +15176,7 @@ function autoSkillReferenceToSkillV13(ref,cls,spec){
     ownerSpec:spec,
     referenceSpec:ref?.spec || 'Shared',
     source:ref?.referenceSource || 'Dictionnaire de référence',
-    importedBy:'Recherche auto dictionnaire V13',
+    importedBy:'Automatic search dictionnaire V13',
     referenceImported:true
   };
 }
@@ -15275,7 +15275,7 @@ function autoPopulateSkillsFromReferenceV13(){
     );
   }catch(e){
     if(typeof bdoDebugError==='function') bdoDebugError('Auto skill dictionary import failed',e);
-    setStatus(`Search auto impossible : ${e?.message||String(e)}`,'bad');
+    setStatus(`Automatic search impossible : ${e?.message||String(e)}`,'bad');
   }finally{
     if(btn)btn.disabled=false;
   }
@@ -18881,7 +18881,7 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   if(remainingAtLand<0) return {score:-7,reason:`CC arriverait ${Math.abs(remainingAtLand).toFixed(2)}s trop tard`};
   if(remainingAtLand<=0.25) return {score:5.5,reason:`Re-CC optimal · ${remainingAtLand.toFixed(2)}s restantes`};
   if(remainingAtLand<=0.55) return {score:4,reason:`Bon timing CC · ${remainingAtLand.toFixed(2)}s restantes`};
-  if(remainingAtLand<=0.90) return {score:2,reason:`CC sûr · ${remainingAtLand.toFixed(2)}s restantes`};
+  if(remainingAtLand<=0.90) return {score:2,reason:`Safe CC · ${remainingAtLand.toFixed(2)}s remaining`};
   return {score:-2.5,reason:`CC too early · ${remainingAtLand.toFixed(2)}s still available`};
 }
 
@@ -22458,7 +22458,7 @@ function addAutoDetectedSkillsV43(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
   try{if(typeof renderYouTubeAnalyzer==='function')renderYouTubeAnalyzer();}catch(e){}
 
-  if(status)status.textContent=`Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).`;
+  if(status)status.textContent=`Skills detected: ${added} added · ${already} already present · ${unresolved} unresolved.`;
 }
 
 
@@ -22865,7 +22865,7 @@ function renderHomeDashboardV18(){
   const recs=[];
   if(!cls) recs.push(['Choose a class','The context drives the entire project','classPage','Class']);
   else{
-    if(refs.length && skills.length<refs.length*.8) recs.push(['Complete the Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Recherche auto']);
+    if(refs.length && skills.length<refs.length*.8) recs.push(['Complete the Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Automatic search']);
     if(skills.length && completeness<70) recs.push(['Enrich metadata',`Completeness actuelle : ${completeness}%`,'skillsPage','Inspecter']);
     if(!combos.length) recs.push(['Create a first combo','No combo saved for this context','builderPage','Builder']);
     if(!transitions.length) recs.push(['Add transitions','No validated cancel/transition','transitionPage','Transitions']);
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
