@@ -1,49 +1,5 @@
 [
   {
-    "fr": ", laisse cochée",
-    "en": ", leaves checked",
-    "de": ", laisse cochée",
-    "es": ", hojas marcadas",
-    "it": ", laisse cochée",
-    "pt": ", folhas verificadas",
-    "indexes": [
-      332
-    ]
-  },
-  {
-    "fr": ", puis ajoute un marqueur. Le cancel sera associé à la transition vers la compétence suivante.",
-    "en": ", then adds a marker. The cancellation will be associated with the transition to the next skill.",
-    "de": ", fügt dann eine Markierung hinzu. Die Stornierung wird mit dem Übergang zur nächsten Fähigkeit verbunden sein.",
-    "es": "y luego agrega un marcador. La cancelación estará asociada con la transición a la siguiente habilidad.",
-    "it": ", quindi aggiunge un marcatore. L'annullamento sarà associato al passaggio alla competenza successiva.",
-    "pt": "e adiciona um marcador. O cancelamento estará associado à transição para a próxima habilidade.",
-    "indexes": [
-      595
-    ]
-  },
-  {
-    "fr": ". L’outil calcule la séquence, la durée totale, les temps entre compétences et les points de cancel.",
-    "en": ". The tool calculates the sequence, total duration, time between skills and cancel points.",
-    "de": ". Das Tool berechnet die Sequenz, Gesamtdauer, Zeiten zwischen Skills und Cancel-Punkte.",
-    "es": ". La herramienta calcula la secuencia, la duración total, los tiempos entre skills y los puntos de cancel.",
-    "it": ". Lo strumento calcola la sequenza, la durata totale, i tempi tra le skill e i punti di cancel.",
-    "pt": ". A ferramenta calcula a sequência, a duração total, os tempos entre skills e os pontos de cancel.",
-    "indexes": [
-      600
-    ]
-  },
-  {
-    "fr": ". Le combo est ajouté à",
-    "en": ". The combo is added to",
-    "de": ". Die Combo wird hinzugefügt zu",
-    "es": ". Le combinación est ajouté à",
-    "it": ". La combo viene aggiunta a",
-    "pt": ". Le combinação est ajouté à",
-    "indexes": [
-      605
-    ]
-  },
-  {
     "fr": ". Le lecteur local est la source de temps utilisée pour tous les marqueurs.",
     "en": ". The local player is the time source used for all markers.",
     "de": ". Der lokale Player ist die Zeitquelle für alle Marker.",
@@ -77,6 +33,17 @@
     ]
   },
   {
+    "fr": "← Retour au profil",
+    "en": "← Back to profile",
+    "de": "← Zurück au profil",
+    "es": "← Volver au profil",
+    "it": "← Indietro au profil",
+    "pt": "← Voltar au profil",
+    "indexes": [
+      966
+    ]
+  },
+  {
     "fr": "↩ Début",
     "en": "↩ Beginning",
     "de": "↩ Début",
@@ -85,17 +52,6 @@
     "pt": "↩ Começo",
     "indexes": [
       625
-    ]
-  },
-  {
-    "fr": "+ Ajouter",
-    "en": "+ Add",
-    "de": "+ Hinzufügen",
-    "es": "+ Añadir",
-    "it": "+ Aggiungi",
-    "pt": "+ Adicionar",
-    "indexes": [
-      501
     ]
   },
   {
@@ -111,28 +67,6 @@
     ]
   },
   {
-    "fr": "0 activés",
-    "en": "0 actives",
-    "de": "0 activés",
-    "es": "0 activés",
-    "it": "0 activés",
-    "pt": "0 activés",
-    "indexes": [
-      45
-    ]
-  },
-  {
-    "fr": "0 build enregistré",
-    "en": "0 saved builds",
-    "de": "0 build enregistré",
-    "es": "0 build enregistré",
-    "it": "0 build enregistré",
-    "pt": "0 build enregistré",
-    "indexes": [
-      93
-    ]
-  },
-  {
     "fr": "8 · Sauvegarde",
     "en": "8 · Backup",
     "de": "8 · Sauvegarde",
@@ -141,28 +75,6 @@
     "pt": "8 · Sauvegarde",
     "indexes": [
       159
-    ]
-  },
-  {
-    "fr": "À la fin",
-    "en": "At the end",
-    "de": "À la fin",
-    "es": "al final",
-    "it": "À la fin",
-    "pt": "No final",
-    "indexes": [
-      362
-    ]
-  },
-  {
-    "fr": "Actualise une mesure précédemment détectée si elle est mauvaise.",
-    "en": "Updates a previously detected measurement if it is bad.",
-    "de": "Aktualisiert eine zuvor erkannte Messung, wenn sie fehlerhaft ist.",
-    "es": "Actualiza una medición detectada previamente si es mala.",
-    "it": "Aggiorna una misurazione rilevata in precedenza se è errata.",
-    "pt": "Atualiza uma medição detectada anteriormente se ela estiver incorreta.",
-    "indexes": [
-      212
     ]
   },
   {
@@ -188,17 +100,6 @@
     ]
   },
   {
-    "fr": "Ajout, renommage et suppression synchronisent désormais aussi l’historique des builds enregistrés.",
-    "en": "Adding, renaming, and deleting now also syncs saved build history.",
-    "de": "Durch Hinzufügen, Umbenennen und Löschen wird nun auch der gespeicherte Build-Verlauf synchronisiert.",
-    "es": "Agregue, cambie el nombre y elimine ahora y también sincronice el historial de compilación guardado.",
-    "it": "Aggiungi, rinomina ed elimina ora sincronizza anche la cronologia delle build salvate.",
-    "pt": "Adicione, renomeie e exclua agora e também sincronize o histórico de construção salvo.",
-    "indexes": [
-      142
-    ]
-  },
-  {
     "fr": "Ajoute le marqueur",
     "en": "Add the marker",
     "de": "Ajoute le marqueur",
@@ -207,28 +108,6 @@
     "pt": "Adicione o marcador",
     "indexes": [
       585
-    ]
-  },
-  {
-    "fr": "Ajoute les skills détectés à la liste lorsque la correspondance est correcte.",
-    "en": "Adds detected skills to the list when the match is correct.",
-    "de": "Füge erkannte Skills zur Liste hinzu, wenn die Zuordnung korrekt ist.",
-    "es": "Agrega habilidades detectadas a la lista cuando la coincidencia es correcta.",
-    "it": "Aggiungi le skill rilevate alla lista quando la corrispondenza è corretta.",
-    "pt": "Adiciona habilidades detectadas à lista quando a correspondência está correta.",
-    "indexes": [
-      204
-    ]
-  },
-  {
-    "fr": "Ajoute une suggestion ou une compétence manuellement : la liste est immédiatement recalculée à partir du nouveau dernier skill.",
-    "en": "Add a suggestion or skill manually: the list is immediately recalculated from the new last skill.",
-    "de": "Fügen Sie manuell einen Vorschlag oder eine Fertigkeit hinzu: Die Liste wird sofort ab der neuen letzten Fertigkeit neu berechnet.",
-    "es": "Agregar una sugerencia o habilidad manualmente: la lista se recalcula inmediatamente a partir de la última habilidad nueva.",
-    "it": "Aggiungi un suggerimento o una competenza manualmente: la lista viene immediatamente ricalcolata a partire dalla nuova ultima competenza.",
-    "pt": "Adicione uma sugestão ou habilidade manualmente: a lista é imediatamente recalculada a partir da última habilidade.",
-    "indexes": [
-      244
     ]
   },
   {
@@ -255,58 +134,14 @@
     ]
   },
   {
-    "fr": "Analyse assistée automatique",
-    "en": "Automatic assisted analysis",
-    "de": "Analyse assistée automatique",
-    "es": "Análisis asistido automático",
-    "it": "Analyse assistée automatique",
-    "pt": "Análise assistida automática",
+    "fr": "Analyse le combo",
+    "en": "Analyze the combo",
+    "de": "Analyse le combo",
+    "es": "analiza el combinación",
+    "it": "Analyse le combo",
+    "pt": "Analise a combinação",
     "indexes": [
-      650
-    ]
-  },
-  {
-    "fr": "Analyse depuis une position choisie, détection de skills, transitions/cancels et durées CC validables directement sur un skill.",
-    "en": "Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.",
-    "de": "Analyse von einer ausgewählten Position aus, Erkennung von Fertigkeiten, Übergängen/Abbrüchen und CC-Dauern, validiert direkt an einer Fertigkeit.",
-    "es": "Análisis desde una posición elegida, detección de habilidades, transiciones/cancelas y duraciones de CC validadas directamente en una habilidad.",
-    "it": "Analisi da una posizione prescelta, rilevamento di skill, transizioni/cancellazioni e durate CC validate direttamente su una skill.",
-    "pt": "Análise a partir de uma posição escolhida, detecção de habilidades, transições/cancelamentos e durações de CC validadas diretamente em uma habilidade.",
-    "indexes": [
-      138
-    ]
-  },
-  {
-    "fr": "Analyse une zone courte du combo pour obtenir des timings précis. Maximum recommandé : 30 à 60 secondes.",
-    "en": "Analyzes a short area of ​​the combo to obtain precise timings. Maximum recommended: 30 to 60 seconds.",
-    "de": "Analysiert einen kurzen Bereich der Combo, um genaue Timings zu erhalten. Maximal empfohlen: 30 bis 60 Sekunden.",
-    "es": "Analiza una zona corta del combinación para obtener tiempos precisos. Máximo recomendado: 30 a 60 segundos.",
-    "it": "Analizza una breve area della combo per ottenere tempi precisi. Massimo consigliato: da 30 a 60 secondi.",
-    "pt": "Analisa uma pequena área do combinação para obter tempos precisos. Máximo recomendado: 30 a 60 segundos.",
-    "indexes": [
-      673
-    ]
-  },
-  {
-    "fr": "Appliquer au skill sélectionné",
-    "en": "Apply to selected skill",
-    "de": "Appliquer au skill sélectionné",
-    "es": "Aplicar a la habilidad seleccionada",
-    "it": "Appliquer au skill sélectionné",
-    "pt": "Aplicar à habilidade selecionada",
-    "indexes": [
-      679
-    ]
-  },
-  {
-    "fr": "Après avoir corrigé ou ajouté plusieurs compétences.",
-    "en": "After correcting or adding several skills.",
-    "de": "Nach dem Korrigieren oder Hinzufügen mehrerer Fähigkeiten.",
-    "es": "Después de corregir o agregar varias habilidades.",
-    "it": "Dopo aver corretto o aggiunto diverse abilità.",
-    "pt": "Depois de corrigir ou adicionar várias habilidades.",
-    "indexes": [
-      321
+      597
     ]
   },
   {
@@ -318,17 +153,6 @@
     "pt": "Depois de medir durações DC significativas.",
     "indexes": [
       322
-    ]
-  },
-  {
-    "fr": "Après avoir validé beaucoup de transitions/cancels.",
-    "en": "After having validated many transitions/cancels.",
-    "de": "Nachdem viele Übergänge/Abbrüche validiert wurden.",
-    "es": "Después de haber validado muchas transiciones/cancelas.",
-    "it": "Dopo aver convalidato molte transizioni/annullamenti.",
-    "pt": "Depois de validar muitas transições/cancelamentos.",
-    "indexes": [
-      323
     ]
   },
   {
@@ -365,17 +189,6 @@
     ]
   },
   {
-    "fr": "Aucun build enregistré pour le moment.",
-    "en": "No build saved yet.",
-    "de": "Keine build enregistré pour le moment.",
-    "es": "Ninguno build enregistré pour le moment.",
-    "it": "Nessuno build enregistré pour le moment.",
-    "pt": "Nenhum build enregistré pour le moment.",
-    "indexes": [
-      102
-    ]
-  },
-  {
     "fr": "Aucun rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.",
     "en": "No report is sent automatically: the file or text must be sent to the developer.",
     "de": "Keine rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.",
@@ -384,33 +197,6 @@
     "pt": "Nenhum rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.",
     "indexes": [
       995
-    ]
-  },
-  {
-    "fr": "Aucun set de cristaux appliqué.",
-    "en": "No crystal set applied.",
-    "de": "Keine set de cristaux appliqué.",
-    "es": "Ninguno set de cristaux appliqué.",
-    "it": "Nessuno set de cristaux appliqué.",
-    "pt": "Nenhum set de cristaux appliqué.",
-    "indexes": [
-      513
-    ]
-  },
-  {
-    "fr": "Aucune classe sélectionnée",
-    "en": "No class selected",
-    "de": "Keine classe sélectionnée",
-    "es": "Ninguna clase sélectionnée",
-    "it": "Nessuna classe sélectionnée",
-    "pt": "Nenhuma aula sélectionnée",
-    "indexes": [
-      41,
-      419,
-      436,
-      466,
-      470,
-      695
     ]
   },
   {
@@ -433,50 +219,6 @@
     "pt": "Nenhuma vidéo chargée.",
     "indexes": [
       619
-    ]
-  },
-  {
-    "fr": "Augmente la priorité des compétences disposant d’une I-frame.",
-    "en": "Increases the priority of skills with an I-frame.",
-    "de": "Erhöht die Priorität von Fertigkeiten mit einem I-Frame.",
-    "es": "Aumenta la prioridad de las habilidades con un I-frame.",
-    "it": "Aumenta la priorità delle abilità con un I-frame.",
-    "pt": "Aumenta a prioridade das habilidades com um I-frame.",
-    "indexes": [
-      803
-    ]
-  },
-  {
-    "fr": "Augmente la priorité des compétences disposant de Forward Guard.",
-    "en": "Increase the priority of skills with Forward Guard.",
-    "de": "Erhöhe die Priorität von Skills mit Forward Guard.",
-    "es": "Aumenta la prioridad de las skills con Forward Guard.",
-    "it": "Aumenta la priorità delle skill con Forward Guard.",
-    "pt": "Aumenta a prioridade das skills com Forward Guard.",
-    "indexes": [
-      798
-    ]
-  },
-  {
-    "fr": "Augmente la priorité des compétences disposant de Super Armor.",
-    "en": "Increase the priority of skills with Super Armor.",
-    "de": "Erhöhe die Priorität von Skills mit Super Armor.",
-    "es": "Aumenta la prioridad de las skills con Super Armor.",
-    "it": "Aumenta la priorità delle skill con Super Armor.",
-    "pt": "Aumenta a prioridade das skills com Super Armor.",
-    "indexes": [
-      793
-    ]
-  },
-  {
-    "fr": "Autorise l’optimiseur à proposer un changement de stance.",
-    "en": "Allows the optimizer to suggest a stance change.",
-    "de": "Ermöglicht dem Optimierer, eine Haltungsänderung vorzuschlagen.",
-    "es": "Permite que el optimizador sugiera un cambio de postura.",
-    "it": "Consente all'ottimizzatore di suggerire un cambio di posizione.",
-    "pt": "Permite que o otimizador sugira uma mudança de postura.",
-    "indexes": [
-      903
     ]
   },
   {
@@ -524,14 +266,14 @@
     ]
   },
   {
-    "fr": "Avant de changer de navigateur, de machine, de fichier HTML ou de version de l’application.",
-    "en": "Before changing browser, machine, HTML file or application version.",
-    "de": "Bevor Sie den Browser, den Computer, die HTML-Datei oder die Anwendungsversion ändern.",
-    "es": "Antes de cambiar el navegador, la máquina, el archivo HTML o la versión de la aplicación.",
-    "it": "Prima di cambiare browser, macchina, file HTML o versione dell'applicazione.",
-    "pt": "Antes de alterar a versão do navegador, da máquina, do arquivo HTML ou da aplicação.",
+    "fr": "Avant de construire",
+    "en": "Before building",
+    "de": "Avant de construire",
+    "es": "antes de construir",
+    "it": "Avant de construire",
+    "pt": "Antes de construir",
     "indexes": [
-      324
+      353
     ]
   },
   {
@@ -568,17 +310,6 @@
     ]
   },
   {
-    "fr": "Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.",
-    "en": "With Stiffness at 0.7, three applications may be required to cross the limit; with CC at 1.0, two are enough.",
-    "de": "Bei einem Wert von Stiffness von 0,7 sind daher möglicherweise drei Anwendungen erforderlich, um den Grenzwert zu überschreiten; Bei einem CC von 1,0 reichen zwei aus.",
-    "es": "Con Stiffness en 0,7, pueden ser necesarias tres aplicaciones para cruzar el límite; con CC en 1,0, dos son suficientes.",
-    "it": "Con Stiffness a 0,7 potrebbero quindi essere necessarie tre applicazioni per superare il limite; con CC a 1.0, ne bastano due.",
-    "pt": "Com Stiffness em 0,7, podem ser necessárias três aplicações para ultrapassar o limite; com CC em 1,0, dois são suficientes.",
-    "indexes": [
-      270
-    ]
-  },
-  {
     "fr": "Avec données combat",
     "en": "With combat data",
     "de": "Avec données combat",
@@ -590,6 +321,17 @@
     ]
   },
   {
+    "fr": "Avec protection",
+    "en": "With protection",
+    "de": "Avec protection",
+    "es": "Con proteccion",
+    "it": "Avec protection",
+    "pt": "Com proteção",
+    "indexes": [
+      452
+    ]
+  },
+  {
     "fr": "avec sa durée mesurée.",
     "en": "with its measured duration.",
     "de": "avec sa durée gemessen.",
@@ -598,28 +340,6 @@
     "pt": "com sua duração medida.",
     "indexes": [
       263
-    ]
-  },
-  {
-    "fr": "Awakening / Mixte / Pré-Awakening",
-    "en": "Awakening / Mixed / Pre-Awakening",
-    "de": "Awakening / Gemischt / Pré-Awakening",
-    "es": "Awakening / Mixto / Pré-Awakening",
-    "it": "Awakening / Misto / Pré-Awakening",
-    "pt": "Awakening / Misto / Pré-Awakening",
-    "indexes": [
-      174
-    ]
-  },
-  {
-    "fr": "Base de données des compétences, objets et données du jeu",
-    "en": "Database of skills, items and game data",
-    "de": "Datenbank mit Fertigkeiten, Gegenständen und Spieldaten",
-    "es": "Base de datos de habilidades, elementos y datos del juego.",
-    "it": "Database di abilità, oggetti e dati di gioco",
-    "pt": "Banco de dados de habilidades, itens e dados do jogo",
-    "indexes": [
-      114
     ]
   },
   {
@@ -645,61 +365,6 @@
     ]
   },
   {
-    "fr": "CC Timer et immunité utilisent la même chronologie start-to-start, sans double comptage de la durée des skills.",
-    "en": "CC Timer and immunity use the same start-to-start timeline, without double counting of skill durations.",
-    "de": "CC-Timer und Immunität verwenden die gleiche Start-zu-Start-Zeitleiste, ohne dass die Fertigkeitsdauer doppelt gezählt wird.",
-    "es": "El temporizador CC y la inmunidad utilizan la misma línea de tiempo de inicio a inicio, sin contar dos veces la duración de las habilidades.",
-    "it": "Il timer CC e l'immunità utilizzano la stessa sequenza temporale dall'inizio alla fine, senza contare due volte la durata delle abilità.",
-    "pt": "CC Timer e imunidade usam o mesmo cronograma de início a início, sem contagem dupla da duração das habilidades.",
-    "indexes": [
-      134
-    ]
-  },
-  {
-    "fr": "CC Timer, CHAIN et statistiques contrôlés",
-    "en": "CC Timer, CHAIN ​​and statistics controlled",
-    "de": "CC Timer, CHAIN et statistiques contrôlés",
-    "es": "Temporizador CC, CADENA y estadísticas controladas.",
-    "it": "CC Timer, CHAIN et statistiques contrôlés",
-    "pt": "CC Timer, CHAIN et statistiques contrôlés",
-    "indexes": [
-      360
-    ]
-  },
-  {
-    "fr": "Ce compte est enregistré uniquement dans ce navigateur. Pour transférer tes données sur un autre PC, utilise aussi",
-    "en": "This account is saved only in this browser. To transfer your data to another PC, also use",
-    "de": "Dieses Konto wird nur in diesem Browser gespeichert. Um Ihre Daten auf einen anderen PC zu übertragen, nutzen Sie ebenfalls",
-    "es": "Esta cuenta se guarda sólo en este navegador. Para transferir sus datos a otra PC, utilice también",
-    "it": "Questo account viene salvato solo in questo browser. Per trasferire i tuoi dati su un altro PC, usa anche",
-    "pt": "Esta conta é salva apenas neste navegador. Para transferir seus dados para outro PC, use também",
-    "indexes": [
-      957
-    ]
-  },
-  {
-    "fr": "Ce lecteur utilise directement un fichier vidéo local et permet une navigation frame par frame fiable.",
-    "en": "This player directly uses a local video file and provides reliable frame-by-frame navigation.",
-    "de": "Dieser Player verwendet direkt eine lokale Videodatei und bietet eine zuverlässige Bild-für-Bild-Navigation.",
-    "es": "Este reproductor utiliza directamente un archivo de vídeo local y proporciona una navegación fiable cuadro por cuadro.",
-    "it": "Questo lettore utilizza direttamente un file video locale e fornisce una navigazione affidabile fotogramma per fotogramma.",
-    "pt": "Este player usa diretamente um arquivo de vídeo local e fornece navegação confiável quadro a quadro.",
-    "indexes": [
-      613
-    ]
-  },
-  {
-    "fr": "Ce que l’application prend maintenant en compte",
-    "en": "What the application now takes into account",
-    "de": "Was die Anwendung nun berücksichtigt",
-    "es": "Qué tiene en cuenta ahora la aplicación",
-    "it": "Ciò di cui ora tiene conto l'applicazione",
-    "pt": "O que o aplicativo agora leva em consideração",
-    "indexes": [
-      131
-    ]
-  },
-  {
     "fr": "Ce que la sauvegarde complète contient",
     "en": "What the full backup contains",
     "de": "Ce que la sauvegarde complète contient",
@@ -708,6 +373,19 @@
     "pt": "Ce que la sauvegarde complète contient",
     "indexes": [
       308
+    ]
+  },
+  {
+    "fr": "Changer le mot de passe",
+    "en": "Change password",
+    "de": "Changer le mot de passe",
+    "es": "Cambiar la contraseña",
+    "it": "Changer le mot de passe",
+    "pt": "Alterar a senha",
+    "indexes": [
+      21,
+      955,
+      961
     ]
   },
   {
@@ -722,28 +400,6 @@
     ]
   },
   {
-    "fr": "Choisis Awakening ou la spécialisation disponible.",
-    "en": "Choose Awakening or the available specialization.",
-    "de": "Wählen Sie „Erwachen“ oder die verfügbare Spezialisierung.",
-    "es": "Elija Despertar o la especialización disponible.",
-    "it": "Scegli Risveglio o la specializzazione disponibile.",
-    "pt": "Escolha Despertar ou a especialização disponível.",
-    "indexes": [
-      171
-    ]
-  },
-  {
-    "fr": "Choisis d’abord le FPS de la vidéo (30 ou 60), puis pause au moment exact où l’animation commence. Utilise les boutons ±0.10s ou ±1 frame pour ajuster précisément.",
-    "en": "First choose the FPS of the video (30 or 60), then pause at the exact moment the animation begins. Use the ±0.10s or ±1 frame buttons to fine-tune.",
-    "de": "Wählen Sie zunächst die FPS des Videos (30 oder 60) und pausieren Sie dann genau in dem Moment, in dem die Animation beginnt. Verwenden Sie zur Feinabstimmung die Tasten ±0,10 s oder ±1 Bild.",
-    "es": "Primero elige el FPS del vídeo (30 o 60), luego haz una pausa en el momento exacto en que comienza la animación. Utilice los botones de fotograma ±0,10 s o ±1 para realizar un ajuste fino.",
-    "it": "Scegli prima gli FPS del video (30 o 60), quindi metti in pausa nel momento esatto in cui inizia l'animazione. Utilizzare i pulsanti ±0,10s o ±1 fotogramma per effettuare la regolazione fine.",
-    "pt": "Escolha primeiro o FPS do vídeo (30 ou 60) e depois pause no momento exato em que a animação começa. Use os botões de quadro ±0,10s ou ±1 para fazer o ajuste fino.",
-    "indexes": [
-      576
-    ]
-  },
-  {
     "fr": "Choisis la classe et la spécialisation qui pilotent les Skills, Combos, Transitions et imports.",
     "en": "Choose the class and specialization used for Skills, Combos, Transitions and imports.",
     "de": "Choisis la classe et la spécialisation qui pilotent les Skills, Combos, Transitions et imports.",
@@ -752,28 +408,6 @@
     "pt": "Choisis la aula e o especialização qui pilotent les Skills, Combos, Transições et imports.",
     "indexes": [
       366
-    ]
-  },
-  {
-    "fr": "Choisis la compétence correspondante dans la liste",
-    "en": "Choose the corresponding skill from the list",
-    "de": "Wählen Sie die entsprechende Fähigkeit aus der Liste aus",
-    "es": "Elija la habilidad correspondiente de la lista",
-    "it": "Scegli l'abilità corrispondente dall'elenco",
-    "pt": "Escolha a habilidade correspondente na lista",
-    "indexes": [
-      579
-    ]
-  },
-  {
-    "fr": "Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.",
-    "en": "Chooses the PvP or PvE optimization rules used by the Builder.",
-    "de": "Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.",
-    "es": "Elige las reglas de optimización PvP o PvE utilizadas por el Constructor.",
-    "it": "Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.",
-    "pt": "Escolhe as regras de otimização PvP ou PvE usadas pelo Construtor.",
-    "indexes": [
-      710
     ]
   },
   {
@@ -810,17 +444,6 @@
     ]
   },
   {
-    "fr": "Combos validés",
-    "en": "Validated combos",
-    "de": "Combos validés",
-    "es": "Combinaciones validadas",
-    "it": "Combo validés",
-    "pt": "Combos validados",
-    "indexes": [
-      467
-    ]
-  },
-  {
     "fr": "Commence par sélectionner la",
     "en": "Start by selecting the",
     "de": "Commence par sélectionner la",
@@ -829,28 +452,6 @@
     "pt": "Comece selecionando o",
     "indexes": [
       162
-    ]
-  },
-  {
-    "fr": "Communauté",
-    "en": "Community",
-    "de": "Communauté",
-    "es": "Comunidad",
-    "it": "Communauté",
-    "pt": "Comunidade",
-    "indexes": [
-      908
-    ]
-  },
-  {
-    "fr": "Compétences vs référentiel",
-    "en": "Skills vs reference",
-    "de": "Skills vs Referenz",
-    "es": "Skills vs referencia",
-    "it": "Skill vs riferimento",
-    "pt": "Skills vs referência",
-    "indexes": [
-      61
     ]
   },
   {
@@ -898,25 +499,14 @@
     ]
   },
   {
-    "fr": "Configure l’optimiseur, les contraintes du Combo Builder, les priorités de transition/cancel et la sauvegarde de tes données.",
-    "en": "Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.",
-    "de": "Konfigurieren Sie den Optimierer, Combo Builder-Einschränkungen, Übergangs-/Abbruchprioritäten und die Sicherung Ihrer Daten.",
-    "es": "Configure el optimizador, las restricciones de Generador combinado, las prioridades de transición/cancelación y la copia de seguridad de sus datos.",
-    "it": "Configura l'ottimizzatore, i vincoli del Combo Builder, le priorità di transizione/annullamento e il backup dei tuoi dati.",
-    "pt": "Configure o otimizador, as restrições do Construtor de combinação, as prioridades de transição/cancelamento e o backup dos seus dados.",
+    "fr": "Confirmer le mot de passe",
+    "en": "Confirm password",
+    "de": "Bestätigen le mot de passe",
+    "es": "Confirmar Contraseña",
+    "it": "Conferma le mot de passe",
+    "pt": "Confirme sua senha",
     "indexes": [
-      694
-    ]
-  },
-  {
-    "fr": "Configure les consommables, les cristaux et jusqu’à 6 compétences avec 2 effets de Skill Add-on chacune.",
-    "en": "Configures consumables, crystals and up to 6 skills with 2 Skill Add-on effects each.",
-    "de": "Konfiguriert Verbrauchsmaterialien, Kristalle und bis zu 6 Fertigkeiten mit jeweils 2 Fertigkeits-Add-on-Effekten.",
-    "es": "Configura consumibles, cristales y hasta 6 habilidades con 2 efectos adicionales de habilidad cada una.",
-    "it": "Configura materiali di consumo, cristalli e fino a 6 abilità con 2 effetti aggiuntivi abilità ciascuna.",
-    "pt": "Configura consumíveis, cristais e até 6 habilidades com 2 efeitos complementares de habilidade cada.",
-    "indexes": [
-      495
+      935
     ]
   },
   {
@@ -953,17 +543,6 @@
     ]
   },
   {
-    "fr": "Contraintes de contrôle et de couverture défensive.",
-    "en": "Control and defensive coverage constraints.",
-    "de": "Kontroll- und Verteidigungsbeschränkungen.",
-    "es": "Limitaciones de control y cobertura defensiva.",
-    "it": "Vincoli di controllo e copertura difensiva.",
-    "pt": "Restrições de controle e cobertura defensiva.",
-    "indexes": [
-      774
-    ]
-  },
-  {
     "fr": "Contrôle / re-CC PvP",
     "en": "Control / PvP re-CC",
     "de": "Contrôle / re-CC PvP",
@@ -972,28 +551,6 @@
     "pt": "Contrôle / re-CC PvP",
     "indexes": [
       866
-    ]
-  },
-  {
-    "fr": "Contrôle la durée et les frames lorsqu’elles sont disponibles.",
-    "en": "Controls duration and frames when available.",
-    "de": "Steuert Dauer und Frames, sofern verfügbar.",
-    "es": "Controla la duración y los fotogramas cuando están disponibles.",
-    "it": "Controlla la durata e i fotogrammi quando disponibili.",
-    "pt": "Controla a duração e os frames quando disponíveis.",
-    "indexes": [
-      223
-    ]
-  },
-  {
-    "fr": "Contrôle la qualité des données et les changements de stance.",
-    "en": "Controls data quality and stance changes.",
-    "de": "Steuert die Datenqualität und Haltungsänderungen.",
-    "es": "Controla la calidad de los datos y los cambios de postura.",
-    "it": "Controlla la qualità dei dati e i cambiamenti di posizione.",
-    "pt": "Controla a qualidade dos dados e as mudanças de postura.",
-    "indexes": [
-      885
     ]
   },
   {
@@ -1052,17 +609,6 @@
     ]
   },
   {
-    "fr": "Cooldowns & répétitions",
-    "en": "Cooldowns & repeats",
-    "de": "Cooldowns & répétitions",
-    "es": "Enfriamientos y repeticiones",
-    "it": "Cooldowns & répétitions",
-    "pt": "Recargas e repetições",
-    "indexes": [
-      751
-    ]
-  },
-  {
     "fr": "Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.",
     "en": "Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.",
     "de": "Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.",
@@ -1071,39 +617,6 @@
     "pt": "Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.",
     "indexes": [
       698
-    ]
-  },
-  {
-    "fr": "Corrige ou supprime les détections parasites.",
-    "en": "Corrects or removes spurious detections.",
-    "de": "Corrige ou supprime les détections parasites.",
-    "es": "Corrige o elimina detecciones espurias.",
-    "it": "Corrige ou supprime les détections parasites.",
-    "pt": "Corrige ou remove detecções falsas.",
-    "indexes": [
-      225
-    ]
-  },
-  {
-    "fr": "Coût maximal de ressource de classe accepté pour le combo.",
-    "en": "Maximum class resource cost accepted for the combo.",
-    "de": "Maximal akzeptierte Klassenressourcenkosten für die Combo.",
-    "es": "Costo máximo de recursos de clase aceptado para el combinación.",
-    "it": "Costo massimo in risorse di classe accettato per la combo.",
-    "pt": "Custo máximo de recurso de aula aceito para o combinação.",
-    "indexes": [
-      838
-    ]
-  },
-  {
-    "fr": "Coût maximal de stamina accepté pour le combo.",
-    "en": "Maximum stamina cost accepted for the combo.",
-    "de": "Maximal akzeptierte Ausdauerkosten für die Combo.",
-    "es": "Coste máximo de resistencia aceptado para el combinación.",
-    "it": "Costo massimo di resistenza accettato per la combo.",
-    "pt": "Custo máximo de resistência aceito para o combinação.",
-    "indexes": [
-      841
     ]
   },
   {
@@ -1140,28 +653,6 @@
     ]
   },
   {
-    "fr": "Crée ton espace personnel pour séparer tes données de celles des autres utilisateurs de ce navigateur.",
-    "en": "Create your personal space to separate your data from that of other users of this browser.",
-    "de": "Erstellen Sie Ihren persönlichen Bereich, um Ihre Daten von denen anderer Benutzer dieses Browsers zu trennen.",
-    "es": "Crea tu espacio personal para separar tus datos de los de otros usuarios de este navegador.",
-    "it": "Crea il tuo spazio personale per separare i tuoi dati da quelli di altri utenti di questo browser.",
-    "pt": "Crie seu espaço pessoal para separar seus dados dos de outros usuários deste navegador.",
-    "indexes": [
-      931
-    ]
-  },
-  {
-    "fr": "Crée un compte pour séparer automatiquement ton espace de travail des autres utilisateurs de ce navigateur. Une sauvegarde locale du profil est mise à jour périodiquement et à la déconnexion.",
-    "en": "Create an account to automatically separate your workspace from other users of this browser. A local backup of the profile is updated periodically and upon logout.",
-    "de": "Erstellen Sie ein Konto, um Ihren Arbeitsbereich automatisch von anderen Benutzern dieses Browsers zu trennen. Eine lokale Sicherung des Profils wird regelmäßig und beim Abmelden aktualisiert.",
-    "es": "Cree una cuenta para separar automáticamente su espacio de trabajo de otros usuarios de este navegador. Una copia de seguridad local del perfil se actualiza periódicamente y al cerrar sesión.",
-    "it": "Crea un account per separare automaticamente il tuo spazio di lavoro dagli altri utenti di questo browser. Un backup locale del profilo viene aggiornato periodicamente e al momento del logout.",
-    "pt": "Crie uma conta para separar automaticamente seu espaço de trabalho de outros usuários deste navegador. Um backup local do perfil é atualizado periodicamente e após o logout.",
-    "indexes": [
-      123
-    ]
-  },
-  {
     "fr": "Créer mon compte",
     "en": "Create my account",
     "de": "Créer mon compte",
@@ -1183,17 +674,6 @@
       13,
       928,
       930
-    ]
-  },
-  {
-    "fr": "De la donnée brute au combo optimisé",
-    "en": "From raw data to an optimized combo",
-    "de": "Von Rohdaten zur optimierten Combo",
-    "es": "De datos sin procesar al combinación optimizado",
-    "it": "Dai dati grezzi alla combo ottimizzata",
-    "pt": "Dos dados brutos ao combinação otimizado",
-    "indexes": [
-      71
     ]
   },
   {
@@ -1227,17 +707,6 @@
     "pt": "Iniciar análise",
     "indexes": [
       658
-    ]
-  },
-  {
-    "fr": "Décris ce qui s’est passé. Le rapport peut être copié ou téléchargé afin d’être transmis au développeur.",
-    "en": "Describe what happened. The report can be copied or downloaded to send to the developer.",
-    "de": "Beschreiben Sie, was passiert ist. Der Bericht kann kopiert oder heruntergeladen werden, um ihn an den Entwickler zu senden.",
-    "es": "Describe lo que pasó. El informe se puede copiar o descargar para enviarlo al desarrollador.",
-    "it": "Descrivi cosa è successo. Il report può essere copiato o scaricato per inviarlo allo sviluppatore.",
-    "pt": "Descreva o que aconteceu. O relatório pode ser copiado ou baixado para enviar ao desenvolvedor.",
-    "indexes": [
-      971
     ]
   },
   {
@@ -1307,39 +776,6 @@
     ]
   },
   {
-    "fr": "DERNIÈRES ÉVOLUTIONS",
-    "en": "LATEST DEVELOPMENTS",
-    "de": "DERNIÈRES ÉVOLUTIONS",
-    "es": "ÚLTIMOS DESARROLLOS",
-    "it": "DERNIÈRES ÉVOLUTIONS",
-    "pt": "ÚLTIMOS DESENVOLVIMENTOS",
-    "indexes": [
-      130
-    ]
-  },
-  {
-    "fr": "Détecter automatiquement",
-    "en": "Automatically detect",
-    "de": "Détecter automatiquement",
-    "es": "Detectar automáticamente",
-    "it": "Détecter automatiquement",
-    "pt": "Detectar automaticamente",
-    "indexes": [
-      678
-    ]
-  },
-  {
-    "fr": "Détecter skills, CC, transitions et cancels",
-    "en": "Detect skills, CC, transitions and cancellations",
-    "de": "Détecter skills, CC, transitions et cancels",
-    "es": "Detectar habilidades, CC, transiciones y cancelaciones",
-    "it": "Détecter skills, CC, transitions et cancels",
-    "pt": "Detecte habilidades, CC, transições e cancelamentos",
-    "indexes": [
-      81
-    ]
-  },
-  {
     "fr": "Détection de segments par mouvement + rapprochement avec le référentiel actif.",
     "en": "Detection of segments by movement + approximation with the active frame of reference.",
     "de": "Détection de segments par mouvement + rapprochement avec le référentiel actif.",
@@ -1381,28 +817,6 @@
     "pt": "Down Smash / Air Smash ne sont pas inclus dans le compteur ci-dessus. Source : note de mise à jour officielle Pearl Abyss. Le « CC Timer » utilise uniquement des mesures enregistrées. Un * indique qu'falta uma transição intermediária: a última hora conhecida permanece exibida, mas não'est pas utilisé comme timing précis par l'optimiseur. Em Skills → Editar, renseigne CC mesuré (s), ou FPS + frames début/fin.",
     "indexes": [
       544
-    ]
-  },
-  {
-    "fr": "du Combo Builder est différent de la spécialisation : il définit l’orientation de la chaîne que le Builder doit proposer.",
-    "en": "of the Combo Builder is different from the specialization: it defines the orientation of the chain that the Builder must propose.",
-    "de": "Der Wert des Combo Builders unterscheidet sich von der Spezialisierung: Er definiert die Ausrichtung der Kette, die der Builder vorschlagen muss.",
-    "es": "del Generador combinado es diferente de la especialización: define la orientación de la cadena que el Builder debe proponer.",
-    "it": "del Combo Builder è diverso dalla specializzazione: definisce l'orientamento della catena che il Builder deve proporre.",
-    "pt": "do Construtor de combinação é diferente da especialização: define a orientação da cadeia que o Builder deve propor.",
-    "indexes": [
-      175
-    ]
-  },
-  {
-    "fr": "du Combo Builder ne sauvegarde qu’une séquence de combo. Pour éviter de perdre les compétences, durées CC, transitions/cancels, mesures vidéo, réglages et loadouts, il faut utiliser la",
-    "en": "of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the",
-    "de": "Der Combo Builder speichert nur eine Combo-Sequenz. Um den Verlust von Fertigkeiten, CC-Dauern, Übergängen/Abbrüchen, Videomessungen, Einstellungen und Loadouts zu vermeiden, müssen Sie die verwenden",
-    "es": "del Generador combinado solo guarda una secuencia combinada. Para evitar perder habilidades, duraciones de CC, transiciones/cancelaciones, mediciones de video, configuraciones y equipamientos, debes usar el",
-    "it": "del Combo Builder salva solo una sequenza combo. Per evitare di perdere abilità, durate CC, transizioni/annullamenti, misurazioni video, impostazioni e caricamenti, è necessario utilizzare il",
-    "pt": "do Construtor de combinação salva apenas uma sequência de combinação. Para evitar perder habilidades, durações de CC, transições/cancelamentos, medições de vídeo, configurações e carregamentos, você deve usar o",
-    "indexes": [
-      293
     ]
   },
   {
@@ -1518,39 +932,6 @@
     ]
   },
   {
-    "fr": "En PvP, lorsque le CC Timer est pratiquement à zéro, le Builder doit prioriser un nouveau CC afin d’éviter que la cible puisse se relever avant la suite du combo.",
-    "en": "In PvP, when the CC Timer is practically at zero, the Builder must prioritize a new CC in order to prevent the target from being able to get up before the continuation of the combo.",
-    "de": "Wenn im PvP der CC-Timer praktisch auf Null steht, muss der Builder einem neuen CC Priorität einräumen, um zu verhindern, dass das Ziel vor der Fortsetzung der Combo aufstehen kann.",
-    "es": "En PvP, cuando el CC Timer está prácticamente en cero, el Constructor debe priorizar un nuevo CC para evitar que el objetivo pueda levantarse antes de que continúe el combinación.",
-    "it": "In PvP, quando il CC Timer è praticamente a zero, il Builder deve dare priorità ad un nuovo CC per evitare che il bersaglio riesca ad alzarsi prima del proseguimento della combo.",
-    "pt": "No PvP, quando o CC Timer está praticamente zerado, o Construtor deve priorizar um novo CC para evitar que o alvo consiga se levantar antes da continuação do combinação.",
-    "indexes": [
-      271
-    ]
-  },
-  {
-    "fr": "Encadre la taille et la durée estimée des combos générés.",
-    "en": "Controls the size and estimated duration of generated combos.",
-    "de": "Steuert die Größe und geschätzte Dauer der generierten Combos.",
-    "es": "Controla el tamaño y la duración estimada de los combos generados.",
-    "it": "Controlla la dimensione e la durata stimata delle combo generate.",
-    "pt": "Controla o tamanho e a duração estimada dos combos gerados.",
-    "indexes": [
-      734
-    ]
-  },
-  {
-    "fr": "Enregistre les résultats",
-    "en": "Save results",
-    "de": "Enregistre les résultats",
-    "es": "Guardar resultados",
-    "it": "Enregistre les résultats",
-    "pt": "Salvar resultados",
-    "indexes": [
-      602
-    ]
-  },
-  {
     "fr": "Enregistrer les mesures",
     "en": "Save measurements",
     "de": "Speichern les mesures",
@@ -1570,28 +951,6 @@
     "pt": "Guardar les réglages",
     "indexes": [
       916
-    ]
-  },
-  {
-    "fr": "Entrée / prise d’initiative",
-    "en": "Entry / initiative",
-    "de": "Entrée / prise d’initiative",
-    "es": "Entrée / prise d’initiative",
-    "it": "Entrée / prise d’initiative",
-    "pt": "Entrée / prise d’initiative",
-    "indexes": [
-      856
-    ]
-  },
-  {
-    "fr": "entrées disponibles",
-    "en": "entries available",
-    "de": "entrées disponibles",
-    "es": "entradas disponibles",
-    "it": "entrées disponibles",
-    "pt": "entradas disponíveis",
-    "indexes": [
-      48
     ]
   },
   {
@@ -1628,17 +987,6 @@
     ]
   },
   {
-    "fr": "Étapes pour reproduire",
-    "en": "Steps to reproduce",
-    "de": "Étapes pour reproduire",
-    "es": "Pasos para reproducir",
-    "it": "Étapes pour reproduire",
-    "pt": "Passos para reproduzir",
-    "indexes": [
-      991
-    ]
-  },
-  {
     "fr": "État du Combo Builder",
     "en": "Combo Builder state",
     "de": "Status du Combo Builder",
@@ -1661,6 +1009,17 @@
     ]
   },
   {
+    "fr": "Exiger au moins une protection",
+    "en": "Require at least one protection",
+    "de": "Exiger au moins une protection",
+    "es": "Requiere al menos una protección",
+    "it": "Exiger au moins une protection",
+    "pt": "Exigir pelo menos uma proteção",
+    "indexes": [
+      784
+    ]
+  },
+  {
     "fr": "Exporter la sauvegarde complète JSON",
     "en": "Export full JSON backup",
     "de": "Exportieren la sauvegarde complète JSON",
@@ -1669,50 +1028,6 @@
     "pt": "Exportar la sauvegarde complète JSON",
     "indexes": [
       363
-    ]
-  },
-  {
-    "fr": "Favorise les enchaînements qui restent dans la stance actuelle.",
-    "en": "Favors sequences that remain in the current stanza.",
-    "de": "Bevorzugt Sequenzen, die in der aktuellen Strophe verbleiben.",
-    "es": "Prefiere secuencias que permanecen en la estrofa actual.",
-    "it": "Preferisce le sequenze che rimangono nella strofa corrente.",
-    "pt": "Favorece sequências que permanecem na estrofe atual.",
-    "indexes": [
-      898
-    ]
-  },
-  {
-    "fr": "Favorise les séquences qui conservent davantage de ressource.",
-    "en": "Favors sequences which conserve more resources.",
-    "de": "Bevorzugt Sequenzen, die mehr Ressourcen schonen.",
-    "es": "Favorece secuencias que conservan más recursos.",
-    "it": "Preferisce sequenze che risparmiano più risorse.",
-    "pt": "Favorece sequências que conservam mais recursos.",
-    "indexes": [
-      844
-    ]
-  },
-  {
-    "fr": "Favoriser même stance",
-    "en": "Favor same stance",
-    "de": "Favoriser même stance",
-    "es": "Favoriser même stance",
-    "it": "Favoriser même stance",
-    "pt": "Favoreça a mesma postura",
-    "indexes": [
-      897
-    ]
-  },
-  {
-    "fr": "Filtres avancés",
-    "en": "Advanced filters",
-    "de": "Filtres avancés",
-    "es": "Filtres avancés",
-    "it": "Filtres avancés",
-    "pt": "Filtres avancés",
-    "indexes": [
-      884
     ]
   },
   {
@@ -1727,17 +1042,6 @@
     ]
   },
   {
-    "fr": "Fin de chaîne / sortie",
-    "en": "End of chain / exit",
-    "de": "Fin de chaîne / sortie",
-    "es": "FIN de chaîne / sortie",
-    "it": "Fin de chaîne / sortie",
-    "pt": "FIM de chaîne / sortie",
-    "indexes": [
-      878
-    ]
-  },
-  {
     "fr": "FPS vidéo",
     "en": "Video FPS",
     "de": "FPS vidéo",
@@ -1746,17 +1050,6 @@
     "pt": "FPS de vídeo",
     "indexes": [
       615
-    ]
-  },
-  {
-    "fr": "Garde-le dans un dossier sûr, un cloud ou une copie externe. C’est ta sauvegarde de sécurité.",
-    "en": "Keep it in a safe folder, cloud or external copy. This is your security backup.",
-    "de": "Bewahren Sie es in einem sicheren Ordner, in der Cloud oder in einer externen Kopie auf. Dies ist Ihr Sicherheits-Backup.",
-    "es": "Guárdelo en una carpeta segura, en la nube o en una copia externa. Esta es su copia de seguridad.",
-    "it": "Conservalo in una cartella sicura, nel cloud o in una copia esterna. Questo è il tuo backup di sicurezza.",
-    "pt": "Mantenha-o em uma pasta segura, nuvem ou cópia externa. Este é o seu backup de segurança.",
-    "indexes": [
-      304
     ]
   },
   {
@@ -1779,28 +1072,6 @@
     "pt": "Gérer mon compte",
     "indexes": [
       124
-    ]
-  },
-  {
-    "fr": "Guide rapide — Comment analyser un combo vidéo",
-    "en": "Quick Guide — How to Analyze a Video Combo",
-    "de": "Kurzanleitung – So analysieren Sie eine Videokombination",
-    "es": "Guía rápida: cómo analizar una combinación de vídeos",
-    "it": "Guida rapida: come analizzare una combinazione video",
-    "pt": "Guia rápido — Como analisar um combinação de vídeo",
-    "indexes": [
-      568
-    ]
-  },
-  {
-    "fr": "Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.",
-    "en": "It reduces combo execution/chaining time, which may allow more skills during the same control window.",
-    "de": "Es reduziert die Ausführungs-/Verkettungszeit der Combo und kann dadurch mehr Skills im selben Kontrollfenster ermöglichen.",
-    "es": "Reduce el tiempo de ejecución/encadenamiento del combinación, lo que puede permitir usar más skills durante la misma ventana de control.",
-    "it": "Riduce il tempo di esecuzione/concatenazione della combo, permettendo potenzialmente più skill nella stessa finestra di controllo.",
-    "pt": "Reduz o tempo de execução/encadeamento do combinação, podendo permitir mais skills na mesma janela de controlo.",
-    "indexes": [
-      227
     ]
   },
   {
@@ -1837,95 +1108,6 @@
     ]
   },
   {
-    "fr": "Importance de la vitesse réelle des transitions dans le classement.",
-    "en": "Importance of actual speed of transitions in ranking.",
-    "de": "Bedeutung der tatsächlichen Geschwindigkeit der Übergänge im Ranking.",
-    "es": "Importancia de la velocidad real de las transiciones en el ranking.",
-    "it": "Importanza della velocità effettiva delle transizioni nella classifica.",
-    "pt": "Importância da velocidade real das transições na classificação.",
-    "indexes": [
-      817
-    ]
-  },
-  {
-    "fr": "Importance des compétences de mobilité et de repositionnement.",
-    "en": "Importance of mobility and repositioning skills.",
-    "de": "Bedeutung von Mobilität und Repositionierungsfähigkeiten.",
-    "es": "Importancia de la movilidad y las habilidades de reposicionamiento.",
-    "it": "Importanza delle capacità di mobilità e riposizionamento.",
-    "pt": "Importância das habilidades de mobilidade e reposicionamento.",
-    "indexes": [
-      826
-    ]
-  },
-  {
-    "fr": "Importance des contrôles dans le score de l’optimiseur.",
-    "en": "Importance of controls in the optimizer score.",
-    "de": "Bedeutung von Kontrollen im Optimierer-Score.",
-    "es": "Importancia de los controles en la puntuación del optimizador.",
-    "it": "Importanza dei controlli nel punteggio dell'ottimizzatore.",
-    "pt": "Importância dos controles na pontuação do otimizador.",
-    "indexes": [
-      820
-    ]
-  },
-  {
-    "fr": "Importance des dégâts dans le score global d’une compétence.",
-    "en": "Importance of damage in the overall score of a skill.",
-    "de": "Bedeutung des Schadens für die Gesamtpunktzahl einer Fertigkeit.",
-    "es": "Importancia del daño en la puntuación global de una habilidad.",
-    "it": "Importanza del danno nel punteggio complessivo di un'abilità.",
-    "pt": "Importância do dano na pontuação geral de uma habilidade.",
-    "indexes": [
-      814
-    ]
-  },
-  {
-    "fr": "Importance des transitions/cancels rapides, mesurés et validés.",
-    "en": "Importance of rapid, measured and validated transitions/cancels.",
-    "de": "Bedeutung schneller, gemessener und validierter Übergänge/Abbrüche.",
-    "es": "Importancia de las transiciones/cancelas rápidas, medidas y validadas.",
-    "it": "Importanza di transizioni/annullazioni rapide, misurate e validate.",
-    "pt": "Importância de transições/cancelamentos rápidos, medidos e validados.",
-    "indexes": [
-      829
-    ]
-  },
-  {
-    "fr": "Importer une sauvegarde",
-    "en": "Import a backup",
-    "de": "Backup importieren",
-    "es": "Importar copia de seguridad",
-    "it": "Importa backup",
-    "pt": "Importar cópia de segurança",
-    "indexes": [
-      336,
-      700
-    ]
-  },
-  {
-    "fr": "Impose la présence d’au moins une compétence protégée.",
-    "en": "Requires the presence of at least one protected skill.",
-    "de": "Erfordert das Vorhandensein mindestens einer geschützten Fähigkeit.",
-    "es": "Requiere la presencia de al menos una habilidad protegida.",
-    "it": "Richiede la presenza di almeno una abilità protetta.",
-    "pt": "Requer a presença de pelo menos uma habilidade protegida.",
-    "indexes": [
-      785
-    ]
-  },
-  {
-    "fr": "indique si la transition vers chaque candidat est connue, mesurée ou validée, ainsi que son cancel éventuel.",
-    "en": "indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.",
-    "de": "gibt an, ob der Übergang zu jedem Kandidaten bekannt, gemessen oder validiert ist, sowie seine mögliche Aufhebung.",
-    "es": "Indica si se conoce, mide o valida la transición a cada candidato, así como su posible cancelación.",
-    "it": "indica se il passaggio per ciascun candidato è noto, misurato o validato, nonché il suo eventuale annullamento.",
-    "pt": "indica se a transição para cada candidato é conhecida, medida ou validada, bem como o seu possível cancelamento.",
-    "indexes": [
-      243
-    ]
-  },
-  {
     "fr": "J’aime requis pour vérifier un combo",
     "en": "Likes required to verify a combo",
     "de": "J’aime requis pour vérifier un combo",
@@ -1959,72 +1141,6 @@
     ]
   },
   {
-    "fr": "Le Builder assemble la séquence et recalcule les suggestions après chaque modification.",
-    "en": "The Builder assembles the sequence and recalculates the suggestions after each modification.",
-    "de": "Der Builder stellt die Sequenz zusammen und berechnet die Vorschläge nach jeder Änderung neu.",
-    "es": "El Constructor ensambla la secuencia y recalcula las sugerencias después de cada modificación.",
-    "it": "Il Builder assembla la sequenza e ricalcola i suggerimenti dopo ogni modifica.",
-    "pt": "O Construtor monta a sequência e recalcula as sugestões após cada modificação.",
-    "indexes": [
-      230
-    ]
-  },
-  {
-    "fr": "Le Builder suit le budget CC PvP affiché dans l’application :",
-    "en": "The Builder follows the CC PvP budget displayed in the application:",
-    "de": "Der Builder folgt dem in der Anwendung angezeigten CC-PvP-Budget:",
-    "es": "El Constructor sigue el presupuesto CC PvP que se muestra en la aplicación:",
-    "it": "Il Costruttore segue il budget CC PvP visualizzato nell'applicazione:",
-    "pt": "O Builder segue o orçamento CC PvP exibido no aplicativo:",
-    "indexes": [
-      254
-    ]
-  },
-  {
-    "fr": "Le CC qui fait atteindre/dépasser 2.0 est encore appliqué ; les CC suivants sont ensuite bloqués par la limite.",
-    "en": "The CC which reaches/exceeds 2.0 is still applied; subsequent CCs are then blocked by the limit.",
-    "de": "Der CC, der 2,0 erreicht/übersteigt, wird weiterhin angewendet; Nachfolgende CCs werden dann durch das Limit blockiert.",
-    "es": "Se sigue aplicando el CC que alcanza o supera 2,0; Los CC posteriores quedan entonces bloqueados por el límite.",
-    "it": "Resta applicato il CC che raggiunge/supera 2.0; i CC successivi vengono quindi bloccati dal limite.",
-    "pt": "O CC que atinge/excede 2.0 ainda é aplicado; CCs subsequentes são então bloqueados pelo limite.",
-    "indexes": [
-      269
-    ]
-  },
-  {
-    "fr": "Le contenu importé est associé au contexte sélectionné ci-dessus.",
-    "en": "Imported content is linked to the context selected above.",
-    "de": "Le contenu importé est associé au contexte sélectionné ci-dessus.",
-    "es": "Le contenu importé est associé au contexte sélectionné ci-dessus.",
-    "it": "Le contenu importé est associé au contexte sélectionné ci-dessus.",
-    "pt": "Le contenu importé est associé au contexte sélectionné ci-dessus.",
-    "indexes": [
-      417
-    ]
-  },
-  {
-    "fr": "Le navigateur cherche par timestamp. Pour les mesures importantes, utilise une vidéo à fréquence constante et vérifie plusieurs essais.",
-    "en": "The browser seeks by timestamp. For important measurements, use a constant-frame-rate video and verify several attempts.",
-    "de": "Der Browser springt per Zeitstempel. Verwende für wichtige Messungen ein Video mit konstanter Bildrate und prüfe mehrere Versuche.",
-    "es": "El navegador busca por marca de tiempo. Para mediciones importantes, usa un vídeo con frecuencia de imagen constante y verifica varios intentos.",
-    "it": "Il browser cerca tramite timestamp. Per misure importanti, usa un video a frame rate costante e verifica più tentativi.",
-    "pt": "O navegador procura por timestamp. Para medições importantes, usa um vídeo com frame rate constante e verifica várias tentativas.",
-    "indexes": [
-      634
-    ]
-  },
-  {
-    "fr": "Le navigateur peut perdre ses données après un nettoyage, une réinstallation, un changement de profil ou certaines manipulations. Le fichier JSON exporté est la copie de sécurité à conserver.",
-    "en": "The browser may lose its data after cleaning, reinstallation, profile change or certain manipulations. The exported JSON file is the backup copy to keep.",
-    "de": "Der Browser kann nach einer Bereinigung, Neuinstallation, Profiländerung oder bestimmten Manipulationen seine Daten verlieren. Die exportierte JSON-Datei ist die aufzubewahrende Sicherungskopie.",
-    "es": "El navegador puede perder sus datos después de una limpieza, reinstalación, cambio de perfil o determinadas manipulaciones. El archivo JSON exportado es la copia de seguridad que se debe conservar.",
-    "it": "Il browser potrebbe perdere i propri dati dopo la pulizia, la reinstallazione, la modifica del profilo o determinate manipolazioni. Il file JSON esportato è la copia di backup da conservare.",
-    "pt": "O navegador pode perder seus dados após limpeza, reinstalação, alteração de perfil ou certas manipulações. O arquivo JSON exportado é a cópia de backup a ser mantida.",
-    "indexes": [
-      346
-    ]
-  },
-  {
     "fr": "Le premier CC appliqué démarre son",
     "en": "The first CC applied starts its",
     "de": "Le premier CC appliqué démarre son",
@@ -2033,17 +1149,6 @@
     "pt": "O primeiro CC aplicado inicia seu",
     "indexes": [
       261
-    ]
-  },
-  {
-    "fr": "Le score n’est pas seulement un score de dégâts : il combine la logique joueur et les facteurs techniques disponibles. Les données absentes limitent forcément la précision de l’optimisation.",
-    "en": "The score is not just a damage score: it combines player logic and available technical factors. Missing data necessarily limits the precision of the optimization.",
-    "de": "Der Punktestand ist nicht nur ein Schadenswert: Er kombiniert Spielerlogik und verfügbare technische Faktoren. Fehlende Daten schränken zwangsläufig die Präzision der Optimierung ein.",
-    "es": "La puntuación no es sólo una puntuación de daño: combina la lógica del jugador y los factores técnicos disponibles. Los datos faltantes necesariamente limitan la precisión de la optimización.",
-    "it": "Il punteggio non è solo un punteggio di danno: combina la logica del giocatore e i fattori tecnici disponibili. I dati mancanti limitano necessariamente la precisione dell'ottimizzazione.",
-    "pt": "A pontuação não é apenas uma pontuação de dano: ela combina a lógica do jogador e os fatores técnicos disponíveis. A falta de dados limita necessariamente a precisão da otimização.",
-    "indexes": [
-      287
     ]
   },
   {
@@ -2080,69 +1185,14 @@
     ]
   },
   {
-    "fr": "Les deux panneaux utilisent toute la largeur disponible et restent indépendants des anciens layouts.",
-    "en": "Both panels use the full available width and remain independent of the old layouts.",
-    "de": "Beide Panels nutzen die volle verfügbare Breite und bleiben unabhängig von den alten Layouts.",
-    "es": "Ambos paneles utilizan todo el ancho disponible y permanecen independientes de los diseños antiguos.",
-    "it": "Entrambi i pannelli utilizzano tutta la larghezza disponibile e rimangono indipendenti dai vecchi layout.",
-    "pt": "Ambos os painéis utilizam toda a largura disponível e permanecem independentes dos layouts antigos.",
+    "fr": "Limites de stamina et de ressource de classe.",
+    "en": "Stamina and class resource limits.",
+    "de": "Limites de stamina et de ressource de classe.",
+    "es": "Límites de recursos de resistencia y clase.",
+    "it": "Limites de stamina et de ressource de classe.",
+    "pt": "Limites de resistência e recursos de aula.",
     "indexes": [
-      498
-    ]
-  },
-  {
-    "fr": "Les étapes suivent le workflow recommandé",
-    "en": "Steps follow recommended workflow",
-    "de": "Les étapes suivent le workflow recommandé",
-    "es": "Los pasos siguen el flujo de trabajo recomendado",
-    "it": "Les étapes suivent le workflow recommandé",
-    "pt": "Les étapes suivent le workflow recommandé",
-    "indexes": [
-      147
-    ]
-  },
-  {
-    "fr": "Les mesures connues influencent le classement, l’Auto-Build et le temps réellement consommé dans les fenêtres CC.",
-    "en": "Known metrics influence ranking, Auto-Build, and actual time consumed in CC windows.",
-    "de": "Bekannte Metriken beeinflussen das Ranking, die automatische Erstellung und die tatsächlich in CC-Fenstern verbrauchte Zeit.",
-    "es": "Las métricas conocidas influyen en la clasificación, la creación automática y el tiempo real consumido en las ventanas CC.",
-    "it": "Le metriche conosciute influenzano il ranking, la creazione automatica e il tempo effettivo impiegato nelle finestre CC.",
-    "pt": "Métricas conhecidas influenciam a classificação, a construção automática e o tempo real consumido nas janelas CC.",
-    "indexes": [
-      136
-    ]
-  },
-  {
-    "fr": "Les transitions et cancels font avancer le temps de la séquence et donc diminuer le temps restant.",
-    "en": "Transitions and cancels advance the time of the sequence and therefore reduce the remaining time.",
-    "de": "Übergänge und Abbrüche verlängern die Zeit der Sequenz und verkürzen somit die verbleibende Zeit.",
-    "es": "Las transiciones y cancelaciones adelantan el tiempo de la secuencia y por lo tanto reducen el tiempo restante.",
-    "it": "Transizioni e annullamenti fanno avanzare il tempo della sequenza e quindi riducono il tempo rimanente.",
-    "pt": "Transições e cancelamentos avançam o tempo da sequência e, portanto, reduzem o tempo restante.",
-    "indexes": [
-      264
-    ]
-  },
-  {
-    "fr": "Les transitions/cancels influencent désormais réellement le classement. Une transition rapide, mesurée et validée est favorisée ; une transition inconnue peut être pénalisée selon les Settings.",
-    "en": "Transitions/cancels now actually influence ranking. A rapid, measured and validated transition is favored; an unknown transition may be penalized depending on the Settings.",
-    "de": "Übergänge/Abbrüche haben nun tatsächlich Einfluss auf das Ranking. Ein schneller, maßvoller und validierter Übergang wird bevorzugt; Abhängig von den Einstellungen kann ein unbekannter Übergang bestraft werden.",
-    "es": "Las transiciones/cancelaciones ahora influyen en la clasificación. Se favorece una transición rápida, medida y validada; una transición desconocida puede ser penalizada según la configuración.",
-    "it": "Le transizioni/annullamenti ora influenzano effettivamente la classifica. È privilegiata una transizione rapida, misurata e validata; una transizione sconosciuta potrebbe essere penalizzata a seconda delle Impostazioni.",
-    "pt": "Transições/cancelamentos agora realmente influenciam a classificação. Favorece-se uma transição rápida, medida e validada; uma transição desconhecida pode ser penalizada dependendo das configurações.",
-    "indexes": [
-      251
-    ]
-  },
-  {
-    "fr": "Limite 2.0 points · Immunité 5 s",
-    "en": "Limit 2.0 points · Immunity 5 s",
-    "de": "Limite 2.0 points · Immunité 5 s",
-    "es": "Límite 2.0 puntos · Inmunidad 5 s",
-    "it": "Limite 2.0 points · Immunité 5 s",
-    "pt": "Limite 2,0 pontos · Imunidade 5 s",
-    "indexes": [
-      527
+      833
     ]
   },
   {
@@ -2154,17 +1204,6 @@
     "pt": "Comprimento e duração",
     "indexes": [
       733
-    ]
-  },
-  {
-    "fr": "Lorsqu’un combo partagé atteint ce nombre de votes uniques, il rejoint automatiquement Combos de classe.",
-    "en": "When a shared combo reaches this number of unique votes, it automatically joins Class Combos.",
-    "de": "Wenn eine gemeinsame Combo diese Anzahl einzigartiger Stimmen erreicht, schließt sie sich automatisch Klassencombos an.",
-    "es": "Cuando un combinación compartido alcanza esta cantidad de votos únicos, automáticamente se une a los combos de Clase.",
-    "it": "Quando una combo condivisa raggiunge questo numero di voti unici, si unisce automaticamente alle combo di classe.",
-    "pt": "Quando um combinação compartilhado atinge esse número de votos únicos, ele automaticamente entra nos Combos de Classe.",
-    "indexes": [
-      914
     ]
   },
   {
@@ -2234,36 +1273,26 @@
     ]
   },
   {
-    "fr": "Mettre à jour",
-    "en": "To update",
-    "de": "Mettre à jour",
-    "es": "Para actualizar",
-    "it": "Mettre à jour",
-    "pt": "Para atualizar",
+    "fr": "Mot de passe",
+    "en": "Password",
+    "de": "Mot de passe",
+    "es": "Contraseña",
+    "it": "Mot de passe",
+    "pt": "Senha",
     "indexes": [
-      965
+      924,
+      934
     ]
   },
   {
-    "fr": "Mobilité",
-    "en": "Mobility",
-    "de": "Mobilität",
-    "es": "Movilidad",
-    "it": "Mobilità",
-    "pt": "Mobilidade",
+    "fr": "Mot de passe actuel",
+    "en": "Current password",
+    "de": "Mot de passe actuel",
+    "es": "Contraseña actual",
+    "it": "Mot de passe actuel",
+    "pt": "Senha atual",
     "indexes": [
-      722
-    ]
-  },
-  {
-    "fr": "Mode local : ce compte protège uniquement les données de ce navigateur. Le partage communautaire utilise désormais Supabase. Comme cette application n’a pas encore de serveur, ce système n’est pas un compte cloud et ne protège pas contre une personne ayant accès au profil du navigateur.",
-    "en": "Local mode: This account only protects data from this browser. Community sharing now uses Supabase. As this application does not have a server yet, this system is not a cloud account and does not protect against someone having access to the browser profile.",
-    "de": "Lokaler Modus: Dieses Konto schützt nur Daten von diesem Browser. Community-Sharing verwendet jetzt Supabase. Da diese Anwendung noch keinen Server hat, ist dieses System kein Cloud-Konto und bietet keinen Schutz davor, dass jemand Zugriff auf das Browserprofil hat.",
-    "es": "Modo local: esta cuenta solo protege los datos de este navegador. El intercambio comunitario ahora utiliza Supabase. Como esta aplicación aún no tiene un servidor, este sistema no es una cuenta en la nube y no protege contra el acceso de alguien al perfil del navegador.",
-    "it": "Modalità locale: questo account protegge solo i dati di questo browser. La condivisione della comunità ora utilizza Supabase. Poiché questa applicazione non dispone ancora di un server, questo sistema non è un account cloud e non protegge da qualcuno che ha accesso al profilo del browser.",
-    "pt": "Modo local: esta conta protege apenas os dados deste navegador. O compartilhamento comunitário agora usa Supabase. Como este aplicativo ainda não possui servidor, este sistema não é uma conta na nuvem e não protege contra alguém que tenha acesso ao perfil do navegador.",
-    "indexes": [
-      967
+      962
     ]
   },
   {
@@ -2275,17 +1304,6 @@
     "pt": "Não perca suas medidas",
     "indexes": [
       126
-    ]
-  },
-  {
-    "fr": "ne réinitialise pas",
-    "en": "does not reset",
-    "de": "ne réinitialise pas",
-    "es": "no se reinicia",
-    "it": "ne réinitialise pas",
-    "pt": "não reinicia",
-    "indexes": [
-      266
     ]
   },
   {
@@ -2308,17 +1326,6 @@
     "pt": "Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.",
     "indexes": [
       767
-    ]
-  },
-  {
-    "fr": "Nombre maximum d’effets CC autorisés par les contraintes du Builder.",
-    "en": "Maximum number of CC effects allowed by Builder constraints.",
-    "de": "Nombre maximum d’effets CC autorisés par les contraintes du Builder.",
-    "es": "Nombre maximum d’effets CC autorisés par les contraintes du Builder.",
-    "it": "Nombre maximum d’effets CC autorisés par les contraintes du Builder.",
-    "pt": "Nombre maximum d’effets CC autorisés par les contraintes du Builder.",
-    "indexes": [
-      782
     ]
   },
   {
@@ -2355,6 +1362,17 @@
     ]
   },
   {
+    "fr": "Nouveau mot de passe",
+    "en": "New Password",
+    "de": "Nouveau mot de passe",
+    "es": "Nueva contraseña",
+    "it": "Nouveau mot de passe",
+    "pt": "Nova Senha",
+    "indexes": [
+      963
+    ]
+  },
+  {
     "fr": "Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.",
     "en": "Optimizer will follow the order Engage → Setup → CC → Burst → Finisher and account for measured transition durations. A disabled phase is ignored. The limit is the maximum number of skills allowed in that phase.",
     "de": "Optimizer folgt der Reihenfolge Engage → Setup → CC → Burst → Finisher und berücksichtigt gemessene Transition-Dauern. Eine deaktivierte Phase wird ignoriert. Das Limit gibt die maximale Anzahl an Skills in dieser Phase an.",
@@ -2363,6 +1381,17 @@
     "pt": "Optimizer seguirá a ordem Engage → Setup → CC → Burst → Finisher e terá em conta as durações medidas das transições. Uma fase desativada é ignorada. O limite indica o número máximo de skills permitidas nessa fase.",
     "indexes": [
       882
+    ]
+  },
+  {
+    "fr": "ou utilise la touche",
+    "en": "or use the key",
+    "de": "ou utilise la touche",
+    "es": "o usa la llave",
+    "it": "ou utilise la touche",
+    "pt": "ou use a chave",
+    "indexes": [
+      588
     ]
   },
   {
@@ -2396,39 +1425,6 @@
     "pt": "Penaliza ou exclui habilidades que estão indisponíveis devido ao seu tempo de espera.",
     "indexes": [
       757
-    ]
-  },
-  {
-    "fr": "permet de décider à quel point le Builder doit privilégier la vitesse des transitions, les cancels et les liaisons connues.",
-    "en": "allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.",
-    "de": "ermöglicht Ihnen zu entscheiden, inwieweit der Builder die Geschwindigkeit von Übergängen, Abbrüchen und bekannten Verbindungen bevorzugen soll.",
-    "es": "le permite decidir en qué medida el Constructor debe favorecer la velocidad de las transiciones, cancelaciones y conexiones conocidas.",
-    "it": "ti permette di decidere in che misura il Builder deve privilegiare la velocità delle transizioni, delle cancellazioni e delle connessioni conosciute.",
-    "pt": "permite decidir até que ponto o Construtor deve favorecer a velocidade das transições, cancelamentos e conexões conhecidas.",
-    "indexes": [
-      276
-    ]
-  },
-  {
-    "fr": "Place la lecture au moment où le combo intéressant commence, par exemple 3:00.",
-    "en": "Place playback at the time when the interesting combo begins, for example 3:00.",
-    "de": "Setze die Wiedergabe an die Stelle, an der die relevante Combo beginnt, zum Beispiel 3:00.",
-    "es": "Coloque la reproducción en el momento en que comience el combinación interesante, por ejemplo a las 3:00.",
-    "it": "Porta la riproduzione al punto in cui inizia la combo rilevante, ad esempio 3:00.",
-    "pt": "Coloque a reprodução no horário em que o combinação interessante começa, por exemplo 3:00.",
-    "indexes": [
-      199
-    ]
-  },
-  {
-    "fr": "Place la vidéo au début/à la fin du CC, ou lance la détection automatique sur la zone analysée.",
-    "en": "Place the video at the beginning/end of the CC, or launch automatic detection on the analyzed area.",
-    "de": "Platzieren Sie das Video am Anfang/Ende des CC oder starten Sie die automatische Erkennung im analysierten Bereich.",
-    "es": "Coloque el vídeo al principio/final del CC, o inicie la detección automática en el área analizada.",
-    "it": "Posiziona il video all'inizio/fine del CC, oppure avvia il rilevamento automatico sull'area analizzata.",
-    "pt": "Coloque o vídeo no início/fim do CC, ou inicie a detecção automática na área analisada.",
-    "indexes": [
-      691
     ]
   },
   {
@@ -2476,61 +1472,6 @@
     ]
   },
   {
-    "fr": "Poids mobilité",
-    "en": "Mobility weight",
-    "de": "Poids mobilité",
-    "es": "Poids mobilité",
-    "it": "Poids mobilité",
-    "pt": "Poids mobilité",
-    "indexes": [
-      825
-    ]
-  },
-  {
-    "fr": "Poids pénalité cooldown",
-    "en": "Cooldown penalty weight",
-    "de": "Poids pénalité cooldown",
-    "es": "Peso de penalización de enfriamiento",
-    "it": "Poids pénalité cooldown",
-    "pt": "Peso de penalidade de resfriamento",
-    "indexes": [
-      769
-    ]
-  },
-  {
-    "fr": "pour de meilleurs timings, marque toujours le premier frame visible du démarrage de chaque compétence, puis le moment exact où l’animation est interrompue pour les cancels.",
-    "en": "for better timings, always mark the first visible frame of starting each skill, then the exact moment when the animation is interrupted for cancels.",
-    "de": "Für bessere Timings markieren Sie immer den ersten sichtbaren Frame beim Starten jeder Fertigkeit und dann den genauen Moment, in dem die Animation wegen Abbrüchen unterbrochen wird.",
-    "es": "Para mejores tiempos, marque siempre el primer fotograma visible del inicio de cada habilidad, luego el momento exacto en el que la animación se interrumpe por cancelaciones.",
-    "it": "per una tempistica migliore, segna sempre il primo fotogramma visibile all'avvio di ciascuna abilità, poi il momento esatto in cui l'animazione viene interrotta per cancellazioni.",
-    "pt": "para melhores tempos, marque sempre o primeiro quadro visível do início de cada habilidade, depois o momento exato em que a animação é interrompida para cancelamentos.",
-    "indexes": [
-      611
-    ]
-  },
-  {
-    "fr": "pour favoriser les enchaînements disposant d’un cancel.",
-    "en": "to favor sequences with a cancel.",
-    "de": "um Sequenzen mit einem Abbruch zu bevorzugen.",
-    "es": "para favorecer secuencias con una cancelación.",
-    "it": "per privilegiare le sequenze con un cancel.",
-    "pt": "para favorecer sequências com cancelamento.",
-    "indexes": [
-      282
-    ]
-  },
-  {
-    "fr": "pour préférer les candidats dont la liaison est mesurée/connue.",
-    "en": "to prefer candidates whose binding is measured/known.",
-    "de": "Kandidaten zu bevorzugen, deren Bindung gemessen/bekannt ist.",
-    "es": "preferir candidatos cuya vinculación se mida/conozca.",
-    "it": "preferire candidati il ​​cui legame è misurato/conosciuto.",
-    "pt": "preferir candidatos cuja ligação seja medida/conhecida.",
-    "indexes": [
-      285
-    ]
-  },
-  {
     "fr": "pour privilégier les chaînes rapides.",
     "en": "to favor fast chains.",
     "de": "pour privilégier les chaînes rapides.",
@@ -2553,17 +1494,6 @@
     ]
   },
   {
-    "fr": "Pour un CC mesuré, renseigne sa",
-    "en": "For a measured CC, enter its",
-    "de": "Pour un CC mesuré, renseigne sa",
-    "es": "Para un CC medido, ingrese su",
-    "it": "Pour un CC mesuré, renseigne sa",
-    "pt": "Para um CC medido, insira seu",
-    "indexes": [
-      189
-    ]
-  },
-  {
     "fr": "Pourcentage minimal du combo qui doit bénéficier d’une protection.",
     "en": "Minimum percentage of the combo that must benefit from protection.",
     "de": "Mindestprozentsatz der Combo, der vom Schutz profitieren muss.",
@@ -2572,30 +1502,6 @@
     "pt": "Porcentagem mínima do combinação que deve se beneficiar de proteção.",
     "indexes": [
       790
-    ]
-  },
-  {
-    "fr": "Pré-Awakening",
-    "en": "Pre-Awakening",
-    "de": "Pré-Awakening",
-    "es": "Pré-Awakening",
-    "it": "Pré-Awakening",
-    "pt": "Pré-Awakening",
-    "indexes": [
-      236,
-      553,
-      556
-    ]
-  },
-  {
-    "fr": "Préparation du build",
-    "en": "Build preparation",
-    "de": "Build-Vorbereitung",
-    "es": "Preparación de build",
-    "it": "Preparazione build",
-    "pt": "Preparação da build",
-    "indexes": [
-      497
     ]
   },
   {
@@ -2621,69 +1527,14 @@
     ]
   },
   {
-    "fr": "Priorité CC",
-    "en": "CC Priority",
-    "de": "Priorité CC",
-    "es": "Prioridad CC",
-    "it": "Priorité CC",
-    "pt": "Prioridade CC",
+    "fr": "Priority: player/community combo choices and observed skill order. Technical factors such as timings, CC, damage, cooldowns and protection are secondary.",
+    "en": "Priority: player/community combo choices and observed skill order. Technical factors such as timings, CC, damage, cooldowns and protection are secondary.",
+    "de": "Priorität: Spieler-/Community-Kombinationsauswahl und beobachtete Fertigkeitsreihenfolge. Technische Faktoren wie Timings, CC, Schaden, Abklingzeiten und Schutz sind zweitrangig.",
+    "es": "Prioridad: opciones combinadas de jugador/comunidad y orden de habilidades observado. Los factores técnicos como tiempos, CC, daños, tiempos de reutilización y protección son secundarios.",
+    "it": "Priorità: scelte della combo giocatore/comunità e ordine delle abilità osservato. Fattori tecnici come tempi, CC, danni, tempi di recupero e protezione sono secondari.",
+    "pt": "Prioridade: escolhas de combinação entre jogador/comunidade e ordem de habilidade observada. Fatores técnicos como tempos, CC, danos, tempos de espera e proteção são secundários.",
     "indexes": [
-      719
-    ]
-  },
-  {
-    "fr": "Priorité communauté",
-    "en": "Community priority",
-    "de": "Priorité communauté",
-    "es": "Prioridad comunitaria",
-    "it": "Priorité communauté",
-    "pt": "Prioridade da comunidade",
-    "indexes": [
-      484
-    ]
-  },
-  {
-    "fr": "Priorité protections",
-    "en": "Protection priority",
-    "de": "Priorité protections",
-    "es": "Prioridad de protección",
-    "it": "Priorité protections",
-    "pt": "Prioridade de proteção",
-    "indexes": [
-      720
-    ]
-  },
-  {
-    "fr": "Priorités recommandées",
-    "en": "Recommended priorities",
-    "de": "Empfohlene Prioritäten",
-    "es": "Prioridades recomendadas",
-    "it": "Priorità consigliate",
-    "pt": "Prioridades recomendadas",
-    "indexes": [
-      69
-    ]
-  },
-  {
-    "fr": "PROCHAINES ACTIONS",
-    "en": "NEXT ACTIONS",
-    "de": "NÄCHSTE AKTIONEN",
-    "es": "PRÓXIMAS ACCIONES",
-    "it": "PROSSIME AZIONI",
-    "pt": "PRÓXIMAS AÇÕES",
-    "indexes": [
-      68
-    ]
-  },
-  {
-    "fr": "Profil général qui détermine les priorités de l’Auto-Build.",
-    "en": "General profile that determines Auto-Build priorities.",
-    "de": "Allgemeines Profil, das die Auto-Build-Prioritäten bestimmt.",
-    "es": "Perfil general que determina las prioridades de Auto-Build.",
-    "it": "Profilo generale che determina le priorità di creazione automatica.",
-    "pt": "Perfil geral que determina as prioridades do Auto-Build.",
-    "indexes": [
-      715
+      548
     ]
   },
   {
@@ -2695,28 +1546,6 @@
     "pt": "PROTEÇÃO DE DADOS",
     "indexes": [
       125
-    ]
-  },
-  {
-    "fr": "Qté",
-    "en": "Qty",
-    "de": "Qté",
-    "es": "Cantidad",
-    "it": "Qté",
-    "pt": "Quantidade",
-    "indexes": [
-      514
-    ]
-  },
-  {
-    "fr": "Qualité de détection",
-    "en": "Detection quality",
-    "de": "Erkennungsqualität",
-    "es": "Calidad de detección",
-    "it": "Qualità rilevamento",
-    "pt": "Qualidade da deteção",
-    "indexes": [
-      425
     ]
   },
   {
@@ -2753,17 +1582,6 @@
     ]
   },
   {
-    "fr": "Que s’est-il passé ?",
-    "en": "What happened?",
-    "de": "Que s’est-il passé ?",
-    "es": "¿Qué pasó?",
-    "it": "Que s’est-il passé ?",
-    "pt": "O que aconteceu?",
-    "indexes": [
-      989
-    ]
-  },
-  {
     "fr": "Quel comportement était attendu ?",
     "en": "What behavior was expected?",
     "de": "Quel comportement était attendu ?",
@@ -2772,17 +1590,6 @@
     "pt": "Que comportamento era esperado?",
     "indexes": [
       990
-    ]
-  },
-  {
-    "fr": "Rapporter un problème",
-    "en": "Report a problem",
-    "de": "Rapporter un problème",
-    "es": "Rapporter un problème",
-    "it": "Rapporter un problème",
-    "pt": "Informar um problema",
-    "indexes": [
-      970
     ]
   },
   {
@@ -2797,28 +1604,6 @@
     ]
   },
   {
-    "fr": "Référentiel",
-    "en": "Reference",
-    "de": "Referenz",
-    "es": "Referencia",
-    "it": "Riferimento",
-    "pt": "Referência",
-    "indexes": [
-      46
-    ]
-  },
-  {
-    "fr": "Référentiel : —",
-    "en": "Reference : —",
-    "de": "Referenz : —",
-    "es": "Referencia : —",
-    "it": "Riferimento : —",
-    "pt": "Referência : —",
-    "indexes": [
-      42
-    ]
-  },
-  {
     "fr": "Référentiel + compétences actives",
     "en": "Reference + active skills",
     "de": "Referenz + compétences actives",
@@ -2827,35 +1612,6 @@
     "pt": "Referência + compétences actives",
     "indexes": [
       490
-    ]
-  },
-  {
-    "fr": "Référentiel actif",
-    "en": "Active reference",
-    "de": "Aktive Referenz",
-    "es": "Referencia activa",
-    "it": "Riferimento attivo",
-    "pt": "Referência ativa",
-    "indexes": [
-      438
-    ]
-  },
-  {
-    "fr": "Réglage",
-    "en": "Setting",
-    "de": "Einstellung",
-    "es": "Ajuste",
-    "it": "Impostazione",
-    "pt": "Definição",
-    "indexes": [
-      706,
-      735,
-      753,
-      775,
-      810,
-      834,
-      886,
-      910
     ]
   },
   {
@@ -2881,28 +1637,6 @@
     ]
   },
   {
-    "fr": "Régler le poids des timings, cancels et contraintes",
-    "en": "Adjust the weight of timings, cancellations and constraints",
-    "de": "Passen Sie die Gewichtung von Zeitplänen, Stornierungen und Einschränkungen an",
-    "es": "Ajustar el peso de los tiempos, cancelaciones y restricciones.",
-    "it": "Regolare il peso delle tempistiche, delle cancellazioni e dei vincoli",
-    "pt": "Ajustar o peso dos horários, cancelamentos e restrições",
-    "indexes": [
-      90
-    ]
-  },
-  {
-    "fr": "Règles de validation des combos partagés par les joueurs.",
-    "en": "Combo validation rules shared by players.",
-    "de": "Von den Spielern geteilte Combo-Validierungsregeln.",
-    "es": "Reglas de validación de combos compartidas por los jugadores.",
-    "it": "Regole di convalida delle combo condivise dai giocatori.",
-    "pt": "Regras de validação de combinação compartilhadas pelos jogadores.",
-    "indexes": [
-      909
-    ]
-  },
-  {
     "fr": "Réinitialiser",
     "en": "Reset",
     "de": "Réinitialiser",
@@ -2924,17 +1658,6 @@
     "indexes": [
       333,
       701
-    ]
-  },
-  {
-    "fr": "Renommer un skill met à jour les références associées lorsque l’application peut les résoudre. Vérifie malgré tout les transitions importantes après un renommage.",
-    "en": "Renaming a skill updates the associated references when the application can resolve them. Still checks important transitions after a rename.",
-    "de": "Durch das Umbenennen eines Skills werden die zugehörigen Referenzen aktualisiert, wenn die Anwendung sie auflösen kann. Überprüft weiterhin wichtige Übergänge nach einer Umbenennung.",
-    "es": "Cambiar el nombre de una habilidad actualiza las referencias asociadas cuando la aplicación puede resolverlas. Todavía comprueba las transiciones importantes después de un cambio de nombre.",
-    "it": "Rinominare una competenza aggiorna i riferimenti associati quando l'applicazione può risolverli. Controlla ancora le transizioni importanti dopo una ridenominazione.",
-    "pt": "Renomear uma habilidade atualiza as referências associadas quando o aplicativo pode resolvê-las. Ainda verifica transições importantes após uma renomeação.",
-    "indexes": [
-      192
     ]
   },
   {
@@ -2968,28 +1691,6 @@
     "pt": "Restaurar um backup",
     "indexes": [
       326
-    ]
-  },
-  {
-    "fr": "Rester connecté sur cet appareil",
-    "en": "Stay connected on this device",
-    "de": "Rester connecté sur cet appareil",
-    "es": "Mantente conectado en este dispositivo",
-    "it": "Rester connecté sur cet appareil",
-    "pt": "Fique conectado neste dispositivo",
-    "indexes": [
-      925
-    ]
-  },
-  {
-    "fr": "Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.",
-    "en": "Return to Skills, Transition / Cancel and Combo Builder to verify the restored data.",
-    "de": "Kehre zu Skills, Transition / Cancel und Combo Builder zurück, um die wiederhergestellten Daten zu prüfen.",
-    "es": "Vuelve a Skills, Transición / Cancel y Generador combinado para verificar los datos restaurados.",
-    "it": "Torna a Skills, Transizione / Cancel e Combo Builder per verificare i dati ripristinati.",
-    "pt": "Volta a Skills, Transferir/Cancelar e Construtor de combinação para verificar os dados restaurados.",
-    "indexes": [
-      342
     ]
   },
   {
@@ -3105,17 +1806,6 @@
     ]
   },
   {
-    "fr": "SÉCURITÉ",
-    "en": "SECURITY",
-    "de": "SÉCURITÉ",
-    "es": "SEGURIDAD",
-    "it": "SÉCURITÉ",
-    "pt": "SEGURANÇA",
-    "indexes": [
-      960
-    ]
-  },
-  {
     "fr": "Sélectionne d’abord une classe dans l’onglet Classe.",
     "en": "Select a class first in the Class tab.",
     "de": "Sélectionne d’abord une classe dans l’onglet Klasse.",
@@ -3161,17 +1851,6 @@
     ]
   },
   {
-    "fr": "Sélectionne une compétence puis ses deux effets d’add-on.",
-    "en": "Select a skill then its two add-on effects.",
-    "de": "Wählen Sie eine Fertigkeit und dann ihre beiden Zusatzeffekte aus.",
-    "es": "Selecciona una habilidad y luego sus dos efectos adicionales.",
-    "it": "Seleziona un'abilità e poi i suoi due effetti aggiuntivi.",
-    "pt": "Selecione uma habilidade e depois seus dois efeitos complementares.",
-    "indexes": [
-      520
-    ]
-  },
-  {
     "fr": "Séquence",
     "en": "Sequence",
     "de": "Séquence",
@@ -3180,17 +1859,6 @@
     "pt": "Séquence",
     "indexes": [
       98
-    ]
-  },
-  {
-    "fr": "sert à extraire des mesures réelles depuis une vidéo locale. Tu peux choisir le point de départ de l’analyse au lieu de commencer obligatoirement à 0:00.",
-    "en": "is used to extract real measurements from a local video. You can choose the starting point for the analysis instead of necessarily starting at 0:00.",
-    "de": "wird verwendet, um echte Messungen aus einem lokalen Video zu extrahieren. Sie können den Startpunkt für die Analyse wählen, anstatt unbedingt bei 0:00 zu beginnen.",
-    "es": "se utiliza para extraer medidas reales de un vídeo local. Puede elegir el punto de partida para el análisis en lugar de comenzar necesariamente a las 0:00.",
-    "it": "viene utilizzato per estrarre misurazioni reali da un video locale. Puoi scegliere il punto di partenza per l'analisi invece di iniziare necessariamente alle 0:00.",
-    "pt": "é usado para extrair medidas reais de um vídeo local. Você pode escolher o ponto de partida para a análise em vez de necessariamente começar às 0:00.",
-    "indexes": [
-      197
     ]
   },
   {
@@ -3205,17 +1873,6 @@
     ]
   },
   {
-    "fr": "Settings ont une persistance unique, les rapports de bug indiquent la bonne version et l’export JSON complet reste recommandé.",
-    "en": "Settings have unique persistence, bug reports indicate the correct version and full JSON export is still recommended.",
-    "de": "Einstellungen haben eine einzigartige Persistenz, Fehlerberichte weisen auf die richtige Version hin und ein vollständiger JSON-Export wird weiterhin empfohlen.",
-    "es": "La configuración tiene una persistencia única, los informes de errores indican la versión correcta y aún se recomienda la exportación JSON completa.",
-    "it": "Le impostazioni hanno una persistenza univoca, le segnalazioni di bug indicano la versione corretta e si consiglia comunque l'esportazione JSON completa.",
-    "pt": "As configurações têm persistência única, os relatórios de bugs indicam a versão correta e a exportação JSON completa ainda é recomendada.",
-    "indexes": [
-      144
-    ]
-  },
-  {
     "fr": "Seuil re-CC PvP",
     "en": "PvP re-CC threshold",
     "de": "Seuil re-CC PvP",
@@ -3224,28 +1881,6 @@
     "pt": "Seuil re-CC PvP",
     "indexes": [
       869
-    ]
-  },
-  {
-    "fr": "si tu veux retrouver exactement l’état sauvegardé.",
-    "en": "if you want to find exactly the saved state.",
-    "de": "wenn Sie genau den gespeicherten Zustand finden möchten.",
-    "es": "si desea encontrar exactamente el estado guardado.",
-    "it": "se vuoi trovare esattamente lo stato salvato.",
-    "pt": "se você quiser encontrar exatamente o estado salvo.",
-    "indexes": [
-      334
-    ]
-  },
-  {
-    "fr": "Site officiel PC · actualités, événements et annonces",
-    "en": "Official PC site · news, events and announcements",
-    "de": "Offizielle PC-Website · Neuigkeiten, Veranstaltungen und Ankündigungen",
-    "es": "Sitio oficial de PC · noticias, eventos y anuncios",
-    "it": "Sito PC ufficiale · notizie, eventi e annunci",
-    "pt": "Site oficial para PC · notícias, eventos e anúncios",
-    "indexes": [
-      108
     ]
   },
   {
@@ -3293,29 +1928,6 @@
     ]
   },
   {
-    "fr": "Spécialisation",
-    "en": "Specialization",
-    "de": "Spezialisierung",
-    "es": "Especialización",
-    "it": "Specializzazione",
-    "pt": "Especialização",
-    "indexes": [
-      402,
-      407
-    ]
-  },
-  {
-    "fr": "Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle source du CC Timer avec sa propre durée mesurée, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.",
-    "en": "Stiffness = 0.7 pt; other CCs counted = 1.0 pt. The CC that makes 2.0 reach/exceed is applied normally, becomes the new source of the CC Timer with its own measured duration, then immunity begins. Immunity only blocks subsequent CCs and never removes this count. Example: 1.0 + 1.0 = 2 CC applied; 0.7 + 0.7 + 0.7 = 3 CC applied.",
-    "de": "Stiffness = 0,7 pt; weitere CCs gezählt = 1,0 Pkt. Der CC, der dafür sorgt, dass 2,0 erreicht/überschritten wird, wird normal angewendet, wird mit seiner eigenen gemessenen Dauer zur neuen Quelle des CC-Timers, dann beginnt die Immunität. Immunität blockiert nur nachfolgende CCs und entfernt diese Zählung niemals. Beispiel: 1,0 + 1,0 = 2 CC angewendet; 0,7 + 0,7 + 0,7 = 3 CC angewendet.",
-    "es": "Stiffness = 0,7 puntos; otros CC contados = 1,0 pt. El CC que hace que 2.0 alcance/exceda se aplica normalmente, se convierte en la nueva fuente del temporizador CC con su propia duración medida, luego comienza la inmunidad. La inmunidad solo bloquea los CC posteriores y nunca elimina este recuento. Ejemplo: 1,0 + 1,0 = 2 CC aplicados; 0,7 + 0,7 + 0,7 = 3 CC aplicados.",
-    "it": "Stiffness = 0,7 pt; altri CC contati = 1,0 pt. Il CC che fa raggiungere/superare 2.0 viene applicato normalmente, diventa la nuova fonte del CC Timer con la propria durata misurata, quindi inizia l'immunità. L'immunità blocca solo i CC successivi e non rimuove mai questo conteggio. Esempio: 1,0 + 1,0 = 2 CC applicati; 0,7 + 0,7 + 0,7 = 3 CC applicati.",
-    "pt": "Stiffness = 0,7 pt; outros CCs contados = 1,0 pt. O CC que faz 2.0 atingir/exceder é aplicado normalmente, torna-se a nova fonte do CC Timer com sua própria duração medida e então a imunidade começa. A imunidade apenas bloqueia CCs subsequentes e nunca remove esta contagem. Exemplo: 1,0 + 1,0 = 2 CC aplicados; 0,7 + 0,7 + 0,7 = 3 CC aplicados.",
-    "indexes": [
-      525
-    ]
-  },
-  {
     "fr": "Supprimer mon compte",
     "en": "Delete my account",
     "de": "Löschen mon compte",
@@ -3324,28 +1936,6 @@
     "pt": "Eliminar mon compte",
     "indexes": [
       956
-    ]
-  },
-  {
-    "fr": "Sustain / sécurité",
-    "en": "Sustain/safety",
-    "de": "Sustain / sécurité",
-    "es": "Sostenimiento/seguridad",
-    "it": "Sustain / sécurité",
-    "pt": "Sustentação/segurança",
-    "indexes": [
-      723
-    ]
-  },
-  {
-    "fr": "Système CC PvP officiel",
-    "en": "Official CC PvP system",
-    "de": "Système CC PvP officiel",
-    "es": "Sistema oficial CC PvP",
-    "it": "Système CC PvP officiel",
-    "pt": "Sistema CC PvP oficial",
-    "indexes": [
-      526
     ]
   },
   {
@@ -3368,39 +1958,6 @@
     "pt": "Hora do vídeo",
     "indexes": [
       626
-    ]
-  },
-  {
-    "fr": "Tous ces réglages sont lus automatiquement par Optimizer.",
-    "en": "All these settings are read automatically by Optimizer.",
-    "de": "Alle diese Einstellungen werden vom Optimizer automatisch gelesen.",
-    "es": "Todas estas configuraciones son leídas automáticamente por Optimizer.",
-    "it": "Tutte queste impostazioni vengono lette automaticamente da Optimizer.",
-    "pt": "Todas essas configurações são lidas automaticamente pelo Optimizer.",
-    "indexes": [
-      918
-    ]
-  },
-  {
-    "fr": "Toutes les catégories",
-    "en": "All categories",
-    "de": "Alle les catégories",
-    "es": "Todas les catégories",
-    "it": "Tutte les catégories",
-    "pt": "Todas les catégories",
-    "indexes": [
-      503
-    ]
-  },
-  {
-    "fr": "travaille normalement → mesure/corrige les données → enregistre tes builds utiles → termine la session par",
-    "en": "work normally → measure/correct the data → save your useful builds → end the session with",
-    "de": "Arbeiten Sie normal → Messen/korrigieren Sie die Daten → Speichern Sie Ihre nützlichen Builds → Beenden Sie die Sitzung mit",
-    "es": "trabajar normalmente → medir/corregir los datos → guardar sus compilaciones útiles → finalizar la sesión con",
-    "it": "lavora normalmente → misura/correggi i dati → salva le tue build utili → termina la sessione con",
-    "pt": "funcione normalmente → meça/corrija os dados → salve suas compilações úteis → termine a sessão com",
-    "indexes": [
-      348
     ]
   },
   {
@@ -3437,17 +1994,6 @@
     ]
   },
   {
-    "fr": "Un nouveau CC appliqué devient la nouvelle source du CC Timer avec sa propre durée mesurée.",
-    "en": "A new CC applied becomes the new source of the CC Timer with its own measured duration.",
-    "de": "Ein neu angewendeter CC wird mit seiner eigenen gemessenen Dauer zur neuen Quelle des CC-Timers.",
-    "es": "Un nuevo CC aplicado se convierte en la nueva fuente del temporizador CC con su propia duración medida.",
-    "it": "Un nuovo CC applicato diventa la nuova sorgente del timer CC con la propria durata misurata.",
-    "pt": "Um novo CC aplicado torna-se a nova fonte do CC Timer com sua própria duração medida.",
-    "indexes": [
-      268
-    ]
-  },
-  {
     "fr": "Une compétence sans nouveau CC",
     "en": "A skill without a new CC",
     "de": "Une compétence sans nouveau CC",
@@ -3459,17 +2005,6 @@
     ]
   },
   {
-    "fr": "Une détection automatique est une aide de mesure, pas une vérité absolue. Les valeurs aberrantes doivent être contrôlées dans la vidéo.",
-    "en": "Automatic detection is a measurement aid, not an absolute truth. Outliers should be controlled in the video.",
-    "de": "Die automatische Erkennung ist eine Messhilfe, keine absolute Wahrheit. Ausreißer sollten im Video kontrolliert werden.",
-    "es": "La detección automática es una ayuda para la medición, no una verdad absoluta. Los valores atípicos deben controlarse en el vídeo.",
-    "it": "Il rilevamento automatico è un ausilio alla misurazione, non una verità assoluta. I valori anomali dovrebbero essere controllati nel video.",
-    "pt": "A detecção automática é um auxílio à medição, não uma verdade absoluta. Outliers devem ser controlados no vídeo.",
-    "indexes": [
-      213
-    ]
-  },
-  {
     "fr": "Une donnée absente reste inconnue. Une transition ou une durée de CC non mesurée ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.",
     "en": "Une donnée absente reste inconnue. Une transition ou une duration of CC non measured ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.",
     "de": "Une donnée absente reste inconnue. Une transition ou une durée de CC non gemessen ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.",
@@ -3478,17 +2013,6 @@
     "pt": "Une donnée absente reste inconnue. Une transição ou une duração do CC non medida ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.",
     "indexes": [
       151
-    ]
-  },
-  {
-    "fr": "Une transition représente le temps réel nécessaire pour passer du skill A au skill B. Un cancel permet d’interrompre une animation pour enchaîner plus tôt.",
-    "en": "A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.",
-    "de": "Ein Übergang stellt die tatsächliche Zeit dar, die erforderlich ist, um von Fertigkeit A zu Fertigkeit B zu gelangen. Durch einen Abbruch können Sie eine Animation unterbrechen, um früher fortzufahren.",
-    "es": "Una transición representa el tiempo real necesario para pasar de la habilidad A a la habilidad B. Una cancelación te permite interrumpir una animación para continuar antes.",
-    "it": "Una transizione rappresenta il tempo reale necessario per passare dall'abilità A all'abilità B. Un annullamento consente di interrompere un'animazione per continuare prima.",
-    "pt": "Uma transição representa o tempo real necessário para passar da habilidade A para a habilidade B. Um cancelamento permite interromper uma animação para continuar mais cedo.",
-    "indexes": [
-      216
     ]
   },
   {
@@ -3504,6 +2028,18 @@
     ]
   },
   {
+    "fr": "Utilise",
+    "en": "Used",
+    "de": "Utilise",
+    "es": "Usado",
+    "it": "Utilise",
+    "pt": "Usado",
+    "indexes": [
+      182,
+      245
+    ]
+  },
+  {
     "fr": "Utilise l’édition pour corriger son",
     "en": "Use editing to correct sound",
     "de": "Utilise l’édition pour corriger son",
@@ -3515,36 +2051,14 @@
     ]
   },
   {
-    "fr": "Utilise la lecture lente et la pause pendant l’analyse pour contrôler une détection.",
-    "en": "Uses slow play and pause during scanning to monitor a detection.",
-    "de": "Verwendet langsame Wiedergabe und Pause während des Scannens, um eine Erkennung zu überwachen.",
-    "es": "Utiliza reproducción lenta y pausa durante el escaneo para monitorear una detección.",
-    "it": "Utilizza la riproduzione lenta e la pausa durante la scansione per monitorare un rilevamento.",
-    "pt": "Usa reprodução lenta e pausa durante a varredura para monitorar uma detecção.",
+    "fr": "Utiliser le Combo Builder et ses suggestions",
+    "en": "Use the Combo Builder and its suggestions",
+    "de": "Utiliser le Combo Builder et ses suggestions",
+    "es": "Utilice el Generador combinado y sus sugerencias",
+    "it": "Utiliser le Combo Builder et ses suggestions",
+    "pt": "Use o Construtor de combinação e suas sugestões",
     "indexes": [
-      203
-    ]
-  },
-  {
-    "fr": "Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.",
-    "en": "Uses the reference dictionary for the selected class and specialization.",
-    "de": "Verwendet das Referenzwörterbuch für die ausgewählte Klasse und Spezialisierung.",
-    "es": "Utiliza el diccionario de referencia para la clase y especialización seleccionada.",
-    "it": "Utilizza il dizionario di riferimento per la classe e la specializzazione selezionate.",
-    "pt": "Usa o dicionário de referência para a aula e especialização selecionada.",
-    "indexes": [
-      463
-    ]
-  },
-  {
-    "fr": "Utiliser BDO Combos Labs de A à Z",
-    "en": "Using BDO Combos Labs from A to Z",
-    "de": "Utiliser BDO Combos Labs de A à Z",
-    "es": "Usando Laboratorios de combos BDO de la A a la Z",
-    "it": "Utiliser BDO Combo Labs de A à Z",
-    "pt": "Usando Laboratórios BDO Combos de A a Z",
-    "indexes": [
-      146
+      229
     ]
   },
   {
@@ -3556,28 +2070,6 @@
     "pt": "Valida medições confiáveis.",
     "indexes": [
       224
-    ]
-  },
-  {
-    "fr": "validées / mesurées",
-    "en": "validated / measured",
-    "de": "validées / mesurées",
-    "es": "validado / medido",
-    "it": "validées / mesurées",
-    "pt": "validado / medido",
-    "indexes": [
-      54
-    ]
-  },
-  {
-    "fr": "Vérification : 10 J’aime",
-    "en": "Verification: 10 Likes",
-    "de": "Vérification : 10 J’aime",
-    "es": "Vérification : 10 J’aime",
-    "it": "Vérification : 10 J’aime",
-    "pt": "Vérification : 10 J’aime",
-    "indexes": [
-      471
     ]
   },
   {
@@ -3600,28 +2092,6 @@
     "pt": "Verifica na página inicial se o contexto ativo e o repositório estão corretos.",
     "indexes": [
       172
-    ]
-  },
-  {
-    "fr": "Vitesse / fluidité",
-    "en": "Speed/fluidity",
-    "de": "Vitesse / fluidité",
-    "es": "Velocidad/fluidez",
-    "it": "Vitesse / fluidité",
-    "pt": "Velocidade/fluidez",
-    "indexes": [
-      721
-    ]
-  },
-  {
-    "fr": "Zone concernée",
-    "en": "Area concerned",
-    "de": "Zone concernée",
-    "es": "Zona afectada",
-    "it": "Zone concernée",
-    "pt": "Área em questão",
-    "indexes": [
-      973
     ]
   }
 ]
