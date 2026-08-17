@@ -1,3 +1,4 @@
-BDO Combos Labs V111
+BDO Combos Labs V134
 Force Cloudflare Pages production redeploy.
-2026-08-17
+Combo Setup visual module + AnalysisCore updates.
+2026-08-18
