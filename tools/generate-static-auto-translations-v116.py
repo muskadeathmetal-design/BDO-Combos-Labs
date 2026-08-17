@@ -2,6 +2,7 @@ import html
 import json
 import re
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from deep_translator import GoogleTranslator
@@ -9,6 +10,7 @@ from deep_translator import GoogleTranslator
 SOURCE = Path('en/index.html')
 OUTPUT = Path('bcl-static-auto-translations-v116.json')
 LOCALES = ['en', 'de', 'es', 'it', 'pt']
+BATCH_SIZE = 24
 
 FRENCH_WORDS = re.compile(
     r"\b(?:le|la|les|un|une|des|du|de|dans|avec|sans|pour|sur|est|sont|tu|vous|peux|peut|aucun|aucune|"
@@ -39,8 +41,7 @@ PLACEHOLDER = re.compile(r'(\$\{[^{}]{1,200}\}|\{\{[^{}]{1,200}\}\}|%\w|\b\d+(?:
 
 def normalize(value: str) -> str:
     value = html.unescape(value or '')
-    value = re.sub(r'\s+', ' ', value).strip()
-    return value
+    return re.sub(r'\s+', ' ', value).strip()
 
 
 def protected_names(source: str):
@@ -79,38 +80,31 @@ def looks_human(text: str, protected: set) -> bool:
 def extract_candidates(source: str):
     protected = protected_names(source)
     candidates = set()
-
-    # Human-visible HTML text nodes (script/style contents are removed first).
     html_only = re.sub(r'<script\b[\s\S]*?</script>', ' ', source, flags=re.I)
     html_only = re.sub(r'<style\b[\s\S]*?</style>', ' ', html_only, flags=re.I)
     for match in re.finditer(r'>([^<>]+)<', html_only):
         value = normalize(match.group(1))
         if looks_human(value, protected):
             candidates.add(value)
-
-    # User-facing JS strings. Restrict to reasonably simple quoted/template literals.
     string_re = re.compile(r'''(?s)(["'`])((?:\\.|(?!\1).){3,380})\1''')
     for match in string_re.finditer(source):
         value = normalize(match.group(2))
         if looks_human(value, protected):
             candidates.add(value)
-
     return sorted(candidates, key=lambda s: (-len(s), s.lower()))
 
 
 def protect_text(text: str):
     values = []
-
     def token(match):
         idx = len(values)
         values.append(match.group(0))
         return f'ZZZBCLTOKEN{idx}ZZZ'
-
     protected = PLACEHOLDER.sub(token, text)
     protected_terms = [
-        'Down Smash', 'Air Smash', 'Super Armor', 'Forward Guard', 'Knockdown', 'Knockback',
-        'Stiffness', 'Invincible', 'Iframe', 'Freeze', 'Stun', 'Bound', 'Float', 'Grab',
-        'Shift', 'Space', 'LMB', 'RMB', 'W+F', 'S+F', 'Shift+Q', 'Shift+F', 'W+RMB', 'S+RMB'
+        'Down Smash','Air Smash','Super Armor','Forward Guard','Knockdown','Knockback',
+        'Stiffness','Invincible','Iframe','Freeze','Stun','Bound','Float','Grab',
+        'Shift','Space','LMB','RMB','W+F','S+F','Shift+Q','Shift+F','W+RMB','S+RMB'
     ]
     for term in protected_terms:
         if term in protected:
@@ -128,19 +122,47 @@ def restore_text(text: str, values):
     return out
 
 
-def translate_one(translator, source: str, retries=3):
-    protected, values = protect_text(source)
-    last = None
-    for attempt in range(retries):
-        try:
-            result = translator.translate(protected)
-            if not result:
-                raise RuntimeError('empty translation')
-            return restore_text(result, values)
-        except Exception as exc:
-            last = exc
-            time.sleep(1.2 * (attempt + 1))
-    raise RuntimeError(f'translation failed: {last}')
+def chunks(items, size):
+    for i in range(0, len(items), size):
+        yield items[i:i+size]
+
+
+def translate_locale(locale, pending):
+    translator = GoogleTranslator(source='fr', target=locale)
+    result = {}
+    failures = 0
+    total_batches = (len(pending) + BATCH_SIZE - 1) // BATCH_SIZE
+    for batch_no, batch in enumerate(chunks(pending, BATCH_SIZE), 1):
+        protected_batch = []
+        values_batch = []
+        for source_text in batch:
+            protected, values = protect_text(source_text)
+            protected_batch.append(protected)
+            values_batch.append(values)
+        translated_batch = None
+        for attempt in range(3):
+            try:
+                translated_batch = translator.translate_batch(protected_batch)
+                if not translated_batch or len(translated_batch) != len(batch):
+                    raise RuntimeError('invalid batch result')
+                break
+            except Exception as exc:
+                if attempt == 2:
+                    print(f'WARN {locale} batch {batch_no}: {exc}')
+                else:
+                    time.sleep(0.8 * (attempt + 1))
+        if translated_batch:
+            for source_text, translated, values in zip(batch, translated_batch, values_batch):
+                translated = restore_text(translated or '', values)
+                if translated and translated != source_text:
+                    result[source_text] = translated
+        else:
+            failures += len(batch)
+        print(f'{locale}: batch {batch_no}/{total_batches} · {len(result)} translated')
+        if failures >= 48:
+            print(f'{locale}: stopping after too many failures')
+            break
+    return locale, result
 
 
 def main():
@@ -159,26 +181,17 @@ def main():
     for locale in LOCALES:
         cache.setdefault(locale, {})
 
-    for locale in LOCALES:
-        translator = GoogleTranslator(source='fr', target=locale)
-        pending = [s for s in candidates if not cache[locale].get(s)]
-        print(f'{locale}: {len(pending)} pending')
-        failures = 0
-        for idx, source_text in enumerate(pending, 1):
-            try:
-                translated = translate_one(translator, source_text)
-                if translated and translated != source_text:
-                    cache[locale][source_text] = translated
-            except Exception as exc:
-                failures += 1
-                print(f'WARN {locale} {idx}/{len(pending)}: {exc} :: {source_text[:100]}')
-                if failures >= 25:
-                    print(f'{locale}: stopping after 25 failures')
-                    break
-            if idx % 40 == 0:
-                OUTPUT.write_text(json.dumps(cache, ensure_ascii=False, indent=2, sort_keys=True), encoding='utf-8')
-                print(f'{locale}: {idx}/{len(pending)}')
-            time.sleep(0.08)
+    jobs = {}
+    with ThreadPoolExecutor(max_workers=len(LOCALES)) as executor:
+        for locale in LOCALES:
+            pending = [s for s in candidates if not cache[locale].get(s)]
+            print(f'{locale}: {len(pending)} pending')
+            jobs[executor.submit(translate_locale, locale, pending)] = locale
+        for future in as_completed(jobs):
+            locale, additions = future.result()
+            cache[locale].update(additions)
+            OUTPUT.write_text(json.dumps(cache, ensure_ascii=False, indent=2, sort_keys=True), encoding='utf-8')
+            print(f'{locale}: saved {len(cache[locale])} total')
 
     OUTPUT.write_text(json.dumps(cache, ensure_ascii=False, indent=2, sort_keys=True), encoding='utf-8')
     print('Saved', OUTPUT)
