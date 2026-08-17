@@ -1,4 +1,6 @@
 V116 human residual French candidates: 200
+Visible: 87
+Internal/dynamic: 113
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
