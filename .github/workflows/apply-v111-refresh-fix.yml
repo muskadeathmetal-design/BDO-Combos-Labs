@@ -1,0 +1,101 @@
+name: Apply V111 live refresh fix
+
+on:
+  push:
+    paths:
+      - '.github/v111-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Patch index.html
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('<title>BDO Combos Labs · V110</title>', '<title>BDO Combos Labs · V111</title>')
+          marker = '<!-- BCL V111 LIVE REFRESH FIX -->'
+          if marker not in s:
+              patch = r'''
+<!-- BCL V111 LIVE REFRESH FIX -->
+<script>
+(function(){
+  let refreshTimer = 0;
+  let lastRefresh = 0;
+
+  function refreshBclUIV111(reason){
+    clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(function(){
+      const now = Date.now();
+      if(now - lastRefresh < 250) return;
+      lastRefresh = now;
+
+      try{ if(typeof syncActiveContextV105 === 'function') syncActiveContextV105(true); }catch(e){}
+      try{ if(typeof syncSettingsClassContext === 'function') syncSettingsClassContext(); }catch(e){}
+
+      [
+        'renderClassStats',
+        'renderSkillsPage',
+        'renderComboPage',
+        'renderPlayerCombosPage',
+        'renderTransitionPage',
+        'renderAddonPage',
+        'renderComboBuilder',
+        'renderYouTubeAnalyzer'
+      ].forEach(function(name){
+        try{
+          const fn = window[name];
+          if(typeof fn === 'function') fn();
+        }catch(e){ console.warn('V111 refresh ignored:', name, e); }
+      });
+
+      try{
+        if(typeof renderAuthUI === 'function') renderAuthUI();
+        else if(typeof updateAuthUI === 'function') updateAuthUI();
+      }catch(e){}
+    }, 80);
+  }
+
+  window.bclRefreshUIV111 = refreshBclUIV111;
+
+  window.addEventListener('pageshow', function(){ refreshBclUIV111('pageshow'); });
+  window.addEventListener('focus', function(){ refreshBclUIV111('focus'); });
+  document.addEventListener('visibilitychange', function(){
+    if(!document.hidden) refreshBclUIV111('visible');
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    refreshBclUIV111('dom');
+    setTimeout(function(){ refreshBclUIV111('startup-1'); }, 500);
+    setTimeout(function(){ refreshBclUIV111('startup-2'); }, 1500);
+    setTimeout(function(){ refreshBclUIV111('startup-3'); }, 3500);
+  });
+
+  // Supabase/shared data arrive asynchronously. A light visible-page heartbeat
+  // keeps the current page in sync without requiring F5.
+  setInterval(function(){
+    if(!document.hidden) refreshBclUIV111('heartbeat');
+  }, 3000);
+})();
+</script>
+'''
+              if '</body>' not in s:
+                  raise SystemExit('index.html has no </body> marker')
+              s = s.replace('</body>', patch + '\n</body>', 1)
+          p.write_text(s, encoding='utf-8')
+      - name: Commit V111
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Fix live UI refresh after Supabase sync (V111)"
+          git push origin main
