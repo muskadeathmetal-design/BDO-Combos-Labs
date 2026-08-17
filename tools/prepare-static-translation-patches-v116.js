@@ -50,4 +50,4 @@ for (const locale of locales) {
 }
 
 fs.writeFileSync(outputCache, JSON.stringify(prepared, null, 2), 'utf8');
-console.log('Prepared V116 visible-UI cache including cumulative auto-completed translations.');
+console.log('Prepared V116 visible-UI cache including fully retranslated residual set.');
