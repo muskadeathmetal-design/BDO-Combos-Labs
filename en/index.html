@@ -3449,7 +3449,7 @@ th {
   font-size:8px;font-weight:900;text-transform:uppercase;vertical-align:middle
 }
 .skills-cc-duration-status-v55.auto{color:#e3b341;background:rgba(210,153,34,.10);border:1px solid rgba(210,153,34,.20)}
-.skills-cc-duration-status-v55.validated{color:#7ee787;background:rgba(63,185,80,.10);border:1px solid rgba(63,185,80,.20)}
+.skills-cc-duration-status-v55.validée{color:#7ee787;background:rgba(63,185,80,.10);border:1px solid rgba(63,185,80,.20)}
 </style>
 
 <style id="cc-timeline-stats-v57-style">.builder-selected-skill-meta-item.cc-active strong{font-variant-numeric:tabular-nums}</style>
@@ -5094,7 +5094,7 @@ h4{font-size:15px!important;line-height:1.3!important}
 
 
 <style id="settings-unified-v92-style">
-/* V92 — every Settings section follows the same visual system as Structure combo. */
+/* V92 — every Settings section follows the same visual system as Structure du combo. */
 #settingsPage .settings92-table,
 #settingsPage .phase90-table{
   display:grid!important;
@@ -5700,7 +5700,7 @@ function bclAuthRedirectV109(){
 window.addEventListener('DOMContentLoaded',()=>{
   document.documentElement.dataset.bclWeb=bclIsProductionWebV109()?'production':'local';
   if(location.protocol==='file:'){
-    console.info('BDO Combos Labs V111: local file mode. For the public community, use the deployed HTTPS site.');
+    console.info('BDO Combos Labs V111: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.');
   }
 });
 </script>
@@ -7275,7 +7275,7 @@ if(!BDO_DOM_READY){
 'use strict';
 
 // Base volontairement vide.
-// None dataset, aucune compétence, aucune class, aucun combo,
+// Aucun dataset, aucune compétence, aucune classe, aucun combo,
 // aucun loader, aucun import et aucun fallback.
 
 const APP_STATE = Object.freeze({
@@ -7320,7 +7320,7 @@ function renderClassStats(){
   document.getElementById('statTransitions').textContent =
     (CLASS_TRANSITIONS[name]?.[spec] || []).length;
   document.getElementById('classStatsInfo').textContent =
-    'No combat data has been recorded yet for ' + name + '.';
+    'Aucune donnée de combat n’est encore enregistrée pour ' + name + '.';
   panel.style.display = 'block';
 }
 </script>
@@ -8000,7 +8000,7 @@ function skillsReplaceNameInReferencesV72(className,spec,oldName,newName){
   const oldNorm=norm(oldName);
   if(!oldNorm||oldNorm===norm(newName))return;
 
-  // Transitions / cancellations.
+  // Transitions / cancels.
   const transitions=CLASS_TRANSITIONS?.[className]?.[spec]||[];
   transitions.forEach(tr=>{
     if(typeof tr?.from==='string'&&norm(tr.from)===oldNorm)tr.from=newName;
@@ -8078,12 +8078,12 @@ function skillsReplaceNameInReferencesV72(className,spec,oldName,newName){
 
 function skillsRenameV72(item,className,spec,newName){
   const raw=skillsFindRawItemV72(className,spec,item);
-  if(!raw||typeof raw!=='object')return {ok:false,message:'Skill not found in active list.'};
+  if(!raw||typeof raw!=='object')return {ok:false,message:'Compétence introuvable dans la liste active.'};
 
   const name=skillsNormalizeNameV72(newName);
-  if(!name)return {ok:false,message:'The skill name cannot be empty.'};
+  if(!name)return {ok:false,message:'Le nom de la compétence ne peut pas être vide.'};
   if(skillsNameExistsV72(className,spec,name,raw)){
-    return {ok:false,message:`A skill named “${name}” already exists.`};
+    return {ok:false,message:`Une compétence nommée « ${name} » existe déjà.`};
   }
 
   const oldName=skillsNormalizeNameV72(raw.name||raw.full_name||raw.displayName);
@@ -8103,8 +8103,8 @@ function skillsDeleteV72(item,className,spec){
   const store=skillsRawStoreV72(className,spec);
   if(!raw||!store)return false;
 
-  const name=skillsNormalizeNameV72(raw?.name||raw?.full_name||raw?.displayName||'this skill');
-  if(!confirm(`Delete définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.`)){
+  const name=skillsNormalizeNameV72(raw?.name||raw?.full_name||raw?.displayName||'cette compétence');
+  if(!confirm(`Supprimer définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.`)){
     return false;
   }
 
@@ -8164,12 +8164,12 @@ function skillsManualAddV72(){
   if(!className){
     if(status){
       status.className='skills-auto-search-status skills-auto-status-line bad';
-      status.textContent='Sélectionne une class avant d’ajouter une compétence.';
+      status.textContent='Sélectionne une classe avant d’ajouter une compétence.';
     }
     return;
   }
 
-  const rawName=prompt(`Name de la nouvelle compétence · ${className} · ${spec}`,'');
+  const rawName=prompt(`Nom de la nouvelle compétence · ${className} · ${spec}`,'');
   if(rawName===null)return;
   const name=skillsNormalizeNameV72(rawName);
   if(!name){
@@ -8180,7 +8180,7 @@ function skillsManualAddV72(){
   if(skillsNameExistsV72(className,spec,name)){
     if(status){
       status.className='skills-auto-search-status skills-auto-status-line bad';
-      status.textContent=`« ${name} » existe déjà dans cette specialization.`;
+      status.textContent=`« ${name} » existe déjà dans cette spécialisation.`;
     }
     return;
   }
@@ -8232,7 +8232,7 @@ function skillsTableCreateEditor(item,className,spec,baseName){
     ['Max Targets','maxTargets','number','1'],['MP / Resource Cost','mpCost','number','1'],['Stamina Cost','staminaCost','number','1'],
     ['Required Level','requiredLevel','number','1'],['Category','category','text',''],
     ['CC mesuré (s)','ccMeasuredDuration','number','0.001'],
-    ['CC FPS measurement','ccMeasureFPS','number','1'],
+    ['CC mesure FPS','ccMeasureFPS','number','1'],
     ['CC frame début','ccStartFrame','number','1'],
     ['CC frame fin','ccEndFrame','number','1'],
     ['CC source','ccMeasureSource','text','']
@@ -8273,7 +8273,7 @@ function skillsTableCreateEditor(item,className,spec,baseName){
     };
     field.append(s,input);grid.appendChild(field);
   });
-  const arrays=[['Effects','effects'],['CC','cc'],['Protections','protections'],['Buffs','buffs'],['Debuffs','debuffs'],['Notes','notes'],['CC measurement note','ccMeasureNote']];
+  const arrays=[['Effects','effects'],['CC','cc'],['Protections','protections'],['Buffs','buffs'],['Debuffs','debuffs'],['Notes','notes'],['CC mesure note','ccMeasureNote']];
   arrays.forEach(([label,key])=>{
     const field=document.createElement('label');field.className='skills-editor-field wide';
     const s=document.createElement('span');s.textContent=label;
@@ -8308,7 +8308,7 @@ function renderSkillsPage(){
   const sortEl=document.getElementById('skillsTableSort'); if(sortEl)sortEl.value=SKILLS_TABLE_STATE.sort;
 
   if(!className){
-    context.textContent='No class selected';content.className='page-placeholder';content.textContent='First select a class.';
+    context.textContent='Aucune classe sélectionnée';content.className='page-placeholder';content.textContent='Sélectionne d’abord une classe.';
     ['skillsSummaryTotal','skillsSummaryEnabled','skillsSummaryInput','skillsSummaryCombat'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent='0';});
     const ref=document.getElementById('skillsReferenceActive');if(ref)ref.textContent='—';return;
   }
@@ -8328,7 +8328,7 @@ function renderSkillsPage(){
 
   if(!grouped.length){
     content.className='page-placeholder';
-    content.innerHTML=`No skill registered for ${escapeHtml(className)} · ${escapeHtml(spec)}.<br><button type="button" class="optimizer-btn skills-empty-add-v72" onclick="skillsManualAddV72()">+ Add a skill manually</button>`;
+    content.innerHTML=`Aucune compétence enregistrée pour ${escapeHtml(className)} · ${escapeHtml(spec)}.<br><button type="button" class="optimizer-btn skills-empty-add-v72" onclick="skillsManualAddV72()">+ Ajouter une compétence manuellement</button>`;
     return;
   }
 
@@ -8366,7 +8366,7 @@ function renderSkillsPage(){
 
   const scroller=document.createElement('div');scroller.className='skills-table-scroll';
   const table=document.createElement('table');table.className='skills-data-table';
-  table.innerHTML='<thead><tr><th>Name</th><th>Input</th><th>Cooldown</th><th>Timer</th><th>Protection</th><th>CC</th><th>Duration CC</th><th>PvE</th><th>PvP</th><th>Effets</th><th>Category</th><th>Statut</th><th>Actions</th></tr></thead>';
+  table.innerHTML='<thead><tr><th>Nom</th><th>Input</th><th>Cooldown</th><th>Timer</th><th>Protection</th><th>CC</th><th>Durée CC</th><th>PvE</th><th>PvP</th><th>Effets</th><th>Catégorie</th><th>Statut</th><th>Actions</th></tr></thead>';
   const tbody=document.createElement('tbody');
 
   visible.forEach(row=>{
@@ -8413,7 +8413,7 @@ function renderSkillsPage(){
   table.appendChild(tbody);scroller.appendChild(table);content.appendChild(scroller);
 
   const foot=document.createElement('div');foot.className='skills-pagination';
-  const range=document.createElement('span');range.textContent=total?`Affichage ${start+1} à ${Math.min(start+pageSize,total)} sur ${total} compétences`:'No results';
+  const range=document.createElement('span');range.textContent=total?`Affichage ${start+1} à ${Math.min(start+pageSize,total)} sur ${total} compétences`:'Aucun résultat';
   const nav=document.createElement('div');nav.className='skills-page-buttons';
   const addPageBtn=(label,page,disabled=false,active=false)=>{const b=document.createElement('button');b.type='button';b.className='skills-page-btn'+(active?' active':'');b.textContent=label;b.disabled=disabled;b.onclick=()=>skillsTableSetPage(page);nav.appendChild(b);};
   addPageBtn('‹',SKILLS_TABLE_STATE.page-1,SKILLS_TABLE_STATE.page<=1);
@@ -8443,67 +8443,67 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"InvenGlobal — Tamer most damage combo",
       sourceUrl:"https://www.invenglobal.com/articles/1658/bdo-tamers-guide-to-the-most-damage-combo",
-      note:"Documented Historical Combo: Legendary Beast Dance: Vermillion Bird cancel → Legendary Beast's Power → Moonlight Strike → Flow: Full Moon → Echo Pierce. The principle of cancellation is explicitly described; exact timing to measure.",
+      note:"Combo historique documenté : Legendary Beast Dance: Vermillion Bird cancel → Legendary Beast's Power → Moonlight Strike → Flow: Full Moon → Echo Pierce. Le principe de cancel est explicitement décrit ; timing exact à mesurer.",
       historicalReference:true,
       explicitCancel:true,
       seq:["Legendary Beast Dance: Vermillion Bird","Legendary Beast's Power","Moonlight Strike","Flow: Full Moon","Echo Pierce"]
     },
     {
       name:"Awakening — Grab → Bolt/Jolt → Echo → Rampage",
-      type:"PVP PLAYER COMBO",
+      type:"COMBO JOUEUR PVP",
       playerCategory:"PVP",
       confidence:"historical-documented",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"InvenGlobal — Tamer alternative grab combo",
       sourceUrl:"https://www.invenglobal.com/articles/1658/bdo-tamers-guide-to-the-most-damage-combo",
-      note:"Historical Inven reference retained, but adapted to the active library: Soaring Kick (grab) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. The Bolt/Jolt → Echo channel is also documented by Tamer players. The timings remain to be measured.",
+      note:"Référence historique Inven conservée, mais adaptée à la bibliothèque active : Soaring Kick (grab) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. La chaîne Bolt/Jolt → Echo est également documentée par des joueurs Tamer. Les timings restent à mesurer.",
       historicalReference:true,
       seq:["Soaring Kick","Bolt Wave","Jolt Wave","Echo Pierce","Beast Rampage","Moonlight Strike"]
     },
     {
       name:"Awakening — Large group PvE",
-      type:"PVE PLAYER COMBO",
+      type:"COMBO JOUEUR PVE",
       playerCategory:"PVE",
       confidence:"historical-community",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Trollsies Tamer guide — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/667q4n/tamer_guide_by_trollsies/",
-      note:"Large-group rotation released: Void Lightning → Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Dropping → Flow: Gust → Allround Spinner.",
+      note:"Rotation large-group publiée : Void Lightning → Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Dropping → Flow: Gust → Allround Spinner.",
       historicalReference:true,
       seq:["Void Lightning","Bolt Wave","Jolt Wave","Legendary Beast's Power","Bolt Wave","Jolt Wave","Echo Pierce","Legendary Beast Dance: Black Turtle","Leaves Dropping","Flow: Gust","Allround Spinner"]
     },
     {
       name:"Awakening — PvP basic engage",
-      type:"PVP PLAYER COMBO",
+      type:"COMBO JOUEUR PVP",
       playerCategory:"PVP",
       confidence:"historical-community",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Trollsies Tamer guide — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/667q4n/tamer_guide_by_trollsies/",
-      note:"Released player combo: Evasion → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.",
+      note:"Combo joueur publié : Evasion → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.",
       historicalReference:true,
       seq:["Evasion","Spray Scratch","Bolt Wave","Jolt Wave","Soaring Kick","Bolt Wave","Jolt Wave","Echo Pierce","Bolt Wave","Jolt Wave","Echo Pierce","Allround Spinner"]
     },
     {
       name:"Awakening — Moonlight Intimidation Rampage",
-      type:"PVP PLAYER COMBO",
+      type:"COMBO JOUEUR PVP",
       playerCategory:"PVP",
       confidence:"community",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Tamer community — Reddit/Tamer Discord combo",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/kw1b2u/my_first_pvp_montage_tamer_t1_nw_na/",
-      note:"Chain described as a common Tamer Discord combo: Moonlight Strike → Flow: Intimidation → Beast Rampage, then Allround Spinner/Fearful Trembling/Resonance depending on context.",
+      note:"Chaîne décrite comme combo commun du Tamer Discord : Moonlight Strike → Flow: Intimidation → Beast Rampage, puis Allround Spinner/Fearful Trembling/Resonance selon contexte.",
       seq:["Moonlight Strike","Flow: Intimidation","Beast Rampage","Allround Spinner"]
     },
     {
       name:"Awakening — Celestial Slam → Beast Rampage",
-      type:"PLAYER TRANSITION",
+      type:"TRANSITION JOUEUR",
       playerCategory:"PVE",
       confidence:"documented",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Pearl Abyss class discussion — Tamer reboot feedback",
       sourceUrl:"https://www.naeu.playblackdesert.com/DE-DE/Forum/ForumTopic/Detail?_opinionNo=72293&_topicNo=15840",
-      note:"The class discussion explicitly documents the use of Celestial Slam → Beast Rampage damage.",
+      note:"La discussion de classe documente explicitement l'utilisation du damage de Celestial Slam → Beast Rampage.",
       seq:["Celestial Slam","Beast Rampage"]
     },
     {
@@ -8514,7 +8514,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"BDFoundry Tamer guide — Rabam",
       sourceUrl:"https://www.blackdesertfoundry.com/tamer-class-guide/",
-      note:"BDFoundry states that Breath Spike is very fast and can be canceled very quickly to other skills. This entry does not make exact timings.",
+      note:"BDFoundry indique que Breath Spike est très rapide et peut être cancel très rapidement vers d'autres compétences. Cette entrée ne fabrique pas de timing exact.",
       explicitCancel:true,
       seq:["Breath Spike","Moonlight Strike"]
     }
@@ -8522,13 +8522,13 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
   Succession:[
     {
       name:"Succession — Void Bolt/Jolt route",
-      type:"PVE PLAYER COMBO",
+      type:"COMBO JOUEUR PVE",
       playerCategory:"PVE",
       confidence:"historical-video",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Succession Tamer quick PvE guide",
       sourceUrl:"https://www.youtube.com/watch?v=YPEpReukVVE",
-      note:"The guide lists as the main rotation: Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Historical reference to be revalidate according to current patch.",
+      note:"Le guide cite comme rotation principale : Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Référence historique à revalider selon patch courant.",
       historicalReference:true,
       seq:["Prime: Void Lightning","Prime: Bolt Wave","Prime: Jolt Wave","Prime: Lightning of Earth","Flash","Flash: Pole Thrust","Prime: Bolt Wave","Prime: Jolt Wave"]
     },
@@ -8540,31 +8540,31 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Tamer Succession community — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/ddhew0/tamer_succession_breakdown_and_thoughts/",
-      note:"The community confirms that Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt cancel worked in Succession; the exact timing has evolved and remains to be measured.",
+      note:"La communauté confirme que Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt cancel fonctionnait en Succession ; le timing exact a évolué et reste à mesurer.",
       historicalReference:true,
       explicitCancel:true,
       seq:["Prime: Bolt Wave","Prime: Jolt Wave","Legendary Beast's Power","Prime: Bolt Wave","Prime: Jolt Wave"]
     },
     {
       name:"Succession — Current PvE input route",
-      type:"PVE PLAYER COMBO",
+      type:"COMBO JOUEUR PVE",
       playerCategory:"PVE",
       confidence:"video-published",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Tamer Succ PvE Combo & Addons — published video",
       sourceUrl:"https://www.youtube.com/watch?v=e0S-tba7cuk",
-      note:"The video posts a full rotation of inputs. The skills corresponding to the inputs are reconciled here via the current Succession chain: Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.",
+      note:"La vidéo publie une rotation d'inputs complète. Les compétences correspondant aux inputs sont rapprochées ici via la chaîne Succession courante : Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.",
       seq:["Prime: Bolt Wave","Prime: Jolt Wave","Prime: Moonlight Strike","Prime: Whiplash","Fearful Trembling","Prime: Roaring","Prime: Lightning of Earth","Prime: Bolt Wave","Prime: Jolt Wave"]
     },
     {
       name:"Succession — Debuff setup",
-      type:"PVE PLAYER COMBO",
+      type:"COMBO JOUEUR PVE",
       playerCategory:"PVE",
       confidence:"guide-supported",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"BDFoundry Tamer guide — Succession PvE addons",
       sourceUrl:"https://www.blackdesertfoundry.com/tamer-class-guide/",
-      note:"Setup chain built only from skills that the BDFoundry guide recommends for Succession add-ons: Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.",
+      note:"Chaîne de setup construite uniquement à partir des compétences que le guide BDFoundry recommande pour les add-ons Succession : Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.",
       seq:["Prime: Jolt Wave","Flash: Pole Thrust","Fearful Trembling","Flash","Prime: Roaring","Prime: Lightning of Earth"]
     }
   ]
@@ -8647,7 +8647,7 @@ function tamerTransitionFromPattern(pattern,from,to,spec){
     simulationTime:.08,simulationCancelAt:.08,
     keepDamage:true,removeCC:false,reqStance:"Any",reqEffect:"",bonus:.1,
     cancelSource:"Joueurs",playerApproved:true,communityApproved:true,verifiedByPlayers:true,
-    evidenceType:isCancel?"CANCEL JOUEUR":"PLAYER TRANSITION",isPlayerCancel:isCancel,
+    evidenceType:isCancel?"CANCEL JOUEUR":"TRANSITION JOUEUR",isPlayerCancel:isCancel,
     sourceTag:pattern.sourceTag,source:pattern.sourceTag,sourceUrl:pattern.sourceUrl,
     playerEvidence:[{
       comboName:pattern.name,category:pattern.playerCategory,sourceTag:pattern.sourceTag,
@@ -8746,7 +8746,7 @@ function currentProjectPlayerPatterns(className,spec){
     out.push({
       ...combo,
       seq:Array.isArray(combo?.sequence) ? combo.sequence : combo?.seq,
-      type:combo?.type || 'PLAYER COMBO',
+      type:combo?.type || 'COMBO JOUEUR',
       confidence:combo?.confidence || 'imported',
       sourceTag:combo?.source || combo?.sourceTag || combo?.importedBy || 'Projet actuel',
       note:combo?.note || '',
@@ -8786,7 +8786,7 @@ function currentProjectPlayerPatterns(className,spec){
         String(transition?.evidenceType || '').toUpperCase().includes('CANCEL') ||
         String(transition?.kind || '').toLowerCase().includes('cancel')
           ? 'CANCEL JOUEUR'
-          : 'PLAYER TRANSITION',
+          : 'TRANSITION JOUEUR',
       confidence:transition?.confidence || transition?.timingConfidence || 'documented',
       sourceTag:transition?.sourceTag || transition?.source || transition?.importedBy || 'Projet actuel',
       note:transition?.note || '',
@@ -8933,7 +8933,7 @@ function loadPlayerComboIntoBuilder(index, append=false){
   const resolution = playerComboSkillResolution(pattern);
 
   if(!resolution.resolved.length){
-    alert('No skill de ce combo ne correspond à la bibliothèque active.');
+    alert('Aucune compétence de ce combo ne correspond à la bibliothèque active.');
     return;
   }
 
@@ -8980,10 +8980,10 @@ function renderPlayerCombosPage(){
   if(!context || !summary || !list) return;
 
   if(!className){
-    context.textContent = 'No class selected';
+    context.textContent = 'Aucune classe sélectionnée';
     summary.innerHTML = '';
     list.innerHTML =
-      '<div class="page-placeholder">Sélectionne une class dans l’onglet Class.</div>';
+      '<div class="page-placeholder">Sélectionne une classe dans l’onglet Class.</div>';
     return;
   }
 
@@ -9004,7 +9004,7 @@ function renderPlayerCombosPage(){
   summary.innerHTML = `
     <div><span>Références</span><strong>${all.length}</strong></div>
     <div><span>En attente de votes</span><strong>${sharedCommunity.length}</strong></div>
-    <div><span>Promus en class</span><strong>${verifiedCommunity.length}</strong></div>
+    <div><span>Promus en classe</span><strong>${verifiedCommunity.length}</strong></div>
     <div><span>Transitions</span><strong>${transitions.length}</strong></div>
     <div><span>Cancels</span><strong>${cancels.length}</strong></div>
     <div><span>100% exploitables</span><strong>${fullyAvailable.length}</strong></div>
@@ -9012,7 +9012,7 @@ function renderPlayerCombosPage(){
 
   const thresholdBadge=document.getElementById('communityVerifyThresholdBadgeV101');
   if(thresholdBadge){
-    thresholdBadge.textContent=`Vérification : ${communityVerifyThresholdV101()} Like`;
+    thresholdBadge.textContent=`Vérification : ${communityVerifyThresholdV101()} J’aime`;
   }
 
   const typeFilter = document.getElementById('playerComboTypeFilter')?.value || 'all';
@@ -9040,7 +9040,7 @@ function renderPlayerCombosPage(){
 
   if(!shown.length){
     list.innerHTML =
-      '<div class="page-placeholder">None référence joueur pour ces filtres.</div>';
+      '<div class="page-placeholder">Aucune référence joueur pour ces filtres.</div>';
     return;
   }
 
@@ -9066,7 +9066,7 @@ function renderPlayerCombosPage(){
     titleBox.className = 'player-combo-title-box';
 
     const title = document.createElement('h3');
-    title.textContent = pattern.name || 'Player Combo';
+    title.textContent = pattern.name || 'Combo joueur';
 
     const badges = document.createElement('div');
     badges.className = 'player-combo-badges';
@@ -9094,8 +9094,8 @@ function renderPlayerCombosPage(){
       badges.appendChild(
         makeBadge(
           pattern.communityVerified
-            ? '✓ Verified par la communauté'
-            : `${Number(pattern.likes||0)}/${communityVerifyThresholdV101()} Like`,
+            ? '✓ Vérifié par la communauté'
+            : `${Number(pattern.likes||0)}/${communityVerifyThresholdV101()} J’aime`,
           pattern.communityVerified ? 'community-verified' : 'community-pending'
         )
       );
@@ -9109,13 +9109,13 @@ function renderPlayerCombosPage(){
     const load = document.createElement('button');
     load.type = 'button';
     load.className = 'optimizer-btn';
-    load.textContent = 'Load into Combo Builder';
+    load.textContent = 'Charger dans Combo Builder';
     load.onclick = () => loadPlayerComboIntoBuilder(realIndex,false);
 
     const append = document.createElement('button');
     append.type = 'button';
     append.className = 'tab-btn';
-    append.textContent = 'Add next';
+    append.textContent = 'Ajouter à la suite';
     append.onclick = () => loadPlayerComboIntoBuilder(realIndex,true);
 
     actions.append(load,append);
@@ -9126,8 +9126,8 @@ function renderPlayerCombosPage(){
       const liked=communityHasLikedV101(pattern.communityId);
       like.className=`community101-like-btn ${liked?'liked':''}`.trim();
       like.textContent=liked
-        ? `♥ Like · ${Number(pattern.likes||0)}`
-        : `♡ Like · ${Number(pattern.likes||0)}`;
+        ? `♥ J’aime · ${Number(pattern.likes||0)}`
+        : `♡ J’aime · ${Number(pattern.likes||0)}`;
       like.onclick=()=>toggleCommunityLikeV101(pattern.communityId);
       actions.appendChild(like);
     }
@@ -9175,8 +9175,8 @@ function renderPlayerCombosPage(){
       const communityMeta=document.createElement('span');
       communityMeta.className='community101-footer-meta';
       communityMeta.textContent=pattern.communityVerified
-        ? `Verified le ${communityFormatDateV101(pattern.verifiedAt)}`
-        : `${Number(pattern.likes||0)} Like · seuil ${communityVerifyThresholdV101()}`;
+        ? `Vérifié le ${communityFormatDateV101(pattern.verifiedAt)}`
+        : `${Number(pattern.likes||0)} J’aime · seuil ${communityVerifyThresholdV101()}`;
       footer.appendChild(communityMeta);
     }
 
@@ -9215,9 +9215,9 @@ function renderComboPage(){
   if(!context || !content) return;
 
   if(!className){
-    context.textContent = 'No class selected';
+    context.textContent = 'Aucune classe sélectionnée';
     content.className = 'page-placeholder';
-    content.textContent = 'Select a class first in the Class tab.';
+    content.textContent = 'Sélectionne d’abord une classe dans l’onglet Classe.';
     return;
   }
 
@@ -9240,7 +9240,7 @@ function renderComboPage(){
 
   if(!combos.length){
     content.className = 'page-placeholder';
-    content.textContent = 'No combo de class validated enregistré pour ' + className + '.';
+    content.textContent = 'Aucun combo de classe validé enregistré pour ' + className + '.';
     return;
   }
 
@@ -9266,7 +9266,7 @@ function renderComboPage(){
     if(combo?.communityVerified){
       const community=document.createElement('span');
       community.className='verified-badge community101-class-verified';
-      community.textContent=`♥ ${Number(combo.likes||0)} Like`;
+      community.textContent=`♥ ${Number(combo.likes||0)} J’aime`;
       meta.appendChild(community);
     }
 
@@ -9642,7 +9642,7 @@ function exportFullBackupV48(){
   const status=document.getElementById('fullBackupStatusV48');
   if(status){
     status.className='optimizer-note status-good';
-    status.textContent=`Backup exportée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${Object.keys(storage).length} clés locales.`;
+    status.textContent=`Sauvegarde exportée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${Object.keys(storage).length} clés locales.`;
   }
   return backup;
 }
@@ -9770,7 +9770,7 @@ async function importFullBackupV48(file){
     const skipped=skippedCacheKeys+skippedQuotaKeys+skippedOtherKeys;
     if(status){
       status.className='optimizer-note status-good';
-      status.textContent=`Backup restaurée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${restoredKeys} clés locales restaurées${skipped?` · ${skipped} clé(s) non essentielle(s) ignorée(s) (${skippedCacheKeys} cache, ${skippedQuotaKeys} quota)`:''}.`;
+      status.textContent=`Sauvegarde restaurée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${restoredKeys} clés locales restaurées${skipped?` · ${skipped} clé(s) non essentielle(s) ignorée(s) (${skippedCacheKeys} cache, ${skippedQuotaKeys} quota)`:''}.`;
     }
   }catch(err){
     console.error('Full backup import failed',err);
@@ -9787,7 +9787,7 @@ function saveAutoBuildSettings(){
     localStorage.setItem('bdoCombosLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Settings saved. Optimizer will use the ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' settings.';
+  if(status) status.textContent = 'Réglages enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' paramètres.';
   syncSettingsClassContext();
 }
 
@@ -9811,19 +9811,19 @@ function resetAutoBuildSettings(){
   applyAutoBuildSettingsToUI();
   try{ localStorage.setItem('bdoCombosLabs.autoBuildSettings',JSON.stringify(AUTO_BUILD_SETTINGS)); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Auto-Build settings reset.';
+  if(status) status.textContent = 'Réglages Auto-Build réinitialisés.';
 }
 
 function optimizerModeLabel(mode){
   const labels = {
     balanced:'Équilibré',
-    damage:'Maximum damage',
+    damage:'Dégâts maximum',
     burst:'Burst court',
-    cc:'CC Priority',
-    protected:'Protection priority',
-    speed:'Speed/fluidity',
+    cc:'Priorité CC',
+    protected:'Priorité protections',
+    speed:'Vitesse / fluidité',
     mobility:'Mobilité',
-    sustain:'Sustain/safety'
+    sustain:'Sustain / sécurité'
   };
   return labels[mode] || mode;
 }
@@ -10377,7 +10377,7 @@ function optimizeCurrentCombo(){
 
     const validation = validateBuilderCombo(BUILDER_STATE[key]);
     // V20: l'Optimizer ne sauvegarde plus automatiquement le build.
-    // L'utilisateur choisit explicitement « Save ce build ».
+    // L'utilisateur choisit explicitement « Enregistrer ce build ».
     const timing = typeof optimizerSequenceTiming === 'function'
       ? optimizerSequenceTiming(BUILDER_STATE[key])
       : null;
@@ -10405,11 +10405,11 @@ function optimizeCurrentCombo(){
           <div class="optimizer-stats-v41">
             <div><span>Skills</span><b>${combatStats.skillsCount ?? best.sequence.length}</b></div>
             <div><span>Total Damage</span><b>${Number(combatStats.totalDamage)>0 ? Number(combatStats.totalDamage).toFixed(2) : '—'}</b></div>
-            <div><span>Duration estimated</span><b>${Number(combatStats.totalDuration)>0 ? Number(combatStats.totalDuration).toFixed(2)+' s' : '—'}</b></div>
+            <div><span>Durée estimée</span><b>${Number(combatStats.totalDuration)>0 ? Number(combatStats.totalDuration).toFixed(2)+' s' : '—'}</b></div>
             <div><span>DPS estimé</span><b>${Number(combatStats.dps)>0 ? Number(combatStats.dps).toFixed(2) : '—'}</b></div>
             <div><span>CC</span><b>${combatStats.ccCount ?? 0}</b></div>
             <div><span>Protection</span><b>${Math.round(Number(combatStats.protectionCoverage||0)*100)}%</b></div>
-            <div><span>Measured transitions</span><b>${combatStats.measuredLinks ?? 0}/${combatStats.totalLinks ?? Math.max(0,best.sequence.length-1)}</b></div>
+            <div><span>Transitions mesurées</span><b>${combatStats.measuredLinks ?? 0}/${combatStats.totalLinks ?? Math.max(0,best.sequence.length-1)}</b></div>
             <div><span>Couverture timing</span><b>${Math.round(Number(combatStats.timingCoverage||0)*100)}%</b></div>
             <div><span>Skills avec Add-ons</span><b>${combatStats.addonSkills ?? 0}/${combatStats.skillsCount ?? best.sequence.length}</b></div>
           </div>` : ''}
@@ -10478,7 +10478,7 @@ function renderManualGoogleDocContext(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const el=document.getElementById('manualGoogleDocContext');
-  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'No class selected';
+  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'Aucune classe sélectionnée';
 }
 
 function normalizeGuideFetchUrl(url){
@@ -10580,7 +10580,7 @@ async function fetchGoogleDocText(originalUrl){
       );
       const text=await oldDocsFetchSingle(candidate);
       if(googleDocsLooksReadable(text))return {text,url:candidate};
-      errors.push(`${candidate}: empty content or access page`);
+      errors.push(`${candidate}: contenu vide ou page d'accès`);
     }catch(err){
       errors.push(`${candidate}: ${err?.message||err}`);
     }
@@ -10936,7 +10936,7 @@ function orderedKnownSkillsInText(text){
  }
  hits.sort((a,b)=>a.index-b.index || b.alias.length-a.alias.length);
  const out=[];
- land thestName="",lastIndex=-999;
+ let lastName="",lastIndex=-999;
  for(const h of hits){
    if(h.skill.name===lastName && Math.abs(h.index-lastIndex)<8)continue;
    out.push(h.skill);lastName=h.skill.name;lastIndex=h.index;
@@ -11386,7 +11386,7 @@ function integrateGuideEvidence(evidence,cls,spec){
   const transitions=CLASS_TRANSITIONS[cls][spec];
 
   const comboMap=new Map(combos.map(p=>[
-    `${String(p.type||'PLAYER COMBO')}::${(p.sequence||p.seq||[]).map(oldDocsNorm).join(">")}`.toLowerCase(),p
+    `${String(p.type||'COMBO JOUEUR')}::${(p.sequence||p.seq||[]).map(oldDocsNorm).join(">")}`.toLowerCase(),p
   ]));
 
   const trMap=new Map(transitions.map(tr=>{
@@ -11403,8 +11403,8 @@ function integrateGuideEvidence(evidence,cls,spec){
     if(seq.length<2)continue;
 
     if(["combo_pvp","combo_pve","combo_generic"].includes(ev.kind)){
-      const type=ev.kind==="combo_pve"?"PVE PLAYER COMBO":
-                 ev.kind==="combo_pvp"?"PVP PLAYER COMBO":"PLAYER COMBO";
+      const type=ev.kind==="combo_pve"?"COMBO JOUEUR PVE":
+                 ev.kind==="combo_pvp"?"COMBO JOUEUR PVP":"COMBO JOUEUR";
       const key=`${type}::${seq.map(oldDocsNorm).join(">")}`.toLowerCase();
       if(!comboMap.has(key)){
         const p={
@@ -11412,7 +11412,7 @@ function integrateGuideEvidence(evidence,cls,spec){
           sequence:[...seq],seq:[...seq],type,
           confidence:"documented-guide",
           source:ev.sourceUrl,
-          sourceTag:`${ev.sourceName} · guide de class`,
+          sourceTag:`${ev.sourceName} · guide de classe`,
           note:ev.excerpt,
           ownerClass:cls,ownerSpec:spec,
           guideIntegrated:true,
@@ -11429,7 +11429,7 @@ function integrateGuideEvidence(evidence,cls,spec){
       const incoming={
         from:seq[i],to:seq[i+1],sequence:[seq[i],seq[i+1]],
         kind:isCancel?"cancel":"transition",
-        evidenceType:isCancel?"CANCEL JOUEUR":"PLAYER TRANSITION",
+        evidenceType:isCancel?"CANCEL JOUEUR":"TRANSITION JOUEUR",
         playerApproved:true,communityApproved:true,verifiedByPlayers:true,
         confidence:ev.confidence,
         source:ev.sourceUrl,
@@ -11462,7 +11462,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
 
-  if(!cls)throw new Error('Sélectionne une class avant l’analyse.');
+  if(!cls)throw new Error('Sélectionne une classe avant l’analyse.');
   if(!text||String(text).trim().length<20)throw new Error('Le document est vide ou illisible.');
 
   if(!CLASS_SKILLS[cls])CLASS_SKILLS[cls]={Awakening:[],Succession:[]};
@@ -11537,7 +11537,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
   if(summaryEl){
 
     const refNote=summary.reference?.source
-      ? `<div class="optimizer-note"><b>Active reference :</b> ${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.</div>`
+      ? `<div class="optimizer-note"><b>Référentiel actif :</b> ${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.</div>`
       : '';
     summaryEl.innerHTML=`
       <div><span>Skills avant</span><strong>${beforeSkills}</strong></div>
@@ -11553,7 +11553,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
   if(skillRoot){
     const found=summary.skills||[];
     skillRoot.innerHTML=found.length
-      ? `<h4>Skills résolues depuis lignes, tableaux et chaînes</h4><div class="old-doc-skill-grid">`+
+      ? `<h4>Compétences résolues depuis lignes, tableaux et chaînes</h4><div class="old-doc-skill-grid">`+
         found.map(item=>{
           const name=typeof item==='string'?item:item?.name||'';
           const matched=typeof item==='object'&&item?.matchedExisting;
@@ -11568,7 +11568,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
           </div>`;
         }).join('')+
         `</div>`
-      : `<div class="result warn"><b>None nom de compétence extrait des chaînes du document.</b></div>`;
+      : `<div class="result warn"><b>Aucun nom de compétence extrait des chaînes du document.</b></div>`;
   }
 
   const root=document.getElementById('manualGoogleDocResults');
@@ -11588,7 +11588,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
             <div class="old-doc-result-head"><b>${oldDocsEsc(t.kind||'transition')}</b></div>
             <div>${(t.sequence||[t.from,t.to]).filter(Boolean).map(oldDocsEsc).join(' → ')}</div>
           </div>`).join('')
-      : '<div class="result warn">None chaîne explicite détectée dans ce document.</div>';
+      : '<div class="result warn">Aucune chaîne explicite détectée dans ce document.</div>';
   }
 
   return {
@@ -11604,11 +11604,11 @@ async function importManualGoogleDocUrl(){
  if(!url)return manualGoogleDocStatus("Colle d’abord l’URL d’un Google Doc ou Google Sheet.","warn");
 
  if(!/^https?:\/\/docs\.google\.com\/(?:document|spreadsheets)\//i.test(url)){
-   return manualGoogleDocStatus("This link does not look like a Google Doc/Sheet.","bad");
+   return manualGoogleDocStatus("Ce lien ne ressemble pas à un Google Doc/Sheet.","bad");
  }
  const cls=document.getElementById('classSelector')?.value||'';
  const spec=document.getElementById('specSelector')?.value||'Awakening';
- if(!cls)return manualGoogleDocStatus("First select a class.","warn");
+ if(!cls)return manualGoogleDocStatus("Sélectionne d’abord une classe.","warn");
  manualGoogleDocStatus(`<b>${oldDocsEsc(cls)} ${oldDocsEsc(spec)}</b> — lecture du Google Doc…`,"warn");
 
  try{
@@ -11631,7 +11631,7 @@ async function oldDocsEnsureMammothLoaded(){
    const s=document.createElement("script");
    s.src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js";
    s.onload=()=>resolve(true);
-   s.onerror=()=>reject(new Error("Failed to load DOCX reader."));
+   s.onerror=()=>reject(new Error("Impossible de charger le lecteur DOCX."));
    document.head.appendChild(s);
  });
 }
@@ -12309,7 +12309,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Restores HP to Heuklang"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Absorb Heilang"
@@ -12335,7 +12335,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Damage + Spin attack"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12358,7 +12358,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Damage + Movement speed"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12375,7 +12375,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente la puissance de compétences"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12397,7 +12397,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "680%",
     "pvpDamage": "520%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12419,7 +12419,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "950%",
     "pvpDamage": "730%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Black Spirit: Legendary Beast's Dance"
@@ -12443,7 +12443,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente l'aggro"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12464,7 +12464,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "520%",
     "pvpDamage": "400%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12485,7 +12485,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente la menace"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12506,7 +12506,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "480%",
     "pvpDamage": "370%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12529,7 +12529,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Damage + Range"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12546,7 +12546,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente ATQ de la canne"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12569,7 +12569,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Knockback + Damage"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12590,7 +12590,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "950%",
     "pvpDamage": "730%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12609,7 +12609,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12628,7 +12628,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "450%",
     "pvpDamage": "350%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12645,7 +12645,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Réduit le coût en mana"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12666,7 +12666,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Instant teleport"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12689,7 +12689,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Counter-attaque"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12710,7 +12710,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Change de stance"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12731,7 +12731,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Récupère du mana"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12752,9 +12752,9 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "1,200%",
     "pvpDamage": "920%",
     "effects": [
-      "Damage + Heal"
+      "Dégâts + Soin"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Flow: Fullmoon"
@@ -12780,7 +12780,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Propulse en l'air"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12803,7 +12803,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente l'aggro"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12826,7 +12826,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Saut puissant"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12847,7 +12847,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "680%",
     "pvpDamage": "520%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12868,7 +12868,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Orage + Dégâts"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12889,9 +12889,9 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "650%",
     "pvpDamage": "500%",
     "effects": [
-      "Quick damage"
+      "Dégâts rapides"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12908,9 +12908,9 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "380%",
     "pvpDamage": "290%",
     "effects": [
-      "Damage + Heal"
+      "Dégâts + Soin"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12932,7 +12932,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "1,050%",
     "pvpDamage": "810%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Legendary Beast's Dance"
@@ -12956,7 +12956,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "920%",
     "pvpDamage": "710%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12973,7 +12973,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Crée un feu de camp"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -12994,7 +12994,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "880%",
     "pvpDamage": "680%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13013,7 +13013,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Passive bonus"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13032,7 +13032,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Passive bonus"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13053,7 +13053,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "720%",
     "pvpDamage": "550%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13074,7 +13074,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "920%",
     "pvpDamage": "710%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13095,7 +13095,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Atterrissage puissant"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13116,7 +13116,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "550%",
     "pvpDamage": "420%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13139,7 +13139,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Contre-attaque"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13160,7 +13160,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "1,100%",
     "pvpDamage": "850%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13181,7 +13181,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "850%",
     "pvpDamage": "650%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13200,7 +13200,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "650%",
     "pvpDamage": "500%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Prime: Heilang: Claw"
@@ -13222,7 +13222,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "720%",
     "pvpDamage": "550%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Prime: Heilang: Hurling"
@@ -13246,7 +13246,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Téléportation"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13267,7 +13267,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "780%",
     "pvpDamage": "600%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13288,7 +13288,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Soin"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13309,7 +13309,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "820%",
     "pvpDamage": "630%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13330,7 +13330,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "750%",
     "pvpDamage": "580%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13351,7 +13351,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Soin + Remise en vie"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13372,7 +13372,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "950%",
     "pvpDamage": "730%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13393,7 +13393,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente la menace"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13414,7 +13414,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "1,100%",
     "pvpDamage": "850%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13435,7 +13435,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Soin"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13456,7 +13456,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "650%",
     "pvpDamage": "500%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13477,7 +13477,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Invoque Heuklang"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Prime: Summon Heilang"
@@ -13501,7 +13501,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "580%",
     "pvpDamage": "450%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13522,7 +13522,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "450%",
     "pvpDamage": "350%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Prime: Throat Burn"
@@ -13546,7 +13546,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13567,7 +13567,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "580%",
     "pvpDamage": "440%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13588,7 +13588,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Téléportation"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13609,7 +13609,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "1,050%",
     "pvpDamage": "810%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13630,7 +13630,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente la menace"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13649,7 +13649,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "520%",
     "pvpDamage": "400%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13670,7 +13670,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "620%",
     "pvpDamage": "480%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13691,7 +13691,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13712,7 +13712,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "780%",
     "pvpDamage": "600%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13733,7 +13733,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "650%",
     "pvpDamage": "500%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13754,7 +13754,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "750%",
     "pvpDamage": "580%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13773,7 +13773,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "550%",
     "pvpDamage": "420%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13794,7 +13794,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Soin"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13815,7 +13815,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "620%",
     "pvpDamage": "480%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13836,7 +13836,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Soin + Damage"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13857,7 +13857,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Soin + Réanimation"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13878,7 +13878,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "480%",
     "pvpDamage": "370%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13901,7 +13901,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Attire les ennemis"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13922,7 +13922,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "950%",
     "pvpDamage": "730%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13943,7 +13943,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13962,7 +13962,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -13983,7 +13983,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14004,7 +14004,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "620%",
     "pvpDamage": "550%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14025,7 +14025,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Escalade murale"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14044,7 +14044,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Résistance aux CC"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14065,7 +14065,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "480%",
     "pvpDamage": "370%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14086,7 +14086,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "880%",
     "pvpDamage": "680%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14103,7 +14103,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente la force"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14124,7 +14124,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "520%",
     "pvpDamage": "400%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14143,7 +14143,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "650%",
     "pvpDamage": "500%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14160,7 +14160,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Active l'éveil"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14181,7 +14181,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "580%",
     "pvpDamage": "450%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14202,7 +14202,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "520%",
     "pvpDamage": "400%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14219,7 +14219,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Ordre à Heuklang"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14236,7 +14236,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Heuklang te suit"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14253,7 +14253,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Heuklang protège"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14270,7 +14270,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Heuklang attaque"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14291,7 +14291,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "750%",
     "pvpDamage": "580%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14312,7 +14312,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "850%",
     "pvpDamage": "650%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14333,7 +14333,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "950%",
     "pvpDamage": "730%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14354,7 +14354,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Téléportation d'urgence"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14375,7 +14375,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "1,200%",
     "pvpDamage": "920%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14396,7 +14396,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "850%",
     "pvpDamage": "650%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14418,7 +14418,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "980%",
     "pvpDamage": "750%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Legendary Beast's Dance: Echo"
@@ -14442,7 +14442,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "650%",
     "pvpDamage": "500%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14459,7 +14459,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente les dégâts"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14480,7 +14480,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "450%",
     "pvpDamage": "350%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14499,7 +14499,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Buff"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14520,7 +14520,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Buff d'équipe"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Prime: Heilang's Aura"
@@ -14544,7 +14544,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Invoque Heuklang"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Prime: Summon Heilang"
@@ -14566,9 +14566,9 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "720%",
     "pvpDamage": "550%",
     "effects": [
-      "Synchronizes with Heuklang"
+      "Synchronise avec Heuklang"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14589,7 +14589,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Ressuscite un allié"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14610,7 +14610,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14627,7 +14627,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente les dégâts"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14644,7 +14644,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente la précision"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14665,7 +14665,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "720%",
     "pvpDamage": "550%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14684,7 +14684,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "620%",
     "pvpDamage": "480%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14703,7 +14703,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "680%",
     "pvpDamage": "520%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14724,7 +14724,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Version améliorée"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Succession: Heilang"
@@ -14748,7 +14748,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "780%",
     "pvpDamage": "600%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14769,7 +14769,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "950%",
     "pvpDamage": "730%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14786,7 +14786,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "420%",
     "pvpDamage": "320%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14807,7 +14807,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "1,050%",
     "pvpDamage": "810%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14828,7 +14828,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "680%",
     "pvpDamage": "520%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14847,7 +14847,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "520%",
     "pvpDamage": "400%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14868,7 +14868,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "950%",
     "pvpDamage": "730%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14889,7 +14889,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "",
     "pvpDamage": "",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14908,7 +14908,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "450%",
     "pvpDamage": "350%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14929,7 +14929,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "680%",
     "pvpDamage": "520%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14950,7 +14950,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "580%",
     "pvpDamage": "450%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14971,7 +14971,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Escalade murale"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -14992,7 +14992,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Soin"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -15013,7 +15013,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Invoque Heuklang"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true,
     "aliases": [
       "Summon Heilang"
@@ -15037,7 +15037,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "pveDamage": "820%",
     "pvpDamage": "630%",
     "effects": [],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -15056,7 +15056,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Passive résistance"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   },
   {
@@ -15079,7 +15079,7 @@ const TAMER_COMPLETE_REFERENCE_V12 = [
     "effects": [
       "Augmente l'aggro"
     ],
-    "referenceSource": "Complete table provided by user · V12",
+    "referenceSource": "Tableau complet fourni par utilisateur · V12",
     "__userCompleteTableV12": true
   }
 ];
@@ -15172,7 +15172,7 @@ function autoSkillReferenceToSkillV13(ref,cls,spec){
     ownerSpec:spec,
     referenceSpec:ref?.spec || 'Shared',
     source:ref?.referenceSource || 'Dictionnaire de référence',
-    importedBy:'Automatic search dictionnaire V13',
+    importedBy:'Recherche auto dictionnaire V13',
     referenceImported:true
   };
 }
@@ -15216,17 +15216,17 @@ function autoPopulateSkillsFromReferenceV13(){
   };
 
   if(!cls){
-    setStatus('First select a class in the Class tab.','warn');
+    setStatus('Sélectionne d’abord une classe dans l’onglet Class.','warn');
     return;
   }
   if(typeof guideReferenceForCurrentClassV10!=='function'){
-    setStatus('No reference dictionary engine is available.','bad');
+    setStatus('Aucun moteur de dictionnaire de référence n’est disponible.','bad');
     return;
   }
 
   const refs=guideReferenceForCurrentClassV10();
   if(!refs.length){
-    setStatus(`No reference dictionary available for ${cls} · ${spec}.`,'warn');
+    setStatus(`Aucun dictionnaire de référence disponible pour ${cls} · ${spec}.`,'warn');
     return;
   }
 
@@ -15271,7 +15271,7 @@ function autoPopulateSkillsFromReferenceV13(){
     );
   }catch(e){
     if(typeof bdoDebugError==='function') bdoDebugError('Auto skill dictionary import failed',e);
-    setStatus(`Automatic search impossible : ${e?.message||String(e)}`,'bad');
+    setStatus(`Recherche auto impossible : ${e?.message||String(e)}`,'bad');
   }finally{
     if(btn)btn.disabled=false;
   }
@@ -16470,10 +16470,10 @@ function enhanceTransitionReviewUIV47(){
     bar.innerHTML=`
       <span class="transition-review-status-v47">${transitionReviewLabelV47(tr)}</span>
       <span class="transition-review-confidence-v47">
-        ${status==='pending'?`Confidence auto ${Math.round(Number(tr?.timingConfidence||0)*100)}%`:''}
+        ${status==='pending'?`Confiance auto ${Math.round(Number(tr?.timingConfidence||0)*100)}%`:''}
       </span>
       <div class="transition-review-actions-v47">
-        <button type="button" class="tab-btn" onclick="transitionReviewSetStatusV47(${index},'validated')">Confirm</button>
+        <button type="button" class="tab-btn" onclick="transitionReviewSetStatusV47(${index},'validated')">Valider</button>
         <button type="button" class="tab-btn" onclick="transitionReviewCorrectV47(${index})">Corriger</button>
         <button type="button" class="tab-btn" onclick="transitionReviewSetStatusV47(${index},'rejected')">Rejeter</button>
         <button type="button" class="tab-btn" onclick="transitionReviewVideoV47(${index})">Voir vidéo 0.5×</button>
@@ -16490,7 +16490,7 @@ function enhanceTransitionReviewUIV47(){
     const summary=document.createElement('div');
     summary.id='transitionReviewSummaryV47';
     summary.className='transition-review-summary-v47';
-    summary.textContent=`Manual validation: ${validated} confirmed · ${pending} to review · ${rejected} rejected`;
+    summary.textContent=`Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)`;
     validation.appendChild(summary);
   }
 }
@@ -16599,7 +16599,7 @@ function renderTransitionPage(){
       grid.appendChild(box);
     };
 
-    addMetric('Transition duration',
+    addMetric('Transition Duration',
       Number.isFinite(derivedSeconds) ? `${derivedSeconds.toFixed(4)} s` : '—');
     addMetric('Frames',
       Number.isFinite(framesCandidate) ? `${Math.round(framesCandidate)} frames` : '—');
@@ -16753,7 +16753,7 @@ function renderBuilderAvailableSkillsV74(){
 
   if(!skills.length){
     available.className='page-placeholder';
-    available.textContent=`No skill compatible avec l’orientation ${builderOrientationLabelV71(currentBuilderOrientation())}.`;
+    available.textContent=`Aucune compétence compatible avec l’orientation ${builderOrientationLabelV71(currentBuilderOrientation())}.`;
     return;
   }
 
@@ -17081,9 +17081,9 @@ function smartBuilderTransitionBonus(fromName,toName){
   if(!link || !link.known || !Number.isFinite(Number(link.seconds))){
     return {
       score:requireKnown?-8:-2,
-      reason:requireKnown?'Unknown transition · strong penalty':'Unknown transition',
+      reason:requireKnown?'Transition inconnue · pénalité forte':'Transition inconnue',
       known:false,measured:false,validated:false,hasCancel:Boolean(link?.hasCancel),
-      seconds:null,cancelAt:link?.cancelAt??null,source:'timing unknown'
+      seconds:null,cancelAt:link?.cancelAt??null,source:'timing inconnu'
     };
   }
 
@@ -17432,7 +17432,7 @@ function builderPvpReccCandidateV68(skill,sequence=getBuilderSequence()){
       timingKnown:false,
       hardRejected:true,
       ...state,
-      reason:'this skill does not apply any CC'
+      reason:'ce skill n’applique aucun CC'
     };
   }
 
@@ -17487,7 +17487,7 @@ function builderPvpReccCandidateV68(skill,sequence=getBuilderSequence()){
     timingKnown:false,
     hardRejected:false,
     ...state,
-    reason:'Valid CC · unknown link timing'
+    reason:'CC valide · timing de liaison inconnu'
   };
 }
 
@@ -17609,7 +17609,7 @@ function scoreSmartBuilderSkill(skill,phase,lastSkillName,sequenceOverride=null)
   if(phase.key==='cc' && cc>0){
     if(currentCCState.immune){
       score -= 8;
-      reasons.push(`CC still immune ${currentCCState.immunityRemaining.toFixed(1)}s`);
+      reasons.push(`CC encore immunisé ${currentCCState.immunityRemaining.toFixed(1)}s`);
     }else{
       const budget=currentCCState.ccRemainingPoints;
       const before=Number(currentCCState.ccPoints||0);
@@ -17896,7 +17896,7 @@ function renderSmartBuilderSuggestions(){
       const types=(ccInfo.types||[]).join(' / ') || 'CC';
       ccMeta.innerHTML=`<span>CC</span><strong>${escapeHtmlText(types)}</strong><b>${Number(ccInfo.points).toFixed(1)} pt</b>`;
     }else{
-      ccMeta.innerHTML='<span>CC</span><strong>No counted CC</strong>';
+      ccMeta.innerHTML='<span>CC</span><strong>Aucun CC comptabilisé</strong>';
       ccMeta.classList.add('none');
     }
 
@@ -17907,11 +17907,11 @@ function renderSmartBuilderSuggestions(){
     const linkV73=previousNameV73?smartBuilderTransitionBonus(previousNameV73,entry.skill.name):null;
 
     if(!previousNameV73){
-      linkMeta.innerHTML='<span>CHAIN</span><strong>First skill</strong>';
+      linkMeta.innerHTML='<span>CHAIN</span><strong>Premier skill</strong>';
     }else if(linkV73?.known){
-      linkMeta.innerHTML=`<span>CHAIN</span><strong>${escapeHtml(linkV73.seconds.toFixed(3)+' s')}</strong><b>${escapeHtml(linkV73.measured?(linkV73.validated?'Transition validée':'Measured transition'):'Estimated timing')}</b>${linkV73.hasCancel?`<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · validé':''}</em>`:''}`;
+      linkMeta.innerHTML=`<span>CHAIN</span><strong>${escapeHtml(linkV73.seconds.toFixed(3)+' s')}</strong><b>${escapeHtml(linkV73.measured?(linkV73.validated?'Transition validée':'Transition mesurée'):'Timing estimé')}</b>${linkV73.hasCancel?`<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · validé':''}</em>`:''}`;
     }else{
-      linkMeta.innerHTML='<span>CHAIN</span><strong>Unknown transition</strong>';
+      linkMeta.innerHTML='<span>CHAIN</span><strong>Transition inconnue</strong>';
       linkMeta.classList.add('unknown');
     }
 
@@ -18638,7 +18638,7 @@ function builderLinkTimingV61(fromName,toName){
       cancelAt,
       hasCancel:cancelAt!==null,
       validated:transitionValidated,
-      source:transitionValidated?'transition validated':'measured transition'
+      source:transitionValidated?'transition validée':'transition mesurée'
     };
   }
 
@@ -18655,7 +18655,7 @@ function builderLinkTimingV61(fromName,toName){
       cancelAt,
       hasCancel:true,
       validated:true,
-      source:'cancel validated (start-to-start estimation)'
+      source:'cancel validé (estimation start-to-start)'
     };
   }
 
@@ -18677,7 +18677,7 @@ function builderLinkTimingV61(fromName,toName){
       cancelAt,
       hasCancel:cancelAt!==null,
       validated:false,
-      source:'raw skill duration'
+      source:'durée brute skill'
     };
   }
 
@@ -18689,7 +18689,7 @@ function builderLinkTimingV61(fromName,toName){
     cancelAt,
     hasCancel:cancelAt!==null,
     validated:false,
-    source:'timing unknown'
+    source:'timing inconnu'
   };
 }
 
@@ -18853,22 +18853,22 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   if(info.points<=0) return {score:0,reason:null};
 
   if(timeline.immunityRemaining!==null && timeline.immunityRemaining>0){
-    return {score:-12,reason:`CC impossible · remaining immunity ${timeline.immunityRemaining.toFixed(2)}s`};
+    return {score:-12,reason:`CC impossible · immunité restante ${timeline.immunityRemaining.toFixed(2)}s`};
   }
 
   // No measured CC window => do not invent placement advice.
   if(!timeline.ccTimerKnown || timeline.ccTimerRemaining===null){
-    return {score:0,reason:'DC timing not measured · temporal placement ignored'};
+    return {score:0,reason:'Timing CC non mesuré · placement temporel ignoré'};
   }
   if(!timeline.timelineComplete){
-    return {score:0,reason:'Intermediate timing incomplete · temporal placement ignored'};
+    return {score:0,reason:'Timing intermédiaire incomplet · placement temporel ignoré'};
   }
 
-  land thending=0;
+  let landing=0;
   if(lastSkillName){
     const link=builderLinkTimingV61(lastSkillName,skill?.name);
     if(!link.known || !Number.isFinite(Number(link.seconds))){
-      return {score:0,reason:'Transition/cancel not measured CC placement ignored'};
+      return {score:0,reason:'Transition / cancel non mesuré · placement CC ignoré'};
     }
     landing+=Number(link.seconds);
   }
@@ -18877,8 +18877,8 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   if(remainingAtLand<0) return {score:-7,reason:`CC arriverait ${Math.abs(remainingAtLand).toFixed(2)}s trop tard`};
   if(remainingAtLand<=0.25) return {score:5.5,reason:`Re-CC optimal · ${remainingAtLand.toFixed(2)}s restantes`};
   if(remainingAtLand<=0.55) return {score:4,reason:`Bon timing CC · ${remainingAtLand.toFixed(2)}s restantes`};
-  if(remainingAtLand<=0.90) return {score:2,reason:`Safe CC · ${remainingAtLand.toFixed(2)}s remaining`};
-  return {score:-2.5,reason:`CC too early · ${remainingAtLand.toFixed(2)}s still available`};
+  if(remainingAtLand<=0.90) return {score:2,reason:`CC sûr · ${remainingAtLand.toFixed(2)}s restantes`};
+  return {score:-2.5,reason:`CC trop tôt · ${remainingAtLand.toFixed(2)}s encore disponibles`};
 }
 
 function builderOfficialCCState(sequence=getBuilderSequence()){
@@ -19432,7 +19432,7 @@ function builderOfficialCCDisplay(validationRow){
   const info=validationRow.ccInfo||{points:0,types:[]};
 
   if(validationRow.blocked){
-    return `2.0 / 2.0 · blocked`;
+    return `2.0 / 2.0 · bloqué`;
   }
 
   if(validationRow.triggered && validationRow.ccApplied){
@@ -19531,19 +19531,19 @@ function renderBuilderSequence(){
             );
             chip.title=tl.ccApplied
               ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}`
-              : `Elapsed time since previous skill: ${tl.linkTimingSource||'unknown'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
+              : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
             return chip;
           }
           if(tl.ccTimerExpiredHere){
             const chip=makeMeta('CC Timer','0.000s','cc-expired-v66');
-            chip.title=`END du CC actif (${tl.ccTimerSource||'source inconnue'})`;
+            chip.title=`Fin du CC actif (${tl.ccTimerSource||'source inconnue'})`;
             return chip;
           }
         }
 
         if(tl.ccApplied && (!tl.ccTimerMeasurement?.measured || !Number(tl.ccTimerMeasurement?.seconds))){
-          const chip=makeMeta('CC Timer','— CC duration not measured','cc-empty');
-          chip.title='The CC has been applied, but its duration has not yet been measured.';
+          const chip=makeMeta('CC Timer','— durée CC non mesurée','cc-empty');
+          chip.title='Le CC a bien été appliqué, mais sa durée n’est pas encore mesurée.';
           return chip;
         }
         return null;
@@ -20105,204 +20105,204 @@ document.getElementById('specSelector')?.addEventListener('change',()=>{
 const OLD_OFFICIAL_CONSUMABLES=[
  // REPAS CRON
  {id:"exquisite_cron",category:"Repas Cron",name:"Repas de Cron exquis",duration:7200,stackGroup:"food",
-  stats:["Tous PA +8","Accuracy +15","Vitesse attaque/incantation +2","Movement speed +2","Critique +2","Esquive +15","PV max +150","Endurance max +200","All résistances +4%","Rear attack damage +5%","Critical damage +5%"],
+  stats:["Tous PA +8","Précision +15","Vitesse attaque/incantation +2","Vitesse déplacement +2","Critique +2","Esquive +15","PV max +150","Endurance max +200","Toutes résistances +4%","Dégâts attaque arrière +5%","Dégâts critiques +5%"],
   source:"Pearl Abyss — guides/patchs officiels",verified:true},
  {id:"simple_cron",category:"Repas Cron",name:"Repas de Cron simple",duration:7200,stackGroup:"food",
-  stats:["PA contre monstres +30","EXP combat +20%","Skill EXP +10%","Vitesse attaque/incantation +2","Movement speed +3","Critique +2","PV max +150","Poids +100 LT","Ground attack damage +5%","Critical damage +5%","Damage received from monsters -6%"],
+  stats:["PA contre monstres +30","EXP combat +20%","EXP compétence +10%","Vitesse attaque/incantation +2","Vitesse déplacement +3","Critique +2","PV max +150","Poids +100 LT","Dégâts attaque au sol +5%","Dégâts critiques +5%","Dégâts reçus des monstres -6%"],
   source:"Pearl Abyss — Welcome Gifts 2026 / guides officiels",verified:true},
  {id:"seafood_cron",category:"Repas Cron",name:"Repas de Cron aux fruits de mer",duration:7200,stackGroup:"food",
-  stats:["EXP profession +10%","Transformation success +10%","Harvest +2","Movement +2","Fishing +2","Poids +100 LT","Master’s degree in professions +25"],
-  source:"Pearl Abyss — official Cron Meal data",verified:true},
+  stats:["EXP profession +10%","Succès transformation +10%","Récolte +2","Déplacement +2","Pêche +2","Poids +100 LT","Maîtrise professions +25"],
+  source:"Pearl Abyss — données officielles Cron Meal",verified:true},
 
  // DRAUGHTS CLASSIQUES
  {id:"verdure",category:"Draught",name:"Breuvage de verdure",duration:900,stackGroup:"draught",
-  stats:["Temps cuisine/alchimie -1 s","EXP profession +20%","Transformation success +20%","Harvest +3","Movement speed +3","Fishing +3","Poids +200 LT"],
+  stats:["Temps cuisine/alchimie -1 s","EXP profession +20%","Succès transformation +20%","Récolte +3","Vitesse déplacement +3","Pêche +3","Poids +200 LT"],
   source:"Pearl Abyss — patch notes 07/08/2020",verified:true},
  {id:"beast",category:"Draught",name:"Breuvage de la bête",duration:900,stackGroup:"draught",
-  stats:["PA contre monstres +15","EXP combat +20%","Skill EXP +10%","HP recovery +3 per hit","Damage received from monsters -10%","Critique +3","Poids +100 LT"],
+  stats:["PA contre monstres +15","EXP combat +20%","EXP compétence +10%","Récupération PV +3 par coup","Dégâts reçus des monstres -10%","Critique +3","Poids +100 LT"],
   source:"Pearl Abyss — patch notes officiels",verified:true},
  {id:"giant",category:"Draught",name:"Breuvage du géant",duration:900,stackGroup:"draught",
-  stats:["Tous PA +10","PV max +150","Damage from all special attacks +10%","Movement speed +3","Critique +3","Endurance max +200"],
+  stats:["Tous PA +10","PV max +150","Dégâts de toutes attaques spéciales +10%","Vitesse déplacement +3","Critique +3","Endurance max +200"],
   source:"Pearl Abyss — patch notes officiels",verified:true},
  {id:"savage",category:"Draught",name:"Breuvage sauvage",duration:900,stackGroup:"draught",
-  stats:["PA contre monstres +15","Chance connaissance +12%","Chance connaissance haut grade +7%","HP recovery +3 per hit","Damage received from monsters -10%","Critique +3","Poids +100 LT"],
+  stats:["PA contre monstres +15","Chance connaissance +12%","Chance connaissance haut grade +7%","Récupération PV +3 par coup","Dégâts reçus des monstres -10%","Critique +3","Poids +100 LT"],
   source:"Pearl Abyss — patch notes officiels",verified:true},
  {id:"frenzy",category:"Draught",name:"Breuvage de frénésie",duration:900,stackGroup:"draught",
-  stats:["PA contre monstres +30","Accuracy +12","Endurance max +200","HP recovery +9 per hit","All DP -15","Critical damage +10%","Poids +100 LT"],
+  stats:["PA contre monstres +30","Précision +12","Endurance max +200","Récupération PV +9 par coup","Toutes DP -15","Dégâts critiques +10%","Poids +100 LT"],
   source:"Pearl Abyss — Frenzy Draught patch notes",verified:true},
  {id:"frenzy_corrupt",category:"Draught",name:"Breuvage de frénésie corrompu",duration:900,stackGroup:"draught",
-  stats:["Effects of Brew of Frenzy","Additional AP against monsters (Corrupted Breath version)"],
+  stats:["Effets du Breuvage de frénésie","PA contre monstres supplémentaire (version Corrupted Breath)"],
   source:"Pearl Abyss — Elvia Calpheon update history",verified:true},
 
  // DRAUGHTS 2024 — composants Harmony
  {id:"fury",category:"Draught",name:"Breuvage de fureur",duration:900,stackGroup:"draught",
-  stats:["Tous PA +13","Accuracy +13","Damage from all special attacks +2%"],
+  stats:["Tous PA +13","Précision +13","Dégâts de toutes attaques spéciales +2%"],
   source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"adaptation",category:"Draught",name:"Breuvage d'adaptation",duration:900,stackGroup:"draught",
-  stats:["Damage reduction +13","Esquive +13","PV max +200","Endurance max +200"],
+  stats:["Réduction de dégâts +13","Esquive +13","PV max +200","Endurance max +200"],
   source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"potential",category:"Draught",name:"Breuvage de potentiel",duration:900,stackGroup:"draught",
-  stats:["Movement speed +5","Vitesse attaque +5","Vitesse incantation +5","Critique +5"],
+  stats:["Vitesse déplacement +5","Vitesse attaque +5","Vitesse incantation +5","Critique +5"],
   source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"corruption",category:"Draught",name:"Breuvage de corruption",duration:900,stackGroup:"draught",
-  stats:["Fixed damage +15 on rear attack","Fixed damage +15 on critical hit","HP recovery +17 on critical hit","HP recovery +12 per hit"],
+  stats:["Dégâts fixes +15 sur attaque arrière","Dégâts fixes +15 sur coup critique","Récupération PV +17 sur coup critique","Récupération PV +12 par coup"],
   source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"berserk",category:"Draught",name:"Breuvage de berserk",duration:900,stackGroup:"draught",
-  stats:["Damage from all special attacks +16%"],
+  stats:["Dégâts de toutes attaques spéciales +16%"],
   source:"Pearl Abyss — July 25 2024 Update",verified:true},
 
  // HARMONY FAMILY
  {id:"harmony",category:"Harmony Draught",name:"Breuvage d'harmonie",duration:900,stackGroup:"draught",
-  stats:["Tous PA +13","Accuracy +13","Damage reduction +13","Esquive +13","PV max +200","Endurance max +200","Movement/attack/cast speed +5","Critique +5","Fixed damage +15 on rear attack","Fixed damage +15 on critical hit","HP recovery +17 on critical","HP recovery +12 per hit","Damage from all special attacks +18%"],
+  stats:["Tous PA +13","Précision +13","Réduction de dégâts +13","Esquive +13","PV max +200","Endurance max +200","Vitesse déplacement/attaque/incantation +5","Critique +5","Dégâts fixes +15 sur attaque arrière","Dégâts fixes +15 sur coup critique","Récupération PV +17 sur critique","Récupération PV +12 par coup","Dégâts de toutes attaques spéciales +18%"],
   source:"Pearl Abyss — Harmony Draught 2024",verified:true},
  {id:"harmony_human",category:"Harmony Draught",name:"[Groupe] Breuvage d'harmonie — Humains",duration:900,stackGroup:"draught",
-  stats:["Tous PA +13","Accuracy +13","Damage reduction +13","Esquive +13","PV max +200","Endurance max +200","Movement/attack/cast speed +5","Critique +5","Fixed damage +15 on rear attack","Fixed damage +15 on critical","HP recovery +17 on critical","HP recovery +12 per hit","Special attack damage +18%","Damage vs. Humans +11","Damage received from monsters -10%"],
+  stats:["Tous PA +13","Précision +13","Réduction de dégâts +13","Esquive +13","PV max +200","Endurance max +200","Vitesse déplacement/attaque/incantation +5","Critique +5","Dégâts fixes +15 sur attaque arrière","Dégâts fixes +15 sur critique","Récupération PV +17 sur critique","Récupération PV +12 par coup","Dégâts attaques spéciales +18%","Dégâts contre Humains +11","Dégâts reçus des monstres -10%"],
   source:"Pearl Abyss — Harmony Draught event/update 2024",verified:true},
  {id:"harmony_demihuman",category:"Harmony Draught",name:"[Groupe] Breuvage d'harmonie — Demi-humains",duration:900,stackGroup:"draught",
-  stats:["Tous PA +13","Accuracy +13","Damage reduction +13","Esquive +13","PV max +200","Endurance max +200","Movement/attack/cast speed +5","Critique +5","Fixed damage +15 on rear attack","Fixed damage +15 on critical","HP recovery +17 on critical","HP recovery +12 per hit","Special attack damage +18%","Damage against Demi-humans +15","Damage received from monsters -10%"],
+  stats:["Tous PA +13","Précision +13","Réduction de dégâts +13","Esquive +13","PV max +200","Endurance max +200","Vitesse déplacement/attaque/incantation +5","Critique +5","Dégâts fixes +15 sur attaque arrière","Dégâts fixes +15 sur critique","Récupération PV +17 sur critique","Récupération PV +12 par coup","Dégâts attaques spéciales +18%","Dégâts contre Demi-humains +15","Dégâts reçus des monstres -10%"],
   source:"Pearl Abyss — Harmony Draught event/update 2024",verified:true},
  {id:"harmony_kama",category:"Harmony Draught",name:"[Groupe] Breuvage d'harmonie — Kamasylvia",duration:900,stackGroup:"draught",
-  stats:["Tous PA +13","Accuracy +13","Damage reduction +13","Esquive +13","PV max +200","Endurance max +200","Movement/attack/cast speed +5","Critique +5","Fixed damage +15 on rear attack","Fixed damage +15 on critical","HP recovery +17 on critical","HP recovery +12 per hit","Special attack damage +18%","Damage against Kamasylvian monsters +17","Damage received from monsters -10%"],
+  stats:["Tous PA +13","Précision +13","Réduction de dégâts +13","Esquive +13","PV max +200","Endurance max +200","Vitesse déplacement/attaque/incantation +5","Critique +5","Dégâts fixes +15 sur attaque arrière","Dégâts fixes +15 sur critique","Récupération PV +17 sur critique","Récupération PV +12 par coup","Dégâts attaques spéciales +18%","Dégâts contre monstres Kamasylviens +17","Dégâts reçus des monstres -10%"],
   source:"Pearl Abyss — Harmony Draught event/update 2024",verified:true},
  {id:"harmony_edania",category:"Harmony Draught",name:"[Groupe] Breuvage d'harmonie — Edania",duration:900,stackGroup:"draught",
-  stats:["Tous PA +13","PA contre monstres d'Edania +17","Accuracy +13","Damage reduction +13","Esquive +13","PV max +200","Endurance max +200","Movement/attack/cast speed +5","Critique +5","Fixed damage +15 rear attack","Fixed damage +15 critical","HP recovery +17 critical","HP recovery +12 per hit","Special attack damage +18%","Monster damage reduction +10%"],
+  stats:["Tous PA +13","PA contre monstres d'Edania +17","Précision +13","Réduction de dégâts +13","Esquive +13","PV max +200","Endurance max +200","Vitesse déplacement/attaque/incantation +5","Critique +5","Dégâts fixes +15 attaque arrière","Dégâts fixes +15 critique","Récupération PV +17 critique","Récupération PV +12 par coup","Dégâts attaques spéciales +18%","Réduction dégâts monstres +10%"],
   source:"Pearl Abyss — Edania Update 2025",verified:true},
 
  // EDANIA INDIVIDUAL ELIXIRS
- {id:"edania_elixir",category:"Elixir",name:"Elixir of Edania",duration:600,stackGroup:"elixir",
+ {id:"edania_elixir",category:"Élixir",name:"Élixir d'Edania",duration:600,stackGroup:"elixir",
   stats:["PA contre monstres d'Edania +12"],source:"Pearl Abyss — Edania Update 2025",verified:true},
- {id:"strong_edania_elixir",category:"Elixir",name:"Potent Elixir of Edania",duration:900,stackGroup:"elixir",
+ {id:"strong_edania_elixir",category:"Élixir",name:"Élixir puissant d'Edania",duration:900,stackGroup:"elixir",
   stats:["PA contre monstres d'Edania +17"],source:"Pearl Abyss — Edania Update 2025",verified:true},
 
  // PERFUMES
  {id:"courage",category:"Parfum",name:"Parfum de courage",duration:1200,stackGroup:"perfume",
-  stats:["Tous PA +20","PV max +200","Vitesse attaque +5","Vitesse incantation +5","Movement speed +5"],
+  stats:["Tous PA +20","PV max +200","Vitesse attaque +5","Vitesse incantation +5","Vitesse déplacement +5"],
   source:"Pearl Abyss — official 2026 event description",verified:true},
  {id:"charm",category:"Parfum",name:"Parfum de charme",duration:1200,stackGroup:"perfume",
-  stats:["Esquive +25","PV max +750","Movement speed +5%"],
+  stats:["Esquive +25","PV max +750","Vitesse déplacement +5%"],
   source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"envy",category:"Parfum",name:"Parfum d'envie",duration:1200,stackGroup:"perfume",
-  stats:["Tous PA +25","PV max +500","Vitesse attaque +5","Vitesse incantation +5","Movement speed +5"],
+  stats:["Tous PA +25","PV max +500","Vitesse attaque +5","Vitesse incantation +5","Vitesse déplacement +5"],
   source:"Pearl Abyss — Edania update 2025",verified:true},
  {id:"tenacity",category:"Parfum",name:"Parfum de ténacité",duration:1200,stackGroup:"perfume",
-  stats:["Tous PA +15","Endurance max +100","PV max +400","Rear attack damage +10%","Ground attack damage +10%","Air attack damage +10%"],
+  stats:["Tous PA +15","Endurance max +100","PV max +400","Dégâts attaque arrière +10%","Dégâts attaque au sol +10%","Dégâts attaque aérienne +10%"],
   source:"Pearl Abyss — Edania update 2025",verified:true},
- {id:"spirit",category:"Parfum",name:"Elixir de parfum spirituel",duration:1200,stackGroup:"perfume",
-  stats:["PV max +300","Critique +5","Resource recovery per move"],source:"Pearl Abyss — official item/update data",verified:true},
- {id:"khalk",category:"Parfum",name:"Elixir de Khalk",duration:1200,stackGroup:"perfume",
-  stats:["All résistances +10%","Damage reduction +15","PV max +100","Movement speed +5"],
+ {id:"spirit",category:"Parfum",name:"Élixir de parfum spirituel",duration:1200,stackGroup:"perfume",
+  stats:["PV max +300","Critique +5","Récupération ressource par coup"],source:"Pearl Abyss — official item/update data",verified:true},
+ {id:"khalk",category:"Parfum",name:"Élixir de Khalk",duration:1200,stackGroup:"perfume",
+  stats:["Toutes résistances +10%","Réduction de dégâts +15","PV max +100","Vitesse déplacement +5"],
   source:"Pearl Abyss — official item/update data",verified:true},
- {id:"deep_sea",category:"Parfum",name:"Elixir de la mer profonde",duration:1200,stackGroup:"perfume",
-  stats:["Tous PA +10","PV max +100","Endurance max +100","Damage from all special attacks +10%"],
+ {id:"deep_sea",category:"Parfum",name:"Élixir de la mer profonde",duration:1200,stackGroup:"perfume",
+  stats:["Tous PA +10","PV max +100","Endurance max +100","Dégâts de toutes attaques spéciales +10%"],
   source:"Pearl Abyss — official item/update data",verified:true},
 
  // IMMORTAL VARIANTS — same effect, persist through death
  {id:"immortal_giant",category:"Immortel",name:"Immortel : Breuvage du géant",duration:900,stackGroup:"draught",
-  stats:["Same effect as Giant's Brew","Effect retained after death"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"giant"},
+  stats:["Même effet que Breuvage du géant","Effet conservé après la mort"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"giant"},
  {id:"immortal_beast",category:"Immortel",name:"Immortel : Breuvage de la bête",duration:900,stackGroup:"draught",
-  stats:["Same effect as Beast's Brew","Effect retained after death"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"beast"},
+  stats:["Même effet que Breuvage de la bête","Effet conservé après la mort"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"beast"},
  {id:"immortal_savage",category:"Immortel",name:"Immortel : Breuvage sauvage",duration:900,stackGroup:"draught",
-  stats:["Same effect as Wild Brew","Effect retained after death"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"savage"},
+  stats:["Même effet que Breuvage sauvage","Effet conservé après la mort"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"savage"},
  {id:"immortal_frenzy",category:"Immortel",name:"Immortel : Breuvage de frénésie",duration:900,stackGroup:"draught",
-  stats:["Same effect as Brew of Frenzy","Effect retained after death"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"frenzy"},
+  stats:["Même effet que Breuvage de frénésie","Effet conservé après la mort"],source:"Pearl Abyss — O'dyllita immortal consumables",verified:true,mirror:"frenzy"},
  {id:"immortal_harmony_human",category:"Immortel",name:"[Groupe] Immortel : Harmonie — Humains",duration:900,stackGroup:"draught",
-  stats:["Same effect as Harmony — Humans","Effect retained after death"],source:"Pearl Abyss — Harmony/Immortal updates",verified:true,mirror:"harmony_human"},
+  stats:["Même effet que Harmonie — Humains","Effet conservé après la mort"],source:"Pearl Abyss — Harmony/Immortal updates",verified:true,mirror:"harmony_human"},
  {id:"immortal_harmony_demihuman",category:"Immortel",name:"[Groupe] Immortel : Harmonie — Demi-humains",duration:900,stackGroup:"draught",
-  stats:["Same effect as Harmony — Demi-humans","Effect retained after death"],source:"Pearl Abyss — Harmony/Immortal updates",verified:true,mirror:"harmony_demihuman"},
+  stats:["Même effet que Harmonie — Demi-humains","Effet conservé après la mort"],source:"Pearl Abyss — Harmony/Immortal updates",verified:true,mirror:"harmony_demihuman"},
  {id:"immortal_harmony_edania",category:"Immortel",name:"[Groupe] Immortel : Harmonie — Edania",duration:900,stackGroup:"draught",
-  stats:["Same effect as Harmony — Edania","Effect retained after death"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"harmony_edania"},
+  stats:["Même effet que Harmonie — Edania","Effet conservé après la mort"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"harmony_edania"},
  {id:"immortal_courage",category:"Immortel",name:"Immortel : Parfum de courage",duration:1200,stackGroup:"perfume",
-  stats:["Same effect as Perfume of Courage","Effect retained after death"],source:"Pearl Abyss — immortal perfumes",verified:true,mirror:"courage"},
+  stats:["Même effet que Parfum de courage","Effet conservé après la mort"],source:"Pearl Abyss — immortal perfumes",verified:true,mirror:"courage"},
  {id:"immortal_envy",category:"Immortel",name:"Immortel : Parfum d'envie",duration:1200,stackGroup:"perfume",
-  stats:["Same effect as Parfum d’Envy","Effect retained after death"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"envy"},
+  stats:["Même effet que Parfum d'envie","Effet conservé après la mort"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"envy"},
  {id:"immortal_tenacity",category:"Immortel",name:"Immortel : Parfum de ténacité",duration:1200,stackGroup:"perfume",
-  stats:["Same effect as Perfume of Tenacity","Effect retained after death"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"tenacity"},
+  stats:["Même effet que Parfum de ténacité","Effet conservé après la mort"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"tenacity"},
 
  // CHURCH / CAMPSITE — current consolidated buff
- {id:"adventure_boon_120",category:"Church / Camp",name:"[Blessing] Adventurer's Favor — 120 min",duration:7200,stackGroup:"church",
-  stats:["Tous PA +8","Accuracy +8","Damage reduction +8","PV max +150","EXP combat +15%","Skill EXP +15%"],
+ {id:"adventure_boon_120",category:"Église / Camp",name:"[Bénédiction] Faveur de l'aventurier — 120 min",duration:7200,stackGroup:"church",
+  stats:["Tous PA +8","Précision +8","Réduction de dégâts +8","PV max +150","EXP combat +15%","EXP compétence +15%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
- {id:"adventure_boon_300",category:"Church / Camp",name:"[Blessing] Adventurer's Favor — 300 min",duration:18000,stackGroup:"church",
-  stats:["Tous PA +8","Accuracy +8","Damage reduction +8","PV max +150","EXP combat +15%","Skill EXP +15%"],
+ {id:"adventure_boon_300",category:"Église / Camp",name:"[Bénédiction] Faveur de l'aventurier — 300 min",duration:18000,stackGroup:"church",
+  stats:["Tous PA +8","Précision +8","Réduction de dégâts +8","PV max +150","EXP combat +15%","EXP compétence +15%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
  {id:"body_enhancement",category:"Villa / Camp",name:"Amélioration corporelle",duration:3600,stackGroup:"villa",
-  stats:["Tous PA +10","Damage reduction +10","PV max +200","All résistances +10%","EXP combat +50%","Skill EXP +50%","Heat/hypothermia resistance +50%"],
+  stats:["Tous PA +10","Réduction de dégâts +10","PV max +200","Toutes résistances +10%","EXP combat +50%","EXP compétence +50%","Résistance chaleur/hypothermie +50%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
 
  // BLESSING OF MYSTIC BEASTS
- {id:"mystic_ap",category:"Blessing of Mystical Beasts",name:"Blessing of Mystical Beasts — Tous PA",duration:3600,stackGroup:"furniture",
+ {id:"mystic_ap",category:"Bénédiction des bêtes mystiques",name:"Bénédiction des bêtes mystiques — Tous PA",duration:3600,stackGroup:"furniture",
   stats:["Tous PA +15"],source:"Pearl Abyss — May 29 2025 Update",verified:true},
- {id:"mystic_acc",category:"Blessing of Mystical Beasts",name:"Blessing of Mystical Beasts — Précision",duration:3600,stackGroup:"furniture",
-  stats:["Accuracy +20"],source:"Pearl Abyss — May 29 2025 Update",verified:true},
- {id:"mystic_hp",category:"Blessing of Mystical Beasts",name:"Blessing of Mystical Beasts — PV max",duration:3600,stackGroup:"furniture",
+ {id:"mystic_acc",category:"Bénédiction des bêtes mystiques",name:"Bénédiction des bêtes mystiques — Précision",duration:3600,stackGroup:"furniture",
+  stats:["Précision +20"],source:"Pearl Abyss — May 29 2025 Update",verified:true},
+ {id:"mystic_hp",category:"Bénédiction des bêtes mystiques",name:"Bénédiction des bêtes mystiques — PV max",duration:3600,stackGroup:"furniture",
   stats:["PV max +100"],source:"Pearl Abyss — May 29 2025 Update",verified:true},
- {id:"mystic_dr",category:"Blessing of Mystical Beasts",name:"Blessing of Mystical Beasts — Réduction dégâts",duration:3600,stackGroup:"furniture",
-  stats:["Damage reduction +15"],source:"Pearl Abyss — May 29 2025 Update",verified:true},
- {id:"mystic_eva",category:"Blessing of Mystical Beasts",name:"Blessing of Mystical Beasts — Esquive",duration:3600,stackGroup:"furniture",
+ {id:"mystic_dr",category:"Bénédiction des bêtes mystiques",name:"Bénédiction des bêtes mystiques — Réduction dégâts",duration:3600,stackGroup:"furniture",
+  stats:["Réduction de dégâts +15"],source:"Pearl Abyss — May 29 2025 Update",verified:true},
+ {id:"mystic_eva",category:"Bénédiction des bêtes mystiques",name:"Bénédiction des bêtes mystiques — Esquive",duration:3600,stackGroup:"furniture",
   stats:["Esquive +20"],source:"Pearl Abyss — May 29 2025 Update",verified:true},
 
  // RECOVERY CONSUMABLES
  {id:"hp_small",category:"Potion PV",name:"Potion de PV (petite)",duration:0,stackGroup:"instant",
-  stats:["Recovers 150 HP"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
+  stats:["Récupère 150 PV"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"hp_medium",category:"Potion PV",name:"Potion de PV (moyenne)",duration:0,stackGroup:"instant",
-  stats:["Recovers 250 HP"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
+  stats:["Récupère 250 PV"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"hp_large",category:"Potion PV",name:"Potion de PV (grande)",duration:0,stackGroup:"instant",
-  stats:["Recovers 400 HP"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
+  stats:["Récupère 400 PV"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"hp_jumbo",category:"Potion PV",name:"Potion de PV (Jumbo)",duration:0,stackGroup:"instant",
-  stats:["Recovers 800 HP"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
+  stats:["Récupère 800 PV"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"whale",category:"Potion de tendon de baleine",name:"Potion de tendon de baleine",duration:0,stackGroup:"instant",
-  stats:["Recovers 1,200 HP"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
+  stats:["Récupère 1 200 PV"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"whale_superior",category:"Potion de tendon de baleine",name:"Potion supérieure de tendon de baleine",duration:0,stackGroup:"instant",
-  stats:["Recovers 1,800 HP"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
+  stats:["Récupère 1 800 PV"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
  {id:"whale_sturdy",category:"Potion de tendon de baleine",name:"Potion robuste de tendon de baleine",duration:0,stackGroup:"instant",
-  stats:["Recovers 3,000 HP"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
+  stats:["Récupère 3 000 PV"],source:"Pearl Abyss — July 25 2024 Update",verified:true},
 
  // SCROLLS / SUPPORT
  {id:"combat_skill_300",category:"Parchemin",name:"Parchemin EXP combat & compétence +300% (60 min)",duration:3600,stackGroup:"scroll_exp",
-  stats:["EXP combat +300%","Skill EXP +300%"],source:"Pearl Abyss — Welcome Gifts 2026",verified:true}
+  stats:["EXP combat +300%","EXP compétence +300%"],source:"Pearl Abyss — Welcome Gifts 2026",verified:true}
 ];
 const OLD_CRYSTAL_PRESETS={
  pve:{
-   label:"PvE endgame — general damage 2026",
+   label:"PvE endgame — dégâts généralistes 2026",
    source:"BDFoundry PvE Crystal Build Examples + Garmoth crystal meta",
    crystals:[
     {qty:2,name:"Ultimate Combined Magic Crystal - Macalod",role:"AP / stamina / set offensif"},
-    {qty:1,name:"Girin's Tear",role:"AP monster / precision / DR monster"},
-    {qty:2,name:"Crystal of Brutal Decimation",role:"PvE damage / accuracy depending on spot"},
+    {qty:1,name:"Girin's Tear",role:"AP monstre / précision / DR monstre"},
+    {qty:2,name:"Crystal of Brutal Decimation",role:"dégâts PvE / précision selon spot"},
     {qty:2,name:"Rebellious Spirit Crystal",role:"AP + PV"},
     {qty:2,name:"Crystal of Void - Ah'krad",role:"AP monstre / vitesse"},
-    {qty:2,name:"Corrupted Gluttony Crystal",role:"special damage / PvE"},
-    {qty:2,name:"Crystal of Void Destruction",role:"AP/PvE damage"},
-    {qty:2,name:"Sycraia Crystal - Adamantine",role:"resistance adapted to the spot"},
-    {qty:1,name:"HAN Crystal of Dusky Ruin",role:"defense / content Edania"}
+    {qty:2,name:"Corrupted Gluttony Crystal",role:"dégâts spéciaux / PvE"},
+    {qty:2,name:"Crystal of Void Destruction",role:"AP / dégâts PvE"},
+    {qty:2,name:"Sycraia Crystal - Adamantine",role:"résistance adaptée au spot"},
+    {qty:1,name:"HAN Crystal of Dusky Ruin",role:"défense / contenu Edania"}
    ],
    // Aggregate offensive subset from the current BDFoundry example.
    mods:{ap:73,monsterAP:76,accuracy:19,critDmgPct:22,backDmgPct:2,specialPct:1,atkSpeedPct:2,castingSpeedPct:2},
-   note:"The resistance crystal can be replaced depending on the area. Brutal Decimation can be replaced with Elkarr/Visionary Elkarr if accuracy is lacking."
+   note:"Le cristal de résistance peut être remplacé selon la zone. Brutal Decimation peut être remplacé par Elkarr/Visionary Elkarr si la précision manque."
  },
  pvp:{
-   label:"All-purpose PvP — DR/General Offensive 2026",
+   label:"PvP passe-partout — DR/offensif général 2026",
    source:"Garmoth PvP crystal meta + guides joueurs 2026",
    crystals:[
-    {qty:2,name:"Visionary/Crystal of Elkarr",role:"precision / ignore resistance"},
-    {qty:2,name:"Red Spirit Crystal",role:"AP/offensive damage"},
-    {qty:2,name:"Corrupted Magic Crystal",role:"critical damage"},
-    {qty:2,name:"Glorious Crystal of Gallantry - Olucas",role:"human damage / accuracy / speed"},
-    {qty:2,name:"Red Battlefield Crystal: Viper",role:"accuracy / human damage"},
-    {qty:2,name:"Red Battlefield Crystal: Carmae",role:"human damage/attack"},
-    {qty:1,name:"Haetae's Tear",role:"DR / dodge / HP / resistance"},
-    {qty:1,name:"Crystal of Frozen Bitterness",role:"defense/survival"},
-    {qty:1,name:"JIN Glorious Crystal of Honor - Max HP / Special Evasion",role:"HP / special dodge"}
+    {qty:2,name:"Visionary/Crystal of Elkarr",role:"précision / ignore résistance"},
+    {qty:2,name:"Red Spirit Crystal",role:"AP / dégâts offensifs"},
+    {qty:2,name:"Corrupted Magic Crystal",role:"dégâts critiques"},
+    {qty:2,name:"Glorious Crystal of Gallantry - Olucas",role:"dégâts humains / précision / vitesse"},
+    {qty:2,name:"Red Battlefield Crystal: Viper",role:"précision / dégâts humains"},
+    {qty:2,name:"Red Battlefield Crystal: Carmae",role:"dégâts humains / attaque"},
+    {qty:1,name:"Haetae's Tear",role:"DR / esquive / PV / résistance"},
+    {qty:1,name:"Crystal of Frozen Bitterness",role:"défense / survie"},
+    {qty:1,name:"JIN Glorious Crystal of Honor - Max HP / Special Evasion",role:"PV / esquive spéciale"}
    ],
    // Only clearly-supported offensive effects are fed to damage/speed calculation.
    mods:{humanDamage:56,accuracy:45,critDmgPct:22,atkSpeedPct:2,castingSpeedPct:2},
-   note:"Versatile preset. Against strong dodge, increases Elkarr/Viper; for glass cannon, replaces more defensive with human damage."
+   note:"Preset polyvalent. Contre forte esquive, augmente Elkarr/Viper; pour glass cannon, remplace davantage de défensifs par dégâts humains."
  }
 };
 let oldEffects=[]; let oldActiveCrystalPreset='';
 function oldEsc(v){return escapeHtmlText(String(v??''));}
 function oldOfficialConsumable(id){return OLD_OFFICIAL_CONSUMABLES.find(x=>x.id===id)||OLD_OFFICIAL_CONSUMABLES[0];}
-function oldHydrate(e){const p=oldOfficialConsumable(e.presetId||'exquisite_cron'); const base=p.mirror?oldOfficialConsumable(p.mirror):p; return Object.assign(e,{presetId:p.id,name:p.name,category:p.category,duration:p.duration,stackGroup:p.stackGroup||p.category,stats:p.mirror?[...(base.stats||[]),'Effect retained after death']:[...(p.stats||[])],source:p.source||base.source||'Pearl Abyss',enabled:e.enabled!==false});}
+function oldHydrate(e){const p=oldOfficialConsumable(e.presetId||'exquisite_cron'); const base=p.mirror?oldOfficialConsumable(p.mirror):p; return Object.assign(e,{presetId:p.id,name:p.name,category:p.category,duration:p.duration,stackGroup:p.stackGroup||p.category,stats:p.mirror?[...(base.stats||[]),'Effet conservé après la mort']:[...(p.stats||[])],source:p.source||base.source||'Pearl Abyss',enabled:e.enabled!==false});}
 function oldEnforce(changed=-1){const active=new Map(); oldEffects.forEach((e,i)=>{oldHydrate(e);if(e.enabled===false)return;if(active.has(e.stackGroup)){if(i===changed){oldEffects[active.get(e.stackGroup)].enabled=false;active.set(e.stackGroup,i)}else e.enabled=false}else active.set(e.stackGroup,i)});}
 function oldOptions(sel){const q=(document.getElementById('oldConsumableSearch')?.value||'').toLowerCase().trim();const cat=document.getElementById('oldConsumableCategory')?.value||'';return OLD_OFFICIAL_CONSUMABLES.filter(p=>(!cat||p.category===cat)&&(!q||(`${p.name} ${p.category} ${(p.stats||[]).join(' ')}`).toLowerCase().includes(q))).map(p=>`<option value="${oldEsc(p.id)}" ${p.id===sel?'selected':''}>${oldEsc(p.name)}</option>`).join('')}
 function oldSave(){ if(typeof saveClassLoadoutSettings==='function') saveClassLoadoutSettings(); }
@@ -20316,7 +20316,7 @@ function oldRenderConsumables(){
   const cs=document.getElementById('oldConsumableCategory');
   if(cs){
     const v=cs.value;
-    cs.innerHTML='<option value="">All</option>'+
+    cs.innerHTML='<option value="">Toutes</option>'+
       [...new Set(OLD_OFFICIAL_CONSUMABLES.map(p=>p.category))]
         .sort()
         .map(c=>`<option value="${oldEsc(c)}">${oldEsc(c)}</option>`)
@@ -20364,14 +20364,14 @@ function oldRenderConsumables(){
             <td class="consumable-stats-cell">
               ${stats.length
                 ? `<div class="consumable-stat-list">${stats.map(s=>`<span class="consumable-stat-chip">${oldEsc(s)}</span>`).join('')}</div>`
-                : `<span class="consumable-stat-missing">None stat détaillée</span>`}
+                : `<span class="consumable-stat-missing">Aucune stat détaillée</span>`}
             </td>
             <td class="consumable-remove-cell">
               <button type="button" onclick="oldRemoveConsumable(${i})">×</button>
             </td>
           </tr>`;
       }).join('')
-    : '<tr><td colspan="5">No active consumable.</td></tr>';
+    : '<tr><td colspan="5">Aucun consommable actif.</td></tr>';
 
   oldSave();
 }
@@ -20388,17 +20388,17 @@ function oldRenderCrystals(){
 
   if(box){
     if(!p){
-      box.innerHTML='<b>No crystal set applied.</b>';
+      box.innerHTML='<b>Aucun set de cristaux appliqué.</b>';
     }else{
       const m=p.mods||{};
       const aggregate=[];
-      if(m.ap) aggregate.push(`Hidden AP +${m.ap}`);
+      if(m.ap) aggregate.push(`AP caché +${m.ap}`);
       if(m.monsterAP) aggregate.push(`AP monstre +${m.monsterAP}`);
-      if(m.humanDamage) aggregate.push(`Human damage +${m.humanDamage}`);
-      if(m.accuracy) aggregate.push(`Accuracy +${m.accuracy}`);
-      if(m.critDmgPct) aggregate.push(`Critical damage +${m.critDmgPct}%`);
+      if(m.humanDamage) aggregate.push(`Dégâts humains +${m.humanDamage}`);
+      if(m.accuracy) aggregate.push(`Précision +${m.accuracy}`);
+      if(m.critDmgPct) aggregate.push(`Dégâts critiques +${m.critDmgPct}%`);
       if(m.backDmgPct) aggregate.push(`Back Attack +${m.backDmgPct}%`);
-      if(m.specialPct) aggregate.push(`Special damage +${m.specialPct}%`);
+      if(m.specialPct) aggregate.push(`Dégâts spéciaux +${m.specialPct}%`);
       if(m.atkSpeedPct) aggregate.push(`Vitesse attaque +${m.atkSpeedPct}%`);
       if(m.castingSpeedPct) aggregate.push(`Vitesse incantation +${m.castingSpeedPct}%`);
 
@@ -20427,7 +20427,7 @@ function oldRenderCrystals(){
               </td>
             </tr>`;
         }).join('')
-      : '<tr><td colspan="4">No active preset.</td></tr>';
+      : '<tr><td colspan="4">Aucun preset actif.</td></tr>';
   }
 
   oldSave();
@@ -20615,7 +20615,7 @@ function videoAnalysisLoadFile(file){
 
   if(analyzerStatus){
     analyzerStatus.textContent =
-      'Vidéo prête. Place yourself at the start of a skill puis ajoute un marqueur.';
+      'Vidéo prête. Place-toi au début d’une compétence puis ajoute un marqueur.';
   }
 
   videoAnalysisSyncFrameDisplay();
@@ -21229,7 +21229,7 @@ function videoAutoCandidateScoreV43(segment,candidate){
     reasons.push(`durée ${candidate.timing.toFixed(3)}s`);
   }else{
     score=0.32;
-    reasons.push('timing skill unknown');
+    reasons.push('timing skill inconnu');
   }
 
   if(candidate.origin==='skills')score+=.08;
@@ -21253,7 +21253,7 @@ function videoAutoRenderV43(){
   if(add)add.disabled=!detections.some(x=>x.selectedName);
 
   if(!detections.length){
-    root.innerHTML='<div class="page-placeholder">None segment candidat détecté.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun segment candidat détecté.</div>';
     return;
   }
 
@@ -21271,7 +21271,7 @@ function videoAutoRenderV43(){
       </div>
       <div class="video-auto-candidate-v43">
         <select onchange="videoAutoSelectCandidateV43(${index},this.value)">
-          <option value="">No résolu</option>${opts}
+          <option value="">Non résolu</option>${opts}
         </select>
         <small>${best?`${source} · confiance ${Math.round(best.score*100)}%`:'Aucun candidat'}</small>
       </div>
@@ -21387,7 +21387,7 @@ function setVideoAutoWindowFromCurrentV70(lengthSeconds=30){
   if(endInput)endInput.value=videoFormatTimeV70(end,true);
 
   const status=document.getElementById('videoAutoStatusV43');
-  if(status)status.textContent=`Prepared area: ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.`;
+  if(status)status.textContent=`Zone préparée : ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.`;
 }
 
 function normalizeVideoAutoTimeInputsV70(){
@@ -21421,8 +21421,8 @@ function toggleVideoAutoPauseV46(){
   VIDEO_AUTO_STATE_V43.paused=!VIDEO_AUTO_STATE_V43.paused;
   const btn=document.getElementById('videoAutoPauseBtnV46');
   const status=document.getElementById('videoAutoStatusV43');
-  if(btn)btn.textContent=VIDEO_AUTO_STATE_V43.paused?'Resume analysis':'Analysis break';
-  if(status && VIDEO_AUTO_STATE_V43.paused)status.textContent='Analysis paused. You can inspect the video and then resume.';
+  if(btn)btn.textContent=VIDEO_AUTO_STATE_V43.paused?'Reprendre analyse':'Pause analyse';
+  if(status && VIDEO_AUTO_STATE_V43.paused)status.textContent='Analyse en pause. Tu peux inspecter la vidéo puis reprendre.';
 }
 
 async function waitVideoAutoResumeV46(){
@@ -21436,7 +21436,7 @@ function refreshAutoMeasurementsV46(){
   VIDEO_AUTO_STATE_V43.transitionMeasurements=[];
   if(typeof measureAutoTransitionsV45==='function')measureAutoTransitionsV45();
   const status=document.getElementById('videoAutoStatusV43');
-  if(status)status.textContent='Previously detected measurements recalculated from current segments and selections.';
+  if(status)status.textContent='Mesures précédemment détectées recalculées à partir des segments et sélections actuels.';
 }
 
 async function autoAnalyzeLocalVideoV43(){
@@ -21448,13 +21448,13 @@ async function autoAnalyzeLocalVideoV43(){
   const pauseBtn=document.getElementById('videoAutoPauseBtnV46');
 
   if(!video||!Number.isFinite(video.duration)||video.duration<=0){
-    if(status)status.textContent='Loads a valid local video first.';
+    if(status)status.textContent='Charge d’abord une vidéo locale valide.';
     return;
   }
 
   const cls=document.getElementById('classSelector')?.value||'';
   if(!cls){
-    if(status)status.textContent='First select a class.';
+    if(status)status.textContent='Sélectionne d’abord une classe.';
     return;
   }
 
@@ -21464,7 +21464,7 @@ async function autoAnalyzeLocalVideoV43(){
   const parsedEnd=videoParseTimeV70(endInput?.value);
 
   if(parsedStart===null || parsedEnd===null){
-    if(status)status.textContent='Format de temps invalide. Used par exemple 3:00, 03:15.500, 1:02:30 ou 180.';
+    if(status)status.textContent='Format de temps invalide. Utilise par exemple 3:00, 03:15.500, 1:02:30 ou 180.';
     return;
   }
 
@@ -21487,7 +21487,7 @@ async function autoAnalyzeLocalVideoV43(){
   VIDEO_AUTO_STATE_V43.analysisEnd=range.end;
 
   if(btn)btn.disabled=true;
-  if(pauseBtn){pauseBtn.disabled=false;pauseBtn.textContent='Analysis break';}
+  if(pauseBtn){pauseBtn.disabled=false;pauseBtn.textContent='Pause analyse';}
 
   const originalTime=video.currentTime||0;
   const wasPaused=video.paused;
@@ -21526,7 +21526,7 @@ async function autoAnalyzeLocalVideoV43(){
       if(i%12===0)await new Promise(r=>setTimeout(r,0));
     }
 
-    if(samples.length<4)throw new Error('Not enough images analyzed.');
+    if(samples.length<4)throw new Error('Pas assez d’images analysées.');
 
     const motions=samples.slice(1).map(x=>x.motion);
     const med=videoAutoMedianV43(motions);
@@ -21535,7 +21535,7 @@ async function autoAnalyzeLocalVideoV43(){
     const threshold=Math.max(.025,med+mad*2.0);
 
     const boundaries=[range.start];
-    land thestBoundary=range.start;
+    let lastBoundary=range.start;
     const minSegment=.18;
 
     for(let i=1;i<samples.length-1;i++){
@@ -21614,7 +21614,7 @@ async function autoAnalyzeLocalVideoV43(){
     VIDEO_AUTO_STATE_V43.running=false;
     VIDEO_AUTO_STATE_V43.paused=false;
     if(btn)btn.disabled=false;
-    if(pauseBtn){pauseBtn.disabled=true;pauseBtn.textContent='Analysis break';}
+    if(pauseBtn){pauseBtn.disabled=true;pauseBtn.textContent='Pause analyse';}
     await videoAutoSeekV43(video,originalTime);
     if(!wasPaused)video.play().catch(()=>{});
     videoAnalysisSyncFrameDisplay();
@@ -21718,7 +21718,7 @@ function genericCCMarkStartV50(){
   }
   GENERIC_CC_STATE_V50.auto=false;
   const status=document.getElementById('genericCCStatusV50');
-  if(status)status.textContent=`Beginning CC marqué à ${GENERIC_CC_STATE_V50.start.toFixed(4)} s.`;
+  if(status)status.textContent=`Début CC marqué à ${GENERIC_CC_STATE_V50.start.toFixed(4)} s.`;
   genericCCRenderV50();
 }
 
@@ -21735,7 +21735,7 @@ function genericCCMarkEndV50(){
     GENERIC_CC_STATE_V50.end=t;
     const duration=t-GENERIC_CC_STATE_V50.start;
     const status=document.getElementById('genericCCStatusV50');
-    if(status)status.textContent=`Duration CC : ${duration.toFixed(4)} s.`;
+    if(status)status.textContent=`Durée CC : ${duration.toFixed(4)} s.`;
   }else{
     const status=document.getElementById('genericCCStatusV50');
     if(status)status.textContent='La fin du CC doit être après le début.';
@@ -21792,7 +21792,7 @@ function genericCCApplyToSelectedSkillV67(){
   try{if(typeof renderSkillsPage==='function')renderSkillsPage();}catch(e){}
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
 
-  if(status)status.textContent=`Duration CC validated pour ${skillName} : ${duration.toFixed(4)} s.`;
+  if(status)status.textContent=`Durée CC validée pour ${skillName} : ${duration.toFixed(4)} s.`;
 }
 
 function genericCCResetV50(){
@@ -21801,7 +21801,7 @@ function genericCCResetV50(){
   GENERIC_CC_STATE_V50.auto=false;
   GENERIC_CC_STATE_V50.confidence=null;
   const status=document.getElementById('genericCCStatusV50');
-  if(status)status.textContent='DC measurement reset.';
+  if(status)status.textContent='Mesure CC réinitialisée.';
   genericCCRenderV50();
 }
 
@@ -21810,7 +21810,7 @@ function genericCCAutoDetectV50(){
   const samples=VIDEO_AUTO_STATE_V43.samples||[];
 
   if(samples.length<4){
-    if(status)status.textContent='First launch “Analysis + automatic measurement” on a video zone.';
+    if(status)status.textContent='Lance d’abord « Analyse + mesure automatique » sur une zone vidéo.';
     return;
   }
 
@@ -21820,7 +21820,7 @@ function genericCCAutoDetectV50(){
 
   const inRange=samples.filter(s=>s.time>=range.start&&s.time<=range.end);
   if(inRange.length<4){
-    if(status)status.textContent='Not enough samples in the selected area.';
+    if(status)status.textContent='Pas assez d’échantillons dans la zone sélectionnée.';
     return;
   }
 
@@ -21846,13 +21846,13 @@ function genericCCAutoDetectV50(){
     impact=inRange.reduce((best,row)=>!best||row.motion>best.motion?row:best,null);
   }
   if(!impact){
-    if(status)status.textContent='Unable to find a plausible CC start.';
+    if(status)status.textContent='Impossible de trouver un début CC plausible.';
     return;
   }
 
   const after=inRange.filter(x=>x.time>impact.time+.08);
   if(after.length<3){
-    if(status)status.textContent='Insufficient area after DC start detected.';
+    if(status)status.textContent='Zone insuffisante après le début CC détecté.';
     return;
   }
 
@@ -21879,7 +21879,7 @@ function genericCCAutoDetectV50(){
   }
 
   if(!recovery){
-    if(status)status.textContent='CC start detected, but end/resumption of motion unreliable. Use “Mark End CC”.';
+    if(status)status.textContent='Début CC détecté, mais fin/reprise de mouvement non fiable. Utilise « Marquer fin CC ».';
     GENERIC_CC_STATE_V50.start=impact.time;
     GENERIC_CC_STATE_V50.end=null;
     GENERIC_CC_STATE_V50.auto=true;
@@ -21889,9 +21889,9 @@ function genericCCAutoDetectV50(){
 
   const duration=recovery.time-impact.time;
   if(duration<.15||duration>6){
-    if(status)status.textContent=`Implausible window detected (${duration.toFixed(3)} s). Check manually.`;
+    if(status)status.textContent=`Fenêtre détectée peu plausible (${duration.toFixed(3)} s). Vérifie manuellement.`;
   }else{
-    if(status)status.textContent=`Duration CC détectée automatiquement : ${duration.toFixed(4)} s. Vérifie au ralenti si nécessaire.`;
+    if(status)status.textContent=`Durée CC détectée automatiquement : ${duration.toFixed(4)} s. Vérifie au ralenti si nécessaire.`;
   }
 
   GENERIC_CC_STATE_V50.start=impact.time;
@@ -22014,8 +22014,8 @@ function measureAutoCCV49(){
 
   if(status){
     status.textContent=rows.length
-      ? `${rows.length} proposed CC measure(s). You can save them now (auto status) or validate/correct them first.`
-      : 'No automatically measurable CC in resolved segments.';
+      ? `${rows.length} mesure(s) CC proposée(s). Tu peux les enregistrer maintenant (statut auto) ou les valider/corriger d’abord.`
+      : 'Aucun CC mesurable automatiquement dans les segments résolus.';
   }
   return rows;
 }
@@ -22033,7 +22033,7 @@ function renderAutoCCV49(){
   root.innerHTML=`
     <div class="video-auto-cc-head-v49">
       <strong>Mesures CC détectées</strong>
-      <small>Beginning = impact estimé · END = reprise de mouvement estimated · les mesures auto peuvent être enregistrées puis validées</small>
+      <small>Début = impact estimé · Fin = reprise de mouvement estimée · les mesures auto peuvent être enregistrées puis validées</small>
     </div>
     ${rows.map((m,index)=>`
       <div class="video-auto-cc-row-v49">
@@ -22041,15 +22041,15 @@ function renderAutoCCV49(){
           <b>${index+1}. ${escapeHtml(m.skillName)}</b>
           <small>${escapeHtml((m.ccTypes||[]).join('/')||'CC')} · ${m.ccPoints.toFixed(1)} pt · confiance ${Math.round(m.confidence*100)}%</small>
         </div>
-        <div><span>Beginning CC</span><strong>${m.impactTime.toFixed(4)} s</strong></div>
-        <div><span>END CC</span><strong>${m.recoveryTime.toFixed(4)} s</strong></div>
-        <div><span>Duration</span><strong>${m.duration.toFixed(4)} s</strong></div>
+        <div><span>Début CC</span><strong>${m.impactTime.toFixed(4)} s</strong></div>
+        <div><span>Fin CC</span><strong>${m.recoveryTime.toFixed(4)} s</strong></div>
+        <div><span>Durée</span><strong>${m.duration.toFixed(4)} s</strong></div>
         <div><span>Frames</span><strong>${m.startFrame} → ${m.endFrame}</strong></div>
         <div class="video-auto-cc-actions-v49">
           <button type="button" class="tab-btn" onclick="reviewAutoCCV49(${index},'start')">Voir début</button>
           <button type="button" class="tab-btn" onclick="reviewAutoCCV49(${index},'end')">Voir fin</button>
           <button type="button" class="tab-btn" onclick="correctAutoCCV49(${index})">Corriger</button>
-          <button type="button" class="tab-btn" onclick="setAutoCCStatusV49(${index},'validated')">Confirm</button>
+          <button type="button" class="tab-btn" onclick="setAutoCCStatusV49(${index},'validated')">Valider</button>
           <button type="button" class="tab-btn" onclick="setAutoCCStatusV49(${index},'rejected')">Rejeter</button>
         </div>
       </div>
@@ -22080,9 +22080,9 @@ function correctAutoCCV49(index){
   const m=VIDEO_AUTO_STATE_V43.ccMeasurements?.[index];
   if(!m)return;
 
-  const startRaw=prompt('Start CC (absolute seconds in video)',String(m.impactTime));
+  const startRaw=prompt('Début CC (secondes absolues dans la vidéo)',String(m.impactTime));
   if(startRaw===null)return;
-  const endRaw=prompt('End CC / regain control (absolute seconds in the video)',String(m.recoveryTime));
+  const endRaw=prompt('Fin CC / reprise de contrôle (secondes absolues dans la vidéo)',String(m.recoveryTime));
   if(endRaw===null)return;
 
   const start=Number(String(startRaw).replace(',','.'));
@@ -22191,7 +22191,7 @@ function videoCCPersistOneV55(skill,m){
     }
   }
 
-  skill.ccMeasureNote=`Video measurement V67 · ${Number(m.impactTime||0).toFixed(4)}s → ${Number(m.recoveryTime||0).toFixed(4)}s · ${confirmed?'validated':'auto candidate'}`;
+  skill.ccMeasureNote=`Mesure vidéo V67 · ${Number(m.impactTime||0).toFixed(4)}s → ${Number(m.recoveryTime||0).toFixed(4)}s · ${confirmed?'validated':'auto candidate'}`;
   skill.ccMeasureSavedAt=new Date().toISOString();
   return true;
 }
@@ -22202,7 +22202,7 @@ function saveAutoCCV49(){
     .filter(x=>String(x.reviewStatus||'pending')!=='rejected');
 
   if(!rows.length){
-    if(status)status.textContent='No detected CC measurement to save.';
+    if(status)status.textContent='Aucune mesure CC détectée à enregistrer.';
     return;
   }
 
@@ -22224,7 +22224,7 @@ function saveAutoCCV49(){
   try{if(typeof saveImportedAnalyzerData==='function')saveImportedAnalyzerData();}catch(e){console.warn(e);}
   try{if(typeof saveAppState==='function')saveAppState();}catch(e){console.warn(e);}
 
-  // Render Skills after persistence so the new Duration CC column updates immediately.
+  // Render Skills after persistence so the new Durée CC column updates immediately.
   try{if(typeof renderSkillsPage==='function')renderSkillsPage();}catch(e){console.warn(e);}
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){console.warn(e);}
 
@@ -22298,7 +22298,7 @@ function measureAutoTransitionsV45(){
 
   if(saveBtn)saveBtn.disabled=!rows.length;
   if(status){
-    status.textContent=`${rows.length} plausible transition(s) · ${rejected} link(s) rejected (gap too large / non-continuous segments).`;
+    status.textContent=`${rows.length} transition(s) plausible(s) · ${rejected} lien(s) rejeté(s) (écart trop grand / segments non continus).`;
   }
   return rows;
 }
@@ -22314,14 +22314,14 @@ function renderAutoTransitionsV45(){
 
   root.innerHTML=`
     <div class="video-auto-transition-head-v45">
-      <strong>Transitions / cancellations détectés</strong>
+      <strong>Transitions / cancels détectés</strong>
       <small>Mesures automatiques à valider</small>
     </div>
     ${rows.map((tr,index)=>`
       <div class="video-auto-transition-row-v45">
         <div>
           <b>${index+1}. ${escapeHtml(tr.from)} → ${escapeHtml(tr.to)}</b>
-          <small>Confidence ${Math.round(tr.confidence*100)}%</small>
+          <small>Confiance ${Math.round(tr.confidence*100)}%</small>
         </div>
         <div><span>Transition</span><strong>${tr.transitionSeconds.toFixed(4)} s</strong></div>
         <div><span>Cancel estimé</span><strong>${tr.cancelAtSeconds!==null?tr.cancelAtSeconds.toFixed(4)+' s':'—'}</strong></div>
@@ -22351,7 +22351,7 @@ function saveAutoTransitionsV45(){
   const rows=VIDEO_AUTO_STATE_V43.transitionMeasurements||[];
 
   if(!cls){
-    if(status)status.textContent='Sélectionne une class avant d’enregistrer.';
+    if(status)status.textContent='Sélectionne une classe avant d’enregistrer.';
     return;
   }
   if(!rows.length){
@@ -22411,7 +22411,7 @@ function saveAutoTransitionsV45(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
 
   if(status){
-    status.textContent=`Measurements recorded: ${added} new(s), ${updated} updated(s). They remain marked “to be validated”.`;
+    status.textContent=`Mesures enregistrées : ${added} nouvelle(s), ${updated} mise(s) à jour. Elles restent marquées « à valider ».`;
   }
 }
 
@@ -22423,7 +22423,7 @@ function addAutoDetectedSkillsV43(){
 
   if(typeof ensureClassSpecStores==='function')ensureClassSpecStores(cls,spec);
   if(!CLASS_SKILLS?.[cls]?.[spec]){
-    if(status)status.textContent='Stockage Skills indisponible for this context.';
+    if(status)status.textContent='Stockage Skills indisponible pour ce contexte.';
     return;
   }
 
@@ -22454,7 +22454,7 @@ function addAutoDetectedSkillsV43(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
   try{if(typeof renderYouTubeAnalyzer==='function')renderYouTubeAnalyzer();}catch(e){}
 
-  if(status)status.textContent=`Skills detected: ${added} added · ${already} already present · ${unresolved} unresolved.`;
+  if(status)status.textContent=`Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).`;
 }
 
 
@@ -22519,8 +22519,8 @@ bdoOnReady(()=>{
     const count=(typeof guideReferenceForCurrentClassV10==='function' && cls) ? guideReferenceForCurrentClassV10().length : 0;
     status.className='skills-auto-search-status';
     status.textContent=cls
-      ? `${count} compétence(s) de référence disponible(s) pour ${cls} · ${spec}. Click to add missing ones.`
-      : 'Uses the reference dictionary for the selected class and specialization.';
+      ? `${count} compétence(s) de référence disponible(s) pour ${cls} · ${spec}. Clique pour ajouter les manquantes.`
+      : 'Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.';
   };
   document.getElementById('classSelector')?.addEventListener('change',refreshAutoSkillHint);
   document.getElementById('specSelector')?.addEventListener('change',refreshAutoSkillHint);
@@ -22664,7 +22664,7 @@ function cleanCurrentTransitionsV17(manual=false){
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const status=document.getElementById('transitionValidationStatus');
   if(!cls || !Array.isArray(CLASS_TRANSITIONS?.[cls]?.[spec])){
-    if(status) status.textContent='Sélectionne une class.';
+    if(status) status.textContent='Sélectionne une classe.';
     return {kept:0,removed:0};
   }
   const before=CLASS_TRANSITIONS[cls][spec];
@@ -22674,7 +22674,7 @@ function cleanCurrentTransitionsV17(manual=false){
   if(status){
     status.textContent=result.removed.length
       ? `${result.valid.length} valide(s) · ${result.removed.length} entrée(s) parasite(s) supprimée(s)`
-      : `${result.valid.length} transition(s) validated(s) · no entries parasite`;
+      : `${result.valid.length} transition(s) validée(s) · aucune entrée parasite`;
     status.className=result.removed.length?'status-warn':'status-good';
   }
   if(manual && typeof renderTransitionPage==='function') renderTransitionPage();
@@ -22743,13 +22743,13 @@ function saveCurrentBuildToHistoryV19(source='manual',options={}){
   const entry={
     id:builderHistoryIdV19(),signature,createdAt:new Date().toISOString(),className:cls,spec,
     orientation,source,sequence,skillCount:sequence.length,valid:validation?.ok!==false,
-    validationMessage:validation?.ok===false?String(validation?.errors?.[0]||'Avertissement de validation'):'Valid combo',
+    validationMessage:validation?.ok===false?String(validation?.errors?.[0]||'Avertissement de validation'):'Combo valide',
     measuredLinks:Number(timing?.measuredLinks||0),totalLinks:Number(timing?.totalLinks||Math.max(0,sequence.length-1)),
     timingCoverage:Number.isFinite(Number(timing?.coverage))?Number(timing.coverage):0
   };
   const next=[entry,...history.filter(x=>x?.signature!==signature)].slice(0,40);
   persistBuilderHistoryV19(next);
-  if(!options?.silent&&status){status.textContent='Saved build ✓';status.style.color='#7ee787';setTimeout(()=>status.textContent='',2600);}
+  if(!options?.silent&&status){status.textContent='Build enregistré ✓';status.style.color='#7ee787';setTimeout(()=>status.textContent='',2600);}
   if(typeof renderRecentBuildsV19==='function')renderRecentBuildsV19();
   return entry;
 }
@@ -22764,7 +22764,7 @@ function renderRecentBuildsV19(){
   const history=loadBuilderHistoryV19();
   const visible=history.slice(0,10);
   const count=document.getElementById('home19BuildCount');if(count)count.textContent=`${history.length} build${history.length>1?'s':''} enregistré${history.length>1?'s':''}`;
-  if(!visible.length){body.innerHTML='<tr><td colspan="7"><div class="home19-empty">No saved build. Build a combo, then use “Save this build”.</div></td></tr>';return;}
+  if(!visible.length){body.innerHTML='<tr><td colspan="7"><div class="home19-empty">Aucun build enregistré. Construis un combo puis utilise « Enregistrer ce build ».</div></td></tr>';return;}
   body.innerHTML=visible.map(entry=>{
     const seq=Array.isArray(entry.sequence)?entry.sequence:[];
     const sequenceHtml=seq.slice(0,5).map((name,i)=>`${i?'<i>→</i>':''}<span>${escapeHtmlText(name)}</span>`).join('')+(seq.length>5?`<i>… +${seq.length-5}</i>`:'');
@@ -22775,8 +22775,8 @@ function renderRecentBuildsV19(){
       <td><span class="home19-build-source">${entry.source==='optimizer'?'Optimizer':'Manuel'}</span></td>
       <td><div class="home19-build-sequence" title="${escapeHtmlAttr(seq.join(' → '))}">${sequenceHtml}</div></td>
       <td>${Number(entry.skillCount||seq.length)}</td>
-      <td><span class="${entry.valid!==false?'home19-build-valid':'home19-build-warn'}">${entry.valid!==false?'Valide':'To be checked'}</span><div style="font-size:8px;color:#6f8094;margin-top:2px">${Number(entry.measuredLinks||0)}/${Number(entry.totalLinks||Math.max(0,seq.length-1))} timings</div></td>
-      <td><div class="home19-build-actions"><button type="button" class="optimizer-btn" onclick="openBuildFromHistoryV19('${entry.id}')">Voir</button><button type="button" class="tab-btn" title="Delete" onclick="deleteBuildHistoryV19('${entry.id}')">×</button></div></td>
+      <td><span class="${entry.valid!==false?'home19-build-valid':'home19-build-warn'}">${entry.valid!==false?'Valide':'À vérifier'}</span><div style="font-size:8px;color:#6f8094;margin-top:2px">${Number(entry.measuredLinks||0)}/${Number(entry.totalLinks||Math.max(0,seq.length-1))} timings</div></td>
+      <td><div class="home19-build-actions"><button type="button" class="optimizer-btn" onclick="openBuildFromHistoryV19('${entry.id}')">Voir</button><button type="button" class="tab-btn" title="Supprimer" onclick="deleteBuildHistoryV19('${entry.id}')">×</button></div></td>
     </tr>`;
   }).join('');
 }
@@ -22815,8 +22815,8 @@ function renderHomeDashboardV18(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const rawHomeSkills=home18GetList(typeof CLASS_SKILLS!=='undefined'?CLASS_SKILLS:null,cls,spec);
-  // V24: le compteur Home suit exactement la même logique que l'onglet Skills:
-  // filtrage de specialization + regroupement des niveaux/rangs d'une même compétence.
+  // V24: le compteur Accueil suit exactement la même logique que l'onglet Skills:
+  // filtrage de spécialisation + regroupement des niveaux/rangs d'une même compétence.
   let skills=rawHomeSkills;
   try{
     if(typeof skillsForCurrentSpec==='function') skills=skillsForCurrentSpec(cls,spec);
@@ -22834,13 +22834,13 @@ function renderHomeDashboardV18(){
   let refs=[];try{refs=typeof guideReferenceForCurrentClassV10==='function'?guideReferenceForCurrentClassV10():[]}catch(e){refs=[]}
   const enabled=skills.filter(s=>s?.enabled!==false).length;
   const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val};
-  set('home18Context',cls?`${cls} · ${spec}`:'No class selected');
-  set('home18Reference',refs.length?`Active reference · ${refs.length} entrées`:'Reference: none for this context');
+  set('home18Context',cls?`${cls} · ${spec}`:'Aucune classe sélectionnée');
+  set('home18Reference',refs.length?`Référentiel actif · ${refs.length} entrées`:'Référentiel : aucun pour ce contexte');
   set('home18Skills',skills.length); set('home18SkillsSub',`${enabled} activé${enabled>1?'s':''}`);
-  set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entries available':'no entries');
+  set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entrées disponibles':'aucune entrée');
   set('home18Combos',combos.length); set('home18Transitions',transitions.length);
   const measured=transitions.filter(x=>Number.isFinite(Number(x?.timingSeconds??x?.transitionSeconds??x?.seconds)) || Number.isFinite(Number(x?.frames))).length;
-  set('home18TransitionsSub',`${measured} with timing`);
+  set('home18TransitionsSub',`${measured} avec timing`);
   const fields=['input','timer','pveDamage','pvpDamage','protection','cc','effects'];
   let possible=skills.length*fields.length,filled=0;
   for(const s of skills){for(const f of fields){let v=s?.[f];if(Array.isArray(v))v=v.filter(Boolean);if(Array.isArray(v)?v.length:Boolean(v!==undefined&&v!==null&&String(v).trim()&&String(v).trim()!=='—'))filled++;}}
@@ -22852,32 +22852,32 @@ function renderHomeDashboardV18(){
   set('home18TimingCoverageText',timingCoverage+'%');home18SetProgress('home18TimingCoverage',timingCoverage);
   const health=document.getElementById('home18Health');
   if(health){
-    if(!cls) health.textContent='Sélectionne une class et une specialization pour activer le diagnostic.';
-    else if(!skills.length) health.textContent='The context is ready, but no skill is loaded. Start with the automatic search from the dictionary.';
-    else if(completeness<45) health.textContent='Les skills sont chargés, mais beaucoup de métacombat data manquent encore. Enrichis les fiches avant d’optimiser les combos.';
+    if(!cls) health.textContent='Sélectionne une classe et une spécialisation pour activer le diagnostic.';
+    else if(!skills.length) health.textContent='Le contexte est prêt, mais aucune compétence n’est chargée. Commence par la recherche automatique depuis le dictionnaire.';
+    else if(completeness<45) health.textContent='Les skills sont chargés, mais beaucoup de métadonnées de combat manquent encore. Enrichis les fiches avant d’optimiser les combos.';
     else if(transitions.length && timingCoverage<30) health.textContent='Bonne base de compétences. La prochaine amélioration utile est de mesurer davantage de transitions/cancels.';
     else health.textContent='Le contexte dispose d’une base exploitable. Tu peux construire et comparer des combos tout en continuant à enrichir les timings.';
   }
   const recs=[];
-  if(!cls) recs.push(['Choose a class','The context drives the entire project','classPage','Class']);
+  if(!cls) recs.push(['Choisir une classe','Le contexte pilote tout le projet','classPage','Class']);
   else{
-    if(refs.length && skills.length<refs.length*.8) recs.push(['Complete the Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Automatic search']);
-    if(skills.length && completeness<70) recs.push(['Enrich metadata',`Completeness actuelle : ${completeness}%`,'skillsPage','Inspecter']);
-    if(!combos.length) recs.push(['Create a first combo','No combo saved for this context','builderPage','Builder']);
-    if(!transitions.length) recs.push(['Add transitions','No validated cancel/transition','transitionPage','Transitions']);
-    else if(timingCoverage<60) recs.push(['Measure timings',`${measured}/${transitions.length} transitions ont une mesure`,'youtubeAnalyzerPage','Vidéo']);
+    if(refs.length && skills.length<refs.length*.8) recs.push(['Compléter les Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Recherche auto']);
+    if(skills.length && completeness<70) recs.push(['Enrichir les métadonnées',`Complétude actuelle : ${completeness}%`,'skillsPage','Inspecter']);
+    if(!combos.length) recs.push(['Créer un premier combo','Aucun combo enregistré pour ce contexte','builderPage','Builder']);
+    if(!transitions.length) recs.push(['Ajouter des transitions','Aucun cancel/transition validé','transitionPage','Transitions']);
+    else if(timingCoverage<60) recs.push(['Mesurer les timings',`${measured}/${transitions.length} transitions ont une mesure`,'youtubeAnalyzerPage','Vidéo']);
   }
-  if(!recs.length) recs.push(['Continuer l’optimisation','The main database is well informed','builderPage','Open Builder']);
+  if(!recs.length) recs.push(['Continuer l’optimisation','La base principale est bien renseignée','builderPage','Ouvrir Builder']);
   const r=document.getElementById('home18Recommendations');
   if(r)r.innerHTML=recs.slice(0,4).map((x,i)=>`<div class="home18-rec"><span class="home18-rec-index">${String(i+1).padStart(2,'0')}</span><div><b>${escapeHtmlText(x[0])}</b><small>${escapeHtmlText(x[1])}</small></div><button type="button" class="tab-btn" onclick="showPage('${x[2]}',document.querySelector('[data-page=${x[2]}]'));${x[2]==='skillsPage'?'renderSkillsPage()':x[2]==='builderPage'?'renderComboBuilder()':x[2]==='transitionPage'?'renderTransitionPage()':x[2]==='youtubeAnalyzerPage'?'renderYouTubeAnalyzer()':''}">${x[3]}</button></div>`).join('');
   const d=document.getElementById('home18Diagnostics');
   if(d)d.innerHTML=[
-    ['Class / spec',cls?`${cls} · ${spec}`:'Non sélectionné',!!cls],
-    ['Référentiel',refs.length?`${refs.length} entrées`:'Unavailable',!!refs.length],
-    ['Active skills',skills.length?`${enabled}/${skills.length}`:'Aucun',!!skills.length],
-    ['Saved combos',String(combos.length),combos.length>0],
-    ['Measured transitions',`${measured}/${transitions.length}`,measured>0],
-    ['Data quality',completeness>=70?'Bonne':completeness>=40?'Partielle':'Needs enrichment',completeness>=70]
+    ['Classe / spec',cls?`${cls} · ${spec}`:'Non sélectionné',!!cls],
+    ['Référentiel',refs.length?`${refs.length} entrées`:'Non disponible',!!refs.length],
+    ['Skills actifs',skills.length?`${enabled}/${skills.length}`:'Aucun',!!skills.length],
+    ['Combos enregistrés',String(combos.length),combos.length>0],
+    ['Transitions mesurées',`${measured}/${transitions.length}`,measured>0],
+    ['Qualité des données',completeness>=70?'Bonne':completeness>=40?'Partielle':'À enrichir',completeness>=70]
   ].map(x=>`<div class="home18-diag"><span>${x[0]}</span><b class="${x[2]?'good':'warn'}">${escapeHtmlText(x[1])}</b></div>`).join('');
 }
 if(typeof bdoOnReady==='function')bdoOnReady(()=>{renderHomeDashboardV18();document.getElementById('classSelector')?.addEventListener('change',renderHomeDashboardV18);document.getElementById('specSelector')?.addEventListener('change',renderHomeDashboardV18);});
@@ -22900,22 +22900,22 @@ function renderClassResourceLinksV23(){
   if(!host)return;
   const cls=document.getElementById('classSelector')?.value||'';
   const ctx=document.getElementById('home23ResourceContext');
-  if(ctx)ctx.textContent=cls?`Resources · ${cls}`:'Sélectionne une classe';
+  if(ctx)ctx.textContent=cls?`Ressources · ${cls}`:'Sélectionne une classe';
   if(!cls){
-    host.innerHTML='<div class="home23-no-class">Sélectionne une class pour afficher son Discord et ses guides dédiés.</div>';
+    host.innerHTML='<div class="home23-no-class">Sélectionne une classe pour afficher son Discord et ses guides dédiés.</div>';
     return;
   }
   const exact=BDO_CLASS_RESOURCE_LINKS_V23[cls]||{};
   const discord=exact.discord||'https://www.naeu.playblackdesert.com/en-US/Forum/ForumTopic/Detail?_bigPageNo=1&_categoryNo=12&_forumListType=0&_orderType=False&_pageNo=1&_pageSize=25&_processStatus=99&_searchDay=0&_searchType=1&_sortType=1&_topicNo=62232&_topicNo=69563';
   const discordTitle=exact.discord?`Discord ${cls}`:`Discords de classes BDO`;
-  const discordDesc=exact.discord?`Community dédiée à la class ${cls}`:`Liste communautaire des Discords de classes publiée sur le forum officiel`;
+  const discordDesc=exact.discord?`Communauté dédiée à la classe ${cls}`:`Liste communautaire des Discords de classes publiée sur le forum officiel`;
   const foundry=exact.foundry||'https://www.blackdesertfoundry.com/guide-list/';
   const foundryDesc=exact.foundry?`Guide ${cls} : skills, gameplay et ressources communautaires`:`Trouver le guide ${cls} dans la liste des guides de classes`;
   const codex=exact.codex||'https://bdocodex.com/us/skills/';
   host.innerHTML=`
-    <a class="home22-official-link home23-class-link" href="${home23Esc(discord)}" target="_blank" rel="noopener noreferrer"><b>${home23Esc(discordTitle)}</b><small>${home23Esc(discordDesc)}</small><span>Open ↗</span></a>
-    <a class="home22-official-link home23-class-link" href="${home23Esc(codex)}" target="_blank" rel="noopener noreferrer"><b>BDO Codex · ${home23Esc(cls)}</b><small>Skills et données de référence pour ${home23Esc(cls)}</small><span>Open ↗</span></a>
-    <a class="home22-official-link home23-class-link" href="${home23Esc(foundry)}" target="_blank" rel="noopener noreferrer"><b>BDO Foundry · ${home23Esc(cls)}</b><small>${home23Esc(foundryDesc)}</small><span>Open ↗</span></a>`;
+    <a class="home22-official-link home23-class-link" href="${home23Esc(discord)}" target="_blank" rel="noopener noreferrer"><b>${home23Esc(discordTitle)}</b><small>${home23Esc(discordDesc)}</small><span>Ouvrir ↗</span></a>
+    <a class="home22-official-link home23-class-link" href="${home23Esc(codex)}" target="_blank" rel="noopener noreferrer"><b>BDO Codex · ${home23Esc(cls)}</b><small>Compétences et données de référence pour ${home23Esc(cls)}</small><span>Ouvrir ↗</span></a>
+    <a class="home22-official-link home23-class-link" href="${home23Esc(foundry)}" target="_blank" rel="noopener noreferrer"><b>BDO Foundry · ${home23Esc(cls)}</b><small>${home23Esc(foundryDesc)}</small><span>Ouvrir ↗</span></a>`;
 }
 if(typeof bdoOnReady==='function')bdoOnReady(()=>{
   renderClassResourceLinksV23();
@@ -23188,7 +23188,7 @@ function accountSaveWorkspaceV78(showStatus=false){
   if(u){u.lastSaveAt=backup.savedAt;accountSaveDBV78(db)}
   ACCOUNT_ACTIVE_V78=u||user;
   renderAccountHeaderV78();
-  if(showStatus)accountStatusV78('Account data saved locally.','good');
+  if(showStatus)accountStatusV78('Données du compte sauvegardées localement.','good');
   return true;
 }
 function accountClearProjectStorageV78(){
@@ -23213,12 +23213,12 @@ async function registerAccountV78(){
   const confirmPass=document.getElementById('accountRegisterConfirmV78')?.value||'';
   if(name.length<2)return accountStatusV78('Le nom doit contenir au moins 2 caractères.','bad');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return accountStatusV78('Adresse e-mail invalide.','bad');
-  if(pass.length<8)return accountStatusV78('The password must contain at least 8 characters.','bad');
-  if(pass!==confirmPass)return accountStatusV78('Passwords do not match.','bad');
+  if(pass.length<8)return accountStatusV78('Le mot de passe doit contenir au moins 8 caractères.','bad');
+  if(pass!==confirmPass)return accountStatusV78('Les mots de passe ne correspondent pas.','bad');
   const db=accountLoadDBV78();
-  if(db.users.some(u=>u.name.toLowerCase()===name.toLowerCase()))return accountStatusV78('This username already exists.','bad');
-  if(db.users.some(u=>u.email===email))return accountStatusV78('This email is already in use.','bad');
-  accountStatusV78('Creating the account…');
+  if(db.users.some(u=>u.name.toLowerCase()===name.toLowerCase()))return accountStatusV78('Ce nom d’utilisateur existe déjà.','bad');
+  if(db.users.some(u=>u.email===email))return accountStatusV78('Cet e-mail est déjà utilisé.','bad');
+  accountStatusV78('Création du compte…');
   const sec=await accountHashPasswordV78(pass);
   const now=new Date().toISOString();
   const user={id:accountIdV78(),name,email,passwordHash:sec.hash,passwordSalt:sec.salt,createdAt:now,lastLoginAt:now,lastSaveAt:null};
@@ -23228,7 +23228,7 @@ async function registerAccountV78(){
   if(importCurrent){
     accountSaveWorkspaceV78(false);
     renderAccountHeaderV78();
-    accountStatusV78('Account created. Your current data is linked to this profile.','good');
+    accountStatusV78('Compte créé. Tes données actuelles sont associées à ce profil.','good');
     setTimeout(closeAccountModalV78,700);
   }else{
     ACCOUNT_SUPPRESS_AUTOSAVE_V88=true;
@@ -23238,7 +23238,7 @@ async function registerAccountV78(){
     );
     accountClearProjectStorageV78();
     renderAccountHeaderV78();
-    accountStatusV78('Account created with an empty workspace. Reloading…','good');
+    accountStatusV78('Compte créé avec un espace de travail vide. Rechargement…','good');
     setTimeout(()=>location.reload(),450);
   }
 }
@@ -23247,9 +23247,9 @@ async function loginAccountV78(){
   const pass=document.getElementById('accountLoginPasswordV78')?.value||'';
   const db=accountLoadDBV78(),user=db.users.find(u=>u.email===identity||u.name.toLowerCase()===identity);
   if(!user)return accountStatusV78('Compte introuvable.','bad');
-  accountStatusV78('Verification…');
+  accountStatusV78('Vérification…');
   const sec=await accountHashPasswordV78(pass,user.passwordSalt);
-  if(sec.hash!==user.passwordHash)return accountStatusV78('Incorrect password.','bad');
+  if(sec.hash!==user.passwordHash)return accountStatusV78('Mot de passe incorrect.','bad');
   if(ACCOUNT_ACTIVE_V78?.id&&ACCOUNT_ACTIVE_V78.id!==user.id)accountSaveWorkspaceV78(false);
   user.lastLoginAt=new Date().toISOString();accountSaveDBV78(db);
   accountSetSessionV78(user.id,document.getElementById('accountRememberV78')?.checked!==false);
@@ -23264,16 +23264,16 @@ async function changeAccountPasswordV78(){
   const user=accountUserV78();if(!user)return;
   const old=document.getElementById('accountOldPasswordV78')?.value||'',next=document.getElementById('accountNewPasswordV78')?.value||'',confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const oldHash=await accountHashPasswordV78(old,user.passwordSalt);
-  if(oldHash.hash!==user.passwordHash)return accountStatusV78('Invalid current password.','bad');
-  if(next.length<8)return accountStatusV78('The new password must contain at least 8 characters.','bad');
-  if(next!==confirm)return accountStatusV78('The confirmation does not match.','bad');
+  if(oldHash.hash!==user.passwordHash)return accountStatusV78('Mot de passe actuel incorrect.','bad');
+  if(next.length<8)return accountStatusV78('Le nouveau mot de passe doit contenir au moins 8 caractères.','bad');
+  if(next!==confirm)return accountStatusV78('La confirmation ne correspond pas.','bad');
   const sec=await accountHashPasswordV78(next),db=accountLoadDBV78(),u=db.users.find(x=>x.id===user.id);
   u.passwordHash=sec.hash;u.passwordSalt=sec.salt;accountSaveDBV78(db);
-  accountStatusV78('Password changed.','good');setTimeout(()=>switchAccountViewV78('profile'),600);
+  accountStatusV78('Mot de passe modifié.','good');setTimeout(()=>switchAccountViewV78('profile'),600);
 }
 function deleteAccountV78(){
   const user=accountUserV78();if(!user)return;
-  if(!confirm(`Delete définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.`))return;
+  if(!confirm(`Supprimer définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.`))return;
   const db=accountLoadDBV78();db.users=db.users.filter(u=>u.id!==user.id);accountSaveDBV78(db);
   localStorage.removeItem(ACCOUNT_DATA_PREFIX_V78+user.id);accountClearProjectStorageV78();accountClearSessionV78();location.reload();
 }
@@ -23365,7 +23365,7 @@ function bugContextV77(){
 }
 function renderBugMetaV77(){
   const c=bugContextV77(), el=document.getElementById('bug77Meta');
-  if(el)el.textContent=`Contexte ajouté automatiquement : Version ${c.version} · Class ${c.className} · Specialization ${c.spec} · Page ${c.activePage} · ${c.time}`;
+  if(el)el.textContent=`Contexte ajouté automatiquement : Version ${c.version} · Classe ${c.className} · Spécialisation ${c.spec} · Page ${c.activePage} · ${c.time}`;
 }
 function openBugReportV77(){
   document.getElementById('bugReportModalV77')?.classList.add('open');
@@ -23379,8 +23379,8 @@ function buildBugReportV77(){
     'BDO COMBOS LABS — BUG REPORT',
     `Version: ${c.version}`,
     `Date: ${c.time}`,
-    `Class: ${c.className}`,
-    `Specialization: ${c.spec}`,
+    `Classe: ${c.className}`,
+    `Spécialisation: ${c.spec}`,
     `Page: ${c.activePage}`,
     `Zone: ${val('bug77Category')}`,
     `Importance: ${val('bug77Severity')}`,
@@ -23402,7 +23402,7 @@ async function copyBugReportV77(){
     await navigator.clipboard.writeText(buildBugReportV77());
     if(status){status.className='bug77-status good';status.textContent='Rapport copié dans le presse-papiers.'}
   }catch(e){
-    if(status){status.className='bug77-status bad';status.textContent='Copie automatique impossible. Used « Download the report ».'}
+    if(status){status.className='bug77-status bad';status.textContent='Copie automatique impossible. Utilise « Télécharger le rapport ».'}
   }
 }
 function downloadBugReportV77(){
@@ -23790,7 +23790,7 @@ body h4{font-size:15px!important}
   font-size:12px!important;
 }
 
-/* Diagnostics */
+/* Diagnostic */
 #homePage .home18-diagnostic,
 #homePage .home18-diagnostic *{
   font-size:12.5px!important;
@@ -24284,10 +24284,10 @@ function communityPatternsForContextV101(className,spec){
     .map(c=>({
       ...c,
       seq:communityNormalizeSequenceV101(c.sequence),
-      type:'PLAYER COMBO',
+      type:'COMBO JOUEUR',
       confidence:c.communityVerified?'community-verified':'community-shared',
-      sourceTag:`Shared by ${c.author||'Player'}`,
-      note:c.note||'Combo shared by a player.',
+      sourceTag:`Partagé par ${c.author||'Joueur'}`,
+      note:c.note||'Combo partagé par un joueur.',
       ownerClass:c.className,
       ownerSpec:c.spec,
       communityShared:true,
@@ -24306,10 +24306,10 @@ function communityVerifiedForClassV101(className,spec){
     )
     .map(c=>({
       ...c,
-      name:c.name||'Community Combo',
+      name:c.name||'Combo communautaire',
       sequence:communityNormalizeSequenceV101(c.sequence),
       mode:c.mode||'PVP',
-      source:`Community · ${Number(c.likes||0)} Like`,
+      source:`Communauté · ${Number(c.likes||0)} J’aime`,
       confidence:'community-verified',
       communityVerified:true
     }));
@@ -24347,7 +24347,7 @@ function toggleCommunityLikeV101(id){
 
   if(becameVerified){
     const status=document.getElementById('builderHistorySaveStatus');
-    if(status)status.textContent=`✓ Combo vérifié par la communauté (${combo.likes} Like)`;
+    if(status)status.textContent=`✓ Combo vérifié par la communauté (${combo.likes} J’aime)`;
   }
 
   if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
@@ -24362,7 +24362,7 @@ function shareCurrentBuilderComboV101(){
   );
 
   if(!className){
-    alert('Sélectionne une class avant de partager un combo.');
+    alert('Sélectionne une classe avant de partager un combo.');
     return;
   }
   if(sequence.length<2){
@@ -24384,7 +24384,7 @@ function shareCurrentBuilderComboV101(){
   }
 
   const suggested=`${className} · ${sequence.slice(0,3).join(' → ')}${sequence.length>3?'…':''}`;
-  const name=(prompt('Shared combo name:',suggested)||'').trim();
+  const name=(prompt('Nom du combo partagé :',suggested)||'').trim();
   if(!name)return;
 
   const combatMode=String(
@@ -24412,7 +24412,7 @@ function shareCurrentBuilderComboV101(){
     communityVerified:false,
     verifiedAt:null,
     status:'shared',
-    note:'Combo shared from the Combo Builder.'
+    note:'Combo partagé depuis le Combo Builder.'
   };
 
   store.combos.unshift(combo);
@@ -24420,7 +24420,7 @@ function shareCurrentBuilderComboV101(){
 
   const status=document.getElementById('builderHistorySaveStatus');
   if(status){
-    status.textContent=`✓ Partagé dans Player combos · 0/${communityVerifyThresholdV101()} Like`;
+    status.textContent=`✓ Partagé dans Combos joueurs · 0/${communityVerifyThresholdV101()} J’aime`;
   }
 
   if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
@@ -24430,7 +24430,7 @@ function communitySyncSettingsUIV101(){
   const input=document.getElementById('communityVerifyThresholdInputV101');
   if(input)input.value=String(communityVerifyThresholdV101());
   const badge=document.getElementById('communityVerifyThresholdBadgeV101');
-  if(badge)badge.textContent=`Vérification : ${communityVerifyThresholdV101()} Like`;
+  if(badge)badge.textContent=`Vérification : ${communityVerifyThresholdV101()} J’aime`;
 }
 
 if(typeof bdoOnReady==='function'){
@@ -24797,14 +24797,14 @@ async function bclCloudShareV107(){
   const {data:{user}}=await sb.auth.getUser();
   BCL_CLOUD_USER_V107=user||null;
   if(!user){
-    bclCloudStatusV107('Log in to your cloud account to share this combo.','error');
+    bclCloudStatusV107('Connecte-toi à ton compte cloud pour partager ce combo.','error');
     if(typeof openLocalAccountModal==='function')openLocalAccountModal('login');
     return;
   }
   const cls=bclCloudClassV107(), spec=bclCloudSpecV107(), seq=bclCloudSequenceV107();
-  if(!cls){bclCloudStatusV107('Select a class before sharing.','error');return}
-  if(!seq.length){bclCloudStatusV107('Adds at least one skill to the combo.','error');return}
-  const name=(prompt('Shared combo name:','Combo '+cls)||'').trim();
+  if(!cls){bclCloudStatusV107('Sélectionne une classe avant de partager.','error');return}
+  if(!seq.length){bclCloudStatusV107('Ajoute au moins une compétence au combo.','error');return}
+  const name=(prompt('Nom du combo partagé :','Combo '+cls)||'').trim();
   if(!name)return;
   const {error}=await sb.from('shared_combos').insert({
     user_id:user.id,class_name:cls,specialization:spec,name,
@@ -24821,7 +24821,7 @@ async function bclCloudToggleLikeV107(comboId){
   const {data:{user}}=await sb.auth.getUser();
   BCL_CLOUD_USER_V107=user||null;
   if(!user){
-    bclCloudStatusV107('Log in to vote.','error');
+    bclCloudStatusV107('Connecte-toi pour voter.','error');
     if(typeof openLocalAccountModal==='function')openLocalAccountModal('login');
     return;
   }
@@ -24840,17 +24840,17 @@ function bclCloudRenderPlayersV107(){
   if(!root)return;
   const cls=bclCloudClassV107();
   if(!cls){
-    root.innerHTML='<div class="page-placeholder">Sélectionne une class pour voir les combos partagés.</div>';
+    root.innerHTML='<div class="page-placeholder">Sélectionne une classe pour voir les combos partagés.</div>';
     return;
   }
   if(!BCL_CLOUD_READY_V107){
-    root.innerHTML='<div class="page-placeholder">Sign in à la communauté…</div>';
+    root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';
     bclCloudRefreshV107();
     return;
   }
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>!x.verified);
   if(!rows.length){
-    root.innerHTML='<div class="page-placeholder">No combo joueur en attente de validation pour cette class.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun combo joueur en attente de validation pour cette classe.</div>';
     return;
   }
   root.innerHTML=rows.map(c=>{
@@ -24859,9 +24859,9 @@ function bclCloudRenderPlayersV107(){
     const seq=(Array.isArray(c.sequence)?c.sequence:[]).map(x=>escapeHtml(String(x))).join(' → ');
     return `<article class="community-combo-card-v101">
       <div class="community-combo-head-v101">
-        <div><strong>${escapeHtml(c.name||'Player Combo')}</strong>
+        <div><strong>${escapeHtml(c.name||'Combo joueur')}</strong>
         <div class="community-combo-meta-v101">${escapeHtml(author)} · ${escapeHtml(c.class_name)} · ${escapeHtml(c.specialization)}</div></div>
-        <button class="optimizer-btn community-like-btn-v101 ${liked?'liked':''}" onclick="bclCloudToggleLikeV107('${c.id}')">${liked?'♥':'♡'} Like · ${Number(c.likes_count||0)}</button>
+        <button class="optimizer-btn community-like-btn-v101 ${liked?'liked':''}" onclick="bclCloudToggleLikeV107('${c.id}')">${liked?'♥':'♡'} J’aime · ${Number(c.likes_count||0)}</button>
       </div>
       <div class="community-combo-sequence-v101">${seq||'—'}</div>
     </article>`;
@@ -24873,12 +24873,12 @@ function bclCloudRenderVerifiedV107(){
   if(!root)return;
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>x.verified);
   if(!BCL_CLOUD_READY_V107){
-    root.innerHTML='<div class="page-placeholder">Sign in à la communauté…</div>';
+    root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';
     bclCloudRefreshV107();
     return;
   }
   if(!rows.length){
-    root.innerHTML='<div class="page-placeholder">No combo de class vérifié par la communauté.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun combo de classe vérifié par la communauté.</div>';
     return;
   }
   root.innerHTML=rows.map(c=>{
@@ -24887,7 +24887,7 @@ function bclCloudRenderVerifiedV107(){
     return `<article class="community-combo-card-v101 verified">
       <div class="community-combo-head-v101">
         <div><strong>✓ ${escapeHtml(c.name||'Combo de classe')}</strong>
-        <div class="community-combo-meta-v101">Verified par la communauté · ${escapeHtml(author)}</div></div>
+        <div class="community-combo-meta-v101">Vérifié par la communauté · ${escapeHtml(author)}</div></div>
         <span class="verified-badge">♥ ${Number(c.likes_count||0)}</span>
       </div>
       <div class="community-combo-sequence-v101">${seq||'—'}</div>
@@ -25242,7 +25242,7 @@ function bclSharedSchedulePushV108(){
 }
 
 async function bclHidePlayerComboV108(id){
-  const user=await bclSharedUserV108(); if(!user)return alert('Log in to hide this combo.');
+  const user=await bclSharedUserV108(); if(!user)return alert('Connecte-toi pour masquer ce combo.');
   const sb=bclSharedSbV108();
   await sb.from('user_hidden_entries').upsert({user_id:user.id,entity_type:'player_combo',entity_id:id},{onConflict:'user_id,entity_type,entity_id'});
   await bclCloudRefreshV107();
@@ -25279,23 +25279,23 @@ window.registerAccountV78=async function(){
   const confirmPass=document.getElementById('accountRegisterConfirmV78')?.value||'';
   if(name.length<2)return accountStatusV78('Le nom doit contenir au moins 2 caractères.','bad');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return accountStatusV78('Adresse e-mail invalide.','bad');
-  if(pass.length<8)return accountStatusV78('The password must contain at least 8 characters.','bad');
-  if(pass!==confirmPass)return accountStatusV78('Passwords do not match.','bad');
-  accountStatusV78('Creating the cloud account…');
+  if(pass.length<8)return accountStatusV78('Le mot de passe doit contenir au moins 8 caractères.','bad');
+  if(pass!==confirmPass)return accountStatusV78('Les mots de passe ne correspondent pas.','bad');
+  accountStatusV78('Création du compte cloud…');
   const signUpOptions={data:{username:name}};
   const redirect=bclAuthRedirectV109();
   if(redirect)signUpOptions.emailRedirectTo=redirect;
   const {data,error}=await sb.auth.signUp({email,password:pass,options:signUpOptions});
-  if(error)return accountStatusV78('Unable to create: '+error.message,'bad');
+  if(error)return accountStatusV78('Création impossible : '+error.message,'bad');
   if(data?.session){
     BCL_CLOUD_USER_V107=data.user;
     ACCOUNT_ACTIVE_V78=bclCloudAccountObjectV108(data.user);
     if(document.getElementById('accountRegisterImportCurrentV78')?.checked!==false)accountSaveWorkspaceV78(false);
     renderAccountHeaderV78();
-    accountStatusV78('Cloud account created and signed in.','good');
+    accountStatusV78('Compte cloud créé et connecté.','good');
     setTimeout(()=>{closeAccountModalV78();bclSharedPushV108()},650);
   }else{
-    accountStatusV78('Account created. Check your email, then sign in.','good');
+    accountStatusV78('Compte créé. Vérifie ton e-mail puis connecte-toi.','good');
   }
 };
 
@@ -25304,13 +25304,13 @@ window.loginAccountV78=async function(){
   const email=document.getElementById('accountLoginIdentityV78')?.value.trim().toLowerCase()||'';
   const pass=document.getElementById('accountLoginPasswordV78')?.value||'';
   if(!email.includes('@'))return accountStatusV78('Utilise ton adresse e-mail pour te connecter.','bad');
-  accountStatusV78('Cloud sign-in…');
+  accountStatusV78('Connexion cloud…');
   const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
-  if(error)return accountStatusV78('Sign in failed: '+error.message,'bad');
+  if(error)return accountStatusV78('Connexion impossible : '+error.message,'bad');
   BCL_CLOUD_USER_V107=data.user;
   ACCOUNT_ACTIVE_V78=bclCloudAccountObjectV108(data.user);
   renderAccountHeaderV78();
-  accountStatusV78('Connected. Data synchronization…','good');
+  accountStatusV78('Connecté. Synchronisation des données…','good');
   await bclSharedPullV108();
   setTimeout(closeAccountModalV78,500);
 };
@@ -25331,17 +25331,17 @@ window.changeAccountPasswordV78=async function(){
   const confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const user=BCL_CLOUD_USER_V107;
   if(!user)return accountStatusV78('Aucun compte cloud connecté.','bad');
-  if(next.length<8)return accountStatusV78('The new password must contain at least 8 characters.','bad');
-  if(next!==confirm)return accountStatusV78('The confirmation does not match.','bad');
+  if(next.length<8)return accountStatusV78('Le nouveau mot de passe doit contenir au moins 8 caractères.','bad');
+  if(next!==confirm)return accountStatusV78('La confirmation ne correspond pas.','bad');
   const verify=await sb.auth.signInWithPassword({email:user.email,password:old});
-  if(verify.error)return accountStatusV78('Invalid current password.','bad');
+  if(verify.error)return accountStatusV78('Mot de passe actuel incorrect.','bad');
   const {error}=await sb.auth.updateUser({password:next});
-  if(error)return accountStatusV78('Cannot modify: '+error.message,'bad');
-  accountStatusV78('Cloud password changed.','good');
+  if(error)return accountStatusV78('Modification impossible : '+error.message,'bad');
+  accountStatusV78('Mot de passe cloud modifié.','good');
 };
 
 window.deleteAccountV78=function(){
-  alert('Deleting a cloud account must go through a secure procedure. Shared data remains in the common database and is never deleted with the account.');
+  alert('La suppression d’un compte cloud doit passer par une procédure sécurisée. Les données partagées restent dans la base commune et ne sont jamais supprimées avec le compte.');
 };
 
 const _renderAccountHeaderLocalV108=window.renderAccountHeaderV78;
@@ -25383,22 +25383,22 @@ window.bclCloudRenderPlayersV107=async function(){
   const hidden=await bclPlayerHiddenIdsV108();
   const cls=bclCloudClassV107();
   if(!cls){
-    root.innerHTML='<div class="page-placeholder">Sélectionne une class pour voir les combos partagés.</div>';return;
+    root.innerHTML='<div class="page-placeholder">Sélectionne une classe pour voir les combos partagés.</div>';return;
   }
-  if(!BCL_CLOUD_READY_V107){root.innerHTML='<div class="page-placeholder">Sign in à la communauté…</div>';bclCloudRefreshV107();return}
+  if(!BCL_CLOUD_READY_V107){root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';bclCloudRefreshV107();return}
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>!x.verified&&!hidden.has(x.id));
-  if(!rows.length){root.innerHTML='<div class="page-placeholder">No combo joueur en attente de validation pour cette class.</div>';return}
+  if(!rows.length){root.innerHTML='<div class="page-placeholder">Aucun combo joueur en attente de validation pour cette classe.</div>';return}
   root.innerHTML=rows.map(c=>{
     const liked=BCL_CLOUD_LIKES_V107.has(c.id);
     const author=String(c.profiles?.username||'Joueur');
     const seq=(Array.isArray(c.sequence)?c.sequence:[]).map(x=>escapeHtml(String(x))).join(' → ');
     return `<article class="community-combo-card-v101">
       <div class="community-combo-head-v101">
-        <div><strong>${escapeHtml(c.name||'Player Combo')}</strong>
+        <div><strong>${escapeHtml(c.name||'Combo joueur')}</strong>
         <div class="community-combo-meta-v101">${escapeHtml(author)} · ${escapeHtml(c.class_name)} · ${escapeHtml(c.specialization)}</div></div>
         <div class="community108-actions">
-          <button class="optimizer-btn community-like-btn-v101 ${liked?'liked':''}" onclick="bclCloudToggleLikeV107('${c.id}')">${liked?'♥':'♡'} Like · ${Number(c.likes_count||0)}</button>
-          <button class="tab-btn" onclick="bclHidePlayerComboV108('${c.id}')">Hide for me</button>
+          <button class="optimizer-btn community-like-btn-v101 ${liked?'liked':''}" onclick="bclCloudToggleLikeV107('${c.id}')">${liked?'♥':'♡'} J’aime · ${Number(c.likes_count||0)}</button>
+          <button class="tab-btn" onclick="bclHidePlayerComboV108('${c.id}')">Masquer pour moi</button>
         </div>
       </div>
       <div class="community-combo-sequence-v101">${seq||'—'}</div>
@@ -25413,13 +25413,13 @@ window.bclCloudRenderVerifiedV107=async function(){
   if(!root)return;
   const hidden=await bclPlayerHiddenIdsV108();
   if(!BCL_CLOUD_READY_V107){
-    root.innerHTML='<div class="page-placeholder">Sign in à la communauté…</div>';
+    root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';
     bclCloudRefreshV107();
     return;
   }
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>x.verified&&!hidden.has(x.id));
   if(!rows.length){
-    root.innerHTML='<div class="page-placeholder">No combo de class vérifié par la communauté.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun combo de classe vérifié par la communauté.</div>';
     return;
   }
   root.innerHTML=rows.map(c=>{
@@ -25428,10 +25428,10 @@ window.bclCloudRenderVerifiedV107=async function(){
     return `<article class="community-combo-card-v101 verified">
       <div class="community-combo-head-v101">
         <div><strong>✓ ${escapeHtml(c.name||'Combo de classe')}</strong>
-        <div class="community-combo-meta-v101">Verified par la communauté · ${escapeHtml(author)}</div></div>
+        <div class="community-combo-meta-v101">Vérifié par la communauté · ${escapeHtml(author)}</div></div>
         <div class="community108-actions">
           <span class="verified-badge">♥ ${Number(c.likes_count||0)}</span>
-          <button class="tab-btn" onclick="bclHidePlayerComboV108('${c.id}')">Hide for me</button>
+          <button class="tab-btn" onclick="bclHidePlayerComboV108('${c.id}')">Masquer pour moi</button>
         </div>
       </div>
       <div class="community-combo-sequence-v101">${seq||'—'}</div>
@@ -25538,12 +25538,12 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdoCombosLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Create an account','account.profile':'My profile','account.saveNow':'Back up now','account.changePassword':'Change password','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Class combos','nav.playerCombos':'Player combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos joueurs','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
-de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'My Profile','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
-es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Class Combos','nav.playerCombos':'Jugadores Combos','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
-it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Class Combo','nav.playerCombos':'Combo games','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
-pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Class combos','nav.playerCombos':'Jogadores Combos','nav.transitions':'Transfer / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
+de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mein Profil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
+es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Combos de clase','nav.playerCombos':'Combos de jugadores','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
+it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Combo di classe','nav.playerCombos':'Combo giocatori','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
+pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
 function current(){const saved=localStorage.getItem(STORAGE_KEY);if(dict[saved])return saved;const b=(navigator.language||'fr').slice(0,2).toLowerCase();return dict[b]?b:'fr';}
 function t(key,lang){const l=lang||current();return (dict[l]&&dict[l][key])||(dict.fr&&dict.fr[key])||key;}
 function apply(lang,save){const l=dict[lang]?lang:'fr';document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(function(el){const key=el.getAttribute('data-i18n');if(key)el.textContent=t(key,l);});const sel=document.getElementById('bclLanguageSelect');if(sel&&sel.value!==l)sel.value=l;if(save)localStorage.setItem(STORAGE_KEY,l);window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));}
@@ -25554,6 +25554,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

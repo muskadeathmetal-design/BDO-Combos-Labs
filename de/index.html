@@ -3449,7 +3449,7 @@ th {
   font-size:8px;font-weight:900;text-transform:uppercase;vertical-align:middle
 }
 .skills-cc-duration-status-v55.auto{color:#e3b341;background:rgba(210,153,34,.10);border:1px solid rgba(210,153,34,.20)}
-.skills-cc-duration-status-v55.validiert{color:#7ee787;background:rgba(63,185,80,.10);border:1px solid rgba(63,185,80,.20)}
+.skills-cc-duration-status-v55.validée{color:#7ee787;background:rgba(63,185,80,.10);border:1px solid rgba(63,185,80,.20)}
 </style>
 
 <style id="cc-timeline-stats-v57-style">.builder-selected-skill-meta-item.cc-active strong{font-variant-numeric:tabular-nums}</style>
@@ -5094,7 +5094,7 @@ h4{font-size:15px!important;line-height:1.3!important}
 
 
 <style id="settings-unified-v92-style">
-/* V92 — every Settings section follows the same visual system as Combo-Struktur. */
+/* V92 — every Settings section follows the same visual system as Structure du combo. */
 #settingsPage .settings92-table,
 #settingsPage .phase90-table{
   display:grid!important;
@@ -5700,7 +5700,7 @@ function bclAuthRedirectV109(){
 window.addEventListener('DOMContentLoaded',()=>{
   document.documentElement.dataset.bclWeb=bclIsProductionWebV109()?'production':'local';
   if(location.protocol==='file:'){
-    console.info('BDO Combos Labs V111: Lokaler Dateimodus. Verwenden Sie für die öffentliche Community die bereitgestellte HTTPS-Site.');
+    console.info('BDO Combos Labs V111: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.');
   }
 });
 </script>
@@ -7277,7 +7277,7 @@ if(!BDO_DOM_READY){
 'use strict';
 
 // Base volontairement vide.
-// Keine dataset, aucune compétence, aucune classe, aucun combo,
+// Aucun dataset, aucune compétence, aucune classe, aucun combo,
 // aucun loader, aucun import et aucun fallback.
 
 const APP_STATE = Object.freeze({
@@ -8083,7 +8083,7 @@ function skillsRenameV72(item,className,spec,newName){
   if(!raw||typeof raw!=='object')return {ok:false,message:'Compétence introuvable dans la liste active.'};
 
   const name=skillsNormalizeNameV72(newName);
-  if(!name)return {ok:false,message:'Der Skillname darf nicht leer sein.'};
+  if(!name)return {ok:false,message:'Le nom de la compétence ne peut pas être vide.'};
   if(skillsNameExistsV72(className,spec,name,raw)){
     return {ok:false,message:`Une compétence nommée « ${name} » existe déjà.`};
   }
@@ -8106,7 +8106,7 @@ function skillsDeleteV72(item,className,spec){
   if(!raw||!store)return false;
 
   const name=skillsNormalizeNameV72(raw?.name||raw?.full_name||raw?.displayName||'cette compétence');
-  if(!confirm(`Löschen définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.`)){
+  if(!confirm(`Supprimer définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.`)){
     return false;
   }
 
@@ -8330,7 +8330,7 @@ function renderSkillsPage(){
 
   if(!grouped.length){
     content.className='page-placeholder';
-    content.innerHTML=`Keine compétence enregistrée pour ${escapeHtml(className)} · ${escapeHtml(spec)}.<br><button type="button" class="optimizer-btn skills-empty-add-v72" onclick="skillsManualAddV72()">+ Skill manuell hinzufügen</button>`;
+    content.innerHTML=`Aucune compétence enregistrée pour ${escapeHtml(className)} · ${escapeHtml(spec)}.<br><button type="button" class="optimizer-btn skills-empty-add-v72" onclick="skillsManualAddV72()">+ Ajouter une compétence manuellement</button>`;
     return;
   }
 
@@ -8445,7 +8445,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"InvenGlobal — Tamer most damage combo",
       sourceUrl:"https://www.invenglobal.com/articles/1658/bdo-tamers-guide-to-the-most-damage-combo",
-      note:"Dokumentierte historische Kombination: Legendary Beast Dance: Vermillion Bird abbrechen → Legendary Beast’s Power → Moonlight Strike → Flow: Full Moon → Echo Pierce. Der Widerrufsgrundsatz wird ausdrücklich beschrieben; genaues Timing zum Messen.",
+      note:"Combo historique documenté : Legendary Beast Dance: Vermillion Bird cancel → Legendary Beast's Power → Moonlight Strike → Flow: Full Moon → Echo Pierce. Le principe de cancel est explicitement décrit ; timing exact à mesurer.",
       historicalReference:true,
       explicitCancel:true,
       seq:["Legendary Beast Dance: Vermillion Bird","Legendary Beast's Power","Moonlight Strike","Flow: Full Moon","Echo Pierce"]
@@ -8458,7 +8458,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"InvenGlobal — Tamer alternative grab combo",
       sourceUrl:"https://www.invenglobal.com/articles/1658/bdo-tamers-guide-to-the-most-damage-combo",
-      note:"Die historische Inven-Referenz wurde beibehalten, aber an die aktive Bibliothek angepasst: Soaring Kick (greifen) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. Der Bolt/Jolt → Echo-Kanal wird auch von Tamer-Spielern dokumentiert. Der Zeitpunkt muss noch gemessen werden.",
+      note:"Référence historique Inven conservée, mais adaptée à la bibliothèque active : Soaring Kick (grab) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. La chaîne Bolt/Jolt → Echo est également documentée par des joueurs Tamer. Les timings restent à mesurer.",
       historicalReference:true,
       seq:["Soaring Kick","Bolt Wave","Jolt Wave","Echo Pierce","Beast Rampage","Moonlight Strike"]
     },
@@ -8470,7 +8470,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Trollsies Tamer guide — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/667q4n/tamer_guide_by_trollsies/",
-      note:"Rotation für große Gruppen veröffentlicht: Void Lightning → Bolt/Jolt → Power des legendären Biests → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Dropping → Flow: Gust → Allround Spinner.",
+      note:"Rotation large-group publiée : Void Lightning → Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Dropping → Flow: Gust → Allround Spinner.",
       historicalReference:true,
       seq:["Void Lightning","Bolt Wave","Jolt Wave","Legendary Beast's Power","Bolt Wave","Jolt Wave","Echo Pierce","Legendary Beast Dance: Black Turtle","Leaves Dropping","Flow: Gust","Allround Spinner"]
     },
@@ -8482,7 +8482,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Trollsies Tamer guide — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/667q4n/tamer_guide_by_trollsies/",
-      note:"Freigegebene Spielerkombination: Ausweichen → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.",
+      note:"Combo joueur publié : Evasion → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.",
       historicalReference:true,
       seq:["Evasion","Spray Scratch","Bolt Wave","Jolt Wave","Soaring Kick","Bolt Wave","Jolt Wave","Echo Pierce","Bolt Wave","Jolt Wave","Echo Pierce","Allround Spinner"]
     },
@@ -8494,7 +8494,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Tamer community — Reddit/Tamer Discord combo",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/kw1b2u/my_first_pvp_montage_tamer_t1_nw_na/",
-      note:"Die Kette wird als übliche Tamer Discord-Kombination beschrieben: Moonlight Strike → Flow: Intimidation → Beast Rampage, dann Allround Spinner/Fearful Trembling/Resonance, je nach Kontext.",
+      note:"Chaîne décrite comme combo commun du Tamer Discord : Moonlight Strike → Flow: Intimidation → Beast Rampage, puis Allround Spinner/Fearful Trembling/Resonance selon contexte.",
       seq:["Moonlight Strike","Flow: Intimidation","Beast Rampage","Allround Spinner"]
     },
     {
@@ -8505,7 +8505,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Pearl Abyss class discussion — Tamer reboot feedback",
       sourceUrl:"https://www.naeu.playblackdesert.com/DE-DE/Forum/ForumTopic/Detail?_opinionNo=72293&_topicNo=15840",
-      note:"Die Klassendiskussion dokumentiert explizit die Verwendung von Celestial Slam → Beast Rampage-Schaden.",
+      note:"La discussion de classe documente explicitement l'utilisation du damage de Celestial Slam → Beast Rampage.",
       seq:["Celestial Slam","Beast Rampage"]
     },
     {
@@ -8516,7 +8516,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"BDFoundry Tamer guide — Rabam",
       sourceUrl:"https://www.blackdesertfoundry.com/tamer-class-guide/",
-      note:"BDFoundry gibt an, dass Breath Spike sehr schnell ist und sehr schnell auf andere Fertigkeiten umgestellt werden kann. Dieser Eintrag enthält keine genauen Zeitangaben.",
+      note:"BDFoundry indique que Breath Spike est très rapide et peut être cancel très rapidement vers d'autres compétences. Cette entrée ne fabrique pas de timing exact.",
       explicitCancel:true,
       seq:["Breath Spike","Moonlight Strike"]
     }
@@ -8530,7 +8530,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Succession Tamer quick PvE guide",
       sourceUrl:"https://www.youtube.com/watch?v=YPEpReukVVE",
-      note:"Der Leitfaden listet als Hauptdrehung auf: Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Historische Referenz muss entsprechend dem aktuellen Patch erneut validiert werden.",
+      note:"Le guide cite comme rotation principale : Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Référence historique à revalider selon patch courant.",
       historicalReference:true,
       seq:["Prime: Void Lightning","Prime: Bolt Wave","Prime: Jolt Wave","Prime: Lightning of Earth","Flash","Flash: Pole Thrust","Prime: Bolt Wave","Prime: Jolt Wave"]
     },
@@ -8542,7 +8542,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Tamer Succession community — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/ddhew0/tamer_succession_breakdown_and_thoughts/",
-      note:"Die Community bestätigt, dass „Blitz/Ruck“ → „Kraft des legendären Biests“ → „Bolzen/Ruck“-Abbruch in der Nachfolge funktioniert hat; Der genaue Zeitpunkt hat sich weiterentwickelt und muss noch gemessen werden.",
+      note:"La communauté confirme que Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt cancel fonctionnait en Succession ; le timing exact a évolué et reste à mesurer.",
       historicalReference:true,
       explicitCancel:true,
       seq:["Prime: Bolt Wave","Prime: Jolt Wave","Legendary Beast's Power","Prime: Bolt Wave","Prime: Jolt Wave"]
@@ -8553,9 +8553,9 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       playerCategory:"PVE",
       confidence:"video-published",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
-      sourceTag:"Tamer Succ PvE Combo & Addons – veröffentlichtes Video",
+      sourceTag:"Tamer Succ PvE Combo & Addons — published video",
       sourceUrl:"https://www.youtube.com/watch?v=e0S-tba7cuk",
-      note:"Das Video zeigt eine vollständige Rotation der Eingaben. Die den Eingaben entsprechenden Fähigkeiten werden hier über die aktuelle Sukzessionskette abgeglichen: Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.",
+      note:"La vidéo publie une rotation d'inputs complète. Les compétences correspondant aux inputs sont rapprochées ici via la chaîne Succession courante : Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.",
       seq:["Prime: Bolt Wave","Prime: Jolt Wave","Prime: Moonlight Strike","Prime: Whiplash","Fearful Trembling","Prime: Roaring","Prime: Lightning of Earth","Prime: Bolt Wave","Prime: Jolt Wave"]
     },
     {
@@ -8566,7 +8566,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"BDFoundry Tamer guide — Succession PvE addons",
       sourceUrl:"https://www.blackdesertfoundry.com/tamer-class-guide/",
-      note:"Die Setup-Kette basiert nur auf Fähigkeiten, die der BDFoundry-Guide für Succession-Add-ons empfiehlt: Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.",
+      note:"Chaîne de setup construite uniquement à partir des compétences que le guide BDFoundry recommande pour les add-ons Succession : Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.",
       seq:["Prime: Jolt Wave","Flash: Pole Thrust","Fearful Trembling","Flash","Prime: Roaring","Prime: Lightning of Earth"]
     }
   ]
@@ -9042,7 +9042,7 @@ function renderPlayerCombosPage(){
 
   if(!shown.length){
     list.innerHTML =
-      '<div class="page-placeholder">Keine référence joueur pour ces filtres.</div>';
+      '<div class="page-placeholder">Aucune référence joueur pour ces filtres.</div>';
     return;
   }
 
@@ -9144,7 +9144,7 @@ function renderPlayerCombosPage(){
       const available = resolution.resolved.some(x =>
         playerComboNormalize(x.requested) === playerComboNormalize(name)
       );
-      chip.className = `Spieler-Combo-Skill ${available ? 'available' : 'missing'}`;
+      chip.className = `player-combo-skill ${available ? 'available' : 'missing'}`;
       chip.textContent = name;
       sequence.appendChild(chip);
 
@@ -9219,7 +9219,7 @@ function renderComboPage(){
   if(!className){
     context.textContent = 'Aucune classe sélectionnée';
     content.className = 'page-placeholder';
-    content.textContent = 'Sélectionne d’abord une classe dans l’onglet Klasse.';
+    content.textContent = 'Sélectionne d’abord une classe dans l’onglet Classe.';
     return;
   }
 
@@ -9242,7 +9242,7 @@ function renderComboPage(){
 
   if(!combos.length){
     content.className = 'page-placeholder';
-    content.textContent = 'Aucun combo de classe validiert enregistré pour ' + className + '.';
+    content.textContent = 'Aucun combo de classe validé enregistré pour ' + className + '.';
     return;
   }
 
@@ -9789,7 +9789,7 @@ function saveAutoBuildSettings(){
     localStorage.setItem('bdoCombosLabs.autoBuildSettings', JSON.stringify(AUTO_BUILD_SETTINGS));
   }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Einstellungen gespeichert. Optimizer verwendet die ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' paramètres.';
+  if(status) status.textContent = 'Réglages enregistrés. Optimizer utilisera les ' + Object.keys(AUTO_BUILD_SETTINGS).length + ' paramètres.';
   syncSettingsClassContext();
 }
 
@@ -10379,7 +10379,7 @@ function optimizeCurrentCombo(){
 
     const validation = validateBuilderCombo(BUILDER_STATE[key]);
     // V20: l'Optimizer ne sauvegarde plus automatiquement le build.
-    // L'utilisateur choisit explicitement « Speichern ce build ».
+    // L'utilisateur choisit explicitement « Enregistrer ce build ».
     const timing = typeof optimizerSequenceTiming === 'function'
       ? optimizerSequenceTiming(BUILDER_STATE[key])
       : null;
@@ -10407,7 +10407,7 @@ function optimizeCurrentCombo(){
           <div class="optimizer-stats-v41">
             <div><span>Skills</span><b>${combatStats.skillsCount ?? best.sequence.length}</b></div>
             <div><span>Total Damage</span><b>${Number(combatStats.totalDamage)>0 ? Number(combatStats.totalDamage).toFixed(2) : '—'}</b></div>
-            <div><span>Durée geschätzt</span><b>${Number(combatStats.totalDuration)>0 ? Number(combatStats.totalDuration).toFixed(2)+' s' : '—'}</b></div>
+            <div><span>Durée estimée</span><b>${Number(combatStats.totalDuration)>0 ? Number(combatStats.totalDuration).toFixed(2)+' s' : '—'}</b></div>
             <div><span>DPS estimé</span><b>${Number(combatStats.dps)>0 ? Number(combatStats.dps).toFixed(2) : '—'}</b></div>
             <div><span>CC</span><b>${combatStats.ccCount ?? 0}</b></div>
             <div><span>Protection</span><b>${Math.round(Number(combatStats.protectionCoverage||0)*100)}%</b></div>
@@ -11539,7 +11539,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
   if(summaryEl){
 
     const refNote=summary.reference?.source
-      ? `<div class="optimizer-note"><b>Aktive Referenz :</b> ${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.</div>`
+      ? `<div class="optimizer-note"><b>Référentiel actif :</b> ${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.</div>`
       : '';
     summaryEl.innerHTML=`
       <div><span>Skills avant</span><strong>${beforeSkills}</strong></div>
@@ -11555,7 +11555,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
   if(skillRoot){
     const found=summary.skills||[];
     skillRoot.innerHTML=found.length
-      ? `<h4>Skills résolues depuis lignes, tableaux et chaînes</h4><div class="old-doc-skill-grid">`+
+      ? `<h4>Compétences résolues depuis lignes, tableaux et chaînes</h4><div class="old-doc-skill-grid">`+
         found.map(item=>{
           const name=typeof item==='string'?item:item?.name||'';
           const matched=typeof item==='object'&&item?.matchedExisting;
@@ -11570,7 +11570,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
           </div>`;
         }).join('')+
         `</div>`
-      : `<div class="result warn"><b>Keine nom de compétence extrait des chaînes du document.</b></div>`;
+      : `<div class="result warn"><b>Aucun nom de compétence extrait des chaînes du document.</b></div>`;
   }
 
   const root=document.getElementById('manualGoogleDocResults');
@@ -11590,7 +11590,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
             <div class="old-doc-result-head"><b>${oldDocsEsc(t.kind||'transition')}</b></div>
             <div>${(t.sequence||[t.from,t.to]).filter(Boolean).map(oldDocsEsc).join(' → ')}</div>
           </div>`).join('')
-      : '<div class="result warn">Keine chaîne explicite détectée dans ce document.</div>';
+      : '<div class="result warn">Aucune chaîne explicite détectée dans ce document.</div>';
   }
 
   return {
@@ -11606,7 +11606,7 @@ async function importManualGoogleDocUrl(){
  if(!url)return manualGoogleDocStatus("Colle d’abord l’URL d’un Google Doc ou Google Sheet.","warn");
 
  if(!/^https?:\/\/docs\.google\.com\/(?:document|spreadsheets)\//i.test(url)){
-   return manualGoogleDocStatus("Dieser Link sieht nicht wie ein Google-Dokument/Tabelle aus.","bad");
+   return manualGoogleDocStatus("Ce lien ne ressemble pas à un Google Doc/Sheet.","bad");
  }
  const cls=document.getElementById('classSelector')?.value||'';
  const spec=document.getElementById('specSelector')?.value||'Awakening';
@@ -15174,7 +15174,7 @@ function autoSkillReferenceToSkillV13(ref,cls,spec){
     ownerSpec:spec,
     referenceSpec:ref?.spec || 'Shared',
     source:ref?.referenceSource || 'Dictionnaire de référence',
-    importedBy:'Automatische Suche dictionnaire V13',
+    importedBy:'Recherche auto dictionnaire V13',
     referenceImported:true
   };
 }
@@ -15218,7 +15218,7 @@ function autoPopulateSkillsFromReferenceV13(){
   };
 
   if(!cls){
-    setStatus('Wählen Sie zunächst im Reiter „Klasse“ eine Klasse aus.','warn');
+    setStatus('Sélectionne d’abord une classe dans l’onglet Class.','warn');
     return;
   }
   if(typeof guideReferenceForCurrentClassV10!=='function'){
@@ -15228,7 +15228,7 @@ function autoPopulateSkillsFromReferenceV13(){
 
   const refs=guideReferenceForCurrentClassV10();
   if(!refs.length){
-    setStatus(`Keine dictionnaire de référence disponible pour ${cls} · ${spec}.`,'warn');
+    setStatus(`Aucun dictionnaire de référence disponible pour ${cls} · ${spec}.`,'warn');
     return;
   }
 
@@ -15273,7 +15273,7 @@ function autoPopulateSkillsFromReferenceV13(){
     );
   }catch(e){
     if(typeof bdoDebugError==='function') bdoDebugError('Auto skill dictionary import failed',e);
-    setStatus(`Automatische Suche impossible : ${e?.message||String(e)}`,'bad');
+    setStatus(`Recherche auto impossible : ${e?.message||String(e)}`,'bad');
   }finally{
     if(btn)btn.disabled=false;
   }
@@ -16475,7 +16475,7 @@ function enhanceTransitionReviewUIV47(){
         ${status==='pending'?`Confiance auto ${Math.round(Number(tr?.timingConfidence||0)*100)}%`:''}
       </span>
       <div class="transition-review-actions-v47">
-        <button type="button" class="tab-btn" onclick="transitionReviewSetStatusV47(${index},'validated')">Bestätigen</button>
+        <button type="button" class="tab-btn" onclick="transitionReviewSetStatusV47(${index},'validated')">Valider</button>
         <button type="button" class="tab-btn" onclick="transitionReviewCorrectV47(${index})">Corriger</button>
         <button type="button" class="tab-btn" onclick="transitionReviewSetStatusV47(${index},'rejected')">Rejeter</button>
         <button type="button" class="tab-btn" onclick="transitionReviewVideoV47(${index})">Voir vidéo 0.5×</button>
@@ -16492,7 +16492,7 @@ function enhanceTransitionReviewUIV47(){
     const summary=document.createElement('div');
     summary.id='transitionReviewSummaryV47';
     summary.className='transition-review-summary-v47';
-    summary.textContent=`Manuelle Validierung: ${validated} bestätigt · ${pending} zu prüfen · ${rejected} abgelehnt`;
+    summary.textContent=`Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)`;
     validation.appendChild(summary);
   }
 }
@@ -16755,7 +16755,7 @@ function renderBuilderAvailableSkillsV74(){
 
   if(!skills.length){
     available.className='page-placeholder';
-    available.textContent=`Keine compétence compatible avec l’orientation ${builderOrientationLabelV71(currentBuilderOrientation())}.`;
+    available.textContent=`Aucune compétence compatible avec l’orientation ${builderOrientationLabelV71(currentBuilderOrientation())}.`;
     return;
   }
 
@@ -17611,7 +17611,7 @@ function scoreSmartBuilderSkill(skill,phase,lastSkillName,sequenceOverride=null)
   if(phase.key==='cc' && cc>0){
     if(currentCCState.immune){
       score -= 8;
-      reasons.push(`CC ist immer noch immun gegen ${currentCCState.immunityRemaining.toFixed(1)}s`);
+      reasons.push(`CC encore immunisé ${currentCCState.immunityRemaining.toFixed(1)}s`);
     }else{
       const budget=currentCCState.ccRemainingPoints;
       const before=Number(currentCCState.ccPoints||0);
@@ -17898,7 +17898,7 @@ function renderSmartBuilderSuggestions(){
       const types=(ccInfo.types||[]).join(' / ') || 'CC';
       ccMeta.innerHTML=`<span>CC</span><strong>${escapeHtmlText(types)}</strong><b>${Number(ccInfo.points).toFixed(1)} pt</b>`;
     }else{
-      ccMeta.innerHTML='<span>CC</span><strong>Keine CC comptabilisé</strong>';
+      ccMeta.innerHTML='<span>CC</span><strong>Aucun CC comptabilisé</strong>';
       ccMeta.classList.add('none');
     }
 
@@ -18657,7 +18657,7 @@ function builderLinkTimingV61(fromName,toName){
       cancelAt,
       hasCancel:true,
       validated:true,
-      source:'cancel validiert (estimation start-to-start)'
+      source:'cancel validé (estimation start-to-start)'
     };
   }
 
@@ -18860,17 +18860,17 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
 
   // No measured CC window => do not invent placement advice.
   if(!timeline.ccTimerKnown || timeline.ccTimerRemaining===null){
-    return {score:0,reason:'DC-Timing nicht gemessen · zeitliche Platzierung ignoriert'};
+    return {score:0,reason:'Timing CC non mesuré · placement temporel ignoré'};
   }
   if(!timeline.timelineComplete){
-    return {score:0,reason:'Zwischenzeitpunkt unvollständig · zeitliche Platzierung ignoriert'};
+    return {score:0,reason:'Timing intermédiaire incomplet · placement temporel ignoré'};
   }
 
   let landing=0;
   if(lastSkillName){
     const link=builderLinkTimingV61(lastSkillName,skill?.name);
     if(!link.known || !Number.isFinite(Number(link.seconds))){
-      return {score:0,reason:'Übergang/Abbruch nicht gemessen. CC-Platzierung ignoriert'};
+      return {score:0,reason:'Transition / cancel non mesuré · placement CC ignoré'};
     }
     landing+=Number(link.seconds);
   }
@@ -18879,8 +18879,8 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   if(remainingAtLand<0) return {score:-7,reason:`CC arriverait ${Math.abs(remainingAtLand).toFixed(2)}s trop tard`};
   if(remainingAtLand<=0.25) return {score:5.5,reason:`Re-CC optimal · ${remainingAtLand.toFixed(2)}s restantes`};
   if(remainingAtLand<=0.55) return {score:4,reason:`Bon timing CC · ${remainingAtLand.toFixed(2)}s restantes`};
-  if(remainingAtLand<=0.90) return {score:2,reason:`Sicherer CC · ${remainingAtLand.toFixed(2)}s verbleibend`};
-  return {score:-2.5,reason:`CC zu früh · ${remainingAtLand.toFixed(2)}s noch verfügbar`};
+  if(remainingAtLand<=0.90) return {score:2,reason:`CC sûr · ${remainingAtLand.toFixed(2)}s restantes`};
+  return {score:-2.5,reason:`CC trop tôt · ${remainingAtLand.toFixed(2)}s encore disponibles`};
 }
 
 function builderOfficialCCState(sequence=getBuilderSequence()){
@@ -19111,10 +19111,10 @@ function builderPairSynergy(fromSkill,toSkill,index){
   const transitionSeconds = builderTransitionSeconds(fromSkill.name,toSkill.name);
   if(transitionSeconds > 0 && transitionSeconds <= .35){
     score += .75;
-    reasons.push(`Schneller Übergang ${transitionSeconds.toFixed(3)}s`);
+    reasons.push(`Fast transition ${transitionSeconds.toFixed(3)}s`);
   }else if(transitionSeconds > .8){
     score -= .75;
-    reasons.push(`Langsamer Übergang ${transitionSeconds.toFixed(3)}s`);
+    reasons.push(`Slow transition ${transitionSeconds.toFixed(3)}s`);
   }
 
   // If there is actual player-logic scoring for this continuation, use it as evidence.
@@ -19165,7 +19165,7 @@ function validateBuilderCombo(sequence=getBuilderSequence()){
 
     if(rawSkill&&!builderOrientationAllowsSkill(rawSkill,spec)){
       result.ok=false;result.firstErrorIndex=i;
-      const reason=`${rawSkillName} ist nicht kompatibel mit der Kombinationsausrichtung: ${currentBuilderOrientation()}.`;
+      const reason=`${rawSkillName} is not compatible with combo orientation: ${currentBuilderOrientation()}.`;
       result.errors.push(reason);
       result.rows.push({index:i,ok:false,reason,...ccRow});
       break;
@@ -19533,7 +19533,7 @@ function renderBuilderSequence(){
             );
             chip.title=tl.ccApplied
               ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}`
-              : `Vergangene Zeit seit dem vorherigen Skill: ${tl.linkTimingSource||'unbekannt'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
+              : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
             return chip;
           }
           if(tl.ccTimerExpiredHere){
@@ -19545,7 +19545,7 @@ function renderBuilderSequence(){
 
         if(tl.ccApplied && (!tl.ccTimerMeasurement?.measured || !Number(tl.ccTimerMeasurement?.seconds))){
           const chip=makeMeta('CC Timer','— durée CC non mesurée','cc-empty');
-          chip.title='Der CC wurde angewendet, seine Dauer wurde jedoch noch nicht gemessen.';
+          chip.title='Le CC a bien été appliqué, mais sa durée n’est pas encore mesurée.';
           return chip;
         }
         return null;
@@ -20107,7 +20107,7 @@ document.getElementById('specSelector')?.addEventListener('change',()=>{
 const OLD_OFFICIAL_CONSUMABLES=[
  // REPAS CRON
  {id:"exquisite_cron",category:"Repas Cron",name:"Repas de Cron exquis",duration:7200,stackGroup:"food",
-  stats:["Tous PA +8","Précision +15","Vitesse attaque/incantation +2","Vitesse déplacement +2","Critique +2","Esquive +15","PV max +150","Endurance max +200","Alle résistances +4%","Dégâts attaque arrière +5%","Dégâts critiques +5%"],
+  stats:["Tous PA +8","Précision +15","Vitesse attaque/incantation +2","Vitesse déplacement +2","Critique +2","Esquive +15","PV max +150","Endurance max +200","Toutes résistances +4%","Dégâts attaque arrière +5%","Dégâts critiques +5%"],
   source:"Pearl Abyss — guides/patchs officiels",verified:true},
  {id:"simple_cron",category:"Repas Cron",name:"Repas de Cron simple",duration:7200,stackGroup:"food",
   stats:["PA contre monstres +30","EXP combat +20%","EXP compétence +10%","Vitesse attaque/incantation +2","Vitesse déplacement +3","Critique +2","PV max +150","Poids +100 LT","Dégâts attaque au sol +5%","Dégâts critiques +5%","Dégâts reçus des monstres -6%"],
@@ -20130,10 +20130,10 @@ const OLD_OFFICIAL_CONSUMABLES=[
   stats:["PA contre monstres +15","Chance connaissance +12%","Chance connaissance haut grade +7%","Récupération PV +3 par coup","Dégâts reçus des monstres -10%","Critique +3","Poids +100 LT"],
   source:"Pearl Abyss — patch notes officiels",verified:true},
  {id:"frenzy",category:"Draught",name:"Breuvage de frénésie",duration:900,stackGroup:"draught",
-  stats:["PA contre monstres +30","Précision +12","Endurance max +200","Récupération PV +9 par coup","Alle DP -15","Dégâts critiques +10%","Poids +100 LT"],
+  stats:["PA contre monstres +30","Précision +12","Endurance max +200","Récupération PV +9 par coup","Toutes DP -15","Dégâts critiques +10%","Poids +100 LT"],
   source:"Pearl Abyss — Frenzy Draught patch notes",verified:true},
  {id:"frenzy_corrupt",category:"Draught",name:"Breuvage de frénésie corrompu",duration:900,stackGroup:"draught",
-  stats:["Effets du Breuvage de frénésie","Zusätzliche AP gegen Monster (Corrupted Breath-Version)"],
+  stats:["Effets du Breuvage de frénésie","PA contre monstres supplémentaire (version Corrupted Breath)"],
   source:"Pearl Abyss — Elvia Calpheon update history",verified:true},
 
  // DRAUGHTS 2024 — composants Harmony
@@ -20192,7 +20192,7 @@ const OLD_OFFICIAL_CONSUMABLES=[
  {id:"spirit",category:"Parfum",name:"Élixir de parfum spirituel",duration:1200,stackGroup:"perfume",
   stats:["PV max +300","Critique +5","Récupération ressource par coup"],source:"Pearl Abyss — official item/update data",verified:true},
  {id:"khalk",category:"Parfum",name:"Élixir de Khalk",duration:1200,stackGroup:"perfume",
-  stats:["Alle résistances +10%","Réduction de dégâts +15","PV max +100","Vitesse déplacement +5"],
+  stats:["Toutes résistances +10%","Réduction de dégâts +15","PV max +100","Vitesse déplacement +5"],
   source:"Pearl Abyss — official item/update data",verified:true},
  {id:"deep_sea",category:"Parfum",name:"Élixir de la mer profonde",duration:1200,stackGroup:"perfume",
   stats:["Tous PA +10","PV max +100","Endurance max +100","Dégâts de toutes attaques spéciales +10%"],
@@ -20221,14 +20221,14 @@ const OLD_OFFICIAL_CONSUMABLES=[
   stats:["Même effet que Parfum de ténacité","Effet conservé après la mort"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"tenacity"},
 
  // CHURCH / CAMPSITE — current consolidated buff
- {id:"adventure_boon_120",category:"Église / Camp",name:"[Segen] Gunst des Abenteurers – 120 Min",duration:7200,stackGroup:"church",
+ {id:"adventure_boon_120",category:"Église / Camp",name:"[Bénédiction] Faveur de l'aventurier — 120 min",duration:7200,stackGroup:"church",
   stats:["Tous PA +8","Précision +8","Réduction de dégâts +8","PV max +150","EXP combat +15%","EXP compétence +15%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
- {id:"adventure_boon_300",category:"Église / Camp",name:"[Segen] Gunst des Abenteurers – 300 Min",duration:18000,stackGroup:"church",
+ {id:"adventure_boon_300",category:"Église / Camp",name:"[Bénédiction] Faveur de l'aventurier — 300 min",duration:18000,stackGroup:"church",
   stats:["Tous PA +8","Précision +8","Réduction de dégâts +8","PV max +150","EXP combat +15%","EXP compétence +15%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
  {id:"body_enhancement",category:"Villa / Camp",name:"Amélioration corporelle",duration:3600,stackGroup:"villa",
-  stats:["Tous PA +10","Réduction de dégâts +10","PV max +200","Alle résistances +10%","EXP combat +50%","EXP compétence +50%","Résistance chaleur/hypothermie +50%"],
+  stats:["Tous PA +10","Réduction de dégâts +10","PV max +200","Toutes résistances +10%","EXP combat +50%","EXP compétence +50%","Résistance chaleur/hypothermie +50%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
 
  // BLESSING OF MYSTIC BEASTS
@@ -20280,7 +20280,7 @@ const OLD_CRYSTAL_PRESETS={
    ],
    // Aggregate offensive subset from the current BDFoundry example.
    mods:{ap:73,monsterAP:76,accuracy:19,critDmgPct:22,backDmgPct:2,specialPct:1,atkSpeedPct:2,castingSpeedPct:2},
-   note:"Der Widerstandskristall kann je nach Bereich ausgetauscht werden. Brutale Dezimierung kann durch Elkarr/Visionärer Elkarr ersetzt werden, wenn es an Genauigkeit mangelt."
+   note:"Le cristal de résistance peut être remplacé selon la zone. Brutal Decimation peut être remplacé par Elkarr/Visionary Elkarr si la précision manque."
  },
  pvp:{
    label:"PvP passe-partout — DR/offensif général 2026",
@@ -20298,7 +20298,7 @@ const OLD_CRYSTAL_PRESETS={
    ],
    // Only clearly-supported offensive effects are fed to damage/speed calculation.
    mods:{humanDamage:56,accuracy:45,critDmgPct:22,atkSpeedPct:2,castingSpeedPct:2},
-   note:"Vielseitige Voreinstellung. Erhöht Elkarr/Viper gegen starkes Ausweichen; für Glaskanonen, ersetzt defensiveres durch menschlichen Schaden."
+   note:"Preset polyvalent. Contre forte esquive, augmente Elkarr/Viper; pour glass cannon, remplace davantage de défensifs par dégâts humains."
  }
 };
 let oldEffects=[]; let oldActiveCrystalPreset='';
@@ -20318,7 +20318,7 @@ function oldRenderConsumables(){
   const cs=document.getElementById('oldConsumableCategory');
   if(cs){
     const v=cs.value;
-    cs.innerHTML='<option value="">Alle</option>'+
+    cs.innerHTML='<option value="">Toutes</option>'+
       [...new Set(OLD_OFFICIAL_CONSUMABLES.map(p=>p.category))]
         .sort()
         .map(c=>`<option value="${oldEsc(c)}">${oldEsc(c)}</option>`)
@@ -20366,14 +20366,14 @@ function oldRenderConsumables(){
             <td class="consumable-stats-cell">
               ${stats.length
                 ? `<div class="consumable-stat-list">${stats.map(s=>`<span class="consumable-stat-chip">${oldEsc(s)}</span>`).join('')}</div>`
-                : `<span class="consumable-stat-missing">Keine stat détaillée</span>`}
+                : `<span class="consumable-stat-missing">Aucune stat détaillée</span>`}
             </td>
             <td class="consumable-remove-cell">
               <button type="button" onclick="oldRemoveConsumable(${i})">×</button>
             </td>
           </tr>`;
       }).join('')
-    : '<tr><td colspan="5">Keine consommable actif.</td></tr>';
+    : '<tr><td colspan="5">Aucun consommable actif.</td></tr>';
 
   oldSave();
 }
@@ -20390,17 +20390,17 @@ function oldRenderCrystals(){
 
   if(box){
     if(!p){
-      box.innerHTML='<b>Keine set de cristaux appliqué.</b>';
+      box.innerHTML='<b>Aucun set de cristaux appliqué.</b>';
     }else{
       const m=p.mods||{};
       const aggregate=[];
-      if(m.ap) aggregate.push(`Versteckte AP +${m.ap}`);
+      if(m.ap) aggregate.push(`AP caché +${m.ap}`);
       if(m.monsterAP) aggregate.push(`AP monstre +${m.monsterAP}`);
-      if(m.humanDamage) aggregate.push(`Menschenschaden +${m.humanDamage}`);
+      if(m.humanDamage) aggregate.push(`Dégâts humains +${m.humanDamage}`);
       if(m.accuracy) aggregate.push(`Précision +${m.accuracy}`);
-      if(m.critDmgPct) aggregate.push(`Kritischer Schaden +${m.critDmgPct}%`);
+      if(m.critDmgPct) aggregate.push(`Dégâts critiques +${m.critDmgPct}%`);
       if(m.backDmgPct) aggregate.push(`Back Attack +${m.backDmgPct}%`);
-      if(m.specialPct) aggregate.push(`Spezialschaden +${m.specialPct}%`);
+      if(m.specialPct) aggregate.push(`Dégâts spéciaux +${m.specialPct}%`);
       if(m.atkSpeedPct) aggregate.push(`Vitesse attaque +${m.atkSpeedPct}%`);
       if(m.castingSpeedPct) aggregate.push(`Vitesse incantation +${m.castingSpeedPct}%`);
 
@@ -20429,7 +20429,7 @@ function oldRenderCrystals(){
               </td>
             </tr>`;
         }).join('')
-      : '<tr><td colspan="4">Keine preset actif.</td></tr>';
+      : '<tr><td colspan="4">Aucun preset actif.</td></tr>';
   }
 
   oldSave();
@@ -21255,7 +21255,7 @@ function videoAutoRenderV43(){
   if(add)add.disabled=!detections.some(x=>x.selectedName);
 
   if(!detections.length){
-    root.innerHTML='<div class="page-placeholder">Keine segment candidat détecté.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun segment candidat détecté.</div>';
     return;
   }
 
@@ -21273,7 +21273,7 @@ function videoAutoRenderV43(){
       </div>
       <div class="video-auto-candidate-v43">
         <select onchange="videoAutoSelectCandidateV43(${index},this.value)">
-          <option value="">Nein résolu</option>${opts}
+          <option value="">Non résolu</option>${opts}
         </select>
         <small>${best?`${source} · confiance ${Math.round(best.score*100)}%`:'Aucun candidat'}</small>
       </div>
@@ -21389,7 +21389,7 @@ function setVideoAutoWindowFromCurrentV70(lengthSeconds=30){
   if(endInput)endInput.value=videoFormatTimeV70(end,true);
 
   const status=document.getElementById('videoAutoStatusV43');
-  if(status)status.textContent=`Vorbereiteter Bereich: ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.`;
+  if(status)status.textContent=`Zone préparée : ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.`;
 }
 
 function normalizeVideoAutoTimeInputsV70(){
@@ -21424,7 +21424,7 @@ function toggleVideoAutoPauseV46(){
   const btn=document.getElementById('videoAutoPauseBtnV46');
   const status=document.getElementById('videoAutoStatusV43');
   if(btn)btn.textContent=VIDEO_AUTO_STATE_V43.paused?'Reprendre analyse':'Pause analyse';
-  if(status && VIDEO_AUTO_STATE_V43.paused)status.textContent='Analyse pausiert. Sie können sich das Video ansehen und dann fortfahren.';
+  if(status && VIDEO_AUTO_STATE_V43.paused)status.textContent='Analyse en pause. Tu peux inspecter la vidéo puis reprendre.';
 }
 
 async function waitVideoAutoResumeV46(){
@@ -21438,7 +21438,7 @@ function refreshAutoMeasurementsV46(){
   VIDEO_AUTO_STATE_V43.transitionMeasurements=[];
   if(typeof measureAutoTransitionsV45==='function')measureAutoTransitionsV45();
   const status=document.getElementById('videoAutoStatusV43');
-  if(status)status.textContent='Zuvor erkannte Messungen wurden aus aktuellen Segmenten und Auswahlen neu berechnet.';
+  if(status)status.textContent='Mesures précédemment détectées recalculées à partir des segments et sélections actuels.';
 }
 
 async function autoAnalyzeLocalVideoV43(){
@@ -21794,7 +21794,7 @@ function genericCCApplyToSelectedSkillV67(){
   try{if(typeof renderSkillsPage==='function')renderSkillsPage();}catch(e){}
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
 
-  if(status)status.textContent=`Durée CC validiert pour ${skillName} : ${duration.toFixed(4)} s.`;
+  if(status)status.textContent=`Durée CC validée pour ${skillName} : ${duration.toFixed(4)} s.`;
 }
 
 function genericCCResetV50(){
@@ -21812,7 +21812,7 @@ function genericCCAutoDetectV50(){
   const samples=VIDEO_AUTO_STATE_V43.samples||[];
 
   if(samples.length<4){
-    if(status)status.textContent='Starten Sie zunächst „Analyse + automatische Messung“ in einer Videozone.';
+    if(status)status.textContent='Lance d’abord « Analyse + mesure automatique » sur une zone vidéo.';
     return;
   }
 
@@ -21822,7 +21822,7 @@ function genericCCAutoDetectV50(){
 
   const inRange=samples.filter(s=>s.time>=range.start&&s.time<=range.end);
   if(inRange.length<4){
-    if(status)status.textContent='Nicht genügend Proben im ausgewählten Bereich.';
+    if(status)status.textContent='Pas assez d’échantillons dans la zone sélectionnée.';
     return;
   }
 
@@ -21881,7 +21881,7 @@ function genericCCAutoDetectV50(){
   }
 
   if(!recovery){
-    if(status)status.textContent='CC-Start erkannt, aber Ende/Wiederaufnahme der Bewegung unzuverlässig. Verwenden Sie „Mark End CC“.';
+    if(status)status.textContent='Début CC détecté, mais fin/reprise de mouvement non fiable. Utilise « Marquer fin CC ».';
     GENERIC_CC_STATE_V50.start=impact.time;
     GENERIC_CC_STATE_V50.end=null;
     GENERIC_CC_STATE_V50.auto=true;
@@ -22016,7 +22016,7 @@ function measureAutoCCV49(){
 
   if(status){
     status.textContent=rows.length
-      ? `${rows.length} hat CC-Maßnahmen vorgeschlagen. Sie können sie jetzt speichern (Auto-Status) oder zunächst validieren/korrigieren.`
+      ? `${rows.length} mesure(s) CC proposée(s). Tu peux les enregistrer maintenant (statut auto) ou les valider/corriger d’abord.`
       : 'Aucun CC mesurable automatiquement dans les segments résolus.';
   }
   return rows;
@@ -22035,7 +22035,7 @@ function renderAutoCCV49(){
   root.innerHTML=`
     <div class="video-auto-cc-head-v49">
       <strong>Mesures CC détectées</strong>
-      <small>Début = impact estimé · Fin = reprise de mouvement geschätzt · les mesures auto peuvent être enregistrées puis validées</small>
+      <small>Début = impact estimé · Fin = reprise de mouvement estimée · les mesures auto peuvent être enregistrées puis validées</small>
     </div>
     ${rows.map((m,index)=>`
       <div class="video-auto-cc-row-v49">
@@ -22051,7 +22051,7 @@ function renderAutoCCV49(){
           <button type="button" class="tab-btn" onclick="reviewAutoCCV49(${index},'start')">Voir début</button>
           <button type="button" class="tab-btn" onclick="reviewAutoCCV49(${index},'end')">Voir fin</button>
           <button type="button" class="tab-btn" onclick="correctAutoCCV49(${index})">Corriger</button>
-          <button type="button" class="tab-btn" onclick="setAutoCCStatusV49(${index},'validated')">Bestätigen</button>
+          <button type="button" class="tab-btn" onclick="setAutoCCStatusV49(${index},'validated')">Valider</button>
           <button type="button" class="tab-btn" onclick="setAutoCCStatusV49(${index},'rejected')">Rejeter</button>
         </div>
       </div>
@@ -22084,7 +22084,7 @@ function correctAutoCCV49(index){
 
   const startRaw=prompt('Début CC (secondes absolues dans la vidéo)',String(m.impactTime));
   if(startRaw===null)return;
-  const endRaw=prompt('CC beenden / Kontrolle wiedererlangen (absolute Sekunden im Video)',String(m.recoveryTime));
+  const endRaw=prompt('Fin CC / reprise de contrôle (secondes absolues dans la vidéo)',String(m.recoveryTime));
   if(endRaw===null)return;
 
   const start=Number(String(startRaw).replace(',','.'));
@@ -22300,7 +22300,7 @@ function measureAutoTransitionsV45(){
 
   if(saveBtn)saveBtn.disabled=!rows.length;
   if(status){
-    status.textContent=`${rows.length} plausible Transition(en) · ${rejected} Link(s) abgelehnt (Lücke zu groß / nicht zusammenhängende Segmente).`;
+    status.textContent=`${rows.length} transition(s) plausible(s) · ${rejected} lien(s) rejeté(s) (écart trop grand / segments non continus).`;
   }
   return rows;
 }
@@ -22413,7 +22413,7 @@ function saveAutoTransitionsV45(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
 
   if(status){
-    status.textContent=`Aufgezeichnete Messungen: ${added} neu(s), ${updated} aktualisiert(en). Sie bleiben als „zu validieren“ gekennzeichnet.`;
+    status.textContent=`Mesures enregistrées : ${added} nouvelle(s), ${updated} mise(s) à jour. Elles restent marquées « à valider ».`;
   }
 }
 
@@ -22456,7 +22456,7 @@ function addAutoDetectedSkillsV43(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
   try{if(typeof renderYouTubeAnalyzer==='function')renderYouTubeAnalyzer();}catch(e){}
 
-  if(status)status.textContent=`Skills erkannt: ${added} hinzugefügt · ${already} bereits vorhanden · ${unresolved} ungelöst.`;
+  if(status)status.textContent=`Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).`;
 }
 
 
@@ -22522,7 +22522,7 @@ bdoOnReady(()=>{
     status.className='skills-auto-search-status';
     status.textContent=cls
       ? `${count} compétence(s) de référence disponible(s) pour ${cls} · ${spec}. Clique pour ajouter les manquantes.`
-      : 'Verwendet das Referenzwörterbuch für die ausgewählte Klasse und Spezialisierung.';
+      : 'Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.';
   };
   document.getElementById('classSelector')?.addEventListener('change',refreshAutoSkillHint);
   document.getElementById('specSelector')?.addEventListener('change',refreshAutoSkillHint);
@@ -22676,7 +22676,7 @@ function cleanCurrentTransitionsV17(manual=false){
   if(status){
     status.textContent=result.removed.length
       ? `${result.valid.length} valide(s) · ${result.removed.length} entrée(s) parasite(s) supprimée(s)`
-      : `${result.valid.length} transition(s) validiert(s) · aucune entrée parasite`;
+      : `${result.valid.length} transition(s) validée(s) · aucune entrée parasite`;
     status.className=result.removed.length?'status-warn':'status-good';
   }
   if(manual && typeof renderTransitionPage==='function') renderTransitionPage();
@@ -22766,7 +22766,7 @@ function renderRecentBuildsV19(){
   const history=loadBuilderHistoryV19();
   const visible=history.slice(0,10);
   const count=document.getElementById('home19BuildCount');if(count)count.textContent=`${history.length} build${history.length>1?'s':''} enregistré${history.length>1?'s':''}`;
-  if(!visible.length){body.innerHTML='<tr><td colspan="7"><div class="home19-empty">Keine build enregistré. Construis un combo puis utilise « Speichern ce build ».</div></td></tr>';return;}
+  if(!visible.length){body.innerHTML='<tr><td colspan="7"><div class="home19-empty">Aucun build enregistré. Construis un combo puis utilise « Enregistrer ce build ».</div></td></tr>';return;}
   body.innerHTML=visible.map(entry=>{
     const seq=Array.isArray(entry.sequence)?entry.sequence:[];
     const sequenceHtml=seq.slice(0,5).map((name,i)=>`${i?'<i>→</i>':''}<span>${escapeHtmlText(name)}</span>`).join('')+(seq.length>5?`<i>… +${seq.length-5}</i>`:'');
@@ -22778,7 +22778,7 @@ function renderRecentBuildsV19(){
       <td><div class="home19-build-sequence" title="${escapeHtmlAttr(seq.join(' → '))}">${sequenceHtml}</div></td>
       <td>${Number(entry.skillCount||seq.length)}</td>
       <td><span class="${entry.valid!==false?'home19-build-valid':'home19-build-warn'}">${entry.valid!==false?'Valide':'À vérifier'}</span><div style="font-size:8px;color:#6f8094;margin-top:2px">${Number(entry.measuredLinks||0)}/${Number(entry.totalLinks||Math.max(0,seq.length-1))} timings</div></td>
-      <td><div class="home19-build-actions"><button type="button" class="optimizer-btn" onclick="openBuildFromHistoryV19('${entry.id}')">Voir</button><button type="button" class="tab-btn" title="Löschen" onclick="deleteBuildHistoryV19('${entry.id}')">×</button></div></td>
+      <td><div class="home19-build-actions"><button type="button" class="optimizer-btn" onclick="openBuildFromHistoryV19('${entry.id}')">Voir</button><button type="button" class="tab-btn" title="Supprimer" onclick="deleteBuildHistoryV19('${entry.id}')">×</button></div></td>
     </tr>`;
   }).join('');
 }
@@ -22817,7 +22817,7 @@ function renderHomeDashboardV18(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const rawHomeSkills=home18GetList(typeof CLASS_SKILLS!=='undefined'?CLASS_SKILLS:null,cls,spec);
-  // V24: le compteur Startseite suit exactement la même logique que l'onglet Skills:
+  // V24: le compteur Accueil suit exactement la même logique que l'onglet Skills:
   // filtrage de spécialisation + regroupement des niveaux/rangs d'une même compétence.
   let skills=rawHomeSkills;
   try{
@@ -22837,7 +22837,7 @@ function renderHomeDashboardV18(){
   const enabled=skills.filter(s=>s?.enabled!==false).length;
   const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val};
   set('home18Context',cls?`${cls} · ${spec}`:'Aucune classe sélectionnée');
-  set('home18Reference',refs.length?`Aktive Referenz · ${refs.length} entrées`:'Referenz: keine für diesen Kontext');
+  set('home18Reference',refs.length?`Référentiel actif · ${refs.length} entrées`:'Référentiel : aucun pour ce contexte');
   set('home18Skills',skills.length); set('home18SkillsSub',`${enabled} activé${enabled>1?'s':''}`);
   set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entrées disponibles':'aucune entrée');
   set('home18Combos',combos.length); set('home18Transitions',transitions.length);
@@ -22863,10 +22863,10 @@ function renderHomeDashboardV18(){
   const recs=[];
   if(!cls) recs.push(['Choisir une classe','Le contexte pilote tout le projet','classPage','Class']);
   else{
-    if(refs.length && skills.length<refs.length*.8) recs.push(['Compléter les Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Automatische Suche']);
-    if(skills.length && completeness<70) recs.push(['Enrichir les métadonnées',`Vollständigkeit actuelle : ${completeness}%`,'skillsPage','Inspecter']);
-    if(!combos.length) recs.push(['Erste Combo erstellen','Aucun combo enregistré pour ce contexte','builderPage','Builder']);
-    if(!transitions.length) recs.push(['Übergänge hinzufügen','Aucun cancel/transition validé','transitionPage','Transitions']);
+    if(refs.length && skills.length<refs.length*.8) recs.push(['Compléter les Skills',`${Math.max(0,refs.length-skills.length)} référence(s) restent à charger`,'skillsPage','Recherche auto']);
+    if(skills.length && completeness<70) recs.push(['Enrichir les métadonnées',`Complétude actuelle : ${completeness}%`,'skillsPage','Inspecter']);
+    if(!combos.length) recs.push(['Créer un premier combo','Aucun combo enregistré pour ce contexte','builderPage','Builder']);
+    if(!transitions.length) recs.push(['Ajouter des transitions','Aucun cancel/transition validé','transitionPage','Transitions']);
     else if(timingCoverage<60) recs.push(['Mesurer les timings',`${measured}/${transitions.length} transitions ont une mesure`,'youtubeAnalyzerPage','Vidéo']);
   }
   if(!recs.length) recs.push(['Continuer l’optimisation','La base principale est bien renseignée','builderPage','Ouvrir Builder']);
@@ -22902,7 +22902,7 @@ function renderClassResourceLinksV23(){
   if(!host)return;
   const cls=document.getElementById('classSelector')?.value||'';
   const ctx=document.getElementById('home23ResourceContext');
-  if(ctx)ctx.textContent=cls?`Ressourcen · ${cls}`:'Sélectionne une classe';
+  if(ctx)ctx.textContent=cls?`Ressources · ${cls}`:'Sélectionne une classe';
   if(!cls){
     host.innerHTML='<div class="home23-no-class">Sélectionne une classe pour afficher son Discord et ses guides dédiés.</div>';
     return;
@@ -22915,9 +22915,9 @@ function renderClassResourceLinksV23(){
   const foundryDesc=exact.foundry?`Guide ${cls} : skills, gameplay et ressources communautaires`:`Trouver le guide ${cls} dans la liste des guides de classes`;
   const codex=exact.codex||'https://bdocodex.com/us/skills/';
   host.innerHTML=`
-    <a class="home22-official-link home23-class-link" href="${home23Esc(discord)}" target="_blank" rel="noopener noreferrer"><b>${home23Esc(discordTitle)}</b><small>${home23Esc(discordDesc)}</small><span>Öffnen ↗</span></a>
-    <a class="home22-official-link home23-class-link" href="${home23Esc(codex)}" target="_blank" rel="noopener noreferrer"><b>BDO Codex · ${home23Esc(cls)}</b><small>Skills et données de référence pour ${home23Esc(cls)}</small><span>Öffnen ↗</span></a>
-    <a class="home22-official-link home23-class-link" href="${home23Esc(foundry)}" target="_blank" rel="noopener noreferrer"><b>BDO Foundry · ${home23Esc(cls)}</b><small>${home23Esc(foundryDesc)}</small><span>Öffnen ↗</span></a>`;
+    <a class="home22-official-link home23-class-link" href="${home23Esc(discord)}" target="_blank" rel="noopener noreferrer"><b>${home23Esc(discordTitle)}</b><small>${home23Esc(discordDesc)}</small><span>Ouvrir ↗</span></a>
+    <a class="home22-official-link home23-class-link" href="${home23Esc(codex)}" target="_blank" rel="noopener noreferrer"><b>BDO Codex · ${home23Esc(cls)}</b><small>Compétences et données de référence pour ${home23Esc(cls)}</small><span>Ouvrir ↗</span></a>
+    <a class="home22-official-link home23-class-link" href="${home23Esc(foundry)}" target="_blank" rel="noopener noreferrer"><b>BDO Foundry · ${home23Esc(cls)}</b><small>${home23Esc(foundryDesc)}</small><span>Ouvrir ↗</span></a>`;
 }
 if(typeof bdoOnReady==='function')bdoOnReady(()=>{
   renderClassResourceLinksV23();
@@ -23215,7 +23215,7 @@ async function registerAccountV78(){
   const confirmPass=document.getElementById('accountRegisterConfirmV78')?.value||'';
   if(name.length<2)return accountStatusV78('Le nom doit contenir au moins 2 caractères.','bad');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return accountStatusV78('Adresse e-mail invalide.','bad');
-  if(pass.length<8)return accountStatusV78('Das Passwort muss mindestens 8 Zeichen enthalten.','bad');
+  if(pass.length<8)return accountStatusV78('Le mot de passe doit contenir au moins 8 caractères.','bad');
   if(pass!==confirmPass)return accountStatusV78('Les mots de passe ne correspondent pas.','bad');
   const db=accountLoadDBV78();
   if(db.users.some(u=>u.name.toLowerCase()===name.toLowerCase()))return accountStatusV78('Ce nom d’utilisateur existe déjà.','bad');
@@ -23267,7 +23267,7 @@ async function changeAccountPasswordV78(){
   const old=document.getElementById('accountOldPasswordV78')?.value||'',next=document.getElementById('accountNewPasswordV78')?.value||'',confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const oldHash=await accountHashPasswordV78(old,user.passwordSalt);
   if(oldHash.hash!==user.passwordHash)return accountStatusV78('Mot de passe actuel incorrect.','bad');
-  if(next.length<8)return accountStatusV78('Das neue Passwort muss mindestens 8 Zeichen enthalten.','bad');
+  if(next.length<8)return accountStatusV78('Le nouveau mot de passe doit contenir au moins 8 caractères.','bad');
   if(next!==confirm)return accountStatusV78('La confirmation ne correspond pas.','bad');
   const sec=await accountHashPasswordV78(next),db=accountLoadDBV78(),u=db.users.find(x=>x.id===user.id);
   u.passwordHash=sec.hash;u.passwordSalt=sec.salt;accountSaveDBV78(db);
@@ -23275,7 +23275,7 @@ async function changeAccountPasswordV78(){
 }
 function deleteAccountV78(){
   const user=accountUserV78();if(!user)return;
-  if(!confirm(`Löschen définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.`))return;
+  if(!confirm(`Supprimer définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.`))return;
   const db=accountLoadDBV78();db.users=db.users.filter(u=>u.id!==user.id);accountSaveDBV78(db);
   localStorage.removeItem(ACCOUNT_DATA_PREFIX_V78+user.id);accountClearProjectStorageV78();accountClearSessionV78();location.reload();
 }
@@ -23367,7 +23367,7 @@ function bugContextV77(){
 }
 function renderBugMetaV77(){
   const c=bugContextV77(), el=document.getElementById('bug77Meta');
-  if(el)el.textContent=`Contexte ajouté automatiquement : Version ${c.version} · Klasse ${c.className} · Spezialisierung ${c.spec} · Page ${c.activePage} · ${c.time}`;
+  if(el)el.textContent=`Contexte ajouté automatiquement : Version ${c.version} · Classe ${c.className} · Spécialisation ${c.spec} · Page ${c.activePage} · ${c.time}`;
 }
 function openBugReportV77(){
   document.getElementById('bugReportModalV77')?.classList.add('open');
@@ -23381,8 +23381,8 @@ function buildBugReportV77(){
     'BDO COMBOS LABS — BUG REPORT',
     `Version: ${c.version}`,
     `Date: ${c.time}`,
-    `Klasse: ${c.className}`,
-    `Spezialisierung: ${c.spec}`,
+    `Classe: ${c.className}`,
+    `Spécialisation: ${c.spec}`,
     `Page: ${c.activePage}`,
     `Zone: ${val('bug77Category')}`,
     `Importance: ${val('bug77Severity')}`,
@@ -23792,7 +23792,7 @@ body h4{font-size:15px!important}
   font-size:12px!important;
 }
 
-/* Diagnose */
+/* Diagnostic */
 #homePage .home18-diagnostic,
 #homePage .home18-diagnostic *{
   font-size:12.5px!important;
@@ -24288,7 +24288,7 @@ function communityPatternsForContextV101(className,spec){
       seq:communityNormalizeSequenceV101(c.sequence),
       type:'COMBO JOUEUR',
       confidence:c.communityVerified?'community-verified':'community-shared',
-      sourceTag:`Geteilt von ${c.author||'Spieler'}`,
+      sourceTag:`Partagé par ${c.author||'Joueur'}`,
       note:c.note||'Combo partagé par un joueur.',
       ownerClass:c.className,
       ownerSpec:c.spec,
@@ -24422,7 +24422,7 @@ function shareCurrentBuilderComboV101(){
 
   const status=document.getElementById('builderHistorySaveStatus');
   if(status){
-    status.textContent=`✓ Partagé dans Spieler-Combos · 0/${communityVerifyThresholdV101()} J’aime`;
+    status.textContent=`✓ Partagé dans Combos joueurs · 0/${communityVerifyThresholdV101()} J’aime`;
   }
 
   if(typeof renderPlayerCombosPage==='function')renderPlayerCombosPage();
@@ -24799,7 +24799,7 @@ async function bclCloudShareV107(){
   const {data:{user}}=await sb.auth.getUser();
   BCL_CLOUD_USER_V107=user||null;
   if(!user){
-    bclCloudStatusV107('Melden Sie sich bei Ihrem Cloud-Konto an, um diese Kombination zu teilen.','error');
+    bclCloudStatusV107('Connecte-toi à ton compte cloud pour partager ce combo.','error');
     if(typeof openLocalAccountModal==='function')openLocalAccountModal('login');
     return;
   }
@@ -24846,13 +24846,13 @@ function bclCloudRenderPlayersV107(){
     return;
   }
   if(!BCL_CLOUD_READY_V107){
-    root.innerHTML='<div class="page-placeholder">Anmelden à la communauté…</div>';
+    root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';
     bclCloudRefreshV107();
     return;
   }
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>!x.verified);
   if(!rows.length){
-    root.innerHTML='<div class="page-placeholder">Keine combo joueur en attente de validation pour cette classe.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun combo joueur en attente de validation pour cette classe.</div>';
     return;
   }
   root.innerHTML=rows.map(c=>{
@@ -24875,12 +24875,12 @@ function bclCloudRenderVerifiedV107(){
   if(!root)return;
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>x.verified);
   if(!BCL_CLOUD_READY_V107){
-    root.innerHTML='<div class="page-placeholder">Anmelden à la communauté…</div>';
+    root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';
     bclCloudRefreshV107();
     return;
   }
   if(!rows.length){
-    root.innerHTML='<div class="page-placeholder">Keine combo de classe vérifié par la communauté.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun combo de classe vérifié par la communauté.</div>';
     return;
   }
   root.innerHTML=rows.map(c=>{
@@ -25281,7 +25281,7 @@ window.registerAccountV78=async function(){
   const confirmPass=document.getElementById('accountRegisterConfirmV78')?.value||'';
   if(name.length<2)return accountStatusV78('Le nom doit contenir au moins 2 caractères.','bad');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return accountStatusV78('Adresse e-mail invalide.','bad');
-  if(pass.length<8)return accountStatusV78('Das Passwort muss mindestens 8 Zeichen enthalten.','bad');
+  if(pass.length<8)return accountStatusV78('Le mot de passe doit contenir au moins 8 caractères.','bad');
   if(pass!==confirmPass)return accountStatusV78('Les mots de passe ne correspondent pas.','bad');
   accountStatusV78('Création du compte cloud…');
   const signUpOptions={data:{username:name}};
@@ -25333,7 +25333,7 @@ window.changeAccountPasswordV78=async function(){
   const confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const user=BCL_CLOUD_USER_V107;
   if(!user)return accountStatusV78('Aucun compte cloud connecté.','bad');
-  if(next.length<8)return accountStatusV78('Das neue Passwort muss mindestens 8 Zeichen enthalten.','bad');
+  if(next.length<8)return accountStatusV78('Le nouveau mot de passe doit contenir au moins 8 caractères.','bad');
   if(next!==confirm)return accountStatusV78('La confirmation ne correspond pas.','bad');
   const verify=await sb.auth.signInWithPassword({email:user.email,password:old});
   if(verify.error)return accountStatusV78('Mot de passe actuel incorrect.','bad');
@@ -25343,7 +25343,7 @@ window.changeAccountPasswordV78=async function(){
 };
 
 window.deleteAccountV78=function(){
-  alert('Das Löschen eines Cloud-Kontos muss ein sicheres Verfahren durchlaufen. Freigegebene Daten verbleiben in der gemeinsamen Datenbank und werden niemals mit dem Konto gelöscht.');
+  alert('La suppression d’un compte cloud doit passer par une procédure sécurisée. Les données partagées restent dans la base commune et ne sont jamais supprimées avec le compte.');
 };
 
 const _renderAccountHeaderLocalV108=window.renderAccountHeaderV78;
@@ -25387,9 +25387,9 @@ window.bclCloudRenderPlayersV107=async function(){
   if(!cls){
     root.innerHTML='<div class="page-placeholder">Sélectionne une classe pour voir les combos partagés.</div>';return;
   }
-  if(!BCL_CLOUD_READY_V107){root.innerHTML='<div class="page-placeholder">Anmelden à la communauté…</div>';bclCloudRefreshV107();return}
+  if(!BCL_CLOUD_READY_V107){root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';bclCloudRefreshV107();return}
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>!x.verified&&!hidden.has(x.id));
-  if(!rows.length){root.innerHTML='<div class="page-placeholder">Keine combo joueur en attente de validation pour cette classe.</div>';return}
+  if(!rows.length){root.innerHTML='<div class="page-placeholder">Aucun combo joueur en attente de validation pour cette classe.</div>';return}
   root.innerHTML=rows.map(c=>{
     const liked=BCL_CLOUD_LIKES_V107.has(c.id);
     const author=String(c.profiles?.username||'Joueur');
@@ -25415,13 +25415,13 @@ window.bclCloudRenderVerifiedV107=async function(){
   if(!root)return;
   const hidden=await bclPlayerHiddenIdsV108();
   if(!BCL_CLOUD_READY_V107){
-    root.innerHTML='<div class="page-placeholder">Anmelden à la communauté…</div>';
+    root.innerHTML='<div class="page-placeholder">Connexion à la communauté…</div>';
     bclCloudRefreshV107();
     return;
   }
   const rows=BCL_CLOUD_COMBOS_V107.filter(x=>x.verified&&!hidden.has(x.id));
   if(!rows.length){
-    root.innerHTML='<div class="page-placeholder">Keine combo de classe vérifié par la communauté.</div>';
+    root.innerHTML='<div class="page-placeholder">Aucun combo de classe vérifié par la communauté.</div>';
     return;
   }
   root.innerHTML=rows.map(c=>{
@@ -25540,12 +25540,12 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdoCombosLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Créer un compte','account.profile':'Mon profil','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Changer le mot de passe','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos joueurs','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Analyseur vidéo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'Mein Profil','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
 es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Combos de clase','nav.playerCombos':'Combos de jugadores','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Analizador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
 it:{'header.localLab':'Local Lab','header.language':'Lingua','account.login':'Accedi','account.register':'Crea account','account.profile':'Il mio profilo','account.saveNow':'Salva ora','account.changePassword':'Cambia password','account.logout':'Esci','nav.home':'Home','nav.class':'Classe','nav.skills':'Abilità','nav.classCombos':'Combo di classe','nav.playerCombos':'Combo giocatori','nav.transitions':'Transizione / Cancel','nav.videoAnalyzer':'Analizzatore video','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Impostazioni'},
-pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
+pt:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Entrar','account.register':'Criar conta','account.profile':'Meu perfil','account.saveNow':'Guardar agora','account.changePassword':'Alterar palavra-passe','account.logout':'Sair','nav.home':'Início','nav.class':'Classe','nav.skills':'Habilidades','nav.classCombos':'Combos de classe','nav.playerCombos':'Combos de jogadores','nav.transitions':'Transição / Cancel','nav.videoAnalyzer':'Analisador de vídeo','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Definições'}};
 function current(){const saved=localStorage.getItem(STORAGE_KEY);if(dict[saved])return saved;const b=(navigator.language||'fr').slice(0,2).toLowerCase();return dict[b]?b:'fr';}
 function t(key,lang){const l=lang||current();return (dict[l]&&dict[l][key])||(dict.fr&&dict.fr[key])||key;}
 function apply(lang,save){const l=dict[lang]?lang:'fr';document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(function(el){const key=el.getAttribute('data-i18n');if(key)el.textContent=t(key,l);});const sel=document.getElementById('bclLanguageSelect');if(sel&&sel.value!==l)sel.value=l;if(save)localStorage.setItem(STORAGE_KEY,l);window.dispatchEvent(new CustomEvent('bcl-language-changed',{detail:{language:l}}));}
@@ -25556,6 +25556,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
