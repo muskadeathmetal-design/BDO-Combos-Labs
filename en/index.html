@@ -5774,7 +5774,7 @@ if(!BDO_DOM_READY){
       <div id="accountMenuV78" class="account78-menu">
         <div class="account78-menu-user"><b id="accountMenuNameV78">—</b><small id="accountMenuEmailV78">—</small></div>
         <button type="button" onclick="openAccountModalV78('profile')"> <span data-i18n="account.profile">My profile</span></button>
-        <button type="button" onclick="accountSaveWorkspaceV78(true)"> <span data-i18n="account.saveNow">Sauvegarder maintenant</span></button>
+        <button type="button" onclick="accountSaveWorkspaceV78(true)"> <span data-i18n="account.saveNow">Back up now</span></button>
         <button type="button" onclick="openAccountModalV78('password')"> <span data-i18n="account.changePassword">Change password</span></button>
         <button type="button" onclick="logoutAccountV78()"> <span data-i18n="account.logout">Sign out</span></button>
       </div>
@@ -5821,7 +5821,7 @@ if(!BDO_DOM_READY){
       </div>
       <div class="home18-context-card">
         <span>Active context</span>
-        <strong id="home18Context">None class sélectionnée</strong>
+        <strong id="home18Context">No class selected</strong>
         <small id="home18Reference">Reference : —</small>
       </div>
     </section>
@@ -5880,7 +5880,7 @@ if(!BDO_DOM_READY){
       <div class="home19-build-table-wrap">
         <table class="home19-build-table">
           <thead><tr><th>Date</th><th>Contexte</th><th>Type</th><th>Sequence</th><th>Skills</th><th>Validation</th><th style="text-align:right">Actions</th></tr></thead>
-          <tbody id="home19RecentBuildRows"><tr><td colspan="7"><div class="home19-empty">None build enregistré pour le moment.</div></td></tr></tbody>
+          <tbody id="home19RecentBuildRows"><tr><td colspan="7"><div class="home19-empty">No build saved yet.</div></td></tr></tbody>
         </table>
       </div>
     </section>
@@ -5921,7 +5921,7 @@ if(!BDO_DOM_READY){
         <p>Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.</p>
       </div>
       <div class="home76-backup-reminder-actions">
-        <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Sauvegarder toutes les données</button>
+        <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Back up all data</button>
         <small>Settings → Backup complète</small>
       </div>
     </section>
@@ -5999,7 +5999,7 @@ if(!BDO_DOM_READY){
           <div class="home75-detail">
             <p>A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.</p>
             <ol><li>Ouvre <b>Transition / Cancel</b>.</li><li>Check the torque <b>A → B</b>.</li><li>Controls duration and frames when available.</li><li>Validates reliable measurements.</li><li>Corrects or removes spurious detections.</li></ol>
-            <p class="home75-tip"><b>A cancel never reduces the duration of the CC.</b> Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.</p>
+            <p class="home75-tip"><b>A cancel never reduces the duration of the CC.</b> It reduces combo execution/chaining time, which may allow more skills during the same control window.</p>
           </div>
         </details>
 
@@ -6025,13 +6025,13 @@ if(!BDO_DOM_READY){
           <summary><span>07</span> Set Optimizer / Auto-Build</summary>
           <div class="home75-detail">
             <p>The page <b>Settings</b> allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.</p>
-            <ol><li>Increases the weight of <b>Speed</b> to favor fast chains.</li><li>Increases the weight of <b>Cancel</b> to favor sequences with a cancel.</li><li>Active <b>Require known transition</b> to prefer candidates whose binding is measured/known.</li><li>Retourne au Builder et compare le score des suggestions.</li></ol>
+            <ol><li>Increases the weight of <b>Speed</b> to favor fast chains.</li><li>Increases the weight of <b>Cancel</b> to favor sequences with a cancel.</li><li>Active <b>Require known transition</b> to prefer candidates whose binding is measured/known.</li><li>Return to the Builder and compare suggestion scores.</li></ol>
             <p class="home75-tip">The score is not just a damage score: it combines player logic and available technical factors. Missing data necessarily limits the precision of the optimization.</p>
           </div>
         </details>
 
         <details id="tuto75-8" open>
-          <summary><span>08</span> Sauvegarder TOUTES les données et les restaurer</summary>
+          <summary><span>08</span> Back up ALL data and restore it</summary>
           <div class="home75-detail">
             <p><b>Important :</b> the button <b>Save ce build</b> of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the <b>Backup complète</b>.</p>
 
@@ -6046,12 +6046,12 @@ if(!BDO_DOM_READY){
             <div class="home76-backup-items">
               <span>Skills added/modified</span>
               <span>Inputs et statistiques</span>
-              <span>Durées CC mesurées</span>
+              <span>Measured CC durations</span>
               <span>Transitions / Cancels</span>
               <span>Video measurements and validations</span>
               <span>Saved combos</span>
               <span>State du Combo Builder</span>
-              <span>Réglages Auto-Build</span>
+              <span>Auto-Build settings</span>
               <span>Skill Add-ons / Loadout</span>
               <span>Data locales BDO Combos Labs</span>
             </div>
@@ -6073,7 +6073,7 @@ if(!BDO_DOM_READY){
               <li>Clique <b>Import a backup</b>.</li>
               <li>Select the file <code>BDO_Combos_Labs_Backup_....json</code>.</li>
               <li>Wait for the confirmation message.</li>
-              <li>Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.</li>
+              <li>Return to Skills, Transition / Cancel and Combo Builder to verify the restored data.</li>
             </ol>
 
             <p class="home75-tip"><b>Account local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Used « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
@@ -6089,7 +6089,7 @@ if(!BDO_DOM_READY){
 
       <div class="home75-checklist">
         <div><span>✓</span><b>Before building</b><small>Class + spec + orientation correctes</small></div>
-        <div><span>✓</span><b>Before optimizing</b><small>Durées CC et transitions importantes mesurées</small></div>
+        <div><span>✓</span><b>Before optimizing</b><small>Important measured CC durations and transitions</small></div>
         <div><span>✓</span><b>Before validating</b><small>CC Timer, CHAIN ​​and statistics controlled</small></div>
         <div><span>✓</span><b>At the end</b><small>Export la sauvegarde complète JSON</small></div>
       </div>
@@ -6177,7 +6177,7 @@ if(!BDO_DOM_READY){
     <div class="combo-header">
       <div>
         <h3>Manual Google Docs import</h3>
-        <div id="manualGoogleDocContext" class="badge">None class sélectionnée</div>
+        <div id="manualGoogleDocContext" class="badge">No class selected</div>
       </div>
     </div>
 
@@ -6252,7 +6252,7 @@ if(!BDO_DOM_READY){
       <div class="skills-page-head">
         <div>
           <h2>Skills</h2>
-          <div id="skillsClassContext" class="badge">None class sélectionnée</div>
+          <div id="skillsClassContext" class="badge">No class selected</div>
         </div>
         <button id="skillsManualAddBtnV72" type="button" class="optimizer-btn" onclick="skillsManualAddV72()">
           + Add une compétence
@@ -6316,7 +6316,7 @@ if(!BDO_DOM_READY){
       <div class="combo-header">
         <div>
           <h2>Class combos</h2>
-          <div id="comboClassContext" class="badge">None class sélectionnée</div>
+          <div id="comboClassContext" class="badge">No class selected</div>
         </div>
         <span class="verified-badge">Validated combos</span>
       </div>
@@ -6337,7 +6337,7 @@ if(!BDO_DOM_READY){
       <div class="combo-header player-combos-header">
         <div>
           <h2>Player combos</h2>
-          <div id="playerCombosContext" class="badge">None class sélectionnée</div>
+          <div id="playerCombosContext" class="badge">No class selected</div>
         </div>
         <div class="community101-header-actions">
           <span id="communityVerifyThresholdBadgeV101" class="community101-threshold-badge">Vérification : 10 Like</span>
@@ -6696,7 +6696,7 @@ if(!BDO_DOM_READY){
           </div>
 
           <div id="timingVideoStatus" class="result small">
-            None vidéo chargée.
+            No video loaded.
           </div>
 
           <video id="timingVideo"
@@ -6894,7 +6894,7 @@ if(!BDO_DOM_READY){
           <h2>Settings</h2>
           <p>Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.</p>
         </div>
-        <div id="settingsClassContext" class="badge settings81-context">None class sélectionnée</div>
+        <div id="settingsClassContext" class="badge settings81-context">No class selected</div>
       </div>
 
       <section class="full-backup-panel-v48">
@@ -6915,7 +6915,7 @@ if(!BDO_DOM_READY){
         <div class="full-backup-options-v48">
           <label class="full-backup-checkbox-v89"><input id="fullBackupReplaceV48" type="checkbox" checked><span>Replace local BDO Combos Labs data during restore</span></label>
         </div>
-        <div id="fullBackupStatusV48" class="optimizer-note">None sauvegarde exportée pendant cette session.</div>
+        <div id="fullBackupStatusV48" class="optimizer-note">No backup exported during this session.</div>
       </section>
 
       <div class="settings81-section-head"><span>01</span><div><h3>Optimization</h3><p>Define the general profile and target type.</p></div></div>
@@ -6967,12 +6967,12 @@ if(!BDO_DOM_READY){
     <span>Usage</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Skills minimum</b><small>Nombre minimum de compétences souhaité dans un combo généré.</small></div>
+    <div class="settings92-name"><b>Skills minimum</b><small>Minimum number of skills desired in a generated combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMinSkills" type="number" min="1" max="30" value="3" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinSkills">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Skills maximum</b><small>Nombre maximum de compétences autorisé dans le combo.</small></div>
+    <div class="settings92-name"><b>Skills maximum</b><small>Maximum number of skills allowed in the combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxSkills" type="number" min="1" max="30" value="8" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxSkills">Automatique</div>
   </div>
@@ -7010,7 +7010,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildAllowReuse">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Max reps. by skill</b><small>Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.</small></div>
+    <div class="settings92-name"><b>Max reps. by skill</b><small>Maximum uses of the same skill when repetition is allowed.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxRepeat" type="number" min="1" max="10" value="1" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxRepeat">Automatique</div>
   </div>
@@ -7029,12 +7029,12 @@ if(!BDO_DOM_READY){
     <span>Usage</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Nombre minimum de CC</b><small>Nombre minimum d’effets CC que l’optimiseur doit rechercher.</small></div>
+    <div class="settings92-name"><b>Minimum CC count</b><small>Nombre minimum d’effets CC que l’optimiseur doit rechercher.</small></div>
     <div class="settings92-control"><input id="autoBuildMinCC" type="number" min="0" max="10" value="0" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinCC">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Nombre maximum de CC</b><small>Nombre maximum d’effets CC autorisés par les contraintes du Builder.</small></div>
+    <div class="settings92-name"><b>Maximum CC count</b><small>Maximum number of CC effects allowed by Builder constraints.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxCC" type="number" min="0" max="10" value="10" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxCC">Automatique</div>
   </div>
@@ -7210,7 +7210,7 @@ if(!BDO_DOM_READY){
         Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
       </div>
 
-      <div class="settings81-section-head"><span>08</span><div><h3>Filtres avancés</h3><p>Controls data quality and stance changes.</p></div></div>
+      <div class="settings81-section-head"><span>08</span><div><h3>Advanced filters</h3><p>Controls data quality and stance changes.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Setting</span>
@@ -8312,7 +8312,7 @@ function renderSkillsPage(){
   const sortEl=document.getElementById('skillsTableSort'); if(sortEl)sortEl.value=SKILLS_TABLE_STATE.sort;
 
   if(!className){
-    context.textContent='Aucune class sélectionnée';content.className='page-placeholder';content.textContent='First select a class.';
+    context.textContent='No class selected';content.className='page-placeholder';content.textContent='First select a class.';
     ['skillsSummaryTotal','skillsSummaryEnabled','skillsSummaryInput','skillsSummaryCombat'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent='0';});
     const ref=document.getElementById('skillsReferenceActive');if(ref)ref.textContent='—';return;
   }
@@ -8984,7 +8984,7 @@ function renderPlayerCombosPage(){
   if(!context || !summary || !list) return;
 
   if(!className){
-    context.textContent = 'Aucune class sélectionnée';
+    context.textContent = 'No class selected';
     summary.innerHTML = '';
     list.innerHTML =
       '<div class="page-placeholder">Sélectionne une class dans l’onglet Class.</div>';
@@ -9119,7 +9119,7 @@ function renderPlayerCombosPage(){
     const append = document.createElement('button');
     append.type = 'button';
     append.className = 'tab-btn';
-    append.textContent = 'Ajouter à la suite';
+    append.textContent = 'Add next';
     append.onclick = () => loadPlayerComboIntoBuilder(realIndex,true);
 
     actions.append(load,append);
@@ -9219,7 +9219,7 @@ function renderComboPage(){
   if(!context || !content) return;
 
   if(!className){
-    context.textContent = 'Aucune class sélectionnée';
+    context.textContent = 'No class selected';
     content.className = 'page-placeholder';
     content.textContent = 'Sélectionne d’abord une class dans l’onglet Class.';
     return;
@@ -9780,7 +9780,7 @@ async function importFullBackupV48(file){
     console.error('Full backup import failed',err);
     if(status){
       status.className='optimizer-note status-bad';
-      status.textContent=`Import failed: ${err?.message||err}`;
+      status.textContent=`Import impossible : ${err?.message||err}`;
     }
   }
 }
@@ -9815,7 +9815,7 @@ function resetAutoBuildSettings(){
   applyAutoBuildSettingsToUI();
   try{ localStorage.setItem('bdoCombosLabs.autoBuildSettings',JSON.stringify(AUTO_BUILD_SETTINGS)); }catch(e){ bdoDebugError('Suppressed runtime error', e); }
   const status = document.getElementById('settingsStatus');
-  if(status) status.textContent = 'Réglages Auto-Build réinitialisés.';
+  if(status) status.textContent = 'Auto-Build settings reset.';
 }
 
 function optimizerModeLabel(mode){
@@ -10482,7 +10482,7 @@ function renderManualGoogleDocContext(){
   const cls=document.getElementById('classSelector')?.value||'';
   const spec=document.getElementById('specSelector')?.value||'Awakening';
   const el=document.getElementById('manualGoogleDocContext');
-  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'Aucune class sélectionnée';
+  if(el)el.textContent=cls?`Class: ${cls} · ${spec}`:'No class selected';
 }
 
 function normalizeGuideFetchUrl(url){
@@ -10592,7 +10592,7 @@ async function fetchGoogleDocText(originalUrl){
 
   throw new Error(
     'Impossible de lire ce document. Vérifie qu’il est accessible à toute personne disposant du lien. ' +
-    (errors.length ? `Details: ${errors.slice(0,3).join(' | ')}` : '')
+    (errors.length ? `Détails: ${errors.slice(0,3).join(' | ')}` : '')
   );
 }
 
@@ -15224,13 +15224,13 @@ function autoPopulateSkillsFromReferenceV13(){
     return;
   }
   if(typeof guideReferenceForCurrentClassV10!=='function'){
-    setStatus('Aucun moteur de dictionnaire de référence n’est disponible.','bad');
+    setStatus('No reference dictionary engine is available.','bad');
     return;
   }
 
   const refs=guideReferenceForCurrentClassV10();
   if(!refs.length){
-    setStatus(`None dictionnaire de référence disponible pour ${cls} · ${spec}.`,'warn');
+    setStatus(`No reference dictionary available for ${cls} · ${spec}.`,'warn');
     return;
   }
 
@@ -20396,13 +20396,13 @@ function oldRenderCrystals(){
     }else{
       const m=p.mods||{};
       const aggregate=[];
-      if(m.ap) aggregate.push(`Hidden AP +${m.ap}`);
+      if(m.ap) aggregate.push(`AP caché +${m.ap}`);
       if(m.monsterAP) aggregate.push(`AP monstre +${m.monsterAP}`);
-      if(m.humanDamage) aggregate.push(`Human damage +${m.humanDamage}`);
+      if(m.humanDamage) aggregate.push(`Dégâts humains +${m.humanDamage}`);
       if(m.accuracy) aggregate.push(`Accuracy +${m.accuracy}`);
-      if(m.critDmgPct) aggregate.push(`Critical damage +${m.critDmgPct}%`);
+      if(m.critDmgPct) aggregate.push(`Dégâts critiques +${m.critDmgPct}%`);
       if(m.backDmgPct) aggregate.push(`Back Attack +${m.backDmgPct}%`);
-      if(m.specialPct) aggregate.push(`Special damage +${m.specialPct}%`);
+      if(m.specialPct) aggregate.push(`Dégâts spéciaux +${m.specialPct}%`);
       if(m.atkSpeedPct) aggregate.push(`Vitesse attaque +${m.atkSpeedPct}%`);
       if(m.castingSpeedPct) aggregate.push(`Vitesse incantation +${m.castingSpeedPct}%`);
 
@@ -21613,7 +21613,7 @@ async function autoAnalyzeLocalVideoV43(){
     }
   }catch(err){
     console.error('Automatic video analysis failed',err);
-    if(status)status.textContent=`Automatic analysis failed: ${err?.message||err}`;
+    if(status)status.textContent=`Analyse automatique impossible : ${err?.message||err}`;
   }finally{
     VIDEO_AUTO_STATE_V43.running=false;
     VIDEO_AUTO_STATE_V43.paused=false;
@@ -22019,7 +22019,7 @@ function measureAutoCCV49(){
   if(status){
     status.textContent=rows.length
       ? `${rows.length} proposed CC measure(s). You can save them now (auto status) or validate/correct them first.`
-      : 'Aucun CC mesurable automatiquement dans les segments résolus.';
+      : 'No automatically measurable CC in resolved segments.';
   }
   return rows;
 }
@@ -22206,7 +22206,7 @@ function saveAutoCCV49(){
     .filter(x=>String(x.reviewStatus||'pending')!=='rejected');
 
   if(!rows.length){
-    if(status)status.textContent='Aucune mesure CC détectée à enregistrer.';
+    if(status)status.textContent='No detected CC measurement to save.';
     return;
   }
 
@@ -22838,7 +22838,7 @@ function renderHomeDashboardV18(){
   let refs=[];try{refs=typeof guideReferenceForCurrentClassV10==='function'?guideReferenceForCurrentClassV10():[]}catch(e){refs=[]}
   const enabled=skills.filter(s=>s?.enabled!==false).length;
   const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val};
-  set('home18Context',cls?`${cls} · ${spec}`:'Aucune class sélectionnée');
+  set('home18Context',cls?`${cls} · ${spec}`:'No class selected');
   set('home18Reference',refs.length?`Active reference · ${refs.length} entrées`:'Reference: none for this context');
   set('home18Skills',skills.length); set('home18SkillsSub',`${enabled} activé${enabled>1?'s':''}`);
   set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entries available':'no entries');
@@ -22871,7 +22871,7 @@ function renderHomeDashboardV18(){
     if(!transitions.length) recs.push(['Add transitions','No validated cancel/transition','transitionPage','Transitions']);
     else if(timingCoverage<60) recs.push(['Measure timings',`${measured}/${transitions.length} transitions ont une mesure`,'youtubeAnalyzerPage','Vidéo']);
   }
-  if(!recs.length) recs.push(['Continuer l’optimisation','The main database is well informed','builderPage','Ouvrir Builder']);
+  if(!recs.length) recs.push(['Continuer l’optimisation','The main database is well informed','builderPage','Open Builder']);
   const r=document.getElementById('home18Recommendations');
   if(r)r.innerHTML=recs.slice(0,4).map((x,i)=>`<div class="home18-rec"><span class="home18-rec-index">${String(i+1).padStart(2,'0')}</span><div><b>${escapeHtmlText(x[0])}</b><small>${escapeHtmlText(x[1])}</small></div><button type="button" class="tab-btn" onclick="showPage('${x[2]}',document.querySelector('[data-page=${x[2]}]'));${x[2]==='skillsPage'?'renderSkillsPage()':x[2]==='builderPage'?'renderComboBuilder()':x[2]==='transitionPage'?'renderTransitionPage()':x[2]==='youtubeAnalyzerPage'?'renderYouTubeAnalyzer()':''}">${x[3]}</button></div>`).join('');
   const d=document.getElementById('home18Diagnostics');
@@ -23002,7 +23002,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <div class="account79-form">
         <div class="account79-row account79-row-two">
           <div class="account79-field">
-            <label for="accountRegisterNameV78">Name d’utilisateur</label>
+            <label for="accountRegisterNameV78">Username</label>
             <input id="accountRegisterNameV78" type="text" maxlength="32" autocomplete="username" placeholder="Ton pseudo">
           </div>
           <div class="account79-field">
@@ -23043,13 +23043,13 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <span class="account78-kicker">MY PROFILE</span>
       <div class="account78-profile-title"><span id="accountProfileAvatarV78" class="account78-big-avatar">U</span><div><h2 id="accountProfileNameV78">User</h2><p id="accountProfileEmailV78">—</p></div></div>
       <div class="account78-profile-grid">
-        <div><span>Account créé</span><strong id="accountCreatedV78">—</strong></div>
+        <div><span>Account created</span><strong id="accountCreatedV78">—</strong></div>
         <div><span>Last connection</span><strong id="accountLastLoginV78">—</strong></div>
         <div><span>Last backup</span><strong id="accountLastSaveV78">—</strong></div>
         <div><span>Mode</span><strong>Account local</strong></div>
       </div>
       <div class="account78-profile-actions">
-        <button type="button" class="optimizer-btn" onclick="accountSaveWorkspaceV78(true)">Sauvegarder mes données</button>
+        <button type="button" class="optimizer-btn" onclick="accountSaveWorkspaceV78(true)">Back up my data</button>
         <button type="button" class="tab-btn" onclick="exportFullBackupV48()">Export JSON complet</button>
         <button type="button" class="tab-btn" onclick="switchAccountViewV78('password')">Change password</button>
         <button type="button" class="tab-btn account78-danger" onclick="deleteAccountV78()">Delete mon compte</button>
@@ -23124,7 +23124,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <button type="button" class="tab-btn" onclick="downloadBugReportV77()">Download the report</button>
       <button type="button" class="tab-btn" onclick="clearBugReportV77()">To erase</button>
     </div>
-    <div id="bug77Status" class="bug77-status">None rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.</div>
+    <div id="bug77Status" class="bug77-status">No report is sent automatically: the file or text must be sent to the developer.</div>
   </div>
 </div>
 
@@ -23192,7 +23192,7 @@ function accountSaveWorkspaceV78(showStatus=false){
   if(u){u.lastSaveAt=backup.savedAt;accountSaveDBV78(db)}
   ACCOUNT_ACTIVE_V78=u||user;
   renderAccountHeaderV78();
-  if(showStatus)accountStatusV78('Données du compte sauvegardées localement.','good');
+  if(showStatus)accountStatusV78('Account data saved locally.','good');
   return true;
 }
 function accountClearProjectStorageV78(){
@@ -23232,7 +23232,7 @@ async function registerAccountV78(){
   if(importCurrent){
     accountSaveWorkspaceV78(false);
     renderAccountHeaderV78();
-    accountStatusV78('Compte créé. Tes données actuelles sont associées à ce profil.','good');
+    accountStatusV78('Account created. Your current data is linked to this profile.','good');
     setTimeout(closeAccountModalV78,700);
   }else{
     ACCOUNT_SUPPRESS_AUTOSAVE_V88=true;
@@ -23242,7 +23242,7 @@ async function registerAccountV78(){
     );
     accountClearProjectStorageV78();
     renderAccountHeaderV78();
-    accountStatusV78('Compte créé avec un espace de travail vide. Rechargement…','good');
+    accountStatusV78('Account created with an empty workspace. Reloading…','good');
     setTimeout(()=>location.reload(),450);
   }
 }
@@ -24290,7 +24290,7 @@ function communityPatternsForContextV101(className,spec){
       seq:communityNormalizeSequenceV101(c.sequence),
       type:'PLAYER COMBO',
       confidence:c.communityVerified?'community-verified':'community-shared',
-      sourceTag:`Shared by ${c.author||'Player'}`,
+      sourceTag:`Partagé par ${c.author||'Joueur'}`,
       note:c.note||'Combo shared by a player.',
       ownerClass:c.className,
       ownerSpec:c.spec,
@@ -24388,7 +24388,7 @@ function shareCurrentBuilderComboV101(){
   }
 
   const suggested=`${className} · ${sequence.slice(0,3).join(' → ')}${sequence.length>3?'…':''}`;
-  const name=(prompt('Nom du combo partagé :',suggested)||'').trim();
+  const name=(prompt('Shared combo name:',suggested)||'').trim();
   if(!name)return;
 
   const combatMode=String(
@@ -24808,7 +24808,7 @@ async function bclCloudShareV107(){
   const cls=bclCloudClassV107(), spec=bclCloudSpecV107(), seq=bclCloudSequenceV107();
   if(!cls){bclCloudStatusV107('Select a class before sharing.','error');return}
   if(!seq.length){bclCloudStatusV107('Adds at least one skill to the combo.','error');return}
-  const name=(prompt('Nom du combo partagé :','Combo '+cls)||'').trim();
+  const name=(prompt('Shared combo name:','Combo '+cls)||'').trim();
   if(!name)return;
   const {error}=await sb.from('shared_combos').insert({
     user_id:user.id,class_name:cls,specialization:spec,name,
@@ -25296,10 +25296,10 @@ window.registerAccountV78=async function(){
     ACCOUNT_ACTIVE_V78=bclCloudAccountObjectV108(data.user);
     if(document.getElementById('accountRegisterImportCurrentV78')?.checked!==false)accountSaveWorkspaceV78(false);
     renderAccountHeaderV78();
-    accountStatusV78('Compte cloud créé et connecté.','good');
+    accountStatusV78('Cloud account created and signed in.','good');
     setTimeout(()=>{closeAccountModalV78();bclSharedPushV108()},650);
   }else{
-    accountStatusV78('Compte créé. Vérifie ton e-mail puis connecte-toi.','good');
+    accountStatusV78('Account created. Check your email, then sign in.','good');
   }
 };
 
@@ -25308,9 +25308,9 @@ window.loginAccountV78=async function(){
   const email=document.getElementById('accountLoginIdentityV78')?.value.trim().toLowerCase()||'';
   const pass=document.getElementById('accountLoginPasswordV78')?.value||'';
   if(!email.includes('@'))return accountStatusV78('Utilise ton adresse e-mail pour te connecter.','bad');
-  accountStatusV78('Connexion cloud…');
+  accountStatusV78('Cloud sign-in…');
   const {data,error}=await sb.auth.signInWithPassword({email,password:pass});
-  if(error)return accountStatusV78('Connexion impossible : '+error.message,'bad');
+  if(error)return accountStatusV78('Sign in failed: '+error.message,'bad');
   BCL_CLOUD_USER_V107=data.user;
   ACCOUNT_ACTIVE_V78=bclCloudAccountObjectV108(data.user);
   renderAccountHeaderV78();
@@ -25542,7 +25542,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,18
 <script id="bcl-safe-i18n-v112">
 (function(){
 const STORAGE_KEY='bdoCombosLabs.language.v112';
-const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Create an account','account.profile':'My profile','account.saveNow':'Sauvegarder maintenant','account.changePassword':'Change password','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Class combos','nav.playerCombos':'Player combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
+const dict={fr:{'header.localLab':'Local Lab','header.language':'Langue','account.login':'Connexion','account.register':'Create an account','account.profile':'My profile','account.saveNow':'Back up now','account.changePassword':'Change password','account.logout':'Déconnexion','nav.home':'Accueil','nav.class':'Classe','nav.skills':'Compétences','nav.classCombos':'Class combos','nav.playerCombos':'Player combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 en:{'header.localLab':'Local Lab','header.language':'Language','account.login':'Sign in','account.register':'Create account','account.profile':'My profile','account.saveNow':'Save now','account.changePassword':'Change password','account.logout':'Sign out','nav.home':'Home','nav.class':'Class','nav.skills':'Skills','nav.classCombos':'Class Combos','nav.playerCombos':'Player Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video Analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Settings'},
 de:{'header.localLab':'Local Lab','header.language':'Sprache','account.login':'Anmelden','account.register':'Konto erstellen','account.profile':'My Profile','account.saveNow':'Jetzt speichern','account.changePassword':'Passwort ändern','account.logout':'Abmelden','nav.home':'Start','nav.class':'Klasse','nav.skills':'Skills','nav.classCombos':'Klassen-Combos','nav.playerCombos':'Spieler-Combos','nav.transitions':'Transition / Cancel','nav.videoAnalyzer':'Video-Analyse','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Einstellungen'},
 es:{'header.localLab':'Local Lab','header.language':'Idioma','account.login':'Iniciar sesión','account.register':'Crear cuenta','account.profile':'Mi perfil','account.saveNow':'Guardar ahora','account.changePassword':'Cambiar contraseña','account.logout':'Cerrar sesión','nav.home':'Inicio','nav.class':'Clase','nav.skills':'Habilidades','nav.classCombos':'Class Combos','nav.playerCombos':'Jugadores Combos','nav.transitions':'Transición / Cancel','nav.videoAnalyzer':'Video analyzer','nav.addons':'Skill Add-ons','nav.builder':'Combo Builder','nav.settings':'Ajustes'},
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
