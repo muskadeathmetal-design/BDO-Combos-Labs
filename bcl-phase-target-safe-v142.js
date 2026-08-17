@@ -1,0 +1,12 @@
+(()=>{'use strict';
+const ORDER=['engagement','setup','cc','burst','finish'];const LABEL={engagement:'Engagement',setup:'Setup',cc:'CC',burst:'Burst',finish:'Finish'};
+const norm=v=>String(v??'').toLowerCase();
+function ctx(){const cls=document.getElementById('classSelector')?.value||'',spec=document.getElementById('specSelector')?.value||'Awakening';return{cls,spec,key:`${cls}::${spec}`}}
+function sequence(){const {key}=ctx();try{return Array.isArray(BUILDER_STATE?.[key])?[...BUILDER_STATE[key]]:[]}catch(e){return[]}}
+function skills(){const {cls,spec}=ctx();try{return Array.isArray(CLASS_SKILLS?.[cls]?.[spec])?CLASS_SKILLS[cls][spec]:[]}catch(e){return[]}}
+function phase(s){const r=norm(s?.role);if(/opener|mobility|engage|catch/.test(r))return'engagement';if(/bridge|setup|resource|protected|buff|debuff/.test(r))return'setup';if(/\bcc\b|control/.test(r)||(Array.isArray(s?.cc)&&s.cc.length))return'cc';if(/finisher|finish|execute/.test(r))return'finish';if(/damage|burst|dps/.test(r))return'burst';return null}
+function target(){const names=sequence(),map=new Map(skills().map(s=>[String(s?.name||s),s]));if(!names.length)return'engagement';let furthest=-1;for(const n of names){const p=phase(map.get(n));const i=ORDER.indexOf(p);if(i>furthest)furthest=i}if(furthest<0)return'engagement';return ORDER[Math.min(ORDER.length-1,furthest+1)]}
+function render(){const badge=document.getElementById('builderSuggestedPhase');if(!badge)return;const t=target();badge.textContent=`Phase cible: ${LABEL[t]}`;badge.dataset.safePhaseTarget='1'}
+function boot(){render();let timer=null;const page=document.getElementById('builderPage');if(page)new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(render,80)}).observe(page,{childList:true,subtree:true,characterData:true});document.getElementById('classSelector')?.addEventListener('change',()=>setTimeout(render,50));document.getElementById('specSelector')?.addEventListener('change',()=>setTimeout(render,50));window.BCL_PHASE_TARGET_SAFE_V142={refresh:render}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,350),{once:true});else setTimeout(boot,350);
+})();
