@@ -7,10 +7,33 @@ const I18N_FILE = 'bcl-i18n-v115-master.js';
 
 function loadMaps() {
   const js = fs.readFileSync(I18N_FILE, 'utf8');
-  const match = js.match(/const maps=(\{[\s\S]*?\});\nconst excluded=/);
-  if (!match) throw new Error('Unable to extract locale maps from ' + I18N_FILE);
-  // The captured value is a plain object literal made only of translation strings.
-  return Function('"use strict"; return (' + match[1] + ');')();
+  const marker = 'const maps=';
+  const start = js.indexOf(marker);
+  if (start < 0) throw new Error('Unable to find locale maps in ' + I18N_FILE);
+  const objectStart = js.indexOf('{', start + marker.length);
+  if (objectStart < 0) throw new Error('Unable to find locale map object start');
+  let depth = 0;
+  let quote = null;
+  let escaped = false;
+  let objectEnd = -1;
+  for (let i = objectStart; i < js.length; i++) {
+    const ch = js[i];
+    if (quote) {
+      if (escaped) { escaped = false; continue; }
+      if (ch === '\\') { escaped = true; continue; }
+      if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'" || ch === '`') { quote = ch; continue; }
+    if (ch === '{') depth++;
+    else if (ch === '}') {
+      depth--;
+      if (depth === 0) { objectEnd = i + 1; break; }
+    }
+  }
+  if (objectEnd < 0) throw new Error('Unable to find locale map object end');
+  const literal = js.slice(objectStart, objectEnd);
+  return Function('"use strict"; return (' + literal + ');')();
 }
 
 function removeDynamicI18n(html) {
@@ -20,7 +43,6 @@ function removeDynamicI18n(html) {
     .replace(/<script[^>]*src=["'][^"']*bcl-i18n-v115-master\.js[^"']*["'][^>]*><\/script>\s*/gi, '');
 }
 
-// Values which must never be localized. The user explicitly requested these to remain untouched.
 const PROTECTED = [
   'Stun','Stiffness','Knockdown','Bound','Float','Knockback','Grab','Freeze',
   'Down Smash','Air Smash','Super Armor','Forward Guard','Invincible','Iframe',
@@ -60,7 +82,6 @@ function translateSource(source, locale, maps) {
 }
 
 function addStaticRouter(html, locale) {
-  // Remove previous V116 router if this builder is run again.
   html = html.replace(/<script id=["']bcl-static-locale-router["'][\s\S]*?<\/script>\s*/gi, '');
   const script = `\n<script id="bcl-static-locale-router">\n(function(){\n  'use strict';\n  var current=${JSON.stringify(locale)};\n  document.documentElement.lang=current;\n  try { localStorage.setItem('bcl_language', current); localStorage.setItem('bclLanguage', current); } catch(e) {}\n  function bind(){\n    var select=document.getElementById('bclLanguageSelect');\n    if(!select) return;\n    select.value=current;\n    select.addEventListener('change',function(ev){\n      var next=ev.target.value;\n      if(!/^(fr|en|de|es|it|pt)$/.test(next) || next===current) return;\n      try { localStorage.setItem('bcl_language', next); localStorage.setItem('bclLanguage', next); } catch(e) {}\n      var suffix=(location.search||'')+(location.hash||'');\n      location.href='/' + next + '/' + suffix;\n    }, true);\n  }\n  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true}); else bind();\n})();\n</script>\n`;
   return html.replace(/<\/body>/i, script + '</body>');
@@ -89,7 +110,6 @@ function main() {
     fs.writeFileSync(path.join(dir, 'index.html'), page, 'utf8');
   }
 
-  // Root becomes a tiny redirect only. All real application versions are static per-language pages.
   const root = `<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDO Combos Labs · V116</title></head><body><script>(function(){var l='fr';try{var s=localStorage.getItem('bcl_language')||localStorage.getItem('bclLanguage');if(/^(fr|en|de|es|it|pt)$/.test(s))l=s;}catch(e){}location.replace('/'+l+'/'+(location.search||'')+(location.hash||''));})();</script><noscript><a href="/fr/">Ouvrir BDO Combos Labs</a></noscript></body></html>\n`;
   fs.writeFileSync(BASE_FILE, root, 'utf8');
 
