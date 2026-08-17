@@ -5,7 +5,8 @@ const locales = ['en','de','es','it','pt'];
 const sourceCache = 'bcl-static-auto-translations-v116.json';
 const sharedPatchFiles = [
   path.join('translations','common-v116.json'),
-  path.join('translations','common-v116-dynamic.json')
+  path.join('translations','common-v116-dynamic.json'),
+  path.join('translations','auto-complete-visible-v116.json')
 ];
 const outputCache = 'bcl-static-prepared-translations-v116.json';
 
@@ -22,8 +23,7 @@ for (const locale of locales) {
   prepared[locale] = {};
 
   // V116 now translates only visible HTML text/attributes. Script/style code is
-  // protected by the builder, so the old code-shaped-entry filter is no longer
-  // needed for this UI cache and was discarding many valid translations.
+  // protected by the builder, so all cached UI translations can be reused safely.
   for (const [from, to] of Object.entries(existing[locale] || {})) {
     if (!from || !to) continue;
     prepared[locale][from] = to;
@@ -50,4 +50,4 @@ for (const locale of locales) {
 }
 
 fs.writeFileSync(outputCache, JSON.stringify(prepared, null, 2), 'utf8');
-console.log('Prepared V116 visible-UI translation cache with full auto cache + shared + locale patches.');
+console.log('Prepared V116 visible-UI translation cache with full auto cache + shared + auto-completed + locale patches.');
