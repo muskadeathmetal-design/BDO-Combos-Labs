@@ -5,6 +5,7 @@ const cp = require('child_process');
 const LOCALES = ['fr','en','de','es','it','pt'];
 const ROOT_FILE = 'index.html';
 const CURRENT_I18N_FILE = 'bcl-i18n-v115-master.js';
+const AUTO_I18N_FILE = 'bcl-static-auto-translations-v116.json';
 const LEGACY_V113_REF = '03ed2d779fc4a0327e87f88700c0b9e905670983';
 const LEGACY_V113_PATH = 'bcl-full-ui-i18n-v113.js';
 
@@ -48,8 +49,6 @@ function loadLegacyV113Exact() {
   const exactObj = extractObjectLiteral(js, 'const exact=');
   const exact = evalObject(exactObj.text);
 
-  // V113 added a second large layer with Object.assign(exact.xx,{...}).
-  // Reuse those dictionaries at BUILD TIME only; no V113 runtime code is restored.
   let pos = exactObj.end;
   const stop = js.indexOf('const fallbackWords=', pos);
   const limit = stop >= 0 ? stop : js.length;
@@ -68,13 +67,24 @@ function loadLegacyV113Exact() {
   return exact;
 }
 
+function loadAutoMaps() {
+  if (!fs.existsSync(AUTO_I18N_FILE)) return {};
+  try {
+    const parsed = JSON.parse(fs.readFileSync(AUTO_I18N_FILE, 'utf8'));
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch (e) {
+    throw new Error('Invalid ' + AUTO_I18N_FILE + ': ' + e.message);
+  }
+}
+
 function loadMaps() {
   const current = loadCurrentMaps();
   const legacy = loadLegacyV113Exact();
+  const auto = loadAutoMaps();
   const merged = {};
   for (const locale of LOCALES) {
     if (locale === 'fr') continue;
-    merged[locale] = Object.assign({}, current[locale] || {}, legacy[locale] || {});
+    merged[locale] = Object.assign({}, current[locale] || {}, legacy[locale] || {}, auto[locale] || {});
   }
   return merged;
 }
@@ -146,7 +156,6 @@ function validate(page, locale) {
 }
 
 function sourceApplication() {
-  // Once V116 exists, root/index.html is only a redirect. FR remains the canonical full source.
   const candidates = [path.join('fr','index.html'), ROOT_FILE];
   for (const file of candidates) {
     if (!fs.existsSync(file)) continue;
@@ -172,7 +181,7 @@ function main() {
 
   const root = `<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDO Combos Labs · V116</title></head><body><script>(function(){var l='fr';try{var s=localStorage.getItem('bcl_language')||localStorage.getItem('bclLanguage');if(/^(fr|en|de|es|it|pt)$/.test(s))l=s;}catch(e){}location.replace('/'+l+'/'+(location.search||'')+(location.hash||''));})();</script><noscript><a href="/fr/">Ouvrir BDO Combos Labs</a></noscript></body></html>\n`;
   fs.writeFileSync(ROOT_FILE, root, 'utf8');
-  console.log('V116 static locales rebuilt with merged V113+V115 dictionaries:', LOCALES.join(', '));
+  console.log('V116 static locales rebuilt with V113+V115+auto dictionaries:', LOCALES.join(', '));
 }
 
 main();
