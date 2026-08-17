@@ -1,15 +1,14 @@
-V116 de visible French residual candidates: 13
+V116 de visible French residual candidates: 12
 
 8 caractères minimum
 Bewahren Sie die Ressource
 Décris ce que l’application aurait dû faire...
 Geschätzte maximale Dauer(n)
-Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Spieler-Combos et rejoint Klassen-Combos.
 Maximale Anzahl an Wiederholungen. nach Können
 Maximale Anzahl der Verwendungen derselben Fertigkeit, wenn Wiederholungen zulässig sind.
 Maximale Fähigkeiten
 Maximale geschätzte Dauer, die für die gesamte Sequenz akzeptiert wird.
 Maximale Ressourcenkosten
 Nom, input, effet, CC, protection…
+Optimizer folgt der Reihenfolge Engage → Setup → CC → Burst → Finisher und berücksichtigt gemessene Transition-Dauern. Eine deaktivierte Phase wird ignoriert. Das Limit gibt die maximale Anzahl an Skills in dieser Phase an.
 Répète le mot de passe
-Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la classe active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
