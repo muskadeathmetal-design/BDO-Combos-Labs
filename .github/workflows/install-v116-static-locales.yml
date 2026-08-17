@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tools/build-static-locales-v116.js'
+      - 'tools/prepare-static-translation-patches-v116.js'
       - 'bcl-static-auto-translations-v116.json'
       - 'translations/**.json'
       - '.github/workflows/install-v116-static-locales.yml'
@@ -21,6 +22,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Prepare safe translation patches
+        run: node tools/prepare-static-translation-patches-v116.js
 
       - name: Build static language versions
         run: node tools/build-static-locales-v116.js
