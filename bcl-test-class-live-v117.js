@@ -9,4 +9,5 @@ load('/bcl-analysiscore-builder-v129.js?v=132','bcl-analysiscore-builder-v132');
 load('/bcl-combo-setup-v134.js?v=134','bcl-combo-setup-v134');
 load('/bcl-combo-builder-v135.js?v=136','bcl-combo-builder-v136');
 load('/bcl-builder-phase-target-v137.js?v=137','bcl-builder-phase-target-v137');
+load('/bcl-combat-profile-v138.js?v=138','bcl-combat-profile-v138');
 })();
