@@ -12,7 +12,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>BDO Combos Labs · V110</title>
+<title>BDO Combos Labs · V111</title>
 <style>
 :root{
   --bg:#0b0f14;
@@ -25460,6 +25460,36 @@ async function bclSharedInitV108(){
 }
 
 if(typeof bdoOnReady==='function')bdoOnReady(()=>setTimeout(bclSharedInitV108,180));
+</script>
+
+<!-- BCL V111 LIVE REFRESH FIX -->
+<script>
+(function(){
+  let refreshTimer=0,lastRefresh=0;
+  function refreshBclUIV111(){
+    clearTimeout(refreshTimer);
+    refreshTimer=setTimeout(function(){
+      const now=Date.now(); if(now-lastRefresh<250)return; lastRefresh=now;
+      try{if(typeof syncActiveContextV105==='function')syncActiveContextV105(true);}catch(e){}
+      try{if(typeof syncSettingsClassContext==='function')syncSettingsClassContext();}catch(e){}
+      ['renderClassStats','renderSkillsPage','renderComboPage','renderPlayerCombosPage','renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'].forEach(function(name){
+        try{const fn=window[name];if(typeof fn==='function')fn();}catch(e){}
+      });
+      try{if(typeof renderAuthUI==='function')renderAuthUI();else if(typeof updateAuthUI==='function')updateAuthUI();}catch(e){}
+    },80);
+  }
+  window.bclRefreshUIV111=refreshBclUIV111;
+  window.addEventListener('pageshow',refreshBclUIV111);
+  window.addEventListener('focus',refreshBclUIV111);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)refreshBclUIV111();});
+  document.addEventListener('DOMContentLoaded',function(){
+    refreshBclUIV111();
+    setTimeout(refreshBclUIV111,500);
+    setTimeout(refreshBclUIV111,1500);
+    setTimeout(refreshBclUIV111,3500);
+  });
+  setInterval(function(){if(!document.hidden)refreshBclUIV111();},3000);
+})();
 </script>
 
 </body>
