@@ -3,7 +3,7 @@ const path = require('path');
 
 const locales = ['en','de','es','it','pt'];
 const sourceCache = 'bcl-static-auto-translations-v116.json';
-const outputCache = 'bcl-static-auto-translations-v116.json';
+const outputCache = 'bcl-static-prepared-translations-v116.json';
 
 function readJson(file, fallback = {}) {
   if (!fs.existsSync(file)) return fallback;
@@ -43,4 +43,4 @@ for (const locale of locales) {
 }
 
 fs.writeFileSync(outputCache, JSON.stringify(safe, null, 2), 'utf8');
-console.log('Prepared safe V116 translation cache with explicit patches applied last.');
+console.log('Prepared temporary V116 translation cache with explicit patches applied last.');
