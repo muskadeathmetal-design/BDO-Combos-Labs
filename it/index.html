@@ -6182,7 +6182,8 @@ if(!BDO_DOM_READY){
     </div>
 
     <p class="note">
-      Puoi incollare il collegamento da un documento/foglio Google pubblico o caricare un file esportato da Google Documenti. Il documento viene prima analizzato indipendentemente dalla Libreria delle Competenze: vengono estratti i nomi presenti nelle stringhe esplicite, poi aggiunti alle Competenze della classe attiva se non esistono ancora. Successivamente vengono importate le combo e le transizioni.
+      Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs.
+      Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la classe active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
     </p>
 
     <div class="toolbar old-doc-toolbar" style="margin-top:8px">
@@ -6269,7 +6270,7 @@ if(!BDO_DOM_READY){
       <div class="skills-control-bar skills95-control-bar">
         <div class="skills-search-field">
           <label for="skillsTableSearch">Cerca</label>
-          <input id="skillsTableSearch" type="text" placeholder="Nom, input, effet, CC, protection…" oninput="skillsTableSetSearch(this.value)">
+          <input id="skillsTableSearch" type="text" placeholder="Nome, input, effetto, CC, protezione…" oninput="skillsTableSetSearch(this.value)">
         </div>
         <label class="skills-check-control">
           <input id="skillsTableEnabledOnly" type="checkbox" onchange="skillsTableToggleEnabledOnly(this.checked)">
@@ -6345,7 +6346,8 @@ if(!BDO_DOM_READY){
       </div>
 
       <p class="player-combos-intro">
-        Le combo condivise dai giocatori rimangono qui durante la fase di votazione. Quando una combo raggiunge la soglia della community, viene automaticamente verificata, abbandona le combo giocatore e si unisce alle combo classe.
+        Les combos partagés par les joueurs restent ici pendant leur phase de vote.
+        Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combo dei giocatori et rejoint Combo di classe.
       </p>
 
       <div id="playerCombosSummary" class="player-combos-summary"></div>
@@ -7203,7 +7205,7 @@ if(!BDO_DOM_READY){
 </div>
 
       <div class="optimizer-note" style="margin-top:8px">
-        Optimizer seguirà l’ordine Engage → Setup → CC → Burst → Finisher e terrà conto delle durate misurate delle transizioni. Una fase disattivata viene ignorata. Il limite indica il numero massimo di skill consentite in quella fase.
+        L'ottimizzatore rispetterà l'ordine: Engage → Setup → CC → Burst → Finisher e terrà conto delle durate misurate delle transizioni. Una fase disattivata viene ignorata. Il limite indica il numero massimo di abilità consentite in questa fase.
       </div>
 
       <div class="settings81-section-head"><span>08</span><div><h3>Filtres avancés</h3><p>Controlla la qualità dei dati e i cambiamenti di posizione.</p></div></div>
@@ -23010,11 +23012,11 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <div class="account79-row account79-row-two">
           <div class="account79-field">
             <label for="accountRegisterPasswordV78">Password</label>
-            <input id="accountRegisterPasswordV78" type="password" minlength="8" autocomplete="new-password" placeholder="8 caractères minimum">
+            <input id="accountRegisterPasswordV78" type="password" minlength="8" autocomplete="new-password" placeholder="Minimo 8 caratteri">
           </div>
           <div class="account79-field">
             <label for="accountRegisterConfirmV78">Conferma password</label>
-            <input id="accountRegisterConfirmV78" type="password" minlength="8" autocomplete="new-password" placeholder="Répète le mot de passe">
+            <input id="accountRegisterConfirmV78" type="password" minlength="8" autocomplete="new-password" placeholder="Ripeti la password">
           </div>
         </div>
 
@@ -23106,7 +23108,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       </div>
       <div class="bug77-field full">
         <label for="bug77Expected">Quale comportamento ci si aspettava?</label>
-        <textarea id="bug77Expected" placeholder="Décris ce que l’application aurait dû faire..."></textarea>
+        <textarea id="bug77Expected" placeholder="Descrivi cosa avrebbe dovuto fare l’applicazione..."></textarea>
       </div>
       <div class="bug77-field full">
         <label for="bug77Steps">Étapes pour reproduire</label>
@@ -25554,6 +25556,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

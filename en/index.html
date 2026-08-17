@@ -6182,7 +6182,7 @@ if(!BDO_DOM_READY){
     </div>
 
     <p class="note">
-      You can paste a public Google Doc/Sheet link or load a file exported from Google Docs. The document is first analyzed independently of the Skill Library: names found in explicit chains are extracted, then added to the active class Skills if they do not already exist. Combos and transitions are imported afterward.
+      You can paste the link from a public Google Doc/Sheet or upload a file exported from Google Docs. The document is first analyzed independently of the Skill Library: the names present in the explicit strings are extracted, then added to the Skills of the active class if they do not yet exist. The combos and transitions are imported next.
     </p>
 
     <div class="toolbar old-doc-toolbar" style="margin-top:8px">
@@ -6345,7 +6345,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <p class="player-combos-intro">
-        Player-shared combos remain here during voting. When a combo reaches the community threshold, it is automatically verified, leaves Player combos and joins Class combos.
+        Combos shared by players remain here during their voting phase. When a combo reaches the community threshold, it automatically becomes verified, leaves Player Combos and joins Class Combos.
       </p>
 
       <div id="playerCombosSummary" class="player-combos-summary"></div>
@@ -7007,7 +7007,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildAllowReuse">Automatic</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Max reps. by skill</b><small>Maximum uses of the same skill when repetition is allowed.</small></div>
+    <div class="settings92-name"><b>Max reps. by skill</b><small>Maximum number of uses of the same skill when repetition is allowed.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxRepeat" type="number" min="1" max="10" value="1" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxRepeat">Automatic</div>
   </div>
@@ -7203,7 +7203,7 @@ if(!BDO_DOM_READY){
 </div>
 
       <div class="optimizer-note" style="margin-top:8px">
-        Optimizer will follow the order Engage → Setup → CC → Burst → Finisher and account for measured transition durations. A disabled phase is ignored. The limit is the maximum number of skills allowed in that phase.
+        Optimizer will respect the order: Engage → Setup → CC → Burst → Finisher and will take into account the measured durations of the transitions. A deactivated phase is ignored. The limit indicates the maximum number of skills allowed in this phase.
       </div>
 
       <div class="settings81-section-head"><span>08</span><div><h3>Advanced filters</h3><p>Controls data quality and stance changes.</p></div></div>
@@ -23010,11 +23010,11 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <div class="account79-row account79-row-two">
           <div class="account79-field">
             <label for="accountRegisterPasswordV78">Password</label>
-            <input id="accountRegisterPasswordV78" type="password" minlength="8" autocomplete="new-password" placeholder="8 caractères minimum">
+            <input id="accountRegisterPasswordV78" type="password" minlength="8" autocomplete="new-password" placeholder="8 characters minimum">
           </div>
           <div class="account79-field">
             <label for="accountRegisterConfirmV78">Confirm password</label>
-            <input id="accountRegisterConfirmV78" type="password" minlength="8" autocomplete="new-password" placeholder="Répète le mot de passe">
+            <input id="accountRegisterConfirmV78" type="password" minlength="8" autocomplete="new-password" placeholder="Repeat password">
           </div>
         </div>
 
@@ -23106,7 +23106,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       </div>
       <div class="bug77-field full">
         <label for="bug77Expected">What behavior was expected?</label>
-        <textarea id="bug77Expected" placeholder="Décris ce que l’application aurait dû faire..."></textarea>
+        <textarea id="bug77Expected" placeholder="Describe what the application should have done..."></textarea>
       </div>
       <div class="bug77-field full">
         <label for="bug77Steps">Steps to reproduce</label>
@@ -25554,6 +25554,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

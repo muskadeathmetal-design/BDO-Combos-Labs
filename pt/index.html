@@ -6007,7 +6007,7 @@ if(!BDO_DOM_READY){
           <summary><span>05</span> Use o Construtor de combinação e suas sugestões</summary>
           <div class="home75-detail">
             <p>O Construtor monta a sequência e recalcula as sugestões após cada modificação.</p>
-            <ol><li>Choisis <b>Awakening</b>, <b>Misto</b> ou <b>Pré-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>Após a primeira habilidade, o bloco <b>CHAIN</b> indica se a transição para cada candidato é conhecida, medida ou validada, bem como o seu possível cancelamento.</li><li>Adicione uma sugestão ou habilidade manualmente: a lista é imediatamente recalculada a partir da última habilidade.</li><li>Usado <b>Combinação Atual Completo</b> ou <b>Add Best Suggestion</b> para permitir que o otimizador continue a cadeia.</li><li>Controla as estatísticas do combinação: duração, dano quando disponível, transições medidas, tempo de cobertura, CC e proteção.</li></ol>
+            <ol><li>Choisis <b>Awakening</b>, <b>Misto</b> ou <b>Pré-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>Após a primeira habilidade, o bloco <b>CHAIN</b> indica se a transição para cada candidato é conhecida, medida ou validada, bem como o seu possível cancelamento.</li><li>Adicione uma sugestão ou habilidade manualmente: a lista é imediatamente recalculada a partir da última habilidade.</li><li>Usado <b>Combinação Atual Completo</b> ou <b>Add Best Suggestion</b> para permitir que o otimizador continue a cadeia.</li><li>Controla as estatísticas do combo: duração, dano quando disponível, transições medidas, tempo de cobertura, CC e proteção.</li></ol>
             <p class="home75-tip">Transições/cancelamentos agora realmente influenciam a classificação. Favorece-se uma transição rápida, medida e validada; uma transição desconhecida pode ser penalizada dependendo das configurações.</p>
           </div>
         </details>
@@ -6182,7 +6182,8 @@ if(!BDO_DOM_READY){
     </div>
 
     <p class="note">
-      Você pode colar o link de um Documento/Planilha Google público ou fazer upload de um arquivo exportado do Google Docs. O documento é primeiro analisado independentemente da Biblioteca de Habilidades: os nomes presentes nas strings explícitas são extraídos e depois adicionados às Habilidades da classe ativa caso ainda não existam. Os combos e transições são importados em seguida.
+      Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs.
+      Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la aula active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
     </p>
 
     <div class="toolbar old-doc-toolbar" style="margin-top:8px">
@@ -6269,7 +6270,7 @@ if(!BDO_DOM_READY){
       <div class="skills-control-bar skills95-control-bar">
         <div class="skills-search-field">
           <label for="skillsTableSearch">Pesquisar</label>
-          <input id="skillsTableSearch" type="text" placeholder="Nom, input, effet, CC, protection…" oninput="skillsTableSetSearch(this.value)">
+          <input id="skillsTableSearch" type="text" placeholder="Nome, input, efeito, CC, proteção…" oninput="skillsTableSetSearch(this.value)">
         </div>
         <label class="skills-check-control">
           <input id="skillsTableEnabledOnly" type="checkbox" onchange="skillsTableToggleEnabledOnly(this.checked)">
@@ -6345,7 +6346,8 @@ if(!BDO_DOM_READY){
       </div>
 
       <p class="player-combos-intro">
-        Os combos compartilhados pelos jogadores permanecem aqui durante a fase de votação. Quando um combo atinge o limite da comunidade, ele é verificado automaticamente, sai dos Player Combos e entra nos Class Combos.
+        Les combos partagés par les joueurs restent ici pendant leur phase de vote.
+        Lorsqu’un combinação atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combos de jogadores et rejoint Combos de aula.
       </p>
 
       <div id="playerCombosSummary" class="player-combos-summary"></div>
@@ -7043,7 +7045,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildRequireProtection">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Cobertura mínima protegida (%)</b><small>Porcentagem mínima do combinação que deve se beneficiar de proteção.</small></div>
+    <div class="settings92-name"><b>Cobertura mínima protegida (%)</b><small>Porcentagem mínima do combo que deve se beneficiar de proteção.</small></div>
     <div class="settings92-control"><input id="autoBuildProtectionCoverage" type="number" min="0" max="100" value="0" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildProtectionCoverage">Automático</div>
   </div>
@@ -7203,7 +7205,7 @@ if(!BDO_DOM_READY){
 </div>
 
       <div class="optimizer-note" style="margin-top:8px">
-        Optimizer seguirá a ordem Engage → Setup → CC → Burst → Finisher e terá em conta as durações medidas das transições. Uma fase desativada é ignorada. O limite indica o número máximo de skills permitidas nessa fase.
+        O Optimizer respeitará a ordem: Engage → Setup → CC → Burst → Finisher e levará em consideração as durações medidas das transições. Uma fase desativada é ignorada. O limite indica o número máximo de habilidades permitidas nesta fase.
       </div>
 
       <div class="settings81-section-head"><span>08</span><div><h3>Filtres avancés</h3><p>Controla a qualidade dos dados e as mudanças de postura.</p></div></div>
@@ -23010,11 +23012,11 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <div class="account79-row account79-row-two">
           <div class="account79-field">
             <label for="accountRegisterPasswordV78">Senha</label>
-            <input id="accountRegisterPasswordV78" type="password" minlength="8" autocomplete="new-password" placeholder="8 caractères minimum">
+            <input id="accountRegisterPasswordV78" type="password" minlength="8" autocomplete="new-password" placeholder="Mínimo de 8 caracteres">
           </div>
           <div class="account79-field">
             <label for="accountRegisterConfirmV78">Confirme sua senha</label>
-            <input id="accountRegisterConfirmV78" type="password" minlength="8" autocomplete="new-password" placeholder="Répète le mot de passe">
+            <input id="accountRegisterConfirmV78" type="password" minlength="8" autocomplete="new-password" placeholder="Repete a palavra-passe">
           </div>
         </div>
 
@@ -23106,7 +23108,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       </div>
       <div class="bug77-field full">
         <label for="bug77Expected">Que comportamento era esperado?</label>
-        <textarea id="bug77Expected" placeholder="Décris ce que l’application aurait dû faire..."></textarea>
+        <textarea id="bug77Expected" placeholder="Descreve o que a aplicação deveria ter feito..."></textarea>
       </div>
       <div class="bug77-field full">
         <label for="bug77Steps">Passos para reproduzir</label>
@@ -25554,6 +25556,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
