@@ -9,3 +9,4 @@ for(const m of src.matchAll(/(?:'([^'\n]{3,500})'|"([^"\n]{3,500})"|`([^`\n]{3,5
 const rows=[...found].sort((a,b)=>a.localeCompare(b,'fr'));
 fs.writeFileSync('en/untranslated-audit.txt',`V116 residual French candidates: ${rows.length}\n\n`+rows.join('\n'),'utf8');
 console.log('Residual French candidates:',rows.length);
+// Audit only: this script never runs in the browser.
