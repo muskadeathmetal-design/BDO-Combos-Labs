@@ -22,8 +22,8 @@ const prepared = {};
 for (const locale of locales) {
   prepared[locale] = {};
 
-  // V116 now translates only visible HTML text/attributes. Script/style code is
-  // protected by the builder, so all cached UI translations can be reused safely.
+  // V116 translates only visible HTML text/attributes; script/style code is
+  // protected. The generated auto-completion patch is therefore safe to merge.
   for (const [from, to] of Object.entries(existing[locale] || {})) {
     if (!from || !to) continue;
     prepared[locale][from] = to;
@@ -50,4 +50,4 @@ for (const locale of locales) {
 }
 
 fs.writeFileSync(outputCache, JSON.stringify(prepared, null, 2), 'utf8');
-console.log('Prepared V116 visible-UI translation cache with full auto cache + shared + auto-completed + locale patches.');
+console.log('Prepared V116 visible-UI cache including auto-completed translations.');
