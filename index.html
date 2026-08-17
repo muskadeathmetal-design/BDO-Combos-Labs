@@ -12,7 +12,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>BDO Combos Labs · V109</title>
+<title>BDO Combos Labs · V110</title>
 <style>
 :root{
   --bg:#0b0f14;
@@ -5686,7 +5686,7 @@ h4{font-size:15px!important}
 
 
 <script id="web-production-v109">
-const BCL_WEB_VERSION_V109='V109';
+const BCL_WEB_VERSION_V109='V110';
 function bclProductionOriginV109(){
   return /^https?:$/.test(location.protocol)?location.origin:null;
 }
@@ -5700,7 +5700,7 @@ function bclAuthRedirectV109(){
 window.addEventListener('DOMContentLoaded',()=>{
   document.documentElement.dataset.bclWeb=bclIsProductionWebV109()?'production':'local';
   if(location.protocol==='file:'){
-    console.info('BDO Combos Labs V109: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.');
+    console.info('BDO Combos Labs V110: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.');
   }
 });
 </script>
@@ -5766,7 +5766,7 @@ if(!BDO_DOM_READY){
         <button type="button" onclick="logoutAccountV78()">Déconnexion</button>
       </div>
     </div>
-    <span class="app-header-version">V109</span>
+    <span class="app-header-version">V110</span>
   </div>
 </header>
 <main>
@@ -9503,19 +9503,42 @@ function fullBackupFlushV48(){
   }
 }
 
+function fullBackupIsCacheKeyV110(key){
+  const k=String(key||'');
+  return (
+    /^bdoCodexV\d*:page:/i.test(k) ||
+    /bdocodex\.com\/(?:us|eu|kr|sea|tw|jp|ru)\//i.test(k) ||
+    /(?:^|[:._-])cache(?:[:._-]|$)/i.test(k) ||
+    /(?:page|html|fetch)(?:Cache|:v\d*:https?:)/i.test(k)
+  );
+}
+
+function fullBackupShouldIncludeStorageKeyV110(key){
+  const k=String(key||'');
+  if(!k || fullBackupIsCacheKeyV110(k))return false;
+  return (
+    /^bdoCombosLabs[.:]/i.test(k) ||
+    /^bcl/i.test(k) ||
+    /combo|skill|transition|cancel|addon|loadout|crystal|consumable|youtube|video|builder|account|setting|measure|timer|cc|class/i.test(k)
+  );
+}
+
+function fullBackupIsQuotaErrorV110(err){
+  return !!err && (
+    err?.name==='QuotaExceededError' ||
+    err?.name==='NS_ERROR_DOM_QUOTA_REACHED' ||
+    err?.code===22 || err?.code===1014 ||
+    /quota/i.test(String(err?.message||err))
+  );
+}
+
 function fullBackupLocalStorageV48(){
   const out={};
   try{
     for(let i=0;i<localStorage.length;i++){
       const key=localStorage.key(i);
-      if(!key)continue;
-      // Export every BDO Combos Labs key and older project keys used by this file.
-      if(
-        /^bdo/i.test(key) ||
-        /combo|skill|transition|addon|loadout|crystal|consumable|youtube|video|builder/i.test(key)
-      ){
-        out[key]=localStorage.getItem(key);
-      }
+      if(!fullBackupShouldIncludeStorageKeyV110(key))continue;
+      try{out[key]=localStorage.getItem(key);}catch(e){}
     }
   }catch(e){}
   return out;
@@ -9657,27 +9680,55 @@ async function importFullBackupV48(file){
     }
 
     const replace=document.getElementById('fullBackupReplaceV48')?.checked!==false;
+    let restoredKeys=0;
+    let skippedCacheKeys=0;
+    let skippedQuotaKeys=0;
+    let skippedOtherKeys=0;
 
     if(replace){
       const remove=[];
-      for(let i=0;i<localStorage.length;i++){
-        const key=localStorage.key(i);
-        if(key && (
-          /^bdo/i.test(key) ||
-          /combo|skill|transition|addon|loadout|crystal|consumable|youtube|video|builder/i.test(key)
-        ))remove.push(key);
-      }
-      remove.forEach(key=>localStorage.removeItem(key));
+      try{
+        for(let i=0;i<localStorage.length;i++){
+          const key=localStorage.key(i);
+          if(key && (
+            fullBackupShouldIncludeStorageKeyV110(key) ||
+            fullBackupIsCacheKeyV110(key)
+          ))remove.push(key);
+        }
+      }catch(e){}
+      remove.forEach(key=>{try{localStorage.removeItem(key);}catch(e){}});
     }
 
-    for(const [key,value] of Object.entries(backup.localStorage)){
-      if(value===null||value===undefined)continue;
-      localStorage.setItem(key,String(value));
-    }
-
+    // The runtime contains the important datasets. Restore it independently
+    // from browser storage so a localStorage quota cannot destroy an import.
     fullBackupRestoreRuntimeV48(backup.runtime);
 
-    // Persist restored runtime back through the application's normal writers.
+    // Old backups can contain multi-megabyte BDO Codex/page caches.
+    // They are disposable and are never restored.
+    for(const [key,value] of Object.entries(backup.localStorage)){
+      if(value===null||value===undefined)continue;
+      if(fullBackupIsCacheKeyV110(key)){
+        skippedCacheKeys++;
+        continue;
+      }
+      if(!fullBackupShouldIncludeStorageKeyV110(key)){
+        skippedOtherKeys++;
+        continue;
+      }
+      try{
+        localStorage.setItem(key,String(value));
+        restoredKeys++;
+      }catch(err){
+        if(fullBackupIsQuotaErrorV110(err)){
+          skippedQuotaKeys++;
+          console.warn('Backup key skipped because localStorage quota is full',key,err);
+          continue;
+        }
+        skippedOtherKeys++;
+        console.warn('Backup key skipped',key,err);
+      }
+    }
+
     fullBackupFlushV48();
 
     if(backup.context?.className){
@@ -9689,6 +9740,10 @@ async function importFullBackupV48(file){
       if(spec && [...spec.options].some(o=>o.value===backup.context.specialization))spec.value=backup.context.specialization;
     }
 
+    try{
+      if(typeof syncActiveContextV105==='function')syncActiveContextV105(true);
+    }catch(e){}
+
     const renderers=[
       'renderClassStats','renderSkillsPage','renderComboPage','renderPlayerCombosPage',
       'renderTransitionPage','renderAddonPage','renderComboBuilder','renderYouTubeAnalyzer'
@@ -9697,10 +9752,16 @@ async function importFullBackupV48(file){
       try{if(typeof window[name]==='function')window[name]();}catch(e){}
     }
 
+    // Send imported shared data to Supabase after a successful restore.
+    try{
+      if(typeof bclSharedPushV108==='function')setTimeout(()=>bclSharedPushV108(),250);
+    }catch(e){}
+
     const c=fullBackupCountsV48(backup.runtime||{});
+    const skipped=skippedCacheKeys+skippedQuotaKeys+skippedOtherKeys;
     if(status){
       status.className='optimizer-note status-good';
-      status.textContent=`Sauvegarde restaurée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · export du ${new Date(backup.exportedAt).toLocaleString()}.`;
+      status.textContent=`Sauvegarde restaurée · ${c.skills} skills · ${c.transitions} transitions · ${c.combos} combos · ${restoredKeys} clés locales restaurées${skipped?` · ${skipped} clé(s) non essentielle(s) ignorée(s) (${skippedCacheKeys} cache, ${skippedQuotaKeys} quota)`:''}.`;
     }
   }catch(err){
     console.error('Full backup import failed',err);
