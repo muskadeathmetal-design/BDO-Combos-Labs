@@ -1,0 +1,42 @@
+(()=>{'use strict';
+const VERSION='v138-combat-profile-radar';
+const AXES=['Offense','Defense','Mobility','Control','Protection','Resources'];
+const clamp=n=>Math.max(0,Math.min(100,Number(n)||0));
+function ctx(){const cls=document.getElementById('classSelector')?.value||'',spec=document.getElementById('specSelector')?.value||'Awakening';return{cls,spec,key:`${cls}::${spec}`}}
+function sequence(){const {key}=ctx();try{return Array.isArray(BUILDER_STATE?.[key])?[...BUILDER_STATE[key]]:(typeof getBuilderSequence==='function'?getBuilderSequence():[])}catch(e){return[]}}
+function skills(){const {cls,spec}=ctx();try{return CLASS_SKILLS?.[cls]?.[spec]||[]}catch(e){return[]}}
+function mapSkills(){return new Map(skills().map(s=>[String(s?.name||s).trim(),typeof s==='string'?{name:s}:s]))}
+function num(...v){for(const x of v){const n=Number(x);if(Number.isFinite(n))return n}return 0}
+function arr(v){return Array.isArray(v)?v:(v?String(v).split(/[,|/]/).map(x=>x.trim()).filter(Boolean):[])}
+function text(s){return [s?.role,s?.category,s?.group,s?.tree,s?.branch,...arr(s?.tags),...arr(s?.effects)].filter(Boolean).join(' ').toLowerCase()}
+function protectionList(s){return [...arr(s?.protections),...arr(s?.protection),...arr(s?.protected)].map(x=>String(x).toLowerCase())}
+function ccList(s){return [...arr(s?.cc),...arr(s?.crowdControl),...arr(s?.ccType)].filter(Boolean)}
+function selected(){const m=mapSkills();return sequence().map(n=>m.get(String(n).trim())||{name:n})}
+function profile(){const ss=selected();if(!ss.length)return{axes:Object.fromEntries(AXES.map(x=>[x,0])),raw:{skills:0}};
+ const damages=ss.map(s=>num(s.pvpDamage,s.damagePvP,s.damage,s.totalDamage));
+ const maxD=Math.max(1,...skills().map(s=>num(s?.pvpDamage,s?.damagePvP,s?.damage,s?.totalDamage)));
+ const offense=clamp((damages.reduce((a,b)=>a+b,0)/(ss.length*maxD))*100);
+ let protectedCount=0,iframe=0,sa=0,fg=0,mobile=0,cc=0,stamina=0,resource=0;
+ for(const s of ss){const p=protectionList(s),t=text(s);if(p.length)protectedCount++;if(p.some(x=>/iframe|invinc/.test(x)))iframe++;if(p.some(x=>/super armor|\bsa\b/.test(x)))sa++;if(p.some(x=>/forward guard|\bfg\b/.test(x)))fg++;if(/mobility|dash|charge|step|rush|leap|blink|movement|engage|opener/.test(t)||num(s.distance,s.range,s.mobility)>0)mobile++;if(ccList(s).length||/\bcc\b|stun|stiff|knock|float|bound|grab|freeze/.test(t))cc++;stamina+=Math.max(0,num(s.staminaCost,s.stamina,s.costStamina));resource+=Math.max(0,num(s.resourceCost,s.resource,s.costResource,s.mpCost,s.wpCost,s.spCost));}
+ const protection=clamp(protectedCount/ss.length*100);
+ const defense=clamp(((protectedCount+iframe*1.2+sa*.55+fg*.45)/(ss.length*2.2))*100);
+ const mobility=clamp(mobile/ss.length*100);
+ const control=clamp(cc/Math.max(1,Math.min(ss.length,3))*100);
+ const avgCost=(stamina+resource)/ss.length;const resources=clamp(100-(avgCost/500)*100);
+ return{axes:{Offense:offense,Defense:defense,Mobility:mobility,Control:control,Protection:protection,Resources:resources},raw:{skills:ss.length,stamina,resource,protectedCount,cc}};
+}
+function point(cx,cy,r,i,n=6){const a=-Math.PI/2+i*Math.PI*2/n;return[cx+Math.cos(a)*r,cy+Math.sin(a)*r]}
+function radarSvg(p){const W=660,H=430,cx=330,cy=205,R=145,n=AXES.length;let grid='';for(const f of [.25,.5,.75,1]){grid+=`<polygon points="${AXES.map((_,i)=>point(cx,cy,R*f,i,n).join(',')).map(x=>x).join(' ')}" class="cp138-grid"/>`}
+ const spokes=AXES.map((_,i)=>{const [x,y]=point(cx,cy,R,i,n);return`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" class="cp138-spoke"/>`}).join('');
+ const poly=AXES.map((a,i)=>{const [x,y]=point(cx,cy,R*(p.axes[a]/100),i,n);return`${x},${y}`}).join(' ');
+ const labels=AXES.map((a,i)=>{const [x,y]=point(cx,cy,R+42,i,n);const anchor=x<cx-10?'end':x>cx+10?'start':'middle';return`<text x="${x}" y="${y}" text-anchor="${anchor}" class="cp138-label">${a}</text>`}).join('');
+ const dots=AXES.map((a,i)=>{const [x,y]=point(cx,cy,R*(p.axes[a]/100),i,n);return`<circle cx="${x}" cy="${y}" r="4" class="cp138-dot"/>`}).join('');
+ return`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Combat profile radar">${grid}${spokes}<polygon points="${poly}" class="cp138-area"/>${dots}${labels}</svg>`}
+function oldGraph(){return [...document.querySelectorAll('#builderPage section,#builderPage div')].find(el=>{const h=el.querySelector?.('h3');return h&&/combat flow/i.test(h.textContent||'')})}
+function render(){const host=document.getElementById('cp138Profile');if(!host)return;const p=profile();host.querySelector('.cp138-radar').innerHTML=sequence().length?radarSvg(p):'<div class="cp138-empty">Ajoute des compétences pour construire le profil de combat.</div>';host.querySelector('.cp138-values').innerHTML=AXES.map(a=>`<div><span>${a}</span><strong>${Math.round(p.axes[a])}</strong><i><b style="width:${p.axes[a]}%"></b></i></div>`).join('')}
+function install(){const page=document.getElementById('builderPage');if(!page)return false;if(document.getElementById('cp138Profile')){render();return true}const old=oldGraph();if(old)old.style.display='none';const stats=document.getElementById('builderCombatStats');if(!stats)return false;const panel=document.createElement('section');panel.id='cp138Profile';panel.className='cp138-panel';panel.innerHTML='<div class="cp138-head"><div><h3>Combat Profile</h3><p>Orientation globale du combo : agressivité, défense, mobilité, contrôle et gestion des ressources.</p></div><span class="cp138-live">LIVE</span></div><div class="cp138-body"><div class="cp138-radar"></div><div class="cp138-values"></div></div><div class="cp138-note">Visualisation normalisée des données déjà présentes dans le Builder. Elle ne remplace pas le score privé AnalysisCore.</div>';
+ const style=document.createElement('style');style.id='cp138-style';style.textContent=`
+#builderPage .cp138-panel{margin:12px 0 16px;border:1px solid rgba(139,148,158,.10);border-radius:16px;background:rgba(10,16,23,.64);overflow:hidden}.cp138-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:15px 17px 10px;border-bottom:1px solid rgba(139,148,158,.07)}.cp138-head h3{margin:0!important;font-size:15px!important}.cp138-head p{margin:4px 0 0!important;color:#788898!important;font-size:11px!important;max-width:700px}.cp138-live{font-size:9px;font-weight:800;letter-spacing:.09em;color:#8ec5ff;padding:5px 7px;border:1px solid rgba(88,166,255,.18);border-radius:999px}.cp138-body{display:grid;grid-template-columns:minmax(380px,.95fr) minmax(260px,.55fr);gap:12px;align-items:center;padding:8px 16px 14px}.cp138-radar{min-height:330px}.cp138-radar svg{display:block;width:100%;max-height:390px}.cp138-grid{fill:none;stroke:rgba(139,148,158,.10);stroke-width:1}.cp138-spoke{stroke:rgba(139,148,158,.08);stroke-width:1}.cp138-area{fill:rgba(88,166,255,.14);stroke:rgba(88,166,255,.78);stroke-width:2}.cp138-dot{fill:#8ec5ff;stroke:#0c1219;stroke-width:2}.cp138-label{fill:#aebdcb;font:600 12px system-ui}.cp138-values{display:grid;gap:9px}.cp138-values>div{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center}.cp138-values span{color:#8291a1;font-size:11px}.cp138-values strong{font-size:13px;color:#e1eaf3}.cp138-values i{grid-column:1/-1;height:4px;border-radius:999px;background:rgba(139,148,158,.08);overflow:hidden}.cp138-values b{display:block;height:100%;background:rgba(88,166,255,.68);border-radius:inherit}.cp138-note{padding:0 17px 14px;color:#647485;font-size:10px}.cp138-empty{display:grid;place-items:center;min-height:300px;color:#718091;font-size:11px}@media(max-width:850px){.cp138-body{grid-template-columns:1fr}.cp138-radar{min-height:260px}.cp138-values{grid-template-columns:1fr 1fr}}
+`;document.head.appendChild(style);stats.parentNode.insertBefore(panel,stats.nextSibling);render();const seq=document.getElementById('builderSequence');if(seq)new MutationObserver(render).observe(seq,{childList:true,subtree:true,characterData:true});document.getElementById('classSelector')?.addEventListener('change',()=>setTimeout(render,0));document.getElementById('specSelector')?.addEventListener('change',()=>setTimeout(render,0));window.BCL_COMBAT_PROFILE_V138={version:VERSION,refresh:render};return true}
+function boot(){if(install())return;let n=0;const t=setInterval(()=>{n++;if(install()||n>80)clearInterval(t)},250)}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+})();
