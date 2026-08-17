@@ -1,0 +1,89 @@
+V116 visible French candidates: 87
+
+, then adds a marker. The cancellation will be associated with the transition to the next skill.
+. All les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.
+. L’outil calcule la séquence, la durée totale, les temps entre compétences et les points de cancel.
+. Le combo est ajouté à
+. Le lecteur local est la source de temps utilisée pour tous les marqueurs.
+. Recommence pour chaque compétence du combo.
+← Back au profil
++ Add une compétence
+4 · Transitions
+A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.
+Actions
+Add les skills détectés
+Adventurer's Guide
+After having validated many transitions/cancels.
+All les catégories
+allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.
+Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
+Backup complète
+BDO Combos Labs relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixed / Pre-Awakening, la séquence actuelle et les timings réellement enregistrés.
+Break down the importance of damage, speed, CC and transitions/cancels.
+Build a combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.
+Build et corriger la base Skills
+Cancels / transitions weight
+Choose the class and specialization used for Skills, Combos, Transitions and imports.
+Class, specialization et référentiel
+Clean up invalid transitions
+Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.
+Confirm les transitions et cancels
+Control and validate transitions / cancellations
+Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
+Current skills, transitions, measures, combos and settings will be attached to this account.
+Delete mon compte
+Detect skills, CC, transitions and cancellations
+Duration CC générique
+Duration estimated maximale acceptée pour la séquence complète.
+Duration estimated minimale souhaitée pour la séquence.
+Duration vidéo
+Export la sauvegarde complète JSON
+Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.
+Importance of actual speed of transitions in ranking.
+Importance of rapid, measured and validated transitions/cancels.
+Important measured CC durations and transitions
+indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.
+L'application a été remise à zéro. None dataset ni mécanisme de restauration automatique n'est présent.
+Le navigateur cherche par timestamp. Pour les mesures importantes, utilise une vidéo à fréquence constante et vérifie plusieurs essais.
+Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Player combos et rejoint Class combos.
+Like requis pour vérifier un combo
+Max transition(s)
+Measure transitions + cancels
+NEXT ACTIONS
+No transition / cancel registered.
+of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the
+Open la sauvegarde complète
+Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
+pour laisser l’optimiseur poursuivre la chaîne.
+Pour restaurer : « Import a backup »
+Quality de données minimale (%)
+Quality minimale des données exigée avant qu’un skill soit privilégié.
+Quick Guide — How to Analyze a Video Combo
+Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.
+Reference + compétences actives
+Refresh les mesures détectées
+Renaming a skill updates the associated references when the application can resolve them. Still checks important transitions after a rename.
+Require known transition
+Retourne au Builder et compare le score des suggestions.
+Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.
+Save Combo + Transitions
+Save les mesures
+Save les réglages
+Sélectionne d’abord une class dans l’onglet Class.
+Settings → Backup complète
+Sign in, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
+Skills & améliorations
+Skills vs référentiel
+State du Combo Builder
+transition
+Transition / Cancel
+Transitions
+Transitions / cancellations
+Transitions / Cancels
+Transitions & Cancels
+Transitions and cancels advance the time of the sequence and therefore reduce the remaining time.
+Transitions with timing
+Transitions/cancels now actually influence ranking. A rapid, measured and validated transition is favored; an unknown transition may be penalized depending on the Settings.
+Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la class active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
+Validating transitions
+Vérification : 10 Like
