@@ -1,13 +1,11 @@
-V116 human residual French candidates: 703
+V116 human residual French candidates: 228
 
-— durée CC non mesurée
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
 , confidence:transition?.confidence || transition?.timingConfidence ||
-, laisse cochée
 , note:transition?.note ||
-, puis ajoute un marqueur. Le cancel sera associé à la transition vers la compétence suivante.
 , sourceTag:transition?.sourceTag || transition?.source || transition?.importedBy ||
+, then adds a marker. The cancellation will be associated with the transition to the next skill.
 ,`${enabled} activé${enabled>1?
 ,refs.length?`${refs.length} entrées`:
 ,refs.length?`Active reference · ${refs.length} entrées`:
@@ -15,7 +13,6 @@ V116 human residual French candidates: 703
 ,transitions.data||[],personal,cls,spec); bclSharedMergeRowsV108(
 ; if(/transition|cancel|flow|link/.test(descriptor)) kind =
 ; tr.manualValidation=true; tr.needsValidation=false; tr.enabled=true; tr.reviewedAt=new Date().toISOString(); tr.timingConfidence=1; tr.note=`Correction manuelle V47 · transition ${tr.timingSeconds.toFixed(4)}s · cancel ${tr.cancelAt===null?
-: cette valeur alimente le CC Timer du Builder.
 :''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}
 ? transition : transition.text; if(!text) continue; if(addUniqueByText(CLASS_TRANSITIONS[className][spec], { name: transition?.kind ===
 ?CLASS_SKILLS:null,cls,spec); // V24: le compteur Home suit exactement la même logique que l
@@ -25,429 +22,117 @@ V116 human residual French candidates: 703
 . Le lecteur local est la source de temps utilisée pour tous les marqueurs.
 . Recommence pour chaque compétence du combo.
 );actions.className=
-[Bénédiction] Faveur de l'aventurier — 120 min
-[Bénédiction] Faveur de l'aventurier — 300 min
 } enregistré${history.length>1?
 ← Back au profil
 + Add une compétence
 <b>${added}</b> nouveau(x) Skill(s) ajouté(s) à ${oldDocsEsc(cls)} ${oldDocsEsc(spec)} ·
 <b>${oldDocsEsc(cls)} ${oldDocsEsc(spec)}</b> — lecture du Google Doc…
 <b>${String(text).length.toLocaleString()}</b> caractères lus ·
-<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · validé':''}</em>
-⚠ Rapporter un bug
+<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · valid':''}</em>
 ✓ Combo vérifié par la communauté (${combo.likes} Like)
-✓ Partagé dans Combos joueurs · 0/${communityVerifyThresholdV101()} Like
+✓ Partagé dans Player combos · 0/${communityVerifyThresholdV101()} Like
 ✓ Verified par la communauté
 ${before.toFixed(1)} + ${incoming.toFixed(1)} → CAP · CC #${count} appliqué
-${candidate}: contenu vide ou page d'accès
-${ev.sourceName} · guide de classe
+${ev.sourceName} · guide de class
 ${measured}/${transitions.length} transitions ont une mesure
 ${Number(validationRow.ccPoints||0).toFixed(1)} / 2.0 · CC #${count} appliqué
-${rows.length} mesure(s) CC proposée(s). Tu peux les enregistrer maintenant (statut auto) ou les valider/corriger d’abord.
-${rows.length} transition(s) plausible(s) · ${rejected} lien(s) rejeté(s) (écart trop grand / segments non continus).
-2.0 / 2.0 · bloqué
+${rows.length} plausible transition(s) · ${rejected} link(s) rejected (gap too large / non-continuous segments).
 4 · Transitions
-À la fin
-À vérifier
-Abilità
+A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.
 Account cloud créé et connecté.
 Account créé
 Account créé avec un espace de travail vide. Rechargement…
 Account créé. Tes données actuelles sont associées à ce profil.
 Account créé. Vérifie ton e-mail puis connecte-toi.
 Actions
-Active ou limite les différentes phases utilisées par l’Auto-Build.
-Actualise une mesure précédemment détectée si elle est mauvaise.
-Adapte le profil d’optimisation au type de cible.
 Add à la suite
 Add les skills détectés
 Add transitions
-Afficher
-Ajout, renommage et suppression synchronisent désormais aussi l’historique des builds enregistrés.
-Ajoute au moins une compétence au combo.
-Ajoute le marqueur
-Ajoute les skills détectés à la liste lorsque la correspondance est correcte.
-Ajoute une suggestion ou une compétence manuellement : la liste est immédiatement recalculée à partir du nouveau dernier skill.
+Adventurer's Guide
+After having validated many transitions/cancels.
 All les catégories
 All résistances +10%
 All résistances +4%
-Analisador de vídeo
-Analizador de vídeo
-Analyse + mesure automatique
-Analyse assistée automatique
+allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.
+an intermediate transition is missing: the last known time remains displayed but no
 Analyse automatique impossible : ${err?.message||err}
-Analyse depuis une position choisie, détection de skills, transitions/cancels et durées CC validables directement sur un skill.
-Analyse en pause. Tu peux inspecter la vidéo puis reprendre.
-Analyse le combo
-Analyse une zone courte du combo pour obtenir des timings précis. Maximum recommandé : 30 à 60 secondes.
-Analyser 30 s depuis ici
-Analyseur vidéo
-AP / dégâts offensifs
-AP / dégâts PvE
+Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
 AP caché +${m.ap}
-AP monstre / précision / DR monstre
 application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n
-Appliquer au skill sélectionné
-Après avoir corrigé ou ajouté plusieurs compétences.
-Après avoir mesuré des durées CC importantes.
-Après avoir validé beaucoup de transitions/cancels.
-Après le premier skill, le bloc
-Après une grosse session de mesure vidéo.
-Associer mes données actuelles
-Attends le message de confirmation.
-Augmente la priorité des compétences disposant d’une I-frame.
 Augmente la priorité des compétences disposant de Forward Guard.
 Augmente la priorité des compétences disposant de Super Armor.
-Augmente le poids de
-Autorise l’optimiseur à proposer un changement de stance.
-Autorise ou bloque les skills dont certaines données techniques sont inconnues.
-Autorise une même compétence à apparaître plusieurs fois dans la séquence.
-Autoriser changement de stance
-Autoriser données inconnues
-Autoriser la répétition d’une compétence
-Avant d’optimiser
-Avant de changer de navigateur, de machine, de fichier HTML ou de version de l’application.
-Avant de construire
-Avant de valider
-Avant toute opération qui pourrait vider les données locales du navigateur.
-Avec CC
-Avec dégâts
 Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.
-Avec protection
-avec sa durée mesurée.
 Backne au Builder et compare le score des suggestions.
 Backne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.
 Backup complète
 Backupr mes données
 Backupr toutes les données
 Backupr TOUTES les données et les restaurer
-Base de données des compétences, objets et données du jeu
-BDFoundry indique que Breath Spike est très rapide et peut être cancel très rapidement vers d'autres compétences. Cette entrée ne fabrique pas de timing exact.
 BDFoundry Tamer guide — Rabam
 BDFoundry Tamer guide — Succession PvE addons
 BDO Combos Labs relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixed / Pre-Awakening, la séquence actuelle et les timings réellement enregistrés.
-BDO Combos Labs V111: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.
-Bénédiction des bêtes mystiques
-Build a combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.
-Build enregistré ✓
+Break down the importance of damage, speed, CC and transitions/cancels.
+Build a combo à partir de données measureds plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classr ses suggestions.
 Build et corriger la base Skills
-cancel validé (estimation start-to-start)
 Cancels / transitions weight
-Catégorie
-CC encore immunisé ${currentCCState.immunityRemaining.toFixed(1)}s
-CC impossible · immunité restante ${timeline.immunityRemaining.toFixed(2)}s
-CC mesure FPS
-CC mesure note
+CC impossible · remaining immunity ${timeline.immunityRemaining.toFixed(2)}s
 CC sûr · ${remainingAtLand.toFixed(2)}s restantes
-CC Timer et immunité utilisent la même chronologie start-to-start, sans double comptage de la durée des skills.
-CC Timer, CHAIN et statistiques contrôlés
-CC trop tôt · ${remainingAtLand.toFixed(2)}s encore disponibles
-CC valide · timing de liaison inconnu
-Ce compte est enregistré uniquement dans ce navigateur. Pour transférer tes données sur un autre PC, utilise aussi
-Ce lecteur utilise directement un fichier vidéo local et permet une navigation frame par frame fiable.
-Ce lien ne ressemble pas à un Google Doc/Sheet.
-Ce nom d’utilisateur existe déjà.
-Ce que l’application prend maintenant en compte
-Ce que la sauvegarde complète contient
-ce skill n’applique aucun CC
-Cet e-mail est déjà utilisé.
-cette compétence
-Chaîne de setup construite uniquement à partir des compétences que le guide BDFoundry recommande pour les add-ons Succession : Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.
-Chaîne décrite comme combo commun du Tamer Discord : Moonlight Strike → Flow: Intimidation → Beast Rampage, puis Allround Spinner/Fearful Trembling/Resonance selon contexte.
-Changer le mot de passe
-Charge d’abord une vidéo locale valide.
-Charge la vidéo locale
-Charge une vidéo locale et indique son FPS.
-Charge une vidéo locale, puis marque le début des compétences et les cancels.
-Charger dans Combo Builder
-Choisir le contexte de travail
-Choisir une classe
-Choisis Awakening ou la spécialisation disponible.
-Choisis d’abord le FPS de la vidéo (30 ou 60), puis pause au moment exact où l’animation commence. Utilise les boutons ±0.10s ou ±1 frame pour ajuster précisément.
-Choisis la compétence correspondante dans la liste
-Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.
 Choose the class and specialization used for Skills, Combos, Transitions and imports.
-Class, spécialisation et référentiel
-classe
-Clique sur
-Combo di classe
-Combo historique documenté : Legendary Beast Dance: Vermillion Bird cancel → Legendary Beast's Power → Moonlight Strike → Flow: Full Moon → Echo Pierce. Le principe de cancel est explicitement décrit ; timing exact à mesurer.
-Combo joueur publié : Evasion → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.
-Combo partagé depuis le Combo Builder.
-Combo partagé par un joueur.
-Combos de clase
-Combos de classe
-Combos de jogadores
-Combos de jugadores
-Combos validés
-comme type de marqueur.
-Commence par sélectionner la
-Communauté
-Communauté · ${Number(c.likes||0)} Like
+Class, specialization et référentiel
+Clean up invalid transitions
 community108-actions
-Compétence introuvable dans la liste active.
 Completeness actuelle : ${completeness}%
-Compléter les Skills
-Comprendre le CC Timer PvP
-Configure l’optimiseur, les contraintes du Combo Builder, les priorités de transition/cancel et la sauvegarde de tes données.
-Configure les consommables, les cristaux et jusqu’à 6 compétences avec 2 effets de Skill Add-on chacune.
+Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.
 Confirm les transitions et cancels
-Confirmer le mot de passe
-Connecte-toi à ton compte cloud pour partager ce combo.
-Connecte-toi pour masquer ce combo.
-Connecte-toi pour voter.
-Connecté. Synchronisation des données…
-Conserve le fichier JSON
-Contraintes de contrôle et de couverture défensive.
-Contrôle la durée et les frames lorsqu’elles sont disponibles.
-Contrôle la qualité des données et les changements de stance.
-Contrôle la réutilisation des compétences.
-Contrôle les compétences importées.
-Contrôle les mesures de
-Contrôle les statistiques sous le combo : durée, dégâts lorsque disponibles, transitions mesurées, couverture timing, CC et protection.
-Contrôler et valider transitions / cancels
-Cooldowns & répétitions
-Copier le rapport
-Corrige ou supprime les détections parasites.
-Coût maximal de ressource de classe accepté pour le combo.
-Coût maximal de stamina accepté pour le combo.
-Couverture protégée minimale (%)
-Création du compte cloud…
-Création du compte…
-Création impossible :
-Crée ton espace personnel pour séparer tes données de celles des autres utilisateurs de ce navigateur.
-Crée un compte pour séparer automatiquement ton espace de travail des autres utilisateurs de ce navigateur. Une sauvegarde locale du profil est mise à jour périodiquement et à la déconnexion.
-Créer mon compte
-Créer un compte
-Créer, renommer, supprimer et renseigner les stats
-Dans
+Control and validate transitions / cancellations
+Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
+Current skills, transitions, measures, combos and settings will be attached to this account.
 Data du compte sauvegardées localement.
-Début
-Début = position vidéo
-Début analyse
-Début CC (secondes absolues dans la vidéo)
-Début CC détecté, mais fin/reprise de mouvement non fiable. Utilise « Marquer fin CC ».
-Décris ce qui s’est passé. Le rapport peut être copié ou téléchargé afin d’être transmis au développeur.
-défense / contenu Edania
-défense / survie
-Definições
-Définis le profil général et le type de cible.
-Dégâts + Soin
-Dégâts attaque aérienne +10%
-Dégâts attaque arrière +10%
-Dégâts attaque arrière +5%
-Dégâts attaque au sol +10%
-Dégâts attaque au sol +5%
-Dégâts attaques spéciales +18%
-Dégâts contre Demi-humains +15
-Dégâts contre Humains +11
-Dégâts contre monstres Kamasylviens +17
-dégâts critiques
 Dégâts critiques +${m.critDmgPct}%
-Dégâts critiques +10%
-Dégâts critiques +5%
-Dégâts de toutes attaques spéciales +10%
-Dégâts de toutes attaques spéciales +16%
-Dégâts de toutes attaques spéciales +18%
-Dégâts de toutes attaques spéciales +2%
-Dégâts fixes +15 attaque arrière
-Dégâts fixes +15 critique
-Dégâts fixes +15 sur attaque arrière
-Dégâts fixes +15 sur coup critique
-Dégâts fixes +15 sur critique
-dégâts humains / attaque
-dégâts humains / précision / vitesse
 Dégâts humains +${m.humanDamage}
-Dégâts maximum
-Dégâts PvE
-dégâts PvE / précision selon spot
-Dégâts PvP
-Dégâts rapides
-Dégâts reçus des monstres -10%
-Dégâts reçus des monstres -6%
-dégâts spéciaux / PvE
 Dégâts spéciaux +${m.specialPct}%
 Delete définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.
 Delete définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.
 Delete mon compte
-Déplacement +2
-Dernière connexion
-Dernière sauvegarde
-DERNIÈRES ÉVOLUTIONS
-Désactiver
 Détails: ${errors.slice(0,3).join(' | ')}
-Détecter automatiquement
-Détecter skills, CC, transitions et cancels
-Détection de segments par mouvement + rapprochement avec le référentiel actif.
+Detect skills, CC, transitions and cancellations
 documented-guide
-DONNÉES & SAUVEGARDE
-DR / esquive / PV / résistance
-du Combo Builder est différent de la spécialisation : il définit l’orientation de la chaîne que le Builder doit proposer.
-du Combo Builder ne sauvegarde qu’une séquence de combo. Pour éviter de perdre les compétences, durées CC, transitions/cancels, mesures vidéo, réglages et loadouts, il faut utiliser la
 Duration CC détectée automatiquement : ${duration.toFixed(4)} s. Vérifie au ralenti si nécessaire.
 Duration CC générique
-Duration CC validée pour ${skillName} : ${duration.toFixed(4)} s.
-Duration estimée maximale acceptée pour la séquence complète.
-Duration estimée minimale souhaitée pour la séquence.
-Duration max. estimée (s)
-Duration min. estimée (s)
+Duration CC validated pour ${skillName} : ${duration.toFixed(4)} s.
+Duration estimated maximale acceptée pour la séquence complète.
+Duration estimated minimale souhaitée pour la séquence.
 Duration vidéo
-Durations CC et transitions importantes mesurées
-Durations CC mesurées
+Durations CC et transitions importantes measureds
 durée ${candidate.timing.toFixed(3)}s
-durée brute skill
-durée de CC
-Effet conservé après la mort
-Effets du Breuvage de frénésie
-Église / Camp
-Élixir
-Élixir d'Edania
-Élixir puissant d'Edania
-En PvP, lorsque le CC Timer est pratiquement à zéro, le Builder doit prioriser un nouveau CC afin d’éviter que la cible puisse se relever avant la suite du combo.
-Encadre la taille et la durée estimée des combos générés.
-Enregistre les résultats
-Enrichir les métadonnées
-entrées disponibles
-Équilibré
-équipe" ], "referenceSource": "Tableau complet fourni par utilisateur · V12", "__userCompleteTableV12": true, "aliases": [ "Prime: Heilang
-est la base de données utilisée par le reste de l’application. Chaque compétence peut contenir input, cooldown, timer, protection, CC, durée de CC, dégâts PvE/PvP, effets et catégorie.
-estimée
-et la
-et les mesures sont enregistrées dans
-Étapes pour reproduire
-Éviter les compétences en cooldown
-Exiger au moins une protection
-EXP compétence +10%
-EXP compétence +15%
-EXP compétence +300%
-EXP compétence +50%
+END du CC actif (${tl.ccTimerSource||'source inconnue'})
+équipe" ], "referenceSource": "Complete table provided by user · V12", "__userCompleteTableV12": true, "aliases": [ "Prime: Heilang
 Export la sauvegarde complète JSON
 Fast transition ${transitionSeconds.toFixed(3)}s
-Favorise les enchaînements qui restent dans la stance actuelle.
-Favorise les séquences qui conservent davantage de ressource.
-Favoriser même stance
-Fenêtre détectée peu plausible (${duration.toFixed(3)} s). Vérifie manuellement.
 Filters avancés
-Fin
-Fin = position vidéo
-Fin analyse
-Fin CC / reprise de contrôle (secondes absolues dans la vidéo)
-Fin du CC actif (${tl.ccTimerSource||'source inconnue'})
-Fonctionne même si aucune compétence n'est reconnue.
-FPS vidéo
-Frame estimée
-Garde-le dans un dossier sûr, un cloud ou une copie externe. C’est ta sauvegarde de sécurité.
-Générique
 guide
 Guide — ${seq.join(" → ")}
-Guide de l’Aventurier
-Guide rapide — Comment analyser un combo vidéo
 guide-supported
-Guides de classes, PvE/PvP et ressources communautaires
-HISTORIQUE BUILDER
 home18-actions
 home18-panel home18-guide home75-tutorial
 home19-build-actions
 home75-guide-grid
 home76-backup-actions
 Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.
-IMPORT & DÉTECTION
 Import impossible : ${err?.message||err}
-Importance de la pénalité appliquée aux compétences gênées par leur cooldown.
-Importance de la vitesse réelle des transitions dans le classement.
-Importance des compétences de mobilité et de repositionnement.
-Importance des contrôles dans le score de l’optimiseur.
-Importance des dégâts dans le score global d’une compétence.
-Importance des protections dans le score global.
-Importance des transitions/cancels rapides, mesurés et validés.
-Impose la présence d’au moins une compétence protégée.
-Impossible de charger le lecteur DOCX.
-Impossible de trouver un début CC plausible.
-indique si la transition vers chaque candidat est connue, mesurée ou validée, ainsi que son cancel éventuel.
+Importance of actual speed of transitions in ranking.
+Importance of rapid, measured and validated transitions/cancels.
+indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.
 L'application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n'est présent.
-L’application crée un fichier JSON contenant le travail actuellement enregistré.
-La base principale est bien renseignée
-La communauté confirme que Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt cancel fonctionnait en Succession ; le timing exact a évolué et reste à mesurer.
-La confirmation ne correspond pas.
-La discussion de classe documente explicitement l'utilisation du damage de Celestial Slam → Beast Rampage.
-La page
-La suppression d’un compte cloud doit passer par une procédure sécurisée. Les données partagées restent dans la base commune et ne sont jamais supprimées avec le compte.
-La vidéo publie une rotation d'inputs complète. Les compétences correspondant aux inputs sont rapprochées ici via la chaîne Succession courante : Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.
-La zone « SAUVEGARDE COMPLÈTE » se trouve en haut de cette page.
-Lance d’abord « Analyse + mesure automatique » sur une zone vidéo.
 Language du site
-le bouton
-Le Builder assemble la séquence et recalcule les suggestions après chaque modification.
-Le Builder suit le budget CC PvP affiché dans l’application :
-Le CC a bien été appliqué, mais sa durée n’est pas encore mesurée.
-Le CC qui fait atteindre/dépasser 2.0 est encore appliqué ; les CC suivants sont ensuite bloqués par la limite.
-Le choix
-Le contexte pilote tout le projet
-Le cristal de résistance peut être remplacé selon la zone. Brutal Decimation peut être remplacé par Elkarr/Visionary Elkarr si la précision manque.
-Le guide cite comme rotation principale : Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Référence historique à revalider selon patch courant.
-Le mot de passe doit contenir au moins 8 caractères.
 Le navigateur cherche par timestamp. Pour les mesures importantes, utilise une vidéo à fréquence constante et vérifie plusieurs essais.
-Le navigateur peut perdre ses données après un nettoyage, une réinstallation, un changement de profil ou certaines manipulations. Le fichier JSON exporté est la copie de sécurité à conserver.
-Le nom de la compétence ne peut pas être vide.
-Le nouveau mot de passe doit contenir au moins 8 caractères.
-Le premier CC appliqué démarre son
-Le score n’est pas seulement un score de dégâts : il combine la logique joueur et les facteurs techniques disponibles. Les données absentes limitent forcément la précision de l’optimisation.
-le timer.
-Lecteur vidéo local
-Lecture contrôle
-Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combos joueurs et rejoint Combos de classe.
-Les deux panneaux utilisent toute la largeur disponible et restent indépendants des anciens layouts.
-Les étapes suivent le workflow recommandé
-Les mesures connues influencent le classement, l’Auto-Build et le temps réellement consommé dans les fenêtres CC.
-Les mots de passe ne correspondent pas.
-Les transitions et cancels font avancer le temps de la séquence et donc diminuer le temps restant.
-Les transitions/cancels influencent désormais réellement le classement. Une transition rapide, mesurée et validée est favorisée ; une transition inconnue peut être pénalisée selon les Settings.
+Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Player combos et rejoint Class combos.
 Like requis pour vérifier un combo
-Limite 2.0 points · Immunité 5 s
-Limites de stamina et de ressource de classe.
-Longueur & durée
-Lorsqu’un combo partagé atteint ce nombre de votes uniques, il rejoint automatiquement Combos de classe.
-Maintenance & sauvegarde
-Maîtrise professions +25
-Marque les animation cancels
-Marquer début CC
-Marquer fin CC
+Max transition(s)
+Measure transitions + cancels
+measured transition
+Measured transition
 Measured Transitions
-Mein Profil
-Même effet que Breuvage de frénésie
-Même effet que Breuvage de la bête
-Même effet que Breuvage du géant
-Même effet que Breuvage sauvage
-Même effet que Harmonie — Demi-humains
-Même effet que Harmonie — Edania
-Même effet que Harmonie — Humains
-Même effet que Parfum d'envie
-Même effet que Parfum de courage
-Même effet que Parfum de ténacité
-Mesure CC réinitialisée.
-Mesure vidéo
-Mesure vidéo V67 · ${Number(m.impactTime||0).toFixed(4)}s → ${Number(m.recoveryTime||0).toFixed(4)}s · ${confirmed?'validated':'auto candidate'}
-mesurée
-Mesurer automatiquement une vidéo
-Mesurer les CC
-Mesurer les timings
-Mesurer transitions + cancels
-Mesures enregistrées : ${added} nouvelle(s), ${updated} mise(s) à jour. Elles restent marquées « à valider ».
-Mesures et validations vidéo
-Mesures précédemment détectées recalculées à partir des segments et sélections actuels.
-Mettre à jour
-mm:ss, hh:mm:ss ou secondes
-Mobilité
-Mode local : ce compte protège uniquement les données de ce navigateur. Le partage communautaire utilise désormais Supabase. Comme cette application n’a pas encore de serveur, ce système n’est pas un compte cloud et ne protège pas contre une personne ayant accès au profil du navigateur.
-Modification impossible :
-Mon profil
-MON PROFIL
-Mot de passe
-Mot de passe actuel
-Mot de passe actuel incorrect.
-Mot de passe cloud modifié.
-Mot de passe incorrect.
-Mot de passe modifié.
 Name d’utilisateur
 Name du combo partagé :
 Namebre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
@@ -457,17 +142,13 @@ Namebre maximum de compétences autorisé dans le combo.
 Namebre minimum de CC
 Namebre minimum de compétences souhaité dans un combo généré.
 nav.transitions
-Ne compte pas uniquement sur le stockage local du navigateur.
-Ne perds pas tes mesures
-ne réinitialise pas
-Nettoyer les transitions invalides
 NEXT ACTIONS
 No transition / cancel registered.
 No transition synergy data
 No validated cancel/transition
 Noe build enregistré pour le moment.
 Noe CC mesurable automatiquement dans les segments résolus.
-Noe classe sélectionnée
+Noe class sélectionnée
 Noe dictionnaire de référence disponible pour ${cls} · ${spec}.
 Noe mesure CC détectée à enregistrer.
 Noe moteur de dictionnaire de référence n’est disponible.
@@ -475,231 +156,75 @@ Noe rapport envoyé automatiquement : le fichier ou le texte doit être transmis
 Noe sauvegarde exportée pendant cette session.
 Noe vidéo chargée.
 Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}
-NOUVEAU COMPTE LOCAL
-Nouveau mot de passe
+of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the
 Open la sauvegarde complète
 Optimizer ne sauvegarde plus automatiquement le build. // L
-Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
-ou utilise la touche
-PA contre monstres supplémentaire (version Corrupted Breath)
-Pack de mobs
-paramètres.
+Optimizer respectera l’ordre : Engage → Setup → CC → Burst → ENDisher et tiendra compte des durées measureds des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
 Partagé par ${c.author||'Joueur'}
-Pas assez d’échantillons dans la zone sélectionnée.
-Pas assez d’images analysées.
-Pas encore de compte ?
-Pause analyse
 Pearl Abyss — Campsite Guide 2026
-Pearl Abyss — données officielles Cron Meal
-Pêche +2
-Pêche +3
-Pénalise ou exclut les compétences indisponibles à cause de leur cooldown.
-permet de décider à quel point le Builder doit privilégier la vitesse des transitions, les cancels et les liaisons connues.
-Place la lecture au moment où le combo intéressant commence, par exemple 3:00.
-Place la vidéo au début/à la fin du CC, ou lance la détection automatique sur la zone analysée.
-Place la vidéo au moment où l’animation d’une compétence est coupée, sélectionne
-Place-toi au début d’une compétence
+PLAYER TRANSITION
 Player transition (${pair.toFixed(1)})
 player-combo-actions
-Poids de l’optimiseur
-Poids dégâts
-Poids pénalité cooldown
-pour de meilleurs timings, marque toujours le premier frame visible du démarrage de chaque compétence, puis le moment exact où l’animation est interrompue pour les cancels.
-pour favoriser les enchaînements disposant d’un cancel.
 pour laisser l’optimiseur poursuivre la chaîne.
-pour préférer les candidats dont la liaison est mesurée/connue.
-pour privilégier les chaînes rapides.
 Pour restaurer : « Import a backup »
-Pour un CC mesuré, renseigne sa
-Pourcentage minimal du combo qui doit bénéficier d’une protection.
-Pré-Awak
-précision / dégâts humains
-précision / ignore résistance
 Précision +${m.accuracy}
-Précision +12
-Précision +13
-Précision +15
-Précision +20
-Précision +8
-Preset polyvalent. Contre forte esquive, augmente Elkarr/Viper; pour glass cannon, remplace davantage de défensifs par dégâts humains.
-Priorité CC
-Priorité communauté
-Priorité protections
-Profil d’optimisation
-Profil général qui détermine les priorités de l’Auto-Build.
-PROTECTION DES DONNÉES
-PV / esquive spéciale
-PvE endgame — dégâts généralistes 2026
-PvP passe-partout — DR/offensif général 2026
-Qté
 Quality de données minimale (%)
 Quality minimale des données exigée avant qu’un skill soit privilégié.
-Quand refaire une sauvegarde ?
-Que s’est-il passé ?
-Quel comportement était attendu ?
-Rapporter un problème
-Récolte +2
-Récolte +3
+Quick Guide — How to Analyze a Video Combo
 Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.
-Récupération PV +12 par coup
-Récupération PV +17 critique
-Récupération PV +17 sur coup critique
-Récupération PV +17 sur critique
-Récupération PV +3 par coup
-Récupération PV +9 par coup
-Récupération ressource par coup
-Récupère 1 200 PV
-Récupère 1 800 PV
-Récupère 150 PV
-Récupère 250 PV
-Récupère 3 000 PV
-Récupère 400 PV
-Récupère 800 PV
-Réduction de dégâts +10
-Réduction de dégâts +13
-Réduction de dégâts +15
-Réduction de dégâts +8
-Réduction dégâts monstres +10%
 Reference + compétences actives
-Référence historique Inven conservée, mais adaptée à la bibliothèque active : Soaring Kick (grab) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. La chaîne Bolt/Jolt → Echo est également documentée par des joueurs Tamer. Les timings restent à mesurer.
 Refresh les mesures détectées
-Régler l’optimiseur / Auto-Build
-Régler le poids des timings, cancels et contraintes
-Règles de validation des combos partagés par les joueurs.
-Réinitialiser
-Renommer un skill met à jour les références associées lorsque l’application peut les résoudre. Vérifie malgré tout les transitions importantes après un renommage.
-Répartis l’importance des dégâts, de la vitesse, des CC et des transitions/cancels.
-Répétitions max. par compétence
-Reprendre analyse
+Renaming a skill updates the associated references when the application can resolve them. Still checks important transitions after a rename.
 Require known transition
-résistance adaptée au spot
-Résistance chaleur/hypothermie +50%
-Restaurer une sauvegarde
-Rester connecté sur cet appareil
-Résumé du projet
-Retrouve ton espace de travail local et toutes tes données enregistrées.
-Rôle
-Rotation large-group publiée : Void Lightning → Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Dropping → Flow: Gust → Allround Spinner.
-Routine recommandée :
 Save Combo + Transitions
-Save les CC
 Save les mesures
 Save les réglages
 Scanning guide
 Search auto impossible : ${e?.message||String(e)}
-SÉCURITÉ
-Sélectionne d’abord une classe dans l’onglet Class.
-Sélectionne d’abord une classe.
-Sélectionne la classe.
-Sélectionne la compétence
-Sélectionne le fichier
-Sélectionne le fichier JSON précédemment exporté.
-Sélectionne un fichier vidéo local avec le bouton
-Sélectionne une classe avant de partager.
-Sélectionne une classe pour afficher l’état des données.
-Sélectionne une compétence puis ses deux effets d’add-on.
-sert à extraire des mesures réelles depuis une vidéo locale. Tu peux choisir le point de départ de l’analyse au lieu de commencer obligatoirement à 0:00.
+Sélectionne d’abord une class dans l’onglet Class.
 Settings → Backup complète
 Settings Auto-Build réinitialisés.
 Settings enregistrés. Optimizer utilisera les
-Settings ont une persistance unique, les rapports de bug indiquent la bonne version et l’export JSON complet reste recommandé.
-si tu veux retrouver exactement l’état sauvegardé.
-si un skill manque.
+Setup chain built only from skills that the BDFoundry guide recommends for Succession add-ons: Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.
 Sign in impossible :
 Sign in, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
-Site officiel PC · actualités, événements et annonces
 Skills & améliorations
-Skills ajoutés / modifiés
 Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).
 Skills vs référentiel
-Skills, transitions, mesures, combos et réglages actuels seront rattachés à ce compte.
 Slow transition ${transitionSeconds.toFixed(3)}s
-spécialisation
 State du Combo Builder
-Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle source du CC Timer avec sa propre durée mesurée, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.
-Succès transformation +10%
-Succès transformation +20%
+Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle source du CC Timer avec sa propre durée measured, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.
 Succession Tamer quick PvE guide
-Supprime les entrées incorrectes avec le bouton de suppression.
-Sustain / sécurité
-Synchronise avec Heuklang
-Système CC PvP officiel
-Tableau complet fourni par utilisateur · V12
-Télécharger le rapport
 Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?
-Temps vidéo
-Timing CC non mesuré · placement temporel ignoré
-Timing estimé
-timing inconnu
-Timing intermédiaire incomplet · placement temporel ignoré
-timing skill inconnu
-Tous ces réglages sont lus automatiquement par Optimizer.
-Transição / Cancel
+The guide lists as the main rotation: Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Historical reference to be revalidate according to current patch.
 transition
 Transition / Cancel
-Transition / cancel non mesuré · placement CC ignoré
 Transition ${seconds.toFixed(3)}s
 Transition Duration
-Transition inconnue
-Transition inconnue · pénalité forte
-TRANSITION JOUEUR
-Transition max (s)
-transition mesurée
-Transition mesurée
 Transition V17 startup cleanup failed
-transition validée
+transition validated
 transition-cancel-aware-v73-style
 transition-review-summary-v47
 transition-review-v47-style
 transition-timing-box
 transition-timing-grid
+Transition/cancel not measured CC placement ignored
 Transitions
-Transitions / cancels
+Transitions / cancellations
 Transitions / Cancels
 Transitions & Cancels
+Transitions and cancels advance the time of the sequence and therefore reduce the remaining time.
 Transitions with timing
-travaille normalement → mesure/corrige les données → enregistre tes builds utiles → termine la session par
+Transitions/cancels now actually influence ranking. A rapid, measured and validated transition is favored; an unknown transition may be penalized depending on the Settings.
 Trollsies Tamer guide — Reddit
-Tu as déjà un compte ?
-Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la classe active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
-Type de cible
-Un cancel ne réduit jamais la durée du CC.
-Un nouveau CC appliqué devient la nouvelle source du CC Timer avec sa propre durée mesurée.
-Une compétence nommée « ${name} » existe déjà.
-Une compétence sans nouveau CC
-Une détection automatique est une aide de mesure, pas une vérité absolue. Les valeurs aberrantes doivent être contrôlées dans la vidéo.
-une transition intermédiaire manque : le dernier temps connu reste affiché mais n
-Une transition représente le temps réel nécessaire pour passer du skill A au skill B. Un cancel permet d’interrompre une animation pour enchaîner plus tôt.
-Utilisateur
-Utilise l’édition pour corriger son
-Utilise la lecture lente et la pause pendant l’analyse pour contrôler une détection.
-Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.
-Utiliser BDO Combos Labs de A à Z
-Utiliser le Combo Builder et ses suggestions
-Validation des transitions
+Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la class active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.
+Unknown transition
+Unknown transition · strong penalty
+Validating transitions
 Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)
-validé
-Valide les mesures fiables.
-validée
-validées / mesurées
 Vérification : ${communityVerifyThresholdV101()} Like
 Vérification : 10 Like
-Vérification…
-Vérifie le couple
-Vérifie sur l’accueil que le contexte actif et le référentiel sont corrects.
-Vidéo
-Vidéo locale
-Video-Analyse
 video-auto-cc-actions-v49
 video-auto-transition-row-v45
 video-auto-transitions-v45-style
-Vitesse / fluidité
-Vitesse déplacement +2
-Vitesse déplacement +3
-Vitesse déplacement +5
-Vitesse déplacement +5%
-Vitesse déplacement/attaque/incantation +5
 youtube-transition-analysis
-Zone concernée
-Zone insuffisante après le début CC détecté.
-Zone préparée : ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.
