@@ -5812,7 +5812,7 @@ if(!BDO_DOM_READY){
       <div class="home18-hero-copy">
         <div class="home18-eyebrow">LABORATORIOS BDO COMBOS · CENTRO DE CONTROL</div>
         <h2>Mide, crea y optimiza tus combos de BDO</h2>
-        <p>Laboratorios de combos BDO relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Generador combinado. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixto / Pré-Awakening, la séquence actuelle et les timings réellement enregistrés.</p>
+        <p>Laboratorios de combos BDO ahora vincula el repositorio de habilidades, métricas de video, transiciones/cancelaciones, el sistema oficial PvP CC y Generador combinado. Las sugerencias del Constructor se recalculan según la orientación Awakening / Mixta / Pre-Awakening, la secuencia actual y los tiempos realmente registrados.</p>
         <div class="home18-actions">
           <button class="optimizer-btn" type="button" onclick="showPage('skillsPage',document.querySelector('[data-page=skillsPage]'));renderSkillsPage()">Abrir Skills</button>
           <button class="tab-btn" type="button" onclick="showPage('builderPage',document.querySelector('[data-page=builderPage]'));renderComboBuilder()">Generador combinado</button>
@@ -5831,7 +5831,7 @@ if(!BDO_DOM_READY){
       <article class="home18-kpi"><span>Referencia</span><strong id="home18ReferenceCount">0</strong><small id="home18ReferenceSub">entradas disponibles</small></article>
       <article class="home18-kpi"><span>combos</span><strong id="home18Combos">0</strong><small>pour ce contexte</small></article>
       <article class="home18-kpi"><span>Transiciones</span><strong id="home18Transitions">0</strong><small id="home18TransitionsSub">validado / medido</small></article>
-      <article class="home18-kpi"><span>Completitud</span><strong id="home18Completeness">0%</strong><small>données de combat</small></article>
+      <article class="home18-kpi"><span>Completitud</span><strong id="home18Completeness">0%</strong><small>datos de combate</small></article>
     </section>
 
     <div class="home18-main-grid">
@@ -5842,7 +5842,7 @@ if(!BDO_DOM_READY){
         </div>
         <div class="home18-progress-list">
           <div class="home18-progress-row"><div><span>Skills vs referencia</span><b id="home18SkillCoverageText">0 / 0</b></div><div class="home18-progress-track"><i id="home18SkillCoverage"></i></div></div>
-          <div class="home18-progress-row"><div><span>Métadonnées Skills</span><b id="home18MetaCoverageText">0%</b></div><div class="home18-progress-track"><i id="home18MetaCoverage"></i></div></div>
+          <div class="home18-progress-row"><div><span>Metadatos de habilidades</span><b id="home18MetaCoverageText">0%</b></div><div class="home18-progress-track"><i id="home18MetaCoverage"></i></div></div>
           <div class="home18-progress-row"><div><span>Transiciones avec timing</span><b id="home18TimingCoverageText">0%</b></div><div class="home18-progress-track"><i id="home18TimingCoverage"></i></div></div>
         </div>
         <div class="home18-health" id="home18Health">Selecciona una clase para mostrar el estado de los datos.</div>
@@ -5857,10 +5857,10 @@ if(!BDO_DOM_READY){
     <section class="home18-panel">
       <div class="home18-panel-head">
         <div><span class="home18-section-kicker">FLUJO DE TRABAJO</span><h3>De datos sin procesar al combinación optimizado</h3></div>
-        <span class="home18-muted">Hacer clic en une étape pour ouvrir l’outil correspondant</span>
+        <span class="home18-muted">Haga clic en un paso para abrir la herramienta correspondiente</span>
       </div>
       <div class="home18-workflow">
-        <button type="button" onclick="showPage('classPage',document.querySelector('[data-page=classPage]'))"><span>01</span><b>Contexte</b><small>Clase, especialización et référentiel</small></button>
+        <button type="button" onclick="showPage('classPage',document.querySelector('[data-page=classPage]'))"><span>01</span><b>Contexte</b><small>Clase, especialización y referencia.</small></button>
         <button type="button" onclick="showPage('skillsPage',document.querySelector('[data-page=skillsPage]'));renderSkillsPage()"><span>02</span><b>Skills</b><small>Crear, renombrar, eliminar e ingresar estadísticas</small></button>
         <button type="button" onclick="showPage('youtubeAnalyzerPage',document.querySelector('[onclick*=youtubeAnalyzerPage]'));renderYouTubeAnalyzer()"><span>03</span><b>Medición de vídeo</b><small>Detectar habilidades, CC, transiciones y cancelaciones</small></button>
         <button type="button" onclick="showPage('transitionPage',document.querySelector('[data-page=transitionPage]'));renderTransitionPage()"><span>04</span><b>Timing</b><small>Controlar y validar transiciones / cancelaciones</small></button>
@@ -5879,7 +5879,7 @@ if(!BDO_DOM_READY){
       </div>
       <div class="home19-build-table-wrap">
         <table class="home19-build-table">
-          <thead><tr><th>Date</th><th>Contexte</th><th>Type</th><th>Séquence</th><th>Skills</th><th>Validation</th><th style="text-align:right">Comportamiento</th></tr></thead>
+          <thead><tr><th>Date</th><th>Contexte</th><th>Type</th><th>Secuencia</th><th>Skills</th><th>Validation</th><th style="text-align:right">Comportamiento</th></tr></thead>
           <tbody id="home19RecentBuildRows"><tr><td colspan="7"><div class="home19-empty">Ninguno build enregistré pour le moment.</div></td></tr></tbody>
         </table>
       </div>
@@ -5910,19 +5910,19 @@ if(!BDO_DOM_READY){
     
     
         <section class="home18-panel account78-home-info">
-      <div><span class="home18-section-kicker">ESPACE UTILISATEUR</span><h3>Compte local & données personnelles</h3><p>Cree una cuenta para separar automáticamente su espacio de trabajo de otros usuarios de este navegador. Una copia de seguridad local del perfil se actualiza periódicamente y al cerrar sesión.</p></div>
-      <button type="button" class="tab-btn" onclick="openAccountModalV78(accountUserV78()?'profile':'register')">Gérer mon compte</button>
+      <div><span class="home18-section-kicker">ÁREA DE USUARIO</span><h3>Cuenta local y datos personales</h3><p>Cree una cuenta para separar automáticamente su espacio de trabajo de otros usuarios de este navegador. Una copia de seguridad local del perfil se actualiza periódicamente y al cerrar sesión.</p></div>
+      <button type="button" class="tab-btn" onclick="openAccountModalV78(accountUserV78()?'profile':'register')">Administrar mi cuenta</button>
     </section>
 
 <section class="home18-panel home76-backup-reminder">
       <div class="home76-backup-reminder-copy">
         <span class="home18-section-kicker">PROTECCIÓN DE DATOS</span>
         <h3>No pierdas tus medidas</h3>
-        <p>Skills, durées CC, transitions/cancels, mesures vidéo, réglages et builds peuvent être exportés ensemble dans une sauvegarde JSON. Fais une copie régulièrement.</p>
+        <p>Las habilidades, duraciones de CC, transiciones/cancelaciones, mediciones de video, configuraciones y compilaciones se pueden exportar juntas en una copia de seguridad JSON. Haga una copia periódicamente.</p>
       </div>
       <div class="home76-backup-reminder-actions">
-        <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Sauvegarder toutes les données</button>
-        <small>Settings → Sauvegarde complète</small>
+        <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Copia de seguridad de todos los datos</button>
+        <small>Configuración → Copia de seguridad completa</small>
       </div>
     </section>
 
@@ -5935,7 +5935,7 @@ if(!BDO_DOM_READY){
         <article><b>Stabilisation CC PvP</b><p>El temporizador CC y la inmunidad utilizan la misma línea de tiempo de inicio a inicio, sin contar dos veces la duración de las habilidades.</p></article>
         <article><b>Transiciones y Cancels</b><p>Las métricas conocidas influyen en la clasificación, la creación automática y el tiempo real consumido en las ventanas CC.</p></article>
         <article><b>Video Analyzer</b><p>Análisis desde una posición elegida, detección de habilidades, transiciones/cancelas y duraciones de CC validadas directamente en una habilidad.</p></article>
-        <article><b>Comptes locaux</b><p>Iniciar sesión, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.</p></article>
+        <article><b>Comptes locaux</b><p>Conexión, perfiles separados y espacios de trabajo locales. Una cuenta creada vacía ya no recopila datos anónimos por error.</p></article>
         <article><b>Gestion Skills & Builds</b><p>Agregue, cambie el nombre y elimine ahora y también sincronice el historial de compilación guardado.</p></article>
         <article><b>Mantenimiento y respaldo</b><p>La configuración tiene una persistencia única, los informes de errores indican la versión correcta y aún se recomienda la exportación JSON completa.</p></article>
       </div>
@@ -5951,8 +5951,8 @@ if(!BDO_DOM_READY){
       </div>
 
       <div class="home75-start">
-        <div><b>Objectif</b><p>Construire un combinación à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.</p></div>
-        <div><b>Principe important</b><p>Une donnée absente reste inconnue. Une transición ou une duración del CC non medida ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.</p></div>
+        <div><b>Objectif</b><p>Cree una combinación a partir de datos medidos en lugar de tiempos inventados. El Constructor utiliza habilidades registradas, CC, transiciones y cancelaciones para clasificar sus sugerencias.</p></div>
+        <div><b>Principe important</b><p>Los datos faltantes siguen siendo desconocidos. Una transición o duración de CC no medida no debe ser reemplazada silenciosamente por un valor arbitrario. Después de una sesión larga, siempre exporta una copia de seguridad JSON completa.</p></div>
       </div>
 
       <div class="home75-toc">
@@ -5963,14 +5963,14 @@ if(!BDO_DOM_READY){
         <button onclick="document.getElementById('tuto75-5').scrollIntoView({behavior:'smooth'})">5 · Generador combinado</button>
         <button onclick="document.getElementById('tuto75-6').scrollIntoView({behavior:'smooth'})">6 · CC PvP</button>
         <button onclick="document.getElementById('tuto75-7').scrollIntoView({behavior:'smooth'})">7 · Auto-Build</button>
-        <button onclick="document.getElementById('tuto75-8').scrollIntoView({behavior:'smooth'})">8 · Sauvegarde</button>
+        <button onclick="document.getElementById('tuto75-8').scrollIntoView({behavior:'smooth'})">8 · Copia de seguridad</button>
       </div>
 
       <div class="home75-guide-grid">
         <details id="tuto75-1" open>
           <summary><span>01</span> Elige el contexto laboral</summary>
           <div class="home75-detail">
-            <p>Comience seleccionando el <b>clase</b> y el <b>especialización</b>. Todas les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.</p>
+            <p>Comience seleccionando el <b>clase</b> y el <b>especialización</b>. Todas las páginas utilizan este contexto para cargar el repositorio, habilidades, combos y medidas correctos.</p>
             <ol><li>Ouvre <b>Perfil de clase</b>.</li><li>Seleccione la clase.</li><li>Elija Despertar o la especialización disponible.</li><li>Comprueba en la página de inicio que el contexto activo y el repositorio sean correctos.</li></ol>
             <p class="home75-tip">la eleccion <b>Awakening / Mixto / Pré-Awakening</b> del Generador combinado es diferente de la especialización: define la orientación de la cadena que el Builder debe proponer.</p>
           </div>
@@ -5980,7 +5980,7 @@ if(!BDO_DOM_READY){
           <summary><span>02</span> Construire et corriger la base Skills</summary>
           <div class="home75-detail">
             <p>la pagina <b>Skills</b> es la base de datos utilizada por el resto de la aplicación. Cada habilidad puede contener entrada, tiempo de reutilización, temporizador, protección, CC, duración de CC, daño PvE/PvP, efectos y categoría.</p>
-            <ol><li>Controla las habilidades importadas.</li><li>Usado <b>+ Añadir une compétence</b> si falta una habilidad.</li><li>Utilice la edición para corregir el sonido. <b>nom</b> et ses statistiques.</li><li>Elimina las entradas incorrectas con el botón Eliminar.</li><li>Para un CC medido, ingrese su <b>duración del CC</b> : este valor alimenta el temporizador CC del constructor.</li></ol>
+            <ol><li>Controla las habilidades importadas.</li><li>Usado <b>+ Agregar una habilidad</b> si falta una habilidad.</li><li>Utilice la edición para corregir el sonido. <b>nom</b> et ses statistiques.</li><li>Elimina las entradas incorrectas con el botón Eliminar.</li><li>Para un CC medido, ingrese su <b>duración del CC</b> : este valor alimenta el temporizador CC del constructor.</li></ol>
             <p class="home75-tip">Cambiar el nombre de una habilidad actualiza las referencias asociadas cuando la aplicación puede resolverlas. Todavía comprueba las transiciones importantes después de un cambio de nombre.</p>
           </div>
         </details>
@@ -6031,27 +6031,27 @@ if(!BDO_DOM_READY){
         </details>
 
         <details id="tuto75-8" open>
-          <summary><span>08</span> Sauvegarder TOUTES les données et les restaurer</summary>
+          <summary><span>08</span> Haga una copia de seguridad de TODOS los datos y restáurelos</summary>
           <div class="home75-detail">
-            <p><b>Important :</b> el botón <b>Guardar ce build</b> del Generador combinado solo guarda una secuencia combinada. Para evitar perder habilidades, duraciones de CC, transiciones/cancelaciones, mediciones de video, configuraciones y equipamientos, debes usar el <b>Sauvegarde complète</b>.</p>
+            <p><b>Important :</b> el botón <b>Guardar ce build</b> del Generador combinado solo guarda una secuencia combinada. Para evitar perder habilidades, duraciones de CC, transiciones/cancelaciones, mediciones de video, configuraciones y equipamientos, debes usar el <b>Copia de seguridad completa</b>.</p>
 
             <div class="home76-backup-flow">
               <div><span>1</span><b>Ouvre Settings</b><small>El área "RESPALDO COMPLETO" se encuentra en la parte superior de esta página.</small></div>
               <div><span>2</span><b>Clique « Exportar todos los datos »</b><small>La aplicación crea un archivo JSON que contiene el trabajo guardado actualmente.</small></div>
               <div><span>3</span><b>Mantener el archivo JSON</b><small>Guárdelo en una carpeta segura, en la nube o en una copia externa. Esta es su copia de seguridad.</small></div>
-              <div><span>4</span><b>Pour restaurer : « Importar copia de seguridad »</b><small>Selecciona el archivo JSON previamente exportado.</small></div>
+              <div><span>4</span><b>Para restaurar: "Importar una copia de seguridad"</b><small>Selecciona el archivo JSON previamente exportado.</small></div>
             </div>
 
             <h4>Qué contiene la copia de seguridad completa</h4>
             <div class="home76-backup-items">
               <span>Habilidades agregadas/modificadas</span>
               <span>Inputs et statistiques</span>
-              <span>Durées CC mesurées</span>
+              <span>Tiempos CC medidos</span>
               <span>Transiciones / Cancels</span>
               <span>Mediciones y validaciones en vídeo.</span>
               <span>combos enregistrés</span>
               <span>Estado du Generador combinado</span>
-              <span>Réglages Auto-Build</span>
+              <span>Configuración de Auto-Build</span>
               <span>Skill Add-ons / Loadout</span>
               <span>Datos locales Laboratorios de combos BDO</span>
             </div>
@@ -6069,19 +6069,19 @@ if(!BDO_DOM_READY){
             <h4>Restaurar una copia de seguridad</h4>
             <ol>
               <li>Ouvre <b>Settings</b>.</li>
-              <li>En <b>Sauvegarde complète</b>, hojas marcadas <b>Remplacer les données locales Laboratorios de combos BDO lors de la restauration</b> si desea encontrar exactamente el estado guardado.</li>
+              <li>En <b>Copia de seguridad completa</b>, hojas marcadas <b>Sobrescribir los datos locales Laboratorios de combos BDO al restaurar</b> si desea encontrar exactamente el estado guardado.</li>
               <li>Clique <b>Importar copia de seguridad</b>.</li>
               <li>Seleccione el archivo <code>BDO_combos_Labs_Backup_....json</code>.</li>
               <li>Espere el mensaje de confirmación.</li>
               <li>Vuelve a Skills, Transición / Cancel y Generador combinado para verificar los datos restaurados.</li>
             </ol>
 
-            <p class="home75-tip"><b>Compte local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Usado « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
+            <p class="home75-tip"><b>Cuenta local:</b> separa los espacios de trabajo en este navegador, pero no reemplaza la exportación JSON. Utilice "Informar un error" si una restauración o copia de seguridad produce un comportamiento inesperado.</p>
             <p class="home75-warning"><b>No confíe únicamente en el almacenamiento del navegador local.</b> El navegador puede perder sus datos después de una limpieza, reinstalación, cambio de perfil o determinadas manipulaciones. El archivo JSON exportado es la copia de seguridad que se debe conservar.</p>
             <p class="home75-tip"><b>Routine recommandée :</b> trabajar normalmente → medir/corregir los datos → guardar sus compilaciones útiles → finalizar la sesión con <b>Exportar todos los datos</b>.</p>
 
             <div class="home76-backup-actions">
-              <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Abrir la sauvegarde complète</button>
+              <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Abrir copia de seguridad completa</button>
             </div>
           </div>
         </details>
@@ -6089,9 +6089,9 @@ if(!BDO_DOM_READY){
 
       <div class="home75-checklist">
         <div><span>✓</span><b>antes de construir</b><small>Clase + spec + orientation correctes</small></div>
-        <div><span>✓</span><b>Antes de optimizar</b><small>Durées CC et transitions importantes mesurées</small></div>
+        <div><span>✓</span><b>Antes de optimizar</b><small>Duraciones de DC y transiciones importantes medidas</small></div>
         <div><span>✓</span><b>Antes de validar</b><small>Temporizador CC, CADENA y estadísticas controladas.</small></div>
-        <div><span>✓</span><b>al final</b><small>Exportar la sauvegarde complète JSON</small></div>
+        <div><span>✓</span><b>al final</b><small>Exportar copia de seguridad completa JSON</small></div>
       </div>
     </section>
   </div>
@@ -6240,7 +6240,7 @@ if(!BDO_DOM_READY){
     </div>
 
     <div class="empty">
-      L'application a été remise à zéro. Ninguno dataset ni mécanisme de restauration automatique n'est présent.
+      La aplicación ha sido reiniciada. No existe ningún conjunto de datos ni mecanismo de recuperación automática.
     </div>
   </div>
 
@@ -6255,7 +6255,7 @@ if(!BDO_DOM_READY){
           <div id="skillsClassContext" class="badge">Ninguna clase sélectionnée</div>
         </div>
         <button id="skillsManualAddBtnV72" type="button" class="optimizer-btn" onclick="skillsManualAddV72()">
-          + Añadir une compétence
+          + Agregar una habilidad
         </button>
       </div>
 
@@ -6264,7 +6264,7 @@ if(!BDO_DOM_READY){
         <div><span>Skills</span><strong id="skillsSummaryTotal">0</strong></div>
         <div><span>Actives</span><strong id="skillsSummaryEnabled">0</strong></div>
         <div><span>Avec input</span><strong id="skillsSummaryInput">0</strong></div>
-        <div><span>Avec données combat</span><strong id="skillsSummaryCombat">0</strong></div>
+        <div><span>Con datos de combate</span><strong id="skillsSummaryCombat">0</strong></div>
       </div>
 
       <div class="skills-control-bar skills95-control-bar">
@@ -6297,7 +6297,7 @@ if(!BDO_DOM_READY){
           </select>
         </div>
         <button id="autoSkillReferenceSearchBtn" type="button" class="optimizer-btn skills-auto-main-btn" onclick="autoPopulateSkillsFromReferenceV13()">
-          Búsqueda automática des compétences
+          Búsqueda automática de habilidades
         </button>
       </div>
 
@@ -6306,7 +6306,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <div id="skillsPageContent" class="page-placeholder">
-        Sélectionne d’abord une clase dans l’onglet Clase.
+        Primero seleccione una clase en la pestaña Clase.
       </div>
     </div>
   </section>
@@ -6321,7 +6321,7 @@ if(!BDO_DOM_READY){
         <span class="verified-badge">Combinaciones validadas</span>
       </div>
       <div id="comboPageContent" class="page-placeholder">
-        Sélectionne d’abord une clase dans l’onglet Clase.
+        Primero seleccione una clase en la pestaña Clase.
       </div>
     </div>
   </section>
@@ -6397,7 +6397,7 @@ if(!BDO_DOM_READY){
             <div class="transition-clean-toolbar">
         <div>
           <strong>Validar transiciones</strong>
-          <span id="transitionValidationStatus">Referencia + compétences actives</span>
+          <span id="transitionValidationStatus">Referencia + habilidades activas</span>
         </div>
         <button id="transitionCleanBtn" type="button" class="tab-btn" onclick="cleanCurrentTransitionsV17(true)">Limpiar transiciones no válidas</button>
       </div>
@@ -6525,7 +6525,7 @@ if(!BDO_DOM_READY){
           <span>Grab <b>1.0</b></span>
           <span>Freeze <b>1.0</b></span>
         </div>
-        <small>Down Smash / Air Smash ne sont pas inclus dans le compteur ci-dessus. Source : note de mise à jour officielle Pearl Abyss. Le « CC Timer » utilise uniquement des mesures enregistrées. Un * indique qu'falta una transición intermedia: la última hora conocida permanece mostrada pero no'est pas utilisé comme timing précis par l'optimiseur. En Skills → Editar, renseigne CC mesuré (s), ou FPS + frames début/fin.</small>
+        <small>Down Smash / Air Smash no están incluidos en el contador anterior. Fuente: Nota oficial del parche Pearl Abyss. El “CC Timer” solo utiliza mediciones registradas. Un * indica que falta una transición intermedia: el último tiempo conocido permanece mostrado pero el optimizador no lo utiliza como tiempo preciso. En Habilidades → Modificar, ingrese CC (s) medidos o FPS + inicio/final de fotogramas.</small>
       </div>
       <div id="builderCombatStats" class="builder-combat-stats"></div>
 
@@ -6582,7 +6582,7 @@ if(!BDO_DOM_READY){
         <span class="builder-history-actions">
   <button type="button" class="tab-btn" onclick="saveCurrentBuildToHistoryV19('manual')">Guardar ce build</button>
   <button type="button" class="optimizer-btn community101-share-btn" onclick="shareCurrentBuilderComboV101()">Partager ce combinación</button>
-</span><span id="builderHistorySaveStatus" class="builder-history-save-status"></span><span style="font-size:9px;color:#6f8094;margin-left:7px">Sauvegarde manuelle uniquement</span>
+</span><span id="builderHistorySaveStatus" class="builder-history-save-status"></span><span style="font-size:9px;color:#6f8094;margin-left:7px">Sólo copia de seguridad manual</span>
 <div id="builderOptimizerOutput" style="margin-top:10px"></div>
         <div id="optimizerStatus" class="optimizer-note">
           Agrega habilidades de la clase seleccionada para crear un combinación.
@@ -6611,7 +6611,7 @@ if(!BDO_DOM_READY){
             <span class="youtube-tutorial-number">1</span>
             <div>
               <strong>Cargar vídeo local</strong>
-              <p>Seleccione un archivo de vídeo local con el botón <b>Vídeo local</b>. Le lecteur local est la fuente de temps utilisée pour tous les marqueurs.</p>
+              <p>Seleccione un archivo de vídeo local con el botón <b>Vídeo local</b>. El jugador local es la fuente de tiempo utilizada para todos los marcadores.</p>
             </div>
           </div>
 
@@ -6635,7 +6635,7 @@ if(!BDO_DOM_READY){
             <span class="youtube-tutorial-number">4</span>
             <div>
               <strong>Añade el marcador</strong>
-              <p>Hacer clic en <b>Mark Current Time</b> o usa la llave <b>M</b>. Recommence pour chaque compétence du combinación.</p>
+              <p>Hacer clic en <b>Mark Current Time</b> o usa la llave <b>M</b>. Repita para cada habilidad en el combinación.</p>
             </div>
           </div>
 
@@ -6696,7 +6696,7 @@ if(!BDO_DOM_READY){
           </div>
 
           <div id="timingVideoStatus" class="result small">
-            Ninguna vidéo chargée.
+            No hay vídeos cargados.
           </div>
 
           <video id="timingVideo"
@@ -6725,7 +6725,7 @@ if(!BDO_DOM_READY){
               <strong id="timingVideoCurrentFrame">0</strong>
             </div>
             <div>
-              <span>Durée vidéo</span>
+              <span>Duración del vídeo</span>
               <strong id="timingVideoDuration">—</strong>
             </div>
             <div>
@@ -6806,7 +6806,7 @@ if(!BDO_DOM_READY){
                   Medir transiciones + cancelaciones
                 </button>
                 <button id="videoAutoSaveTransitionsBtnV45" type="button" class="tab-btn" onclick="saveAutoTransitionsV45()" disabled>
-                  Guardar les mesures
+                  Guardar medidas
                 </button>
                 <button id="videoAutoMeasureCCBtnV49" type="button" class="tab-btn" onclick="measureAutoCCV49()" disabled>
                   Medida CC
@@ -6842,7 +6842,7 @@ if(!BDO_DOM_READY){
               <button type="button" class="tab-btn" onclick="setVideoAutoRangePointV46('end')">FIN = posición del vídeo</button>
               <button type="button" class="tab-btn" onclick="setVideoAutoWindowFromCurrentV70(30)">Analizar 30 seg desde aquí</button>
               <button id="videoAutoPauseBtnV46" type="button" class="tab-btn" onclick="toggleVideoAutoPauseV46()" disabled>Pausa de análisis</button>
-              <button type="button" class="tab-btn" onclick="refreshAutoMeasurementsV46()">Actualizar les mesures détectées</button>
+              <button type="button" class="tab-btn" onclick="refreshAutoMeasurementsV46()">Actualizar medidas detectadas</button>
             </div>
             <div id="videoAutoStatusV43" class="optimizer-note">
               Analiza una zona corta del combinación para obtener tiempos precisos. Máximo recomendado: 30 a 60 segundos.
@@ -6852,7 +6852,7 @@ if(!BDO_DOM_READY){
             <div class="video-generic-cc-v50">
               <div class="video-generic-cc-head-v50">
                 <div>
-                  <strong>Durée CC générique</strong>
+                  <strong>Duración del CC genérico</strong>
                   <small>Funciona incluso si no se reconocen habilidades.</small>
                 </div>
                 <div class="video-generic-cc-actions-v50">
@@ -6864,13 +6864,13 @@ if(!BDO_DOM_READY){
                 </div>
               </div>
               <div id="genericCCDurationBannerV51" class="generic-cc-duration-banner-v51">
-                <span>Durée CC</span>
+                <span>duración del CC</span>
                 <strong id="genericCCDurationMainV51">—</strong>
               </div>
               <div class="video-generic-cc-stats-v50">
                 <div><span>Comienzo</span><strong id="genericCCStartV50">—</strong></div>
                 <div><span>FIN</span><strong id="genericCCEndV50">—</strong></div>
-                <div class="duration"><span>Durée CC</span><strong id="genericCCDurationV50">—</strong></div>
+                <div class="duration"><span>duración del CC</span><strong id="genericCCDurationV50">—</strong></div>
                 <div><span>Frames</span><strong id="genericCCFramesV50">—</strong></div>
               </div>
               <div id="genericCCStatusV50" class="optimizer-note">Coloque el vídeo al principio/final del CC, o inicie la detección automática en el área analizada.</div>
@@ -6901,7 +6901,7 @@ if(!BDO_DOM_READY){
           <div>
             <span class="full-backup-kicker-v48">DATOS Y RESPALDO</span>
             <h3>Datos Laboratorios de combos BDO</h3>
-            <p>Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.</p>
+            <p>Copia de seguridad recomendada: exporta habilidades, duraciones de CC, combos, transiciones/cancelaciones, mediciones de video, validaciones, complementos, equipamiento, estado del constructor y configuraciones a un archivo JSON. Guarde este archivo para que pueda restaurar todo sin tener que volver a escribir.</p>
           </div>
           <div class="full-backup-actions-v48 backup104-actions">
             <button type="button" class="optimizer-btn" onclick="exportFullBackupV48()">Exportar todos los datos</button>
@@ -6912,9 +6912,9 @@ if(!BDO_DOM_READY){
           </div>
         </div>
         <div class="full-backup-options-v48">
-          <label class="full-backup-checkbox-v89"><input id="fullBackupReplaceV48" type="checkbox" checked><span>Remplacer les données locales Laboratorios de combos BDO lors de la restauration</span></label>
+          <label class="full-backup-checkbox-v89"><input id="fullBackupReplaceV48" type="checkbox" checked><span>Sobrescribir los datos locales Laboratorios de combos BDO al restaurar</span></label>
         </div>
-        <div id="fullBackupStatusV48" class="optimizer-note">Ninguna sauvegarde exportée pendant cette session.</div>
+        <div id="fullBackupStatusV48" class="optimizer-note">No se exportaron copias de seguridad durante esta sesión.</div>
       </section>
 
       <div class="settings81-section-head"><span>01</span><div><h3>Optimización</h3><p>Definir el perfil general y el tipo de target.</p></div></div>
@@ -6966,22 +6966,22 @@ if(!BDO_DOM_READY){
     <span>Uso</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Skills minimum</b><small>Nombre minimum de compétences souhaité dans un combinación généré.</small></div>
+    <div class="settings92-name"><b>Skills minimum</b><small>Número mínimo de habilidades deseadas en un combinación generado.</small></div>
     <div class="settings92-control"><input id="autoBuildMinSkills" type="number" min="1" max="30" value="3" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinSkills">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Skills maximum</b><small>Nombre maximum de compétences autorisé dans le combinación.</small></div>
+    <div class="settings92-name"><b>Skills maximum</b><small>Número máximo de habilidades permitidas en el combinación.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxSkills" type="number" min="1" max="30" value="8" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxSkills">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Durée max. estimada (s)</b><small>Durée estimada maximale acceptée pour la séquence complète.</small></div>
+    <div class="settings92-name"><b>Duración máxima estimada(s)</b><small>Duración máxima estimada aceptada para la secuencia completa.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxDuration" type="number" min="0.5" max="60" step="0.1" value="8" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxDuration">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Durée min. estimada (s)</b><small>Durée estimada minimale souhaitée pour la séquence.</small></div>
+    <div class="settings92-name"><b>Duración mínima estimada(s)</b><small>Duración mínima estimada deseada para la secuencia.</small></div>
     <div class="settings92-control"><input id="autoBuildMinDuration" type="number" min="0" max="60" step="0.1" value="0" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinDuration">Automático</div>
   </div>
@@ -7009,7 +7009,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildAllowReuse">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Repeticiones máximas. por habilidad</b><small>Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.</small></div>
+    <div class="settings92-name"><b>Repeticiones máximas. por habilidad</b><small>Número máximo de usos de la misma habilidad cuando se permite la repetición.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxRepeat" type="number" min="1" max="10" value="1" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxRepeat">Automático</div>
   </div>
@@ -7072,7 +7072,7 @@ if(!BDO_DOM_READY){
   </div>
 </div>
 
-      <div class="settings81-section-head"><span>05</span><div><h3>Poids de l’optimiseur</h3><p>Desglosa la importancia del daño, la velocidad, el CC y las transiciones/cancelaciones.</p></div></div>
+      <div class="settings81-section-head"><span>05</span><div><h3>Peso optimizador</h3><p>Desglosa la importancia del daño, la velocidad, el CC y las transiciones/cancelaciones.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Ajuste</span>
@@ -7119,17 +7119,17 @@ if(!BDO_DOM_READY){
     <span>Uso</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Coût ressource max.</b><small>Costo máximo de recursos de clase aceptado para el combinación.</small></div>
+    <div class="settings92-name"><b>Costo máximo de recursos</b><small>Costo máximo de recursos de clase aceptado para el combinación.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxResourceCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxResourceCost">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Coût stamina max.</b><small>Coste máximo de resistencia aceptado para el combinación.</small></div>
+    <div class="settings92-name"><b>Costo de resistencia máximo.</b><small>Coste máximo de resistencia aceptado para el combinación.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxStaminaCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxStaminaCost">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Préserver la ressource</b><small>Favorece secuencias que conservan más recursos.</small></div>
+    <div class="settings92-name"><b>Preservar el recurso</b><small>Favorece secuencias que conservan más recursos.</small></div>
     <div class="settings92-control"><select id="autoBuildPreserveResource" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Sí</option>
           </select></div>
@@ -7157,7 +7157,7 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row">
-    <div class="phase90-name"><b>Setup</b><small>Préparation du combinación</small></div>
+    <div class="phase90-name"><b>Setup</b><small>Preparando la combinación</small></div>
     <select id="autoBuildSetupEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Activado</option>
       <option value="false">Desactivado</option>
@@ -7167,14 +7167,14 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row phase90-cc">
-    <div class="phase90-name"><b>CC</b><small>Contrôle / re-CC PvP</small></div>
+    <div class="phase90-name"><b>CC</b><small>Controlar/re-CC PvP</small></div>
     <select id="autoBuildCCPhaseEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Activado</option>
       <option value="false">Desactivado</option>
     </select>
     <input id="autoBuildCCPhaseMaxSkills" type="number" min="0" max="20" value="2" onchange="saveAutoBuildSettings()">
     <div class="phase90-special">
-      <label for="autoBuildPvpReccThreshold">Seuil re-CC PvP</label>
+      <label for="autoBuildPvpReccThreshold">Umbral de re-CC PvP</label>
       <div class="phase90-unit">
         <input id="autoBuildPvpReccThreshold" type="number" min="0.05" max="1.50" step="0.05" value="0.35" onchange="saveAutoBuildSettings()">
         <span>s</span>
@@ -7184,7 +7184,7 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row">
-    <div class="phase90-name"><b>Burst</b><small>Dégâts principaux</small></div>
+    <div class="phase90-name"><b>Burst</b><small>Daños principales</small></div>
     <select id="autoBuildBurstEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Activado</option>
       <option value="false">Desactivado</option>
@@ -7223,7 +7223,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildAllowUnknownData">Automático</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Qualité de données minimale (%)</b><small>Qualité minimale des données exigée avant qu’un skill soit privilégié.</small></div>
+    <div class="settings92-name"><b>Calidad mínima de los datos (%)</b><small>Se requiere una calidad de datos mínima antes de privilegiar una habilidad.</small></div>
     <div class="settings92-control"><input id="autoBuildMinDataQuality" type="number" min="0" max="100" value="80" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMinDataQuality">Automático</div>
   </div>
@@ -7253,7 +7253,7 @@ if(!BDO_DOM_READY){
         </div>
         <div class="settings92-row">
           <div class="settings92-name">
-            <b>J’aime requis pour vérifier un combinación</b>
+            <b>Como requerido para marcar un combinación</b>
             <small>Cuando un combinación compartido alcanza esta cantidad de votos únicos, automáticamente se une a los combos de Clase.</small>
           </div>
           <div class="settings92-control">
@@ -7264,7 +7264,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <div class="settings-actions">
-        <button type="button" class="optimizer-btn" onclick="saveAutoBuildSettings()">Guardar les réglages</button>
+        <button type="button" class="optimizer-btn" onclick="saveAutoBuildSettings()">Guardar configuración</button>
         <button type="button" class="tab-btn" onclick="resetAutoBuildSettings()">Reiniciar</button>
       </div>
       <div id="settingsStatus" class="optimizer-note">
@@ -23000,7 +23000,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <div class="account79-form">
         <div class="account79-row account79-row-two">
           <div class="account79-field">
-            <label for="accountRegisterNameV78">Nom d’utilisateur</label>
+            <label for="accountRegisterNameV78">Nombre de usuario</label>
             <input id="accountRegisterNameV78" type="text" maxlength="32" autocomplete="username" placeholder="Ton pseudo">
           </div>
           <div class="account79-field">
@@ -23041,16 +23041,16 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <span class="account78-kicker">MI PERFIL</span>
       <div class="account78-profile-title"><span id="accountProfileAvatarV78" class="account78-big-avatar">U</span><div><h2 id="accountProfileNameV78">Usuario</h2><p id="accountProfileEmailV78">—</p></div></div>
       <div class="account78-profile-grid">
-        <div><span>Compte créé</span><strong id="accountCreatedV78">—</strong></div>
+        <div><span>Cuenta creada</span><strong id="accountCreatedV78">—</strong></div>
         <div><span>Última conexión</span><strong id="accountLastLoginV78">—</strong></div>
         <div><span>Última copia de seguridad</span><strong id="accountLastSaveV78">—</strong></div>
-        <div><span>Mode</span><strong>Compte local</strong></div>
+        <div><span>Mode</span><strong>cuenta local</strong></div>
       </div>
       <div class="account78-profile-actions">
-        <button type="button" class="optimizer-btn" onclick="accountSaveWorkspaceV78(true)">Sauvegarder mes données</button>
+        <button type="button" class="optimizer-btn" onclick="accountSaveWorkspaceV78(true)">hacer una copia de seguridad de mis datos</button>
         <button type="button" class="tab-btn" onclick="exportFullBackupV48()">Exportar JSON complet</button>
         <button type="button" class="tab-btn" onclick="switchAccountViewV78('password')">Cambiar la contraseña</button>
-        <button type="button" class="tab-btn account78-danger" onclick="deleteAccountV78()">Eliminar mon compte</button>
+        <button type="button" class="tab-btn account78-danger" onclick="deleteAccountV78()">eliminar mi cuenta</button>
       </div>
       <div class="account78-local-warning">Esta cuenta se guarda sólo en este navegador. Para transferir sus datos a otra PC, utilice también <b>Exportar JSON complet</b>.</div>
     </section>
@@ -23062,7 +23062,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <label>Nueva contraseña<input id="accountNewPasswordV78" type="password" minlength="8" autocomplete="new-password"></label>
       <label>Confirmar<input id="accountNewPasswordConfirmV78" type="password" minlength="8" autocomplete="new-password"></label>
       <button type="button" class="optimizer-btn account78-primary" onclick="changeAccountPasswordV78()">Para actualizar</button>
-      <div class="account78-switch"><button onclick="switchAccountViewV78('profile')">← Volver au profil</button></div>
+      <div class="account78-switch"><button onclick="switchAccountViewV78('profile')">← Volver al perfil</button></div>
     </section>
 
     <div id="accountStatusV78" class="account78-status"></div>
@@ -23089,7 +23089,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <select id="bug77Category">
           <option>Generador combinado</option><option>Video Analyzer</option><option>Skills</option>
           <option>Transición / Cancel</option><option>CC / CC Timer</option><option>Auto-Build</option>
-          <option>Sauvegarde / Restauration</option><option>Interface</option><option>Autre</option>
+          <option>Copia de seguridad/Restaurar</option><option>Interface</option><option>Autre</option>
         </select>
       </div>
       <div class="bug77-field">
@@ -23122,7 +23122,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <button type="button" class="tab-btn" onclick="downloadBugReportV77()">Descargar el informe</button>
       <button type="button" class="tab-btn" onclick="clearBugReportV77()">para borrar</button>
     </div>
-    <div id="bug77Status" class="bug77-status">Ninguno rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.</div>
+    <div id="bug77Status" class="bug77-status">Ningún informe se envía automáticamente: el archivo o texto debe enviarse al desarrollador.</div>
   </div>
 </div>
 
@@ -25556,6 +25556,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
