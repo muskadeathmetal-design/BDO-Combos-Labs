@@ -5,4 +5,5 @@ function load(src,id){
 }
 load('/bcl-test-native-v128.js?v=128','bcl-test-native-v128');
 load('/bcl-analysis-settings-v121.js?v=127','bcl-analysis-settings-v127');
+load('/bcl-analysiscore-builder-v129.js?v=129','bcl-analysiscore-builder-v129');
 })();
