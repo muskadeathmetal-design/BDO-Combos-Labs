@@ -12,10 +12,7 @@ function loadMaps() {
   if (start < 0) throw new Error('Unable to find locale maps in ' + I18N_FILE);
   const objectStart = js.indexOf('{', start + marker.length);
   if (objectStart < 0) throw new Error('Unable to find locale map object start');
-  let depth = 0;
-  let quote = null;
-  let escaped = false;
-  let objectEnd = -1;
+  let depth = 0, quote = null, escaped = false, objectEnd = -1;
   for (let i = objectStart; i < js.length; i++) {
     const ch = js[i];
     if (quote) {
@@ -32,8 +29,7 @@ function loadMaps() {
     }
   }
   if (objectEnd < 0) throw new Error('Unable to find locale map object end');
-  const literal = js.slice(objectStart, objectEnd);
-  return Function('"use strict"; return (' + literal + ');')();
+  return Function('"use strict"; return (' + js.slice(objectStart, objectEnd) + ');')();
 }
 
 function removeDynamicI18n(html) {
@@ -43,17 +39,19 @@ function removeDynamicI18n(html) {
     .replace(/<script[^>]*src=["'][^"']*bcl-i18n-v115-master\.js[^"']*["'][^>]*><\/script>\s*/gi, '');
 }
 
+// Preserve CC terminology and multi-character combat input labels only.
+// Single letters are deliberately NOT protected because doing so would corrupt normal words.
 const PROTECTED = [
-  'Stun','Stiffness','Knockdown','Bound','Float','Knockback','Grab','Freeze',
-  'Down Smash','Air Smash','Super Armor','Forward Guard','Invincible','Iframe',
-  'LMB','RMB','Shift','Space','W','A','S','D','Q','E','F','C','Z','X','Tab'
+  'Down Smash','Air Smash','Super Armor','Forward Guard',
+  'Knockdown','Knockback','Stiffness','Invincible','Iframe','Freeze','Stun','Bound','Float','Grab',
+  'Shift','Space','LMB','RMB'
 ];
 
 function protect(text) {
   const values = [];
   let out = text;
   PROTECTED.forEach((value, i) => {
-    const token = `__BCL_PROTECTED_${i}__`;
+    const token = `§§BCLKEEP${i}§§`;
     if (out.includes(value)) {
       values.push([token, value]);
       out = out.split(value).join(token);
@@ -73,8 +71,7 @@ function translateSource(source, locale, maps) {
   const dict = maps[locale] || maps.en || {};
   const { out: protectedSource, values } = protect(source);
   let out = protectedSource;
-  const entries = Object.entries(dict).sort((a,b) => b[0].length - a[0].length);
-  for (const [from, to] of entries) {
+  for (const [from, to] of Object.entries(dict).sort((a,b) => b[0].length - a[0].length)) {
     if (!from || from === to || !out.includes(from)) continue;
     out = out.split(from).join(to);
   }
@@ -83,7 +80,7 @@ function translateSource(source, locale, maps) {
 
 function addStaticRouter(html, locale) {
   html = html.replace(/<script id=["']bcl-static-locale-router["'][\s\S]*?<\/script>\s*/gi, '');
-  const script = `\n<script id="bcl-static-locale-router">\n(function(){\n  'use strict';\n  var current=${JSON.stringify(locale)};\n  document.documentElement.lang=current;\n  try { localStorage.setItem('bcl_language', current); localStorage.setItem('bclLanguage', current); } catch(e) {}\n  function bind(){\n    var select=document.getElementById('bclLanguageSelect');\n    if(!select) return;\n    select.value=current;\n    select.addEventListener('change',function(ev){\n      var next=ev.target.value;\n      if(!/^(fr|en|de|es|it|pt)$/.test(next) || next===current) return;\n      try { localStorage.setItem('bcl_language', next); localStorage.setItem('bclLanguage', next); } catch(e) {}\n      var suffix=(location.search||'')+(location.hash||'');\n      location.href='/' + next + '/' + suffix;\n    }, true);\n  }\n  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true}); else bind();\n})();\n</script>\n`;
+  const script = `\n<script id="bcl-static-locale-router">\n(function(){\n  'use strict';\n  var current=${JSON.stringify(locale)};\n  document.documentElement.lang=current;\n  try { localStorage.setItem('bcl_language', current); localStorage.setItem('bclLanguage', current); } catch(e) {}\n  function bind(){\n    var select=document.getElementById('bclLanguageSelect');\n    if(!select) return;\n    select.value=current;\n    select.addEventListener('change',function(ev){\n      var next=ev.target.value;\n      if(!/^(fr|en|de|es|it|pt)$/.test(next) || next===current) return;\n      try { localStorage.setItem('bcl_language', next); localStorage.setItem('bclLanguage', next); } catch(e) {}\n      location.href='/' + next + '/' + (location.search||'') + (location.hash||'');\n    }, true);\n  }\n  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bind,{once:true}); else bind();\n})();\n</script>\n`;
   return html.replace(/<\/body>/i, script + '</body>');
 }
 
@@ -95,25 +92,31 @@ function setVersionAndLang(html, locale) {
   return html;
 }
 
+function validate(page, locale) {
+  if (page.includes('__BCL_PROTECTED_') || page.includes('§§BCLKEEP')) throw new Error(locale + ': unrecovered protection token');
+  if (/bcl-(?:full-ui-i18n-v113|i18n-v114|i18n-v115-master)\.js/i.test(page)) throw new Error(locale + ': dynamic i18n script still present');
+  if (!page.includes('bcl-static-locale-router')) throw new Error(locale + ': static router missing');
+  if (!page.includes('BDO Combos Labs')) throw new Error(locale + ': application signature missing');
+}
+
 function main() {
   if (!fs.existsSync(BASE_FILE)) throw new Error('Missing ' + BASE_FILE);
   if (!fs.existsSync(I18N_FILE)) throw new Error('Missing ' + I18N_FILE);
   const maps = loadMaps();
-  let base = removeDynamicI18n(fs.readFileSync(BASE_FILE, 'utf8'));
+  const base = removeDynamicI18n(fs.readFileSync(BASE_FILE, 'utf8'));
 
   for (const locale of LOCALES) {
     let page = translateSource(base, locale, maps);
     page = setVersionAndLang(page, locale);
     page = addStaticRouter(page, locale);
-    const dir = path.join(locale);
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), page, 'utf8');
+    validate(page, locale);
+    fs.mkdirSync(locale, { recursive: true });
+    fs.writeFileSync(path.join(locale, 'index.html'), page, 'utf8');
   }
 
   const root = `<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDO Combos Labs · V116</title></head><body><script>(function(){var l='fr';try{var s=localStorage.getItem('bcl_language')||localStorage.getItem('bclLanguage');if(/^(fr|en|de|es|it|pt)$/.test(s))l=s;}catch(e){}location.replace('/'+l+'/'+(location.search||'')+(location.hash||''));})();</script><noscript><a href="/fr/">Ouvrir BDO Combos Labs</a></noscript></body></html>\n`;
   fs.writeFileSync(BASE_FILE, root, 'utf8');
-
-  console.log('V116 static locales built:', LOCALES.join(', '));
+  console.log('V116 static locales built and validated:', LOCALES.join(', '));
 }
 
 main();
