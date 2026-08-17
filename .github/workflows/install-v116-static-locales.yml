@@ -9,6 +9,7 @@ on:
       - 'tools/prepare-static-translation-patches-v116.js'
       - 'tools/apply-post-visible-translations-v116.js'
       - 'tools/apply-aligned-residual-translations-v116.js'
+      - 'tools/apply-final-visible-residuals-v116.js'
       - 'bcl-static-auto-translations-v116.json'
       - 'translations/**.json'
       - '.github/workflows/install-v116-static-locales.yml'
@@ -37,6 +38,9 @@ jobs:
 
       - name: Apply aligned residual translations
         run: node tools/apply-aligned-residual-translations-v116.js
+
+      - name: Apply final visible residual cleanup
+        run: node tools/apply-final-visible-residuals-v116.js
 
       - name: Verify dynamic i18n is absent from locale pages
         run: |
