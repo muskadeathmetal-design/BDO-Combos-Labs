@@ -58,4 +58,4 @@ for (const locale of locales) {
 }
 
 fs.writeFileSync(outputCache, JSON.stringify(prepared, null, 2), 'utf8');
-console.log('Prepared V116 visible-UI cache: base -> auto-complete -> curated -> locale-specific.');
+console.log('Prepared V116 visible-UI cache: base -> auto-complete -> curated -> locale-specific. Final residual batch included.');
