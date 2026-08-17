@@ -5700,7 +5700,7 @@ function bclAuthRedirectV109(){
 window.addEventListener('DOMContentLoaded',()=>{
   document.documentElement.dataset.bclWeb=bclIsProductionWebV109()?'production':'local';
   if(location.protocol==='file:'){
-    console.info('BDO Combo Labs V111: mode fichier local. Pour la communauté publique, utiliser le site HTTPS déployé.');
+    console.info('BDO Combo Labs V111: modalità file locale. Per la comunità pubblica, utilizzare il sito HTTPS distribuito.');
   }
 });
 </script>
@@ -5845,7 +5845,7 @@ if(!BDO_DOM_READY){
           <div class="home18-progress-row"><div><span>Métadonnées Skills</span><b id="home18MetaCoverageText">0%</b></div><div class="home18-progress-track"><i id="home18MetaCoverage"></i></div></div>
           <div class="home18-progress-row"><div><span>Transitions avec timing</span><b id="home18TimingCoverageText">0%</b></div><div class="home18-progress-track"><i id="home18TimingCoverage"></i></div></div>
         </div>
-        <div class="home18-health" id="home18Health">Sélectionne une classe pour afficher l’état des données.</div>
+        <div class="home18-health" id="home18Health">Seleziona una classe per visualizzare lo stato dei dati.</div>
       </section>
 
       <section class="home18-panel">
@@ -5861,11 +5861,11 @@ if(!BDO_DOM_READY){
       </div>
       <div class="home18-workflow">
         <button type="button" onclick="showPage('classPage',document.querySelector('[data-page=classPage]'))"><span>01</span><b>Contexte</b><small>Classe, spécialisation et référentiel</small></button>
-        <button type="button" onclick="showPage('skillsPage',document.querySelector('[data-page=skillsPage]'));renderSkillsPage()"><span>02</span><b>Skills</b><small>Créer, renommer, supprimer et renseigner les stats</small></button>
+        <button type="button" onclick="showPage('skillsPage',document.querySelector('[data-page=skillsPage]'));renderSkillsPage()"><span>02</span><b>Skills</b><small>Crea, rinomina, elimina e inserisci statistiche</small></button>
         <button type="button" onclick="showPage('youtubeAnalyzerPage',document.querySelector('[onclick*=youtubeAnalyzerPage]'));renderYouTubeAnalyzer()"><span>03</span><b>Mesure vidéo</b><small>Détecter skills, CC, transitions et cancels</small></button>
         <button type="button" onclick="showPage('transitionPage',document.querySelector('[data-page=transitionPage]'));renderTransitionPage()"><span>04</span><b>Timing</b><small>Contrôler et valider transitions / cancels</small></button>
         <button type="button" onclick="showPage('builderPage',document.querySelector('[data-page=builderPage]'));renderComboBuilder()"><span>05</span><b>Builder PvP</b><small>Orientation, CC Timer et suggestions dynamiques</small></button>
-        <button type="button" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'))"><span>06</span><b>Auto-Build</b><small>Régler le poids des timings, cancels et contraintes</small></button>
+        <button type="button" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'))"><span>06</span><b>Auto-Build</b><small>Regolare il peso delle tempistiche, delle cancellazioni e dei vincoli</small></button>
       </div>
     </section>
 
@@ -5894,10 +5894,10 @@ if(!BDO_DOM_READY){
         <div class="home18-tool-grid home22-link-grid" id="home23ClassLinks"></div>
         <div class="home23-resource-separator"><span>Risorse generali</span></div>
         <div class="home18-tool-grid home22-link-grid">
-          <a class="home22-official-link" href="https://www.naeu.playblackdesert.com/" target="_blank" rel="noopener noreferrer"><b>Black Desert NA/EU</b><small>Site officiel PC · actualités, événements et annonces</small><span>Apri ↗</span></a>
+          <a class="home22-official-link" href="https://www.naeu.playblackdesert.com/" target="_blank" rel="noopener noreferrer"><b>Black Desert NA/EU</b><small>Sito PC ufficiale · notizie, eventi e annunci</small><span>Apri ↗</span></a>
           <a class="home22-official-link" href="https://www.naeu.playblackdesert.com/en-US/Adventure/Guide" target="_blank" rel="noopener noreferrer"><b>Guide de l’Aventurier</b><small>Documentation officielle Black Desert</small><span>Apri ↗</span></a>
-          <a class="home22-official-link" href="https://bdocodex.com/us/skills/" target="_blank" rel="noopener noreferrer"><b>BDO Codex</b><small>Base de données des compétences, objets et données du jeu</small><span>Apri ↗</span></a>
-          <a class="home22-official-link" href="https://www.blackdesertfoundry.com/guide-list/" target="_blank" rel="noopener noreferrer"><b>BDO Foundry</b><small>Guides de classes, PvE/PvP et ressources communautaires</small><span>Apri ↗</span></a>
+          <a class="home22-official-link" href="https://bdocodex.com/us/skills/" target="_blank" rel="noopener noreferrer"><b>BDO Codex</b><small>Database di abilità, oggetti e dati di gioco</small><span>Apri ↗</span></a>
+          <a class="home22-official-link" href="https://www.blackdesertfoundry.com/guide-list/" target="_blank" rel="noopener noreferrer"><b>BDO Foundry</b><small>Guide alle lezioni, PvE/PvP e risorse della community</small><span>Apri ↗</span></a>
         </div>
       </section>
 
@@ -5910,7 +5910,7 @@ if(!BDO_DOM_READY){
     
     
         <section class="home18-panel account78-home-info">
-      <div><span class="home18-section-kicker">ESPACE UTILISATEUR</span><h3>Compte local & données personnelles</h3><p>Crée un compte pour séparer automatiquement ton espace de travail des autres utilisateurs de ce navigateur. Une sauvegarde locale du profil est mise à jour périodiquement et à la déconnexion.</p></div>
+      <div><span class="home18-section-kicker">ESPACE UTILISATEUR</span><h3>Compte local & données personnelles</h3><p>Crea un account per separare automaticamente il tuo spazio di lavoro dagli altri utenti di questo browser. Un backup locale del profilo viene aggiornato periodicamente e al momento del logout.</p></div>
       <button type="button" class="tab-btn" onclick="openAccountModalV78(accountUserV78()?'profile':'register')">Gérer mon compte</button>
     </section>
 
@@ -5928,16 +5928,16 @@ if(!BDO_DOM_READY){
 
 <section class="home18-panel home75-updates">
       <div class="home18-panel-head">
-        <div><span class="home18-section-kicker">DERNIÈRES ÉVOLUTIONS</span><h3>Ce que l’application prend maintenant en compte</h3></div>
+        <div><span class="home18-section-kicker">DERNIÈRES ÉVOLUTIONS</span><h3>Ciò di cui ora tiene conto l'applicazione</h3></div>
         <span class="home75-version">V116</span>
       </div>
       <div class="home75-update-grid">
-        <article><b>Stabilisation CC PvP</b><p>CC Timer et immunité utilisent la même chronologie start-to-start, sans double comptage de la durée des skills.</p></article>
-        <article><b>Transitions & Cancels</b><p>Les mesures connues influencent le classement, l’Auto-Build et le temps réellement consommé dans les fenêtres CC.</p></article>
-        <article><b>Video Analyzer</b><p>Analyse depuis une position choisie, détection de skills, transitions/cancels et durées CC validables directement sur un skill.</p></article>
+        <article><b>Stabilisation CC PvP</b><p>Il timer CC e l'immunità utilizzano la stessa sequenza temporale dall'inizio alla fine, senza contare due volte la durata delle abilità.</p></article>
+        <article><b>Transitions & Cancels</b><p>Le metriche conosciute influenzano il ranking, la creazione automatica e il tempo effettivo impiegato nelle finestre CC.</p></article>
+        <article><b>Video Analyzer</b><p>Analisi da una posizione prescelta, rilevamento di skill, transizioni/cancellazioni e durate CC validate direttamente su una skill.</p></article>
         <article><b>Comptes locaux</b><p>Accedi, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.</p></article>
-        <article><b>Gestion Skills & Builds</b><p>Ajout, renommage et suppression synchronisent désormais aussi l’historique des builds enregistrés.</p></article>
-        <article><b>Maintenance & sauvegarde</b><p>Settings ont une persistance unique, les rapports de bug indiquent la bonne version et l’export JSON complet reste recommandé.</p></article>
+        <article><b>Gestion Skills & Builds</b><p>Aggiungi, rinomina ed elimina ora sincronizza anche la cronologia delle build salvate.</p></article>
+        <article><b>Maintenance & sauvegarde</b><p>Le impostazioni hanno una persistenza univoca, le segnalazioni di bug indicano la versione corretta e si consiglia comunque l'esportazione JSON completa.</p></article>
       </div>
     </section>
 
@@ -5971,75 +5971,75 @@ if(!BDO_DOM_READY){
           <summary><span>01</span> Choisir le contexte de travail</summary>
           <div class="home75-detail">
             <p>Commence par sélectionner la <b>classe</b> et la <b>spécialisation</b>. Tutte les pages utilisent ce contexte pour charger le bon référentiel, les skills, les combos et les mesures.</p>
-            <ol><li>Ouvre <b>Profilo classe</b>.</li><li>Sélectionne la classe.</li><li>Choisis Awakening ou la spécialisation disponible.</li><li>Vérifie sur l’accueil que le contexte actif et le référentiel sont corrects.</li></ol>
-            <p class="home75-tip">Le choix <b>Awakening / Misto / Pré-Awakening</b> du Combo Builder est différent de la spécialisation : il définit l’orientation de la chaîne que le Builder doit proposer.</p>
+            <ol><li>Ouvre <b>Profilo classe</b>.</li><li>Sélectionne la classe.</li><li>Scegli Risveglio o la specializzazione disponibile.</li><li>Vérifie sur l’accueil que le contexte actif et le référentiel sont corrects.</li></ol>
+            <p class="home75-tip">Le choix <b>Awakening / Misto / Pré-Awakening</b> del Combo Builder è diverso dalla specializzazione: definisce l'orientamento della catena che il Builder deve proporre.</p>
           </div>
         </details>
 
         <details id="tuto75-2">
           <summary><span>02</span> Construire et corriger la base Skills</summary>
           <div class="home75-detail">
-            <p>La page <b>Skills</b> est la base de données utilisée par le reste de l’application. Chaque compétence peut contenir input, cooldown, timer, protection, CC, durée de CC, dégâts PvE/PvP, effets et catégorie.</p>
-            <ol><li>Contrôle les compétences importées.</li><li>Utilise <b>+ Aggiungi une compétence</b> si un skill manque.</li><li>Utilise l’édition pour corriger son <b>nom</b> et ses statistiques.</li><li>Supprime les entrées incorrectes avec le bouton de suppression.</li><li>Pour un CC mesuré, renseigne sa <b>durée de CC</b> : cette valeur alimente le CC Timer du Builder.</li></ol>
-            <p class="home75-tip">Renommer un skill met à jour les références associées lorsque l’application peut les résoudre. Vérifie malgré tout les transitions importantes après un renommage.</p>
+            <p>La page <b>Skills</b> è il database utilizzato dal resto dell'applicazione. Ogni abilità può contenere input, tempo di recupero, timer, protezione, CC, durata CC, danni PvE/PvP, effetti e categoria.</p>
+            <ol><li>Contrôle les compétences importées.</li><li>Utilise <b>+ Aggiungi une compétence</b> si un skill manque.</li><li>Utilise l’édition pour corriger son <b>nom</b> et ses statistiques.</li><li>Elimina le voci errate con il pulsante Elimina.</li><li>Pour un CC mesuré, renseigne sa <b>durée de CC</b> : questo valore alimenta il CC Timer del Costruttore.</li></ol>
+            <p class="home75-tip">Rinominare una competenza aggiorna i riferimenti associati quando l'applicazione può risolverli. Controlla ancora le transizioni importanti dopo una ridenominazione.</p>
           </div>
         </details>
 
         <details id="tuto75-3">
           <summary><span>03</span> Mesurer automatiquement une vidéo</summary>
           <div class="home75-detail">
-            <p>Le <b>Video Analyzer</b> sert à extraire des mesures réelles depuis une vidéo locale. Tu peux choisir le point de départ de l’analyse au lieu de commencer obligatoirement à 0:00.</p>
-            <ol><li>Charge une vidéo locale et indique son FPS.</li><li>Place la lecture au moment où le combo intéressant commence, par exemple 3:00.</li><li>Lance <b>Analyse + mesure automatique</b>.</li><li>Utilise la lecture lente et la pause pendant l’analyse pour contrôler une détection.</li><li>Ajoute les skills détectés à la liste lorsque la correspondance est correcte.</li><li>Contrôle les mesures de <b>transition</b>, <b>cancel</b> et <b>durée de CC</b>.</li><li>Actualise une mesure précédemment détectée si elle est mauvaise.</li></ol>
-            <p class="home75-warning">Une détection automatique est une aide de mesure, pas une vérité absolue. Les valeurs aberrantes doivent être contrôlées dans la vidéo.</p>
+            <p>Le <b>Video Analyzer</b> viene utilizzato per estrarre misurazioni reali da un video locale. Puoi scegliere il punto di partenza per l'analisi invece di iniziare necessariamente alle 0:00.</p>
+            <ol><li>Charge une vidéo locale et indique son FPS.</li><li>Place la lecture au moment où le combo intéressant commence, par exemple 3:00.</li><li>Lance <b>Analyse + mesure automatique</b>.</li><li>Utilizza la riproduzione lenta e la pausa durante la scansione per monitorare un rilevamento.</li><li>Ajoute les skills détectés à la liste lorsque la correspondance est correcte.</li><li>Contrôle les mesures de <b>transition</b>, <b>cancel</b> et <b>durée de CC</b>.</li><li>Aggiorna una misurazione rilevata in precedenza se è errata.</li></ol>
+            <p class="home75-warning">Il rilevamento automatico è un ausilio alla misurazione, non una verità assoluta. I valori anomali dovrebbero essere controllati nel video.</p>
           </div>
         </details>
 
         <details id="tuto75-4">
           <summary><span>04</span> Conferma les transitions et cancels</summary>
           <div class="home75-detail">
-            <p>Une transition représente le temps réel nécessaire pour passer du skill A au skill B. Un cancel permet d’interrompre une animation pour enchaîner plus tôt.</p>
-            <ol><li>Ouvre <b>Transition / Cancel</b>.</li><li>Vérifie le couple <b>A → B</b>.</li><li>Contrôle la durée et les frames lorsqu’elles sont disponibles.</li><li>Valide les mesures fiables.</li><li>Corrige ou supprime les détections parasites.</li></ol>
-            <p class="home75-tip"><b>Un cancel ne réduit jamais la durée du CC.</b> Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.</p>
+            <p>Una transizione rappresenta il tempo reale necessario per passare dall'abilità A all'abilità B. Un annullamento consente di interrompere un'animazione per continuare prima.</p>
+            <ol><li>Ouvre <b>Transition / Cancel</b>.</li><li>Vérifie le couple <b>A → B</b>.</li><li>Controlla la durata e i fotogrammi quando disponibili.</li><li>Valide les mesures fiables.</li><li>Corrige ou supprime les détections parasites.</li></ol>
+            <p class="home75-tip"><b>Un cancel ne réduit jamais la durée du CC.</b> Riduce il tempo di esecuzione/catena della combo, il che può consentire di posizionare più abilità durante la stessa finestra di controllo.</p>
           </div>
         </details>
 
         <details id="tuto75-5">
           <summary><span>05</span> Utiliser le Combo Builder et ses suggestions</summary>
           <div class="home75-detail">
-            <p>Le Builder assemble la séquence et recalcule les suggestions après chaque modification.</p>
-            <ol><li>Choisis <b>Awakening</b>, <b>Misto</b> ou <b>Pré-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>Après le premier skill, le bloc <b>CHAIN</b> indique si la transition vers chaque candidat est connue, mesurée ou validée, ainsi que son cancel éventuel.</li><li>Ajoute une suggestion ou une compétence manuellement : la liste est immédiatement recalculée à partir du nouveau dernier skill.</li><li>Utilise <b>Complete Current Combo</b> ou <b>Add Best Suggestion</b> pour laisser l’optimiseur poursuivre la chaîne.</li><li>Contrôle les statistiques sous le combo : durée, dégâts lorsque disponibles, transitions mesurées, couverture timing, CC et protection.</li></ol>
-            <p class="home75-tip">Les transitions/cancels influencent désormais réellement le classement. Une transition rapide, mesurée et validée est favorisée ; une transition inconnue peut être pénalisée selon les Settings.</p>
+            <p>Il Builder assembla la sequenza e ricalcola i suggerimenti dopo ogni modifica.</p>
+            <ol><li>Choisis <b>Awakening</b>, <b>Misto</b> ou <b>Pré-Awakening</b>.</li><li>Observe <b>Player-Priority Suggestions</b>.</li><li>Après le premier skill, le bloc <b>CHAIN</b> indica se il passaggio per ciascun candidato è noto, misurato o validato, nonché il suo eventuale annullamento.</li><li>Aggiungi un suggerimento o una competenza manualmente: la lista viene immediatamente ricalcolata a partire dalla nuova ultima competenza.</li><li>Utilise <b>Complete Current Combo</b> ou <b>Add Best Suggestion</b> per consentire all'ottimizzatore di continuare la catena.</li><li>Controlla le statistiche sotto la combo: durata, danno quando disponibile, transizioni misurate, tempi di copertura, CC e protezione.</li></ol>
+            <p class="home75-tip">Le transizioni/annullamenti ora influenzano effettivamente la classifica. È privilegiata una transizione rapida, misurata e validata; una transizione sconosciuta potrebbe essere penalizzata a seconda delle Impostazioni.</p>
           </div>
         </details>
 
         <details id="tuto75-6">
           <summary><span>06</span> Comprendre le CC Timer PvP</summary>
           <div class="home75-detail">
-            <p>Le Builder suit le budget CC PvP affiché dans l’application : <b>2.0 points</b>. Stiffness vaut <b>0.7</b> ; Stun, Knockback, Knockdown, Float, Bound, Grab et Freeze valent <b>1.0</b>.</p>
-            <ol><li>Le premier CC appliqué démarre son <b>CC Timer</b> avec sa durée mesurée.</li><li>Les transitions et cancels font avancer le temps de la séquence et donc diminuer le temps restant.</li><li>Une compétence sans nouveau CC <b>ne réinitialise pas</b> le timer.</li><li>Un nouveau CC appliqué devient la nouvelle source du CC Timer avec sa propre durée mesurée.</li><li>Le CC qui fait atteindre/dépasser 2.0 est encore appliqué ; les CC suivants sont ensuite bloqués par la limite.</li><li>Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.</li></ol>
-            <p class="home75-warning">En PvP, lorsque le CC Timer est pratiquement à zéro, le Builder doit prioriser un nouveau CC afin d’éviter que la cible puisse se relever avant la suite du combo.</p>
+            <p>Il Costruttore segue il budget CC PvP visualizzato nell'applicazione: <b>2.0 points</b>. Stiffness vaut <b>0.7</b> ; Stun, Knockback, Knockdown, Float, Bound, Grab et Freeze valent <b>1.0</b>.</p>
+            <ol><li>Le premier CC appliqué démarre son <b>CC Timer</b> avec sa durée mesurée.</li><li>Transizioni e annullamenti fanno avanzare il tempo della sequenza e quindi riducono il tempo rimanente.</li><li>Une compétence sans nouveau CC <b>ne réinitialise pas</b> le timer.</li><li>Un nuovo CC applicato diventa la nuova sorgente del timer CC con la propria durata misurata.</li><li>Resta applicato il CC che raggiunge/supera 2.0; i CC successivi vengono quindi bloccati dal limite.</li><li>Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.</li></ol>
+            <p class="home75-warning">In PvP, quando il CC Timer è praticamente a zero, il Builder deve dare priorità ad un nuovo CC per evitare che il bersaglio riesca ad alzarsi prima del proseguimento della combo.</p>
           </div>
         </details>
 
         <details id="tuto75-7">
           <summary><span>07</span> Régler l’optimiseur / Auto-Build</summary>
           <div class="home75-detail">
-            <p>La page <b>Settings</b> permet de décider à quel point le Builder doit privilégier la vitesse des transitions, les cancels et les liaisons connues.</p>
-            <ol><li>Augmente le poids de <b>Speed</b> pour privilégier les chaînes rapides.</li><li>Augmente le poids de <b>Cancel</b> pour favoriser les enchaînements disposant d’un cancel.</li><li>Active <b>Require known transition</b> pour préférer les candidats dont la liaison est mesurée/connue.</li><li>Indietrone au Builder et compare le score des suggestions.</li></ol>
-            <p class="home75-tip">Le score n’est pas seulement un score de dégâts : il combine la logique joueur et les facteurs techniques disponibles. Les données absentes limitent forcément la précision de l’optimisation.</p>
+            <p>La page <b>Settings</b> ti permette di decidere in che misura il Builder deve privilegiare la velocità delle transizioni, delle cancellazioni e delle connessioni conosciute.</p>
+            <ol><li>Augmente le poids de <b>Speed</b> pour privilégier les chaînes rapides.</li><li>Augmente le poids de <b>Cancel</b> per privilegiare le sequenze con un cancel.</li><li>Active <b>Require known transition</b> preferire candidati il ​​cui legame è misurato/conosciuto.</li><li>Indietrone au Builder et compare le score des suggestions.</li></ol>
+            <p class="home75-tip">Il punteggio non è solo un punteggio di danno: combina la logica del giocatore e i fattori tecnici disponibili. I dati mancanti limitano necessariamente la precisione dell'ottimizzazione.</p>
           </div>
         </details>
 
         <details id="tuto75-8" open>
           <summary><span>08</span> Sauvegarder TOUTES les données et les restaurer</summary>
           <div class="home75-detail">
-            <p><b>Important :</b> le bouton <b>Salva ce build</b> du Combo Builder ne sauvegarde qu’une séquence de combo. Pour éviter de perdre les compétences, durées CC, transitions/cancels, mesures vidéo, réglages et loadouts, il faut utiliser la <b>Sauvegarde complète</b>.</p>
+            <p><b>Important :</b> le bouton <b>Salva ce build</b> del Combo Builder salva solo una sequenza combo. Per evitare di perdere abilità, durate CC, transizioni/annullamenti, misurazioni video, impostazioni e caricamenti, è necessario utilizzare il <b>Sauvegarde complète</b>.</p>
 
             <div class="home76-backup-flow">
-              <div><span>1</span><b>Ouvre Settings</b><small>La zone « SAUVEGARDE COMPLÈTE » se trouve en haut de cette page.</small></div>
+              <div><span>1</span><b>Ouvre Settings</b><small>L'area “BACKUP COMPLETO” si trova nella parte superiore di questa pagina.</small></div>
               <div><span>2</span><b>Clique « Esporta tutti i dati »</b><small>L’application crée un fichier JSON contenant le travail actuellement enregistré.</small></div>
-              <div><span>3</span><b>Conserve le fichier JSON</b><small>Garde-le dans un dossier sûr, un cloud ou une copie externe. C’est ta sauvegarde de sécurité.</small></div>
-              <div><span>4</span><b>Pour restaurer : « Importa backup »</b><small>Sélectionne le fichier JSON précédemment exporté.</small></div>
+              <div><span>3</span><b>Conserve le fichier JSON</b><small>Conservalo in una cartella sicura, nel cloud o in una copia esterna. Questo è il tuo backup di sicurezza.</small></div>
+              <div><span>4</span><b>Pour restaurer : « Importa backup »</b><small>Seleziona il file JSON precedentemente esportato.</small></div>
             </div>
 
             <h4>Ce que la sauvegarde complète contient</h4>
@@ -6059,17 +6059,17 @@ if(!BDO_DOM_READY){
             <h4>Quand refaire une sauvegarde ?</h4>
             <ol>
               <li>Après une grosse session de mesure vidéo.</li>
-              <li>Après avoir corrigé ou ajouté plusieurs compétences.</li>
+              <li>Dopo aver corretto o aggiunto diverse abilità.</li>
               <li>Après avoir mesuré des durées CC importantes.</li>
-              <li>Après avoir validé beaucoup de transitions/cancels.</li>
-              <li>Avant de changer de navigateur, de machine, de fichier HTML ou de version de l’application.</li>
+              <li>Dopo aver convalidato molte transizioni/annullamenti.</li>
+              <li>Prima di cambiare browser, macchina, file HTML o versione dell'applicazione.</li>
               <li>Avant toute opération qui pourrait vider les données locales du navigateur.</li>
             </ol>
 
             <h4>Restaurer une sauvegarde</h4>
             <ol>
               <li>Ouvre <b>Settings</b>.</li>
-              <li>Dans <b>Sauvegarde complète</b>, laisse cochée <b>Remplacer les données locales BDO Combo Labs lors de la restauration</b> si tu veux retrouver exactement l’état sauvegardé.</li>
+              <li>Dans <b>Sauvegarde complète</b>, laisse cochée <b>Remplacer les données locales BDO Combo Labs lors de la restauration</b> se vuoi trovare esattamente lo stato salvato.</li>
               <li>Clique <b>Importa backup</b>.</li>
               <li>Sélectionne le fichier <code>BDO_Combo_Labs_Backup_....json</code>.</li>
               <li>Attends le message de confirmation.</li>
@@ -6077,8 +6077,8 @@ if(!BDO_DOM_READY){
             </ol>
 
             <p class="home75-tip"><b>Compte local :</b> il sépare les espaces de travail sur ce navigateur, mais ne remplace pas l’export JSON. Utilise « Rapporter un bug » si une restauration ou une sauvegarde produit un comportement inattendu.</p>
-            <p class="home75-warning"><b>Ne compte pas uniquement sur le stockage local du navigateur.</b> Le navigateur peut perdre ses données après un nettoyage, une réinstallation, un changement de profil ou certaines manipulations. Le fichier JSON exporté est la copie de sécurité à conserver.</p>
-            <p class="home75-tip"><b>Routine recommandée :</b> travaille normalement → mesure/corrige les données → enregistre tes builds utiles → termine la session par <b>Esporta tutti i dati</b>.</p>
+            <p class="home75-warning"><b>No fare affidamento esclusivamente sull'archiviazione del browser locale.</b> Il browser potrebbe perdere i propri dati dopo la pulizia, la reinstallazione, la modifica del profilo o determinate manipolazioni. Il file JSON esportato è la copia di backup da conservare.</p>
+            <p class="home75-tip"><b>Routine recommandée :</b> lavora normalmente → misura/correggi i dati → salva le tue build utili → termina la sessione con <b>Esporta tutti i dati</b>.</p>
 
             <div class="home76-backup-actions">
               <button type="button" class="optimizer-btn" onclick="showPage('settingsPage',document.querySelector('[data-page=settingsPage]'));setTimeout(()=>document.querySelector('.full-backup-panel-v48')?.scrollIntoView({behavior:'smooth',block:'start'}),80)">Apri la sauvegarde complète</button>
@@ -6302,7 +6302,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <div id="autoSkillReferenceSearchStatus" class="skills-auto-search-status skills-auto-status-line">
-        Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.
+        Utilizza il dizionario di riferimento per la classe e la specializzazione selezionate.
       </div>
 
       <div id="skillsPageContent" class="page-placeholder">
@@ -6417,14 +6417,14 @@ if(!BDO_DOM_READY){
     </div>
 
     <p class="addon87-intro">
-      Configure les consommables, les cristaux et jusqu’à 6 compétences avec 2 effets de Skill Add-on chacune.
+      Configura materiali di consumo, cristalli e fino a 6 abilità con 2 effetti aggiuntivi abilità ciascuna.
     </p>
 
     <div class="addon87-section-head">
       <div>
         <span class="addon87-kicker">LOADOUT</span>
         <h3>Preparazione build</h3>
-        <p>Les deux panneaux utilisent toute la largeur disponible et restent indépendants des anciens layouts.</p>
+        <p>Entrambi i pannelli utilizzano tutta la larghezza disponibile e rimangono indipendenti dai vecchi layout.</p>
       </div>
     </div>
 
@@ -6488,7 +6488,7 @@ if(!BDO_DOM_READY){
       <div>
         <span class="addon87-kicker">SKILL ADD-ONS</span>
         <h3>Abilità & améliorations</h3>
-        <p>Sélectionne une compétence puis ses deux effets d’add-on.</p>
+        <p>Seleziona un'abilità e poi i suoi due effetti aggiuntivi.</p>
       </div>
     </div>
 
@@ -6538,7 +6538,7 @@ if(!BDO_DOM_READY){
           <button type="button" class="tab-btn" onclick="renderSmartBuilderSuggestions()">Refresh Suggestions</button>
         </div>
         <div class="optimizer-note" style="margin-top:8px">
-          Priority: player/community combo choices and observed skill order. Technical factors such as timings, CC, damage, cooldowns and protection are secondary.
+          Priorità: scelte della combo giocatore/comunità e ordine delle abilità osservato. Fattori tecnici come tempi, CC, danni, tempi di recupero e protezione sono secondari.
         </div>
         <div id="builderSuggestions" class="builder-suggestions"></div>
 
@@ -6585,7 +6585,7 @@ if(!BDO_DOM_READY){
 </span><span id="builderHistorySaveStatus" class="builder-history-save-status"></span><span style="font-size:9px;color:#6f8094;margin-left:7px">Sauvegarde manuelle uniquement</span>
 <div id="builderOptimizerOutput" style="margin-top:10px"></div>
         <div id="optimizerStatus" class="optimizer-note">
-          Add skills from the selected class to build a combo.
+          Aggiungi abilità dalla classe selezionata per creare una combo.
         </div>
       </div>
     </div>
@@ -6604,14 +6604,14 @@ if(!BDO_DOM_READY){
 
       
       <details class="youtube-analyzer-tutorial" open>
-        <summary>Guide rapide — Comment analyser un combo vidéo</summary>
+        <summary>Guida rapida: come analizzare una combinazione video</summary>
 
         <div class="youtube-tutorial-content">
           <div class="youtube-tutorial-step">
             <span class="youtube-tutorial-number">1</span>
             <div>
               <strong>Charge la vidéo locale</strong>
-              <p>Sélectionne un fichier vidéo local avec le bouton <b>Vidéo locale</b>. Le lecteur local est la source de temps utilisée pour tous les marqueurs.</p>
+              <p>Selezionare un file video locale con il pulsante <b>Vidéo locale</b>. Le lecteur local est la source de temps utilisée pour tous les marqueurs.</p>
             </div>
           </div>
 
@@ -6619,7 +6619,7 @@ if(!BDO_DOM_READY){
             <span class="youtube-tutorial-number">2</span>
             <div>
               <strong>Place-toi au début d’une compétence</strong>
-              <p>Choisis d’abord le FPS de la vidéo (30 ou 60), puis pause au moment exact où l’animation commence. Utilise les boutons ±0.10s ou ±1 frame pour ajuster précisément.</p>
+              <p>Scegli prima gli FPS del video (30 o 60), quindi metti in pausa nel momento esatto in cui inizia l'animazione. Utilizzare i pulsanti ±0,10s o ±1 fotogramma per effettuare la regolazione fine.</p>
             </div>
           </div>
 
@@ -6627,7 +6627,7 @@ if(!BDO_DOM_READY){
             <span class="youtube-tutorial-number">3</span>
             <div>
               <strong>Sélectionne la compétence</strong>
-              <p>Choisis la compétence correspondante dans la liste <b>Skill</b>, puis laisse <b>Skill start</b> comme type de marqueur.</p>
+              <p>Scegli l'abilità corrispondente dall'elenco <b>Skill</b>, puis laisse <b>Skill start</b> comme type de marqueur.</p>
             </div>
           </div>
 
@@ -6643,7 +6643,7 @@ if(!BDO_DOM_READY){
             <span class="youtube-tutorial-number">5</span>
             <div>
               <strong>Marque les animation cancels</strong>
-              <p>Place la vidéo au moment où l’animation d’une compétence est coupée, sélectionne <b>Cancel point</b>, puis ajoute un marqueur. Le cancel sera associé à la transition vers la compétence suivante.</p>
+              <p>Place la vidéo au moment où l’animation d’une compétence est coupée, sélectionne <b>Cancel point</b>, quindi aggiunge un marcatore. L'annullamento sarà associato al passaggio alla competenza successiva.</p>
             </div>
           </div>
 
@@ -6664,7 +6664,7 @@ if(!BDO_DOM_READY){
           </div>
 
           <div class="youtube-tutorial-tip">
-            <b>Conseil :</b> pour de meilleurs timings, marque toujours le premier frame visible du démarrage de chaque compétence, puis le moment exact où l’animation est interrompue pour les cancels.
+            <b>Conseil :</b> per una tempistica migliore, segna sempre il primo fotogramma visibile all'avvio di ciascuna abilità, poi il momento esatto in cui l'animazione viene interrotta per cancellazioni.
           </div>
         </div>
       </details>
@@ -6674,7 +6674,7 @@ if(!BDO_DOM_READY){
         <div class="youtube-analyzer-player-card local-video-player">
           <h3>Lecteur vidéo local</h3>
           <p class="optimizer-note">
-            Ce lecteur utilise directement un fichier vidéo local et permet une navigation frame par frame fiable.
+            Questo lettore utilizza direttamente un file video locale e fornisce una navigazione affidabile fotogramma per fotogramma.
           </p>
 
           <div class="youtube-old-player-toolbar">
@@ -6846,7 +6846,7 @@ if(!BDO_DOM_READY){
               <button type="button" class="tab-btn" onclick="refreshAutoMeasurementsV46()">Aggiorna les mesures détectées</button>
             </div>
             <div id="videoAutoStatusV43" class="optimizer-note">
-              Analyse une zone courte du combo pour obtenir des timings précis. Maximum recommandé : 30 à 60 secondes.
+              Analizza una breve area della combo per ottenere tempi precisi. Massimo consigliato: da 30 a 60 secondi.
             </div>
             <div id="videoAutoResultsV43" class="video-auto-results-v43"></div>
             <div id="videoAutoTransitionResultsV45" class="video-auto-transition-results-v45"></div>
@@ -6854,7 +6854,7 @@ if(!BDO_DOM_READY){
               <div class="video-generic-cc-head-v50">
                 <div>
                   <strong>Durée CC générique</strong>
-                  <small>Fonctionne même si aucune compétence n'est reconnue.</small>
+                  <small>Funziona anche se non vengono riconosciute competenze.</small>
                 </div>
                 <div class="video-generic-cc-actions-v50">
                   <button type="button" class="tab-btn" onclick="genericCCMarkStartV50()">Marquer début CC</button>
@@ -6874,7 +6874,7 @@ if(!BDO_DOM_READY){
                 <div class="duration"><span>Durée CC</span><strong id="genericCCDurationV50">—</strong></div>
                 <div><span>Frames</span><strong id="genericCCFramesV50">—</strong></div>
               </div>
-              <div id="genericCCStatusV50" class="optimizer-note">Place la vidéo au début/à la fin du CC, ou lance la détection automatique sur la zone analysée.</div>
+              <div id="genericCCStatusV50" class="optimizer-note">Posiziona il video all'inizio/fine del CC, oppure avvia il rilevamento automatico sull'area analizzata.</div>
             </div>
 
             <div id="videoAutoCCResultsV49" class="video-auto-cc-results-v49"></div>
@@ -6892,7 +6892,7 @@ if(!BDO_DOM_READY){
         <div>
           <span class="settings81-kicker">CONFIGURATION</span>
           <h2>Settings</h2>
-          <p>Configure l’optimiseur, les contraintes du Combo Builder, les priorités de transition/cancel et la sauvegarde de tes données.</p>
+          <p>Configura l'ottimizzatore, i vincoli del Combo Builder, le priorità di transizione/annullamento e il backup dei tuoi dati.</p>
         </div>
         <div id="settingsClassContext" class="badge settings81-context">Nessuna classe sélectionnée</div>
       </div>
@@ -6918,7 +6918,7 @@ if(!BDO_DOM_READY){
         <div id="fullBackupStatusV48" class="optimizer-note">Nessuna sauvegarde exportée pendant cette session.</div>
       </section>
 
-      <div class="settings81-section-head"><span>01</span><div><h3>Ottimizzazione</h3><p>Définis le profil général et le type de cible.</p></div></div>
+      <div class="settings81-section-head"><span>01</span><div><h3>Ottimizzazione</h3><p>Definire il profilo generale e il tipo di target.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Impostazione</span>
@@ -6934,7 +6934,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildCombatMode">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Profil d’optimisation</b><small>Profil général qui détermine les priorités de l’Auto-Build.</small></div>
+    <div class="settings92-name"><b>Profil d’optimisation</b><small>Profilo generale che determina le priorità di creazione automatica.</small></div>
     <div class="settings92-control"><select id="autoBuildMode" onchange="saveAutoBuildSettings()">
             <option value="balanced">Équilibré</option>
             <option value="damage">Dégâts maximum</option>
@@ -6948,7 +6948,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildMode">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Type de cible</b><small>Adapte le profil d’optimisation au type de cible.</small></div>
+    <div class="settings92-name"><b>Type de cible</b><small>Adatta il profilo di ottimizzazione al tipo di target.</small></div>
     <div class="settings92-control"><select id="autoBuildTargetType" onchange="saveAutoBuildSettings()">
             <option value="generic">Générique</option>
             <option value="player">Joueur</option>
@@ -6959,7 +6959,7 @@ if(!BDO_DOM_READY){
   </div>
 </div>
 
-      <div class="settings81-section-head"><span>02</span><div><h3>Longueur & durée</h3><p>Encadre la taille et la durée estimée des combos générés.</p></div></div>
+      <div class="settings81-section-head"><span>02</span><div><h3>Longueur & durée</h3><p>Controlla la dimensione e la durata stimata delle combo generate.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Impostazione</span>
@@ -7021,7 +7021,7 @@ if(!BDO_DOM_READY){
   </div>
 </div>
 
-      <div class="settings81-section-head"><span>04</span><div><h3>CC & protections</h3><p>Contraintes de contrôle et de couverture défensive.</p></div></div>
+      <div class="settings81-section-head"><span>04</span><div><h3>CC & protections</h3><p>Vincoli di controllo e copertura difensiva.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Impostazione</span>
@@ -7039,14 +7039,14 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildMaxCC">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Exiger au moins une protection</b><small>Impose la présence d’au moins une compétence protégée.</small></div>
+    <div class="settings92-name"><b>Exiger au moins une protection</b><small>Richiede la presenza di almeno una abilità protetta.</small></div>
     <div class="settings92-control"><select id="autoBuildRequireProtection" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Sì</option>
           </select></div>
     <div class="settings92-state" data-setting-id="autoBuildRequireProtection">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Couverture protégée minimale (%)</b><small>Pourcentage minimal du combo qui doit bénéficier d’une protection.</small></div>
+    <div class="settings92-name"><b>Couverture protégée minimale (%)</b><small>Percentuale minima della combo che deve beneficiare della protezione.</small></div>
     <div class="settings92-control"><input id="autoBuildProtectionCoverage" type="number" min="0" max="100" value="0" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildProtectionCoverage">Automatique</div>
   </div>
@@ -7065,7 +7065,7 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildPreferFG">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Favoriser I-frame</b><small>Augmente la priorité des compétences disposant d’une I-frame.</small></div>
+    <div class="settings92-name"><b>Favoriser I-frame</b><small>Aumenta la priorità delle abilità con un I-frame.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferIframe" onchange="saveAutoBuildSettings()">
             <option value="no">No</option><option value="yes">Sì</option>
           </select></div>
@@ -7081,32 +7081,32 @@ if(!BDO_DOM_READY){
     <span>Utilizzo</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids dégâts</b><small>Importance des dégâts dans le score global d’une compétence.</small></div>
+    <div class="settings92-name"><b>Poids dégâts</b><small>Importanza del danno nel punteggio complessivo di un'abilità.</small></div>
     <div class="settings92-control"><input id="autoBuildDamageWeight" type="number" min="0" max="10" step="0.1" value="5" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildDamageWeight">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids vitesse</b><small>Importance de la vitesse réelle des transitions dans le classement.</small></div>
+    <div class="settings92-name"><b>Poids vitesse</b><small>Importanza della velocità effettiva delle transizioni nella classifica.</small></div>
     <div class="settings92-control"><input id="autoBuildSpeedWeight" type="number" min="0" max="10" step="0.1" value="3" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildSpeedWeight">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids CC</b><small>Importance des contrôles dans le score de l’optimiseur.</small></div>
+    <div class="settings92-name"><b>Poids CC</b><small>Importanza dei controlli nel punteggio dell'ottimizzatore.</small></div>
     <div class="settings92-control"><input id="autoBuildCCWeight" type="number" min="0" max="10" step="0.1" value="2" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildCCWeight">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids protections</b><small>Importance des protections dans le score global.</small></div>
+    <div class="settings92-name"><b>Poids protections</b><small>Importanza delle tutele nel punteggio complessivo.</small></div>
     <div class="settings92-control"><input id="autoBuildProtectionWeight" type="number" min="0" max="10" step="0.1" value="2" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildProtectionWeight">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids mobilité</b><small>Importance des compétences de mobilité et de repositionnement.</small></div>
+    <div class="settings92-name"><b>Poids mobilité</b><small>Importanza delle capacità di mobilità e riposizionamento.</small></div>
     <div class="settings92-control"><input id="autoBuildMobilityWeight" type="number" min="0" max="10" step="0.1" value="1" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMobilityWeight">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids cancels / transitions</b><small>Importance des transitions/cancels rapides, mesurés et validés.</small></div>
+    <div class="settings92-name"><b>Poids cancels / transitions</b><small>Importanza di transizioni/annullazioni rapide, misurate e validate.</small></div>
     <div class="settings92-control"><input id="autoBuildCancelWeight" type="number" min="0" max="10" step="0.1" value="4" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildCancelWeight">Automatique</div>
   </div>
@@ -7120,17 +7120,17 @@ if(!BDO_DOM_READY){
     <span>Utilizzo</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Coût ressource max.</b><small>Coût maximal de ressource de classe accepté pour le combo.</small></div>
+    <div class="settings92-name"><b>Coût ressource max.</b><small>Costo massimo in risorse di classe accettato per la combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxResourceCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxResourceCost">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Coût stamina max.</b><small>Coût maximal de stamina accepté pour le combo.</small></div>
+    <div class="settings92-name"><b>Coût stamina max.</b><small>Costo massimo di resistenza accettato per la combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxStaminaCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxStaminaCost">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Préserver la ressource</b><small>Favorise les séquences qui conservent davantage de ressource.</small></div>
+    <div class="settings92-name"><b>Préserver la ressource</b><small>Preferisce sequenze che risparmiano più risorse.</small></div>
     <div class="settings92-control"><select id="autoBuildPreserveResource" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Sì</option>
           </select></div>
@@ -7138,7 +7138,7 @@ if(!BDO_DOM_READY){
   </div>
 </div>
 
-      <div class="settings81-section-head"><span>07</span><div><h3>Struttura combo</h3><p>Active ou limite les différentes phases utilisées par l’Auto-Build.</p></div></div>
+      <div class="settings81-section-head"><span>07</span><div><h3>Struttura combo</h3><p>Attiva o limita le diverse fasi utilizzate da Auto-Build.</p></div></div>
       <div class="phase90-table" role="group" aria-label="Struttura combo">
   <div class="phase90-head">
     <span>Fase</span>
@@ -7210,7 +7210,7 @@ if(!BDO_DOM_READY){
         Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
       </div>
 
-      <div class="settings81-section-head"><span>08</span><div><h3>Filtros avancés</h3><p>Contrôle la qualité des données et les changements de stance.</p></div></div>
+      <div class="settings81-section-head"><span>08</span><div><h3>Filtros avancés</h3><p>Controlla la qualità dei dati e i cambiamenti di posizione.</p></div></div>
       <div class="settings92-table">
   <div class="settings92-head">
     <span>Impostazione</span>
@@ -7230,14 +7230,14 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildMinDataQuality">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Favoriser même stance</b><small>Favorise les enchaînements qui restent dans la stance actuelle.</small></div>
+    <div class="settings92-name"><b>Favoriser même stance</b><small>Preferisce le sequenze che rimangono nella strofa corrente.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferSameStance" onchange="saveAutoBuildSettings()">
             <option value="yes" selected>Sì</option><option value="no">No</option>
           </select></div>
     <div class="settings92-state" data-setting-id="autoBuildPreferSameStance">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Autoriser changement de stance</b><small>Autorise l’optimiseur à proposer un changement de stance.</small></div>
+    <div class="settings92-name"><b>Autoriser changement de stance</b><small>Consente all'ottimizzatore di suggerire un cambio di posizione.</small></div>
     <div class="settings92-control"><select id="autoBuildAllowStanceSwap" onchange="saveAutoBuildSettings()">
             <option value="yes" selected>Sì</option><option value="no">No</option>
           </select></div>
@@ -7246,7 +7246,7 @@ if(!BDO_DOM_READY){
 </div>
 
 
-      <div class="settings81-section-head"><span>09</span><div><h3>Communauté</h3><p>Règles de validation des combos partagés par les joueurs.</p></div></div>
+      <div class="settings81-section-head"><span>09</span><div><h3>Communauté</h3><p>Regole di convalida delle combo condivise dai giocatori.</p></div></div>
       <div class="settings92-table community101-settings-table">
         <div class="settings92-head">
           <span>Impostazione</span>
@@ -7256,7 +7256,7 @@ if(!BDO_DOM_READY){
         <div class="settings92-row">
           <div class="settings92-name">
             <b>J’aime requis pour vérifier un combo</b>
-            <small>Lorsqu’un combo partagé atteint ce nombre de votes uniques, il rejoint automatiquement Combo de classe.</small>
+            <small>Quando una combo condivisa raggiunge questo numero di voti unici, si unisce automaticamente alle combo di classe.</small>
           </div>
           <div class="settings92-control">
             <input id="communityVerifyThresholdInputV101" type="number" min="1" max="1000" step="1" value="10" onchange="setCommunityVerifyThresholdV101(this.value)">
@@ -7270,7 +7270,7 @@ if(!BDO_DOM_READY){
         <button type="button" class="tab-btn" onclick="resetAutoBuildSettings()">Réinitialiser</button>
       </div>
       <div id="settingsStatus" class="optimizer-note">
-        Tous ces réglages sont lus automatiquement par Optimizer.
+        Tutte queste impostazioni vengono lette automaticamente da Optimizer.
       </div>
     </div>
   </section>
@@ -8085,7 +8085,7 @@ function skillsRenameV72(item,className,spec,newName){
   if(!raw||typeof raw!=='object')return {ok:false,message:'Compétence introuvable dans la liste active.'};
 
   const name=skillsNormalizeNameV72(newName);
-  if(!name)return {ok:false,message:'Le nom de la compétence ne peut pas être vide.'};
+  if(!name)return {ok:false,message:'Il nome della competenza non può essere vuoto.'};
   if(skillsNameExistsV72(className,spec,name,raw)){
     return {ok:false,message:`Une compétence nommée « ${name} » existe déjà.`};
   }
@@ -8447,7 +8447,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"InvenGlobal — Tamer most damage combo",
       sourceUrl:"https://www.invenglobal.com/articles/1658/bdo-tamers-guide-to-the-most-damage-combo",
-      note:"Combo historique documenté : Legendary Beast Dance: Vermillion Bird cancel → Legendary Beast's Power → Moonlight Strike → Flow: Full Moon → Echo Pierce. Le principe de cancel est explicitement décrit ; timing exact à mesurer.",
+      note:"Combo storica documentata: Danza della bestia leggendaria: annullamento dell'Uccello vermiglio → Potere della bestia leggendaria → Colpo al chiaro di luna → Flusso: Luna piena → Perforazione dell'eco. Il principio di cancellazione è esplicitamente descritto; tempismo esatto da misurare.",
       historicalReference:true,
       explicitCancel:true,
       seq:["Legendary Beast Dance: Vermillion Bird","Legendary Beast's Power","Moonlight Strike","Flow: Full Moon","Echo Pierce"]
@@ -8460,7 +8460,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"InvenGlobal — Tamer alternative grab combo",
       sourceUrl:"https://www.invenglobal.com/articles/1658/bdo-tamers-guide-to-the-most-damage-combo",
-      note:"Référence historique Inven conservée, mais adaptée à la bibliothèque active : Soaring Kick (grab) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. La chaîne Bolt/Jolt → Echo est également documentée par des joueurs Tamer. Les timings restent à mesurer.",
+      note:"Riferimenti storici di Inven mantenuti, ma adattati alla libreria attiva: Soaring Kick (afferra) → Bolt/Jolt → Echo Pierce → Beast Rampage → Moonlight Strike. Il canale Bolt/Jolt → Echo è documentato anche dai giocatori Tamer. Restano da misurare i tempi.",
       historicalReference:true,
       seq:["Soaring Kick","Bolt Wave","Jolt Wave","Echo Pierce","Beast Rampage","Moonlight Strike"]
     },
@@ -8472,7 +8472,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Trollsies Tamer guide — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/667q4n/tamer_guide_by_trollsies/",
-      note:"Rotation large-group publiée : Void Lightning → Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Dropping → Flow: Gust → Allround Spinner.",
+      note:"Rotazione per grandi gruppi rilasciata: Fulmine del Vuoto → Bolt/Jolt → Potere della bestia leggendaria → Bolt/Jolt → Echo Pierce → Legendary Beast Dance: Black Turtle → Leaves Droping → Flow: Gust → Allround Spinner.",
       historicalReference:true,
       seq:["Void Lightning","Bolt Wave","Jolt Wave","Legendary Beast's Power","Bolt Wave","Jolt Wave","Echo Pierce","Legendary Beast Dance: Black Turtle","Leaves Dropping","Flow: Gust","Allround Spinner"]
     },
@@ -8484,7 +8484,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Trollsies Tamer guide — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/667q4n/tamer_guide_by_trollsies/",
-      note:"Combo joueur publié : Evasion → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.",
+      note:"Combo giocatore rilasciata: Evasione → Spray Scratch → Bolt/Jolt → Soaring Kick → Bolt/Jolt → Echo Pierce → Bolt/Jolt → Echo Pierce → Allround Spinner.",
       historicalReference:true,
       seq:["Evasion","Spray Scratch","Bolt Wave","Jolt Wave","Soaring Kick","Bolt Wave","Jolt Wave","Echo Pierce","Bolt Wave","Jolt Wave","Echo Pierce","Allround Spinner"]
     },
@@ -8496,7 +8496,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Tamer community — Reddit/Tamer Discord combo",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/kw1b2u/my_first_pvp_montage_tamer_t1_nw_na/",
-      note:"Chaîne décrite comme combo commun du Tamer Discord : Moonlight Strike → Flow: Intimidation → Beast Rampage, puis Allround Spinner/Fearful Trembling/Resonance selon contexte.",
+      note:"Catena descritta come una comune combo di Tamer Discord: Moonlight Strike → Flow: Intimidation → Beast Rampage, poi Allround Spinner/Fearful Trembling/Resonance a seconda del contesto.",
       seq:["Moonlight Strike","Flow: Intimidation","Beast Rampage","Allround Spinner"]
     },
     {
@@ -8507,7 +8507,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Pearl Abyss class discussion — Tamer reboot feedback",
       sourceUrl:"https://www.naeu.playblackdesert.com/DE-DE/Forum/ForumTopic/Detail?_opinionNo=72293&_topicNo=15840",
-      note:"La discussion de classe documente explicitement l'utilisation du damage de Celestial Slam → Beast Rampage.",
+      note:"La discussione in classe documenta esplicitamente l'uso dei danni di Schianto Celestiale → Furia della Bestia.",
       seq:["Celestial Slam","Beast Rampage"]
     },
     {
@@ -8518,7 +8518,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"BDFoundry Tamer guide — Rabam",
       sourceUrl:"https://www.blackdesertfoundry.com/tamer-class-guide/",
-      note:"BDFoundry indique que Breath Spike est très rapide et peut être cancel très rapidement vers d'autres compétences. Cette entrée ne fabrique pas de timing exact.",
+      note:"BDFoundry afferma che Breath Spike è molto veloce e può essere cancellato molto rapidamente da altre abilità. Questa voce non fornisce tempi esatti.",
       explicitCancel:true,
       seq:["Breath Spike","Moonlight Strike"]
     }
@@ -8532,7 +8532,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Succession Tamer quick PvE guide",
       sourceUrl:"https://www.youtube.com/watch?v=YPEpReukVVE",
-      note:"Le guide cite comme rotation principale : Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Référence historique à revalider selon patch courant.",
+      note:"La guida elenca come rotazione principale: Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Riferimento storico da riconvalidare in base alla patch attuale.",
       historicalReference:true,
       seq:["Prime: Void Lightning","Prime: Bolt Wave","Prime: Jolt Wave","Prime: Lightning of Earth","Flash","Flash: Pole Thrust","Prime: Bolt Wave","Prime: Jolt Wave"]
     },
@@ -8544,7 +8544,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"Tamer Succession community — Reddit",
       sourceUrl:"https://www.reddit.com/r/blackdesertonline/comments/ddhew0/tamer_succession_breakdown_and_thoughts/",
-      note:"La communauté confirme que Bolt/Jolt → Legendary Beast's Power → Bolt/Jolt cancel fonctionnait en Succession ; le timing exact a évolué et reste à mesurer.",
+      note:"La community conferma che Bolt/Jolt → Potere della bestia leggendaria → Bolt/Jolt cancel ha funzionato in Succession; il tempismo esatto si è evoluto e resta da misurare.",
       historicalReference:true,
       explicitCancel:true,
       seq:["Prime: Bolt Wave","Prime: Jolt Wave","Legendary Beast's Power","Prime: Bolt Wave","Prime: Jolt Wave"]
@@ -8555,9 +8555,9 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       playerCategory:"PVE",
       confidence:"video-published",
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
-      sourceTag:"Tamer Succ PvE Combo & Addons — published video",
+      sourceTag:"Combo PvE e componenti aggiuntivi Tamer Succ: video pubblicato",
       sourceUrl:"https://www.youtube.com/watch?v=e0S-tba7cuk",
-      note:"La vidéo publie une rotation d'inputs complète. Les compétences correspondant aux inputs sont rapprochées ici via la chaîne Succession courante : Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.",
+      note:"Il video pubblica una rotazione completa di input. Le abilità corrispondenti agli input vengono qui riconciliate tramite l'attuale catena di successione: Bolt/Jolt, Moonlight, Whiplash, Fearful Trembling, Roaring, Lightning of Earth.",
       seq:["Prime: Bolt Wave","Prime: Jolt Wave","Prime: Moonlight Strike","Prime: Whiplash","Fearful Trembling","Prime: Roaring","Prime: Lightning of Earth","Prime: Bolt Wave","Prime: Jolt Wave"]
     },
     {
@@ -8568,7 +8568,7 @@ const LEGACY_TAMER_PLAYER_PATTERNS={
       verifiedByPlayers:true,communityApproved:true,playerApproved:true,
       sourceTag:"BDFoundry Tamer guide — Succession PvE addons",
       sourceUrl:"https://www.blackdesertfoundry.com/tamer-class-guide/",
-      note:"Chaîne de setup construite uniquement à partir des compétences que le guide BDFoundry recommande pour les add-ons Succession : Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.",
+      note:"Catena di setup costruita solo con le abilità consigliate dalla guida BDFoundry per i componenti aggiuntivi di Succession: Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.",
       seq:["Prime: Jolt Wave","Flash: Pole Thrust","Fearful Trembling","Flash","Prime: Roaring","Prime: Lightning of Earth"]
     }
   ]
@@ -9146,7 +9146,7 @@ function renderPlayerComboPage(){
       const available = resolution.resolved.some(x =>
         playerComboNormalize(x.requested) === playerComboNormalize(name)
       );
-      chip.className = `player-combo-skill ${available ? 'available' : 'missing'}`;
+      chip.className = `abilità combo giocatore ${available ? 'available' : 'missing'}`;
       chip.textContent = name;
       sequence.appendChild(chip);
 
@@ -11608,7 +11608,7 @@ async function importManualGoogleDocUrl(){
  if(!url)return manualGoogleDocStatus("Colle d’abord l’URL d’un Google Doc ou Google Sheet.","warn");
 
  if(!/^https?:\/\/docs\.google\.com\/(?:document|spreadsheets)\//i.test(url)){
-   return manualGoogleDocStatus("Ce lien ne ressemble pas à un Google Doc/Sheet.","bad");
+   return manualGoogleDocStatus("Questo collegamento non sembra un documento/foglio Google.","bad");
  }
  const cls=document.getElementById('classSelector')?.value||'';
  const spec=document.getElementById('specSelector')?.value||'Awakening';
@@ -15220,7 +15220,7 @@ function autoPopulateSkillsFromReferenceV13(){
   };
 
   if(!cls){
-    setStatus('Sélectionne d’abord une classe dans l’onglet Class.','warn');
+    setStatus('Per prima cosa seleziona una classe nella scheda Classe.','warn');
     return;
   }
   if(typeof guideReferenceForCurrentClassV10!=='function'){
@@ -17613,7 +17613,7 @@ function scoreSmartBuilderSkill(skill,phase,lastSkillName,sequenceOverride=null)
   if(phase.key==='cc' && cc>0){
     if(currentCCState.immune){
       score -= 8;
-      reasons.push(`CC encore immunisé ${currentCCState.immunityRemaining.toFixed(1)}s`);
+      reasons.push(`CC è ancora immune a ${currentCCState.immunityRemaining.toFixed(1)}`);
     }else{
       const budget=currentCCState.ccRemainingPoints;
       const before=Number(currentCCState.ccPoints||0);
@@ -18862,17 +18862,17 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
 
   // No measured CC window => do not invent placement advice.
   if(!timeline.ccTimerKnown || timeline.ccTimerRemaining===null){
-    return {score:0,reason:'Timing CC non mesuré · placement temporel ignoré'};
+    return {score:0,reason:'Temporizzazione CC non misurata · posizionamento temporale ignorato'};
   }
   if(!timeline.timelineComplete){
-    return {score:0,reason:'Timing intermédiaire incomplet · placement temporel ignoré'};
+    return {score:0,reason:'Tempistica intermedia incompleta · posizionamento temporale ignorato'};
   }
 
   let landing=0;
   if(lastSkillName){
     const link=builderLinkTimingV61(lastSkillName,skill?.name);
     if(!link.known || !Number.isFinite(Number(link.seconds))){
-      return {score:0,reason:'Transition / cancel non mesuré · placement CC ignoré'};
+      return {score:0,reason:'Transizione/annullamento non misurato Posizionamento CC ignorato'};
     }
     landing+=Number(link.seconds);
   }
@@ -18882,7 +18882,7 @@ function builderNextCCTimingAdviceV32(skill,phase,lastSkillName){
   if(remainingAtLand<=0.25) return {score:5.5,reason:`Re-CC optimal · ${remainingAtLand.toFixed(2)}s restantes`};
   if(remainingAtLand<=0.55) return {score:4,reason:`Bon timing CC · ${remainingAtLand.toFixed(2)}s restantes`};
   if(remainingAtLand<=0.90) return {score:2,reason:`CC sûr · ${remainingAtLand.toFixed(2)}s restantes`};
-  return {score:-2.5,reason:`CC trop tôt · ${remainingAtLand.toFixed(2)}s encore disponibles`};
+  return {score:-2.5,reason:`CC troppo presto · ${remainingAtLand.toFixed(2)} ancora disponibili`};
 }
 
 function builderOfficialCCState(sequence=getBuilderSequence()){
@@ -19113,10 +19113,10 @@ function builderPairSynergy(fromSkill,toSkill,index){
   const transitionSeconds = builderTransitionSeconds(fromSkill.name,toSkill.name);
   if(transitionSeconds > 0 && transitionSeconds <= .35){
     score += .75;
-    reasons.push(`Fast transition ${transitionSeconds.toFixed(3)}s`);
+    reasons.push(`Transizione veloce ${transitionSeconds.toFixed(3)}s`);
   }else if(transitionSeconds > .8){
     score -= .75;
-    reasons.push(`Slow transition ${transitionSeconds.toFixed(3)}s`);
+    reasons.push(`Transizione lenta ${transitionSeconds.toFixed(3)}s`);
   }
 
   // If there is actual player-logic scoring for this continuation, use it as evidence.
@@ -19167,7 +19167,7 @@ function validateBuilderCombo(sequence=getBuilderSequence()){
 
     if(rawSkill&&!builderOrientationAllowsSkill(rawSkill,spec)){
       result.ok=false;result.firstErrorIndex=i;
-      const reason=`${rawSkillName} is not compatible with combo orientation: ${currentBuilderOrientation()}.`;
+      const reason=`${rawSkillName} non è compatibile con l'orientamento combinato: ${currentBuilderOrientation()}.`;
       result.errors.push(reason);
       result.rows.push({index:i,ok:false,reason,...ccRow});
       break;
@@ -19534,7 +19534,7 @@ function renderBuilderSequence(){
               tl.timelineComplete?'cc-active':'cc-bound-v60'
             );
             chip.title=tl.ccApplied
-              ? `Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}`
+              ? `Nuovo CC applicato: ${tl.ccTimerSource} · Durata CC utilizzata ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · fonte ${tl.ccTimerMeasurement?.source||'inconnue'}`
               : `Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?` · ${Number(tl.transitionSeconds).toFixed(3)}s`:''}${tl.ccBlocked?' · nouveau CC bloqué par immunité, timer actif inchangé':''}`;
             return chip;
           }
@@ -19547,7 +19547,7 @@ function renderBuilderSequence(){
 
         if(tl.ccApplied && (!tl.ccTimerMeasurement?.measured || !Number(tl.ccTimerMeasurement?.seconds))){
           const chip=makeMeta('CC Timer','— durée CC non mesurée','cc-empty');
-          chip.title='Le CC a bien été appliqué, mais sa durée n’est pas encore mesurée.';
+          chip.title='Il CC è stato applicato, ma la sua durata non è stata ancora misurata.';
           return chip;
         }
         return null;
@@ -20135,7 +20135,7 @@ const OLD_OFFICIAL_CONSUMABLES=[
   stats:["PA contre monstres +30","Précision +12","Endurance max +200","Récupération PV +9 par coup","Tutte DP -15","Dégâts critiques +10%","Poids +100 LT"],
   source:"Pearl Abyss — Frenzy Draught patch notes",verified:true},
  {id:"frenzy_corrupt",category:"Draught",name:"Breuvage de frénésie corrompu",duration:900,stackGroup:"draught",
-  stats:["Effets du Breuvage de frénésie","PA contre monstres supplémentaire (version Corrupted Breath)"],
+  stats:["Effets du Breuvage de frénésie","AP aggiuntivi contro i mostri (versione Corrupted Breath)"],
   source:"Pearl Abyss — Elvia Calpheon update history",verified:true},
 
  // DRAUGHTS 2024 — composants Harmony
@@ -20223,10 +20223,10 @@ const OLD_OFFICIAL_CONSUMABLES=[
   stats:["Même effet que Parfum de ténacité","Effet conservé après la mort"],source:"Pearl Abyss — Edania Update",verified:true,mirror:"tenacity"},
 
  // CHURCH / CAMPSITE — current consolidated buff
- {id:"adventure_boon_120",category:"Église / Camp",name:"[Bénédiction] Faveur de l'aventurier — 120 min",duration:7200,stackGroup:"church",
+ {id:"adventure_boon_120",category:"Église / Camp",name:"[Benedizione] Il favore dell'avventuriero – 120 min",duration:7200,stackGroup:"church",
   stats:["Tous PA +8","Précision +8","Réduction de dégâts +8","PV max +150","EXP combat +15%","EXP compétence +15%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
- {id:"adventure_boon_300",category:"Église / Camp",name:"[Bénédiction] Faveur de l'aventurier — 300 min",duration:18000,stackGroup:"church",
+ {id:"adventure_boon_300",category:"Église / Camp",name:"[Benedizione] Il favore dell'avventuriero – 300 min",duration:18000,stackGroup:"church",
   stats:["Tous PA +8","Précision +8","Réduction de dégâts +8","PV max +150","EXP combat +15%","EXP compétence +15%"],
   source:"Pearl Abyss — Campsite Guide 2026",verified:true},
  {id:"body_enhancement",category:"Villa / Camp",name:"Amélioration corporelle",duration:3600,stackGroup:"villa",
@@ -20282,7 +20282,7 @@ const OLD_CRYSTAL_PRESETS={
    ],
    // Aggregate offensive subset from the current BDFoundry example.
    mods:{ap:73,monsterAP:76,accuracy:19,critDmgPct:22,backDmgPct:2,specialPct:1,atkSpeedPct:2,castingSpeedPct:2},
-   note:"Le cristal de résistance peut être remplacé selon la zone. Brutal Decimation peut être remplacé par Elkarr/Visionary Elkarr si la précision manque."
+   note:"Il cristallo della resistenza può essere sostituito a seconda della zona. La Decimazione Brutale può essere sostituita con Elkarr/Elkarr Visionario se manca la precisione."
  },
  pvp:{
    label:"PvP passe-partout — DR/offensif général 2026",
@@ -20300,7 +20300,7 @@ const OLD_CRYSTAL_PRESETS={
    ],
    // Only clearly-supported offensive effects are fed to damage/speed calculation.
    mods:{humanDamage:56,accuracy:45,critDmgPct:22,atkSpeedPct:2,castingSpeedPct:2},
-   note:"Preset polyvalent. Contre forte esquive, augmente Elkarr/Viper; pour glass cannon, remplace davantage de défensifs par dégâts humains."
+   note:"Preimpostazione versatile. Contro la schivata forte, aumenta Elkarr/Viper; per il cannone di vetro, sostituisce il danno più difensivo con quello umano."
  }
 };
 let oldEffects=[]; let oldActiveCrystalPreset='';
@@ -21391,7 +21391,7 @@ function setVideoAutoWindowFromCurrentV70(lengthSeconds=30){
   if(endInput)endInput.value=videoFormatTimeV70(end,true);
 
   const status=document.getElementById('videoAutoStatusV43');
-  if(status)status.textContent=`Zone préparée : ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.`;
+  if(status)status.textContent=`Area preparata: ${videoFormatTimeV70(start,true)} → ${videoFormatTimeV70(end,true)}.`;
 }
 
 function normalizeVideoAutoTimeInputsV70(){
@@ -21426,7 +21426,7 @@ function toggleVideoAutoPauseV46(){
   const btn=document.getElementById('videoAutoPauseBtnV46');
   const status=document.getElementById('videoAutoStatusV43');
   if(btn)btn.textContent=VIDEO_AUTO_STATE_V43.paused?'Reprendre analyse':'Pause analyse';
-  if(status && VIDEO_AUTO_STATE_V43.paused)status.textContent='Analyse en pause. Tu peux inspecter la vidéo puis reprendre.';
+  if(status && VIDEO_AUTO_STATE_V43.paused)status.textContent='L'analisi è stata sospesa. È possibile esaminare il video e poi riprendere.';
 }
 
 async function waitVideoAutoResumeV46(){
@@ -21440,7 +21440,7 @@ function refreshAutoMeasurementsV46(){
   VIDEO_AUTO_STATE_V43.transitionMeasurements=[];
   if(typeof measureAutoTransitionsV45==='function')measureAutoTransitionsV45();
   const status=document.getElementById('videoAutoStatusV43');
-  if(status)status.textContent='Mesures précédemment détectées recalculées à partir des segments et sélections actuels.';
+  if(status)status.textContent='Misurazioni rilevate in precedenza ricalcolate dai segmenti e dalle selezioni correnti.';
 }
 
 async function autoAnalyzeLocalVideoV43(){
@@ -21814,7 +21814,7 @@ function genericCCAutoDetectV50(){
   const samples=VIDEO_AUTO_STATE_V43.samples||[];
 
   if(samples.length<4){
-    if(status)status.textContent='Lance d’abord « Analyse + mesure automatique » sur une zone vidéo.';
+    if(status)status.textContent='Avviare innanzitutto “Analisi + misurazione automatica” su una zona video.';
     return;
   }
 
@@ -21824,7 +21824,7 @@ function genericCCAutoDetectV50(){
 
   const inRange=samples.filter(s=>s.time>=range.start&&s.time<=range.end);
   if(inRange.length<4){
-    if(status)status.textContent='Pas assez d’échantillons dans la zone sélectionnée.';
+    if(status)status.textContent='Campioni insufficienti nell'area selezionata.';
     return;
   }
 
@@ -21883,7 +21883,7 @@ function genericCCAutoDetectV50(){
   }
 
   if(!recovery){
-    if(status)status.textContent='Début CC détecté, mais fin/reprise de mouvement non fiable. Utilise « Marquer fin CC ».';
+    if(status)status.textContent='Rilevato avvio CC, ma fine/ripresa del movimento inaffidabile. Utilizzare "Segna fine CC".';
     GENERIC_CC_STATE_V50.start=impact.time;
     GENERIC_CC_STATE_V50.end=null;
     GENERIC_CC_STATE_V50.auto=true;
@@ -22018,7 +22018,7 @@ function measureAutoCCV49(){
 
   if(status){
     status.textContent=rows.length
-      ? `${rows.length} mesure(s) CC proposée(s). Tu peux les enregistrer maintenant (statut auto) ou les valider/corriger d’abord.`
+      ? `${rows.length} misure CC proposte. Puoi salvarli ora (stato automatico) o prima convalidarli/correggerli.`
       : 'Nessuno CC mesurable automatiquement dans les segments résolus.';
   }
   return rows;
@@ -22086,7 +22086,7 @@ function correctAutoCCV49(index){
 
   const startRaw=prompt('Début CC (secondes absolues dans la vidéo)',String(m.impactTime));
   if(startRaw===null)return;
-  const endRaw=prompt('Fin CC / reprise de contrôle (secondes absolues dans la vidéo)',String(m.recoveryTime));
+  const endRaw=prompt('Termina CC / riprendi il controllo (secondi assoluti nel video)',String(m.recoveryTime));
   if(endRaw===null)return;
 
   const start=Number(String(startRaw).replace(',','.'));
@@ -22302,7 +22302,7 @@ function measureAutoTransitionsV45(){
 
   if(saveBtn)saveBtn.disabled=!rows.length;
   if(status){
-    status.textContent=`${rows.length} transition(s) plausible(s) · ${rejected} lien(s) rejeté(s) (écart trop grand / segments non continus).`;
+    status.textContent=`${rows.length} transizione/i plausibile/i · ${rejected} collegamento/i rifiutato/i (spazio troppo grande/segmenti non continui).`;
   }
   return rows;
 }
@@ -22415,7 +22415,7 @@ function saveAutoTransitionsV45(){
   try{if(typeof renderComboBuilder==='function')renderComboBuilder();}catch(e){}
 
   if(status){
-    status.textContent=`Mesures enregistrées : ${added} nouvelle(s), ${updated} mise(s) à jour. Elles restent marquées « à valider ».`;
+    status.textContent=`Misurazioni registrate: ${added} nuovo/i, ${updated} aggiornato/i. Rimangono contrassegnati come “da convalidare”.`;
   }
 }
 
@@ -22524,7 +22524,7 @@ bdoOnReady(()=>{
     status.className='skills-auto-search-status';
     status.textContent=cls
       ? `${count} compétence(s) de référence disponible(s) pour ${cls} · ${spec}. Clique pour ajouter les manquantes.`
-      : 'Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.';
+      : 'Utilizza il dizionario di riferimento per la classe e la specializzazione selezionate.';
   };
   document.getElementById('classSelector')?.addEventListener('change',refreshAutoSkillHint);
   document.getElementById('specSelector')?.addEventListener('change',refreshAutoSkillHint);
@@ -22996,7 +22996,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <div class="account79-intro">
         <span class="account78-kicker">NOUVEAU COMPTE LOCAL</span>
         <h2>Créer un compte</h2>
-        <p>Crée ton espace personnel pour séparer tes données de celles des autres utilisateurs de ce navigateur.</p>
+        <p>Crea il tuo spazio personale per separare i tuoi dati da quelli di altri utenti di questo browser.</p>
       </div>
 
       <div class="account79-form">
@@ -23026,7 +23026,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
           <input id="accountRegisterImportCurrentV78" type="checkbox" checked>
           <span>
             <b>Associer mes données actuelles</b>
-            <small>Skills, transitions, mesures, combos et réglages actuels seront rattachés à ce compte.</small>
+            <small>Le abilità, le transizioni, le misure, le combo e le impostazioni attuali verranno allegate a questo account.</small>
           </span>
         </label>
 
@@ -23054,7 +23054,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
         <button type="button" class="tab-btn" onclick="switchAccountViewV78('password')">Changer le mot de passe</button>
         <button type="button" class="tab-btn account78-danger" onclick="deleteAccountV78()">Elimina mon compte</button>
       </div>
-      <div class="account78-local-warning">Ce compte est enregistré uniquement dans ce navigateur. Pour transférer tes données sur un autre PC, utilise aussi <b>Esporta JSON complet</b>.</div>
+      <div class="account78-local-warning">Questo account viene salvato solo in questo browser. Per trasferire i tuoi dati su un altro PC, usa anche <b>Esporta JSON complet</b>.</div>
     </section>
 
     <section id="accountPasswordViewV78" class="account78-view">
@@ -23068,7 +23068,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
     </section>
 
     <div id="accountStatusV78" class="account78-status"></div>
-    <div class="account78-security-note">Mode local : ce compte protège uniquement les données de ce navigateur. Le partage communautaire utilise désormais Supabase. Comme cette application n’a pas encore de serveur, ce système n’est pas un compte cloud et ne protège pas contre une personne ayant accès au profil du navigateur.</div>
+    <div class="account78-security-note">Modalità locale: questo account protegge solo i dati di questo browser. La condivisione della comunità ora utilizza Supabase. Poiché questa applicazione non dispone ancora di un server, questo sistema non è un account cloud e non protegge da qualcuno che ha accesso al profilo del browser.</div>
   </div>
 </div>
 
@@ -23080,7 +23080,7 @@ if(typeof bdoOnReady==='function')bdoOnReady(()=>{
       <div>
         <span class="full-backup-kicker-v48" style="color:#ff7b72">BUG REPORT</span>
         <h3 id="bugReportTitleV77">Rapporter un problème</h3>
-        <p>Décris ce qui s’est passé. Le rapport peut être copié ou téléchargé afin d’être transmis au développeur.</p>
+        <p>Descrivi cosa è successo. Il report può essere copiato o scaricato per inviarlo allo sviluppatore.</p>
       </div>
       <button type="button" class="tab-btn bug77-close" onclick="closeBugReportV77()">✕</button>
     </div>
@@ -23217,7 +23217,7 @@ async function registerAccountV78(){
   const confirmPass=document.getElementById('accountRegisterConfirmV78')?.value||'';
   if(name.length<2)return accountStatusV78('Le nom doit contenir au moins 2 caractères.','bad');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return accountStatusV78('Adresse e-mail invalide.','bad');
-  if(pass.length<8)return accountStatusV78('Le mot de passe doit contenir au moins 8 caractères.','bad');
+  if(pass.length<8)return accountStatusV78('La password deve contenere almeno 8 caratteri.','bad');
   if(pass!==confirmPass)return accountStatusV78('Les mots de passe ne correspondent pas.','bad');
   const db=accountLoadDBV78();
   if(db.users.some(u=>u.name.toLowerCase()===name.toLowerCase()))return accountStatusV78('Ce nom d’utilisateur existe déjà.','bad');
@@ -23269,7 +23269,7 @@ async function changeAccountPasswordV78(){
   const old=document.getElementById('accountOldPasswordV78')?.value||'',next=document.getElementById('accountNewPasswordV78')?.value||'',confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const oldHash=await accountHashPasswordV78(old,user.passwordSalt);
   if(oldHash.hash!==user.passwordHash)return accountStatusV78('Mot de passe actuel incorrect.','bad');
-  if(next.length<8)return accountStatusV78('Le nouveau mot de passe doit contenir au moins 8 caractères.','bad');
+  if(next.length<8)return accountStatusV78('La nuova password deve contenere almeno 8 caratteri.','bad');
   if(next!==confirm)return accountStatusV78('La confirmation ne correspond pas.','bad');
   const sec=await accountHashPasswordV78(next),db=accountLoadDBV78(),u=db.users.find(x=>x.id===user.id);
   u.passwordHash=sec.hash;u.passwordSalt=sec.salt;accountSaveDBV78(db);
@@ -24801,7 +24801,7 @@ async function bclCloudShareV107(){
   const {data:{user}}=await sb.auth.getUser();
   BCL_CLOUD_USER_V107=user||null;
   if(!user){
-    bclCloudStatusV107('Connecte-toi à ton compte cloud pour partager ce combo.','error');
+    bclCloudStatusV107('Accedi al tuo account cloud per condividere questa combinazione.','error');
     if(typeof openLocalAccountModal==='function')openLocalAccountModal('login');
     return;
   }
@@ -25283,7 +25283,7 @@ window.registerAccountV78=async function(){
   const confirmPass=document.getElementById('accountRegisterConfirmV78')?.value||'';
   if(name.length<2)return accountStatusV78('Le nom doit contenir au moins 2 caractères.','bad');
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return accountStatusV78('Adresse e-mail invalide.','bad');
-  if(pass.length<8)return accountStatusV78('Le mot de passe doit contenir au moins 8 caractères.','bad');
+  if(pass.length<8)return accountStatusV78('La password deve contenere almeno 8 caratteri.','bad');
   if(pass!==confirmPass)return accountStatusV78('Les mots de passe ne correspondent pas.','bad');
   accountStatusV78('Création du compte cloud…');
   const signUpOpziones={data:{username:name}};
@@ -25335,7 +25335,7 @@ window.changeAccountPasswordV78=async function(){
   const confirm=document.getElementById('accountNewPasswordConfirmV78')?.value||'';
   const user=BCL_CLOUD_USER_V107;
   if(!user)return accountStatusV78('Nessuno compte cloud connecté.','bad');
-  if(next.length<8)return accountStatusV78('Le nouveau mot de passe doit contenir au moins 8 caractères.','bad');
+  if(next.length<8)return accountStatusV78('La nuova password deve contenere almeno 8 caratteri.','bad');
   if(next!==confirm)return accountStatusV78('La confirmation ne correspond pas.','bad');
   const verify=await sb.auth.signInWithPassword({email:user.email,password:old});
   if(verify.error)return accountStatusV78('Mot de passe actuel incorrect.','bad');
@@ -25345,7 +25345,7 @@ window.changeAccountPasswordV78=async function(){
 };
 
 window.deleteAccountV78=function(){
-  alert('La suppression d’un compte cloud doit passer par une procédure sécurisée. Les données partagées restent dans la base commune et ne sont jamais supprimées avec le compte.');
+  alert('L'eliminazione di un account cloud deve passare attraverso una procedura sicura. I dati condivisi rimangono nel database comune e non vengono mai eliminati con l'account.');
 };
 
 const _renderAccountHeaderLocalV108=window.renderAccountHeaderV78;
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
