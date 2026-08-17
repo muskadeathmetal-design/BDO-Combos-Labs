@@ -7,6 +7,7 @@ on:
       - 'tools/build-static-locales-v116.js'
       - 'tools/run-safe-static-build-v116.js'
       - 'tools/prepare-static-translation-patches-v116.js'
+      - 'tools/apply-post-visible-translations-v116.js'
       - 'bcl-static-auto-translations-v116.json'
       - 'translations/**.json'
       - '.github/workflows/install-v116-static-locales.yml'
@@ -29,6 +30,9 @@ jobs:
 
       - name: Build static language versions safely
         run: node tools/run-safe-static-build-v116.js
+
+      - name: Apply post-build visible translations
+        run: node tools/apply-post-visible-translations-v116.js
 
       - name: Verify dynamic i18n is absent from locale pages
         run: |
