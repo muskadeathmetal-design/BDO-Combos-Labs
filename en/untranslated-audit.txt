@@ -1,4 +1,4 @@
-V116 human residual French candidates: 242
+V116 human residual French candidates: 212
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
@@ -40,23 +40,20 @@ ${rows.length} plausible transition(s) · ${rejected} link(s) rejected (gap too 
 4 · Transitions
 A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.
 Abilità
-Account créé
 Actions
 Add les skills détectés
 Add transitions
 Adventurer's Guide
 After having validated many transitions/cancels.
-Ajouter à la suite
 All les catégories
 All résistances +10%
 All résistances +4%
 allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.
 an intermediate transition is missing: the last known time remains displayed but no
+Analyse automatique impossible : ${err?.message||err}
 Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
+AP caché +${m.ap}
 application a été remise à zéro. None dataset ni mécanisme de restauration automatique n
-Aucun CC mesurable automatiquement dans les segments résolus.
-Aucun moteur de dictionnaire de référence n’est disponible.
-Aucune mesure CC détectée à enregistrer.
 Augmente la priorité des compétences disposant de Forward Guard.
 Augmente la priorité des compétences disposant de Super Armor.
 Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.
@@ -77,27 +74,24 @@ Clean up invalid transitions
 community108-actions
 Compétences
 Completeness actuelle : ${completeness}%
-Compte cloud créé et connecté.
-Compte créé avec un espace de travail vide. Rechargement…
-Compte créé. Tes données actuelles sont associées à ce profil.
-Compte créé. Vérifie ton e-mail puis connecte-toi.
 Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.
 Confirm les transitions et cancels
 Connexion
-Connexion cloud…
-Connexion impossible :
 Control and validate transitions / cancellations
 Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
 Current skills, transitions, measures, combos and settings will be attached to this account.
 Déconnexion
 Definições
+Dégâts critiques +${m.critDmgPct}%
+Dégâts humains +${m.humanDamage}
+Dégâts spéciaux +${m.specialPct}%
 Delete définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.
 Delete définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.
 Delete mon compte
 Désactiver
+Détails: ${errors.slice(0,3).join(' | ')}
 Detect skills, CC, transitions and cancellations
 documented-guide
-Données du compte sauvegardées localement.
 Duration CC détectée automatiquement : ${duration.toFixed(4)} s. Vérifie au ralenti si nécessaire.
 Duration CC générique
 Duration CC validated pour ${skillName} : ${duration.toFixed(4)} s.
@@ -105,15 +99,12 @@ Duration estimated maximale acceptée pour la séquence complète.
 Duration estimated minimale souhaitée pour la séquence.
 Duration vidéo
 durée ${candidate.timing.toFixed(3)}s
-Durées CC et transitions importantes mesurées
-Durées CC mesurées
 END du CC actif (${tl.ccTimerSource||'source inconnue'})
 Équilibré
 équipe" ], "referenceSource": "Complete table provided by user · V12", "__userCompleteTableV12": true, "aliases": [ "Prime: Heilang
 estimée
 Export la sauvegarde complète JSON
 Fast transition ${transitionSeconds.toFixed(3)}s
-Filtres avancés
 guide
 Guide — ${seq.join(" → ")}
 guide-supported
@@ -122,9 +113,10 @@ home18-panel home18-guide home75-tutorial
 home19-build-actions
 home75-guide-grid
 home76-backup-actions
-Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.
+Import impossible : ${err?.message||err}
 Importance of actual speed of transitions in ranking.
 Importance of rapid, measured and validated transitions/cancels.
+Important measured CC durations and transitions
 indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.
 L'application a été remise à zéro. None dataset ni mécanisme de restauration automatique n'est présent.
 Language du site
@@ -138,31 +130,17 @@ Measured transition
 Measured Transitions
 mesurée
 Mobilité
-Name d’utilisateur
 nav.transitions
 NEXT ACTIONS
 No transition / cancel registered.
 No transition synergy data
 No validated cancel/transition
-Nom du combo partagé :
-Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
-Nombre maximum d’effets CC autorisés par les contraintes du Builder.
-Nombre maximum de CC
-Nombre maximum de compétences autorisé dans le combo.
-Nombre minimum de CC
-Nombre minimum de compétences souhaité dans un combo généré.
-None build enregistré pour le moment.
-None class sélectionnée
-None dictionnaire de référence disponible pour ${cls} · ${spec}.
-None rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.
-None sauvegarde exportée pendant cette session.
-None vidéo chargée.
 Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}
 of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the
 Open la sauvegarde complète
 Optimizer ne sauvegarde plus automatiquement le build. // L
 Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
-Ouvrir Builder
+Partagé par ${c.author||'Joueur'}
 Pearl Abyss — Campsite Guide 2026
 PLAYER TRANSITION
 Player transition (${pair.toFixed(1)})
@@ -178,17 +156,9 @@ Recommended backup: export Skills, CC durations, combos, transitions/cancels, vi
 Reference + compétences actives
 Référentiel
 Refresh les mesures détectées
-Réglages Auto-Build
-Réglages Auto-Build réinitialisés.
 Réglages enregistrés. Optimizer utilisera les
 Renaming a skill updates the associated references when the application can resolve them. Still checks important transitions after a rename.
 Require known transition
-Retourne au Builder et compare le score des suggestions.
-Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.
-Sauvegarder maintenant
-Sauvegarder mes données
-Sauvegarder toutes les données
-Sauvegarder TOUTES les données et les restaurer
 Save Combo + Transitions
 Save les mesures
 Save les réglages
