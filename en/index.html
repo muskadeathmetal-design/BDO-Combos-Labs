@@ -20836,7 +20836,7 @@ function markYouTubeSkillAtCurrentTime(){
 
   const time = youtubeCurrentTime();
   if(time === null){
-    if(status) status.textContent = 'Charge une vidéo locale avant d’ajouter un marqueur.';
+    if(status) status.textContent = 'Load a local video before adding a marker.';
     return;
   }
 
@@ -25554,6 +25554,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 

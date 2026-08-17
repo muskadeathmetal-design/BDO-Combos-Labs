@@ -5986,10 +5986,10 @@ if(!BDO_DOM_READY){
         </details>
 
         <details id="tuto75-3">
-          <summary><span>03</span> Mesurer automatiquement une vidéo</summary>
+          <summary><span>03</span> Misura automaticamente un video</summary>
           <div class="home75-detail">
             <p>Le <b>Video Analyzer</b> viene utilizzato per estrarre misurazioni reali da un video locale. Puoi scegliere il punto di partenza per l'analisi invece di iniziare necessariamente alle 0:00.</p>
-            <ol><li>Charge une vidéo locale et indique son FPS.</li><li>Place la lecture au moment où le combo intéressant commence, par exemple 3:00.</li><li>Lance <b>Analyse + mesure automatique</b>.</li><li>Utilizza la riproduzione lenta e la pausa durante la scansione per monitorare un rilevamento.</li><li>Ajoute les skills détectés à la liste lorsque la correspondance est correcte.</li><li>Contrôle les mesures de <b>transition</b>, <b>cancel</b> et <b>durée de CC</b>.</li><li>Aggiorna una misurazione rilevata in precedenza se è errata.</li></ol>
+            <ol><li>Carica un video locale e indica i suoi FPS.</li><li>Porta la riproduzione al punto in cui inizia la combo rilevante, ad esempio 3:00.</li><li>Lance <b>Analyse + mesure automatique</b>.</li><li>Utilizza la riproduzione lenta e la pausa durante la scansione per monitorare un rilevamento.</li><li>Aggiungi le skill rilevate alla lista quando la corrispondenza è corretta.</li><li>Contrôle les mesures de <b>transition</b>, <b>cancel</b> et <b>durée de CC</b>.</li><li>Aggiorna una misurazione rilevata in precedenza se è errata.</li></ol>
             <p class="home75-warning">Il rilevamento automatico è un ausilio alla misurazione, non una verità assoluta. I valori anomali dovrebbero essere controllati nel video.</p>
           </div>
         </details>
@@ -6739,7 +6739,7 @@ if(!BDO_DOM_READY){
           </div>
 
           <div id="youtubeAnalyzerStatus" class="result small">
-            Charge une vidéo locale, puis marque le début des compétences et les cancels.
+            Carica un video locale, quindi marca l’inizio delle skill e dei cancel.
           </div>
         </div>
 
@@ -20838,7 +20838,7 @@ function markYouTubeSkillAtCurrentTime(){
 
   const time = youtubeCurrentTime();
   if(time === null){
-    if(status) status.textContent = 'Charge une vidéo locale avant d’ajouter un marqueur.';
+    if(status) status.textContent = 'Carica un video locale prima di aggiungere un marcatore.';
     return;
   }
 
@@ -25556,6 +25556,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
