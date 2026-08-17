@@ -1,4 +1,4 @@
-V116 human residual French candidates: 212
+V116 human residual French candidates: 208
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
@@ -52,7 +52,6 @@ allows you to decide to what extent the Builder should favor the speed of transi
 an intermediate transition is missing: the last known time remains displayed but no
 Analyse automatique impossible : ${err?.message||err}
 Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
-AP caché +${m.ap}
 application a été remise à zéro. None dataset ni mécanisme de restauration automatique n
 Augmente la priorité des compétences disposant de Forward Guard.
 Augmente la priorité des compétences disposant de Super Armor.
@@ -82,9 +81,6 @@ Controls stats under the combo: duration, damage when available, measured transi
 Current skills, transitions, measures, combos and settings will be attached to this account.
 Déconnexion
 Definições
-Dégâts critiques +${m.critDmgPct}%
-Dégâts humains +${m.humanDamage}
-Dégâts spéciaux +${m.specialPct}%
 Delete définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.
 Delete définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.
 Delete mon compte
@@ -113,6 +109,7 @@ home18-panel home18-guide home75-tutorial
 home19-build-actions
 home75-guide-grid
 home76-backup-actions
+Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre de placer davantage de compétences pendant la même fenêtre de contrôle.
 Import impossible : ${err?.message||err}
 Importance of actual speed of transitions in ranking.
 Importance of rapid, measured and validated transitions/cancels.
@@ -140,7 +137,6 @@ of the Combo Builder only saves a combo sequence. To avoid losing skills, CC dur
 Open la sauvegarde complète
 Optimizer ne sauvegarde plus automatiquement le build. // L
 Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
-Partagé par ${c.author||'Joueur'}
 Pearl Abyss — Campsite Guide 2026
 PLAYER TRANSITION
 Player transition (${pair.toFixed(1)})
@@ -159,6 +155,8 @@ Refresh les mesures détectées
 Réglages enregistrés. Optimizer utilisera les
 Renaming a skill updates the associated references when the application can resolve them. Still checks important transitions after a rename.
 Require known transition
+Retourne au Builder et compare le score des suggestions.
+Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.
 Save Combo + Transitions
 Save les mesures
 Save les réglages
@@ -175,7 +173,6 @@ Slow transition ${transitionSeconds.toFixed(3)}s
 State du Combo Builder
 Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle source du CC Timer avec sa propre durée measured, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.
 Succession Tamer quick PvE guide
-Temps écoulé depuis le skill précédent : ${tl.linkTimingSource||'inconnu'}${tl.transitionSeconds!==null&&tl.transitionSeconds!==undefined?
 The guide lists as the main rotation: Void → Bolt/Jolt cancel → Lightning of Earth → Flash tree → Bolt/Jolt. Historical reference to be revalidate according to current patch.
 transition
 Transition / Cancel
@@ -201,7 +198,6 @@ Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier expo
 Unknown transition
 Unknown transition · strong penalty
 Validating transitions
-Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)
 validé
 validée
 Vérification : ${communityVerifyThresholdV101()} Like
