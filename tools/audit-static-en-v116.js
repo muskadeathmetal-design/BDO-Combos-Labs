@@ -30,4 +30,4 @@ for(const locale of locales){
   fs.writeFileSync(`${locale}/untranslated-visible-audit.txt`,`V116 ${locale} visible French residual candidates: ${rows.length}\n\n${rows.join('\n')}`,'utf8');
   console.log(locale,'visible French residual candidates:',rows.length);
 }
-// audit after safe aligned residual replacement pass
+// final multilingual audit after complete residual retranslation + aligned replacement
