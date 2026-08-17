@@ -6016,7 +6016,7 @@ if(!BDO_DOM_READY){
           <summary><span>06</span> Comprender el temporizador CC PvP</summary>
           <div class="home75-detail">
             <p>El Constructor sigue el presupuesto CC PvP que se muestra en la aplicación: <b>2.0 points</b>. Stiffness vaut <b>0.7</b> ; Stun, Knockback, Knockdown, Float, Bound, Grab et Freeze valent <b>1.0</b>.</p>
-            <ol><li>El primer CC aplicado inicia su <b>CC Timer</b> con su duración medida.</li><li>Las transiciones y cancelaciones adelantan el tiempo de la secuencia y por lo tanto reducen el tiempo restante.</li><li>Una habilidad sin un nuevo CC <b>no se reinicia</b> el cronómetro.</li><li>Un nuevo CC aplicado se convierte en la nueva fuente del temporizador CC con su propia duración medida.</li><li>Se sigue aplicando el CC que alcanza o supera 2,0; Los CC posteriores quedan entonces bloqueados por el límite.</li><li>Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.</li></ol>
+            <ol><li>El primer CC aplicado inicia su <b>CC Timer</b> con su duración medida.</li><li>Las transiciones y cancelaciones adelantan el tiempo de la secuencia y por lo tanto reducen el tiempo restante.</li><li>Una habilidad sin un nuevo CC <b>no se reinicia</b> el cronómetro.</li><li>Un nuevo CC aplicado se convierte en la nueva fuente del temporizador CC con su propia duración medida.</li><li>Se sigue aplicando el CC que alcanza o supera 2,0; Los CC posteriores quedan entonces bloqueados por el límite.</li><li>Con Stiffness en 0,7, pueden ser necesarias tres aplicaciones para cruzar el límite; con CC en 1,0, dos son suficientes.</li></ol>
             <p class="home75-warning">En PvP, cuando el CC Timer está prácticamente en cero, el Constructor debe priorizar un nuevo CC para evitar que el objetivo pueda levantarse antes de que continúe el combinación.</p>
           </div>
         </details>
@@ -6510,7 +6510,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <div id="builderSequence" class="combo-list" style="margin-top:12px"></div>
-<div class="optimizer-note cc-budget-note-v64"><strong>Budget CC :</strong> Stiffness = 0.7 pt ; les autres CC comptés = 1.0 pt. Le CC qui fait atteindre/dépasser 2.0 est appliqué normalement, devient la nouvelle fuente du CC Timer avec sa propre durée medida, puis l’immunité commence. L’immunité bloque uniquement les CC suivants et ne supprime jamais ce décompte. Exemple : 1.0 + 1.0 = 2 CC appliqués ; 0.7 + 0.7 + 0.7 = 3 CC appliqués.</div>
+<div class="optimizer-note cc-budget-note-v64"><strong>Budget CC :</strong> Stiffness = 0,7 puntos; otros CC contados = 1,0 pt. El CC que hace que 2.0 alcance/exceda se aplica normalmente, se convierte en la nueva fuente del temporizador CC con su propia duración medida, luego comienza la inmunidad. La inmunidad solo bloquea los CC posteriores y nunca elimina este recuento. Ejemplo: 1,0 + 1,0 = 2 CC aplicados; 0,7 + 0,7 + 0,7 = 3 CC aplicados.</div>
       <div id="builderPvpReccStatusV68" class="builder-pvp-recc-status-v68" style="display:none"></div>
       <div id="builderValidationStatus" class="builder-validation-status"></div>
       <div id="builderOfficialCCLegend" class="builder-official-cc-legend">
@@ -7051,14 +7051,14 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildProtectionCoverage">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Favoriser Super Armor</b><small>Augmente la priorité des compétences disposant de Super Armor.</small></div>
+    <div class="settings92-name"><b>Favoriser Super Armor</b><small>Aumenta la prioridad de las skills con Super Armor.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferSA" onchange="saveAutoBuildSettings()">
             <option value="no">No</option><option value="yes">Sí</option>
           </select></div>
     <div class="settings92-state" data-setting-id="autoBuildPreferSA">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Favoriser Forward Guard</b><small>Augmente la priorité des compétences disposant de Forward Guard.</small></div>
+    <div class="settings92-name"><b>Favoriser Forward Guard</b><small>Aumenta la prioridad de las skills con Forward Guard.</small></div>
     <div class="settings92-control"><select id="autoBuildPreferFG" onchange="saveAutoBuildSettings()">
             <option value="no">No</option><option value="yes">Sí</option>
           </select></div>
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 
 
