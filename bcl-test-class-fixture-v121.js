@@ -1,6 +1,6 @@
 (()=>{'use strict';
 const CLASS='Optimizer Test Class';
-const VERSION='v123-cloud-isolated-fixture';
+const VERSION='v124-light-selection-fixture';
 let state=0x51A7C0DE;
 const rnd=()=>{state=(state*1664525+1013904223)>>>0;return state/4294967296};
 const r=(a,b,d=3)=>Number((a+rnd()*(b-a)).toFixed(d));
@@ -62,10 +62,18 @@ function ensureOption(){
   else matches[0].textContent='🧪 Optimizer Test Class (100 sparse synthetic skills)';
   return true;
 }
-function expose(){globalThis.BCL_TEST_CLASS_V123={version:VERSION,name:CLASS,synthetic:true,skills:allSkills,common,awakening,transitions,transitionChains,counts:{skills:100,common:50,awakening:50,cc:20,pvpProfiled:60,transitions:20,cancels:20,chains:3}}}
+function expose(){globalThis.BCL_TEST_CLASS_V124={version:VERSION,name:CLASS,synthetic:true,skills:allSkills,common,awakening,transitions,transitionChains,counts:{skills:100,common:50,awakening:50,cc:20,pvpProfiled:60,transitions:20,cancels:20,chains:3}}}
+function activePageId(){return document.querySelector('.page.active')?.id||''}
+function lightRefresh(){
+  const page=activePageId();
+  try{if(typeof renderClassStats==='function')renderClassStats()}catch(e){}
+  if(page==='skillsPage')try{if(typeof renderSkillsPage==='function')renderSkillsPage()}catch(e){}
+  if(page==='transitionPage'||page==='transitionsPage')try{if(typeof renderTransitionPage==='function')renderTransitionPage()}catch(e){}
+  if(page==='classPage')try{if(typeof renderClassStats==='function')renderClassStats()}catch(e){}
+}
 function isolateCloudSync(){
-  if(globalThis.__BCL_TEST_CLOUD_ISOLATED_V123)return;
-  globalThis.__BCL_TEST_CLOUD_ISOLATED_V123=true;
+  if(globalThis.__BCL_TEST_CLOUD_ISOLATED_V124)return;
+  globalThis.__BCL_TEST_CLOUD_ISOLATED_V124=true;
   try{
     if(typeof globalThis.bclSharedPullV108==='function'){
       const originalPull=globalThis.bclSharedPullV108;
@@ -77,10 +85,42 @@ function isolateCloudSync(){
     }
   }catch(e){console.warn('[BCL test fixture] cloud isolation failed',e)}
 }
+function isolateHeavyAutoRefresh(){
+  if(globalThis.__BCL_TEST_LIGHT_REFRESH_V124)return;
+  globalThis.__BCL_TEST_LIGHT_REFRESH_V124=true;
+  try{
+    if(typeof globalThis.syncActiveContextV105==='function'){
+      const originalSync=globalThis.syncActiveContextV105;
+      globalThis.syncActiveContextV105=function(persist=true){
+        if(!isTestActive())return originalSync.apply(this,arguments);
+        resetStores();
+        if(persist){
+          try{localStorage.setItem('bclActiveClass.v105',CLASS);localStorage.setItem('bclActiveSpec.v105',document.getElementById('specSelector')?.value||'Awakening')}catch(e){}
+        }
+        lightRefresh();
+      };
+    }
+    if(typeof globalThis.bclRefreshUIV111==='function'){
+      const originalRefresh=globalThis.bclRefreshUIV111;
+      globalThis.bclRefreshUIV111=function(...args){if(isTestActive()){lightRefresh();return}return originalRefresh.apply(this,args)};
+    }
+    if(typeof globalThis.renderSmartBuilderSuggestions==='function'){
+      const originalSuggestions=globalThis.renderSmartBuilderSuggestions;
+      globalThis.renderSmartBuilderSuggestions=function(...args){
+        if(!isTestActive())return originalSuggestions.apply(this,args);
+        const wrap=document.getElementById('builderSuggestions');
+        const badge=document.getElementById('builderSuggestedPhase');
+        if(badge)badge.textContent='AnalysisCore test fixture';
+        if(wrap)wrap.innerHTML='<div class="page-placeholder">Automatic legacy suggestions are disabled for the 100-skill synthetic class. Use AnalysisCore for optimizer stress tests.</div>';
+        return [];
+      };
+    }
+  }catch(e){console.warn('[BCL test fixture] heavy refresh isolation failed',e)}
+}
 function boot(){
-  ensureOption();resetStores();expose();isolateCloudSync();
-  setTimeout(()=>{ensureOption();resetStores();isolateCloudSync()},300);
-  setTimeout(()=>{ensureOption();resetStores();isolateCloudSync()},1200);
+  ensureOption();resetStores();expose();isolateCloudSync();isolateHeavyAutoRefresh();
+  setTimeout(()=>{ensureOption();resetStores();isolateCloudSync();isolateHeavyAutoRefresh()},300);
+  setTimeout(()=>{ensureOption();resetStores();isolateCloudSync();isolateHeavyAutoRefresh()},1200);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
