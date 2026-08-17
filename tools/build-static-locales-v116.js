@@ -39,8 +39,6 @@ function removeDynamicI18n(html) {
     .replace(/<script[^>]*src=["'][^"']*bcl-i18n-v115-master\.js[^"']*["'][^>]*><\/script>\s*/gi, '');
 }
 
-// Preserve CC terminology and multi-character combat input labels only.
-// Single letters are deliberately NOT protected because doing so would corrupt normal words.
 const PROTECTED = [
   'Down Smash','Air Smash','Super Armor','Forward Guard',
   'Knockdown','Knockback','Stiffness','Invincible','Iframe','Freeze','Stun','Bound','Float','Grab',
@@ -96,7 +94,8 @@ function validate(page, locale) {
   if (page.includes('__BCL_PROTECTED_') || page.includes('§§BCLKEEP')) throw new Error(locale + ': unrecovered protection token');
   if (/bcl-(?:full-ui-i18n-v113|i18n-v114|i18n-v115-master)\.js/i.test(page)) throw new Error(locale + ': dynamic i18n script still present');
   if (!page.includes('bcl-static-locale-router')) throw new Error(locale + ': static router missing');
-  if (!page.includes('BDO Combos Labs')) throw new Error(locale + ': application signature missing');
+  if (!/<html[^>]*lang=["'](?:fr|en|de|es|it|pt)["']/i.test(page)) throw new Error(locale + ': html language missing');
+  if (page.length < 500000) throw new Error(locale + ': generated application unexpectedly small');
 }
 
 function main() {
