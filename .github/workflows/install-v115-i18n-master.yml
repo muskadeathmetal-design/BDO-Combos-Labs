@@ -1,0 +1,44 @@
+name: Install V115 i18n master
+
+on:
+  push:
+    paths:
+      - 'bcl-i18n-v115-master.js'
+      - '.github/workflows/install-v115-i18n-master.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Install single i18n master
+        run: |
+          cp bcl-i18n-v115-master.js bcl-i18n-v114.js
+          cat > bcl-full-ui-i18n-v113.js <<'EOF'
+          // V113 compatibility stub.
+          // Disabled because V114/V115 is now the single dynamic i18n master.
+          window.BCL_I18N_V113_DISABLED = true;
+          EOF
+          sed -i 's/BDO Combos Labs · V114/BDO Combos Labs · V115/g' index.html
+          sed -i 's/>V114</>V115</g' index.html
+      - name: Validate JavaScript
+        run: |
+          node --check bcl-i18n-v114.js
+          node --check bcl-full-ui-i18n-v113.js
+      - name: Commit V115
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bcl-i18n-v114.js bcl-full-ui-i18n-v113.js index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Fix i18n flicker with a single translation master (V115)"
+            git push origin main
+          fi
