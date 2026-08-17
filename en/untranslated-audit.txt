@@ -1,4 +1,4 @@
-V116 human residual French candidates: 219
+V116 human residual French candidates: 242
 
 , `ÉTAPES POUR REPRODUIRE\n${val(
 , `PROBLÈME OBSERVÉ\n${val(
@@ -28,7 +28,7 @@ V116 human residual French candidates: 219
 <b>${added}</b> nouveau(x) Skill(s) ajouté(s) à ${oldDocsEsc(cls)} ${oldDocsEsc(spec)} ·
 <b>${oldDocsEsc(cls)} ${oldDocsEsc(spec)}</b> — lecture du Google Doc…
 <b>${String(text).length.toLocaleString()}</b> caractères lus ·
-<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · valid':''}</em>
+<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · validé':''}</em>
 ✓ Combo vérifié par la communauté (${combo.likes} Like)
 ✓ Partagé dans Player combos · 0/${communityVerifyThresholdV101()} Like
 ✓ Verified par la communauté
@@ -39,71 +39,81 @@ ${Number(validationRow.ccPoints||0).toFixed(1)} / 2.0 · CC #${count} appliqué
 ${rows.length} plausible transition(s) · ${rejected} link(s) rejected (gap too large / non-continuous segments).
 4 · Transitions
 A transition represents the real time necessary to go from skill A to skill B. A cancel allows you to interrupt an animation to continue sooner.
-Account cloud créé et connecté.
+Abilità
 Account créé
-Account créé avec un espace de travail vide. Rechargement…
-Account créé. Tes données actuelles sont associées à ce profil.
-Account créé. Vérifie ton e-mail puis connecte-toi.
 Actions
-Add à la suite
 Add les skills détectés
 Add transitions
 Adventurer's Guide
 After having validated many transitions/cancels.
+Ajouter à la suite
 All les catégories
 All résistances +10%
 All résistances +4%
 allows you to decide to what extent the Builder should favor the speed of transitions, cancellations and known connections.
 an intermediate transition is missing: the last known time remains displayed but no
 Analysis from a chosen position, detection of skills, transitions/cancels and CC durations validated directly on a skill.
-application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n
+application a été remise à zéro. None dataset ni mécanisme de restauration automatique n
+Aucun CC mesurable automatiquement dans les segments résolus.
+Aucun moteur de dictionnaire de référence n’est disponible.
+Aucune mesure CC détectée à enregistrer.
 Augmente la priorité des compétences disposant de Forward Guard.
 Augmente la priorité des compétences disposant de Super Armor.
 Avec des Stiffness à 0.7, trois applications peuvent donc être nécessaires pour franchir la limite ; avec des CC à 1.0, deux suffisent.
-Backne au Builder et compare le score des suggestions.
-Backne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.
 Backup complète
-Backupr mes données
-Backupr toutes les données
-Backupr TOUTES les données et les restaurer
 BDFoundry Tamer guide — Rabam
 BDFoundry Tamer guide — Succession PvE addons
 BDO Combos Labs relie désormais le référentiel de compétences, les mesures vidéo, les transitions/cancels, le système CC PvP officiel et le Combo Builder. Les suggestions du Builder se recalculent selon l’orientation Awakening / Mixed / Pre-Awakening, la séquence actuelle et les timings réellement enregistrés.
 Break down the importance of damage, speed, CC and transitions/cancels.
-Build a combo à partir de données measureds plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classr ses suggestions.
+Build a combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.
 Build et corriger la base Skills
 Cancels / transitions weight
 CC impossible · remaining immunity ${timeline.immunityRemaining.toFixed(2)}s
 CC sûr · ${remainingAtLand.toFixed(2)}s restantes
 Choose the class and specialization used for Skills, Combos, Transitions and imports.
 Class, specialization et référentiel
+Classe
 Clean up invalid transitions
 community108-actions
+Compétences
 Completeness actuelle : ${completeness}%
+Compte cloud créé et connecté.
+Compte créé avec un espace de travail vide. Rechargement…
+Compte créé. Tes données actuelles sont associées à ce profil.
+Compte créé. Vérifie ton e-mail puis connecte-toi.
 Configure the optimizer, Combo Builder constraints, transition/cancel priorities and backup of your data.
 Confirm les transitions et cancels
+Connexion
+Connexion cloud…
+Connexion impossible :
 Control and validate transitions / cancellations
 Controls stats under the combo: duration, damage when available, measured transitions, coverage timing, CC and protection.
 Current skills, transitions, measures, combos and settings will be attached to this account.
-Data du compte sauvegardées localement.
+Déconnexion
+Definições
 Delete définitivement « ${name} » de ${className} · ${spec} ?\n\nLes transitions qui l’utilisent seront aussi supprimées.
 Delete définitivement le compte « ${user.name} » et son espace local ?\n\nExporte une sauvegarde JSON avant si tu veux conserver les données.
 Delete mon compte
+Désactiver
 Detect skills, CC, transitions and cancellations
 documented-guide
+Données du compte sauvegardées localement.
 Duration CC détectée automatiquement : ${duration.toFixed(4)} s. Vérifie au ralenti si nécessaire.
 Duration CC générique
 Duration CC validated pour ${skillName} : ${duration.toFixed(4)} s.
 Duration estimated maximale acceptée pour la séquence complète.
 Duration estimated minimale souhaitée pour la séquence.
 Duration vidéo
-Durations CC et transitions importantes measureds
 durée ${candidate.timing.toFixed(3)}s
+Durées CC et transitions importantes mesurées
+Durées CC mesurées
 END du CC actif (${tl.ccTimerSource||'source inconnue'})
+Équilibré
 équipe" ], "referenceSource": "Complete table provided by user · V12", "__userCompleteTableV12": true, "aliases": [ "Prime: Heilang
+estimée
 Export la sauvegarde complète JSON
 Fast transition ${transitionSeconds.toFixed(3)}s
-Filters avancés
+Filtres avancés
 guide
 Guide — ${seq.join(" → ")}
 guide-supported
@@ -116,7 +126,7 @@ Il réduit le temps d’exécution/enchaînement du combo, ce qui peut permettre
 Importance of actual speed of transitions in ranking.
 Importance of rapid, measured and validated transitions/cancels.
 indicates whether the transition to each candidate is known, measured or validated, as well as its possible cancellation.
-L'application a été remise à zéro. Noe dataset ni mécanisme de restauration automatique n'est présent.
+L'application a été remise à zéro. None dataset ni mécanisme de restauration automatique n'est présent.
 Language du site
 Le navigateur cherche par timestamp. Pour les mesures importantes, utilise une vidéo à fréquence constante et vérifie plusieurs essais.
 Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Player combos et rejoint Class combos.
@@ -126,47 +136,59 @@ Measure transitions + cancels
 measured transition
 Measured transition
 Measured Transitions
+mesurée
+Mobilité
 Name d’utilisateur
-Name du combo partagé :
-Namebre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
-Namebre maximum d’effets CC autorisés par les contraintes du Builder.
-Namebre maximum de CC
-Namebre maximum de compétences autorisé dans le combo.
-Namebre minimum de CC
-Namebre minimum de compétences souhaité dans un combo généré.
 nav.transitions
 NEXT ACTIONS
 No transition / cancel registered.
 No transition synergy data
 No validated cancel/transition
-Noe build enregistré pour le moment.
-Noe CC mesurable automatiquement dans les segments résolus.
-Noe class sélectionnée
-Noe dictionnaire de référence disponible pour ${cls} · ${spec}.
-Noe mesure CC détectée à enregistrer.
-Noe moteur de dictionnaire de référence n’est disponible.
-Noe rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.
-Noe sauvegarde exportée pendant cette session.
-Noe vidéo chargée.
+Nom du combo partagé :
+Nombre maximal d’utilisations d’un même skill lorsque la répétition est autorisée.
+Nombre maximum d’effets CC autorisés par les contraintes du Builder.
+Nombre maximum de CC
+Nombre maximum de compétences autorisé dans le combo.
+Nombre minimum de CC
+Nombre minimum de compétences souhaité dans un combo généré.
+None build enregistré pour le moment.
+None class sélectionnée
+None dictionnaire de référence disponible pour ${cls} · ${spec}.
+None rapport envoyé automatiquement : le fichier ou le texte doit être transmis au développeur.
+None sauvegarde exportée pendant cette session.
+None vidéo chargée.
 Nouveau CC appliqué : ${tl.ccTimerSource} · durée CC utilisée ${Number(tl.ccTimerMeasurement?.seconds||tl.ccTimerRemaining).toFixed(3)}s · source ${tl.ccTimerMeasurement?.source||'inconnue'}
 of the Combo Builder only saves a combo sequence. To avoid losing skills, CC durations, transitions/cancels, video measurements, settings and loadouts, you must use the
 Open la sauvegarde complète
 Optimizer ne sauvegarde plus automatiquement le build. // L
-Optimizer respectera l’ordre : Engage → Setup → CC → Burst → ENDisher et tiendra compte des durées measureds des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
+Optimizer respectera l’ordre : Engage → Setup → CC → Burst → Finisher et tiendra compte des durées mesurées des transitions. Une phase désactivée est ignorée. La limite indique le nombre maximal de compétences autorisées dans cette phase.
+Ouvrir Builder
 Pearl Abyss — Campsite Guide 2026
 PLAYER TRANSITION
 Player transition (${pair.toFixed(1)})
 player-combo-actions
 pour laisser l’optimiseur poursuivre la chaîne.
 Pour restaurer : « Import a backup »
+Pré-Awak
 Quality de données minimale (%)
 Quality minimale des données exigée avant qu’un skill soit privilégié.
 Quick Guide — How to Analyze a Video Combo
+Recherche auto
 Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.
 Reference + compétences actives
+Référentiel
 Refresh les mesures détectées
+Réglages Auto-Build
+Réglages Auto-Build réinitialisés.
+Réglages enregistrés. Optimizer utilisera les
 Renaming a skill updates the associated references when the application can resolve them. Still checks important transitions after a rename.
 Require known transition
+Retourne au Builder et compare le score des suggestions.
+Retourne dans Skills, Transition / Cancel et Combo Builder pour vérifier les données restaurées.
+Sauvegarder maintenant
+Sauvegarder mes données
+Sauvegarder toutes les données
+Sauvegarder TOUTES les données et les restaurer
 Save Combo + Transitions
 Save les mesures
 Save les réglages
@@ -174,10 +196,7 @@ Scanning guide
 Search auto impossible : ${e?.message||String(e)}
 Sélectionne d’abord une class dans l’onglet Class.
 Settings → Backup complète
-Settings Auto-Build réinitialisés.
-Settings enregistrés. Optimizer utilisera les
 Setup chain built only from skills that the BDFoundry guide recommends for Succession add-ons: Jolt Wave, Flash: Pole Thrust, Fearful Trembling, Flash, Roaring, Lightning of Earth.
-Sign in impossible :
 Sign in, profils séparés et espaces de travail locaux. Un compte créé vide ne récupère plus les données anonymes par erreur.
 Skills & améliorations
 Skills détectés : ${added} ajouté(s) · ${already} déjà présent(s) · ${unresolved} non résolu(s).
@@ -213,8 +232,12 @@ Unknown transition
 Unknown transition · strong penalty
 Validating transitions
 Validation manuelle : ${validated} confirmée(s) · ${pending} à vérifier · ${rejected} rejetée(s)
+validé
+validée
 Vérification : ${communityVerifyThresholdV101()} Like
 Vérification : 10 Like
+Vidéo
+Video-Analyse
 video-auto-cc-actions-v49
 video-auto-transition-row-v45
 video-auto-transitions-v45-style
