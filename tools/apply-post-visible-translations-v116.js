@@ -3,7 +3,8 @@ const path=require('path');
 const locales=['en','de','es','it','pt'];
 const patchFiles=[
   path.join('translations','post-visible-v116.json'),
-  path.join('translations','post-visible-final-v116.json')
+  path.join('translations','post-visible-final-v116.json'),
+  path.join('translations','post-visible-tutorial-v116.json')
 ];
 const patches=patchFiles.map(file=>JSON.parse(fs.readFileSync(file,'utf8')));
 
