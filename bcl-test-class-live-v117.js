@@ -7,4 +7,5 @@ load('/bcl-test-native-v128.js?v=128','bcl-test-native-v128');
 load('/bcl-analysis-settings-v121.js?v=127','bcl-analysis-settings-v127');
 load('/bcl-analysiscore-builder-v129.js?v=132','bcl-analysiscore-builder-v132');
 load('/bcl-combo-setup-v134.js?v=134','bcl-combo-setup-v134');
+load('/bcl-combo-builder-v135.js?v=135','bcl-combo-builder-v135');
 })();
