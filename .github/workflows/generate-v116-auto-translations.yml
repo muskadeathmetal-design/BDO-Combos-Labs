@@ -8,13 +8,17 @@ on:
       - 'tools/generate-static-auto-translations-v116.py'
       - '.github/workflows/generate-v116-auto-translations.yml'
 
+concurrency:
+  group: v116-static-translations
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,4 +53,5 @@ jobs:
             exit 0
           fi
           git commit -m "Complete V116 static translation cache"
+          git pull --rebase origin main
           git push
