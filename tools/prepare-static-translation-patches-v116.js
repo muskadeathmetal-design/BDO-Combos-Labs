@@ -14,35 +14,27 @@ function readJson(file, fallback = {}) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
-function looksLikeCode(text) {
-  const s = String(text || '');
-  return /(?:\bfunction\b|\bconst\b|\blet\b|\bvar\b|\breturn\b|document\.|window\.|localStorage|querySelector|innerHTML|textContent|addEventListener|Math\.|JSON\.|Object\.|Array\.|\.map\(|\.filter\(|\.forEach\(|=>|\?\.|sourceTag|timingSeconds|cancelAt|className|<\/?(?:div|span|script|style|table|tr|td|th)\b|class=|style=)/i.test(s);
-}
-
-function unsafePair(from, to) {
-  if (!from || !to) return true;
-  if (looksLikeCode(from) || looksLikeCode(to)) return true;
-  if ((from.match(/[{}]/g) || []).length > 8) return true;
-  if ((to.match(/[{}]/g) || []).length > 8) return true;
-  return false;
-}
-
 const existing = readJson(sourceCache, {});
 const sharedPatches = sharedPatchFiles.map(file => readJson(file, {}));
-const safe = {};
-for (const locale of locales) {
-  safe[locale] = {};
+const prepared = {};
 
+for (const locale of locales) {
+  prepared[locale] = {};
+
+  // V116 now translates only visible HTML text/attributes. Script/style code is
+  // protected by the builder, so the old code-shaped-entry filter is no longer
+  // needed for this UI cache and was discarding many valid translations.
   for (const [from, to] of Object.entries(existing[locale] || {})) {
-    if (!unsafePair(from, to)) safe[locale][from] = to;
+    if (!from || !to) continue;
+    prepared[locale][from] = to;
   }
 
   let sharedCount = 0;
   for (const shared of sharedPatches) {
     for (const [from, translations] of Object.entries(shared)) {
       const to = translations && translations[locale];
-      if (!from || !to || unsafePair(from, to)) continue;
-      safe[locale][from] = to;
+      if (!from || !to) continue;
+      prepared[locale][from] = to;
       sharedCount++;
     }
   }
@@ -50,13 +42,12 @@ for (const locale of locales) {
   const patchFile = path.join('translations', `${locale}.json`);
   const patch = readJson(patchFile, {});
   for (const [from, to] of Object.entries(patch)) {
-    if (from.startsWith('_')) continue;
-    if (!from || !to || unsafePair(from, to)) continue;
-    safe[locale][from] = to;
+    if (from.startsWith('_') || !from || !to) continue;
+    prepared[locale][from] = to;
   }
 
-  console.log(`${locale}: ${Object.keys(safe[locale]).length} safe translations (${sharedCount} shared + ${Object.keys(patch).filter(k=>!k.startsWith('_')).length} locale patch entries)`);
+  console.log(`${locale}: ${Object.keys(prepared[locale]).length} prepared visible-UI translations (${sharedCount} shared + ${Object.keys(patch).filter(k=>!k.startsWith('_')).length} locale patch entries)`);
 }
 
-fs.writeFileSync(outputCache, JSON.stringify(safe, null, 2), 'utf8');
-console.log('Prepared temporary V116 translation cache with shared + dynamic + locale patches applied last.');
+fs.writeFileSync(outputCache, JSON.stringify(prepared, null, 2), 'utf8');
+console.log('Prepared V116 visible-UI translation cache with full auto cache + shared + locale patches.');
