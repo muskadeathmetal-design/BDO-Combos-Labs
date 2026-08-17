@@ -5,10 +5,10 @@ const cp = require('child_process');
 const LOCALES = ['fr','en','de','es','it','pt'];
 const ROOT_FILE = 'index.html';
 const CURRENT_I18N_FILE = 'bcl-i18n-v115-master.js';
-const AUTO_I18N_FILE = 'bcl-static-auto-translations-v116.json';
+const AUTO_I18N_FILE = 'bcl-static-prepared-translations-v116.json';
 const LEGACY_V113_REF = '03ed2d779fc4a0327e87f88700c0b9e905670983';
 const LEGACY_V113_PATH = 'bcl-full-ui-i18n-v113.js';
-const BUILD_REASON = 'translation-cache-ready';
+const BUILD_REASON = 'prepared-patches-ready';
 
 function extractObjectLiteral(js, marker, fromIndex = 0) {
   const start = js.indexOf(marker, fromIndex);
@@ -182,7 +182,7 @@ function main() {
 
   const root = `<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDO Combos Labs · V116</title></head><body><script>(function(){var l='fr';try{var s=localStorage.getItem('bcl_language')||localStorage.getItem('bclLanguage');if(/^(fr|en|de|es|it|pt)$/.test(s))l=s;}catch(e){}location.replace('/'+l+'/'+(location.search||'')+(location.hash||''));})();</script><noscript><a href="/fr/">Ouvrir BDO Combos Labs</a></noscript></body></html>\n`;
   fs.writeFileSync(ROOT_FILE, root, 'utf8');
-  console.log('V116 static locales rebuilt with V113+V115+auto dictionaries:', LOCALES.join(', '), BUILD_REASON);
+  console.log('V116 static locales rebuilt with V113+V115+prepared patches:', LOCALES.join(', '), BUILD_REASON);
 }
 
 main();
