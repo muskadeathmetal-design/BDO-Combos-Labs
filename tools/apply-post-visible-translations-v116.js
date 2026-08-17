@@ -7,9 +7,17 @@ const patchFiles=[
 ];
 const patches=patchFiles.map(file=>JSON.parse(fs.readFileSync(file,'utf8')));
 
-// This pass runs AFTER the main translation build. Its keys are exact strings
-// observed in the generated pages, so literal replacement is the safest option.
-// BDO terms, inputs and CC names are already preserved in every target value.
+function escapeRegex(s){
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+}
+function flexibleWhitespaceRegex(s){
+  const parts=String(s).trim().split(/\s+/).map(escapeRegex);
+  return new RegExp(parts.join('\\s+'),'g');
+}
+
+// This pass runs AFTER the main translation build and only uses curated,
+// human-reviewed visible UI phrases. First try exact matching, then a whitespace-
+// tolerant match so phrases split across HTML lines are still translated.
 for(const locale of locales){
   const file=path.join(locale,'index.html');
   let html=fs.readFileSync(file,'utf8');
@@ -17,11 +25,20 @@ for(const locale of locales){
   for(const patch of patches){
     for(const [from,map] of Object.entries(patch)){
       const to=map&&map[locale];
-      if(!from||!to||!html.includes(from)) continue;
-      html=html.split(from).join(to);
-      applied++;
+      if(!from||!to) continue;
+      if(html.includes(from)){
+        html=html.split(from).join(to);
+        applied++;
+        continue;
+      }
+      const re=flexibleWhitespaceRegex(from);
+      if(re.test(html)){
+        re.lastIndex=0;
+        html=html.replace(re,to);
+        applied++;
+      }
     }
   }
   fs.writeFileSync(file,html,'utf8');
-  console.log(locale+': post-visible exact translations applied:',applied);
+  console.log(locale+': post-visible translations applied:',applied);
 }
