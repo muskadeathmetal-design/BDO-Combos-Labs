@@ -5827,7 +5827,7 @@ if(!BDO_DOM_READY){
     </section>
 
     <section class="home18-kpis" aria-label="Résumé du projet">
-      <article class="home18-kpi"><span>Loaded skills</span><strong id="home18Skills">0</strong><small id="home18SkillsSub">0 activés</small></article>
+      <article class="home18-kpi"><span>Loaded skills</span><strong id="home18Skills">0</strong><small id="home18SkillsSub">0 actives</small></article>
       <article class="home18-kpi"><span>Reference</span><strong id="home18ReferenceCount">0</strong><small id="home18ReferenceSub">entrées disponibles</small></article>
       <article class="home18-kpi"><span>Combos</span><strong id="home18Combos">0</strong><small>for this context</small></article>
       <article class="home18-kpi"><span>Transitions</span><strong id="home18Transitions">0</strong><small id="home18TransitionsSub">validées / mesurées</small></article>
@@ -5837,7 +5837,7 @@ if(!BDO_DOM_READY){
     <div class="home18-main-grid">
       <section class="home18-panel home18-progress-panel">
         <div class="home18-panel-head">
-          <div><span class="home18-section-kicker">ÉTAT DES DONNÉES</span><h3>Build coverage</h3></div>
+          <div><span class="home18-section-kicker">DATA STATUS</span><h3>Build coverage</h3></div>
           <button class="tab-btn home18-mini-btn" type="button" onclick="renderHomeDashboardV18()">Refresh</button>
         </div>
         <div class="home18-progress-list">
@@ -5849,14 +5849,14 @@ if(!BDO_DOM_READY){
       </section>
 
       <section class="home18-panel">
-        <div class="home18-panel-head"><div><span class="home18-section-kicker">PROCHAINES ACTIONS</span><h3>Recommended priorities</h3></div></div>
+        <div class="home18-panel-head"><div><span class="home18-section-kicker">NEXT ACTIONS</span><h3>Recommended priorities</h3></div></div>
         <div id="home18Recommendations" class="home18-recommendations"></div>
       </section>
     </div>
 
     <section class="home18-panel">
       <div class="home18-panel-head">
-        <div><span class="home18-section-kicker">WORKFLOW</span><h3>From raw data to optimized combo</h3></div>
+        <div><span class="home18-section-kicker">WORKFLOW</span><h3>From raw data to an optimized combo</h3></div>
         <span class="home18-muted">Click a step to open the corresponding tool</span>
       </div>
       <div class="home18-workflow">
@@ -5873,7 +5873,7 @@ if(!BDO_DOM_READY){
       <div class="home18-panel-head">
         <div><span class="home18-section-kicker">HISTORIQUE BUILDER</span><h3>Latest builds</h3></div>
         <div style="display:flex;gap:7px;align-items:center">
-          <span class="home18-muted" id="home19BuildCount">0 build enregistré</span>
+          <span class="home18-muted" id="home19BuildCount">0 saved builds</span>
           <button class="tab-btn home18-mini-btn" type="button" onclick="renderRecentBuildsV19()">Refresh</button>
         </div>
       </div>
@@ -5888,7 +5888,7 @@ if(!BDO_DOM_READY){
     <div class="home18-bottom-grid">
       <section class="home18-panel">
         <div class="home18-panel-head">
-          <div><span class="home18-section-kicker">LIENS UTILES</span><h3>Class resources</h3></div>
+          <div><span class="home18-section-kicker">USEFUL LINKS</span><h3>Class resources</h3></div>
           <span class="home18-muted" id="home23ResourceContext">Active class</span>
         </div>
         <div class="home18-tool-grid home22-link-grid" id="home23ClassLinks"></div>
@@ -5902,7 +5902,7 @@ if(!BDO_DOM_READY){
       </section>
 
       <section class="home18-panel">
-        <div class="home18-panel-head"><div><span class="home18-section-kicker">DIAGNOSTIC</span><h3>Active context status</h3></div></div>
+        <div class="home18-panel-head"><div><span class="home18-section-kicker">DIAGNOSTICS</span><h3>Active context status</h3></div></div>
         <div id="home18Diagnosticss" class="home18-diagnostics"></div>
       </section>
     </div>
@@ -5910,7 +5910,7 @@ if(!BDO_DOM_READY){
     
     
         <section class="home18-panel account78-home-info">
-      <div><span class="home18-section-kicker">ESPACE UTILISATEUR</span><h3>Local account & personal data</h3><p>Crée un compte pour séparer automatiquement ton espace de travail des autres utilisateurs de ce navigateur. Une sauvegarde locale du profil est mise à jour périodiquement et à la déconnexion.</p></div>
+      <div><span class="home18-section-kicker">USER AREA</span><h3>Local account & personal data</h3><p>Crée un compte pour séparer automatiquement ton espace de travail des autres utilisateurs de ce navigateur. Une sauvegarde locale du profil est mise à jour périodiquement et à la déconnexion.</p></div>
       <button type="button" class="tab-btn" onclick="openAccountModalV78(accountUserV78()?'profile':'register')">Manage my account</button>
     </section>
 
@@ -5951,7 +5951,7 @@ if(!BDO_DOM_READY){
       </div>
 
       <div class="home75-start">
-        <div><b>Objectif</b><p>Build un combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.</p></div>
+        <div><b>Objectif</b><p>Build a combo à partir de données mesurées plutôt que de timings inventés. Le Builder utilise les compétences, les CC, les transitions et les cancels enregistrés pour classer ses suggestions.</p></div>
         <div><b>Principe important</b><p>Une donnée absente reste inconnue. Une transition ou une durée de CC non mesurée ne doit pas être remplacée silencieusement par une valeur arbitraire. Après une session importante, exporte toujours une sauvegarde complète JSON.</p></div>
       </div>
 
@@ -6049,7 +6049,7 @@ if(!BDO_DOM_READY){
               <span>Durations CC mesurées</span>
               <span>Transitions / Cancels</span>
               <span>Mesures et validations vidéo</span>
-              <span>Combos enregistrés</span>
+              <span>Saved combos</span>
               <span>State du Combo Builder</span>
               <span>Settings Auto-Build</span>
               <span>Skill Add-ons / Loadout</span>
@@ -6069,7 +6069,7 @@ if(!BDO_DOM_READY){
             <h4>Restaurer une sauvegarde</h4>
             <ol>
               <li>Ouvre <b>Settings</b>.</li>
-              <li>Dans <b>Backup complète</b>, laisse cochée <b>Remplacer les données locales BDO Combos Labs lors de la restauration</b> si tu veux retrouver exactement l’état sauvegardé.</li>
+              <li>Dans <b>Backup complète</b>, laisse cochée <b>Replace local BDO Combos Labs data during restore</b> si tu veux retrouver exactement l’état sauvegardé.</li>
               <li>Clique <b>Import a backup</b>.</li>
               <li>Sélectionne le fichier <code>BDO_Combos_Labs_Backup_....json</code>.</li>
               <li>Attends le message de confirmation.</li>
@@ -6103,7 +6103,7 @@ if(!BDO_DOM_READY){
       <div>
         <div class="class-kicker">CLASS CONFIGURATION</div>
         <h2>Class profile</h2>
-        <p>Choisis la classe et la spécialisation qui pilotent les Skills, Combos, Transitions et imports.</p>
+        <p>Choose the class and specialization used for Skills, Combos, Transitions and imports.</p>
       </div>
       <span class="badge class-context-badge">Active context</span>
     </div>
@@ -6169,7 +6169,7 @@ if(!BDO_DOM_READY){
         <span class="class-section-eyebrow">IMPORT & DÉTECTION</span>
         <h3>Data sources</h3>
       </div>
-      <span class="class-section-note">Le contenu importé est associé au contexte sélectionné ci-dessus.</span>
+      <span class="class-section-note">Imported content is linked to the context selected above.</span>
     </div>
 
 <div class="docs-analyzer old-exact-docs">
@@ -6188,18 +6188,18 @@ if(!BDO_DOM_READY){
 
     <div class="toolbar old-doc-toolbar" style="margin-top:8px">
       <div style="min-width:360px;flex:1">
-        <label>Lien Google Docs / Sheets</label>
+        <label>Google Docs / Sheets link</label>
         <input id="manualGoogleDocUrl" type="text"
                placeholder="https://docs.google.com/document/d/...">
       </div>
       <button class="optimizer-btn" type="button" onclick="importManualGoogleDocUrl()">
-        Charger ce Google Doc
+        Load this Google Doc
       </button>
     </div>
 
     <div class="toolbar old-doc-toolbar" style="margin-top:8px">
       <div>
-        <label>Fichier exporté Google Docs</label>
+        <label>Google Docs exported file</label>
         <input id="manualGoogleDocFile" type="file"
           accept=".txt,.md,.html,.htm,.csv,.json,.docx,text/plain,text/html,text/markdown,text/csv,application/json,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
           onchange="importManualGoogleDocFile(this.files&&this.files[0]);this.value=''">
@@ -6260,11 +6260,11 @@ if(!BDO_DOM_READY){
       </div>
 
       <div class="skills-reference-summary skills95-reference-summary">
-        <div class="skills-reference-title"><span>Reference actif</span><strong id="skillsReferenceActive">—</strong></div>
+        <div class="skills-reference-title"><span>Active reference</span><strong id="skillsReferenceActive">—</strong></div>
         <div><span>Skills</span><strong id="skillsSummaryTotal">0</strong></div>
-        <div><span>Actives</span><strong id="skillsSummaryEnabled">0</strong></div>
-        <div><span>Avec input</span><strong id="skillsSummaryInput">0</strong></div>
-        <div><span>Avec données combat</span><strong id="skillsSummaryCombat">0</strong></div>
+        <div><span>Active</span><strong id="skillsSummaryEnabled">0</strong></div>
+        <div><span>With input</span><strong id="skillsSummaryInput">0</strong></div>
+        <div><span>With combat data</span><strong id="skillsSummaryCombat">0</strong></div>
       </div>
 
       <div class="skills-control-bar skills95-control-bar">
@@ -6283,7 +6283,7 @@ if(!BDO_DOM_READY){
             <option value="protected">Avec protection</option>
             <option value="cc">Avec CC</option>
             <option value="damage">Avec dégâts</option>
-            <option value="input">Avec input</option>
+            <option value="input">With input</option>
           </select>
         </div>
         <div class="skills-filter-field">
@@ -6297,7 +6297,7 @@ if(!BDO_DOM_READY){
           </select>
         </div>
         <button id="autoSkillReferenceSearchBtn" type="button" class="optimizer-btn skills-auto-main-btn" onclick="autoPopulateSkillsFromReferenceV13()">
-          Search auto des compétences
+          Automatic skill search
         </button>
       </div>
 
@@ -6471,7 +6471,7 @@ if(!BDO_DOM_READY){
           </div>
         </div>
 
-        <div id="oldCrystalSummary" class="addon87-summary">Noe set de cristaux appliqué.</div>
+        <div id="oldCrystalSummary" class="addon87-summary">No crystal set applied.</div>
 
         <div class="addon87-table-wrap">
           <table id="oldCrystalTable" class="addon87-table">
@@ -6901,8 +6901,8 @@ if(!BDO_DOM_READY){
         <div class="full-backup-head-v48">
           <div>
             <span class="full-backup-kicker-v48">DONNÉES & SAUVEGARDE</span>
-            <h3>Data BDO Combos Labs</h3>
-            <p>Copie de sécurité recommandée : exporte dans un fichier JSON les Skills, durées CC, combos, transitions/cancels, mesures vidéo, validations, add-ons, loadout, état du Builder et réglages. Conserve ce fichier pour pouvoir tout restaurer sans ressaisie.</p>
+            <h3>BDO Combos Labs data</h3>
+            <p>Recommended backup: export Skills, CC durations, combos, transitions/cancels, video measurements, validations, add-ons, loadout, Builder state and settings to a JSON file. Keep this file so everything can be restored without re-entering data.</p>
           </div>
           <div class="full-backup-actions-v48 backup104-actions">
             <button type="button" class="optimizer-btn" onclick="exportFullBackupV48()">Export all data</button>
@@ -6913,7 +6913,7 @@ if(!BDO_DOM_READY){
           </div>
         </div>
         <div class="full-backup-options-v48">
-          <label class="full-backup-checkbox-v89"><input id="fullBackupReplaceV48" type="checkbox" checked><span>Remplacer les données locales BDO Combos Labs lors de la restauration</span></label>
+          <label class="full-backup-checkbox-v89"><input id="fullBackupReplaceV48" type="checkbox" checked><span>Replace local BDO Combos Labs data during restore</span></label>
         </div>
         <div id="fullBackupStatusV48" class="optimizer-note">Noe sauvegarde exportée pendant cette session.</div>
       </section>
@@ -6926,7 +6926,7 @@ if(!BDO_DOM_READY){
     <span>Usage</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Mode de combat</b><small>Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.</small></div>
+    <div class="settings92-name"><b>Combat mode</b><small>Choisit les règles d’optimisation PvP ou PvE utilisées par le Builder.</small></div>
     <div class="settings92-control"><select id="autoBuildCombatMode" onchange="saveAutoBuildSettings()">
             <option value="pvp">PvP</option>
             <option value="pve">PvE</option>
@@ -7101,12 +7101,12 @@ if(!BDO_DOM_READY){
     <div class="settings92-state" data-setting-id="autoBuildProtectionWeight">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids mobilité</b><small>Importance des compétences de mobilité et de repositionnement.</small></div>
+    <div class="settings92-name"><b>Mobility weight</b><small>Importance des compétences de mobilité et de repositionnement.</small></div>
     <div class="settings92-control"><input id="autoBuildMobilityWeight" type="number" min="0" max="10" step="0.1" value="1" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMobilityWeight">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Poids cancels / transitions</b><small>Importance des transitions/cancels rapides, mesurés et validés.</small></div>
+    <div class="settings92-name"><b>Cancels / transitions weight</b><small>Importance des transitions/cancels rapides, mesurés et validés.</small></div>
     <div class="settings92-control"><input id="autoBuildCancelWeight" type="number" min="0" max="10" step="0.1" value="4" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildCancelWeight">Automatique</div>
   </div>
@@ -7120,17 +7120,17 @@ if(!BDO_DOM_READY){
     <span>Usage</span>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Coût ressource max.</b><small>Coût maximal de ressource de classe accepté pour le combo.</small></div>
+    <div class="settings92-name"><b>Max resource cost</b><small>Coût maximal de ressource de classe accepté pour le combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxResourceCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxResourceCost">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Coût stamina max.</b><small>Coût maximal de stamina accepté pour le combo.</small></div>
+    <div class="settings92-name"><b>Max stamina cost</b><small>Coût maximal de stamina accepté pour le combo.</small></div>
     <div class="settings92-control"><input id="autoBuildMaxStaminaCost" type="number" min="0" step="1" value="9999" onchange="saveAutoBuildSettings()"></div>
     <div class="settings92-state" data-setting-id="autoBuildMaxStaminaCost">Automatique</div>
   </div>
   <div class="settings92-row">
-    <div class="settings92-name"><b>Préserver la ressource</b><small>Favorise les séquences qui conservent davantage de ressource.</small></div>
+    <div class="settings92-name"><b>Preserve resource</b><small>Favorise les séquences qui conservent davantage de ressource.</small></div>
     <div class="settings92-control"><select id="autoBuildPreserveResource" onchange="saveAutoBuildSettings()">
             <option value="no" selected>No</option><option value="yes">Yes</option>
           </select></div>
@@ -7148,7 +7148,7 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row">
-    <div class="phase90-name"><b>Engage</b><small>Entrée / prise d’initiative</small></div>
+    <div class="phase90-name"><b>Engage</b><small>Entry / initiative</small></div>
     <select id="autoBuildEngageEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Enabled</option>
       <option value="false">Disabled</option>
@@ -7158,7 +7158,7 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row">
-    <div class="phase90-name"><b>Setup</b><small>Préparation du combo</small></div>
+    <div class="phase90-name"><b>Setup</b><small>Combo setup</small></div>
     <select id="autoBuildSetupEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Enabled</option>
       <option value="false">Disabled</option>
@@ -7168,24 +7168,24 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row phase90-cc">
-    <div class="phase90-name"><b>CC</b><small>Contrôle / re-CC PvP</small></div>
+    <div class="phase90-name"><b>CC</b><small>Control / PvP re-CC</small></div>
     <select id="autoBuildCCPhaseEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Enabled</option>
       <option value="false">Disabled</option>
     </select>
     <input id="autoBuildCCPhaseMaxSkills" type="number" min="0" max="20" value="2" onchange="saveAutoBuildSettings()">
     <div class="phase90-special">
-      <label for="autoBuildPvpReccThreshold">Seuil re-CC PvP</label>
+      <label for="autoBuildPvpReccThreshold">PvP re-CC threshold</label>
       <div class="phase90-unit">
         <input id="autoBuildPvpReccThreshold" type="number" min="0.05" max="1.50" step="0.05" value="0.35" onchange="saveAutoBuildSettings()">
         <span>s</span>
       </div>
-      <small>En dessous, le prochain skill doit appliquer un CC.</small>
+      <small>Below this threshold, the next skill must apply a CC.</small>
     </div>
   </div>
 
   <div class="phase90-row">
-    <div class="phase90-name"><b>Burst</b><small>Dégâts principaux</small></div>
+    <div class="phase90-name"><b>Burst</b><small>Main damage</small></div>
     <select id="autoBuildBurstEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Enabled</option>
       <option value="false">Disabled</option>
@@ -7195,7 +7195,7 @@ if(!BDO_DOM_READY){
   </div>
 
   <div class="phase90-row">
-    <div class="phase90-name"><b>Finisher</b><small>Fin de chaîne / sortie</small></div>
+    <div class="phase90-name"><b>Finisher</b><small>End of chain / exit</small></div>
     <select id="autoBuildFinisherEnabled" onchange="saveAutoBuildSettings()">
       <option value="true">Enabled</option>
       <option value="false">Disabled</option>
@@ -7324,7 +7324,7 @@ function renderClassStats(){
   document.getElementById('statTransitions').textContent =
     (CLASS_TRANSITIONS[name]?.[spec] || []).length;
   document.getElementById('classStatsInfo').textContent =
-    'No data de combat n’est encore enregistrée pour ' + name + '.';
+    'No combat data has been recorded yet for ' + name + '.';
   panel.style.display = 'block';
 }
 </script>
@@ -8332,7 +8332,7 @@ function renderSkillsPage(){
 
   if(!grouped.length){
     content.className='page-placeholder';
-    content.innerHTML=`No skill enregistrée pour ${escapeHtml(className)} · ${escapeHtml(spec)}.<br><button type="button" class="optimizer-btn skills-empty-add-v72" onclick="skillsManualAddV72()">+ Add une compétence manuellement</button>`;
+    content.innerHTML=`No skill registered for ${escapeHtml(className)} · ${escapeHtml(spec)}.<br><button type="button" class="optimizer-btn skills-empty-add-v72" onclick="skillsManualAddV72()">+ Add a skill manually</button>`;
     return;
   }
 
@@ -10413,7 +10413,7 @@ function optimizeCurrentCombo(){
             <div><span>DPS estimé</span><b>${Number(combatStats.dps)>0 ? Number(combatStats.dps).toFixed(2) : '—'}</b></div>
             <div><span>CC</span><b>${combatStats.ccCount ?? 0}</b></div>
             <div><span>Protection</span><b>${Math.round(Number(combatStats.protectionCoverage||0)*100)}%</b></div>
-            <div><span>Transitions mesurées</span><b>${combatStats.measuredLinks ?? 0}/${combatStats.totalLinks ?? Math.max(0,best.sequence.length-1)}</b></div>
+            <div><span>Measured transitions</span><b>${combatStats.measuredLinks ?? 0}/${combatStats.totalLinks ?? Math.max(0,best.sequence.length-1)}</b></div>
             <div><span>Couverture timing</span><b>${Math.round(Number(combatStats.timingCoverage||0)*100)}%</b></div>
             <div><span>Skills avec Add-ons</span><b>${combatStats.addonSkills ?? 0}/${combatStats.skillsCount ?? best.sequence.length}</b></div>
           </div>` : ''}
@@ -11541,7 +11541,7 @@ async function parseManualGuideText(text,sourceName,sourceUrl=''){
   if(summaryEl){
 
     const refNote=summary.reference?.source
-      ? `<div class="optimizer-note"><b>Reference actif :</b> ${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.</div>`
+      ? `<div class="optimizer-note"><b>Active reference :</b> ${oldDocsEsc(summary.reference.source)} · ${summary.reference.entries||0} entrée(s) disponibles · ${summary.reference.mentions||0} nom(s) retrouvé(s) dans ce document.</div>`
       : '';
     summaryEl.innerHTML=`
       <div><span>Skills avant</span><strong>${beforeSkills}</strong></div>
@@ -17900,7 +17900,7 @@ function renderSmartBuilderSuggestions(){
       const types=(ccInfo.types||[]).join(' / ') || 'CC';
       ccMeta.innerHTML=`<span>CC</span><strong>${escapeHtmlText(types)}</strong><b>${Number(ccInfo.points).toFixed(1)} pt</b>`;
     }else{
-      ccMeta.innerHTML='<span>CC</span><strong>Noe CC comptabilisé</strong>';
+      ccMeta.innerHTML='<span>CC</span><strong>No counted CC</strong>';
       ccMeta.classList.add('none');
     }
 
@@ -17911,7 +17911,7 @@ function renderSmartBuilderSuggestions(){
     const linkV73=previousNameV73?smartBuilderTransitionBonus(previousNameV73,entry.skill.name):null;
 
     if(!previousNameV73){
-      linkMeta.innerHTML='<span>CHAIN</span><strong>Premier skill</strong>';
+      linkMeta.innerHTML='<span>CHAIN</span><strong>First skill</strong>';
     }else if(linkV73?.known){
       linkMeta.innerHTML=`<span>CHAIN</span><strong>${escapeHtml(linkV73.seconds.toFixed(3)+' s')}</strong><b>${escapeHtml(linkV73.measured?(linkV73.validated?'Transition validée':'Transition mesurée'):'Timing estimé')}</b>${linkV73.hasCancel?`<em>Cancel ${linkV73.cancelAt!==null?escapeHtml(linkV73.cancelAt.toFixed(3)+' s'):'détecté'}${linkV73.validated?' · validé':''}</em>`:''}`;
     }else{
@@ -20375,7 +20375,7 @@ function oldRenderConsumables(){
             </td>
           </tr>`;
       }).join('')
-    : '<tr><td colspan="5">Noe consommable actif.</td></tr>';
+    : '<tr><td colspan="5">No active consumable.</td></tr>';
 
   oldSave();
 }
@@ -20392,7 +20392,7 @@ function oldRenderCrystals(){
 
   if(box){
     if(!p){
-      box.innerHTML='<b>Noe set de cristaux appliqué.</b>';
+      box.innerHTML='<b>No crystal set applied.</b>';
     }else{
       const m=p.mods||{};
       const aggregate=[];
@@ -20431,7 +20431,7 @@ function oldRenderCrystals(){
               </td>
             </tr>`;
         }).join('')
-      : '<tr><td colspan="4">Noe preset actif.</td></tr>';
+      : '<tr><td colspan="4">No active preset.</td></tr>';
   }
 
   oldSave();
@@ -22523,7 +22523,7 @@ bdoOnReady(()=>{
     const count=(typeof guideReferenceForCurrentClassV10==='function' && cls) ? guideReferenceForCurrentClassV10().length : 0;
     status.className='skills-auto-search-status';
     status.textContent=cls
-      ? `${count} compétence(s) de référence disponible(s) pour ${cls} · ${spec}. Clique pour ajouter les manquantes.`
+      ? `${count} compétence(s) de référence disponible(s) pour ${cls} · ${spec}. Click to add missing ones.`
       : 'Utilise le dictionnaire de référence de la classe et de la spécialisation sélectionnées.';
   };
   document.getElementById('classSelector')?.addEventListener('change',refreshAutoSkillHint);
@@ -22678,7 +22678,7 @@ function cleanCurrentTransitionsV17(manual=false){
   if(status){
     status.textContent=result.removed.length
       ? `${result.valid.length} valide(s) · ${result.removed.length} entrée(s) parasite(s) supprimée(s)`
-      : `${result.valid.length} transition(s) validée(s) · no entry parasite`;
+      : `${result.valid.length} transition(s) validée(s) · no entries parasite`;
     status.className=result.removed.length?'status-warn':'status-good';
   }
   if(manual && typeof renderTransitionPage==='function') renderTransitionPage();
@@ -22768,7 +22768,7 @@ function renderRecentBuildsV19(){
   const history=loadBuilderHistoryV19();
   const visible=history.slice(0,10);
   const count=document.getElementById('home19BuildCount');if(count)count.textContent=`${history.length} build${history.length>1?'s':''} enregistré${history.length>1?'s':''}`;
-  if(!visible.length){body.innerHTML='<tr><td colspan="7"><div class="home19-empty">Noe build enregistré. Construis un combo puis utilise « Save ce build ».</div></td></tr>';return;}
+  if(!visible.length){body.innerHTML='<tr><td colspan="7"><div class="home19-empty">No saved build. Build a combo, then use “Save this build”.</div></td></tr>';return;}
   body.innerHTML=visible.map(entry=>{
     const seq=Array.isArray(entry.sequence)?entry.sequence:[];
     const sequenceHtml=seq.slice(0,5).map((name,i)=>`${i?'<i>→</i>':''}<span>${escapeHtmlText(name)}</span>`).join('')+(seq.length>5?`<i>… +${seq.length-5}</i>`:'');
@@ -22839,9 +22839,9 @@ function renderHomeDashboardV18(){
   const enabled=skills.filter(s=>s?.enabled!==false).length;
   const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val};
   set('home18Context',cls?`${cls} · ${spec}`:'Noe classe sélectionnée');
-  set('home18Reference',refs.length?`Reference actif · ${refs.length} entrées`:'Reference: none for this context');
+  set('home18Reference',refs.length?`Active reference · ${refs.length} entrées`:'Reference: none for this context');
   set('home18Skills',skills.length); set('home18SkillsSub',`${enabled} activé${enabled>1?'s':''}`);
-  set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entrées disponibles':'no entry');
+  set('home18ReferenceCount',refs.length); set('home18ReferenceSub',refs.length?'entrées disponibles':'no entries');
   set('home18Combos',combos.length); set('home18Transitions',transitions.length);
   const measured=transitions.filter(x=>Number.isFinite(Number(x?.timingSeconds??x?.transitionSeconds??x?.seconds)) || Number.isFinite(Number(x?.frames))).length;
   set('home18TransitionsSub',`${measured} with timing`);
@@ -22857,7 +22857,7 @@ function renderHomeDashboardV18(){
   const health=document.getElementById('home18Health');
   if(health){
     if(!cls) health.textContent='Sélectionne une classe et une spécialisation pour activer le diagnostic.';
-    else if(!skills.length) health.textContent='The context is ready, but no skill is loaded. Start with automatic search from the dictionary.';
+    else if(!skills.length) health.textContent='The context is ready, but no skill is loaded. Start with the automatic search from the dictionary.';
     else if(completeness<45) health.textContent='Les skills sont chargés, mais beaucoup de métacombat data manquent encore. Enrichis les fiches avant d’optimiser les combos.';
     else if(transitions.length && timingCoverage<30) health.textContent='Bonne base de compétences. La prochaine amélioration utile est de mesurer davantage de transitions/cancels.';
     else health.textContent='Le contexte dispose d’une base exploitable. Tu peux construire et comparer des combos tout en continuant à enrichir les timings.';
@@ -22877,11 +22877,11 @@ function renderHomeDashboardV18(){
   const d=document.getElementById('home18Diagnosticss');
   if(d)d.innerHTML=[
     ['Class / spec',cls?`${cls} · ${spec}`:'No sélectionné',!!cls],
-    ['Reference',refs.length?`${refs.length} entrées`:'No disponible',!!refs.length],
-    ['Skills actifs',skills.length?`${enabled}/${skills.length}`:'Noe',!!skills.length],
-    ['Combos enregistrés',String(combos.length),combos.length>0],
-    ['Transitions mesurées',`${measured}/${transitions.length}`,measured>0],
-    ['Data quality',completeness>=70?'Bonne':completeness>=40?'Partielle':'À enrichir',completeness>=70]
+    ['Reference',refs.length?`${refs.length} entrées`:'Unavailable',!!refs.length],
+    ['Active skills',skills.length?`${enabled}/${skills.length}`:'Noe',!!skills.length],
+    ['Saved combos',String(combos.length),combos.length>0],
+    ['Measured transitions',`${measured}/${transitions.length}`,measured>0],
+    ['Data quality',completeness>=70?'Bonne':completeness>=40?'Partielle':'Needs enrichment',completeness>=70]
   ].map(x=>`<div class="home18-diag"><span>${x[0]}</span><b class="${x[2]?'good':'warn'}">${escapeHtmlText(x[1])}</b></div>`).join('');
 }
 if(typeof bdoOnReady==='function')bdoOnReady(()=>{renderHomeDashboardV18();document.getElementById('classSelector')?.addEventListener('change',renderHomeDashboardV18);document.getElementById('specSelector')?.addEventListener('change',renderHomeDashboardV18);});
@@ -25558,6 +25558,7 @@ document.addEventListener('click',function(){setTimeout(function(){apply(current
 document.addEventListener('change',function(e){if(!e.target||e.target.id!=='bclLanguageSelect')setTimeout(function(){apply(current(),false);},140);},true);
 })();
 </script>
+
 
 <script id="bcl-static-locale-router">
 (function(){
