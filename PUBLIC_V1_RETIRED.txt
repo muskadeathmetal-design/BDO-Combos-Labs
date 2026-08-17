@@ -1,0 +1,1 @@
+Public Analysis Engine V1 sources are retired from the active site and are being removed from the public repository. New proprietary engine development continues only in the private AnalysisCore repository.

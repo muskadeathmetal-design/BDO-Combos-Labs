@@ -1,5 +1,4 @@
 name: Install V116 static locales
-
 on:
   push:
     branches: [main]
@@ -10,39 +9,27 @@ on:
       - 'tools/apply-post-visible-translations-v116.js'
       - 'tools/apply-aligned-residual-translations-v116.js'
       - 'tools/apply-final-visible-residuals-v116.js'
+      - 'tools/remove-public-v1-engines.js'
       - 'bcl-static-auto-translations-v116.json'
       - 'translations/**.json'
       - '.github/workflows/install-v116-static-locales.yml'
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   build-static-locales:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Prepare safe translation patches
-        run: node tools/prepare-static-translation-patches-v116.js
-
-      - name: Build static language versions safely
-        run: node tools/run-safe-static-build-v116.js
-
-      - name: Apply post-build visible translations
-        run: node tools/apply-post-visible-translations-v116.js
-
-      - name: Apply aligned residual translations
-        run: node tools/apply-aligned-residual-translations-v116.js
-
-      - name: Apply final visible residual cleanup
-        run: node tools/apply-final-visible-residuals-v116.js
-
-      - name: Verify dynamic i18n is absent from locale pages
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - run: node tools/prepare-static-translation-patches-v116.js
+      - run: node tools/run-safe-static-build-v116.js
+      - run: node tools/apply-post-visible-translations-v116.js
+      - run: node tools/apply-aligned-residual-translations-v116.js
+      - run: node tools/apply-final-visible-residuals-v116.js
+      - name: Remove public V1 analysis engines
+        run: node tools/remove-public-v1-engines.js
+      - name: Verify generated locale pages
         run: |
           set -e
           for lang in fr en de es it pt; do
@@ -51,19 +38,16 @@ jobs:
             ! grep -q 'bcl-i18n-v115-master.js' "$lang/index.html"
             ! grep -q 'bcl-full-ui-i18n-v113.js' "$lang/index.html"
             grep -q 'bcl-static-locale-router' "$lang/index.html"
+            for file in bcl-timeline-engine-v1 bcl-timeline-adapter-v1 bcl-timeline-shadow-v1 bcl-combat-graph-v1 bcl-combat-graph-adapter-v1 bcl-confidence-engine-v1 bcl-protection-measurement-v1 bcl-protection-adapter-v1 bcl-multi-objective-engine-v1 bcl-multi-objective-adapter-v1 bcl-analysis-shadow-v1 bcl-shadow-comparator-v1; do ! grep -q "/$file.js" "$lang/index.html"; done
           done
           ! grep -q 'transición:' es/index.html
           ! grep -q 'fuente:transition' es/index.html
-
       - name: Commit generated static locales
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html fr/index.html en/index.html de/index.html es/index.html it/index.html pt/index.html
-          if git diff --cached --quiet; then
-            echo "Nothing to commit"
-            exit 0
-          fi
-          git commit -m "Build V116 static language versions"
+          git diff --cached --quiet && exit 0
+          git commit -m "Remove public V1 analysis engines from generated site"
           git pull --rebase origin main
           git push
