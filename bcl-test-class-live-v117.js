@@ -1,12 +1,15 @@
 (()=>{'use strict';
-function load(src,id){if(document.getElementById(id))return;const s=document.createElement('script');s.id=id;s.src=src;document.head.appendChild(s)}
-load('/bcl-test-native-v128.js?v=128','bcl-test-native-v128');
-load('/bcl-analysis-settings-v121.js?v=151','bcl-analysis-settings-v151');
-load('/bcl-site-workspace-v151.js?v=156','bcl-site-class-combos-v156');
-load('/bcl-analysiscore-builder-v129.js?v=140','bcl-analysiscore-builder-v140');
-load('/bcl-combat-profile-safe-v141.js?v=141','bcl-combat-profile-safe-v141');
-load('/bcl-phase-target-safe-v142.js?v=142','bcl-phase-target-safe-v142');
-load('/bcl-combat-coach-safe-v143.js?v=143','bcl-combat-coach-safe-v143');
-load('/bcl-builder-harmony-v144.js?v=153','bcl-builder-redesign-v153');
-load('/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157');
+const modules=[
+ ['/bcl-test-native-v128.js?v=128','bcl-test-native-v128'],
+ ['/bcl-analysis-settings-v121.js?v=151','bcl-analysis-settings-v151'],
+ ['/bcl-site-workspace-v151.js?v=156','bcl-site-class-combos-v156'],
+ ['/bcl-analysiscore-builder-v129.js?v=140','bcl-analysiscore-builder-v140'],
+ ['/bcl-combat-profile-safe-v141.js?v=158','bcl-combat-profile-safe-v158'],
+ ['/bcl-phase-target-safe-v142.js?v=158','bcl-phase-target-safe-v158'],
+ ['/bcl-combat-coach-safe-v143.js?v=143','bcl-combat-coach-safe-v143'],
+ ['/bcl-builder-harmony-v144.js?v=153','bcl-builder-redesign-v153'],
+ ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157']
+];
+function load(src,id){return new Promise(resolve=>{const existing=document.getElementById(id);if(existing){resolve();return}const s=document.createElement('script');s.id=id;s.src=src;s.async=false;s.onload=()=>resolve();s.onerror=()=>{console.error('[BCL loader] failed',src);resolve()};document.head.appendChild(s)})}
+(async()=>{for(const [src,id] of modules)await load(src,id);document.documentElement.dataset.bclModulesReady='1'})();
 })();
