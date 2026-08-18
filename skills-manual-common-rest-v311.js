@@ -1,0 +1,22 @@
+(()=>{'use strict';const K='bcl.clean.v3';const A=[
+{name:'Umbral Rush',id:'TST-C-030',input:'W+Space',phase:'protected',pveDamage:661,pvpDamage:57,hits:10,duration:.48,cooldown:8.9,staminaCost:0,resourceDelta:0,accuracy:0,critRate:37.8,cc:[],protection:'Forward Guard',enabled:true},
+{name:'Lunar Shard',id:'TST-C-031',input:'Q',phase:'resource',pveDamage:6615,pvpDamage:69,hits:10,duration:.403,cooldown:10.8,staminaCost:214,resourceDelta:-90,cc:[],enabled:true},
+{name:'Frost Claw',id:'TST-C-032',input:'W+Space',phase:'cc',pveDamage:2712,pvpDamage:53,hits:7,duration:.972,cooldown:9.5,critRate:34.4,cc:['Stun'],ccMeasuredDuration:1.39,enabled:true},
+{name:'Astral Flare',id:'TST-C-033',input:'E',phase:'cc',pveDamage:4205,pvpDamage:36,hits:9,duration:.685,cooldown:4.9,resourceDelta:-82,critRate:28.5,cc:[],enabled:true},
+{name:'Ghost Bloom',id:'TST-C-034',input:'Shift+F',phase:'damage',pveDamage:3970,pvpDamage:80,hits:11,duration:1.783,cooldown:16.2,resourceDelta:74,cc:[],protection:'Forward Guard',enabled:true},
+{name:'Golden Slash',id:'TST-C-035',input:'S+RMB',phase:'resource',pveDamage:7023,pvpDamage:51,hits:6,duration:.602,cooldown:1.7,resourceDelta:87,cc:[],protection:'Forward Guard',enabled:true},
+{name:'Ashen Crescent',id:'TST-C-036',input:'Q',phase:'bridge',pveDamage:2918,pvpDamage:'',hits:4,duration:1.109,cooldown:13.7,staminaCost:107,cc:[],protection:'i-Frames',enabled:true},
+{name:'Void Torrent',id:'TST-C-037',input:'Shift+LMB',phase:'damage',pveDamage:4771,pvpDamage:61,hits:3,duration:1.52,cooldown:15.4,resourceDelta:70,cc:['Floating'],ccMeasuredDuration:2.32,enabled:true},
+{name:'Scarlet Fang',id:'TST-C-038',input:'Q',phase:'finisher',pveDamage:3421,pvpDamage:'',hits:11,duration:.87,cooldown:7.8,staminaCost:284,accuracy:18.6,cc:[],enabled:true},
+{name:'Winter Edge',id:'TST-C-039',input:'W+RMB',phase:'bridge',pveDamage:6239,pvpDamage:65,hits:7,duration:1.974,cooldown:3.4,cc:[],enabled:true},
+{name:'Black Rush',id:'TST-C-040',input:'F',phase:'finisher',pveDamage:3695,pvpDamage:'',hits:10,duration:.728,cooldown:17.1,critRate:84.4,cc:[],protection:'i-Frames',enabled:true},
+{name:'Phantom Bane',id:'TST-C-041',input:'Shift+LMB',phase:'damage',pveDamage:4441,pvpDamage:69,hits:7,duration:.466,cooldown:12.7,resourceDelta:18,accuracy:-5.9,cc:[],enabled:true},
+{name:'Solar Mark',id:'TST-C-042',input:'S+Q',phase:'bridge',pveDamage:4083,pvpDamage:59,hits:3,duration:1.071,cooldown:12.8,resourceDelta:-11,cc:[],enabled:true},
+{name:'Silent Slash',id:'TST-C-043',input:'S+RMB',phase:'bridge',pveDamage:3198,pvpDamage:'',hits:1,duration:1.035,cooldown:7.6,staminaCost:220,accuracy:6.5,cc:[],protection:'i-Frames',enabled:true},
+{name:'Ivory Veil',id:'TST-C-044',input:'Q',phase:'damage',pveDamage:2744,pvpDamage:58,hits:2,duration:1.722,cooldown:1.5,staminaCost:125,critRate:51.4,cc:[],enabled:true},
+{name:'Broken Arc',id:'TST-C-046',input:'Shift+F',phase:'finisher',pveDamage:7276,pvpDamage:69,hits:12,duration:.73,cooldown:13.8,critRate:12.4,cc:[],enabled:true},
+{name:'Raven Thorn',id:'TST-C-047',input:'Shift+F',phase:'resource',pveDamage:6415,pvpDamage:52,hits:1,duration:.691,cooldown:6.7,staminaCost:124,critRate:59.5,cc:[],protection:'i-Frames',enabled:true},
+{name:'Lunar Edge',id:'TST-C-048',input:'W+F',phase:'protected',pveDamage:3186,pvpDamage:59,hits:2,duration:1.717,cooldown:6.2,staminaCost:127,cc:[],protection:'Forward Guard',enabled:true},
+{name:'Wild Rush',id:'TST-C-049',input:'Q',phase:'protected',pveDamage:4409,pvpDamage:41,hits:2,duration:1.512,cooldown:22.5,accuracy:6.1,cc:['Stiffness'],ccMeasuredDuration:2.21,enabled:true},
+{name:'Storm Bane',id:'TST-C-050',input:'S+RMB',phase:'resource',pveDamage:7287,pvpDamage:67,hits:9,duration:.562,cooldown:21.8,cc:[],enabled:true}
+];let s;try{s=JSON.parse(localStorage.getItem(K)||'null')}catch(_){s=null}if(!s||typeof s!=='object')s={version:3,context:{className:'Test',spec:'Awakening'}};s.skills??={};s.skills.Test??={Awakening:[],Succession:[]};s.skills.Test.Awakening=Array.isArray(s.skills.Test.Awakening)?s.skills.Test.Awakening:[];const n=new Set(s.skills.Test.Awakening.map(x=>String(x?.name||'').toLowerCase()));for(const x of A)if(!n.has(x.name.toLowerCase())){s.skills.Test.Awakening.push(x);n.add(x.name.toLowerCase())}localStorage.setItem(K,JSON.stringify(s));})();
