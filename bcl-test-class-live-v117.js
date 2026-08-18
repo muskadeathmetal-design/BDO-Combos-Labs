@@ -10,7 +10,7 @@ const modules=[
  ['/bcl-builder-harmony-v144.js?v=160','bcl-builder-redesign-v160'],
  ['/bcl-builder-breakpoint-v161.js?v=163','bcl-builder-breakpoint-v163'],
  ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157'],
- ['/bcl-runtime-v166.js?v=166','bcl-runtime-v166'],
+ ['/bcl-runtime-v166.js?v=168','bcl-runtime-v168'],
  ['/bcl-transition-antiflicker-v167.js?v=167','bcl-transition-antiflicker-v167']
 ];
 function load(src,id){return new Promise(resolve=>{if(document.getElementById(id)){resolve();return}const s=document.createElement('script');s.id=id;s.src=src;s.async=false;s.onload=resolve;s.onerror=()=>{console.error('[BCL loader] failed',src);resolve()};document.head.appendChild(s)})}
