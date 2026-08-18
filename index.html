@@ -85,7 +85,7 @@
     <div id="settingsForm" class="settings"></div>
   </section>
 </main>
-<dialog id="editorDialog"><form method="dialog" id="editorForm"><div class="dialog-head"><h2 id="editorTitle">Edit</h2><button value="cancel" class="icon-btn">×</button></div><div id="editorFields" class="form-grid"></div><div class="dialog-actions"><button value="cancel">Cancel</button><button value="default" class="primary" id="editorSave">Save</button></div></form></dialog>
+<dialog id="editorDialog"><form method="dialog" id="editorForm"><div class="dialog-head"><h2 id="editorTitle">Edit</h2><button type="button" class="icon-btn" onclick="this.closest('dialog').close()">×</button></div><div id="editorFields" class="form-grid"></div><div class="dialog-actions"><button type="button" onclick="this.closest('dialog').close()">Cancel</button><button type="submit" class="primary" id="editorSave">Save</button></div></form></dialog>
 <script src="/app.js?v=1" defer></script>
 </body>
 </html>
