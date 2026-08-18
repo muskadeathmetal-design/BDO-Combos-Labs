@@ -1,30 +1,34 @@
 (()=>{'use strict';
 const KEY='bcl.clean.v3';
 const $=q=>document.querySelector(q);
-const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[m]));
+const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const arr=v=>Array.isArray(v)?v:String(v||'').split(',').map(x=>x.trim()).filter(Boolean);
 const num=(v,d=0)=>Number.isFinite(Number(v))?Number(v):d;
+const EFFECTS=['','Attack Speed','Casting Speed','Movement Speed','Critical Hit Rate','Critical Hit Damage','All AP','Monster AP','Human Damage','Accuracy','All DP','Evasion','Damage Reduction','HP Recovery','MP/WP/SP Recovery','Stamina Recovery','All Resistance','Ignore All Resistance','Back Attack Damage','Down Attack Damage','Air Attack Damage','Critical Damage','Movement Speed Reduction','Attack/Casting Speed Reduction','All DP Reduction','Evasion Reduction','Accuracy Reduction'];
+const VALUES=['','+3','+4','+5','+6','+7','+8','+10','+15','+20','+25','+30','+5%','+7%','+10%','+15%','-3','-4','-5','-6','-7','-10','-15','-20','-5%','-7%','-10%','-15%'];
+const DURATIONS=['','3','5','7','10','12','15','20','30','60'];
+const TAGS=['','damage','defense','utility','speed','accuracy','critical','resource','recovery','debuff','buff','pvp','pve'];
 function state(){try{return JSON.parse(localStorage.getItem(KEY)||'null')||{}}catch(_){return {}}}
 function save(s){localStorage.setItem(KEY,JSON.stringify(s))}
 function ctx(s){return{c:s?.context?.className||$('#classSelector')?.value||'Test',sp:s?.context?.spec||$('#specSelector')?.value||'Awakening'}}
 function list(s){const {c,sp}=ctx(s);s.addons??={};s.addons[c]??={Awakening:[],Succession:[]};s.addons[c][sp]=Array.isArray(s.addons[c][sp])?s.addons[c][sp]:[];return s.addons[c][sp]}
-function skillList(s){const {c,sp}=ctx(s);return (Array.isArray(s?.skills?.[c]?.[sp])?s.skills[c][sp]:[]).filter(x=>x&&x.enabled!==false&&String(x.name||'').trim()).map(x=>String(x.name).trim()).sort((a,b)=>a.localeCompare(b))}
+function skills(s){const {c,sp}=ctx(s);return Array.isArray(s?.skills?.[c]?.[sp])?s.skills[c][sp].filter(x=>x&&x.enabled!==false):[]}
 function normalize(a={}){const effect1=a.effect1||a.effect||'',effect2=a.effect2||'';return{skill:a.skill||'',mode:a.mode||'both',effect1,effect1Value:a.effect1Value??'',effect1Duration:a.effect1Duration??'',effect2,effect2Value:a.effect2Value??'',effect2Duration:a.effect2Duration??'',tags:arr(a.tags),notes:a.notes||'',enabled:a.enabled!==false}}
 function effectLine(name,val,dur){if(!name)return'—';let x=name;if(String(val).trim())x+=` · ${val}`;if(String(dur).trim())x+=` · ${dur}s`;return x}
+function options(values,current,emptyLabel='Select…'){const vals=[...values];if(current!==''&&current!=null&&!vals.includes(String(current)))vals.splice(1,0,String(current));return vals.map((v,i)=>`<option value="${esc(v)}" ${String(v)===String(current)?'selected':''}>${v===''?emptyLabel:esc(v)}${i===1&&String(v)===String(current)&&!values.includes(String(current))?' · Existing':''}</option>`).join('')}
 function render(){const h=$('#addonList');if(!h)return;const s=state(),d=list(s).map(normalize);h.innerHTML=d.length?d.map((a,i)=>`<article class="row"><div class="row-title"><strong>${esc(a.skill||'Unassigned skill')}</strong><small>${esc(a.mode.toUpperCase())}${a.tags.length?' · '+esc(a.tags.join(', ')):''}</small></div><div class="cell"><span>Effect 1</span><b>${esc(effectLine(a.effect1,a.effect1Value,a.effect1Duration))}</b></div><div class="cell"><span>Effect 2</span><b>${esc(effectLine(a.effect2,a.effect2Value,a.effect2Duration))}</b></div><div class="cell"><span>Status</span><b>${a.enabled?'Enabled':'Disabled'}</b></div><div class="actions"><button data-addon-edit="${i}">Edit</button><button data-addon-dup="${i}">Duplicate</button><button data-addon-toggle="${i}">${a.enabled?'Disable':'Enable'}</button><button data-addon-del="${i}" class="danger">Delete</button></div>${a.notes?`<div style="grid-column:1/-1"><small>${esc(a.notes)}</small></div>`:''}</article>`).join(''):'<div class="empty">No skill add-ons registered.</div>'}
-function skillOptions(s,current=''){const names=skillList(s),hasCurrent=current&&names.includes(current);let html='<option value="">Select a skill…</option>';if(current&&!hasCurrent)html+=`<option value="${esc(current)}" selected>${esc(current)} · missing/disabled</option>`;html+=names.map(n=>`<option value="${esc(n)}" ${n===current?'selected':''}>${esc(n)}</option>`).join('');return html}
-function openEditor(index=null){const s=state(),d=list(s),raw=index==null?{}:d[index]||{},a=normalize(raw),dlg=$('#editorDialog'),form=$('#editorForm'),box=$('#editorFields');if(!dlg||!form||!box)return;$('#editorTitle').textContent=index==null?'Add skill add-on':'Edit skill add-on';box.innerHTML=`
-<label>Skill<select name="skill" required>${skillOptions(s,a.skill)}</select></label>
+function openEditor(index=null){const s=state(),d=list(s),raw=index==null?{}:d[index]||{},a=normalize(raw),dlg=$('#editorDialog'),form=$('#editorForm'),box=$('#editorFields');if(!dlg||!form||!box)return;const skillList=skills(s).map(x=>String(x.name||'').trim()).filter(Boolean);if(a.skill&&!skillList.includes(a.skill))skillList.push(a.skill);$('#editorTitle').textContent=index==null?'Add skill add-on':'Edit skill add-on';box.innerHTML=`
+<label>Skill<select name="skill" required>${options(['',...skillList],a.skill,'Select a skill…')}</select></label>
 <label>Mode<select name="mode"><option value="both" ${a.mode==='both'?'selected':''}>PvP & PvE</option><option value="pvp" ${a.mode==='pvp'?'selected':''}>PvP</option><option value="pve" ${a.mode==='pve'?'selected':''}>PvE</option></select></label>
-<label>Effect 1<input name="effect1" value="${esc(a.effect1)}" placeholder="e.g. Attack Speed +7%"></label>
-<label>Effect 1 value<input name="effect1Value" value="${esc(a.effect1Value)}" placeholder="Optional numeric/text value"></label>
-<label>Effect 1 duration (s)<input name="effect1Duration" type="number" step="any" value="${esc(a.effect1Duration)}"></label>
-<label>Effect 2<input name="effect2" value="${esc(a.effect2)}" placeholder="e.g. All DP -15"></label>
-<label>Effect 2 value<input name="effect2Value" value="${esc(a.effect2Value)}"></label>
-<label>Effect 2 duration (s)<input name="effect2Duration" type="number" step="any" value="${esc(a.effect2Duration)}"></label>
-<label class="wide">Tags<input name="tags" value="${esc(a.tags.join(', '))}" placeholder="damage, defense, utility"></label>
+<label>Effect 1<select name="effect1">${options(EFFECTS,a.effect1,'Select effect…')}</select></label>
+<label>Effect 1 value<select name="effect1Value">${options(VALUES,a.effect1Value,'Select value…')}</select></label>
+<label>Effect 1 duration (s)<select name="effect1Duration">${options(DURATIONS,a.effect1Duration,'Select duration…')}</select></label>
+<label>Effect 2<select name="effect2">${options(EFFECTS,a.effect2,'Select effect…')}</select></label>
+<label>Effect 2 value<select name="effect2Value">${options(VALUES,a.effect2Value,'Select value…')}</select></label>
+<label>Effect 2 duration (s)<select name="effect2Duration">${options(DURATIONS,a.effect2Duration,'Select duration…')}</select></label>
+<label class="wide">Primary tag<select name="tags">${options(TAGS,a.tags[0]||'','Select tag…')}</select></label>
 <label class="wide">Notes<textarea name="notes">${esc(a.notes)}</textarea></label>`;
-form.onsubmit=e=>{e.preventDefault();const fd=Object.fromEntries(new FormData(form));const x={...a,skill:String(fd.skill||'').trim(),mode:fd.mode||'both',effect1:String(fd.effect1||'').trim(),effect1Value:String(fd.effect1Value||'').trim(),effect1Duration:fd.effect1Duration===''?'':num(fd.effect1Duration),effect2:String(fd.effect2||'').trim(),effect2Value:String(fd.effect2Value||'').trim(),effect2Duration:fd.effect2Duration===''?'':num(fd.effect2Duration),tags:arr(fd.tags),notes:String(fd.notes||'').trim(),enabled:a.enabled!==false};if(!x.skill)return;if(index==null)d.push(x);else d[index]=x;save(s);dlg.close();render()};dlg.showModal()}
+form.onsubmit=e=>{e.preventDefault();const fd=Object.fromEntries(new FormData(form));const x={...a,skill:String(fd.skill||'').trim(),mode:fd.mode||'both',effect1:String(fd.effect1||'').trim(),effect1Value:String(fd.effect1Value||'').trim(),effect1Duration:fd.effect1Duration===''?'':num(fd.effect1Duration),effect2:String(fd.effect2||'').trim(),effect2Value:String(fd.effect2Value||'').trim(),effect2Duration:fd.effect2Duration===''?'':num(fd.effect2Duration),tags:fd.tags?[String(fd.tags)]:[],notes:String(fd.notes||'').trim(),enabled:a.enabled!==false};if(index==null)d.push(x);else d[index]=x;save(s);dlg.close();render()};dlg.showModal()}
 function duplicate(i){const s=state(),d=list(s),a=d[i];if(!a)return;d.splice(i+1,0,{...JSON.parse(JSON.stringify(a))});save(s);render()}
 function toggle(i){const s=state(),d=list(s),a=d[i];if(!a)return;a.enabled=a.enabled===false;save(s);render()}
 function del(i){if(!confirm('Delete this skill add-on?'))return;const s=state(),d=list(s);d.splice(i,1);save(s);render()}
