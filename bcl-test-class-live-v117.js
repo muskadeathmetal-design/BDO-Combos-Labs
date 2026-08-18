@@ -11,7 +11,7 @@ const modules=[
  ['/bcl-builder-breakpoint-v161.js?v=163','bcl-builder-breakpoint-v163'],
  ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157'],
  ['/bcl-runtime-v166.js?v=169','bcl-runtime-v169'],
- ['/bcl-transition-antiflicker-v167.js?v=167','bcl-transition-antiflicker-v167']
+ ['/bcl-transition-page-v170.js?v=170','bcl-transition-page-v170']
 ];
 function load(src,id){return new Promise(resolve=>{if(document.getElementById(id)){resolve();return}const s=document.createElement('script');s.id=id;s.src=src;s.async=false;s.onload=resolve;s.onerror=()=>{console.error('[BCL loader] failed',src);resolve()};document.head.appendChild(s)})}
 (async()=>{for(const[src,id]of modules)await load(src,id);document.documentElement.dataset.bclModulesReady='1'})();})();
