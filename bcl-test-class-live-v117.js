@@ -10,6 +10,7 @@ const modules=[
  ['/bcl-builder-harmony-v144.js?v=160','bcl-builder-redesign-v160'],
  ['/bcl-builder-breakpoint-v161.js?v=163','bcl-builder-breakpoint-v163'],
  ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157'],
+ ['/bcl-transition-change-guard-v165.js?v=165','bcl-transition-change-guard-v165'],
  ['/bcl-transition-stability-v162.js?v=164','bcl-transition-stability-v164'],
  ['/bcl-render-stability-v163.js?v=164','bcl-render-stability-v164'],
  ['/bcl-runtime-health-v158.js?v=164','bcl-runtime-health-v164']
