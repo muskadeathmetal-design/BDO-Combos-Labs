@@ -8,4 +8,5 @@ load('/bcl-combat-profile-safe-v141.js?v=141','bcl-combat-profile-safe-v141');
 load('/bcl-phase-target-safe-v142.js?v=142','bcl-phase-target-safe-v142');
 load('/bcl-combat-coach-safe-v143.js?v=143','bcl-combat-coach-safe-v143');
 load('/bcl-builder-harmony-v144.js?v=153','bcl-builder-redesign-v153');
+load('/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157');
 })();
