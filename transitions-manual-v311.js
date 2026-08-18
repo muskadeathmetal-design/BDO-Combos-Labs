@@ -1,0 +1,22 @@
+(()=>{'use strict';const K='bcl.clean.v3';const A=[
+{id:'TST-CHAIN-1-1',from:'Ashen Grip',to:'Storm Bane',timingSeconds:.472,cancelAt:.472,kind:'cancel',confidence:.96,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-1-2',from:'Storm Bane',to:'Golden Mark',timingSeconds:.756,cancelAt:.756,kind:'cancel',confidence:.90,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-1-3',from:'Golden Mark',to:'Shadow Fang',timingSeconds:.706,cancelAt:.706,kind:'cancel',confidence:.81,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-1-4',from:'Shadow Fang',to:'Crimson Fang',timingSeconds:.378,cancelAt:.378,kind:'cancel',confidence:.81,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-1-5',from:'Crimson Fang',to:'Scarlet Bloom',timingSeconds:.773,cancelAt:.773,kind:'cancel',confidence:.74,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-1-6',from:'Scarlet Bloom',to:'Golden Slash',timingSeconds:.446,cancelAt:.446,kind:'cancel',confidence:.92,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-1-7',from:'Golden Slash',to:'Winter Gale',timingSeconds:.545,cancelAt:.545,kind:'cancel',confidence:.85,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-2-1',from:'Feral Shard',to:'Ghost Fang',timingSeconds:.370,cancelAt:.370,kind:'cancel',confidence:.74,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-2-2',from:'Ghost Fang',to:'Winter Thorn',timingSeconds:.679,cancelAt:.679,kind:'cancel',confidence:.97,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-2-3',from:'Winter Thorn',to:'Feral Edge',timingSeconds:.587,cancelAt:.587,kind:'cancel',confidence:.95,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-2-4',from:'Feral Edge',to:'Solar Mark',timingSeconds:.515,cancelAt:.515,kind:'cancel',confidence:.93,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-2-5',from:'Solar Mark',to:'Void Fang',timingSeconds:.425,cancelAt:.425,kind:'cancel',confidence:.73,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-2-6',from:'Void Fang',to:'Storm Edge',timingSeconds:.795,cancelAt:.795,kind:'cancel',confidence:.71,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-2-7',from:'Storm Edge',to:'Winter Edge',timingSeconds:.703,cancelAt:.703,kind:'cancel',confidence:.85,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-3-1',from:'Astral Rush',to:'Frost Wave',timingSeconds:.322,cancelAt:.322,kind:'cancel',confidence:.80,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-3-2',from:'Frost Wave',to:'Winter Rift',timingSeconds:.564,cancelAt:.564,kind:'cancel',confidence:.89,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-3-3',from:'Winter Rift',to:'Storm Slash',timingSeconds:.788,cancelAt:.788,kind:'cancel',confidence:.76,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-3-4',from:'Storm Slash',to:'Broken Arc',timingSeconds:.395,cancelAt:.395,kind:'cancel',confidence:.78,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-3-5',from:'Broken Arc',to:'Golden Thorn',timingSeconds:.320,cancelAt:.320,kind:'cancel',confidence:.85,reviewStatus:'validated',enabled:true},
+{id:'TST-CHAIN-3-6',from:'Golden Thorn',to:'Lunar Rush',timingSeconds:.784,cancelAt:.784,kind:'cancel',confidence:.85,reviewStatus:'validated',enabled:true}
+];let s;try{s=JSON.parse(localStorage.getItem(K)||'null')}catch(_){s=null}if(!s||typeof s!=='object')s={version:3,context:{className:'Test',spec:'Awakening'}};s.transitions??={};s.transitions.Test??={Awakening:[],Succession:[]};s.transitions.Test.Awakening=Array.isArray(s.transitions.Test.Awakening)?s.transitions.Test.Awakening:[];const key=x=>`${String(x?.from||'').toLowerCase()}>${String(x?.to||'').toLowerCase()}`;const n=new Set(s.transitions.Test.Awakening.map(key));for(const x of A)if(!n.has(key(x))){s.transitions.Test.Awakening.push(x);n.add(key(x))}localStorage.setItem(K,JSON.stringify(s));})();
