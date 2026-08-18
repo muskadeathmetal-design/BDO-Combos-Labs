@@ -8,6 +8,7 @@ const modules=[
  ['/bcl-phase-target-safe-v142.js?v=158','bcl-phase-target-safe-v158'],
  ['/bcl-combat-coach-safe-v143.js?v=143','bcl-combat-coach-safe-v143'],
  ['/bcl-builder-harmony-v144.js?v=160','bcl-builder-redesign-v160'],
+ ['/bcl-builder-breakpoint-v161.js?v=161','bcl-builder-breakpoint-v161'],
  ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157'],
  ['/bcl-runtime-health-v158.js?v=158','bcl-runtime-health-v158']
 ];
