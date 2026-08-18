@@ -1,33 +1,39 @@
 (()=>{'use strict';
 const STYLE_ID='bcl-builder-harmony-v144-style';
 function installStyle(){if(document.getElementById(STYLE_ID))return;const s=document.createElement('style');s.id=STYLE_ID;s.textContent=`
-#builderPage{--bcl-surface:rgba(12,18,26,.72);--bcl-soft:rgba(255,255,255,.025);--bcl-line:rgba(139,148,158,.10);--bcl-line2:rgba(139,148,158,.16);--bcl-text:#d7e0e9;--bcl-muted:#8190a0;--bcl-blue:#75b7ff;max-width:1440px;margin:0 auto;padding-bottom:44px}
-#builderPage .page-title,#builderPage h1{letter-spacing:-.025em;color:#e8eef5}
-#builderPage .page-subtitle{max-width:760px;line-height:1.6;color:#8291a1}
-#builderPage .panel,#builderPage .card,#builderPage .combo-card,#builderPage .builder-smart-panel,#builderPage .optimizer-panel,#builderPage [class*="stat-card"]{border-color:var(--bcl-line)!important;box-shadow:none!important}
-#builderPage .builder-smart-panel,#builderPage .optimizer-panel,#builderPage #bclCombatProfileSafeV141,#builderPage #bclCombatCoachSafeV143{background:var(--bcl-surface)!important;border:1px solid var(--bcl-line)!important;border-radius:18px!important;padding:18px 20px!important;margin-top:18px!important}
-#builderPage #builderCombatStats{display:grid!important;grid-template-columns:repeat(4,minmax(150px,1fr))!important;gap:10px!important;margin:18px 0!important}
-#builderPage #builderCombatStats>*{min-width:0!important;padding:12px 14px!important;border:1px solid var(--bcl-line)!important;border-radius:12px!important;background:var(--bcl-soft)!important}
-#builderPage #builderCombatStats>*:nth-child(n+5){opacity:.72}
-#builderPage .combo-card{background:rgba(255,255,255,.018)!important;border:1px solid var(--bcl-line)!important;border-radius:13px!important;padding:13px 15px!important;margin:8px 0!important;transition:border-color .16s ease,background .16s ease,transform .16s ease}
-#builderPage .combo-card:hover{border-color:rgba(117,183,255,.25)!important;background:rgba(117,183,255,.035)!important;transform:translateY(-1px)}
-#builderPage .combo-header{gap:14px!important;align-items:center!important}
-#builderPage .optimizer-note,#builderPage .muted,#builderPage small{color:var(--bcl-muted)!important;line-height:1.5}
-#builderPage .badge{border-color:var(--bcl-line2)!important;background:rgba(255,255,255,.025)!important}
-#builderPage button,#builderPage .tab-btn{border-radius:10px!important;min-height:34px;transition:background .15s ease,border-color .15s ease,transform .15s ease}
-#builderPage button:hover,#builderPage .tab-btn:hover{transform:translateY(-1px)}
-#builderPage input,#builderPage select{border-radius:10px!important;border-color:var(--bcl-line2)!important;background:rgba(6,10,15,.62)!important}
-#builderPage #bclCombatProfileSafeV141>div:nth-child(2){grid-template-columns:minmax(250px,380px) minmax(240px,1fr)!important;gap:28px!important;margin-top:10px}
-#builderPage #bclCombatProfileSafeV141 svg{width:100%;max-height:280px;display:block;margin:auto}
-#builderPage #bclCombatCoachSafeV143{border-left:2px solid rgba(117,183,255,.38)!important}
-#builderPage .builder-smart-head{padding-bottom:12px;margin-bottom:8px;border-bottom:1px solid var(--bcl-line)}
-#builderPage #builderSuggestions{display:grid;gap:8px}
-#builderPage .combo-sequence{line-height:1.8}
+#builderPage{--bcl-surface:#171a1d;--bcl-surface2:#1d2125;--bcl-soft:#20252a;--bcl-line:#30363c;--bcl-text:#e6e9ec;--bcl-muted:#9aa3ac;--bcl-accent:#8b73c9;max-width:1180px!important;margin:18px auto 54px!important;padding:0 18px 44px!important;color:var(--bcl-text);font-size:14px;line-height:1.45}
+#builderPage>*{max-width:100%}
+#builderPage .page-title,#builderPage h1{font-size:20px!important;letter-spacing:-.02em;color:#f0f2f4!important;margin-bottom:4px!important}
+#builderPage .page-subtitle{max-width:720px;color:var(--bcl-muted)!important;line-height:1.5}
+#builderPage .panel,#builderPage .card,#builderPage .combo-card,#builderPage .builder-smart-panel,#builderPage .optimizer-panel,#builderPage [class*="stat-card"]{box-shadow:none!important;border-color:var(--bcl-line)!important}
+#builderPage .builder-smart-panel,#builderPage .optimizer-panel,#builderPage #bclCombatProfileSafeV141,#builderPage #bclCombatCoachSafeV143{background:var(--bcl-surface)!important;border:1px solid var(--bcl-line)!important;border-radius:7px!important;padding:16px 18px!important;margin:12px 0!important}
+#builderPage #builderCombatStats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important;margin:12px 0!important}
+#builderPage #builderCombatStats>*{min-width:0!important;padding:10px 12px!important;border:1px solid var(--bcl-line)!important;border-radius:5px!important;background:var(--bcl-surface2)!important;box-shadow:none!important}
+#builderPage #builderCombatStats>*:nth-child(n+5){opacity:.88}
+#builderPage #builderCombatStats *{text-shadow:none!important}
+#builderPage .combo-card{background:var(--bcl-surface2)!important;border:1px solid var(--bcl-line)!important;border-radius:5px!important;padding:11px 13px!important;margin:5px 0!important;transition:background .12s ease,border-color .12s ease}
+#builderPage .combo-card:hover{background:#23282d!important;border-color:#424a52!important;transform:none!important}
+#builderPage .combo-header{gap:10px!important;align-items:center!important}
+#builderPage .optimizer-note,#builderPage .muted,#builderPage small{color:var(--bcl-muted)!important;line-height:1.45}
+#builderPage .badge{border:1px solid #3a4148!important;background:#20252a!important;border-radius:4px!important;box-shadow:none!important}
+#builderPage button,#builderPage .tab-btn{border-radius:4px!important;min-height:32px!important;box-shadow:none!important;transition:background .12s ease,border-color .12s ease!important}
+#builderPage button:hover,#builderPage .tab-btn:hover{transform:none!important}
+#builderPage input,#builderPage select{border-radius:4px!important;border-color:#394047!important;background:#14171a!important;min-height:34px!important;box-shadow:none!important}
+#builderPage #bclCombatProfileSafeV141{display:grid!important;grid-template-columns:1fr!important}
+#builderPage #bclCombatProfileSafeV141>div:first-child{padding-bottom:10px;border-bottom:1px solid var(--bcl-line)}
+#builderPage #bclCombatProfileSafeV141>div:nth-child(2){grid-template-columns:minmax(230px,310px) minmax(300px,1fr)!important;gap:32px!important;margin-top:8px!important;align-items:center!important}
+#builderPage #bclCombatProfileSafeV141 svg{width:100%!important;max-height:235px!important;display:block;margin:auto}
+#builderPage #bclCombatCoachSafeV143{border-left:3px solid #65549a!important}
+#builderPage .builder-smart-head{padding-bottom:10px!important;margin-bottom:10px!important;border-bottom:1px solid var(--bcl-line)!important}
+#builderPage #builderSuggestions{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(245px,1fr))!important;gap:6px!important}
+#builderPage .combo-sequence{line-height:1.65}
 #builderPage hr{border-color:var(--bcl-line)!important}
-@media(max-width:900px){#builderPage #builderCombatStats{grid-template-columns:repeat(2,minmax(130px,1fr))!important}#builderPage #bclCombatProfileSafeV141>div:nth-child(2){grid-template-columns:1fr!important}#builderPage{padding-left:10px;padding-right:10px}}
-@media(max-width:560px){#builderPage #builderCombatStats{grid-template-columns:1fr 1fr!important}#builderPage .builder-smart-panel,#builderPage .optimizer-panel,#builderPage #bclCombatProfileSafeV141,#builderPage #bclCombatCoachSafeV143{padding:14px!important;border-radius:14px!important}}
+#builderPage [style*="border:1px solid rgba"],#builderPage [style*="border: 1px solid rgba"]{border-color:var(--bcl-line)!important}
+#builderPage [style*="border-radius:14px"],#builderPage [style*="border-radius: 14px"],#builderPage [style*="border-radius:18px"],#builderPage [style*="border-radius: 18px"]{border-radius:7px!important}
+@media(max-width:900px){#builderPage{margin-top:8px!important;padding-left:10px!important;padding-right:10px!important}#builderPage #builderCombatStats{grid-template-columns:repeat(2,minmax(0,1fr))!important}#builderPage #bclCombatProfileSafeV141>div:nth-child(2){grid-template-columns:1fr!important;gap:12px!important}}
+@media(max-width:560px){#builderPage #builderCombatStats{grid-template-columns:1fr 1fr!important}#builderPage .builder-smart-panel,#builderPage .optimizer-panel,#builderPage #bclCombatProfileSafeV141,#builderPage #bclCombatCoachSafeV143{padding:12px!important}}
 `;document.head.appendChild(s)}
-function addSectionLabels(){const page=document.getElementById('builderPage');if(!page)return;const profile=document.getElementById('bclCombatProfileSafeV141');if(profile&&!profile.dataset.harmony){profile.dataset.harmony='1';profile.setAttribute('aria-label','Profil de combat du combo')}const coach=document.getElementById('bclCombatCoachSafeV143');if(coach&&!coach.dataset.harmony){coach.dataset.harmony='1';coach.setAttribute('aria-label','Conseils de combat AnalysisCore')}}
-function boot(){installStyle();addSectionLabels();let t;const page=document.getElementById('builderPage');if(page)new MutationObserver(()=>{clearTimeout(t);t=setTimeout(addSectionLabels,100)}).observe(page,{childList:true,subtree:true})}
+function labels(){const profile=document.getElementById('bclCombatProfileSafeV141');if(profile)profile.setAttribute('aria-label','Profil de combat du combo');const coach=document.getElementById('bclCombatCoachSafeV143');if(coach)coach.setAttribute('aria-label','Conseils de combat AnalysisCore')}
+function boot(){installStyle();labels();let t;const page=document.getElementById('builderPage');if(page)new MutationObserver(()=>{clearTimeout(t);t=setTimeout(labels,100)}).observe(page,{childList:true,subtree:true})}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,350),{once:true});else setTimeout(boot,350);
 })();
