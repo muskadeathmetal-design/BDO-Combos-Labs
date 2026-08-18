@@ -8,7 +8,8 @@ const modules=[
  ['/bcl-phase-target-safe-v142.js?v=158','bcl-phase-target-safe-v158'],
  ['/bcl-combat-coach-safe-v143.js?v=143','bcl-combat-coach-safe-v143'],
  ['/bcl-builder-harmony-v144.js?v=153','bcl-builder-redesign-v153'],
- ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157']
+ ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157'],
+ ['/bcl-runtime-health-v158.js?v=158','bcl-runtime-health-v158']
 ];
 function load(src,id){return new Promise(resolve=>{const existing=document.getElementById(id);if(existing){resolve();return}const s=document.createElement('script');s.id=id;s.src=src;s.async=false;s.onload=()=>resolve();s.onerror=()=>{console.error('[BCL loader] failed',src);resolve()};document.head.appendChild(s)})}
 (async()=>{for(const [src,id] of modules)await load(src,id);document.documentElement.dataset.bclModulesReady='1'})();
