@@ -1,44 +1,31 @@
 (()=>{'use strict';
+const TEST_CLASS='Test';
+const TEST_SKILLS=globalThis.BCL_TEST_NATIVE_V128?.skills||[];
+const TEST_TRANSITIONS=globalThis.BCL_TEST_NATIVE_V128?.transitions||[];
 const KEY='bcl.clean.v3';
-const EXTRA_SKILLS=[
-{name:'Azure Pulse',phase:'cc',pveDamage:2860,pvpDamage:1910,duration:.92,cooldown:11,damageAt:.46,cc:['Stun'],ccAt:.61,protection:'Super Armor',staminaCost:120,resourceCost:15,mobility:'',specialAttacks:['Down Attack'],buffs:[],debuffs:['All DP -10'],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Solar Arc',phase:'burst',pveDamage:5120,pvpDamage:3340,duration:1.18,cooldown:8,damageAt:.52,cc:[],protection:'Forward Guard',staminaCost:0,resourceCost:35,mobility:'',specialAttacks:['Down Attack'],buffs:['Attack Speed +5%'],debuffs:[],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Shadow Pulse',phase:'setup',pveDamage:2140,pvpDamage:1450,duration:.74,cooldown:5,damageAt:.31,cc:['Stiffness'],ccAt:.38,protection:'',staminaCost:80,resourceCost:10,mobility:'forward',specialAttacks:[],buffs:[],debuffs:['Movement Speed -10%'],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Astral Fang',phase:'burst',pveDamage:4360,pvpDamage:2890,duration:1.03,cooldown:12,damageAt:.43,cc:[],protection:'Super Armor',staminaCost:140,resourceCost:25,mobility:'',specialAttacks:['Air Attack'],buffs:[],debuffs:[],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Golden Mark',phase:'setup',pveDamage:1780,pvpDamage:1190,duration:.68,cooldown:9,damageAt:.29,cc:[],protection:'Forward Guard',staminaCost:0,resourceCost:20,mobility:'',specialAttacks:[],buffs:['All Accuracy +5%'],debuffs:['All DP -15'],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Crimson Veil',phase:'defense',pveDamage:1320,pvpDamage:910,duration:.81,cooldown:10,damageAt:.37,cc:['Stiffness'],ccAt:.49,protection:'Super Armor',staminaCost:100,resourceCost:0,mobility:'backward',specialAttacks:[],buffs:['All DP +15'],debuffs:[],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Void Brand',phase:'finish',pveDamage:5980,pvpDamage:3910,duration:1.31,cooldown:15,damageAt:.64,cc:['Knockdown'],ccAt:.79,protection:'',staminaCost:0,resourceCost:45,mobility:'',specialAttacks:['Down Attack'],buffs:[],debuffs:[],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Feral Rush',phase:'engagement',pveDamage:2250,pvpDamage:1510,duration:.63,cooldown:6,damageAt:.27,cc:[],protection:'Super Armor',staminaCost:180,resourceCost:0,mobility:'forward',specialAttacks:[],buffs:['Movement Speed +10%'],debuffs:[],notes:'Manual V3.11 test skill',enabled:true},
-{name:'Echo Crash',id:'TST-C-001',input:'S+RMB',phase:'resource',pveDamage:7944,pvpDamage:68,hits:12,duration:.666,cooldown:8.1,cc:[],protection:'',staminaCost:280,resourceDelta:0,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Astral Rush',id:'TST-C-002',input:'RMB',phase:'opener',pveDamage:3288,pvpDamage:'',hits:10,duration:1.939,cooldown:20.1,cc:[],protection:'',staminaCost:0,resourceDelta:0,accuracy:13.4,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Feral Shard',id:'TST-C-003',input:'W+RMB',phase:'opener',pveDamage:2651,pvpDamage:46,hits:6,duration:1.323,cooldown:16.8,cc:[],protection:'',staminaCost:0,resourceDelta:119,accuracy:0,critRate:65.6,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Solar Flare',id:'TST-C-004',input:'Shift+F',phase:'finisher',pveDamage:5198,pvpDamage:56,hits:3,duration:1.956,cooldown:12.6,cc:[],protection:'',staminaCost:199,resourceDelta:-73,accuracy:0,critRate:15.8,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Frost Burst',id:'TST-C-005',input:'S+Q',phase:'damage',pveDamage:1482,pvpDamage:70,hits:2,duration:1.928,cooldown:3.8,cc:['Floating'],ccMeasuredDuration:1.4,protection:'',staminaCost:159,resourceDelta:0,accuracy:-10.8,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Ashen Grip',id:'TST-C-006',input:'W+Space',phase:'mobility',pveDamage:6119,pvpDamage:65,hits:4,duration:1.576,cooldown:20.8,cc:[],protection:'i-Frames',staminaCost:0,resourceDelta:86,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Celestial Bloom',id:'TST-C-007',input:'Shift+RMB',phase:'damage',pveDamage:5154,pvpDamage:48,hits:3,duration:1.285,cooldown:19.9,cc:[],protection:'',staminaCost:0,resourceDelta:94,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Wild Edge',id:'TST-C-009',input:'W+Space',phase:'mobility',pveDamage:5348,pvpDamage:'',hits:1,duration:.993,cooldown:10.6,cc:[],protection:'Forward Guard',staminaCost:114,resourceDelta:60,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Black Dance',id:'TST-C-011',input:'Q',phase:'resource',pveDamage:2553,pvpDamage:68,hits:3,duration:.984,cooldown:1.2,cc:[],protection:'',staminaCost:0,resourceDelta:56,accuracy:0,critRate:18.7,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Ivory Fang',id:'TST-C-012',input:'S+F',phase:'opener',pveDamage:5602,pvpDamage:74,hits:9,duration:1.61,cooldown:10.7,cc:[],protection:'Super Armor',staminaCost:0,resourceDelta:-43,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Winter Gale',id:'TST-C-018',input:'W+F',phase:'mobility',pveDamage:6883,pvpDamage:58,hits:1,duration:.811,cooldown:13.8,cc:[],protection:'',staminaCost:66,resourceDelta:0,accuracy:20.9,critRate:48.7,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Hollow Lance',id:'TST-C-019',input:'Space',phase:'protected',pveDamage:1871,pvpDamage:42,hits:9,duration:1.358,cooldown:23.8,cc:['Bound'],ccMeasuredDuration:1.69,protection:'',staminaCost:158,resourceDelta:0,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Storm Slash',id:'TST-C-022',input:'Q',phase:'protected',pveDamage:7010,pvpDamage:64,hits:8,duration:1.978,cooldown:23.4,cc:[],protection:'',staminaCost:209,resourceDelta:-16,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Grim Thorn',id:'TST-C-023',input:'W+RMB',phase:'mobility',pveDamage:639,pvpDamage:36,hits:9,duration:1.965,cooldown:16.9,cc:[],protection:'',staminaCost:229,resourceDelta:0,accuracy:-1.6,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Ghost Surge',id:'TST-C-024',input:'W+F',phase:'bridge',pveDamage:5748,pvpDamage:53,hits:8,duration:1.358,cooldown:1.1,cc:['Knockdown'],ccMeasuredDuration:2.39,protection:'',staminaCost:0,resourceDelta:0,accuracy:0,critRate:31.9,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Azure Fang',id:'TST-C-025',input:'RMB',phase:'resource',pveDamage:4921,pvpDamage:'',hits:10,duration:1.177,cooldown:10.5,cc:[],protection:'',staminaCost:87,resourceDelta:0,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Feral Flare',id:'TST-C-026',input:'W+Space',phase:'opener',pveDamage:5784,pvpDamage:57,hits:12,duration:.356,cooldown:7.5,cc:['Knockback'],ccMeasuredDuration:1.32,protection:'',staminaCost:187,resourceDelta:0,accuracy:0,critRate:75.4,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Wild Torrent',id:'TST-C-027',input:'E',phase:'mobility',pveDamage:1239,pvpDamage:77,hits:4,duration:1.579,cooldown:11.7,cc:[],protection:'',staminaCost:0,resourceDelta:0,accuracy:0,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Golden Bloom',id:'TST-C-028',input:'Q',phase:'finisher',pveDamage:3940,pvpDamage:'',hits:3,duration:.328,cooldown:13.5,cc:[],protection:'',staminaCost:237,resourceDelta:0,accuracy:-1.5,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true},
-{name:'Blood Grip',id:'TST-C-029',input:'Space',phase:'protected',pveDamage:3764,pvpDamage:41,hits:9,duration:.424,cooldown:4.7,cc:[],protection:'Super Armor',staminaCost:0,resourceDelta:0,accuracy:-4.2,critRate:0,specialAttacks:[],buffs:[],debuffs:[],notes:'Manual legacy batch V3.11',enabled:true}
-];
 let state;try{state=JSON.parse(localStorage.getItem(KEY)||'null')}catch(_){state=null}
-if(!state||typeof state!=='object')state={version:3,context:{className:'Test',spec:'Awakening'},skills:{Test:{Awakening:[],Succession:[]}}};
+if(!state||typeof state!=='object')state={version:3,context:{className:TEST_CLASS,spec:'Awakening'}};
 state.skills=state.skills&&typeof state.skills==='object'?state.skills:{};
-state.skills.Test=state.skills.Test&&typeof state.skills.Test==='object'?state.skills.Test:{Awakening:[],Succession:[]};
-state.skills.Test.Awakening=Array.isArray(state.skills.Test.Awakening)?state.skills.Test.Awakening:[];
-state.skills.Test.Succession=Array.isArray(state.skills.Test.Succession)?state.skills.Test.Succession:[];
-const names=new Set(state.skills.Test.Awakening.map(s=>String(s?.name||'').trim().toLowerCase()));
-let added=0;
-for(const skill of EXTRA_SKILLS){const key=skill.name.toLowerCase();if(!names.has(key)){state.skills.Test.Awakening.push(skill);names.add(key);added++;}}
-if(added)localStorage.setItem(KEY,JSON.stringify(state));
-console.info(`[V3.11] ${added} manual test skills added`);
+state.transitions=state.transitions&&typeof state.transitions==='object'?state.transitions:{};
+state.skills[TEST_CLASS]=state.skills[TEST_CLASS]&&typeof state.skills[TEST_CLASS]==='object'?state.skills[TEST_CLASS]:{Awakening:[],Succession:[]};
+state.transitions[TEST_CLASS]=state.transitions[TEST_CLASS]&&typeof state.transitions[TEST_CLASS]==='object'?state.transitions[TEST_CLASS]:{Awakening:[],Succession:[]};
+state.skills[TEST_CLASS].Awakening=Array.isArray(state.skills[TEST_CLASS].Awakening)?state.skills[TEST_CLASS].Awakening:[];
+state.skills[TEST_CLASS].Succession=Array.isArray(state.skills[TEST_CLASS].Succession)?state.skills[TEST_CLASS].Succession:[];
+state.transitions[TEST_CLASS].Awakening=Array.isArray(state.transitions[TEST_CLASS].Awakening)?state.transitions[TEST_CLASS].Awakening:[];
+state.transitions[TEST_CLASS].Succession=Array.isArray(state.transitions[TEST_CLASS].Succession)?state.transitions[TEST_CLASS].Succession:[];
+const normalizeSkill=s=>({id:s.id,name:s.name,input:s.input,phase:s.role||s.category||'unclassified',spec:s.spec,pveDamage:s.pveDamage??s.damage??'',pvpDamage:s.pvpDamage??'',hits:s.hits??'',duration:s.duration??0,cooldown:s.cooldown??0,damageAt:s.damageAt??null,cc:Array.isArray(s.cc)?s.cc:[],ccAt:s.ccAt??null,ccMeasuredDuration:s.ccMeasuredDuration??'',protection:Array.isArray(s.protections)&&s.protections.length?s.protections[0]:'',protections:Array.isArray(s.protections)?s.protections:[],staminaCost:s.staminaCost??0,resourceCost:Number(s.resourceDelta)<0?Math.abs(Number(s.resourceDelta)):0,resourceDelta:s.resourceDelta??0,accuracy:s.accuracy??0,critRate:s.critRate??0,specialAttacks:Array.isArray(s.specialAttacks)?s.specialAttacks:[],buffs:Array.isArray(s.buffs)?s.buffs:[],debuffs:Array.isArray(s.debuffs)?s.debuffs:[],effects:Array.isArray(s.effects)?s.effects:[],notes:s.notes||'Static V3.11 catalog',enabled:s.enabled!==false,synthetic:s.synthetic===true});
+const skillKey=s=>String(s?.name||'').trim().toLowerCase();
+const addSkills=(target,source)=>{const names=new Set(target.map(skillKey));let n=0;for(const raw of source){const skill=normalizeSkill(raw),k=skillKey(skill);if(k&&!names.has(k)){target.push(skill);names.add(k);n++;}}return n};
+const common=TEST_SKILLS.filter(s=>s.spec==='Common');
+const addA=addSkills(state.skills[TEST_CLASS].Awakening,TEST_SKILLS);
+const addS=addSkills(state.skills[TEST_CLASS].Succession,common);
+const trKey=t=>`${String(t?.from||'').trim().toLowerCase()}>${String(t?.to||'').trim().toLowerCase()}`;
+const normalizeTransition=t=>({id:t.id,from:t.from,to:t.to,sequence:Array.isArray(t.sequence)?t.sequence:[t.from,t.to],timingSeconds:t.timingSeconds??t.duration??0,duration:t.duration??t.timingSeconds??0,cancelAt:t.cancelAt??t.cancelSeconds??null,hasCancel:t.hasCancel!==false,cancelSeconds:t.cancelSeconds??t.cancelAt??null,entryOffset:t.entryOffset??0,kind:t.hasCancel===false?'transition':'cancel',confidence:t.timingConfidence??t.confidence??null,timingConfidence:t.timingConfidence??t.confidence??null,measured:t.measured!==false,validated:t.validated===true,reviewStatus:t.validated===true?'validated':'pending',needsValidation:t.validated!==true,enabled:t.enabled!==false,synthetic:t.synthetic===true});
+const addTransitions=(target,source)=>{const keys=new Set(target.map(trKey));let n=0;for(const raw of source){const tr=normalizeTransition(raw),k=trKey(tr);if(k&&k!=='> '&&!keys.has(k)){target.push(tr);keys.add(k);n++;}}return n};
+const addTA=addTransitions(state.transitions[TEST_CLASS].Awakening,TEST_TRANSITIONS);
+const commonNames=new Set(common.map(skillKey));
+const successionTransitions=TEST_TRANSITIONS.filter(t=>commonNames.has(String(t.from||'').trim().toLowerCase())&&commonNames.has(String(t.to||'').trim().toLowerCase()));
+const addTS=addTransitions(state.transitions[TEST_CLASS].Succession,successionTransitions);
+localStorage.setItem(KEY,JSON.stringify(state));
+console.info('[V3.11] static Test catalog ready',{awakeningSkills:state.skills[TEST_CLASS].Awakening.length,successionSkills:state.skills[TEST_CLASS].Succession.length,awakeningTransitions:state.transitions[TEST_CLASS].Awakening.length,successionTransitions:state.transitions[TEST_CLASS].Succession.length,added:{skills:addA+addS,transitions:addTA+addTS}});
 })();
