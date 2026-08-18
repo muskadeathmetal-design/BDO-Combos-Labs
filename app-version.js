@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const VERSION='3.10';
+const VERSION='3.11';
 window.BDO_COMBOS_LAB_VERSION=VERSION;
 function syncVersion(){
   const h=document.querySelector('#appHealth');
