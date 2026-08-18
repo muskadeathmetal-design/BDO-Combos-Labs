@@ -1,2 +1,91 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BDO Combos Labs · V116</title></head><body><script>(function(){var l='fr';try{var s=localStorage.getItem('bcl_language')||localStorage.getItem('bclLanguage');if(/^(fr|en|de|es|it|pt)$/.test(s))l=s;}catch(e){}location.replace('/'+l+'/'+(location.search||'')+(location.hash||''));})();</script><noscript><a href="/fr/">Ouvrir BDO Combos Labs</a></noscript></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BDO Combos Lab</title>
+  <meta name="description" content="BDO combat workspace for skills, transitions, cancels and combo analysis.">
+  <link rel="stylesheet" href="/styles.css?v=1">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><strong>BDO Combos Lab</strong><span>Combat workspace</span></div>
+  <div class="context-controls">
+    <label>Class<select id="classSelector"></select></label>
+    <label>Spec<select id="specSelector"><option>Awakening</option><option>Succession</option></select></label>
+  </div>
+</header>
+<nav class="nav" id="nav">
+  <button data-page="home" class="active">Overview</button>
+  <button data-page="skills">Skills</button>
+  <button data-page="classCombos">Class Combos</button>
+  <button data-page="transitions">Transitions / Cancels</button>
+  <button data-page="video">Video Analyzer</button>
+  <button data-page="addons">Skill Add-ons</button>
+  <button data-page="builder">Combo Builder</button>
+  <button data-page="settings">Settings</button>
+</nav>
+<main>
+  <section id="page-home" class="page active">
+    <div class="page-head"><div><h1>Combat workspace</h1><p>Important information first. No background refresh loops, no legacy renderers.</p></div><span class="status-pill good" id="appHealth">Ready</span></div>
+    <div id="overviewMetrics" class="metrics"></div>
+    <div class="surface compact"><h2>Current focus</h2><div id="overviewFocus" class="focus-line"></div></div>
+  </section>
+
+  <section id="page-skills" class="page">
+    <div class="page-head"><div><h1>Skills</h1><p>Combat data used by AnalysisCore.</p></div><button class="primary" id="addSkillBtn">Add skill</button></div>
+    <div id="skillsTable"></div>
+  </section>
+
+  <section id="page-classCombos" class="page">
+    <div class="page-head"><div><h1>Class Combos</h1><p>Readable, compact reference routes.</p></div><button class="primary" id="addComboBtn">Add combo</button></div>
+    <div id="classCombosList" class="rows"></div>
+  </section>
+
+  <section id="page-transitions" class="page">
+    <div class="page-head"><div><h1>Transitions & Cancels</h1><p>Review timing, cancel points and entry skips. All review controls are persistent.</p></div><button class="primary" id="addTransitionBtn">Add transition</button></div>
+    <div id="transitionSummary" class="metrics"></div>
+    <div id="transitionList" class="rows"></div>
+  </section>
+
+  <section id="page-video" class="page">
+    <div class="page-head"><div><h1>Video Analyzer</h1><p>Measure skill events, transition timing, CC application, buffs and debuffs.</p></div></div>
+    <div class="surface">
+      <div class="form-grid">
+        <label>Video file<input id="videoFile" type="file" accept="video/*"></label>
+        <label>FPS<input id="videoFps" type="number" min="1" value="60"></label>
+      </div>
+      <video id="timingVideo" controls></video>
+      <div class="toolbar"><button id="markTransitionBtn">Mark transition</button><button id="markCcBtn">Mark CC</button><button id="markDamageBtn">Mark damage</button><button id="clearMarkersBtn">Clear markers</button></div>
+      <div id="videoMarkers" class="rows"></div>
+    </div>
+  </section>
+
+  <section id="page-addons" class="page">
+    <div class="page-head"><div><h1>Skill Add-ons</h1><p>Compact notes tied to skills.</p></div><button class="primary" id="addAddonBtn">Add add-on</button></div>
+    <div id="addonList" class="rows"></div>
+  </section>
+
+  <section id="page-builder" class="page">
+    <div class="page-head"><div><h1>Combo Builder</h1><p>Timeline-aware optimization with AnalysisCore.</p></div><span id="analysisStatus" class="status-pill">Idle</span></div>
+    <div id="builderStats" class="stats-table"></div>
+    <div class="surface compact">
+      <div class="builder-head"><h2>Current combo</h2><div class="toolbar"><button id="clearComboBtn">Clear</button><button id="suggestBtn">Refresh suggestions</button><button class="primary" id="completeBtn">Complete combo</button></div></div>
+      <div id="comboSequence" class="sequence"></div>
+    </div>
+    <div class="workspace-split">
+      <div><h2>Suggestions</h2><div id="suggestions" class="rows"></div></div>
+      <div><h2>Combat Coach</h2><div id="coach" class="coach"></div></div>
+    </div>
+  </section>
+
+  <section id="page-settings" class="page">
+    <div class="page-head"><div><h1>Analysis settings</h1><p>Presets first, advanced engine controls underneath.</p></div></div>
+    <div class="preset-bar" id="presetBar"><button data-preset="balanced" class="active">Balanced</button><button data-preset="pvp-safe">PvP Safe</button><button data-preset="pvp-burst">PvP Burst</button><button data-preset="pve-dps">PvE DPS</button></div>
+    <div id="settingsForm" class="settings"></div>
+  </section>
+</main>
+<dialog id="editorDialog"><form method="dialog" id="editorForm"><div class="dialog-head"><h2 id="editorTitle">Edit</h2><button value="cancel" class="icon-btn">×</button></div><div id="editorFields" class="form-grid"></div><div class="dialog-actions"><button value="cancel">Cancel</button><button value="default" class="primary" id="editorSave">Save</button></div></form></dialog>
+<script src="/app.js?v=1" defer></script>
+</body>
+</html>

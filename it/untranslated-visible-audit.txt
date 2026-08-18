@@ -1,6 +1,0 @@
-V116 it visible French residual candidates: 4
-
-. Tutte le pagine utilizzano questo contesto per caricare il repository, le competenze, le combo e le misure corrette.
-Le abilità, le transizioni, le misure, le combo e le impostazioni attuali verranno allegate a questo account.
-Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combo atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combo dei giocatori et rejoint Combo di classe.
-Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la classe active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.

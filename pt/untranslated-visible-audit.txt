@@ -1,4 +1,0 @@
-V116 pt visible French residual candidates: 2
-
-Les combos partagés par les joueurs restent ici pendant leur phase de vote. Lorsqu’un combinação atteint le seuil communautaire, il devient automatiquement vérifié, quitte Combos de jogadores et rejoint Combos de aula.
-Tu peux coller le lien d’un Google Doc/Sheet public ou charger un fichier exporté depuis Google Docs. Le document est d’abord analysé indépendamment de la Skill Library : les noms présents dans les chaînes explicites sont extraits, puis ajoutés aux Skills de la aula active s’ils n’existent pas encore. Les combos et transitions sont importés ensuite.

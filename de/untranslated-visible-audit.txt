@@ -1,9 +1,0 @@
-V116 de visible French residual candidates: 7
-
-Bewahren Sie die Ressource
-Geschätzte maximale Dauer(n)
-Maximale Anzahl an Wiederholungen. nach Können
-Maximale Anzahl der Verwendungen derselben Fertigkeit, wenn Wiederholungen zulässig sind.
-Maximale Fähigkeiten
-Maximale geschätzte Dauer, die für die gesamte Sequenz akzeptiert wird.
-Maximale Ressourcenkosten

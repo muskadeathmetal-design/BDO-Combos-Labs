@@ -3,7 +3,12 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Cross-Origin-Opener-Policy: same-origin-allow-popups
 
-/bcl-test-class-live-v117.js
-  Cache-Control: no-cache, no-store, must-revalidate
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/app.js
+  Cache-Control: no-cache, must-revalidate
+
+/styles.css
+  Cache-Control: no-cache, must-revalidate
