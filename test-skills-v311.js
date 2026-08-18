@@ -11,10 +11,11 @@ const EXTRA_SKILLS=[
 {name:'Feral Rush',phase:'engagement',pveDamage:2250,pvpDamage:1510,duration:.63,cooldown:6,damageAt:.27,cc:[],protection:'Super Armor',staminaCost:180,resourceCost:0,mobility:'forward',specialAttacks:[],buffs:['Movement Speed +10%'],debuffs:[],notes:'Manual V3.11 test skill',enabled:true}
 ];
 let state;try{state=JSON.parse(localStorage.getItem(KEY)||'null')}catch(_){state=null}
-if(!state||typeof state!=='object')return;
+if(!state||typeof state!=='object')state={version:3,context:{className:'Test',spec:'Awakening'},skills:{Test:{Awakening:[],Succession:[]}}};
 state.skills=state.skills&&typeof state.skills==='object'?state.skills:{};
 state.skills.Test=state.skills.Test&&typeof state.skills.Test==='object'?state.skills.Test:{Awakening:[],Succession:[]};
 state.skills.Test.Awakening=Array.isArray(state.skills.Test.Awakening)?state.skills.Test.Awakening:[];
+state.skills.Test.Succession=Array.isArray(state.skills.Test.Succession)?state.skills.Test.Succession:[];
 const names=new Set(state.skills.Test.Awakening.map(s=>String(s?.name||'').trim().toLowerCase()));
 let added=0;
 for(const skill of EXTRA_SKILLS){const key=skill.name.toLowerCase();if(!names.has(key)){state.skills.Test.Awakening.push(skill);names.add(key);added++;}}
