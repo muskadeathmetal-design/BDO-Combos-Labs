@@ -10,9 +10,9 @@ const modules=[
  ['/bcl-builder-harmony-v144.js?v=160','bcl-builder-redesign-v160'],
  ['/bcl-builder-breakpoint-v161.js?v=163','bcl-builder-breakpoint-v163'],
  ['/bcl-addons-scale-v157.js?v=157','bcl-addons-scale-v157'],
- ['/bcl-transition-stability-v162.js?v=163','bcl-transition-stability-v163'],
- ['/bcl-render-stability-v163.js?v=163','bcl-render-stability-v163'],
- ['/bcl-runtime-health-v158.js?v=163','bcl-runtime-health-v163']
+ ['/bcl-transition-stability-v162.js?v=164','bcl-transition-stability-v164'],
+ ['/bcl-render-stability-v163.js?v=164','bcl-render-stability-v164'],
+ ['/bcl-runtime-health-v158.js?v=164','bcl-runtime-health-v164']
 ];
 function load(src,id){return new Promise(resolve=>{const existing=document.getElementById(id);if(existing){resolve();return}const s=document.createElement('script');s.id=id;s.src=src;s.async=false;s.onload=()=>resolve();s.onerror=()=>{console.error('[BCL loader] failed',src);resolve()};document.head.appendChild(s)})}
-(async()=>{for(const [src,id] of modules)await load(src,id);document.documentElement.dataset.bclModulesReady='1'})();})();
+(async()=>{for(const[src,id]of modules)await load(src,id);document.documentElement.dataset.bclModulesReady='1'})();})();
