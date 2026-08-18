@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const KEY='bcl.clean.v3';
 const ENDPOINT='https://rxwlcwziuhtlujdmjwom.supabase.co/functions/v1/analysiscore-builder-v2';
-const ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIUzI1NiIsInJlZiI6InJ4d2xjd3ppdWh0bHVqZG1qd29tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NDgwMzMsImV4cCI6MjEwMjUyNDAzM30.EIFJXVhKlIyOcfcYPmiz4ct10iTpMqe_Dk4Jal49ChU';
+const ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4d2xjd3ppdWh0bHVqZG1qd29tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY5NDgwMzMsImV4cCI6MjEwMjUyNDAzM30.EIFJXVhKlIyOcfcYPmiz4ct10iTpMqe_Dk4Jal49ChU';
 const $=q=>document.querySelector(q);
 const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const num=(v,d=0)=>Number.isFinite(Number(v))?Number(v):d;
